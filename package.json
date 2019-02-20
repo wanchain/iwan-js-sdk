@@ -1,0 +1,25 @@
+{
+  "name": "iwan-js-sdk",
+  "version": "1.0.0",
+  "dependencies": {
+    "ws": "^5.2.2"
+  },
+  "description": "iwan javascript sdk",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wanchain/iWan-js-sdk.git"
+  },
+  "author": "lansehuiyi6",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wanchain/iWan-js-sdk/issues"
+  },
+  "homepage": "https://github.com/wanchain/iWan-js-sdk#readme"
+}
