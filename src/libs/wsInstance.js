@@ -13,12 +13,19 @@ class WsInstance {
         if (config.apiFlag) {
             this.ws_url += '/' + config.apiFlag;
         }
-        this.ws_url += '/' + config.apiVersion + '/' + config.auth.apiKey;
 
-        this.lockReconnect = false;
-        this.functionDict = {};
-        this.heartCheck();
-        this.createWebSocket();
+console.log(config);
+        if (config.auth.apiKey) {
+            this.ws_url += '/' + config.apiVersion + '/' + config.auth.apiKey;
+
+            this.lockReconnect = false;
+            this.functionDict = {};
+            this.heartCheck();
+            this.createWebSocket();
+        } else {
+            console.log("Plz config 'APIKEY' and 'SECRETKEY' in env.");
+            process.exit();
+        }
     }
 
     createWebSocket() {
