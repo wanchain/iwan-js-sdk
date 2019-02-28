@@ -13,7 +13,7 @@ class ApiInstance extends WsInstance {
       let func = (err, result) => {
         if (err) {
           console.log('something is wrong when ' + funcName + ', ' + err);
-          return reject(err);
+          return resolve(err);
         } else {
           console.log(funcName + " function done");
           return resolve(result);
@@ -380,6 +380,7 @@ class ApiInstance extends WsInstance {
   *
   */
   async getGasPrice(chainType) {
+    console.log("ahhahsaha");
     return await this.apiFactory('getGasPrice', { chainType: chainType});
   }
 
@@ -425,7 +426,7 @@ class ApiInstance extends WsInstance {
   * @apiDescription Get balance for multiple Addresses in a single call
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
-  * @apiParam {addressArray} addressArray the account's address array that you want to find
+  * @apiParam {address} addressArray the account's address array that you want to find
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getMultiBalances","params":{"address": ["0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c","0x2cc79fa3b80c5b9b02051facd02478ea88a78e2d"],"chainType":"WAN"},"id":1}
@@ -451,8 +452,8 @@ class ApiInstance extends WsInstance {
   * }
   *
   */
-  async getMultiBalances(chainType, addressArray) {
-    return await this.apiFactory('getMultiBalances', { chainType: chainType, addressArray: addressArray });
+  async getMultiBalances(chainType, address) {
+    return await this.apiFactory('getMultiBalances', { chainType: chainType, address: address });
   }
 
   /**
@@ -498,7 +499,7 @@ class ApiInstance extends WsInstance {
   * @apiDescription Get token balance for multiple addresses of certain token on Wanchain in a single call
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH, default WAN
-  * @apiParam {addressArray} addressArray the account's address array that you want to find
+  * @apiParam {address} addressArray the account's address array that you want to find
   * @apiParam {address} tokenScAddr the token address for the certain token; if set chainType 'WAN', it should be the token address for WETH or WBTC
   *
   * @apiParamExample {string} JSON-RPC over websocket
@@ -525,8 +526,8 @@ class ApiInstance extends WsInstance {
   * }
   *
   */
-  async getMultiTokenBalance(chainType, addressArray, tokenScAddr) {
-    return await this.apiFactory('getMultiTokenBalance', { chainType: chainType, addressArray: addressArray, tokenScAddr: tokenScAddr });
+  async getMultiTokenBalance(chainType, address, tokenScAddr) {
+    return await this.apiFactory('getMultiTokenBalance', { chainType: chainType, address: address, tokenScAddr: tokenScAddr });
   }
 
   /**
@@ -1421,9 +1422,9 @@ class ApiInstance extends WsInstance {
   *
   */
   //Get the x value of p2sh by hash(x) from btc
-  async getP2shxByHashx(chainType, hashX) {
-    return await this.apiFactory('getP2shxByHashx', { chainType: chainType, hashX: hashX });
-  }
+  // async getP2shxByHashx(chainType, hashX) {
+  //   return await this.apiFactory('getP2shxByHashx', { chainType: chainType, hashX: hashX });
+  // }
 
   /**
   *
