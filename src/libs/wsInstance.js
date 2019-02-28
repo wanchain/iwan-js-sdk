@@ -14,7 +14,6 @@ class WsInstance {
             this.ws_url += '/' + config.apiFlag;
         }
 
-console.log(config);
         if (config.auth.apiKey) {
             this.ws_url += '/' + config.apiVersion + '/' + config.auth.apiKey;
 
