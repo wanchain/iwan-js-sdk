@@ -974,60 +974,6 @@ define({ "api": [
     "groupTitle": "CrossChain"
   },
   {
-    "name": "getP2shxByHashx",
-    "group": "CrossChain",
-    "type": "CONNECT",
-    "url": "/ws/v3/YOUR-API-KEY",
-    "title": "getP2shxByHashx",
-    "version": "1.0.0",
-    "description": "<p>Get the x value of p2sh by hash(x) from btc</p>",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be BTC</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "hash",
-            "optional": false,
-            "field": "hashX",
-            "description": "<p>the certain hashX that you want to search</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "JSON-RPC over websocket",
-          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getP2shxByHashx\",\"params\":{\"chainType\":\"BTC\",\"hashx\":\"d2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da\"},\"id\":1}",
-          "type": "string"
-        }
-      ]
-    },
-    "examples": [
-      {
-        "title": "Example usage:",
-        "content": "let apiTest = new ApiInstance();\nawait sleep(5000);\nlet result = await apiTest.getP2shxByHashx(\"BTC\", \"d2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da\");\nconsole.log(\"Result is \", result);\napiTest.close();",
-        "type": "code"
-      }
-    ],
-    "success": {
-      "examples": [
-        {
-          "title": "Successful Response",
-          "content": "\"result\": \"2ecb855170c941f239ffe3495f3e07cceabd8421\"",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "../src/apis/apiInstance.js",
-    "groupTitle": "CrossChain"
-  },
-  {
     "name": "getRegErc20Tokens",
     "group": "CrossChain",
     "type": "CONNECT",
