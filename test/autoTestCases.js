@@ -69,8 +69,8 @@ describe("iWan API Auto Test", () => {
         }
     }
 
-    // for (let i = 1; i < testData.length; i++) {
-    for (let i = 46; i < 47; i++) {
+    for (let i = 1; i < testData.length; i++) {
+    // for (let i = 38; i < 39; i++) {
         if (testData[i].length !== 0 &&
             testData[i][xlsxHeaderPos.flag] !== skipKeyword) {
             let tcid = testData[i][xlsxHeaderPos.tcId];
@@ -84,32 +84,26 @@ describe("iWan API Auto Test", () => {
 
                         let sendData = JSON.parse(testData[i][xlsxHeaderPos.input]);
                         let expectResult = JSON.parse(testData[i][xlsxHeaderPos.output]);
-                        console.log(sendData);
-                        console.log(expectResult);
-                        console.log("method is ", api);
                         let args = getArgs(apiTest[api]);
                         let params = [];
 
                         for (let i = 0; i < args.length; i++) {
-                            console.log(sendData);
-                            console.log(args[i], sendData["params"][args[i]]);
-                            params.push(sendData["params"][args[i]]);
+                            if (args[i] === "blockHashOrBlockNumber") {
+                                if (sendData["params"].hasOwnProperty("blockHash")) {
+                                    params.push(sendData["params"]["blockHash"]);
+                                } else if (sendData["params"].hasOwnProperty("blockNumber")) {
+                                    params.push(sendData["params"]["blockNumber"]);
+                                }
+                            } else {
+                                params.push(sendData["params"][args[i]]);
+                            }                            
                         }
-                        console.log("params are ", params);
 
                         let assertResult;
                         assertResult = expectResult.hasOwnProperty('error') ? expectResult.error : expectResult.result;
-                        console.log("assertResult is ", assertResult, typeof assertResult);
 
                         let result = await apiTest[api](...params);
-                        console.log("result is ", result, typeof result)
 
-                        // if (typeof assertResult === "object") {
-                        //     assert.equal(JSON.stringify(result), JSON.stringify(assertResult));
-                        // } else {
-                        //     assert.equal(result, assertResult);
-                        // }  
-                        // assert.deepStrictEqual(result, assertResult);
                         if (flag === partialKeyword) {
                             if (typeof assertResult === "object") {
                                 if (Array.isArray(assertResult)) {
@@ -120,9 +114,6 @@ describe("iWan API Auto Test", () => {
                                     assert.containsAllKeys(result, assertResult);
                                 }
                             } else {
-                                console.log("aaron debug here , ahahh ");
-                                console.log(typeof result);
-                                console.log(typeof assertResult);
                                 if (expectResult.hasOwnProperty('error')) {
                                     assert.equal(result, assertResult);
                                 } else {
@@ -133,14 +124,11 @@ describe("iWan API Auto Test", () => {
                             if (Array.isArray(assertResult)) {
                                 assert.sameDeepMembers(result, assertResult);
                             } else {
-                                assert.deepEqual(result, assertResult);
+                                assert.deepStrictEqual(result, assertResult);
                             }
-                        }
+                        } 
 
-                        
-                        
                     // } catch (err) {
-                    //     console.log(err);
                     //     assert.equal(err, null);
                     // }
 
