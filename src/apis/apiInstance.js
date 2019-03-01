@@ -1251,7 +1251,7 @@ class ApiInstance extends WsInstance {
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getP2shxByHashx
   * @apiVersion 1.0.0
   * @apiDescription Get the x value of p2sh by hash(x) from btc
-  *
+  *@apiIgnore Comment out this function
   * @apiParam {string} chainType the chain name that you want to search, should be BTC
   * @apiParam {hash} hashX the certain hashX that you want to search
   *
