@@ -8,21 +8,23 @@ const OPTIONS = {
 };
 
 class WsInstance {
-    constructor() {
+    constructor(apiKey, secretKey) {
+        this.apiKey = apiKey;
+        this.secretKey = secretKey;
         this.ws_url = config.socketUrl + ':' + config.socketPort;
         if (config.apiFlag) {
             this.ws_url += '/' + config.apiFlag;
         }
 
-        if (config.auth.apiKey) {
-            this.ws_url += '/' + config.apiVersion + '/' + config.auth.apiKey;
+        if (this.apiKey) {
+            this.ws_url += '/' + config.apiVersion + '/' + this.apiKey;
 
             this.lockReconnect = false;
             this.functionDict = {};
             this.heartCheck();
             this.createWebSocket();
         } else {
-            console.log("Plz config 'APIKEY' and 'SECRETKEY' in env.");
+            console.log("Plz config 'APIKEY' and 'SECRETKEY'.");
             process.exit();
         }
     }

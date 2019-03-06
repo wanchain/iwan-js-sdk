@@ -90,4 +90,3 @@ function integrateJSON(_obj, _secret, _encoding = _Encoding._base64) {
 }
 
 exports.JSON = integrateJSON;
-exports.secretKey = config.auth.secretKey;

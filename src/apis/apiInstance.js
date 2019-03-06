@@ -2,6 +2,9 @@ const WsInstance = require('../libs/wsInstance.js');
 const ApiTemplate = require('../apis/apiTemplate.js');
 
 class ApiInstance extends WsInstance {
+  constructor(apiKey, secretKey) {
+    super(apiKey, secretKey);
+  }
 
   async apiFactory(method, params) {
     let wss = this.wss;
@@ -19,7 +22,7 @@ class ApiInstance extends WsInstance {
           return resolve(result);
         }
       };
-      let message = new ApiTemplate(method, params, func);
+      let message = new ApiTemplate(this.secretKey, method, params, func);
       this.sendMessage(message);
     });
   }

@@ -8,7 +8,9 @@ function sleep(time) {
   }
 
 async function main() {
-    let apiTest = new ApiInstance();
+    let YourApiKey = "d21b98b09c1b4f1001986401e25a27a07a4673140b5125b81cdfedcea4db9e7b";
+    let YourSecretKey = "93c30e4a70f5ec3d4427f76602851791aa58fb823773c96cf1347f8b0276b036";
+    let apiTest = new ApiInstance(YourApiKey, YourSecretKey);
     await sleep(5000);
     try {
     let balance0 = await apiTest.getBalance('WAN', '0x0cc79fa3b80c5b9b02051facd02478ea88a78e2c');
