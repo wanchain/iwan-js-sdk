@@ -7,8 +7,6 @@ const config = {
 
     auth: {
         // projectName: 'test',
-        apiKey: process.env.APIKEY,
-        secretKey: process.env.SECRETKEY
     },
 
     _Encoding: {

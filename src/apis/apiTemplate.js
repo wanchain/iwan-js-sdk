@@ -4,14 +4,14 @@ const auth = require('../authorization/auth.js');
 let index = 0;
 
 class ApiTemplate {
-    constructor(method, parameters, callback) {
+    constructor(secretKey, method, parameters, callback) {
         this.message = {
             jsonrpc: "2.0",
             method: method,
             params: parameters,
             id: index
         };
-        let jsonResult = auth.JSON(this.message, auth.secretKey);
+        let jsonResult = auth.JSON(this.message, secretKey);
         if (jsonResult.hasOwnProperty("error")) {
             console.log("Something error happended during auth-JSON", jsonResult.error);
         } else {
