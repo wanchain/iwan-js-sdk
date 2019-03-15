@@ -1,5 +1,5 @@
 # iWan-js-sdk
-### Javascript SDK for iWan
+### JavaScript SDK for iWan
 
 ## Install
 Use NPM or Yarn to install the library:
