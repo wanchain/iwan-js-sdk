@@ -18,7 +18,7 @@ const xlsxHeader = {
 }
 
 function getArgs(func) {
-    var args = func.toString().match(/async\s.*?\(([^)]*)\)/)[1];
+    var args = func.toString().match(/\s*?\(([^)]*)\)/)[1];
 
     return args.split(",").map(function (arg) {
         return arg.replace(/\/\*.*\*\//, "").trim();
@@ -35,24 +35,67 @@ function sleep(time) {
     })
 }
 
+function getParams(needed, input) {
+    let params = [];
+    for (let i = 0; i < needed.length; ++i) {
+        if (needed[i] === "callback") {
+            continue;
+        } else if (needed[i] === "addrArray") {
+            params.push(input["params"]["address"]);
+        } else if (needed[i] === "blockHashOrBlockNumber") {
+            if (input["params"].hasOwnProperty("blockHash")) {
+                params.push(input["params"]["blockHash"]);
+            } else if (input["params"].hasOwnProperty("blockNumber")) {
+                params.push(input["params"]["blockNumber"]);
+            }
+        } else {
+            params.push(input["params"][needed[i]]);
+        }
+    }
+    return params;
+}
+
+function assertPartialMatch(expect, actual) {
+    if (typeof(actual) === "object") {
+        if (Array.isArray(actual)) {
+            for (let i = 0; i < actual.length; i++) {
+                // assert.containsAllKeys(actual[i], assertResult[0]);
+                assert.containsAllKeys(actual[i], expect[i]);
+            }
+        } else {
+            assert.containsAllKeys(actual, expect);
+        }
+    } else {
+        if (expect.hasOwnProperty('error')) {
+            assert.equal(actual, expect);
+        } else {
+            assert.equal(typeof(actual), typeof(expect));
+        }
+    }
+}
+
+function assertFullMatch(expect, actual) {
+    if (Array.isArray(expect)) {
+        assert.sameDeepMembers(actual, expect);
+    } else {
+        assert.deepStrictEqual(actual, expect);
+    }
+}
+
 let YourApiKey = "d21b98b09c1b4f1001986401e25a27a07a4673140b5125b81cdfedcea4db9e7b";
 let YourSecretKey = "93c30e4a70f5ec3d4427f76602851791aa58fb823773c96cf1347f8b0276b036";
-let apiTest = new ApiInstance(YourApiKey, YourSecretKey);
 
 describe("iWan API Auto Test", () => {
 
     let xlsxHeaderPos = {};
     let testData;
-    let header;
-
-    before(async () => {
-        await sleep(5000);
-    });
+    let apiTest = new ApiInstance(YourApiKey, YourSecretKey);
 
     after(() => {
         apiTest.close();
     });
 
+    console.log("Auto test file:" + testCaseFile);
     const workSheet = xlsx.parse(testCaseFile);
     testData = workSheet[xlsxTestCaseIndex].data;
 
@@ -62,7 +105,7 @@ describe("iWan API Auto Test", () => {
         }
     }
 
-    header = testData[0];
+    let header = testData[0];
     for (let i = 0; i < header.length; i++) {
         for (let key in xlsxHeader) {
             if (header[i] === xlsxHeader[key]) {
@@ -71,71 +114,52 @@ describe("iWan API Auto Test", () => {
         }
     }
 
-    for (let i = 1; i < testData.length; i++) {
-    // for (let i = 38; i < 39; i++) {
-        if (testData[i].length !== 0 &&
-            testData[i][xlsxHeaderPos.flag] !== skipKeyword) {
-            let tcid = testData[i][xlsxHeaderPos.tcId];
-            let description = testData[i][xlsxHeaderPos.description];
-            let api = testData[i][xlsxHeaderPos.apiName];
-            let flag = testData[i][xlsxHeaderPos.flag];
+    testData.slice(1, testData.length).forEach((row) => {
+        if (0 < row.length && skipKeyword !== row[xlsxHeaderPos.flag]) {
+        // if (row[xlsxHeaderPos.tcId] == "TC3002" && 0 < row.length && skipKeyword !== row[xlsxHeaderPos.flag]) {
+        // if (row[xlsxHeaderPos.tcId] == "TC2027" && 0 < row.length && skipKeyword !== row[xlsxHeaderPos.flag]) {
+        // if (row[xlsxHeaderPos.tcId] == "TC1024" && 0 < row.length && skipKeyword !== row[xlsxHeaderPos.flag]) {
+        // if (row[xlsxHeaderPos.tcId] == "TC1025" && 0 < row.length && skipKeyword !== row[xlsxHeaderPos.flag]) {
+        // if (row[xlsxHeaderPos.tcId] == "TC1026" && 0 < row.length && skipKeyword !== row[xlsxHeaderPos.flag]) {
+        // if (row[xlsxHeaderPos.tcId] == "TC1035" && 0 < row.length && skipKeyword !== row[xlsxHeaderPos.flag]) {
+        // if (row[xlsxHeaderPos.tcId] == "TC1036" && 0 < row.length && skipKeyword !== row[xlsxHeaderPos.flag]) {
+        // if (row[xlsxHeaderPos.tcId] == "TC1037" && 0 < row.length && skipKeyword !== row[xlsxHeaderPos.flag]) {
+            let tcid = row[xlsxHeaderPos.tcId];
+            let description = row[xlsxHeaderPos.description];
+            let input = JSON.parse(row[xlsxHeaderPos.input]);
+            let flag = row[xlsxHeaderPos.flag];
 
-            if (apiTest[api]) {
-                it("Auto test " + tcid + " " + description, async () => {
-                    // try {
-
-                        let sendData = JSON.parse(testData[i][xlsxHeaderPos.input]);
-                        let expectResult = JSON.parse(testData[i][xlsxHeaderPos.output]);
+            it("Auto test " + tcid + " " + description, async () => {
+                let api = input["method"];
+                if (api) {
+                    if (apiTest[api]) {
+                        let xlsxResult = JSON.parse(row[xlsxHeaderPos.output]);
+                        let expectResult = xlsxResult.hasOwnProperty('error') ? xlsxResult.error : xlsxResult.result;
                         let args = getArgs(apiTest[api]);
-                        let params = [];
+                        let params = getParams(args, input);;
+                        let actualResult = null;
 
-                        for (let i = 0; i < args.length; i++) {
-                            if (args[i] === "blockHashOrBlockNumber") {
-                                if (sendData["params"].hasOwnProperty("blockHash")) {
-                                    params.push(sendData["params"]["blockHash"]);
-                                } else if (sendData["params"].hasOwnProperty("blockNumber")) {
-                                    params.push(sendData["params"]["blockNumber"]);
-                                }
-                            } else {
-                                params.push(sendData["params"][args[i]]);
-                            }                            
+                        try {
+                            actualResult = await apiTest[api](...params);
+                        } catch (err) {
+                            actualResult = (err.hasOwnProperty('error') ? err.error : err);
                         }
 
-                        let assertResult;
-                        assertResult = expectResult.hasOwnProperty('error') ? expectResult.error : expectResult.result;
-
-                        let result = await apiTest[api](...params);
+                        console.log("expect result:" + (typeof(expectResult) === "object" ? JSON.stringify(expectResult) : expectResult) + ", type " + typeof(expectResult));
+                        console.log("actual result:" + (typeof(actualResult) === "object" ? JSON.stringify(actualResult) : actualResult) + ", type " + typeof(actualResult));
 
                         if (flag === partialKeyword) {
-                            if (typeof assertResult === "object") {
-                                if (Array.isArray(assertResult)) {
-                                    for (let i = 0; i < result.length; i++) {
-                                        assert.containsAllKeys(result[i], assertResult[0]);
-                                    }                                
-                                } else {
-                                    assert.containsAllKeys(result, assertResult);
-                                }
-                            } else {
-                                if (expectResult.hasOwnProperty('error')) {
-                                    assert.equal(result, assertResult);
-                                } else {
-                                    assert.equal(typeof result, typeof assertResult);
-                                }                                
-                            }                            
+                            assertPartialMatch(expectResult, actualResult);
                         } else {
-                            if (Array.isArray(assertResult)) {
-                                assert.sameDeepMembers(result, assertResult);
-                            } else {
-                                assert.deepStrictEqual(result, assertResult);
-                            }
+                            assertFullMatch(expectResult, actualResult);
                         } 
-
-                    // } catch (err) {
-                    //     assert.equal(err, null);
-                    // }
-
-                })
-            }
+                    } else {
+                        assertFullMatch("incorrect API name (" + api + ")", "incorrect API name (" + api + ")");
+                    }
+                } else {
+                    assertFullMatch("key parameter missing: method", "key parameter missing: method");
+                }
+            });
         }
-    }
+    });
 });
