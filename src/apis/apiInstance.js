@@ -1,29 +1,45 @@
-const WsInstance = require('../libs/wsInstance.js');
-const ApiTemplate = require('../apis/apiTemplate.js');
+const utils = require('../libs/utils');
+const WsInstance = require('../libs/wsInstance');
+const auth = require('../authorization/auth.js');
 
 class ApiInstance extends WsInstance {
   constructor(apiKey, secretKey) {
     super(apiKey, secretKey);
+    this.index = 0;
   }
 
-  async apiFactory(method, params) {
-    let wss = this.wss;
-    let funcName = method;
+  _request(method, parameters, callback) {
+    let message = {
+        jsonrpc: "2.0",
+        method: method,
+        params: parameters,
+        id: this.index
+    };
+    ++this.index;
 
-    console.log(funcName + " is called with parameters", params);
+    let jsonResult = auth.integrateJSON(message, this.secretKey);
+    if (jsonResult.hasOwnProperty("error")) {
+        callback(jsonResult["error"]);
+    } else {
+      if (this.open) {
+        this._send(jsonResult["result"], callback);
+      } else {
+        this.events.on("open", () => {
+          this.open = true;
+          this._send(jsonResult["result"], callback);
+        });
+      }
+      
+    }
+  }
 
-    return new Promise((resolve, reject) => {
-      let func = (err, result) => {
-        if (err) {
-          console.log('something is wrong when ' + funcName + ', ' + err);
-          return resolve(err);
-        } else {
-          console.log(funcName + " function done");
-          return resolve(result);
-        }
-      };
-      let message = new ApiTemplate(this.secretKey, method, params, func);
-      this.sendMessage(message);
+  _send(message, callback) {
+    this.sendMessage(message, (resMsg) => {
+      if (resMsg.hasOwnProperty("error")) {
+        callback(resMsg["error"]);
+      } else {
+        callback(null, resMsg["result"]);
+      }
     });
   }
 
@@ -68,8 +84,21 @@ class ApiInstance extends WsInstance {
    * }]
    *
    */
-  async monitorLog(chainType, address, topics) {
-    return await this.apiFactory('monitorLog', { chainType: chainType, address: address, topics: topics });
+  monitorLog(chainType, address, topics, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'monitorLog';
+    let params = { chainType: chainType, address: address, topics: topics };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -108,8 +137,21 @@ class ApiInstance extends WsInstance {
   * }]
   *
   */
-  async getScEvent(chainType, address, topics) {
-    return await this.apiFactory('getScEvent', { chainType: chainType, address: address, topics: topics });
+  getScEvent(chainType, address, topics, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getScEvent';
+    let params = { chainType: chainType, address: address, topics: topics };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -137,8 +179,21 @@ class ApiInstance extends WsInstance {
   *  "result": "0xbb8703ca8226f411811dd16a3f1a2c1b3f71825d"
   *
   */
-  async getScOwner(chainType, scAddr) {
-    return await this.apiFactory('getScOwner', { chainType: chainType, scAddr: scAddr });
+  getScOwner(chainType, scAddr, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getScOwner';
+    let params = { chainType: chainType, scAddr: scAddr };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -165,8 +220,21 @@ class ApiInstance extends WsInstance {
   *  "result": "20"
   *
   */
-  async getCoin2WanRatio(crossChain) {
-    return await this.apiFactory('getCoin2WanRatio', { crossChain: crossChain });
+  getCoin2WanRatio(crossChain, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getCoin2WanRatio';
+    let params = { crossChain: crossChain };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -209,8 +277,21 @@ class ApiInstance extends WsInstance {
   * }]
   *
   */
-  async getUTXO(chainType, minconf, maxconf, address) {
-    return await this.apiFactory('getUTXO', { chainType: chainType, minconf: minconf, maxconf: maxconf, address: address });
+  getUTXO(chainType, minconf, maxconf, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getUTXO';
+    let params = { chainType: chainType, minconf: minconf, maxconf: maxconf, address: address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -248,8 +329,21 @@ class ApiInstance extends WsInstance {
   * }]
   *
   */
-  async getStoremanGroups(crossChain) {
-    return await this.apiFactory('getStoremanGroups', { crossChain: crossChain });
+  getStoremanGroups(crossChain, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getStoremanGroups';
+    let params = { crossChain: crossChain };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -289,8 +383,21 @@ class ApiInstance extends WsInstance {
    }]
   *
   */
-  async getErc20StoremanGroups(crossChain, tokenScAddr) {
-    return await this.apiFactory('getErc20StoremanGroups', { crossChain: crossChain, tokenScAddr: tokenScAddr });
+  getErc20StoremanGroups(crossChain, tokenScAddr, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getErc20StoremanGroups';
+    let params = { crossChain: crossChain, tokenScAddr: tokenScAddr };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -319,8 +426,21 @@ class ApiInstance extends WsInstance {
   *    "wanchainHtlcAddr": "0x3906b053c151c3f0b83df808e2b84d87e20efd4d"
   *  }
   */
-  async getCrossScAddress(crossChain) {
-    return await this.apiFactory('getCrossScAddress', { crossChain: crossChain });
+  getCrossScAddress(crossChain, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getCrossScAddress';
+    let params = { crossChain: crossChain };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -347,8 +467,21 @@ class ApiInstance extends WsInstance {
   *  "result": "180000000000"
   *
   */
-  async getGasPrice(chainType) {
-    return await this.apiFactory('getGasPrice', { chainType: chainType });
+  getGasPrice(chainType, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getGasPrice';
+    let params = { chainType: chainType};
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -376,8 +509,21 @@ class ApiInstance extends WsInstance {
   *  "result": "10000000000000000000000"
   *
   */
-  async getBalance(chainType, address) {
-    return await this.apiFactory('getBalance', { chainType: chainType, address: address });
+  getBalance(chainType, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getBalance';
+    let params = { chainType: chainType, address: address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -408,8 +554,21 @@ class ApiInstance extends WsInstance {
   *  }
   *
   */
-  async getMultiBalances(chainType, address) {
-    return await this.apiFactory('getMultiBalances', { chainType: chainType, address: address });
+  getMultiBalances(chainType, addrArray, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getMultiBalances';
+    let params = { chainType: chainType, address: addrArray };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -438,8 +597,21 @@ class ApiInstance extends WsInstance {
   *  "result": "10000000000000000000000"
   *
   */
-  async getTokenBalance(chainType, address, tokenScAddr) {
-    return await this.apiFactory('getTokenBalance', { chainType: chainType, address: address, tokenScAddr: tokenScAddr });
+  getTokenBalance(chainType, address, tokenScAddr, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getTokenBalance';
+    let params = { chainType: chainType, address: address, tokenScAddr: tokenScAddr };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -471,8 +643,21 @@ class ApiInstance extends WsInstance {
   *  }
   *
   */
-  async getMultiTokenBalance(chainType, address, tokenScAddr) {
-    return await this.apiFactory('getMultiTokenBalance', { chainType: chainType, address: address, tokenScAddr: tokenScAddr });
+  getMultiTokenBalance(chainType, addrArray, tokenScAddr, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getMultiTokenBalance';
+    let params = { chainType: chainType, address: addrArray, tokenScAddr: tokenScAddr };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -502,8 +687,21 @@ class ApiInstance extends WsInstance {
   *  "result": "30000000000000000000000"
   *
   */
-  async getTokenSupply(chainType, tokenScAddr) {
-    return await this.apiFactory('getTokenSupply', { chainType: chainType, tokenScAddr: tokenScAddr });
+  getTokenSupply(chainType, tokenScAddr, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getTokenSupply';
+    let params = { chainType: chainType, tokenScAddr: tokenScAddr };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -531,8 +729,21 @@ class ApiInstance extends WsInstance {
   *  "result": "0x0"
   *
   */
-  async getNonce(chainType, address) {
-    return await this.apiFactory('getNonce', { chainType: chainType, address: address });
+  getNonce(chainType, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getNonce';
+    let params = { chainType: chainType, address: address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -560,8 +771,21 @@ class ApiInstance extends WsInstance {
   *  "result": "0x0"
   *
   */
-  async getNonceIncludePending(chainType, address) {
-    return await this.apiFactory('getNonceIncludePending', { chainType: chainType, address: address });
+  getNonceIncludePending(chainType, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getNonceIncludePending';
+    let params = { chainType: chainType, address: address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -588,8 +812,21 @@ class ApiInstance extends WsInstance {
   *  "result": "119858"
   *
   */
-  async getBlockNumber(chainType) {
-    return await this.apiFactory('getBlockNumber', { chainType: chainType });
+  getBlockNumber(chainType, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getBlockNumber';
+    let params = { chainType: chainType };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   // async getCrossEthScAddress(){
@@ -638,8 +875,21 @@ class ApiInstance extends WsInstance {
   *  "result": "0x4dcfc82728b5a9307f249ac095c8e6fcc436db4f85a094a0c5a457255c20f80f"
   *
   */
-  async sendRawTransaction(chainType, signedTx) {
-    return await this.apiFactory('sendRawTransaction', { chainType: chainType, signedTx: signedTx });
+  sendRawTransaction(chainType, signedTx, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'sendRawTransaction';
+    let params = { chainType: chainType, signedTx: signedTx };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -683,8 +933,21 @@ class ApiInstance extends WsInstance {
     }
    *
    */
-  async getTxInfo(chainType, txHash) {
-    return await this.apiFactory('getTxInfo', { chainType: chainType, txHash: txHash });
+  getTxInfo(chainType, txHash, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getTxInfo';
+    let params = { chainType: chainType, txHash: txHash };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -753,8 +1016,21 @@ class ApiInstance extends WsInstance {
   *
   */
   //TODO: Use the old GetTransaction interface.
-  async getTransaction(chainType, txHash) {
-    return await this.apiFactory('getTransaction', { chainType: chainType, txHash: txHash });
+  getTransaction(chainType, txHash, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getTransaction';
+    let params = { chainType: chainType, txHash: txHash };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -803,8 +1079,21 @@ class ApiInstance extends WsInstance {
     }
    *
    */
-  async getBlockByNumber(chainType, blockNumber) {
-    return await this.apiFactory('getBlockByNumber', { chainType: chainType, blockNumber: blockNumber });
+  getBlockByNumber(chainType, blockNumber, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getBlockByNumber';
+    let params = { chainType: chainType, blockNumber: blockNumber };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -853,8 +1142,21 @@ class ApiInstance extends WsInstance {
     }
    *
    */
-  async getBlockByHash(chainType, blockHash) {
-    return await this.apiFactory('getBlockByHash', { chainType: chainType, blockHash: blockHash });
+  getBlockByHash(chainType, blockHash, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getBlockByHash';
+    let params = { chainType: chainType, blockHash: blockHash };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -885,12 +1187,31 @@ class ApiInstance extends WsInstance {
    *  "result": 1
    *
    */
-  async getBlockTransactionCount(chainType, blockHashOrBlockNumber) {
-    if (this.checkHash(blockHashOrBlockNumber)) {
-      return await this.apiFactory('getBlockTransactionCount', { chainType: chainType, blockHash: blockHashOrBlockNumber });
-    } else {
-      return await this.apiFactory('getBlockTransactionCount', { chainType: chainType, blockNumber: blockHashOrBlockNumber });
+  getBlockTransactionCount(chainType, blockHashOrBlockNumber, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
     }
+    let method = 'getBlockTransactionCount';
+    let params = {};
+    if (this.checkHash(blockHashOrBlockNumber)) {
+        params = { chainType: chainType, blockHash: blockHashOrBlockNumber };
+    } else {
+        params = { chainType: chainType, blockNumber: blockHashOrBlockNumber };
+    }
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+    // if (this.checkHash(blockHashOrBlockNumber)) {
+    //   return await this.apiFactory('getBlockTransactionCount', { chainType: chainType, blockHash: blockHashOrBlockNumber });
+    // } else {
+    //   return await this.apiFactory('getBlockTransactionCount', { chainType: chainType, blockNumber: blockHashOrBlockNumber });
+    // }
   }
 
   /**
@@ -944,8 +1265,21 @@ class ApiInstance extends WsInstance {
     }
    *
    */
-  async getTransactionConfirm(chainType, waitBlocks, txHash) {
-    return await this.apiFactory('getTransactionConfirm', { chainType: chainType, waitBlocks: waitBlocks, txHash: txHash });
+  getTransactionConfirm(chainType, waitBlocks, txHash, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getTransactionConfirm';
+    let params = { chainType: chainType, waitBlocks: waitBlocks, txHash: txHash };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -986,8 +1320,21 @@ class ApiInstance extends WsInstance {
     }
    *
    */
-  async getTransactionReceipt(chainType, txHash) {
-    return await this.apiFactory('getTransactionReceipt', { chainType: chainType, txHash: txHash });
+  getTransactionReceipt(chainType, txHash, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getTransactionReceipt';
+    let params = { chainType: chainType, txHash: txHash };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -1034,12 +1381,31 @@ class ApiInstance extends WsInstance {
     }]
    *
    */
-  async getTransByBlock(chainType, blockHashOrBlockNumber) {
-    if (this.checkHash(blockHashOrBlockNumber)) {
-      return await this.apiFactory('getTransByBlock', { chainType: chainType, blockHash: blockHashOrBlockNumber });
-    } else {
-      return await this.apiFactory('getTransByBlock', { chainType: chainType, blockNumber: blockHashOrBlockNumber });
+  getTransByBlock(chainType, blockHashOrBlockNumber, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
     }
+    let method = 'getTransByBlock';
+    let params = {};
+    if (this.checkHash(blockHashOrBlockNumber)) {
+        params = { chainType: chainType, blockHash: blockHashOrBlockNumber };
+    } else {
+        params = { chainType: chainType, blockNumber: blockHashOrBlockNumber };
+    }
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+    // if (this.checkHash(blockHashOrBlockNumber)) {
+    //   return await this.apiFactory('getTransByBlock', { chainType: chainType, blockHash: blockHashOrBlockNumber });
+    // } else {
+    //   return await this.apiFactory('getTransByBlock', { chainType: chainType, blockNumber: blockHashOrBlockNumber });
+    // }
   }
 
   /**
@@ -1099,8 +1465,21 @@ class ApiInstance extends WsInstance {
     }]
    *
    */
-  async getTransByAddress(chainType, address) {
-    return await this.apiFactory('getTransByAddress', { chainType: chainType, address: address });
+  getTransByAddress(chainType, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getTransByAddress';
+    let params = { chainType: chainType, address: address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -1148,8 +1527,21 @@ class ApiInstance extends WsInstance {
     }]
    *
    */
-  async getTransByAddressBetweenBlocks(chainType, address, startBlockNo, endBlockNo) {
-    return await this.apiFactory('getTransByAddressBetweenBlocks', { chainType: chainType, address: address, startBlockNo: startBlockNo, endBlockNo: endBlockNo });
+  getTransByAddressBetweenBlocks(chainType, address, startBlockNo, endBlockNo, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getTransByAddressBetweenBlocks';
+    let params = { chainType: chainType, address: address, startBlockNo: startBlockNo, endBlockNo: endBlockNo };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -1179,8 +1571,21 @@ class ApiInstance extends WsInstance {
   *  "result": "0x2ecb855170c941f239ffe3495f3e07cceabd8421"
   *
   */
-  async getScVar(chainType, scAddr, name, abi) {
-    return await this.apiFactory('getScVar', { chainType: chainType, scAddr: scAddr, name: name, abi: abi });
+  getScVar(chainType, scAddr, name, abi, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getScVar';
+    let params = { chainType: chainType, scAddr: scAddr, name: name, abi: abi };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -1211,8 +1616,21 @@ class ApiInstance extends WsInstance {
   *  "result": "0x2ecb855170c941f239ffe3495f3e07cceabd8421"
   *
   */
-  async getScMap(chainType, scAddr, name, key, abi) {
-    return await this.apiFactory('getScMap', { chainType: chainType, scAddr: scAddr, name: name, key: key, abi: abi });
+  getScMap(chainType, scAddr, name, key, abi, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getScMap';
+    let params = { chainType: chainType, scAddr: scAddr, name: name, key: key, abi: abi };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -1243,8 +1661,21 @@ class ApiInstance extends WsInstance {
   *  "result": "0x8cc420e422b3fa1c416a14fc600b3354e3312524"
   *
   */
-  async callScFunc(chainType, scAddr, name, args, abi) {
-    return await this.apiFactory('callScFunc', { chainType: chainType, scAddr: scAddr, name: name, args: args, abi: abi });
+  callScFunc(chainType, scAddr, name, args, abi, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'callScFunc';
+    let params = { chainType: chainType, scAddr: scAddr, name: name, args: args, abi: abi };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -1273,9 +1704,22 @@ class ApiInstance extends WsInstance {
   *
   */
   //Get the x value of p2sh by hash(x) from btc
-  // async getP2shxByHashx(chainType, hashX) {
-  //   return await this.apiFactory('getP2shxByHashx', { chainType: chainType, hashX: hashX });
-  // }
+  getP2shxByHashx(chainType, hashX, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getP2shxByHashx';
+    let params = { chainType: chainType, hashX: hashX };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
 
   /**
   *
@@ -1302,8 +1746,21 @@ class ApiInstance extends WsInstance {
   *  "result": "success"
   *
   */
-  async importAddress(chainType, address) {
-    return await this.apiFactory('importAddress', { chainType: chainType, address: address });
+  importAddress(chainType, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'importAddress';
+    let params = { chainType: chainType, address: address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -1354,8 +1811,21 @@ class ApiInstance extends WsInstance {
    }]
   *
   */
-  async getRegErc20Tokens(crossChain) {
-    return await this.apiFactory('getRegErc20Tokens', { crossChain: crossChain });
+  getRegErc20Tokens(crossChain, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getRegErc20Tokens';
+    let params = { crossChain: crossChain };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -1385,8 +1855,21 @@ class ApiInstance extends WsInstance {
   *  "result": "999999999999980000000000000"
   *
   */
-  async getErc20Allowance(chainType, tokenScAddr, ownerAddr, spenderAddr) {
-    return await this.apiFactory('getErc20Allowance', { chainType: chainType, tokenScAddr: tokenScAddr, ownerAddr: ownerAddr, spenderAddr: spenderAddr });
+  getErc20Allowance(chainType, tokenScAddr, ownerAddr, spenderAddr, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getErc20Allowance';
+    let params = { chainType: chainType, tokenScAddr: tokenScAddr, ownerAddr: ownerAddr, spenderAddr: spenderAddr };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -1416,8 +1899,21 @@ class ApiInstance extends WsInstance {
   *    "decimals": "18"
   *  }
   */
-  async getErc20Info(chainType, tokenScAddr) {
-    return await this.apiFactory('getErc20Info', { chainType: chainType, tokenScAddr: tokenScAddr });
+  getErc20Info(chainType, tokenScAddr, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getErc20Info';
+    let params = { chainType: chainType, tokenScAddr: tokenScAddr };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -1454,8 +1950,21 @@ class ApiInstance extends WsInstance {
    }]
   *
   */
-  async getMultiErc20Info(chainType, tokenScAddrArray) {
-    return await this.apiFactory('getMultiErc20Info', { chainType: chainType, tokenScAddrArray: tokenScAddrArray });
+  getMultiErc20Info(chainType, tokenScAddrArray, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getMultiErc20Info';
+    let params = { chainType: chainType, tokenScAddrArray: tokenScAddrArray };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 
   /**
@@ -1483,8 +1992,21 @@ class ApiInstance extends WsInstance {
   *  "result": "3000"
   *
   */
-  async getToken2WanRatio(crossChain, tokenScAddr) {
-    return await this.apiFactory('getToken2WanRatio', { crossChain: crossChain, tokenScAddr: tokenScAddr });
+  getToken2WanRatio(crossChain, tokenScAddr, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getToken2WanRatio';
+    let params = { crossChain: crossChain, tokenScAddr: tokenScAddr };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
   }
 }
 

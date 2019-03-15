@@ -1,16 +1,21 @@
-const config = require('../conf/config.js');
-
 const WebSocket = require('ws');
+const EventEmitter = require('events').EventEmitter;
+
+const config = require('../conf/config.js');
 
 const OPTIONS = {
     'handshakeTimeout': 12000,
     rejectUnauthorized: false
 };
 
+class WsEvent extends EventEmitter {}
+
 class WsInstance {
     constructor(apiKey, secretKey) {
         this.apiKey = apiKey;
         this.secretKey = secretKey;
+        this.open = false;
+        this.events = new WsEvent();
         this.ws_url = config.socketUrl + ':' + config.socketPort;
         if (config.apiFlag) {
             this.ws_url += '/' + config.apiFlag;
@@ -24,7 +29,8 @@ class WsInstance {
             this.heartCheck();
             this.createWebSocket();
         } else {
-            console.log("Plz config 'APIKEY' and 'SECRETKEY'.");
+            throw new Error('Should config \'APIKEY\' and \'SECRETKEY\'');
+            // console.log("Plz config 'APIKEY' and 'SECRETKEY'.");
             process.exit();
         }
     }
@@ -43,6 +49,8 @@ class WsInstance {
         this.wss.onopen = () => {
             console.log("Socket opened.");
             this.heartCheck.reset().start();
+            this.open = true;
+            this.events.emit("open");
         };
 
         this.wss.on('pong', () => {
@@ -50,7 +58,6 @@ class WsInstance {
         });
 
         this.wss.onmessage = (message) => {
-            console.log("websocket onmessage", message.data);
             this.heartCheck.reset().start();
 
             var re = JSON.parse(message.data);
@@ -58,11 +65,12 @@ class WsInstance {
         };
 
         this.wss.onerror = (err) => {
-            console.log("Error be got.", err);
             this.reconnect();
+            this.open = false;
         };
 
         this.wss.onclose = () => {
+            this.open = false;
             console.log("ApiInstance notified socket has closed.");
         };
     }
@@ -110,27 +118,19 @@ class WsInstance {
         this.wss.close();
     }
 
-    // send(data) {
-    //     console.log("debug here");
-    //     if (this.wss.readyState === WebSocket.OPEN) {
-    //         this.wss.send(data);
-    //     } else {
-    //         this.reconnect();
-    //         setTimeout(() => {
-    //             this.wss.send(data);
-    //         }, 2000);
-    //     }
-    // }
+    sendMessage(message, callback) {
+        let idx = message.id.toString()
 
-    sendMessage(message) {
-        this.functionDict[message.message.id] = message;
-        console.log("socket send message:", message.message);
-        this.wss.send(JSON.stringify(message.message));
+        this.wss.send(JSON.stringify(message));
+        this.functionDict[idx] = callback;
     }
 
     getMessage(message) {
-        this.functionDict[message.id].onMessage(message);
-        delete this.functionDict[message.id];
+        let idx = message.id.toString()
+        let fn = this.functionDict[idx];
+
+        delete this.functionDict[idx];
+        fn(message);
     }
 }
 
