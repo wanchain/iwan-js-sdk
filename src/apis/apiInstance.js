@@ -54,18 +54,29 @@ class ApiInstance extends WsInstance {
    * @apiGroup EventLogs
    * @api {CONNECT} /ws/v3/YOUR-API-KEY monitorLog
    * @apiVersion 1.0.0
-   * @apiDescription Subscribe a smart contract event monitor. The server will push the event to subscriber when event comes.
+   * @apiDescription Subscribe a smart contract event monitor. The server will push the event to subscriber when event comes. 
+   * <br><br><strong>Returns:</strong>
+   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
    *
    * @apiParam {string} chainType the chainType name that you want to search, should be WAN or ETH
-   * @apiParam {address} address the contract address
-   * @apiParam {array} topics of Strings - An array of values which must each appear in the log entries. The order is important, if you want to leave topics out use null, e.g. [null, '0x00...'].
+   * @apiParam {string} address the contract address
+   * @apiParam {array} topics array of values which must each appear in the log entries. The order is important, if you want to leave topics out use null, e.g. [null, '0x00...']
+   * @apiParam {function} callback optional, the callback will receive two parameters: 
+   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
    *
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"monitorLog","params":{"chainType":"WAN", "address": "0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26", "topics": ["0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7"]},"id":1}
    *
-   * @apiExample {code} Example usage:
-   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   await sleep(5000);
+   * @apiExample {nodejs} Example usage callback:
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+   *   apiTest.monitorLog('WAN', '0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26', ["0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7"], (err, result) => {
+   *     console.log("Result is ", result);
+   *     apiTest.close();
+   *   });
+   *
+   * @apiExample {nodejs} Example usage promise:
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
    *   let result = await apiTest.monitorLog('WAN', '0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26', ["0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7"]);
    *   console.log("Result is ", result);
    *   apiTest.close();
@@ -108,17 +119,28 @@ class ApiInstance extends WsInstance {
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getScEvent
   * @apiVersion 1.0.0
   * @apiDescription Get smart contract event log via topics
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chainType name that you want to search, should be WAN
   * @apiParam {address} address the contract address
   * @apiParam {array} topics of Strings - An array of values which must each appear in the log entries. The order is important, if you want to leave topics out use null, e.g. [null, '0x00...'].
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getScEvent","params":{"chainType":"WAN", "address": "0xda5b90dc89be59365ec44f3f2d7af8b6700d1167", "topics": ["0xa4345d0839b39e5a6622a55c68bd8f83ac8a68fad252a8363a2c09dbaf85c793", "0x0000000000000000000000000000000000000000000000000000000000000000"]},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getScEvent('WAN', '0xda5b90dc89be59365ec44f3f2d7af8b6700d1167', ["0xa4345d0839b39e5a6622a55c68bd8f83ac8a68fad252a8363a2c09dbaf85c793", "0x0000000000000000000000000000000000000000000000000000000000000000"], (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getScEvent('WAN', '0xda5b90dc89be59365ec44f3f2d7af8b6700d1167', ["0xa4345d0839b39e5a6622a55c68bd8f83ac8a68fad252a8363a2c09dbaf85c793", "0x0000000000000000000000000000000000000000000000000000000000000000"]);
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -161,16 +183,27 @@ class ApiInstance extends WsInstance {
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getScOwner
   * @apiVersion 1.0.0
   * @apiDescription Get the own of the specific contract on certain chain
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chainType name that you want to search, should be WAN or ETH
   * @apiParam {address} scAddr the token address for the certain token
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getScOwner","params":{"chainType":"WAN", "scAddr": "0x59adc38f0b3f64fb542b50e3e955e7a8c1eb3e3b"},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getScOwner('WAN', '0x59adc38f0b3f64fb542b50e3e955e7a8c1eb3e3b', (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getScOwner('WAN', '0x59adc38f0b3f64fb542b50e3e955e7a8c1eb3e3b');
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -203,15 +236,26 @@ class ApiInstance extends WsInstance {
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getCoin2WanRatio
   * @apiVersion 1.0.0
   * @apiDescription Get the native coin ratio to wan for specific chain,in 10000
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} crossChain the cross_chain native coin name that you want to search
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getCoin2WanRatio","params":{"crossChain":"ETH"},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getCoin2WanRatio('ETH', (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getCoin2WanRatio('ETH');
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -243,20 +287,31 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getUTXO
   * @apiVersion 1.0.0
-  * @apiDescription Get the detail btc utxo info for BTC
+  * @apiDescription Get the detail btc utxo info for BTC.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chainType name that you want to search, should be BTC
   * @apiParam {number} minconf the min confirm number of BTC utxo, usually 0
   * @apiParam {number} maxconf the max confirm number of BTC utxo, usually the confirmed blockes you want to wait for the utxo
   * @apiParam {array} address the address array that you want to search
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getUTXO","params":{"chainType":"BTC", "minconf":0, "maxconf":100, "address":["n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R"]},"id":1}
   *
   * 
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getUTXO('BTC', 0, 100, ["n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R"], (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getUTXO('BTC', 0, 100, ["n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R"]);
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -300,16 +355,27 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGroups
   * @apiVersion 1.0.0
-  * @apiDescription Get the detail cross_chain storemanGroup info for one crossChain native coin, like the quota, etc
+  * @apiDescription Get the detail cross_chain storemanGroup info for one crossChain native coin, like the quota, etc.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} crossChain the cross_chain name that you want to search
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getStoremanGroups","params":{"crossChain":"ETH"},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getStoremanGroups('ETH', (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getStoremanGroups('ETH');
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -352,17 +418,28 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getErc20StoremanGroups
   * @apiVersion 1.0.0
-  * @apiDescription Get the detail cross_chain storemanGroup info for one specific erc20 contract, like the quota, etc
+  * @apiDescription Get the detail cross_chain storemanGroup info for one specific erc20 contract, like the quota, etc.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} crossChain the cross_chain name that you want to search, should be "ETH"
   * @apiParam {address} tokenScAddr the token address for the certain token
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getErc20StoremanGroups","params":{"crossChain":"ETH", "tokenScAddr":"0x00f58d6d585f84b2d7267940cede30ce2fe6eae8"},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getErc20StoremanGroups('ETH', '0x00f58d6d585f84b2d7267940cede30ce2fe6eae8', (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getErc20StoremanGroups('ETH', '0x00f58d6d585f84b2d7267940cede30ce2fe6eae8');
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -406,16 +483,27 @@ class ApiInstance extends WsInstance {
   * @apiGroup Token
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getCrossScAddress
   * @apiVersion 1.0.0
-  * @apiDescription Get total amount of certain token on Wanchain
+  * @apiDescription Get total amount of certain token on Wanchain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} crossChain the cross_chain name that you want to search, should be ETH
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getCrossScAddress","params":{"crossChain":"ETH"},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getCrossScAddress('ETH', (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getCrossScAddress('ETH');
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -449,16 +537,27 @@ class ApiInstance extends WsInstance {
   * @apiGroup Status
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getGasPrice
   * @apiVersion 1.0.0
-  * @apiDescription Get total amount of certain token on Wanchain
+  * @apiDescription Get total amount of certain token on Wanchain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getGasPrice","params":{"chainType":"WAN"},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getGasPrice('WAN', (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getGasPrice('WAN');
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -490,17 +589,28 @@ class ApiInstance extends WsInstance {
   * @apiGroup Accounts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getBalance
   * @apiVersion 1.0.0
-  * @apiDescription Get balance for a single address
+  * @apiDescription Get balance for a single address.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
   * @apiParam {address} address the account's address that you want to find
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getBalance","params":{"address": "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c","chainType":"WAN"},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getBalance('WAN', '0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c', (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getBalance('WAN', '0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c');
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -532,17 +642,28 @@ class ApiInstance extends WsInstance {
   * @apiGroup Accounts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getMultiBalances
   * @apiVersion 1.0.0
-  * @apiDescription Get balance for multiple Addresses in a single call
+  * @apiDescription Get balance for multiple Addresses in a single call.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
   * @apiParam {address} addressArray the account's address array that you want to find
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getMultiBalances","params":{"address": ["0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c","0x2cc79fa3b80c5b9b02051facd02478ea88a78e2d"],"chainType":"WAN"},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getMultiBalances('WAN', ["0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c","0x2cc79fa3b80c5b9b02051facd02478ea88a78e2d"], (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getMultiBalances('WAN', ["0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c","0x2cc79fa3b80c5b9b02051facd02478ea88a78e2d"]);
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -577,18 +698,29 @@ class ApiInstance extends WsInstance {
   * @apiGroup Token
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenBalance
   * @apiVersion 1.0.0
-  * @apiDescription Get token balance for a single address of certain token on Wanchain
+  * @apiDescription Get token balance for a single address of certain token on Wanchain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH, default WAN
   * @apiParam {address} address the account's address that you want to find
   * @apiParam {address} tokenScAddr the token address for the certain token; if set chainType 'WAN', it should be the token address for WETH or WBTC
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getTokenBalance","params":{"address": "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c","tokenScAddr" : "0x63eed4943abaac5f43f657d8eec098ca6d6a546e"},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getTokenBalance("WAN", "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c", "0x63eed4943abaac5f43f657d8eec098ca6d6a546e", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getTokenBalance("WAN", "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c", "0x63eed4943abaac5f43f657d8eec098ca6d6a546e");
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -620,18 +752,29 @@ class ApiInstance extends WsInstance {
   * @apiGroup Token
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getMultiTokenBalance
   * @apiVersion 1.0.0
-  * @apiDescription Get token balance for multiple addresses of certain token on Wanchain in a single call
+  * @apiDescription Get token balance for multiple addresses of certain token on Wanchain in a single call.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH, default WAN
   * @apiParam {address} addressArray the account's address array that you want to find
   * @apiParam {address} tokenScAddr the token address for the certain token; if set chainType 'WAN', it should be the token address for WETH or WBTC
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getMultiTokenBalance","params":{"address": ["0xfac95c16da814d24cc64b3186348afecf527324f","0xfac95c16da814d24cc64b3186348afecf527324e"],"tokenScAddr" : "0x63eed4943abaac5f43f657d8eec098ca6d6a546e"},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getMultiTokenBalance("WAN", ["0xfac95c16da814d24cc64b3186348afecf527324f","0xfac95c16da814d24cc64b3186348afecf527324e"], "0x63eed4943abaac5f43f657d8eec098ca6d6a546e", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getMultiTokenBalance("WAN", ["0xfac95c16da814d24cc64b3186348afecf527324f","0xfac95c16da814d24cc64b3186348afecf527324e"], "0x63eed4943abaac5f43f657d8eec098ca6d6a546e");
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -666,19 +809,30 @@ class ApiInstance extends WsInstance {
   * @apiGroup Status
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenSupply
   * @apiVersion 1.0.0
-  * @apiDescription Get total amount of certain token on Wanchain
+  * @apiDescription Get total amount of certain token on Wanchain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} [chainType] the chain name that you want to search, should be WAN or ETH, default WAN
   * @apiParam {address} tokenScAddr the token address for the certain token
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getTokenSupply","params":{"tokenScAddr" : "0x63eed4943abaac5f43f657d8eec098ca6d6a546e"},"id":1}
   * or
   * {"jsonrpc":"2.0","method":"getTokenSupply","params":{"chainType":"WAN", "tokenScAddr" : "0x63eed4943abaac5f43f657d8eec098ca6d6a546e"},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getTokenSupply("WAN", "0x63eed4943abaac5f43f657d8eec098ca6d6a546e", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getTokenSupply("WAN", "0x63eed4943abaac5f43f657d8eec098ca6d6a546e");
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -710,17 +864,28 @@ class ApiInstance extends WsInstance {
   * @apiGroup Accounts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getNonce
   * @apiVersion 1.0.0
-  * @apiDescription Get the nonce of an account
+  * @apiDescription Get the nonce of an account.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
   * @apiParam {address} address the account's address that you want to find
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getNonce","params":{"address": "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c","chainType":"WAN"},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getNonce("WAN", "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getNonce("WAN", "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c");
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -752,17 +917,28 @@ class ApiInstance extends WsInstance {
   * @apiGroup Accounts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getNonceIncludePending
   * @apiVersion 1.0.0
-  * @apiDescription Get the pending nonce of an account
+  * @apiDescription Get the pending nonce of an account.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
   * @apiParam {address} address the account's address that you want to find
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getNonceIncludePending","params":{"address": "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c","chainType":"WAN"}, "id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getNonceIncludePending("WAN", "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getNonceIncludePending("WAN", "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c");
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -789,21 +965,32 @@ class ApiInstance extends WsInstance {
   }
 
   /**
-   *
-   * @apiName getBlockNumber
-   * @apiGroup Blocks
-   * @api {CONNECT} /ws/v3/YOUR-API-KEY getBlockNumber
-   * @apiVersion 1.0.0
-   * @apiDescription Get the current latest block number
-   *
-   * @apiParam {string} chainType the chain name that you want to search, should be WAN or BTC
-   *
-   * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getBlockNumber","params":{"chainType":"WAN"},"id":1}
-   *
-  * @apiExample {code} Example usage:
+  *
+  * @apiName getBlockNumber
+  * @apiGroup Blocks
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getBlockNumber
+  * @apiVersion 1.0.0
+  * @apiDescription Get the current latest block number.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  *
+  * @apiParam {string} chainType the chain name that you want to search, should be WAN or BTC
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getBlockNumber","params":{"chainType":"WAN"},"id":1}
+  *
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getBlockNumber("WAN", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getBlockNumber("WAN");
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -851,22 +1038,33 @@ class ApiInstance extends WsInstance {
   // }
 
   /**
-   *
-   * @apiName sendRawTransaction
-   * @apiGroup Transactions
-   * @api {CONNECT} /ws/v3/YOUR-API-KEY sendRawTransaction
-   * @apiVersion 1.0.0
-   * @apiDescription Submit a pre-signed transaction for broadcast to certain chain
-   *
-   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH or BTC
-   * @apiParam {string} signedTx the signedTx you want to send
-   *
-   * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"sendRawTransaction","params":{"chainType":"WAN", "signedTx":"0xf86e0109852e90edd000832dc6c0946ed9c11cbd8a6ae8355fa62ebca48493da572661880de0b6b3a7640000801ca0bd349ec9f51dd171eb5c59df9a6b8c5656eacb6793bed945a7ec69135f191abfa0359da11e8a4fdd51b52a8752ac32f9125d168441546d011406736bce67b8a356"},"id":1}
-   *
-  * @apiExample {code} Example usage:
+  *
+  * @apiName sendRawTransaction
+  * @apiGroup Transactions
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY sendRawTransaction
+  * @apiVersion 1.0.0
+  * @apiDescription Submit a pre-signed transaction for broadcast to certain chain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  *
+  * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH or BTC
+  * @apiParam {string} signedTx the signedTx you want to send
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"sendRawTransaction","params":{"chainType":"WAN", "signedTx":"0xf86e0109852e90edd000832dc6c0946ed9c11cbd8a6ae8355fa62ebca48493da572661880de0b6b3a7640000801ca0bd349ec9f51dd171eb5c59df9a6b8c5656eacb6793bed945a7ec69135f191abfa0359da11e8a4fdd51b52a8752ac32f9125d168441546d011406736bce67b8a356"},"id":1}
+  *
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.sendRawTransaction('WAN', '0xf86e0109852e90edd000832dc6c0946ed9c11cbd8a6ae8355fa62ebca48493da572661880de0b6b3a7640000801ca0bd349ec9f51dd171eb5c59df9a6b8c5656eacb6793bed945a7ec69135f191abfa0359da11e8a4fdd51b52a8752ac32f9125d168441546d011406736bce67b8a356', (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.sendRawTransaction('WAN', '0xf86e0109852e90edd000832dc6c0946ed9c11cbd8a6ae8355fa62ebca48493da572661880de0b6b3a7640000801ca0bd349ec9f51dd171eb5c59df9a6b8c5656eacb6793bed945a7ec69135f191abfa0359da11e8a4fdd51b52a8752ac32f9125d168441546d011406736bce67b8a356');
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -893,28 +1091,39 @@ class ApiInstance extends WsInstance {
   }
 
   /**
-   *
-   * @apiName getTxInfo
-   * @apiGroup Transactions
-   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTxInfo
-   * @apiVersion 1.0.0
-   * @apiDescription Get the transaction detail via txHash on certain chain
-   *
-   * @apiParam {string} chainType the chain name that you want to search, should be WAN or BTC
-   * @apiParam {hash} txHash the txHash you want to search
-   *
-   * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getTxInfo","params":{"chainType":"WAN", "txHash":"0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da"},"id":1}
-   *
-    * @apiExample {code} Example usage:
-    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-    *   await sleep(5000);
-    *   let result = await apiTest.getTxInfo("WAN", "0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da");
-    *   console.log("Result is ", result);
-    *   apiTest.close();
-    *
-   * @apiSuccessExample {json} Successful Response
-   *  "result": {
+  *
+  * @apiName getTxInfo
+  * @apiGroup Transactions
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getTxInfo
+  * @apiVersion 1.0.0
+  * @apiDescription Get the transaction detail via txHash on certain chain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  *
+  * @apiParam {string} chainType the chain name that you want to search, should be WAN or BTC
+  * @apiParam {hash} txHash the txHash you want to search
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getTxInfo","params":{"chainType":"WAN", "txHash":"0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da"},"id":1}
+  *
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getTxInfo("WAN", "0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);  
+  *   let result = await apiTest.getTxInfo("WAN", "0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da");
+  *   console.log("Result is ", result);
+  *   apiTest.close();
+  *
+  * @apiSuccessExample {json} Successful Response
+  *  "result": {
       "txType": "0x1",
       "blockHash": "0xcb76ea6649d801cc45294f4d0858bad1ca0c2b169b20c4beae2852c57a7f69c9",
       "blockNumber": 1137680,
@@ -931,8 +1140,8 @@ class ApiInstance extends WsInstance {
       "r": "0xe3a5a5d73d0b6512676723bc4bab4f7ffe01476f8cbc9631976890e175d487ac",
       "s": "0x3a79e17290fe2a9f4e5b5c5431eb322882729d68ca0d736c5d9b1f3285c9169e"
     }
-   *
-   */
+  *
+  */
   getTxInfo(chainType, txHash, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
@@ -957,16 +1166,27 @@ class ApiInstance extends WsInstance {
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTransaction
   * @apiVersion 1.0.0
   * @apiDescription Call getRawTransaction function with 1 at second param to get raw transaction info.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be BTC
   * @apiParam {txHash} txHash the txHash you want to search
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getTransaction","params":{"chainType":"BTC","txHash":"7168a86c84eda0bbfb7ae553118b02983516e8a6c448dc4c0630d26299297f20"},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getTransaction("BTC", "7168a86c84eda0bbfb7ae553118b02983516e8a6c448dc4c0630d26299297f20", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getTransaction("BTC", "7168a86c84eda0bbfb7ae553118b02983516e8a6c448dc4c0630d26299297f20");
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -1034,28 +1254,39 @@ class ApiInstance extends WsInstance {
   }
 
   /**
-   *
-   * @apiName getBlockByNumber
-   * @apiGroup Blocks
-   * @api {CONNECT} /ws/v3/YOUR-API-KEY getBlockByNumber
-   * @apiVersion 1.0.0
-   * @apiDescription Get the block information about a block by block number on certain chain
-   *
-   * @apiParam {string} chainType the chain name that you want to search, should be WAN
-   * @apiParam {number} blockNumber the blockNumber you want to search
-   *
-   * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getBlockByNumber","params":{"chainType":"WAN", "blockNumber":"670731"},"id":1}
-   *
-  * @apiExample {code} Example usage:
+  *
+  * @apiName getBlockByNumber
+  * @apiGroup Blocks
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getBlockByNumber
+  * @apiVersion 1.0.0
+  * @apiDescription Get the block information about a block by block number on certain chain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  *
+  * @apiParam {string} chainType the chain name that you want to search, should be WAN
+  * @apiParam {number} blockNumber the blockNumber you want to search
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getBlockByNumber","params":{"chainType":"WAN", "blockNumber":"670731"},"id":1}
+  *
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getBlockByNumber("WAN", "670731", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getBlockByNumber("WAN", "670731");
   *   console.log("Result is ", result);
   *   apiTest.close();
   *
-   * @apiSuccessExample {json} Successful Response
-   *  "result": {
+  * @apiSuccessExample {json} Successful Response
+  *  "result": {
       "size": 727,
       "timestamp": 1522575814,
       "transactions": ["0x4dcfc82728b5a9307f249ac095c8e6fcc436db4f85a094a0c5a457255c20f80f"],
@@ -1077,8 +1308,8 @@ class ApiInstance extends WsInstance {
       "totalDifficulty": "3610551057115",
       "transactionsRoot": "0x96fc902544191c38f1c9a2725ea2ae29e34246fb4e95728f3e72added7c9574b"
     }
-   *
-   */
+  *
+  */
   getBlockByNumber(chainType, blockNumber, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
@@ -1097,28 +1328,39 @@ class ApiInstance extends WsInstance {
   }
 
   /**
-   *
-   * @apiName getBlockByHash
-   * @apiGroup Blocks
-   * @api {CONNECT} /ws/v3/YOUR-API-KEY getBlockByHash
-   * @apiVersion 1.0.0
-   * @apiDescription Get the block information about a block by block hash on certain chain
-   *
-   * @apiParam {string} chainType the chain name that you want to search, should be WAN
-   * @apiParam {hash} blockHash the blockHash you want to search
-   *
-   * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getBlockByHash","params":{"chainType":"WAN", "blockHash":"0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8"},"id":1}
-   *
-  * @apiExample {code} Example usage:
+  *
+  * @apiName getBlockByHash
+  * @apiGroup Blocks
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getBlockByHash
+  * @apiVersion 1.0.0
+  * @apiDescription Get the block information about a block by block hash on certain chain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  *
+  * @apiParam {string} chainType the chain name that you want to search, should be WAN
+  * @apiParam {hash} blockHash the blockHash you want to search
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getBlockByHash","params":{"chainType":"WAN", "blockHash":"0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8"},"id":1}
+  *
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getBlockByHash("WAN", "0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getBlockByHash("WAN", "0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8");
   *   console.log("Result is ", result);
   *   apiTest.close();
   *
-   * @apiSuccessExample {json} Successful Response
-   *  "result": {
+  * @apiSuccessExample {json} Successful Response
+  *  "result": {
       "size": 727,
       "timestamp": 1522575814,
       "transactions": ["0x4dcfc82728b5a9307f249ac095c8e6fcc436db4f85a094a0c5a457255c20f80f"],
@@ -1140,8 +1382,8 @@ class ApiInstance extends WsInstance {
       "totalDifficulty": "3610551057115",
       "transactionsRoot": "0x96fc902544191c38f1c9a2725ea2ae29e34246fb4e95728f3e72added7c9574b"
     }
-   *
-   */
+  *
+  */
   getBlockByHash(chainType, blockHash, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
@@ -1160,33 +1402,45 @@ class ApiInstance extends WsInstance {
   }
 
   /**
-   *
-   * @apiName getBlockTransactionCount
-   * @apiGroup Blocks
-   * @api {CONNECT} /ws/v3/YOUR-API-KEY getBlockTransactionCount
-   * @apiVersion 1.0.0
-   * @apiDescription Get the number of transaction in a given block by blockNumber or blockhash on certain chain
-   *
-   * @apiParam {string} chainType the chain name that you want to search, should be WAN
-   * @apiParam {hashOrNumber} [blockHashOrBlockNumber] the blockHash or the blockNumber you want to search
-   *
-   * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getBlockTransactionCount","params":{"chainType":"WAN", "blockNumber":"670731"},"id":1}
-   * or
-   * {"jsonrpc":"2.0","method":"getBlockTransactionCount","params":{"chainType":"WAN", "blockHash":"0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8"},"id":1}
-   *
-  * @apiExample {code} Example usage:
+  *
+  * @apiName getBlockTransactionCount
+  * @apiGroup Blocks
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getBlockTransactionCount
+  * @apiVersion 1.0.0
+  * @apiDescription Get the number of transaction in a given block by blockNumber or blockhash on certain chain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  *
+  * @apiParam {string} chainType the chain name that you want to search, should be WAN
+  * @apiParam {hashOrNumber} [blockHashOrBlockNumber] the blockHash or the blockNumber you want to search
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getBlockTransactionCount","params":{"chainType":"WAN", "blockNumber":"670731"},"id":1}
+  * or
+  * {"jsonrpc":"2.0","method":"getBlockTransactionCount","params":{"chainType":"WAN", "blockHash":"0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8"},"id":1}
+  *
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getBlockTransactionCount("WAN", "0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8", (err, result) => {
+  *   // apiTest.getBlockTransactionCount("WAN", "670731", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getBlockTransactionCount("WAN", "0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8");
-  * //let result = await apiTest.getBlockTransactionCount("WAN", "670731");
+  *   // let result = await apiTest.getBlockTransactionCount("WAN", "670731");
   *   console.log("Result is ", result);
   *   apiTest.close();
   *
-   * @apiSuccessExample {json} Successful Response
-   *  "result": 1
-   *
-   */
+  * @apiSuccessExample {json} Successful Response
+  *  "result": 1
+  *
+  */
   getBlockTransactionCount(chainType, blockHashOrBlockNumber, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
@@ -1215,31 +1469,42 @@ class ApiInstance extends WsInstance {
   }
 
   /**
-   *
-   * @apiName getTransactionConfirm
-   * @apiGroup Transactions
-   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTransactionConfirm
-   * @apiVersion 1.0.0
-   * @apiDescription Get the transaction mined result on certain chain. 
-   * When the receipt not existed, return directly with 'no receipt was found';
-   * If receipt existed, the receipt will be returned after confirm-block-number blocks
-   *
-   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
-   * @apiParam {number} waitBlocks the confirm-block-number you want to set
-   * @apiParam {hash} txHash the txHash you want to search
-   *
-   * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getTransactionConfirm","params":{"chainType":"WAN", "waitBlocks": 6, "txHash": "0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da"},"id":1}
-   *
-  * @apiExample {code} Example usage:
+  *
+  * @apiName getTransactionConfirm
+  * @apiGroup Transactions
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getTransactionConfirm
+  * @apiVersion 1.0.0
+  * @apiDescription Get the transaction mined result on certain chain. 
+  * When the receipt not existed, return directly with 'no receipt was found';
+  * If receipt existed, the receipt will be returned after confirm-block-number blocks.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  *
+  * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
+  * @apiParam {number} waitBlocks the confirm-block-number you want to set
+  * @apiParam {hash} txHash the txHash you want to search
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getTransactionConfirm","params":{"chainType":"WAN", "waitBlocks": 6, "txHash": "0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da"},"id":1}
+  *
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getTransactionConfirm("WAN", 6, "0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getTransactionConfirm("WAN", 6, "0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da");
   *   console.log("Result is ", result);
   *   apiTest.close();
   *
-   * @apiSuccessExample {json} Successful Response
-   *  "result": {
+  * @apiSuccessExample {json} Successful Response
+  *  "result": {
       "blockHash": "0xcb76ea6649d801cc45294f4d0858bad1ca0c2b169b20c4beae2852c57a7f69c9",
       "blockNumber": 1137680,
       "contractAddress": null,
@@ -1263,8 +1528,8 @@ class ApiInstance extends WsInstance {
       "transactionHash": "0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da",
       "transactionIndex": 0
     }
-   *
-   */
+  *
+  */
   getTransactionConfirm(chainType, waitBlocks, txHash, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
@@ -1283,28 +1548,39 @@ class ApiInstance extends WsInstance {
   }
 
   /**
-   *
-   * @apiName getTransactionReceipt
-   * @apiGroup Transactions
-   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTransactionReceipt
-   * @apiVersion 1.0.0
-   * @apiDescription Get the receipt of a transaction by transaction hash on certain chain
-   *
-   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
-   * @apiParam {hash} txHash the txHash you want to search
-   *
-   * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getTransactionReceipt","params":{"chainType":"WAN", "txHash":"0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe"},"id":1}
-   *
-  * @apiExample {code} Example usage:
+  *
+  * @apiName getTransactionReceipt
+  * @apiGroup Transactions
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getTransactionReceipt
+  * @apiVersion 1.0.0
+  * @apiDescription Get the receipt of a transaction by transaction hash on certain chain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  *
+  * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
+  * @apiParam {hash} txHash the txHash you want to search
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getTransactionReceipt","params":{"chainType":"WAN", "txHash":"0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe"},"id":1}
+  *
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getTransactionReceipt("WAN", "0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getTransactionReceipt("WAN", "0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe");
   *   console.log("Result is ", result);
   *   apiTest.close();
   *
-   * @apiSuccessExample {json} Successful Response
-   *  "result": {
+  * @apiSuccessExample {json} Successful Response
+  *  "result": {
       "logs": [],
       "blockHash": "0x18198d5e42859067db405c9144306f7da87210a8604aac66ef6759b14a199d6b",
       "blockNumber": 2548378,
@@ -1318,8 +1594,8 @@ class ApiInstance extends WsInstance {
       "transactionHash": "0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe",
       "transactionIndex": 0
     }
-   *
-   */
+  *
+  */
   getTransactionReceipt(chainType, txHash, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
@@ -1338,31 +1614,43 @@ class ApiInstance extends WsInstance {
   }
 
   /**
-   *
-   * @apiName getTransByBlock
-   * @apiGroup Transactions
-   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTransByBlock
-   * @apiVersion 1.0.0
-   * @apiDescription Get transaction information in a given block by blockNumber or blockhash on certain chain
-   *
-   * @apiParam {string} chainType the chain name that you want to search, should be WAN
-   * @apiParam {hashOrNumber} [blockHashOrBlockNumber] the blockHash or the blockNumber you want to search
-   *
-   * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getTransByBlock","params":{"chainType":"WAN", "blockNumber":"984133"},"id":1}
-   * or
-   * {"jsonrpc":"2.0","method":"getTransByBlock","params":{"chainType":"WAN", "blockHash":"0xaa0fc2a8a868566f2e4888b2942ec05c47c2254e8b81e43d3ea87420a09126c2"},"id":1}
-   *
-  * @apiExample {code} Example usage:
+  *
+  * @apiName getTransByBlock
+  * @apiGroup Transactions
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getTransByBlock
+  * @apiVersion 1.0.0
+  * @apiDescription Get transaction information in a given block by blockNumber or blockhash on certain chain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  *
+  * @apiParam {string} chainType the chain name that you want to search, should be WAN
+  * @apiParam {hashOrNumber} [blockHashOrBlockNumber] the blockHash or the blockNumber you want to search
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getTransByBlock","params":{"chainType":"WAN", "blockNumber":"984133"},"id":1}
+  * or
+  * {"jsonrpc":"2.0","method":"getTransByBlock","params":{"chainType":"WAN", "blockHash":"0xaa0fc2a8a868566f2e4888b2942ec05c47c2254e8b81e43d3ea87420a09126c2"},"id":1}
+  *
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getTransByBlock("WAN", "0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe", (err, result) => {
+  *   // apiTest.getTransByBlock("WAN", "984133", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getTransByBlock("WAN", "0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe");
   *   //let result = await apiTest.getTransByBlock("WAN", "984133");
   *   console.log("Result is ", result);
   *   apiTest.close();
   *
-   * @apiSuccessExample {json} Successful Response
-   *  "result": [{
+  * @apiSuccessExample {json} Successful Response
+  *  "result": [{
       "blockNumber": 984133,
       "gas": 4700000,
       "nonce": 414,
@@ -1379,8 +1667,8 @@ class ApiInstance extends WsInstance {
       "r": "0x1c1ad7e8ee64fc284adce0910d6f811933af327b20cb8adba392a1b24a15054f",
       "s": "0x690785383bed28c9a951b30329a066cb78062f63febf5aa1ca7e7ef62a2108cb"
     }]
-   *
-   */
+  *
+  */
   getTransByBlock(chainType, blockHashOrBlockNumber, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
@@ -1409,28 +1697,39 @@ class ApiInstance extends WsInstance {
   }
 
   /**
-   *
-   * @apiName getTransByAddress
-   * @apiGroup Transactions
-   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTransByAddress
-   * @apiVersion 1.0.0
-   * @apiDescription Get transaction information via the specified address on certain chain
-   *
-   * @apiParam {string} chainType the chain name that you want to search, should be WAN
-   * @apiParam {address} address the account's address that you want to search
-   *
-   * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getTransByAddress","params":{"chainType":"WAN", "address":"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d"},"id":1}
-   *
-  * @apiExample {code} Example usage:
+  *
+  * @apiName getTransByAddress
+  * @apiGroup Transactions
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getTransByAddress
+  * @apiVersion 1.0.0
+  * @apiDescription Get transaction information via the specified address on certain chain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  *
+  * @apiParam {string} chainType the chain name that you want to search, should be WAN
+  * @apiParam {address} address the account's address that you want to search
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getTransByAddress","params":{"chainType":"WAN", "address":"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d"},"id":1}
+  *
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getTransByAddress("WAN", "0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getTransByAddress("WAN", "0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d");
   *   console.log("Result is ", result);
   *   apiTest.close();
   * 
-   * @apiSuccessExample {json} Successful Response
-   *  "result": [{
+  * @apiSuccessExample {json} Successful Response
+  *  "result": [{
       "blockNumber": 1004796,
       "gas": 90000,
       "nonce": 505,
@@ -1463,8 +1762,8 @@ class ApiInstance extends WsInstance {
       "r": "0x4341dcd4156050b664b9c977644756201a6357c7b12e5db86b370a38b1ed6dfb",
       "s": "0x43b380fc67394e8b9483af97f5de067ef6617b17cfaa75517f07ec8d166f3c65"
     }]
-   *
-   */
+  *
+  */
   getTransByAddress(chainType, address, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
@@ -1483,32 +1782,47 @@ class ApiInstance extends WsInstance {
   }
 
   /**
-   *
-   * @apiName getTransByAddressBetweenBlocks
-   * @apiGroup Transactions
-   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTransByAddressBetweenBlocks
-   * @apiVersion 1.0.0
-   * @apiDescription Get transaction information via the specified address between the specified startBlockNo and endBlockNo on certain chain
-   * Comments:  if no startBlockNo given, startBlockNo will be set to 0;
-   *            if no endBlockNo given, endBlockNo will be set to the newest blockNumber
-   *
-   * @apiParam {string} chainType the chain name that you want to search, should be WAN
-   * @apiParam {address} address the account's address that you want to search
-   * @apiParam {number} startBlockNo the startBlockNo that you want to search from
-   * @apiParam {number} endBlockNo the endBlockNo that you want to search to
-   *
-   * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getTransByAddressBetweenBlocks","params":{"chainType":"WAN", "address":"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d", "startBlockNo":984119, "endBlockNo":984120},"id":1}
-   *
-  * @apiExample {code} Example usage:
+  *
+  * @apiName getTransByAddressBetweenBlocks
+  * @apiGroup Transactions
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getTransByAddressBetweenBlocks
+  * @apiVersion 1.0.0
+  * @apiDescription Get transaction information via the specified address between the specified startBlockNo and endBlockNo on certain chain.
+  * <br>Comments:
+  * <br>&nbsp;&nbsp;&nbsp;&nbsp;if no startBlockNo given, startBlockNo will be set to 0;
+  * <br>&nbsp;&nbsp;&nbsp;&nbsp;if no endBlockNo given, endBlockNo will be set to the newest blockNumber.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  *
+  * @apiParam {string} chainType the chain name that you want to search, should be WAN
+  * @apiParam {address} address the account's address that you want to search
+  * @apiParam {number} startBlockNo the startBlockNo that you want to search from
+  * @apiParam {number} endBlockNo the endBlockNo that you want to search to
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getTransByAddressBetweenBlocks","params":{"chainType":"WAN", "address":"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d", "startBlockNo":984119, "endBlockNo":984120},"id":1}
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getTransByAddress","params":{"chainType":"WAN", "address":"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d"},"id":1}
+  *
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getTransByAddressBetweenBlocks("WAN", "0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d", 984119, 984120, (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getTransByAddressBetweenBlocks("WAN", "0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d", 984119, 984120);
   *   console.log("Result is ", result);
   *   apiTest.close();
   * 
-   * @apiSuccessExample {json} Successful Response
-   *  "result": [{
+  * @apiSuccessExample {json} Successful Response
+  *  "result": [{
       "blockNumber": 984119,
       "gas": 4700000,
       "nonce": 407,
@@ -1525,8 +1839,8 @@ class ApiInstance extends WsInstance {
       "r": "0xd14dfde02e305a945e6a09b6dbd5fe1f1bd5a6dc0721c15f72732aa10a3829b3",
       "s": "0x56923b20a15f02633295b415ae52161529d560580dfcd62a97bc394c841bea37"
     }]
-   *
-   */
+  *
+  */
   getTransByAddressBetweenBlocks(chainType, address, startBlockNo, endBlockNo, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
@@ -1550,19 +1864,33 @@ class ApiInstance extends WsInstance {
   * @apiGroup Contracts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getScVar
   * @apiVersion 1.0.0
-  * @apiDescription Get the specific public parameter value of one contract on certain chain
+  * @apiDescription Get the specific public parameter value of one contract on certain chain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
   * @apiParam {address} scAddr the token address for the certain token
   * @apiParam {string} name the name of the specific contract parameter
   * @apiParam {string} abi the abi of the specific contract
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getScVar","params":{"chainType": "WAN", "scAddr": "0x55ba61f4da3166487a804bccde7ee4015f609f45", "name": "addr", "abi": [/The Abi of the contracts/]},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getTransByAddress","params":{"chainType":"WAN", "address":"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d"},"id":1}
+  *
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getScVar("WAN", "0x55ba61f4da3166487a804bccde7ee4015f609f45", "addr", [/The Abi of the contracts/], (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getScVar("WAN", "0x55ba61f4da3166487a804bccde7ee4015f609f45", "addr", [/The Abi of the contracts/]);
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -1594,20 +1922,31 @@ class ApiInstance extends WsInstance {
   * @apiGroup Contracts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getScMap
   * @apiVersion 1.0.0
-  * @apiDescription Get the specific public map value of one contract on certain chain
+  * @apiDescription Get the specific public map value of one contract on certain chain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
   * @apiParam {address} scAddr the token address for the certain token
   * @apiParam {string} name the name of the specific contract public map
   * @apiParam {string} key the key of parameter of the specific contract public map
   * @apiParam {string} abi the abi of the specific contract
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getScMap","params":{"chainType": "WAN", "scAddr": "0x55ba61f4da3166487a804bccde7ee4015f609f45", "name": "mapAddr", "key": "", "abi": [/The Abi of the contracts/]},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getScMap("WAN", "0x55ba61f4da3166487a804bccde7ee4015f609f45", "mapAddr", "key", [/The Abi of the contracts/], (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getScMap("WAN", "0x55ba61f4da3166487a804bccde7ee4015f609f45", "mapAddr", "key", [/The Abi of the contracts/]);
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -1639,20 +1978,31 @@ class ApiInstance extends WsInstance {
   * @apiGroup Contracts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY callScFunc
   * @apiVersion 1.0.0
-  * @apiDescription Call the specific public function of one contract on certain chain
+  * @apiDescription Call the specific public function of one contract on certain chain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
   * @apiParam {address} scAddr the token address for the certain token
   * @apiParam {string} name the name of the specific contract public function
   * @apiParam {array} args the parameters array a of the specific contract public function
   * @apiParam {string} abi the abi of the specific contract
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"callScFunc","params":{"chainType": "WAN", "scAddr": "0x55ba61f4da3166487a804bccde7ee4015f609f45", "name": "getPriAddress", "args": [], "abi": [/The Abi of the contracts/]},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.callScFunc("WAN", "0x55ba61f4da3166487a804bccde7ee4015f609f45", "getPriAddress", [], [/The Abi of the contracts/]), (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.callScFunc("WAN", "0x55ba61f4da3166487a804bccde7ee4015f609f45", "getPriAddress", [], [/The Abi of the contracts/]);
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -1684,17 +2034,29 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getP2shxByHashx
   * @apiVersion 1.0.0
-  * @apiDescription Get the x value of p2sh by hash(x) from btc
-  *@apiIgnore Comment out this function
+  * @apiDescription Get the x value of p2sh by hash(x) from btc.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  *
+  * @apiIgnore Comment out this function
   * @apiParam {string} chainType the chain name that you want to search, should be BTC
   * @apiParam {hash} hashX the certain hashX that you want to search
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getP2shxByHashx","params":{"chainType":"BTC","hashx":"d2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da"},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getP2shxByHashx("BTC", "d2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getP2shxByHashx("BTC", "d2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da");
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -1728,16 +2090,27 @@ class ApiInstance extends WsInstance {
   * @api {CONNECT} /ws/v3/YOUR-API-KEY importAddress
   * @apiVersion 1.0.0
   * @apiDescription Send a 'import address' command to btc.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be BTC
   * @apiParam {address} address the BTC account address you want to import to the node to scan transactions
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"importAddress","params":{"chainType":"BTC","address":"mmmmmsdfasdjflaksdfasdf"},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.importAddress("BTC", "mmmmmsdfasdjflaksdfasdf", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.importAddress("BTC", "mmmmmsdfasdjflaksdfasdf");
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -1769,16 +2142,27 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getRegErc20Tokens
   * @apiVersion 1.0.0
-  * @apiDescription Get the detail info of registered contract for Erc20_crosschain, like address, ratio, etc, on certain chain
+  * @apiDescription Get the detail info of registered contract for Erc20_crosschain, like address, ratio, etc, on certain chain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} crossChain the cross_chain name that you want to search, should be "ETH"
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getRegErc20Tokens","params":{"crossChain":"ETH"},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getRegErc20Tokens("ETH", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getRegErc20Tokens("ETH");
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -1834,19 +2218,30 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getErc20Allowance
   * @apiVersion 1.0.0
-  * @apiDescription Get the erc20 allowance for one specific account on one contract for one specific spender account on certain chain
+  * @apiDescription Get the erc20 allowance for one specific account on one contract for one specific spender account on certain chain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be "ETH"
   * @apiParam {address} tokenScAddr the token address for the certain token
   * @apiParam {address} ownerAddr the owner address on the certain contract
   * @apiParam {address} spenderAddr the spender address on the certain contract
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getErc20Allowance","params":{"chainType":"ETH", "tokenScAddr":"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a", "ownerAddr":"0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8", "spenderAddr":"0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1"},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getErc20Allowance("ETH", "0xc5bc855056d99ef4bda0a4ae937065315e2ae11a", "0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8", "0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getErc20Allowance("ETH", "0xc5bc855056d99ef4bda0a4ae937065315e2ae11a", "0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8", "0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1");
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -1878,17 +2273,28 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getErc20Info
   * @apiVersion 1.0.0
-  * @apiDescription Get the info of ERC20 contract, like symbol and decimals, on certain chain
+  * @apiDescription Get the info of ERC20 contract, like symbol and decimals, on certain chain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be "ETH"
   * @apiParam {address} tokenScAddr the token address for the certain token
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getErc20Info","params":{"chainType":"ETH", "tokenScAddr":"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a"},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getErc20Info("ETH", "0xc5bc855056d99ef4bda0a4ae937065315e2ae11a", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getErc20Info("ETH", "0xc5bc855056d99ef4bda0a4ae937065315e2ae11a");
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -1922,17 +2328,28 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getMultiErc20Info
   * @apiVersion 1.0.0
-  * @apiDescription Get the infos of muti ERC20 contracts, like symbol and decimals, on certain chain in a single call
+  * @apiDescription Get the infos of muti ERC20 contracts, like symbol and decimals, on certain chain in a single call.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be "ETH"
   * @apiParam {address} tokenScAddrArray the token address array for the certain token that you want to find
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getMultiErc20Info","params":{"tokenScAddrArray":["0xc5bc855056d99ef4bda0a4ae937065315e2ae11a","0x7017500899433272b4088afe34c04d742d0ce7df"],"chainType":"ETH"},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getMultiErc20Info("ETH", ["0xc5bc855056d99ef4bda0a4ae937065315e2ae11a","0x7017500899433272b4088afe34c04d742d0ce7df"], (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getMultiErc20Info("ETH", ["0xc5bc855056d99ef4bda0a4ae937065315e2ae11a","0x7017500899433272b4088afe34c04d742d0ce7df"]);
   *   console.log("Result is ", result);
   *   apiTest.close();
@@ -1973,17 +2390,28 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getToken2WanRatio
   * @apiVersion 1.0.0
-  * @apiDescription Get the token ratio to wan for specific erc20 token,in 10000
+  * @apiDescription Get the token ratio to wan for specific erc20 token,in 10000.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} crossChain the cross_chain name that you want to search, should be "ETH"
   * @apiParam {address} tokenScAddr the token address for the certain token
+  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
+  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getToken2WanRatio","params":{"crossChain":"ETH", "tokenScAddr":"0x00f58d6d585f84b2d7267940cede30ce2fe6eae8"},"id":1}
   *
-  * @apiExample {code} Example usage:
+  * @apiExample {nodejs} Example usage callback:
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
+  *   apiTest.getToken2WanRatio("ETH", "0x00f58d6d585f84b2d7267940cede30ce2fe6eae8", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example usage promise:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   await sleep(5000);
   *   let result = await apiTest.getToken2WanRatio("ETH", "0x00f58d6d585f84b2d7267940cede30ce2fe6eae8");
   *   console.log("Result is ", result);
   *   apiTest.close();
