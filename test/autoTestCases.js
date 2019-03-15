@@ -81,10 +81,8 @@ function assertFullMatch(expect, actual) {
     }
 }
 
-// let YourApiKey = "d21b98b09c1b4f1001986401e25a27a07a4673140b5125b81cdfedcea4db9e7b";
-// let YourSecretKey = "93c30e4a70f5ec3d4427f76602851791aa58fb823773c96cf1347f8b0276b036";
-let YourApiKey = "fa5078fd834201d1d5bd57908a3069fe8ba560f329c060dffe04ccb52a9f1fcb";
-let YourSecretKey = "67ab8ebd6ade75b5a9ae3761f03aa3750ce73a1d859dd070bddd72436c7d5957";
+let YourApiKey = "d21b98b09c1b4f1001986401e25a27a07a4673140b5125b81cdfedcea4db9e7b";
+let YourSecretKey = "93c30e4a70f5ec3d4427f76602851791aa58fb823773c96cf1347f8b0276b036";
 
 describe("iWan API Auto Test", () => {
 
@@ -117,25 +115,17 @@ describe("iWan API Auto Test", () => {
 
     testData.slice(1, testData.length).forEach((row) => {
         if (0 < row.length && skipKeyword !== row[xlsxHeaderPos.flag]) {
-        // if (row[xlsxHeaderPos.tcId] == "TC3002" && 0 < row.length && skipKeyword !== row[xlsxHeaderPos.flag]) {
-        // if (row[xlsxHeaderPos.tcId] == "TC2027" && 0 < row.length && skipKeyword !== row[xlsxHeaderPos.flag]) {
-        // if (row[xlsxHeaderPos.tcId] == "TC1024" && 0 < row.length && skipKeyword !== row[xlsxHeaderPos.flag]) {
-        // if (row[xlsxHeaderPos.tcId] == "TC1025" && 0 < row.length && skipKeyword !== row[xlsxHeaderPos.flag]) {
-        // if (row[xlsxHeaderPos.tcId] == "TC1026" && 0 < row.length && skipKeyword !== row[xlsxHeaderPos.flag]) {
-        // if (row[xlsxHeaderPos.tcId] == "TC1035" && 0 < row.length && skipKeyword !== row[xlsxHeaderPos.flag]) {
-        // if (row[xlsxHeaderPos.tcId] == "TC1036" && 0 < row.length && skipKeyword !== row[xlsxHeaderPos.flag]) {
-        // if (row[xlsxHeaderPos.tcId] == "TC1037" && 0 < row.length && skipKeyword !== row[xlsxHeaderPos.flag]) {
             let tcid = row[xlsxHeaderPos.tcId];
             let description = row[xlsxHeaderPos.description];
-            let input = JSON.parse(row[xlsxHeaderPos.input]);
             let flag = row[xlsxHeaderPos.flag];
+            let input = JSON.parse(row[xlsxHeaderPos.input]);
+            let api = input["method"];
+            let xlsxResult = JSON.parse(row[xlsxHeaderPos.output]);
+            let expectResult = xlsxResult.hasOwnProperty('error') ? xlsxResult.error : xlsxResult.result;
 
-            it("Auto test " + tcid + " " + description, async () => {
-                let api = input["method"];
+            it("Auto test promise [" + tcid + " " + description + "]", async () => {
                 if (api) {
                     if (apiTest[api]) {
-                        let xlsxResult = JSON.parse(row[xlsxHeaderPos.output]);
-                        let expectResult = xlsxResult.hasOwnProperty('error') ? xlsxResult.error : xlsxResult.result;
                         let args = getArgs(apiTest[api]);
                         let params = getParams(args, input);;
                         let actualResult = null;
@@ -151,6 +141,31 @@ describe("iWan API Auto Test", () => {
                         } else {
                             assertFullMatch(expectResult, actualResult);
                         } 
+                    } else {
+                        assertFullMatch("incorrect API name (" + api + ")", "incorrect API name (" + api + ")");
+                    }
+                } else {
+                    assertFullMatch("key parameter missing: method", "key parameter missing: method");
+                }
+            });
+
+            it("Auto test callback [" + tcid + " " + description + "]", async () => {
+                if (api) {
+                    if (apiTest[api]) {
+                        let args = getArgs(apiTest[api]);
+                        let params = getParams(args, input);;
+                        let actualResult = null;
+
+                        apiTest[api](...params, (err, actualResult) => {
+                            if (err) {
+                                actualResult = err;
+                            }
+                            if (flag === partialKeyword) {
+                                assertPartialMatch(expectResult, actualResult);
+                            } else {
+                                assertFullMatch(expectResult, actualResult);
+                            } 
+                        });
                     } else {
                         assertFullMatch("incorrect API name (" + api + ")", "incorrect API name (" + api + ")");
                     }
