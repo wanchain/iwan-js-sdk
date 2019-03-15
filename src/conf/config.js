@@ -1,5 +1,6 @@
 const config = {
-    socketUrl: 'wss://34.223.242.105',
+    // socketUrl: 'wss://34.223.242.105',
+    socketUrl: 'wss://192.168.47.159',
     socketPort: 8080,
 
     apiFlag: 'ws',

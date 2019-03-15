@@ -6,87 +6,60 @@ function genSignature(_secret, _msg, _encoding) {
     return Crypto.createHmac(_Encoding._enc, _secret).update(_msg).digest(_encoding);
 }
 
-function isJSON(_obj) {
-    let _has_keys = 0 ;
-    let _failed = false;
+function isJSON(obj) {
+    let yes = false;
 
-    if (typeof _obj === "object") {
-        for(let _key in _obj) {
-            if (_obj.hasOwnProperty(_key) && !(/^\d+$/.test(_key))) {
-                // if (typeof _obj[_key] === "object") {
-                //     _failed = isJSON(_obj[_key]);
-                // }
-                ++_has_keys;
-            } else {
-                // console.log("isJSON:: invalid key: " + _key);
-                _failed = true;
-                break;
-            }
-        }
-    } else {
-        // console.log("isJSON:: input params is not object");
-        _failed = true;
+    try {
+        JSON.parse(JSON.stringify(obj));
+        yes = true;
+    } catch (err) {
+        yes = false;
     }
 
-    return (!_failed &&  _has_keys && _obj.constructor == Object && _obj.constructor != Array) ? true : false;
+    return yes;
 }
 
-function checkFormat(_obj) {
-    let _keys = ["jsonrpc", "method", "params", "id"];
-    let _result = {ok:false, error:{}};
-    let _failed = false;
+function checkFormat(obj) {
+    let expectKeys = ["jsonrpc", "method", "params", "id"];
+    let result = {error:{}};
+    let failed = false;
 
-    // console.log("checkFormat:: _obj");
-    // console.log(JSON.stringify(_obj));
-
-    _keys.forEach((_key) => {
-        // console.log("check key : " + _key);
-        if (!_obj.hasOwnProperty(_key)) {
-            // console.log("key parameter missing: " + _key);
-            _result.error[_key] = "key parameter missing";
-            _failed = true;
+    let actualKeys = Object.keys(obj);
+    expectKeys.forEach((k) => {
+        if (0 > actualKeys.indexOf(k)) {
+            result["error"][k] = "key parameter missing";
+            failed = true;
         }
     });
-    // console.log("check _result : " + JSON.stringify(_result));
+    actualKeys.forEach((k) => {
+        if (0 > expectKeys.indexOf(k)) {
+            result["error"][k] = "key parameter redundant";
+            failed = true;
+        }
+    });
 
-    if (!_failed) {
-        // console.log("checkFormat succuess");
-        _result.ok = true;
-        delete _result["error"];
-    } else {
-        // console.log("checkFormat failed: " + JSON.stringify(_result.error));
+    if (!failed) {
+        delete result["error"];
     }
-    return _result;
+    return result;
 }
 
-function integrateJSON(_obj, _secret, _encoding = _Encoding._base64) {
-    let _result = {}
-    let _json = _obj;
-    // if (!isJSON(_json)) {
-    //     _result.error = "invalid json format";
-    // } else {
-    //     console.log("integrateJSON:: input params <_obj> is Object");
-    //     let _check = checkFormat(_json);
-    //     if (_check.ok) {
-    //         _json["params"]["timestamp"] = Date.now();
-    //         let sig = genSignature(_secret, JSON.stringify(_json), _encoding);
-    //         _json["params"]["signature"] = sig;
-    //         _result.result = _json;
-    //     } else {
-    //         _result.error = _check.error;
-    //     }
-    // }
-    // console.log("integrateJSON:: input params <_obj> is Object");
-    let _check = checkFormat(_json);
-    if (_check.ok) {
-        _json["params"]["timestamp"] = Date.now();
-        let sig = genSignature(_secret, JSON.stringify(_json), _encoding);
-        _json["params"]["signature"] = sig;
-        _result.result = _json;
+function integrateJSON(obj, _secret, _encoding = _Encoding._base64) {
+    let result = {}
+    let newObj = Object.assign({}, obj);
+    let check = checkFormat(newObj);
+    if (isJSON(newObj)) {
+        if (!check["error"]) {
+            newObj["params"]["timestamp"] = Date.now();
+            newObj["params"]["signature"] = genSignature(_secret, JSON.stringify(newObj), _encoding);
+            result["result"] = newObj;
+        } else {
+            result["error"] = check["error"];
+        }
     } else {
-        _result.error = _check.error;
+        result["error"] = "the input params <obj> is not JSON object";
     }
-    return _result;
+    return result;
 }
 
-exports.JSON = integrateJSON;
+exports.integrateJSON = integrateJSON;
