@@ -146,9 +146,6 @@ describe("iWan API Auto Test", () => {
                             actualResult = (err.hasOwnProperty('error') ? err.error : err);
                         }
 
-                        console.log("expect result:" + (typeof(expectResult) === "object" ? JSON.stringify(expectResult) : expectResult) + ", type " + typeof(expectResult));
-                        console.log("actual result:" + (typeof(actualResult) === "object" ? JSON.stringify(actualResult) : actualResult) + ", type " + typeof(actualResult));
-
                         if (flag === partialKeyword) {
                             assertPartialMatch(expectResult, actualResult);
                         } else {
