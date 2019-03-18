@@ -19,7 +19,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "address",
             "description": "<p>the account's address that you want to find</p>"
@@ -27,7 +27,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -85,7 +85,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "array",
             "optional": false,
             "field": "addressArray",
             "description": "<p>the account's address array that you want to find</p>"
@@ -93,7 +93,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -151,7 +151,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "address",
             "description": "<p>the account's address that you want to find</p>"
@@ -159,7 +159,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -217,7 +217,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "address",
             "description": "<p>the account's address that you want to find</p>"
@@ -225,7 +225,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -283,7 +283,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "hash",
+            "type": "string",
             "optional": false,
             "field": "blockHash",
             "description": "<p>the blockHash you want to search</p>"
@@ -291,7 +291,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -357,7 +357,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -416,7 +416,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -474,15 +474,15 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "hashOrNumber",
-            "optional": true,
+            "type": "string",
+            "optional": false,
             "field": "blockHashOrBlockNumber",
             "description": "<p>the blockHash or the blockNumber you want to search</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -540,7 +540,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "scAddr",
             "description": "<p>the token address for the certain token</p>"
@@ -569,7 +569,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -627,7 +627,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "scAddr",
             "description": "<p>the token address for the certain token</p>"
@@ -656,7 +656,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -714,7 +714,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "scAddr",
             "description": "<p>the token address for the certain token</p>"
@@ -722,7 +722,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -780,7 +780,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "scAddr",
             "description": "<p>the token address for the certain token</p>"
@@ -802,7 +802,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -866,7 +866,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -924,21 +924,21 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "tokenScAddr",
             "description": "<p>the token address for the certain token</p>"
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "ownerAddr",
             "description": "<p>the owner address on the certain contract</p>"
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "spenderAddr",
             "description": "<p>the spender address on the certain contract</p>"
@@ -946,7 +946,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -1004,7 +1004,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "tokenScAddr",
             "description": "<p>the token address for the certain token</p>"
@@ -1012,7 +1012,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -1070,7 +1070,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "tokenScAddr",
             "description": "<p>the token address for the certain token</p>"
@@ -1078,7 +1078,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -1136,7 +1136,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "array",
             "optional": false,
             "field": "tokenScAddrArray",
             "description": "<p>the token address array for the certain token that you want to find</p>"
@@ -1144,7 +1144,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -1203,7 +1203,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -1262,7 +1262,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -1320,7 +1320,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "tokenScAddr",
             "description": "<p>the token address for the certain token</p>"
@@ -1328,7 +1328,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -1386,7 +1386,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "txHash",
+            "type": "string",
             "optional": false,
             "field": "txHash",
             "description": "<p>the txHash you want to search</p>"
@@ -1394,7 +1394,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -1474,7 +1474,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -1532,7 +1532,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "address",
             "description": "<p>the BTC account address you want to import to the node to scan transactions</p>"
@@ -1540,7 +1540,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -1598,7 +1598,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "address",
             "description": "<p>the contract address</p>"
@@ -1613,7 +1613,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -1686,7 +1686,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -1745,7 +1745,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -1803,7 +1803,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "tokenScAddr",
             "description": "<p>the token address for the certain token</p>"
@@ -1811,7 +1811,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -1870,7 +1870,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -1928,14 +1928,14 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "array",
             "optional": false,
             "field": "addressArray",
             "description": "<p>the account's address array that you want to find</p>"
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "tokenScAddr",
             "description": "<p>the token address for the certain token; if set chainType 'WAN', it should be the token address for WETH or WBTC</p>"
@@ -1943,7 +1943,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -2001,14 +2001,14 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "address",
             "description": "<p>the account's address that you want to find</p>"
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "tokenScAddr",
             "description": "<p>the token address for the certain token; if set chainType 'WAN', it should be the token address for WETH or WBTC</p>"
@@ -2016,7 +2016,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -2074,7 +2074,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "address",
             "description": "<p>the account's address that you want to search</p>"
@@ -2082,7 +2082,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -2140,7 +2140,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "address",
+            "type": "string",
             "optional": false,
             "field": "address",
             "description": "<p>the account's address that you want to search</p>"
@@ -2162,7 +2162,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -2225,15 +2225,15 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "hashOrNumber",
-            "optional": true,
+            "type": "string",
+            "optional": false,
             "field": "blockHashOrBlockNumber",
             "description": "<p>the blockHash or the blockNumber you want to search</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -2298,7 +2298,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "hash",
+            "type": "string",
             "optional": false,
             "field": "txHash",
             "description": "<p>the txHash you want to search</p>"
@@ -2306,7 +2306,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -2364,7 +2364,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "hash",
+            "type": "string",
             "optional": false,
             "field": "txHash",
             "description": "<p>the txHash you want to search</p>"
@@ -2372,7 +2372,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -2430,7 +2430,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "hash",
+            "type": "string",
             "optional": false,
             "field": "txHash",
             "description": "<p>the txHash you want to search</p>"
@@ -2438,7 +2438,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
@@ -2504,7 +2504,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "function",
-            "optional": false,
+            "optional": true,
             "field": "callback",
             "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
           }
