@@ -1,15 +1,9 @@
-/*!
- * ignore
- */
-
 'use strict';
 
 const assert = require('assert');
 
 /**
  * Helper for multiplexing promise implementations
- *
- * @api private
  */
 
 const store = {
@@ -18,8 +12,6 @@ const store = {
 
 /**
  * Get the current promise constructor
- *
- * @api private
  */
 
 store.get = function() {
@@ -28,8 +20,6 @@ store.get = function() {
 
 /**
  * Set the current promise constructor
- *
- * @api private
  */
 
 store.set = function(lib) {

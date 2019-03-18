@@ -3,8 +3,8 @@ const WsInstance = require('../libs/wsInstance');
 const auth = require('../authorization/auth.js');
 
 class ApiInstance extends WsInstance {
-  constructor(apiKey, secretKey) {
-    super(apiKey, secretKey);
+  constructor(apiKey, secretKey, option = {}) {
+    super(apiKey, secretKey, option);
     this.index = 0;
   }
 
@@ -61,7 +61,7 @@ class ApiInstance extends WsInstance {
    * @apiParam {string} chainType the chainType name that you want to search, should be WAN or ETH
    * @apiParam {string} address the contract address
    * @apiParam {array} topics array of values which must each appear in the log entries. The order is important, if you want to leave topics out use null, e.g. [null, '0x00...']
-   * @apiParam {function} callback optional, the callback will receive two parameters: 
+   * @apiParam {function} [callback] optional, the callback will receive two parameters: 
    * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
    * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
    *
@@ -123,9 +123,9 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chainType name that you want to search, should be WAN
-  * @apiParam {address} address the contract address
+  * @apiParam {string} address the contract address
   * @apiParam {array} topics of Strings - An array of values which must each appear in the log entries. The order is important, if you want to leave topics out use null, e.g. [null, '0x00...'].
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -187,8 +187,8 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chainType name that you want to search, should be WAN or ETH
-  * @apiParam {address} scAddr the token address for the certain token
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {string} scAddr the token address for the certain token
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -240,7 +240,7 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} crossChain the cross_chain native coin name that you want to search
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -295,7 +295,7 @@ class ApiInstance extends WsInstance {
   * @apiParam {number} minconf the min confirm number of BTC utxo, usually 0
   * @apiParam {number} maxconf the max confirm number of BTC utxo, usually the confirmed blockes you want to wait for the utxo
   * @apiParam {array} address the address array that you want to search
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -360,7 +360,7 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} crossChain the cross_chain name that you want to search
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -423,8 +423,8 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} crossChain the cross_chain name that you want to search, should be "ETH"
-  * @apiParam {address} tokenScAddr the token address for the certain token
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {string} tokenScAddr the token address for the certain token
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -488,7 +488,7 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} crossChain the cross_chain name that you want to search, should be ETH
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -542,7 +542,7 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -594,8 +594,8 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
-  * @apiParam {address} address the account's address that you want to find
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {string} address the account's address that you want to find
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -647,8 +647,8 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
-  * @apiParam {address} addressArray the account's address array that you want to find
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {array} addressArray the account's address array that you want to find
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -703,9 +703,9 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH, default WAN
-  * @apiParam {address} address the account's address that you want to find
-  * @apiParam {address} tokenScAddr the token address for the certain token; if set chainType 'WAN', it should be the token address for WETH or WBTC
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {string} address the account's address that you want to find
+  * @apiParam {string} tokenScAddr the token address for the certain token; if set chainType 'WAN', it should be the token address for WETH or WBTC
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -757,9 +757,9 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH, default WAN
-  * @apiParam {address} addressArray the account's address array that you want to find
-  * @apiParam {address} tokenScAddr the token address for the certain token; if set chainType 'WAN', it should be the token address for WETH or WBTC
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {array} addressArray the account's address array that you want to find
+  * @apiParam {string} tokenScAddr the token address for the certain token; if set chainType 'WAN', it should be the token address for WETH or WBTC
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -814,8 +814,8 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} [chainType] the chain name that you want to search, should be WAN or ETH, default WAN
-  * @apiParam {address} tokenScAddr the token address for the certain token
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {string} tokenScAddr the token address for the certain token
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -869,8 +869,8 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
-  * @apiParam {address} address the account's address that you want to find
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {string} address the account's address that you want to find
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -922,8 +922,8 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
-  * @apiParam {address} address the account's address that you want to find
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {string} address the account's address that you want to find
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -975,7 +975,7 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or BTC
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -1049,7 +1049,7 @@ class ApiInstance extends WsInstance {
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH or BTC
   * @apiParam {string} signedTx the signedTx you want to send
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -1101,8 +1101,8 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or BTC
-  * @apiParam {hash} txHash the txHash you want to search
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {string} txHash the txHash you want to search
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -1170,8 +1170,8 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be BTC
-  * @apiParam {txHash} txHash the txHash you want to search
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {string} txHash the txHash you want to search
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -1265,7 +1265,7 @@ class ApiInstance extends WsInstance {
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN
   * @apiParam {number} blockNumber the blockNumber you want to search
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -1338,8 +1338,8 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN
-  * @apiParam {hash} blockHash the blockHash you want to search
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {string} blockHash the blockHash you want to search
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -1412,8 +1412,8 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN
-  * @apiParam {hashOrNumber} [blockHashOrBlockNumber] the blockHash or the blockNumber you want to search
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {string} blockHashOrBlockNumber the blockHash or the blockNumber you want to search
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -1482,8 +1482,8 @@ class ApiInstance extends WsInstance {
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
   * @apiParam {number} waitBlocks the confirm-block-number you want to set
-  * @apiParam {hash} txHash the txHash you want to search
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {string} txHash the txHash you want to search
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -1558,8 +1558,8 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
-  * @apiParam {hash} txHash the txHash you want to search
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {string} txHash the txHash you want to search
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -1624,8 +1624,8 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN
-  * @apiParam {hashOrNumber} [blockHashOrBlockNumber] the blockHash or the blockNumber you want to search
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {string} blockHashOrBlockNumber the blockHash or the blockNumber you want to search
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -1707,8 +1707,8 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN
-  * @apiParam {address} address the account's address that you want to search
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {string} address the account's address that you want to search
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -1795,10 +1795,10 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN
-  * @apiParam {address} address the account's address that you want to search
+  * @apiParam {string} address the account's address that you want to search
   * @apiParam {number} startBlockNo the startBlockNo that you want to search from
   * @apiParam {number} endBlockNo the endBlockNo that you want to search to
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -1869,10 +1869,10 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
-  * @apiParam {address} scAddr the token address for the certain token
+  * @apiParam {string} scAddr the token address for the certain token
   * @apiParam {string} name the name of the specific contract parameter
   * @apiParam {string} abi the abi of the specific contract
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -1927,11 +1927,11 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
-  * @apiParam {address} scAddr the token address for the certain token
+  * @apiParam {string} scAddr the token address for the certain token
   * @apiParam {string} name the name of the specific contract public map
   * @apiParam {string} key the key of parameter of the specific contract public map
   * @apiParam {string} abi the abi of the specific contract
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -1983,11 +1983,11 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
-  * @apiParam {address} scAddr the token address for the certain token
+  * @apiParam {string} scAddr the token address for the certain token
   * @apiParam {string} name the name of the specific contract public function
   * @apiParam {array} args the parameters array a of the specific contract public function
   * @apiParam {string} abi the abi of the specific contract
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -2040,8 +2040,8 @@ class ApiInstance extends WsInstance {
   *
   * @apiIgnore Comment out this function
   * @apiParam {string} chainType the chain name that you want to search, should be BTC
-  * @apiParam {hash} hashX the certain hashX that you want to search
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {string} hashX the certain hashX that you want to search
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -2094,8 +2094,8 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be BTC
-  * @apiParam {address} address the BTC account address you want to import to the node to scan transactions
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {string} address the BTC account address you want to import to the node to scan transactions
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -2147,7 +2147,7 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} crossChain the cross_chain name that you want to search, should be "ETH"
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -2223,10 +2223,10 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be "ETH"
-  * @apiParam {address} tokenScAddr the token address for the certain token
-  * @apiParam {address} ownerAddr the owner address on the certain contract
-  * @apiParam {address} spenderAddr the spender address on the certain contract
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {string} tokenScAddr the token address for the certain token
+  * @apiParam {string} ownerAddr the owner address on the certain contract
+  * @apiParam {string} spenderAddr the spender address on the certain contract
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -2278,8 +2278,8 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be "ETH"
-  * @apiParam {address} tokenScAddr the token address for the certain token
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {string} tokenScAddr the token address for the certain token
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -2333,8 +2333,8 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be "ETH"
-  * @apiParam {address} tokenScAddrArray the token address array for the certain token that you want to find
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {array} tokenScAddrArray the token address array for the certain token that you want to find
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *
@@ -2395,8 +2395,8 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
   *
   * @apiParam {string} crossChain the cross_chain name that you want to search, should be "ETH"
-  * @apiParam {address} tokenScAddr the token address for the certain token
-  * @apiParam {function} callback optional, the callback will receive two parameters: 
+  * @apiParam {string} tokenScAddr the token address for the certain token
+  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
   *

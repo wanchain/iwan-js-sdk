@@ -3,7 +3,7 @@ const EventEmitter = require('events').EventEmitter;
 
 const config = require('../conf/config.js');
 
-const OPTIONS = {
+const CONN_OPTIONS = {
     'handshakeTimeout': 12000,
     rejectUnauthorized: false
 };
@@ -11,18 +11,19 @@ const OPTIONS = {
 class WsEvent extends EventEmitter {}
 
 class WsInstance {
-    constructor(apiKey, secretKey) {
+    constructor(apiKey, secretKey, option) {
         this.apiKey = apiKey;
         this.secretKey = secretKey;
         this.open = false;
         this.events = new WsEvent();
-        this.ws_url = config.socketUrl + ':' + config.socketPort;
-        if (config.apiFlag) {
-            this.ws_url += '/' + config.apiFlag;
+        this.option = Object.assign({url:config.socketUrl,port:config.socketPort,flag:config.apiFlag,version:config.apiVersion} ,option);
+        this.ws_url = 'wss://' + this.option.url + ':' + this.option.port;
+        if (this.option.flag) {
+            this.ws_url += '/' + this.option.flag;
         }
 
         if (this.apiKey) {
-            this.ws_url += '/' + config.apiVersion + '/' + this.apiKey;
+            this.ws_url += '/' + this.option.version + '/' + this.apiKey;
 
             this.lockReconnect = false;
             this.functionDict = {};
@@ -30,7 +31,6 @@ class WsInstance {
             this.createWebSocket();
         } else {
             throw new Error('Should config \'APIKEY\' and \'SECRETKEY\'');
-            // console.log("Plz config 'APIKEY' and 'SECRETKEY'.");
             process.exit();
         }
     }
@@ -38,7 +38,7 @@ class WsInstance {
     createWebSocket() {
         try {
             console.log("Websocket url is ", this.ws_url);
-            this.wss = new WebSocket(this.ws_url, OPTIONS);
+            this.wss = new WebSocket(this.ws_url, CONN_OPTIONS);
             this.initEventHandle();
         } catch (e) {
             this.reconnect();
@@ -73,6 +73,12 @@ class WsInstance {
             this.open = false;
             console.log("ApiInstance notified socket has closed.");
         };
+
+        this.wss.on("unexpected-response", (req, response)=>{
+            this.open = false;
+            this.reconnect();
+            console.log("ERROR CODE : " + response.statusCode + " < " + response.statusMessage + " > ");
+        });
     }
 
     heartCheck() {

@@ -1,13 +1,9 @@
 const config = {
-    socketUrl: 'wss://34.223.242.105',
-    socketPort: 8080,
+    socketUrl: 'api.wanchain.org',
+    socketPort: 443,
 
     apiFlag: 'ws',
     apiVersion: 'v3',
-
-    auth: {
-        // projectName: 'test',
-    },
 
     _Encoding: {
         _enc: 'sha256',
