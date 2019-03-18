@@ -21,10 +21,20 @@
     "type": "git",
     "url": "git+https://github.com/wanchain/iWan-js-sdk.git"
   },
-  "author": "lansehuiyi6",
+  "author": "wanchain.org",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/wanchain/iWan-js-sdk/issues"
   },
-  "homepage": "https://github.com/wanchain/iWan-js-sdk#readme"
+  "homepage": "https://github.com/wanchain/iWan-js-sdk#readme",
+  "apidoc": {
+    "name": "Public APIs",
+    "version": "1.0.0",
+    "description": "Wanchain public rpc api sdk",
+    "title": "json-rpc",
+    "url" : "wss://api.wanchain.org",
+    "template" : {
+      "forceLanguage" : "en"
+    }
+  }
 }
