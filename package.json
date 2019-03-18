@@ -30,7 +30,7 @@
   "apidoc": {
     "name": "iWan-js-sdk",
     "version": "1.0.0",
-    "description": "Wanchain public rpc js api sdk",
+    "description": "JavaScript SDK for iWan RPC Server",
     "title": "iWan-js-sdk Custom apiDoc browser title",
     "url" : "wss://api.wanchain.org",
     "template" : {
