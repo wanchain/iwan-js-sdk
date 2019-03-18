@@ -28,10 +28,10 @@
   },
   "homepage": "https://github.com/wanchain/iWan-js-sdk#readme",
   "apidoc": {
-    "name": "Public APIs",
+    "name": "iWan-js-sdk",
     "version": "1.0.0",
-    "description": "Wanchain public rpc api sdk",
-    "title": "json-rpc",
+    "description": "Wanchain public rpc js api sdk",
+    "title": "iWan-js-sdk Custom apiDoc browser title",
     "url" : "wss://api.wanchain.org",
     "template" : {
       "forceLanguage" : "en"
