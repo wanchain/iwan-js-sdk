@@ -77,9 +77,9 @@ try {
 }
 ```
 ## Development
-`git clone https://github.com/wanchain/iWan-js-sdk.git`
-`npm install`
-`npm test`
+1. `git clone https://github.com/wanchain/iWan-js-sdk.git`
+2. `npm install`
+3. `npm test`
 
 ## Documentation
 
