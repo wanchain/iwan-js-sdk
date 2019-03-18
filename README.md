@@ -31,7 +31,7 @@ apiClient.close();
 ```
 If you do not plan to hava iWan SDK connnect to iWan RPC server, you can also initialize websocket to connect to, for more infomations, please see the docment [iWan RPC API](https://iwan.wanchain.org/static/apidoc/docs.html). We strongly recommend the use of iWan SDK.
 
-###Detail about `option`
+### Detail about `option`
 The SDK object can accept `option` object, you can use it like above.
 
 - `option` {Object}
@@ -40,7 +40,7 @@ The SDK object can accept `option` object, you can use it like above.
   - `flag` {String} The type to connect the iWan RPC server, default is 'ws'.
   - `version` {String} The verion to connect the iWan RPC server, default is 'v3'.
 
-###ApiKey and SecretKey
+### ApiKey and SecretKey
 If you do not have an `ApiKey`, you could sign up [iWan](https://iwan.wanchain.org) first. Then create a new project to get a pair of `ApiKey` and `SecretKey`.
 
 ## Basic Usage
@@ -52,7 +52,7 @@ For each method, we both support `Promise` and `callback`. if `callback` is used
 
 We use the method `getBalance` as an example to show how to use iWan SDK by `callback` and `Promise` below:
 
-###Callback
+### Callback
 You can use `callback` to do something like:
 ```bash
 apiClient.getBalance('WAN', '0x0cc79fa3b80c5b9b02051facd02478ea88a78e2c', (err, balance) => {
@@ -63,7 +63,7 @@ apiClient.getBalance('WAN', '0x0cc79fa3b80c5b9b02051facd02478ea88a78e2c', (err, 
   }
 });
 ```
-###Promise
+### Promise
 You can use `callback` to do something like:
 ```bash
 try {
@@ -74,7 +74,7 @@ try {
 }
 ```
 
-##Docments
+## Docments
 
 [iWan RPC API](https://iwan.wanchain.org/static/apidoc/docs.html) : API details about iWan RPC server
 
