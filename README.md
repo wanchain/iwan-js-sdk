@@ -20,7 +20,7 @@ By default the SDK will connect to `api.wanchain.org`
 let apiClient = new iWanClient(YourApiKey, YourSecretKey);
 
 ```
-You can also specify a different URL in the `option` object.
+A different URL can be specified in the `option` object.
 ```bash
 let option = {
       url:"apitest.wanchain.org",
