@@ -1,6 +1,24 @@
 {
-  "name": "iwan-js-sdk",
+  "name": "iwan-sdk",
   "version": "1.0.0",
+  "description": "JavaScript SDK for iWan RPC Server",
+  "author": "iwan.wanchian.org<techsupport@wanchain.org>(https://iwan.wanchian.org)",
+  "license": "ISC",
+  "main":"index.js",
+  "homepage": "https://github.com/wanchain/iWan-js-sdk#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wanchain/iWan-js-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wanchain/iWan-js-sdk/issues"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --timeout 600000 test/autoTestCases.js -c"
+  },
   "dependencies": {
     "ws": "^5.2.2"
   },
@@ -9,24 +27,6 @@
     "mocha": "^5.0.5",
     "node-xlsx": "^0.12.0"
   },
-  "description": "iwan javascript sdk",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "mocha --timeout 600000 test/autoTestCases.js -c"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wanchain/iWan-js-sdk.git"
-  },
-  "author": "wanchain.org",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/wanchain/iWan-js-sdk/issues"
-  },
-  "homepage": "https://github.com/wanchain/iWan-js-sdk#readme",
   "apidoc": {
     "name": "iWan-js-sdk",
     "version": "1.0.0",
