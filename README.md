@@ -11,16 +11,16 @@ Use NPM or Yarn to install the library:
 npm install --save iwan-sdk
 ```
 ## Config
-After installation, you can use the iWan SDK to connect iWan RPC server to do something like `getBalance`, you can do so by either the default config or by passing the config directly.
+After installation, the iWan SDK can be used to connect to the iWan RPC server to call a method such as `getBalance`. The default config can be used or custom config parameters can be passed using the `option` object.
 ```bash
 const iWanClient = require('iwan-sdk');
 ```
-Use SDK by default, it will connect `api.wanchain.org`
+By default the SDK will connect to `api.wanchain.org`
 ```bash
 let apiClient = new iWanClient(YourApiKey, YourSecretKey);
 
 ```
-You can also specify other URL.
+You can also specify a different URL in the `option` object.
 ```bash
 let option = {
       url:"apitest.wanchain.org",
@@ -28,14 +28,14 @@ let option = {
 apiClient = new iWanClient(YourApiKey, YourSecretKey, option);
 
 ```
-You should close the client after all operations.
+Th client should be closed after all operations.
 ```bash
 apiClient.close();
 ```
-If you do not want to use iWan SDK connecting to iWan RPC server, you can also use raw WebSocket API, for more information, please see the documentation [iWan RPC API](https://iwan.wanchain.org/static/apidoc/docs.html). We strongly recommend the use of iWan SDK.
+Instead of using the iWan SDK for connecting to the iWan RPC server, a raw WebSocket API can also be used, for more information, please see the documentation [iWan RPC API](https://iwan.wanchain.org/static/apidoc/docs.html). However, we strongly recommend using the iWan SDK.
 
-### Detail about `option`
-The SDK object can accept `option` object, you can use it like above.
+### Details about `option`
+The SDK object can accept an `option` object. See below for examples of usage.
 
 - `option` {Object}
   - `url` {String}  The RPC server URL, default is 'api.wanchain.org'.
@@ -44,19 +44,19 @@ The SDK object can accept `option` object, you can use it like above.
   - `version` {String} The RPC method version, default is 'v3'.
 
 ### ApiKey and SecretKey
-If you do not have an `ApiKey`, you could sign up [iWan](https://iwan.wanchain.org) first. Then create a new project to get a pair of `ApiKey` and `SecretKey`.
+In order to get an `ApiKey`, sign up at [iWan](https://iwan.wanchain.org). Then create a new project to get a new `ApiKey` and `SecretKey` key pair.
 
 ## Basic Usage
-For each method, we both support `Promise` and `callback`. 
+Both `Promise` and `callback` are supported for each method. 
 
 - `callback` {Function}
-  - `err` {String}  if something wrong happened, it will tell error details, or `null` otherwise.
-  - `result` {Object} if success (`err` is `null`), it will tell the result about the method you call such as `getBalance`.
+  - `err` {String}  in case of error, error details will be stored in `err`, `err` will contain `null` otherwise.
+  - `result` {Object} if successful (in other words `err` is `null`), the `result` object will contain the result of the method called, such as `getBalance`.
 
-We use the method `getBalance` as an example to show how to use iWan SDK by `callback` and `Promise` below:
+The method `getBalance` is used as an example below to show the use of `callback` and `Promise` in the iWan SDK :
 
 ### Callback
-You can use `callback` for asynchronous mode:
+`callback` can be used for asynchronous mode:
 ```bash
 apiClient.getBalance('WAN', '0x0cc79fa3b80c5b9b02051facd02478ea88a78e2c', (err, balance) => {
   if (err) {
@@ -67,7 +67,7 @@ apiClient.getBalance('WAN', '0x0cc79fa3b80c5b9b02051facd02478ea88a78e2c', (err, 
 });
 ```
 ### Promise
-You can use `Promise` for synchronous mode:
+`Promise` can be used for synchronous mode:
 ```bash
 try {
   let balance = await apiClient.getBalance('WAN', '0x0cc79fa3b80c5b9b02051facd02478ea88a78e2c');
