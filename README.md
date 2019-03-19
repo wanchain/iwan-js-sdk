@@ -20,7 +20,7 @@ Use SDK by default, it will connect `api.wanchain.org`
 let apiClient = new iWanClient(YourApiKey, YourSecretKey);
 
 ```
-You can also specify URL you want to connect to.
+You can also specify other URL.
 ```bash
 let option = {
       url:"apitest.wanchain.org",
@@ -32,16 +32,16 @@ You should close the client after all operations.
 ```bash
 apiClient.close();
 ```
-If you do not plan to hava iWan SDK connnect to iWan RPC server, you can also initialize websockets to connect to, for more infomations, please see the docment [iWan RPC API](https://iwan.wanchain.org/static/apidoc/docs.html). We strongly recommend the use of iWan SDK.
+If you do not want to use iWan SDK connecting to iWan RPC server, you can also use raw WebSocket API, for more information, please see the documentation [iWan RPC API](https://iwan.wanchain.org/static/apidoc/docs.html). We strongly recommend the use of iWan SDK.
 
 ### Detail about `option`
 The SDK object can accept `option` object, you can use it like above.
 
 - `option` {Object}
-  - `url` {String}  The host URL where to connect the iWan RPC server, default is 'api.wanchain.org'.
-  - `port` {Number} The port where to connect the iWan RPC server, default is 443.
-  - `flag` {String} The type to connect the iWan RPC server, default is 'ws'.
-  - `version` {String} The verion to connect the iWan RPC server, default is 'v3'.
+  - `url` {String}  The RPC server URL, default is 'api.wanchain.org'.
+  - `port` {Number} The RPC server port, default is 443.
+  - `flag` {String} The flag to connect the iWan RPC server, default is 'ws'.
+  - `version` {String} The RPC method version, default is 'v3'.
 
 ### ApiKey and SecretKey
 If you do not have an `ApiKey`, you could sign up [iWan](https://iwan.wanchain.org) first. Then create a new project to get a pair of `ApiKey` and `SecretKey`.
