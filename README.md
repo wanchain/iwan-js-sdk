@@ -60,9 +60,9 @@ The method `getBalance` is used as an example below to show the use of `callback
 ```bash
 apiClient.getBalance('WAN', '0x0cc79fa3b80c5b9b02051facd02478ea88a78e2c', (err, balance) => {
   if (err) {
-    console.log("err:" + err);
+    console.log(err);
   } else {
-    console.log("balance:" + balance);
+    console.log("Balance result is ", balance);
   }
 });
 ```
