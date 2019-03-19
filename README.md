@@ -79,7 +79,7 @@ try {
 
 ### Examples
 
-- [Simple Usage](src/example/iwan-sdk-test.js)
+- [Simple Usage](examples/iwan-sdk-test.js)
 
 ## Development
 1. `git clone https://github.com/wanchain/iWan-js-sdk.git`
