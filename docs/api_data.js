@@ -22,7 +22,7 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "address",
-            "description": "<p>the account's address that you want to find</p>"
+            "description": "<p>The address of the account being queried</p>"
           },
           {
             "group": "Parameter",
