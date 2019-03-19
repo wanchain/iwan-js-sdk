@@ -56,7 +56,7 @@ class ApiInstance extends WsInstance {
    * @apiVersion 1.0.0
    * @apiDescription Subscribe a smart contract event monitor. The server will push the event to subscriber when event comes. 
    * <br><br><strong>Returns:</strong>
-   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
    * @apiParam {string} chainType the chainType name that you want to search, should be WAN or ETH
    * @apiParam {string} address the contract address
@@ -120,7 +120,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get smart contract event log via topics
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chainType name that you want to search, should be WAN
   * @apiParam {string} address the contract address
@@ -184,7 +184,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the own of the specific contract on certain chain
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chainType name that you want to search, should be WAN or ETH
   * @apiParam {string} scAddr the token address for the certain token
@@ -237,7 +237,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the native coin ratio to wan for specific chain,in 10000
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} crossChain the cross_chain native coin name that you want to search
   * @apiParam {function} [callback] optional, the callback will receive two parameters: 
@@ -289,7 +289,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the detail btc utxo info for BTC.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chainType name that you want to search, should be BTC
   * @apiParam {number} minconf the min confirm number of BTC utxo, usually 0
@@ -357,7 +357,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the detail cross_chain storemanGroup info for one crossChain native coin, like the quota, etc.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} crossChain the cross_chain name that you want to search
   * @apiParam {function} [callback] optional, the callback will receive two parameters: 
@@ -420,7 +420,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the detail cross_chain storemanGroup info for one specific erc20 contract, like the quota, etc.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} crossChain the cross_chain name that you want to search, should be "ETH"
   * @apiParam {string} tokenScAddr the token address for the certain token
@@ -485,7 +485,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get total amount of certain token on Wanchain.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} crossChain the cross_chain name that you want to search, should be ETH
   * @apiParam {function} [callback] optional, the callback will receive two parameters: 
@@ -539,7 +539,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get total amount of certain token on Wanchain.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN
   * @apiParam {function} [callback] optional, the callback will receive two parameters: 
@@ -591,7 +591,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get balance for a single address.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
   * @apiParam {string} address the account's address that you want to find
@@ -644,7 +644,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get balance for multiple Addresses in a single call.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
   * @apiParam {array} addressArray the account's address array that you want to find
@@ -700,7 +700,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get token balance for a single address of certain token on Wanchain.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH, default WAN
   * @apiParam {string} address the account's address that you want to find
@@ -754,7 +754,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get token balance for multiple addresses of certain token on Wanchain in a single call.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH, default WAN
   * @apiParam {array} addressArray the account's address array that you want to find
@@ -811,7 +811,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get total amount of certain token on Wanchain.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} [chainType] the chain name that you want to search, should be WAN or ETH, default WAN
   * @apiParam {string} tokenScAddr the token address for the certain token
@@ -866,7 +866,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the nonce of an account.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
   * @apiParam {string} address the account's address that you want to find
@@ -919,7 +919,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the pending nonce of an account.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
   * @apiParam {string} address the account's address that you want to find
@@ -972,7 +972,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the current latest block number.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or BTC
   * @apiParam {function} [callback] optional, the callback will receive two parameters: 
@@ -1045,7 +1045,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Submit a pre-signed transaction for broadcast to certain chain.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH or BTC
   * @apiParam {string} signedTx the signedTx you want to send
@@ -1098,7 +1098,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the transaction detail via txHash on certain chain.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or BTC
   * @apiParam {string} txHash the txHash you want to search
@@ -1167,7 +1167,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Call getRawTransaction function with 1 at second param to get raw transaction info.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be BTC
   * @apiParam {string} txHash the txHash you want to search
@@ -1261,7 +1261,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the block information about a block by block number on certain chain.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN
   * @apiParam {number} blockNumber the blockNumber you want to search
@@ -1335,7 +1335,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the block information about a block by block hash on certain chain.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN
   * @apiParam {string} blockHash the blockHash you want to search
@@ -1409,7 +1409,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the number of transaction in a given block by blockNumber or blockhash on certain chain.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN
   * @apiParam {string} blockHashOrBlockNumber the blockHash or the blockNumber you want to search
@@ -1478,7 +1478,7 @@ class ApiInstance extends WsInstance {
   * When the receipt not existed, return directly with 'no receipt was found';
   * If receipt existed, the receipt will be returned after confirm-block-number blocks.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
   * @apiParam {number} waitBlocks the confirm-block-number you want to set
@@ -1555,7 +1555,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the receipt of a transaction by transaction hash on certain chain.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
   * @apiParam {string} txHash the txHash you want to search
@@ -1621,7 +1621,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get transaction information in a given block by blockNumber or blockhash on certain chain.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN
   * @apiParam {string} blockHashOrBlockNumber the blockHash or the blockNumber you want to search
@@ -1704,7 +1704,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get transaction information via the specified address on certain chain.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN
   * @apiParam {string} address the account's address that you want to search
@@ -1792,7 +1792,7 @@ class ApiInstance extends WsInstance {
   * <br>&nbsp;&nbsp;&nbsp;&nbsp;if no startBlockNo given, startBlockNo will be set to 0;
   * <br>&nbsp;&nbsp;&nbsp;&nbsp;if no endBlockNo given, endBlockNo will be set to the newest blockNumber.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN
   * @apiParam {string} address the account's address that you want to search
@@ -1866,7 +1866,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the specific public parameter value of one contract on certain chain.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
   * @apiParam {string} scAddr the token address for the certain token
@@ -1924,7 +1924,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the specific public map value of one contract on certain chain.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
   * @apiParam {string} scAddr the token address for the certain token
@@ -1980,7 +1980,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Call the specific public function of one contract on certain chain.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
   * @apiParam {string} scAddr the token address for the certain token
@@ -2036,7 +2036,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the x value of p2sh by hash(x) from btc.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiIgnore Comment out this function
   * @apiParam {string} chainType the chain name that you want to search, should be BTC
@@ -2091,7 +2091,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Send a 'import address' command to btc.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be BTC
   * @apiParam {string} address the BTC account address you want to import to the node to scan transactions
@@ -2144,7 +2144,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the detail info of registered contract for Erc20_crosschain, like address, ratio, etc, on certain chain.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} crossChain the cross_chain name that you want to search, should be "ETH"
   * @apiParam {function} [callback] optional, the callback will receive two parameters: 
@@ -2220,7 +2220,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the erc20 allowance for one specific account on one contract for one specific spender account on certain chain.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be "ETH"
   * @apiParam {string} tokenScAddr the token address for the certain token
@@ -2275,7 +2275,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the info of ERC20 contract, like symbol and decimals, on certain chain.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be "ETH"
   * @apiParam {string} tokenScAddr the token address for the certain token
@@ -2330,7 +2330,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the infos of muti ERC20 contracts, like symbol and decimals, on certain chain in a single call.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType the chain name that you want to search, should be "ETH"
   * @apiParam {array} tokenScAddrArray the token address array for the certain token that you want to find
@@ -2392,7 +2392,7 @@ class ApiInstance extends WsInstance {
   * @apiVersion 1.0.0
   * @apiDescription Get the token ratio to wan for specific erc20 token,in 10000.
   * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} crossChain the cross_chain name that you want to search, should be "ETH"
   * @apiParam {string} tokenScAddr the token address for the certain token

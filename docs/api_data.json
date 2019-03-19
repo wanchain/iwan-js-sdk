@@ -6,7 +6,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getBalance",
     "version": "1.0.0",
-    "description": "<p>Get balance for a single address. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get balance for a single address. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -72,7 +72,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getMultiBalances",
     "version": "1.0.0",
-    "description": "<p>Get balance for multiple Addresses in a single call. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get balance for multiple Addresses in a single call. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -138,7 +138,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getNonce",
     "version": "1.0.0",
-    "description": "<p>Get the nonce of an account. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the nonce of an account. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -204,7 +204,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getNonceIncludePending",
     "version": "1.0.0",
-    "description": "<p>Get the pending nonce of an account. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the pending nonce of an account. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -270,7 +270,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getBlockByHash",
     "version": "1.0.0",
-    "description": "<p>Get the block information about a block by block hash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the block information about a block by block hash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -336,7 +336,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getBlockByNumber",
     "version": "1.0.0",
-    "description": "<p>Get the block information about a block by block number on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the block information about a block by block number on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -402,7 +402,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getBlockNumber",
     "version": "1.0.0",
-    "description": "<p>Get the current latest block number. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the current latest block number. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -461,7 +461,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getBlockTransactionCount",
     "version": "1.0.0",
-    "description": "<p>Get the number of transaction in a given block by blockNumber or blockhash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the number of transaction in a given block by blockNumber or blockhash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -527,7 +527,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "callScFunc",
     "version": "1.0.0",
-    "description": "<p>Call the specific public function of one contract on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Call the specific public function of one contract on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -614,7 +614,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getScMap",
     "version": "1.0.0",
-    "description": "<p>Get the specific public map value of one contract on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the specific public map value of one contract on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -701,7 +701,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getScOwner",
     "version": "1.0.0",
-    "description": "<p>Get the own of the specific contract on certain chain <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the own of the specific contract on certain chain <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -767,7 +767,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getScVar",
     "version": "1.0.0",
-    "description": "<p>Get the specific public parameter value of one contract on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the specific public parameter value of one contract on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -852,7 +852,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getCoin2WanRatio",
     "version": "1.0.0",
-    "description": "<p>Get the native coin ratio to wan for specific chain,in 10000 <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the native coin ratio to wan for specific chain,in 10000 <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -911,7 +911,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getErc20Allowance",
     "version": "1.0.0",
-    "description": "<p>Get the erc20 allowance for one specific account on one contract for one specific spender account on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the erc20 allowance for one specific account on one contract for one specific spender account on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -991,7 +991,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getErc20Info",
     "version": "1.0.0",
-    "description": "<p>Get the info of ERC20 contract, like symbol and decimals, on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the info of ERC20 contract, like symbol and decimals, on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1057,7 +1057,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getErc20StoremanGroups",
     "version": "1.0.0",
-    "description": "<p>Get the detail cross_chain storemanGroup info for one specific erc20 contract, like the quota, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the detail cross_chain storemanGroup info for one specific erc20 contract, like the quota, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1123,7 +1123,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getMultiErc20Info",
     "version": "1.0.0",
-    "description": "<p>Get the infos of muti ERC20 contracts, like symbol and decimals, on certain chain in a single call. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the infos of muti ERC20 contracts, like symbol and decimals, on certain chain in a single call. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1189,7 +1189,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getRegErc20Tokens",
     "version": "1.0.0",
-    "description": "<p>Get the detail info of registered contract for Erc20_crosschain, like address, ratio, etc, on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the detail info of registered contract for Erc20_crosschain, like address, ratio, etc, on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1248,7 +1248,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanGroups",
     "version": "1.0.0",
-    "description": "<p>Get the detail cross_chain storemanGroup info for one crossChain native coin, like the quota, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the detail cross_chain storemanGroup info for one crossChain native coin, like the quota, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1307,7 +1307,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getToken2WanRatio",
     "version": "1.0.0",
-    "description": "<p>Get the token ratio to wan for specific erc20 token,in 10000. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the token ratio to wan for specific erc20 token,in 10000. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1373,7 +1373,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTransaction",
     "version": "1.0.0",
-    "description": "<p>Call getRawTransaction function with 1 at second param to get raw transaction info. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Call getRawTransaction function with 1 at second param to get raw transaction info. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1439,7 +1439,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getUTXO",
     "version": "1.0.0",
-    "description": "<p>Get the detail btc utxo info for BTC. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the detail btc utxo info for BTC. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1519,7 +1519,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "importAddress",
     "version": "1.0.0",
-    "description": "<p>Send a 'import address' command to btc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Send a 'import address' command to btc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1585,7 +1585,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getScEvent",
     "version": "1.0.0",
-    "description": "<p>Get smart contract event log via topics <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get smart contract event log via topics <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1658,7 +1658,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "monitorLog",
     "version": "1.0.0",
-    "description": "<p>Subscribe a smart contract event monitor. The server will push the event to subscriber when event comes. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Subscribe a smart contract event monitor. The server will push the event to subscriber when event comes. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1731,7 +1731,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getGasPrice",
     "version": "1.0.0",
-    "description": "<p>Get total amount of certain token on Wanchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get total amount of certain token on Wanchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1790,7 +1790,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTokenSupply",
     "version": "1.0.0",
-    "description": "<p>Get total amount of certain token on Wanchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get total amount of certain token on Wanchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1856,7 +1856,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getCrossScAddress",
     "version": "1.0.0",
-    "description": "<p>Get total amount of certain token on Wanchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get total amount of certain token on Wanchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1915,7 +1915,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getMultiTokenBalance",
     "version": "1.0.0",
-    "description": "<p>Get token balance for multiple addresses of certain token on Wanchain in a single call. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get token balance for multiple addresses of certain token on Wanchain in a single call. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1988,7 +1988,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTokenBalance",
     "version": "1.0.0",
-    "description": "<p>Get token balance for a single address of certain token on Wanchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get token balance for a single address of certain token on Wanchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2061,7 +2061,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTransByAddress",
     "version": "1.0.0",
-    "description": "<p>Get transaction information via the specified address on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get transaction information via the specified address on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2127,7 +2127,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTransByAddressBetweenBlocks",
     "version": "1.0.0",
-    "description": "<p>Get transaction information via the specified address between the specified startBlockNo and endBlockNo on certain chain. <br>Comments: <br>    if no startBlockNo given, startBlockNo will be set to 0; <br>    if no endBlockNo given, endBlockNo will be set to the newest blockNumber. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get transaction information via the specified address between the specified startBlockNo and endBlockNo on certain chain. <br>Comments: <br>    if no startBlockNo given, startBlockNo will be set to 0; <br>    if no endBlockNo given, endBlockNo will be set to the newest blockNumber. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2212,7 +2212,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTransByBlock",
     "version": "1.0.0",
-    "description": "<p>Get transaction information in a given block by blockNumber or blockhash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get transaction information in a given block by blockNumber or blockhash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2278,7 +2278,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTransactionConfirm",
     "version": "1.0.0",
-    "description": "<p>Get the transaction mined result on certain chain. When the receipt not existed, return directly with 'no receipt was found'; If receipt existed, the receipt will be returned after confirm-block-number blocks. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the transaction mined result on certain chain. When the receipt not existed, return directly with 'no receipt was found'; If receipt existed, the receipt will be returned after confirm-block-number blocks. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2351,7 +2351,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTransactionReceipt",
     "version": "1.0.0",
-    "description": "<p>Get the receipt of a transaction by transaction hash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the receipt of a transaction by transaction hash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2417,7 +2417,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTxInfo",
     "version": "1.0.0",
-    "description": "<p>Get the transaction detail via txHash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Get the transaction detail via txHash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -2483,7 +2483,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "sendRawTransaction",
     "version": "1.0.0",
-    "description": "<p>Submit a pre-signed transaction for broadcast to certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a Promise otherwise.</p>",
+    "description": "<p>Submit a pre-signed transaction for broadcast to certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
