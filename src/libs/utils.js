@@ -50,35 +50,5 @@ function promiseOrCallback(callback, fn) {
   });
 };
 
-// function add(ok, callback) {
-//   callback && (callback = wrapCallback(callback));
-//   return promiseOrCallback(callback, cb => {
-//     console.log("add cb:" + cb);
-//     if (ok) {
-//       cb(null, "success");
-//     } else {
-//       cb("failed");
-//     }
-//   });
-// }
-
-// add(true, (err, result) => {
-//   console.log(err);
-//   console.log(result);
-// });
-// add(false, (err, result) => {
-//   console.log(err);
-//   console.log(result);
-// });
-
-// async function test() {
-//   try {
-//     await add(true);
-//     await add(false);
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
-// test();
 exports.wrapCallback = wrapCallback;
 exports.promiseOrCallback = promiseOrCallback;
