@@ -1,19 +1,28 @@
 {
   "name": "iwan-sdk",
   "version": "1.0.0",
+  "keywords": [
+    "iwan",
+    "iwan-sdk",
+    "WebSocket",
+    "WebSockets",
+    "BlockChain",
+    "CrossChain"
+  ],
   "description": "JavaScript SDK for iWan RPC Server",
-  "author": "iwan.wanchian.org<techsupport@wanchain.org>(https://iwan.wanchian.org)",
+  "author": "iwan.wanchian.org <techsupport@wanchain.org> (https://iwan.wanchian.org)",
   "license": "ISC",
-  "main":"index.js",
+  "main": "index.js",
   "homepage": "https://github.com/wanchain/iWan-js-sdk#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wanchain/iWan-js-sdk.git"
+    "url": "git+https://github.com/wanchain/iWan-js-sdk.git"
   },
   "bugs": {
     "url": "https://github.com/wanchain/iWan-js-sdk/issues"
   },
   "directories": {
+    "doc": "docs",
     "test": "test"
   },
   "scripts": {
@@ -32,9 +41,9 @@
     "version": "1.0.0",
     "description": "JavaScript SDK for iWan RPC Server",
     "title": "iWan-js-sdk Custom apiDoc browser title",
-    "url" : "wss://api.wanchain.org",
-    "template" : {
-      "forceLanguage" : "en"
+    "url": "wss://api.wanchain.org",
+    "template": {
+      "forceLanguage": "en"
     }
   }
 }
