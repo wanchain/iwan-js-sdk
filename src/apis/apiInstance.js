@@ -1016,27 +1016,6 @@ class ApiInstance extends WsInstance {
     });
   }
 
-  // async getCrossEthScAddress(){
-  //   return await this.apiFactory('getBalance', {chainType: chainType, address: address});
-  //     let socket = this.webSocket;
-  //     let log = this.log;
-  //     if (!checkKeyParameters(log, socket, msg, 'getCrossEthScAddress', ['chainType']) ||
-  //       !checkChainType(log, socket, msg, 'getCrossEthScAddress', msg['params']['chainType'])) {
-  //       return;
-  //     }
-
-  //     let chainType = msg['params']['chainType'];
-  //     log.info("getCrossEthScAddress is called by Chain-", chainType);
-
-  //     let reply = {};
-  //     let chainDb = this.chainDbDict[chainType];
-  //     let chain = new moduleConfig.chainDict[chainType].chain(log, chainDb);
-  //     reply.result = chain.getCrossEthScAddress();
-  //     socketSafeSend(log, socket, msg.id, reply);
-  //     log.info("getCrossEthScAddress function done");
-  //   }
-  // }
-
   /**
   *
   * @apiName sendRawTransaction
@@ -1102,6 +1081,9 @@ class ApiInstance extends WsInstance {
   *
   * @apiParam {string} chainType the chain name that you want to search, should be WAN or BTC
   * @apiParam {string} txHash the txHash you want to search
+  * @apiParam {bool} [format] Whether to get the serialized or decoded transaction, in this case, <code>chainType</code> should be <code>"BTC"</code>:
+  * <br>Set to <code>false</code> (the default) to return the serialized transaction as hex.
+  * <br>Set to <code>true</code> to return a decoded transaction.
   * @apiParam {function} [callback] optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
@@ -1142,106 +1124,22 @@ class ApiInstance extends WsInstance {
     }
   *
   */
-  getTxInfo(chainType, txHash, callback) {
-    if (callback) {
-      callback = utils.wrapCallback(callback);
-    }
+  getTxInfo(chainType, txHash, format, callback) {
+    let maxArgsize = 4;
+    let mixArgsize = 2;
     let method = 'getTxInfo';
     let params = { chainType: chainType, txHash: txHash };
 
-    return utils.promiseOrCallback(callback, cb => {
-      this._request(method, params, (err, result) => {
-        if (err) {
-          return cb(err);
-        }
-        return cb(null, result);
-      });
-    });
-  }
-
-  /**
-  *
-  * @apiName getTransaction
-  * @apiGroup CrossChain
-  * @api {CONNECT} /ws/v3/YOUR-API-KEY getTransaction
-  * @apiVersion 1.0.0
-  * @apiDescription Call getRawTransaction function with 1 at second param to get raw transaction info.
-  * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
-  *
-  * @apiParam {string} chainType the chain name that you want to search, should be BTC
-  * @apiParam {string} txHash the txHash you want to search
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
-  *
-  * @apiParamExample {string} JSON-RPC over websocket
-  * {"jsonrpc":"2.0","method":"getTransaction","params":{"chainType":"BTC","txHash":"7168a86c84eda0bbfb7ae553118b02983516e8a6c448dc4c0630d26299297f20"},"id":1}
-  *
-  * @apiExample {nodejs} Example usage callback:
-  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
-  *   apiTest.getTransaction("BTC", "7168a86c84eda0bbfb7ae553118b02983516e8a6c448dc4c0630d26299297f20", (err, result) => {
-  *     console.log("Result is ", result);
-  *     apiTest.close();
-  *   });
-  *
-  * @apiExample {nodejs} Example usage promise:
-  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   let result = await apiTest.getTransaction("BTC", "7168a86c84eda0bbfb7ae553118b02983516e8a6c448dc4c0630d26299297f20");
-  *   console.log("Result is ", result);
-  *   apiTest.close();
-  *
-  * @apiSuccessExample {json} Successful Response
-  *  "result": {
-     "txid": "7168a86c84eda0bbfb7ae553118b02983516e8a6c448dc4c0630d26299297f20",
-     "hash": "7168a86c84eda0bbfb7ae553118b02983516e8a6c448dc4c0630d26299297f20",
-     "version": 1,
-     "size": 502,
-     "vsize": 502,
-     "locktime": 0,
-     "vin": [{
-       "txid": "9573ace6a27f08ddb4306351d6764ef18e8d4ef1c21e3bbe40f4a313e552d3d9",
-       "vout": 0,
-       "scriptSig": {
-         "asm": "0 304402203367bfe118686d11de9194f01a31edcd578bdc5d8b377a2189c7ba68ecf763f10220738a0f2bbb298885950a7b08b5fdcfbe4a18ce581474b9160c097bb4ea939d3b[ALL] 304402205f74077b910e4e794e59e881939c71ef27bf4e709063973afa234d4cda69aaa6022042b6914c403adf94761ae42214ad9b366149dbd9f04b17d10c066b5ba3c9a9a3[ALL] 304402204757d2c32e1467cfbdb7327bd4a50b5ebcd5f18717b2b4d6d62d61e1a1cafbe30220461b2d5120b826605d1c83bee4e59eef73fefc94cd0c5ae30c9d1d25e89d3380[ALL] 5321022666ff58d872f45d5f38022af3e8ad21f7a109d70d718171111b035542332f202102378f6c2051e46ac2f8db79929bf24440e45c9fb985bfd5e8a71026440623f5e92103ced1ba9b2f46b49168b38f3f950a5a3cdf15d5d13e8e5a2ebf6a28d1beb6b2562103528901b8cd76a4b9fb270d020706619543d9a75dc2a9c717d397d3838b69e98654ae",
-         "hex": "0047304402203367bfe118686d11de9194f01a31edcd578bdc5d8b377a2189c7ba68ecf763f10220738a0f2bbb298885950a7b08b5fdcfbe4a18ce581474b9160c097bb4ea939d3b0147304402205f74077b910e4e794e59e881939c71ef27bf4e709063973afa234d4cda69aaa6022042b6914c403adf94761ae42214ad9b366149dbd9f04b17d10c066b5ba3c9a9a30147304402204757d2c32e1467cfbdb7327bd4a50b5ebcd5f18717b2b4d6d62d61e1a1cafbe30220461b2d5120b826605d1c83bee4e59eef73fefc94cd0c5ae30c9d1d25e89d3380014c8b5321022666ff58d872f45d5f38022af3e8ad21f7a109d70d718171111b035542332f202102378f6c2051e46ac2f8db79929bf24440e45c9fb985bfd5e8a71026440623f5e92103ced1ba9b2f46b49168b38f3f950a5a3cdf15d5d13e8e5a2ebf6a28d1beb6b2562103528901b8cd76a4b9fb270d020706619543d9a75dc2a9c717d397d3838b69e98654ae"
-       },
-       "sequence": 4294967295
-     }],
-     "vout": [{
-       "value": 0.0531,
-       "n": 0,
-       "scriptPubKey": {
-         "asm": "OP_HASH160 a3d3eea26a00225d76b089a690ae5f48471e5733 OP_EQUAL",
-         "hex": "a914a3d3eea26a00225d76b089a690ae5f48471e573387",
-         "reqSigs": 1,
-         "type": "scripthash",
-         "addresses": ["2N8BU1rgLfkRZZpUQWSz1fNJ5z6hCtWjkUd"]
-       }
-     }, {
-       "value": 0,
-       "n": 1,
-       "scriptPubKey": {
-         "asm": "OP_RETURN 45584f4e554d010078ab7200000000005d114ae1dce23ed8196dc2e6f8b605e228e3994d13900ed1919d604f0507cce9",
-         "hex": "6a3045584f4e554d010078ab7200000000005d114ae1dce23ed8196dc2e6f8b605e228e3994d13900ed1919d604f0507cce9",
-         "type": "nulldata"
-       }
-     }],
-     "hex": "0100000001d9d352e513a3f440be3b1ec2f14e8d8ef14e76d6516330b4dd087fa2e6ac739500000000fd66010047304402203367bfe118686d11de9194f01a31edcd578bdc5d8b377a2189c7ba68ecf763f10220738a0f2bbb298885950a7b08b5fdcfbe4a18ce581474b9160c097bb4ea939d3b0147304402205f74077b910e4e794e59e881939c71ef27bf4e709063973afa234d4cda69aaa6022042b6914c403adf94761ae42214ad9b366149dbd9f04b17d10c066b5ba3c9a9a30147304402204757d2c32e1467cfbdb7327bd4a50b5ebcd5f18717b2b4d6d62d61e1a1cafbe30220461b2d5120b826605d1c83bee4e59eef73fefc94cd0c5ae30c9d1d25e89d3380014c8b5321022666ff58d872f45d5f38022af3e8ad21f7a109d70d718171111b035542332f202102378f6c2051e46ac2f8db79929bf24440e45c9fb985bfd5e8a71026440623f5e92103ced1ba9b2f46b49168b38f3f950a5a3cdf15d5d13e8e5a2ebf6a28d1beb6b2562103528901b8cd76a4b9fb270d020706619543d9a75dc2a9c717d397d3838b69e98654aeffffffff02300651000000000017a914a3d3eea26a00225d76b089a690ae5f48471e5733870000000000000000326a3045584f4e554d010078ab7200000000005d114ae1dce23ed8196dc2e6f8b605e228e3994d13900ed1919d604f0507cce900000000",
-     "blockhash": "000000000000003e0d0f4782df67ca1d46472c7913470621377bcb2424833efe",
-     "confirmations": 13,
-     "time": 1535367245,
-     "blocktime": 1535367245
-   }
-  *
-  */
-  //TODO: Use the old GetTransaction interface.
-  getTransaction(chainType, txHash, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
-    let method = 'getTransaction';
-    let params = { chainType: chainType, txHash: txHash };
+    for (let i = mixArgsize; i < maxArgsize; ++i) {
+      if (typeof(arguments[i]) === "function") {
+        callback = arguments[i];
+      } else if ("BTC" === chainType && typeof(arguments[i]) === "boolean") {
+        params["format"] = arguments[i];
+      }
+    }
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -1461,11 +1359,6 @@ class ApiInstance extends WsInstance {
         return cb(null, result);
       });
     });
-    // if (this.checkHash(blockHashOrBlockNumber)) {
-    //   return await this.apiFactory('getBlockTransactionCount', { chainType: chainType, blockHash: blockHashOrBlockNumber });
-    // } else {
-    //   return await this.apiFactory('getBlockTransactionCount', { chainType: chainType, blockNumber: blockHashOrBlockNumber });
-    // }
   }
 
   /**
@@ -1689,11 +1582,6 @@ class ApiInstance extends WsInstance {
         return cb(null, result);
       });
     });
-    // if (this.checkHash(blockHashOrBlockNumber)) {
-    //   return await this.apiFactory('getTransByBlock', { chainType: chainType, blockHash: blockHashOrBlockNumber });
-    // } else {
-    //   return await this.apiFactory('getTransByBlock', { chainType: chainType, blockNumber: blockHashOrBlockNumber });
-    // }
   }
 
   /**

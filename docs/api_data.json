@@ -1367,72 +1367,6 @@
     "groupTitle": "CrossChain"
   },
   {
-    "name": "getTransaction",
-    "group": "CrossChain",
-    "type": "CONNECT",
-    "url": "/ws/v3/YOUR-API-KEY",
-    "title": "getTransaction",
-    "version": "1.0.0",
-    "description": "<p>Call getRawTransaction function with 1 at second param to get raw transaction info. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be BTC</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "txHash",
-            "description": "<p>the txHash you want to search</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "function",
-            "optional": true,
-            "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "JSON-RPC over websocket",
-          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getTransaction\",\"params\":{\"chainType\":\"BTC\",\"txHash\":\"7168a86c84eda0bbfb7ae553118b02983516e8a6c448dc4c0630d26299297f20\"},\"id\":1}",
-          "type": "string"
-        }
-      ]
-    },
-    "examples": [
-      {
-        "title": "Example usage callback:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTransaction(\"BTC\", \"7168a86c84eda0bbfb7ae553118b02983516e8a6c448dc4c0630d26299297f20\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
-        "type": "nodejs"
-      },
-      {
-        "title": "Example usage promise:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getTransaction(\"BTC\", \"7168a86c84eda0bbfb7ae553118b02983516e8a6c448dc4c0630d26299297f20\");\nconsole.log(\"Result is \", result);\napiTest.close();",
-        "type": "nodejs"
-      }
-    ],
-    "success": {
-      "examples": [
-        {
-          "title": "Successful Response",
-          "content": "\"result\": {\n    \"txid\": \"7168a86c84eda0bbfb7ae553118b02983516e8a6c448dc4c0630d26299297f20\",\n    \"hash\": \"7168a86c84eda0bbfb7ae553118b02983516e8a6c448dc4c0630d26299297f20\",\n    \"version\": 1,\n    \"size\": 502,\n    \"vsize\": 502,\n    \"locktime\": 0,\n    \"vin\": [{\n      \"txid\": \"9573ace6a27f08ddb4306351d6764ef18e8d4ef1c21e3bbe40f4a313e552d3d9\",\n      \"vout\": 0,\n      \"scriptSig\": {\n        \"asm\": \"0 304402203367bfe118686d11de9194f01a31edcd578bdc5d8b377a2189c7ba68ecf763f10220738a0f2bbb298885950a7b08b5fdcfbe4a18ce581474b9160c097bb4ea939d3b[ALL] 304402205f74077b910e4e794e59e881939c71ef27bf4e709063973afa234d4cda69aaa6022042b6914c403adf94761ae42214ad9b366149dbd9f04b17d10c066b5ba3c9a9a3[ALL] 304402204757d2c32e1467cfbdb7327bd4a50b5ebcd5f18717b2b4d6d62d61e1a1cafbe30220461b2d5120b826605d1c83bee4e59eef73fefc94cd0c5ae30c9d1d25e89d3380[ALL] 5321022666ff58d872f45d5f38022af3e8ad21f7a109d70d718171111b035542332f202102378f6c2051e46ac2f8db79929bf24440e45c9fb985bfd5e8a71026440623f5e92103ced1ba9b2f46b49168b38f3f950a5a3cdf15d5d13e8e5a2ebf6a28d1beb6b2562103528901b8cd76a4b9fb270d020706619543d9a75dc2a9c717d397d3838b69e98654ae\",\n        \"hex\": \"0047304402203367bfe118686d11de9194f01a31edcd578bdc5d8b377a2189c7ba68ecf763f10220738a0f2bbb298885950a7b08b5fdcfbe4a18ce581474b9160c097bb4ea939d3b0147304402205f74077b910e4e794e59e881939c71ef27bf4e709063973afa234d4cda69aaa6022042b6914c403adf94761ae42214ad9b366149dbd9f04b17d10c066b5ba3c9a9a30147304402204757d2c32e1467cfbdb7327bd4a50b5ebcd5f18717b2b4d6d62d61e1a1cafbe30220461b2d5120b826605d1c83bee4e59eef73fefc94cd0c5ae30c9d1d25e89d3380014c8b5321022666ff58d872f45d5f38022af3e8ad21f7a109d70d718171111b035542332f202102378f6c2051e46ac2f8db79929bf24440e45c9fb985bfd5e8a71026440623f5e92103ced1ba9b2f46b49168b38f3f950a5a3cdf15d5d13e8e5a2ebf6a28d1beb6b2562103528901b8cd76a4b9fb270d020706619543d9a75dc2a9c717d397d3838b69e98654ae\"\n      },\n      \"sequence\": 4294967295\n    }],\n    \"vout\": [{\n      \"value\": 0.0531,\n      \"n\": 0,\n      \"scriptPubKey\": {\n        \"asm\": \"OP_HASH160 a3d3eea26a00225d76b089a690ae5f48471e5733 OP_EQUAL\",\n        \"hex\": \"a914a3d3eea26a00225d76b089a690ae5f48471e573387\",\n        \"reqSigs\": 1,\n        \"type\": \"scripthash\",\n        \"addresses\": [\"2N8BU1rgLfkRZZpUQWSz1fNJ5z6hCtWjkUd\"]\n      }\n    }, {\n      \"value\": 0,\n      \"n\": 1,\n      \"scriptPubKey\": {\n        \"asm\": \"OP_RETURN 45584f4e554d010078ab7200000000005d114ae1dce23ed8196dc2e6f8b605e228e3994d13900ed1919d604f0507cce9\",\n        \"hex\": \"6a3045584f4e554d010078ab7200000000005d114ae1dce23ed8196dc2e6f8b605e228e3994d13900ed1919d604f0507cce9\",\n        \"type\": \"nulldata\"\n      }\n    }],\n    \"hex\": \"0100000001d9d352e513a3f440be3b1ec2f14e8d8ef14e76d6516330b4dd087fa2e6ac739500000000fd66010047304402203367bfe118686d11de9194f01a31edcd578bdc5d8b377a2189c7ba68ecf763f10220738a0f2bbb298885950a7b08b5fdcfbe4a18ce581474b9160c097bb4ea939d3b0147304402205f74077b910e4e794e59e881939c71ef27bf4e709063973afa234d4cda69aaa6022042b6914c403adf94761ae42214ad9b366149dbd9f04b17d10c066b5ba3c9a9a30147304402204757d2c32e1467cfbdb7327bd4a50b5ebcd5f18717b2b4d6d62d61e1a1cafbe30220461b2d5120b826605d1c83bee4e59eef73fefc94cd0c5ae30c9d1d25e89d3380014c8b5321022666ff58d872f45d5f38022af3e8ad21f7a109d70d718171111b035542332f202102378f6c2051e46ac2f8db79929bf24440e45c9fb985bfd5e8a71026440623f5e92103ced1ba9b2f46b49168b38f3f950a5a3cdf15d5d13e8e5a2ebf6a28d1beb6b2562103528901b8cd76a4b9fb270d020706619543d9a75dc2a9c717d397d3838b69e98654aeffffffff02300651000000000017a914a3d3eea26a00225d76b089a690ae5f48471e5733870000000000000000326a3045584f4e554d010078ab7200000000005d114ae1dce23ed8196dc2e6f8b605e228e3994d13900ed1919d604f0507cce900000000\",\n    \"blockhash\": \"000000000000003e0d0f4782df67ca1d46472c7913470621377bcb2424833efe\",\n    \"confirmations\": 13,\n    \"time\": 1535367245,\n    \"blocktime\": 1535367245\n  }",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/apis/apiInstance.js",
-    "groupTitle": "CrossChain"
-  },
-  {
     "name": "getUTXO",
     "group": "CrossChain",
     "type": "CONNECT",
@@ -2434,6 +2368,13 @@
             "optional": false,
             "field": "txHash",
             "description": "<p>the txHash you want to search</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "bool",
+            "optional": true,
+            "field": "format",
+            "description": "<p>Whether to get the serialized or decoded transaction, in this case, <code>chainType</code> should be <code>&quot;BTC&quot;</code>: <br>Set to <code>false</code> (the default) to return the serialized transaction as hex. <br>Set to <code>true</code> to return a decoded transaction.</p>"
           },
           {
             "group": "Parameter",
