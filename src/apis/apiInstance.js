@@ -58,12 +58,12 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} chainType the chainType name that you want to search, should be WAN or ETH
-   * @apiParam {string} address the contract address
-   * @apiParam {array} topics array of values which must each appear in the log entries. The order is important, if you want to leave topics out use null, e.g. [null, '0x00...']
-   * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-   * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-   * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+   * @apiParam {string} chainType The chainType name that you want to search, should be "WAN" or "ETH".
+   * @apiParam {string} address The contract address.
+   * @apiParam {array} topics Array of values which must each appear in the log entries. The order is important, if you want to leave topics out use null, e.g. [null, '0x00...'].
+   * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+   * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"monitorLog","params":{"chainType":"WAN", "address": "0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26", "topics": ["0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7"]},"id":1}
@@ -118,16 +118,16 @@ class ApiInstance extends WsInstance {
   * @apiGroup EventLogs
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getScEvent
   * @apiVersion 1.0.0
-  * @apiDescription Get smart contract event log via topics
+  * @apiDescription Get smart contract event log via topics.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chainType name that you want to search, should be WAN
-  * @apiParam {string} address the contract address
-  * @apiParam {array} topics of Strings - An array of values which must each appear in the log entries. The order is important, if you want to leave topics out use null, e.g. [null, '0x00...'].
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chainType name that you want to search, should be "WAN".
+  * @apiParam {string} address The contract address.
+  * @apiParam {array} topics A string array of values which must each appear in the log entries. The order is important, if you want to leave topics out use null, e.g. [null, '0x00...'].
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getScEvent","params":{"chainType":"WAN", "address": "0xda5b90dc89be59365ec44f3f2d7af8b6700d1167", "topics": ["0xa4345d0839b39e5a6622a55c68bd8f83ac8a68fad252a8363a2c09dbaf85c793", "0x0000000000000000000000000000000000000000000000000000000000000000"]},"id":1}
@@ -182,15 +182,15 @@ class ApiInstance extends WsInstance {
   * @apiGroup Contracts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getScOwner
   * @apiVersion 1.0.0
-  * @apiDescription Get the own of the specific contract on certain chain
+  * @apiDescription Get the own of the specific contract on certain chain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chainType name that you want to search, should be WAN or ETH
-  * @apiParam {string} scAddr the token address for the certain token
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chainType name that you want to search, should be "WAN" or "ETH".
+  * @apiParam {string} scAddr The token address for the certain token.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getScOwner","params":{"chainType":"WAN", "scAddr": "0x59adc38f0b3f64fb542b50e3e955e7a8c1eb3e3b"},"id":1}
@@ -235,14 +235,14 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getCoin2WanRatio
   * @apiVersion 1.0.0
-  * @apiDescription Get the native coin ratio to wan for specific chain,in 10000
+  * @apiDescription Coin exchange ratio,such as 1 ETH to 880 WANs in ICO period, the precision is 10000, the ratio is 880*precision = 880,0000. The ratio would be changed according to the market value ratio periodically.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} crossChain the cross_chain native coin name that you want to search
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} crossChain The cross_chain native coin name that you want to search.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getCoin2WanRatio","params":{"crossChain":"ETH"},"id":1}
@@ -291,13 +291,13 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chainType name that you want to search, should be BTC
-  * @apiParam {number} minconf the min confirm number of BTC utxo, usually 0
-  * @apiParam {number} maxconf the max confirm number of BTC utxo, usually the confirmed blockes you want to wait for the utxo
-  * @apiParam {array} address the address array that you want to search
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chainType name that you want to search, should be "BTC".
+  * @apiParam {number} minconf The min confirm number of BTC utxo, usually 0.
+  * @apiParam {number} maxconf The max confirm number of BTC utxo, usually the confirmed blockes you want to wait for the utxo.
+  * @apiParam {array} address The address array that you want to search.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getUTXO","params":{"chainType":"BTC", "minconf":0, "maxconf":100, "address":["n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R"]},"id":1}
@@ -355,14 +355,14 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGroups
   * @apiVersion 1.0.0
-  * @apiDescription Get the detail cross_chain storemanGroup info for one crossChain native coin, like the quota, etc.
+  * @apiDescription Get the detail cross-chain storemanGroup info for one cross-chain native coin, like the quota, etc.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} crossChain the cross_chain name that you want to search
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} crossChain The cross_chain name that you want to search.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getStoremanGroups","params":{"crossChain":"ETH"},"id":1}
@@ -418,15 +418,15 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getErc20StoremanGroups
   * @apiVersion 1.0.0
-  * @apiDescription Get the detail cross_chain storemanGroup info for one specific erc20 contract, like the quota, etc.
+  * @apiDescription Get the detail cross_chain storemanGroup info for one specific ERC20 contract, like the quota, etc.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} crossChain the cross_chain name that you want to search, should be "ETH"
-  * @apiParam {string} tokenScAddr the token address for the certain token
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} crossChain The cross_chain name that you want to search, should be "ETH".
+  * @apiParam {string} tokenScAddr The token address for the certain token.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getErc20StoremanGroups","params":{"crossChain":"ETH", "tokenScAddr":"0x00f58d6d585f84b2d7267940cede30ce2fe6eae8"},"id":1}
@@ -487,10 +487,10 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} crossChain the cross_chain name that you want to search, should be ETH
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} crossChain The cross_chain name that you want to search, should be "ETH".
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getCrossScAddress","params":{"crossChain":"ETH"},"id":1}
@@ -541,10 +541,10 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN".
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getGasPrice","params":{"chainType":"WAN"},"id":1}
@@ -593,11 +593,11 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
-  * @apiParam {string} address the account's address that you want to find
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN" or "ETH".
+  * @apiParam {string} address The account's address that you want to find.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getBalance","params":{"address": "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c","chainType":"WAN"},"id":1}
@@ -646,11 +646,11 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
-  * @apiParam {array} addressArray the account's address array that you want to find
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN" or "ETH".
+  * @apiParam {array} addressArray The account's address array that you want to find.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getMultiBalances","params":{"address": ["0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c","0x2cc79fa3b80c5b9b02051facd02478ea88a78e2d"],"chainType":"WAN"},"id":1}
@@ -702,12 +702,12 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH, default WAN
-  * @apiParam {string} address the account's address that you want to find
-  * @apiParam {string} tokenScAddr the token address for the certain token; if set chainType 'WAN', it should be the token address for WETH or WBTC
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN" or "ETH", default "WAN".
+  * @apiParam {string} address The account's address that you want to find.
+  * @apiParam {string} tokenScAddr The token address for the certain token; if set chainType 'WAN', it should be the token address for "WETH" or "WBTC".
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getTokenBalance","params":{"address": "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c","tokenScAddr" : "0x63eed4943abaac5f43f657d8eec098ca6d6a546e"},"id":1}
@@ -756,12 +756,12 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH, default WAN
-  * @apiParam {array} addressArray the account's address array that you want to find
-  * @apiParam {string} tokenScAddr the token address for the certain token; if set chainType 'WAN', it should be the token address for WETH or WBTC
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN" or "ETH", default "WAN".
+  * @apiParam {array} addressArray The account's address array that you want to find.
+  * @apiParam {string} tokenScAddr The token address for the certain token; if set chainType 'WAN', it should be the token address for "WETH" or "WBTC".
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getMultiTokenBalance","params":{"address": ["0xfac95c16da814d24cc64b3186348afecf527324f","0xfac95c16da814d24cc64b3186348afecf527324e"],"tokenScAddr" : "0x63eed4943abaac5f43f657d8eec098ca6d6a546e"},"id":1}
@@ -813,11 +813,11 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} [chainType] the chain name that you want to search, should be WAN or ETH, default WAN
-  * @apiParam {string} tokenScAddr the token address for the certain token
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} [chainType] The chain name that you want to search, should be "WAN" or "ETH", default "WAN".
+  * @apiParam {string} tokenScAddr The token address for the certain token.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getTokenSupply","params":{"tokenScAddr" : "0x63eed4943abaac5f43f657d8eec098ca6d6a546e"},"id":1}
@@ -868,11 +868,11 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
-  * @apiParam {string} address the account's address that you want to find
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN" or "ETH".
+  * @apiParam {string} address The account's address that you want to find.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getNonce","params":{"address": "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c","chainType":"WAN"},"id":1}
@@ -921,11 +921,11 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
-  * @apiParam {string} address the account's address that you want to find
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN" or "ETH".
+  * @apiParam {string} address The account's address that you want to find.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getNonceIncludePending","params":{"address": "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c","chainType":"WAN"}, "id":1}
@@ -974,10 +974,10 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN or BTC
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN" or "BTC"
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getBlockNumber","params":{"chainType":"WAN"},"id":1}
@@ -1026,11 +1026,11 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH or BTC
-  * @apiParam {string} signedTx the signedTx you want to send
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN" or "ETH" or "BTC".
+  * @apiParam {string} signedTx The signedTx you want to send.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"sendRawTransaction","params":{"chainType":"WAN", "signedTx":"0xf86e0109852e90edd000832dc6c0946ed9c11cbd8a6ae8355fa62ebca48493da572661880de0b6b3a7640000801ca0bd349ec9f51dd171eb5c59df9a6b8c5656eacb6793bed945a7ec69135f191abfa0359da11e8a4fdd51b52a8752ac32f9125d168441546d011406736bce67b8a356"},"id":1}
@@ -1079,14 +1079,14 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN or BTC
-  * @apiParam {string} txHash the txHash you want to search
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN" or "BTC".
+  * @apiParam {string} txHash The txHash you want to search.
   * @apiParam {bool} [format] Whether to get the serialized or decoded transaction, in this case, <code>chainType</code> should be <code>"BTC"</code>:
   * <br>Set to <code>false</code> (the default) to return the serialized transaction as hex.
   * <br>Set to <code>true</code> to return a decoded transaction.
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getTxInfo","params":{"chainType":"WAN", "txHash":"0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da"},"id":1}
@@ -1161,11 +1161,11 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN
-  * @apiParam {number} blockNumber the blockNumber you want to search
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN".
+  * @apiParam {number} blockNumber The blockNumber you want to search.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getBlockByNumber","params":{"chainType":"WAN", "blockNumber":"670731"},"id":1}
@@ -1235,11 +1235,11 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN
-  * @apiParam {string} blockHash the blockHash you want to search
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN".
+  * @apiParam {string} blockHash The blockHash you want to search.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getBlockByHash","params":{"chainType":"WAN", "blockHash":"0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8"},"id":1}
@@ -1309,11 +1309,11 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN
-  * @apiParam {string} blockHashOrBlockNumber the blockHash or the blockNumber you want to search
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN".
+  * @apiParam {string} blockHashOrBlockNumber The blockHash or the blockNumber you want to search.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getBlockTransactionCount","params":{"chainType":"WAN", "blockNumber":"670731"},"id":1}
@@ -1373,12 +1373,12 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
-  * @apiParam {number} waitBlocks the confirm-block-number you want to set
-  * @apiParam {string} txHash the txHash you want to search
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN" or "ETH".
+  * @apiParam {number} waitBlocks The confirm-block-number you want to set.
+  * @apiParam {string} txHash The txHash you want to search.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getTransactionConfirm","params":{"chainType":"WAN", "waitBlocks": 6, "txHash": "0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da"},"id":1}
@@ -1450,11 +1450,11 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
-  * @apiParam {string} txHash the txHash you want to search
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN" or "ETH".
+  * @apiParam {string} txHash The txHash you want to search.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getTransactionReceipt","params":{"chainType":"WAN", "txHash":"0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe"},"id":1}
@@ -1516,11 +1516,11 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN
-  * @apiParam {string} blockHashOrBlockNumber the blockHash or the blockNumber you want to search
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN".
+  * @apiParam {string} blockHashOrBlockNumber The blockHash or the blockNumber you want to search.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getTransByBlock","params":{"chainType":"WAN", "blockNumber":"984133"},"id":1}
@@ -1594,11 +1594,11 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN
-  * @apiParam {string} address the account's address that you want to search
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN".
+  * @apiParam {string} address The account's address that you want to search.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getTransByAddress","params":{"chainType":"WAN", "address":"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d"},"id":1}
@@ -1682,13 +1682,13 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN
-  * @apiParam {string} address the account's address that you want to search
-  * @apiParam {number} startBlockNo the startBlockNo that you want to search from
-  * @apiParam {number} endBlockNo the endBlockNo that you want to search to
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN".
+  * @apiParam {string} address The account's address that you want to search.
+  * @apiParam {number} startBlockNo The startBlockNo that you want to search from.
+  * @apiParam {number} endBlockNo The endBlockNo that you want to search to.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getTransByAddressBetweenBlocks","params":{"chainType":"WAN", "address":"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d", "startBlockNo":984119, "endBlockNo":984120},"id":1}
@@ -1756,13 +1756,13 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
-  * @apiParam {string} scAddr the token address for the certain token
-  * @apiParam {string} name the name of the specific contract parameter
-  * @apiParam {string} abi the abi of the specific contract
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN" or "ETH".
+  * @apiParam {string} scAddr The token address for the certain token.
+  * @apiParam {string} name The name of the specific contract parameter.
+  * @apiParam {string} abi The abi of the specific contract.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getScVar","params":{"chainType": "WAN", "scAddr": "0x55ba61f4da3166487a804bccde7ee4015f609f45", "name": "addr", "abi": [/The Abi of the contracts/]},"id":1}
@@ -1814,14 +1814,14 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
-  * @apiParam {string} scAddr the token address for the certain token
-  * @apiParam {string} name the name of the specific contract public map
-  * @apiParam {string} key the key of parameter of the specific contract public map
-  * @apiParam {string} abi the abi of the specific contract
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN" or "ETH".
+  * @apiParam {string} scAddr The token address for the certain token.
+  * @apiParam {string} name The name of the specific contract public map.
+  * @apiParam {string} key The key of parameter of the specific contract public map.
+  * @apiParam {string} abi The abi of the specific contract.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getScMap","params":{"chainType": "WAN", "scAddr": "0x55ba61f4da3166487a804bccde7ee4015f609f45", "name": "mapAddr", "key": "", "abi": [/The Abi of the contracts/]},"id":1}
@@ -1870,14 +1870,14 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be WAN or ETH
-  * @apiParam {string} scAddr the token address for the certain token
-  * @apiParam {string} name the name of the specific contract public function
-  * @apiParam {array} args the parameters array a of the specific contract public function
-  * @apiParam {string} abi the abi of the specific contract
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "WAN" or "ETH".
+  * @apiParam {string} scAddr The token address for the certain token.
+  * @apiParam {string} name The name of the specific contract public function.
+  * @apiParam {array} args The parameters array a of the specific contract public function.
+  * @apiParam {string} abi The abi of the specific contract.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"callScFunc","params":{"chainType": "WAN", "scAddr": "0x55ba61f4da3166487a804bccde7ee4015f609f45", "name": "getPriAddress", "args": [], "abi": [/The Abi of the contracts/]},"id":1}
@@ -1927,11 +1927,11 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiIgnore Comment out this function
-  * @apiParam {string} chainType the chain name that you want to search, should be BTC
-  * @apiParam {string} hashX the certain hashX that you want to search
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "BTC".
+  * @apiParam {string} hashX The certain hashX that you want to search.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getP2shxByHashx","params":{"chainType":"BTC","hashx":"d2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da"},"id":1}
@@ -1977,15 +1977,15 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY importAddress
   * @apiVersion 1.0.0
-  * @apiDescription Send a 'import address' command to btc.
+  * @apiDescription Send a <code>'import address'</code> command to btc.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be BTC
-  * @apiParam {string} address the BTC account address you want to import to the node to scan transactions
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "BTC".
+  * @apiParam {string} address The BTC account address you want to import to the node to scan transactions.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"importAddress","params":{"chainType":"BTC","address":"mmmmmsdfasdjflaksdfasdf"},"id":1}
@@ -2030,14 +2030,14 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getRegErc20Tokens
   * @apiVersion 1.0.0
-  * @apiDescription Get the detail info of registered contract for Erc20_crosschain, like address, ratio, etc, on certain chain.
+  * @apiDescription Get the information of ERC20 tokens which are supported for cross-chain ability.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} crossChain the cross_chain name that you want to search, should be "ETH"
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} crossChain The cross_chain name that you want to search, should be "ETH".
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getRegErc20Tokens","params":{"crossChain":"ETH"},"id":1}
@@ -2106,17 +2106,17 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getErc20Allowance
   * @apiVersion 1.0.0
-  * @apiDescription Get the erc20 allowance for one specific account on one contract for one specific spender account on certain chain.
+  * @apiDescription Get the ERC20 allowance for one specific account on one contract for one specific spender account on certain chain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be "ETH"
-  * @apiParam {string} tokenScAddr the token address for the certain token
-  * @apiParam {string} ownerAddr the owner address on the certain contract
-  * @apiParam {string} spenderAddr the spender address on the certain contract
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "ETH".
+  * @apiParam {string} tokenScAddr The token address for the certain token.
+  * @apiParam {string} ownerAddr The owner address on the certain contract.
+  * @apiParam {string} spenderAddr The spender address on the certain contract.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getErc20Allowance","params":{"chainType":"ETH", "tokenScAddr":"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a", "ownerAddr":"0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8", "spenderAddr":"0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1"},"id":1}
@@ -2165,11 +2165,11 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be "ETH"
-  * @apiParam {string} tokenScAddr the token address for the certain token
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "ETH".
+  * @apiParam {string} tokenScAddr The token address for the certain token.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getErc20Info","params":{"chainType":"ETH", "tokenScAddr":"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a"},"id":1}
@@ -2220,11 +2220,11 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType the chain name that you want to search, should be "ETH"
-  * @apiParam {array} tokenScAddrArray the token address array for the certain token that you want to find
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} chainType The chain name that you want to search, should be "ETH".
+  * @apiParam {array} tokenScAddrArray The token address array for the certain token that you want to find.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getMultiErc20Info","params":{"tokenScAddrArray":["0xc5bc855056d99ef4bda0a4ae937065315e2ae11a","0x7017500899433272b4088afe34c04d742d0ce7df"],"chainType":"ETH"},"id":1}
@@ -2278,15 +2278,15 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getToken2WanRatio
   * @apiVersion 1.0.0
-  * @apiDescription Get the token ratio to wan for specific erc20 token,in 10000.
+  * @apiDescription ERC20 token exchange ratio,such as 1 ERC20 to 880 WANs, the precision is 10000, the ratio is 880*precision = 880,0000. The ratio would be changed accoring to the market value ratio periodically.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} crossChain the cross_chain name that you want to search, should be "ETH"
-  * @apiParam {string} tokenScAddr the token address for the certain token
-  * @apiParam {function} [callback] optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - if an error occurred
-  * <br>&nbsp;&nbsp;<code>result</code> - which is the saved result
+  * @apiParam {string} crossChain The cross_chain name that you want to search, should be "ETH".
+  * @apiParam {string} tokenScAddr The token address for the certain token.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getToken2WanRatio","params":{"crossChain":"ETH", "tokenScAddr":"0x00f58d6d585f84b2d7267940cede30ce2fe6eae8"},"id":1}
