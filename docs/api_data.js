@@ -15,21 +15,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN or ETH</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "address",
-            "description": "<p>the account's address that you want to find</p>"
+            "description": "<p>The account's address that you want to find.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -81,21 +81,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN or ETH</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "array",
             "optional": false,
             "field": "addressArray",
-            "description": "<p>the account's address array that you want to find</p>"
+            "description": "<p>The account's address array that you want to find.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -147,21 +147,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN or ETH</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "address",
-            "description": "<p>the account's address that you want to find</p>"
+            "description": "<p>The account's address that you want to find.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -213,21 +213,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN or ETH</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "address",
-            "description": "<p>the account's address that you want to find</p>"
+            "description": "<p>The account's address that you want to find.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -279,21 +279,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "blockHash",
-            "description": "<p>the blockHash you want to search</p>"
+            "description": "<p>The blockHash you want to search.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -345,21 +345,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "number",
             "optional": false,
             "field": "blockNumber",
-            "description": "<p>the blockNumber you want to search</p>"
+            "description": "<p>The blockNumber you want to search.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -411,14 +411,14 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN or BTC</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;BTC&quot;</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -470,21 +470,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "blockHashOrBlockNumber",
-            "description": "<p>the blockHash or the blockNumber you want to search</p>"
+            "description": "<p>The blockHash or the blockNumber you want to search.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -536,42 +536,42 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN or ETH</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "scAddr",
-            "description": "<p>the token address for the certain token</p>"
+            "description": "<p>The token address for the certain token.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "name",
-            "description": "<p>the name of the specific contract public function</p>"
+            "description": "<p>The name of the specific contract public function.</p>"
           },
           {
             "group": "Parameter",
             "type": "array",
             "optional": false,
             "field": "args",
-            "description": "<p>the parameters array a of the specific contract public function</p>"
+            "description": "<p>The parameters array a of the specific contract public function.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "abi",
-            "description": "<p>the abi of the specific contract</p>"
+            "description": "<p>The abi of the specific contract.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -623,42 +623,42 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN or ETH</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "scAddr",
-            "description": "<p>the token address for the certain token</p>"
+            "description": "<p>The token address for the certain token.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "name",
-            "description": "<p>the name of the specific contract public map</p>"
+            "description": "<p>The name of the specific contract public map.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "key",
-            "description": "<p>the key of parameter of the specific contract public map</p>"
+            "description": "<p>The key of parameter of the specific contract public map.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "abi",
-            "description": "<p>the abi of the specific contract</p>"
+            "description": "<p>The abi of the specific contract.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -701,7 +701,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getScOwner",
     "version": "1.0.0",
-    "description": "<p>Get the own of the specific contract on certain chain <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get the own of the specific contract on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -710,21 +710,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chainType name that you want to search, should be WAN or ETH</p>"
+            "description": "<p>The chainType name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "scAddr",
-            "description": "<p>the token address for the certain token</p>"
+            "description": "<p>The token address for the certain token.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -776,35 +776,35 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN or ETH</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "scAddr",
-            "description": "<p>the token address for the certain token</p>"
+            "description": "<p>The token address for the certain token.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "name",
-            "description": "<p>the name of the specific contract parameter</p>"
+            "description": "<p>The name of the specific contract parameter.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "abi",
-            "description": "<p>the abi of the specific contract</p>"
+            "description": "<p>The abi of the specific contract.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -852,7 +852,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getCoin2WanRatio",
     "version": "1.0.0",
-    "description": "<p>Get the native coin ratio to wan for specific chain,in 10000 <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Coin exchange ratio,such as 1 ETH to 880 WANs in ICO period, the precision is 10000, the ratio is 880*precision = 880,0000. The ratio would be changed according to the market value ratio periodically. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -861,14 +861,14 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "crossChain",
-            "description": "<p>the cross_chain native coin name that you want to search</p>"
+            "description": "<p>The cross_chain native coin name that you want to search.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -911,7 +911,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getErc20Allowance",
     "version": "1.0.0",
-    "description": "<p>Get the erc20 allowance for one specific account on one contract for one specific spender account on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get the ERC20 allowance for one specific account on one contract for one specific spender account on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -920,35 +920,35 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be &quot;ETH&quot;</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "tokenScAddr",
-            "description": "<p>the token address for the certain token</p>"
+            "description": "<p>The token address for the certain token.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "ownerAddr",
-            "description": "<p>the owner address on the certain contract</p>"
+            "description": "<p>The owner address on the certain contract.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "spenderAddr",
-            "description": "<p>the spender address on the certain contract</p>"
+            "description": "<p>The spender address on the certain contract.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -1000,21 +1000,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be &quot;ETH&quot;</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "tokenScAddr",
-            "description": "<p>the token address for the certain token</p>"
+            "description": "<p>The token address for the certain token.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -1057,7 +1057,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getErc20StoremanGroups",
     "version": "1.0.0",
-    "description": "<p>Get the detail cross_chain storemanGroup info for one specific erc20 contract, like the quota, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get the detail cross_chain storemanGroup info for one specific ERC20 contract, like the quota, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1066,21 +1066,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "crossChain",
-            "description": "<p>the cross_chain name that you want to search, should be &quot;ETH&quot;</p>"
+            "description": "<p>The cross_chain name that you want to search, should be &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "tokenScAddr",
-            "description": "<p>the token address for the certain token</p>"
+            "description": "<p>The token address for the certain token.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -1132,21 +1132,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be &quot;ETH&quot;</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "array",
             "optional": false,
             "field": "tokenScAddrArray",
-            "description": "<p>the token address array for the certain token that you want to find</p>"
+            "description": "<p>The token address array for the certain token that you want to find.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -1189,7 +1189,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getRegErc20Tokens",
     "version": "1.0.0",
-    "description": "<p>Get the detail info of registered contract for Erc20_crosschain, like address, ratio, etc, on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get the information of ERC20 tokens which are supported for cross-chain ability. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1198,14 +1198,14 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "crossChain",
-            "description": "<p>the cross_chain name that you want to search, should be &quot;ETH&quot;</p>"
+            "description": "<p>The cross_chain name that you want to search, should be &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -1248,7 +1248,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanGroups",
     "version": "1.0.0",
-    "description": "<p>Get the detail cross_chain storemanGroup info for one crossChain native coin, like the quota, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get the detail cross-chain storemanGroup info for one cross-chain native coin, like the quota, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1257,14 +1257,14 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "crossChain",
-            "description": "<p>the cross_chain name that you want to search</p>"
+            "description": "<p>The cross_chain name that you want to search.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -1307,7 +1307,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getToken2WanRatio",
     "version": "1.0.0",
-    "description": "<p>Get the token ratio to wan for specific erc20 token,in 10000. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>ERC20 token exchange ratio,such as 1 ERC20 to 880 WANs, the precision is 10000, the ratio is 880*precision = 880,0000. The ratio would be changed accoring to the market value ratio periodically. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1316,21 +1316,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "crossChain",
-            "description": "<p>the cross_chain name that you want to search, should be &quot;ETH&quot;</p>"
+            "description": "<p>The cross_chain name that you want to search, should be &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "tokenScAddr",
-            "description": "<p>the token address for the certain token</p>"
+            "description": "<p>The token address for the certain token.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -1382,35 +1382,35 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chainType name that you want to search, should be BTC</p>"
+            "description": "<p>The chainType name that you want to search, should be &quot;BTC&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "number",
             "optional": false,
             "field": "minconf",
-            "description": "<p>the min confirm number of BTC utxo, usually 0</p>"
+            "description": "<p>The min confirm number of BTC utxo, usually 0.</p>"
           },
           {
             "group": "Parameter",
             "type": "number",
             "optional": false,
             "field": "maxconf",
-            "description": "<p>the max confirm number of BTC utxo, usually the confirmed blockes you want to wait for the utxo</p>"
+            "description": "<p>The max confirm number of BTC utxo, usually the confirmed blockes you want to wait for the utxo.</p>"
           },
           {
             "group": "Parameter",
             "type": "array",
             "optional": false,
             "field": "address",
-            "description": "<p>the address array that you want to search</p>"
+            "description": "<p>The address array that you want to search.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -1453,7 +1453,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "importAddress",
     "version": "1.0.0",
-    "description": "<p>Send a 'import address' command to btc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Send a <code>'import address'</code> command to btc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1462,21 +1462,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be BTC</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;BTC&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "address",
-            "description": "<p>the BTC account address you want to import to the node to scan transactions</p>"
+            "description": "<p>The BTC account address you want to import to the node to scan transactions.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -1519,7 +1519,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getScEvent",
     "version": "1.0.0",
-    "description": "<p>Get smart contract event log via topics <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get smart contract event log via topics. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1528,28 +1528,28 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chainType name that you want to search, should be WAN</p>"
+            "description": "<p>The chainType name that you want to search, should be &quot;WAN&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "address",
-            "description": "<p>the contract address</p>"
+            "description": "<p>The contract address.</p>"
           },
           {
             "group": "Parameter",
             "type": "array",
             "optional": false,
             "field": "topics",
-            "description": "<p>of Strings - An array of values which must each appear in the log entries. The order is important, if you want to leave topics out use null, e.g. [null, '0x00...'].</p>"
+            "description": "<p>A string array of values which must each appear in the log entries. The order is important, if you want to leave topics out use null, e.g. [null, '0x00...'].</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -1601,28 +1601,28 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chainType name that you want to search, should be WAN or ETH</p>"
+            "description": "<p>The chainType name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "address",
-            "description": "<p>the contract address</p>"
+            "description": "<p>The contract address.</p>"
           },
           {
             "group": "Parameter",
             "type": "array",
             "optional": false,
             "field": "topics",
-            "description": "<p>array of values which must each appear in the log entries. The order is important, if you want to leave topics out use null, e.g. [null, '0x00...']</p>"
+            "description": "<p>Array of values which must each appear in the log entries. The order is important, if you want to leave topics out use null, e.g. [null, '0x00...'].</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -1674,14 +1674,14 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -1733,21 +1733,21 @@ define({ "api": [
             "type": "string",
             "optional": true,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN or ETH, default WAN</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;, default &quot;WAN&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "tokenScAddr",
-            "description": "<p>the token address for the certain token</p>"
+            "description": "<p>The token address for the certain token.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -1799,14 +1799,14 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "crossChain",
-            "description": "<p>the cross_chain name that you want to search, should be ETH</p>"
+            "description": "<p>The cross_chain name that you want to search, should be &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -1858,28 +1858,28 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN or ETH, default WAN</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;, default &quot;WAN&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "array",
             "optional": false,
             "field": "addressArray",
-            "description": "<p>the account's address array that you want to find</p>"
+            "description": "<p>The account's address array that you want to find.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "tokenScAddr",
-            "description": "<p>the token address for the certain token; if set chainType 'WAN', it should be the token address for WETH or WBTC</p>"
+            "description": "<p>The token address for the certain token; if set chainType 'WAN', it should be the token address for &quot;WETH&quot; or &quot;WBTC&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -1931,28 +1931,28 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN or ETH, default WAN</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;, default &quot;WAN&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "address",
-            "description": "<p>the account's address that you want to find</p>"
+            "description": "<p>The account's address that you want to find.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "tokenScAddr",
-            "description": "<p>the token address for the certain token; if set chainType 'WAN', it should be the token address for WETH or WBTC</p>"
+            "description": "<p>The token address for the certain token; if set chainType 'WAN', it should be the token address for &quot;WETH&quot; or &quot;WBTC&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -2004,21 +2004,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "address",
-            "description": "<p>the account's address that you want to search</p>"
+            "description": "<p>The account's address that you want to search.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -2070,35 +2070,35 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "address",
-            "description": "<p>the account's address that you want to search</p>"
+            "description": "<p>The account's address that you want to search.</p>"
           },
           {
             "group": "Parameter",
             "type": "number",
             "optional": false,
             "field": "startBlockNo",
-            "description": "<p>the startBlockNo that you want to search from</p>"
+            "description": "<p>The startBlockNo that you want to search from.</p>"
           },
           {
             "group": "Parameter",
             "type": "number",
             "optional": false,
             "field": "endBlockNo",
-            "description": "<p>the endBlockNo that you want to search to</p>"
+            "description": "<p>The endBlockNo that you want to search to.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -2155,21 +2155,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "blockHashOrBlockNumber",
-            "description": "<p>the blockHash or the blockNumber you want to search</p>"
+            "description": "<p>The blockHash or the blockNumber you want to search.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -2221,28 +2221,28 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN or ETH</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "number",
             "optional": false,
             "field": "waitBlocks",
-            "description": "<p>the confirm-block-number you want to set</p>"
+            "description": "<p>The confirm-block-number you want to set.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "txHash",
-            "description": "<p>the txHash you want to search</p>"
+            "description": "<p>The txHash you want to search.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -2294,21 +2294,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN or ETH</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "txHash",
-            "description": "<p>the txHash you want to search</p>"
+            "description": "<p>The txHash you want to search.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -2360,14 +2360,14 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN or BTC</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;BTC&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "txHash",
-            "description": "<p>the txHash you want to search</p>"
+            "description": "<p>The txHash you want to search.</p>"
           },
           {
             "group": "Parameter",
@@ -2381,7 +2381,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
@@ -2433,21 +2433,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>the chain name that you want to search, should be WAN or ETH or BTC</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot; or &quot;BTC&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "signedTx",
-            "description": "<p>the signedTx you want to send</p>"
+            "description": "<p>The signedTx you want to send.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>optional, the callback will receive two parameters: <br>  <code>err</code> - if an error occurred <br>  <code>result</code> - which is the saved result</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
           }
         ]
       },
