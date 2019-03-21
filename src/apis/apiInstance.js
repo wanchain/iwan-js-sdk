@@ -239,7 +239,7 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} crossChain The cross_chain native coin name that you want to search.
+  * @apiParam {string} crossChain The cross-chain native coin name that you want to search.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
@@ -287,13 +287,13 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getUTXO
   * @apiVersion 1.0.0
-  * @apiDescription Get the detail btc utxo info for BTC.
+  * @apiDescription Get the detail btc UTXO info for BTC.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType The chainType name that you want to search, should be "BTC".
-  * @apiParam {number} minconf The min confirm number of BTC utxo, usually 0.
-  * @apiParam {number} maxconf The max confirm number of BTC utxo, usually the confirmed blockes you want to wait for the utxo.
+  * @apiParam {number} minconf The min confirm number of BTC UTXO, usually 0.
+  * @apiParam {number} maxconf The max confirm number of BTC UTXO, usually the confirmed blocks you want to wait for the UTXO.
   * @apiParam {array} address The address array that you want to search.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
@@ -359,7 +359,7 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} crossChain The cross_chain name that you want to search.
+  * @apiParam {string} crossChain The cross-chain name that you want to search.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
@@ -418,11 +418,11 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getErc20StoremanGroups
   * @apiVersion 1.0.0
-  * @apiDescription Get the detail cross_chain storemanGroup info for one specific ERC20 contract, like the quota, etc.
+  * @apiDescription Get the detail cross-chain storemanGroup info for one specific ERC20 contract, like the quota, etc.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} crossChain The cross_chain name that you want to search, should be "ETH".
+  * @apiParam {string} crossChain The cross-chain name that you want to search, should be "ETH".
   * @apiParam {string} tokenScAddr The token address for the certain token.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
@@ -487,7 +487,7 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} crossChain The cross_chain name that you want to search, should be "ETH".
+  * @apiParam {string} crossChain The cross-chain name that you want to search, should be "ETH".
   * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
@@ -1305,7 +1305,7 @@ class ApiInstance extends WsInstance {
   * @apiGroup Blocks
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getBlockTransactionCount
   * @apiVersion 1.0.0
-  * @apiDescription Get the number of transaction in a given block by blockNumber or blockhash on certain chain.
+  * @apiDescription Get the number of transaction in a given block by block number or block hash on certain chain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
@@ -1512,7 +1512,7 @@ class ApiInstance extends WsInstance {
   * @apiGroup Transactions
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTransByBlock
   * @apiVersion 1.0.0
-  * @apiDescription Get transaction information in a given block by blockNumber or blockhash on certain chain.
+  * @apiDescription Get transaction information in a given block by block number or block hash on certain chain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
@@ -2034,7 +2034,7 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} crossChain The cross_chain name that you want to search, should be "ETH".
+  * @apiParam {string} crossChain The cross-chain name that you want to search, should be "ETH".
   * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
@@ -2216,7 +2216,7 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getMultiErc20Info
   * @apiVersion 1.0.0
-  * @apiDescription Get the infos of muti ERC20 contracts, like symbol and decimals, on certain chain in a single call.
+  * @apiDescription Get the information of multiple ERC20 tokens.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
@@ -2282,7 +2282,7 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} crossChain The cross_chain name that you want to search, should be "ETH".
+  * @apiParam {string} crossChain The cross-chain name that you want to search, should be "ETH".
   * @apiParam {string} tokenScAddr The token address for the certain token.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
