@@ -13,7 +13,7 @@ define({
   "generator": {
     "name": "iWan",
     "time": "2019-03-18T10:55:05.475Z",
-    "url": "https://api.wanchain.org",
+    "url": "https://iwan.wanchian.org",
     "version": "1.0.0"
   }
 });
