@@ -752,7 +752,7 @@ class ApiInstance extends WsInstance {
   /**
   *
   * @apiName getTokenSupply
-  * @apiGroup Status
+  * @apiGroup Tokens
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenSupply
   * @apiVersion 1.0.0
   * @apiDescription Get total amount of certain token on Wanchain.

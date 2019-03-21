@@ -264,6 +264,152 @@ define({ "api": [
     "groupTitle": "Accounts"
   },
   {
+    "name": "getUTXO",
+    "group": "Accounts",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getUTXO",
+    "version": "1.0.0",
+    "description": "<p>Get the detail BTC UTXO info for BTC. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chainType name that you want to search, should be &quot;BTC&quot;.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "minconf",
+            "description": "<p>The min confirm number of BTC UTXO, usually 0.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "maxconf",
+            "description": "<p>The max confirm number of BTC UTXO, usually the confirmed blocks you want to wait for the UTXO.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "array",
+            "optional": false,
+            "field": "address",
+            "description": "<p>The address array that you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getUTXO\",\"params\":{\"chainType\":\"BTC\", \"minconf\":0, \"maxconf\":100, \"address\":[\"n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R\"]},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example usage callback:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getUTXO('BTC', 0, 100, [\"n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example usage promise:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getUTXO('BTC', 0, 100, [\"n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R\"]);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": " \"result\": [{\n     \"txid\": \"302588f81dc5ad7972d3affc781adc6eb326227a6feda53a990e9b98b715edcc\",\n     \"vout\": 0,\n     \"address\": \"n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R\",\n     \"account\": \"\",\n     \"scriptPubKey\": \"76a914ec8626d9aa394317659a45cfcbd1f0762126c5e888ac\",\n     \"amount\": 0.079,\n     \"confirmations\": 16,\n     \"spendable\": false,\n     \"solvable\": false,\n     \"safe\": true,\n     \"value\": 0.079\n}]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Accounts"
+  },
+  {
+    "name": "importAddress",
+    "group": "Accounts",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "importAddress",
+    "version": "1.0.0",
+    "description": "<p>Send a <code>'import address'</code> command to BTC. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain name that you want to search, should be &quot;BTC&quot;.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "address",
+            "description": "<p>The BTC account address you want to import to the node to scan transactions.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"importAddress\",\"params\":{\"chainType\":\"BTC\",\"address\":\"mmmmmsdfasdjflaksdfasdf\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example usage callback:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.importAddress(\"BTC\", \"mmmmmsdfasdjflaksdfasdf\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example usage promise:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.importAddress(\"BTC\", \"mmmmmsdfasdjflaksdfasdf\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "\"result\": \"success\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Accounts"
+  },
+  {
     "name": "getBlockByHash",
     "group": "Blocks",
     "type": "CONNECT",
@@ -905,152 +1051,6 @@ define({ "api": [
     "groupTitle": "CrossChain"
   },
   {
-    "name": "getErc20Allowance",
-    "group": "CrossChain",
-    "type": "CONNECT",
-    "url": "/ws/v3/YOUR-API-KEY",
-    "title": "getErc20Allowance",
-    "version": "1.0.0",
-    "description": "<p>Get the ERC20 allowance for one specific account on one contract for one specific spender account on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;ETH&quot;.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "tokenScAddr",
-            "description": "<p>The token address for the certain token.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "ownerAddr",
-            "description": "<p>The owner address on the certain contract.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "spenderAddr",
-            "description": "<p>The spender address on the certain contract.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "function",
-            "optional": true,
-            "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "JSON-RPC over websocket",
-          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getErc20Allowance\",\"params\":{\"chainType\":\"ETH\", \"tokenScAddr\":\"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\", \"ownerAddr\":\"0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8\", \"spenderAddr\":\"0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1\"},\"id\":1}",
-          "type": "string"
-        }
-      ]
-    },
-    "examples": [
-      {
-        "title": "Example usage callback:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getErc20Allowance(\"ETH\", \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\", \"0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8\", \"0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
-        "type": "nodejs"
-      },
-      {
-        "title": "Example usage promise:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getErc20Allowance(\"ETH\", \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\", \"0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8\", \"0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1\");\nconsole.log(\"Result is \", result);\napiTest.close();",
-        "type": "nodejs"
-      }
-    ],
-    "success": {
-      "examples": [
-        {
-          "title": "Successful Response",
-          "content": "\"result\": \"999999999999980000000000000\"",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/apis/apiInstance.js",
-    "groupTitle": "CrossChain"
-  },
-  {
-    "name": "getErc20Info",
-    "group": "CrossChain",
-    "type": "CONNECT",
-    "url": "/ws/v3/YOUR-API-KEY",
-    "title": "getErc20Info",
-    "version": "1.0.0",
-    "description": "<p>Get the info of ERC20 contract, like symbol and decimals, on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;ETH&quot;.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "tokenScAddr",
-            "description": "<p>The token address for the certain token.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "function",
-            "optional": true,
-            "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "JSON-RPC over websocket",
-          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getErc20Info\",\"params\":{\"chainType\":\"ETH\", \"tokenScAddr\":\"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\"},\"id\":1}",
-          "type": "string"
-        }
-      ]
-    },
-    "examples": [
-      {
-        "title": "Example usage callback:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getErc20Info(\"ETH\", \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
-        "type": "nodejs"
-      },
-      {
-        "title": "Example usage promise:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getErc20Info(\"ETH\", \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\");\nconsole.log(\"Result is \", result);\napiTest.close();",
-        "type": "nodejs"
-      }
-    ],
-    "success": {
-      "examples": [
-        {
-          "title": "Successful Response",
-          "content": "\"result\": {\n  \"symbol\": \"WCT\",\n  \"decimals\": \"18\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/apis/apiInstance.js",
-    "groupTitle": "CrossChain"
-  },
-  {
     "name": "getErc20StoremanGroups",
     "group": "CrossChain",
     "type": "CONNECT",
@@ -1109,72 +1109,6 @@ define({ "api": [
         {
           "title": "Successful Response",
           "content": "\"result\": [{\n    \"tokenOrigAddr\": \"0xdbf193627ee704d38495c2f5eb3afc3512eafa4c\",\n    \"smgWanAddr\": \"0x765854f97f7a3b6762240c329331a870b65edd96\",\n    \"smgOrigAddr\": \"0x38b6c9a1575c90ceabbfe31b204b6b3a3ce4b3d9\",\n    \"wanDeposit\": \"5000000000000000000000\",\n    \"quota\": \"10000000000000000000000\",\n    \"txFeeRatio\": \"1\",\n    \"inboundQuota\": \"9999500000000000000000\",\n    \"outboundQuota\": \"500000000000000000\",\n    \"receivable\": \"0\",\n    \"payable\": \"0\",\n    \"debt\": \"500000000000000000\"\n  }]",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/apis/apiInstance.js",
-    "groupTitle": "CrossChain"
-  },
-  {
-    "name": "getMultiErc20Info",
-    "group": "CrossChain",
-    "type": "CONNECT",
-    "url": "/ws/v3/YOUR-API-KEY",
-    "title": "getMultiErc20Info",
-    "version": "1.0.0",
-    "description": "<p>Get the information of multiple ERC20 tokens. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;ETH&quot;.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "array",
-            "optional": false,
-            "field": "tokenScAddrArray",
-            "description": "<p>The token address array for the certain token that you want to find.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "function",
-            "optional": true,
-            "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "JSON-RPC over websocket",
-          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getMultiErc20Info\",\"params\":{\"tokenScAddrArray\":[\"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\",\"0x7017500899433272b4088afe34c04d742d0ce7df\"],\"chainType\":\"ETH\"},\"id\":1}",
-          "type": "string"
-        }
-      ]
-    },
-    "examples": [
-      {
-        "title": "Example usage callback:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getMultiErc20Info(\"ETH\", [\"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\",\"0x7017500899433272b4088afe34c04d742d0ce7df\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
-        "type": "nodejs"
-      },
-      {
-        "title": "Example usage promise:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getMultiErc20Info(\"ETH\", [\"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\",\"0x7017500899433272b4088afe34c04d742d0ce7df\"]);\nconsole.log(\"Result is \", result);\napiTest.close();",
-        "type": "nodejs"
-      }
-    ],
-    "success": {
-      "examples": [
-        {
-          "title": "Successful Response",
-          "content": "\"result\": [{\n    \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\": {\n      \"symbol\": \"WCT\",\n      \"decimals\": \"18\"\n    },\n    \"0x7017500899433272b4088afe34c04d742d0ce7df\": {\n      \"symbol\": \"WCT_One\",\n      \"decimals\": \"18\"\n    }\n  }]",
           "type": "json"
         }
       ]
@@ -1367,154 +1301,8 @@ define({ "api": [
     "groupTitle": "CrossChain"
   },
   {
-    "name": "getUTXO",
-    "group": "CrossChain",
-    "type": "CONNECT",
-    "url": "/ws/v3/YOUR-API-KEY",
-    "title": "getUTXO",
-    "version": "1.0.0",
-    "description": "<p>Get the detail btc UTXO info for BTC. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "chainType",
-            "description": "<p>The chainType name that you want to search, should be &quot;BTC&quot;.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": false,
-            "field": "minconf",
-            "description": "<p>The min confirm number of BTC UTXO, usually 0.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": false,
-            "field": "maxconf",
-            "description": "<p>The max confirm number of BTC UTXO, usually the confirmed blocks you want to wait for the UTXO.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "array",
-            "optional": false,
-            "field": "address",
-            "description": "<p>The address array that you want to search.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "function",
-            "optional": true,
-            "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "JSON-RPC over websocket",
-          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getUTXO\",\"params\":{\"chainType\":\"BTC\", \"minconf\":0, \"maxconf\":100, \"address\":[\"n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R\"]},\"id\":1}",
-          "type": "string"
-        }
-      ]
-    },
-    "examples": [
-      {
-        "title": "Example usage callback:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getUTXO('BTC', 0, 100, [\"n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
-        "type": "nodejs"
-      },
-      {
-        "title": "Example usage promise:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getUTXO('BTC', 0, 100, [\"n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R\"]);\nconsole.log(\"Result is \", result);\napiTest.close();",
-        "type": "nodejs"
-      }
-    ],
-    "success": {
-      "examples": [
-        {
-          "title": "Successful Response",
-          "content": " \"result\": [{\n     \"txid\": \"302588f81dc5ad7972d3affc781adc6eb326227a6feda53a990e9b98b715edcc\",\n     \"vout\": 0,\n     \"address\": \"n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R\",\n     \"account\": \"\",\n     \"scriptPubKey\": \"76a914ec8626d9aa394317659a45cfcbd1f0762126c5e888ac\",\n     \"amount\": 0.079,\n     \"confirmations\": 16,\n     \"spendable\": false,\n     \"solvable\": false,\n     \"safe\": true,\n     \"value\": 0.079\n}]",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/apis/apiInstance.js",
-    "groupTitle": "CrossChain"
-  },
-  {
-    "name": "importAddress",
-    "group": "CrossChain",
-    "type": "CONNECT",
-    "url": "/ws/v3/YOUR-API-KEY",
-    "title": "importAddress",
-    "version": "1.0.0",
-    "description": "<p>Send a <code>'import address'</code> command to btc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;BTC&quot;.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "address",
-            "description": "<p>The BTC account address you want to import to the node to scan transactions.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "function",
-            "optional": true,
-            "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "JSON-RPC over websocket",
-          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"importAddress\",\"params\":{\"chainType\":\"BTC\",\"address\":\"mmmmmsdfasdjflaksdfasdf\"},\"id\":1}",
-          "type": "string"
-        }
-      ]
-    },
-    "examples": [
-      {
-        "title": "Example usage callback:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.importAddress(\"BTC\", \"mmmmmsdfasdjflaksdfasdf\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
-        "type": "nodejs"
-      },
-      {
-        "title": "Example usage promise:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.importAddress(\"BTC\", \"mmmmmsdfasdjflaksdfasdf\");\nconsole.log(\"Result is \", result);\napiTest.close();",
-        "type": "nodejs"
-      }
-    ],
-    "success": {
-      "examples": [
-        {
-          "title": "Successful Response",
-          "content": "\"result\": \"success\"",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/apis/apiInstance.js",
-    "groupTitle": "CrossChain"
-  },
-  {
     "name": "getScEvent",
-    "group": "EventLogs",
+    "group": "Events",
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getScEvent",
@@ -1583,14 +1371,14 @@ define({ "api": [
       ]
     },
     "filename": "src/apis/apiInstance.js",
-    "groupTitle": "EventLogs"
+    "groupTitle": "Events"
   },
   {
-    "name": "monitorLog",
-    "group": "EventLogs",
+    "name": "monitorEvent",
+    "group": "Events",
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
-    "title": "monitorLog",
+    "title": "monitorEvent",
     "version": "1.0.0",
     "description": "<p>Subscribe a smart contract event monitor. The server will push the event to subscriber when event comes. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
@@ -1629,7 +1417,7 @@ define({ "api": [
       "examples": [
         {
           "title": "JSON-RPC over websocket",
-          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"monitorLog\",\"params\":{\"chainType\":\"WAN\", \"address\": \"0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26\", \"topics\": [\"0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7\"]},\"id\":1}",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"monitorEvent\",\"params\":{\"chainType\":\"WAN\", \"address\": \"0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26\", \"topics\": [\"0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7\"]},\"id\":1}",
           "type": "string"
         }
       ]
@@ -1637,12 +1425,12 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage callback:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.monitorLog('WAN', '0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26', [\"0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.monitorEvent('WAN', '0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26', [\"0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
         "title": "Example usage promise:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \nlet result = await apiTest.monitorLog('WAN', '0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26', [\"0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7\"]);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \nlet result = await apiTest.monitorEvent('WAN', '0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26', [\"0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7\"]);\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
     ],
@@ -1656,7 +1444,7 @@ define({ "api": [
       ]
     },
     "filename": "src/apis/apiInstance.js",
-    "groupTitle": "EventLogs"
+    "groupTitle": "Events"
   },
   {
     "name": "getGasPrice",
@@ -1718,22 +1506,102 @@ define({ "api": [
     "groupTitle": "Status"
   },
   {
-    "name": "getTokenSupply",
-    "group": "Status",
+    "name": "getErc20Allowance",
+    "group": "Tokens",
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
-    "title": "getTokenSupply",
+    "title": "getErc20Allowance",
     "version": "1.0.0",
-    "description": "<p>Get total amount of certain token on Wanchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get the ERC20 allowance for one specific account on one contract for one specific spender account on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;, default &quot;WAN&quot;.</p>"
+            "description": "<p>The chain name that you want to search, should be &quot;ETH&quot;.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "tokenScAddr",
+            "description": "<p>The token address for the certain token.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "ownerAddr",
+            "description": "<p>The owner address on the certain contract.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "spenderAddr",
+            "description": "<p>The spender address on the certain contract.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getErc20Allowance\",\"params\":{\"chainType\":\"ETH\", \"tokenScAddr\":\"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\", \"ownerAddr\":\"0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8\", \"spenderAddr\":\"0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example usage callback:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getErc20Allowance(\"ETH\", \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\", \"0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8\", \"0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example usage promise:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getErc20Allowance(\"ETH\", \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\", \"0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8\", \"0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "\"result\": \"999999999999980000000000000\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Tokens"
+  },
+  {
+    "name": "getErc20Info",
+    "group": "Tokens",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getErc20Info",
+    "version": "1.0.0",
+    "description": "<p>Get the info of ERC20 contract, like symbol and decimals, on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain name that you want to search, should be &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
@@ -1754,7 +1622,7 @@ define({ "api": [
       "examples": [
         {
           "title": "JSON-RPC over websocket",
-          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getTokenSupply\",\"params\":{\"tokenScAddr\" : \"0x63eed4943abaac5f43f657d8eec098ca6d6a546e\"},\"id\":1}\nor\n{\"jsonrpc\":\"2.0\",\"method\":\"getTokenSupply\",\"params\":{\"chainType\":\"WAN\", \"tokenScAddr\" : \"0x63eed4943abaac5f43f657d8eec098ca6d6a546e\"},\"id\":1}",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getErc20Info\",\"params\":{\"chainType\":\"ETH\", \"tokenScAddr\":\"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\"},\"id\":1}",
           "type": "string"
         }
       ]
@@ -1762,12 +1630,12 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage callback:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTokenSupply(\"WAN\", \"0x63eed4943abaac5f43f657d8eec098ca6d6a546e\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getErc20Info(\"ETH\", \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
         "title": "Example usage promise:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getTokenSupply(\"WAN\", \"0x63eed4943abaac5f43f657d8eec098ca6d6a546e\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getErc20Info(\"ETH\", \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
     ],
@@ -1775,17 +1643,83 @@ define({ "api": [
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": \"30000000000000000000000\"",
+          "content": "\"result\": {\n  \"symbol\": \"WCT\",\n  \"decimals\": \"18\"\n}",
           "type": "json"
         }
       ]
     },
     "filename": "src/apis/apiInstance.js",
-    "groupTitle": "Status"
+    "groupTitle": "Tokens"
+  },
+  {
+    "name": "getMultiErc20Info",
+    "group": "Tokens",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getMultiErc20Info",
+    "version": "1.0.0",
+    "description": "<p>Get the information of multiple ERC20 tokens. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain name that you want to search, should be &quot;ETH&quot;.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "array",
+            "optional": false,
+            "field": "tokenScAddrArray",
+            "description": "<p>The token address array for the certain token that you want to find.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getMultiErc20Info\",\"params\":{\"tokenScAddrArray\":[\"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\",\"0x7017500899433272b4088afe34c04d742d0ce7df\"],\"chainType\":\"ETH\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example usage callback:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getMultiErc20Info(\"ETH\", [\"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\",\"0x7017500899433272b4088afe34c04d742d0ce7df\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example usage promise:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getMultiErc20Info(\"ETH\", [\"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\",\"0x7017500899433272b4088afe34c04d742d0ce7df\"]);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "\"result\": [{\n    \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\": {\n      \"symbol\": \"WCT\",\n      \"decimals\": \"18\"\n    },\n    \"0x7017500899433272b4088afe34c04d742d0ce7df\": {\n      \"symbol\": \"WCT_One\",\n      \"decimals\": \"18\"\n    }\n  }]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Tokens"
   },
   {
     "name": "getMultiTokenBalance",
-    "group": "Token",
+    "group": "Tokens",
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getMultiTokenBalance",
@@ -1854,11 +1788,11 @@ define({ "api": [
       ]
     },
     "filename": "src/apis/apiInstance.js",
-    "groupTitle": "Token"
+    "groupTitle": "Tokens"
   },
   {
     "name": "getTokenBalance",
-    "group": "Token",
+    "group": "Tokens",
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTokenBalance",
@@ -1927,7 +1861,73 @@ define({ "api": [
       ]
     },
     "filename": "src/apis/apiInstance.js",
-    "groupTitle": "Token"
+    "groupTitle": "Tokens"
+  },
+  {
+    "name": "getTokenSupply",
+    "group": "Tokens",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getTokenSupply",
+    "version": "1.0.0",
+    "description": "<p>Get total amount of certain token on Wanchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "chainType",
+            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;, default &quot;WAN&quot;.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "tokenScAddr",
+            "description": "<p>The token address for the certain token.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getTokenSupply\",\"params\":{\"tokenScAddr\" : \"0x63eed4943abaac5f43f657d8eec098ca6d6a546e\"},\"id\":1}\nor\n{\"jsonrpc\":\"2.0\",\"method\":\"getTokenSupply\",\"params\":{\"chainType\":\"WAN\", \"tokenScAddr\" : \"0x63eed4943abaac5f43f657d8eec098ca6d6a546e\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example usage callback:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTokenSupply(\"WAN\", \"0x63eed4943abaac5f43f657d8eec098ca6d6a546e\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example usage promise:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getTokenSupply(\"WAN\", \"0x63eed4943abaac5f43f657d8eec098ca6d6a546e\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "\"result\": \"30000000000000000000000\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Tokens"
   },
   {
     "name": "getTransByAddress",
