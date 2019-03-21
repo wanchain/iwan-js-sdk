@@ -41,7 +41,7 @@
     "version": "1.0.0",
     "description": "JavaScript SDK for iWan RPC Server",
     "title": "iWan-js-sdk Custom apiDoc browser title",
-    "url": "wss://api.wanchain.org",
+    "url": "wss://api.wanchain.org:8443",
     "template": {
       "forceLanguage": "en"
     }

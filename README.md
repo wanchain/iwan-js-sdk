@@ -20,11 +20,16 @@ By default the SDK will connect to `api.wanchain.org`
 let apiClient = new iWanClient(YourApiKey, YourSecretKey);
 
 ```
-A different URL can be specified in the `option` object.
+A different URL can be specified in the `option` object which is subject to [iWan](https://iwan.wanchain.org).
 ```bash
+
+//Subject to https://iwan.wanchain.org
 let option = {
-      url:"apitest.wanchain.org",
-    };
+    url:"apitest.wanchain.org",
+    port:8443,
+    flag:"ws",
+    version:"v3"
+};
 apiClient = new iWanClient(YourApiKey, YourSecretKey, option);
 
 ```
