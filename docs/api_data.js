@@ -15,21 +15,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
+            "description": "<p>The chain being querried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "address",
-            "description": "<p>The account's address that you want to find.</p>"
+            "description": "<p>The account being queried.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -43,12 +43,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getBalance('WAN', '0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getBalance('WAN', '0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c');\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -81,21 +81,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
+            "description": "<p>The chain being querried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
             "type": "array",
             "optional": false,
             "field": "addressArray",
-            "description": "<p>The account's address array that you want to find.</p>"
+            "description": "<p>An array of addresses being queried.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -109,12 +109,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getMultiBalances('WAN', [\"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c\",\"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2d\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getMultiBalances('WAN', [\"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c\",\"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2d\"]);\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -147,21 +147,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
+            "description": "<p>The chain being querried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "address",
-            "description": "<p>The account's address that you want to find.</p>"
+            "description": "<p>The account being queried.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -175,12 +175,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getNonce(\"WAN\", \"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getNonce(\"WAN\", \"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -213,21 +213,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
+            "description": "<p>The chain being querried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "address",
-            "description": "<p>The account's address that you want to find.</p>"
+            "description": "<p>The account being queried.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -241,12 +241,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getNonceIncludePending(\"WAN\", \"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getNonceIncludePending(\"WAN\", \"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -307,7 +307,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -321,12 +321,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getUTXO('BTC', 0, 100, [\"n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getUTXO('BTC', 0, 100, [\"n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R\"]);\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -373,7 +373,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -387,12 +387,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.importAddress(\"BTC\", \"mmmmmsdfasdjflaksdfasdf\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.importAddress(\"BTC\", \"mmmmmsdfasdjflaksdfasdf\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -439,7 +439,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -453,12 +453,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getBlockByHash(\"WAN\", \"0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getBlockByHash(\"WAN\", \"0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -505,7 +505,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -519,12 +519,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getBlockByNumber(\"WAN\", \"670731\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getBlockByNumber(\"WAN\", \"670731\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -564,7 +564,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -578,12 +578,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getBlockNumber(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getBlockNumber(\"WAN\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -630,7 +630,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -644,12 +644,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getBlockTransactionCount(\"WAN\", \"0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8\", (err, result) => {\n// apiTest.getBlockTransactionCount(\"WAN\", \"670731\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getBlockTransactionCount(\"WAN\", \"0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8\");\n// let result = await apiTest.getBlockTransactionCount(\"WAN\", \"670731\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -682,14 +682,14 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
+            "description": "<p>The chain being querried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "scAddr",
-            "description": "<p>The token address for the certain token.</p>"
+            "description": "<p>The token contract address for the specified token.</p>"
           },
           {
             "group": "Parameter",
@@ -717,7 +717,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -731,12 +731,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.callScFunc(\"WAN\", \"0x55ba61f4da3166487a804bccde7ee4015f609f45\", \"getPriAddress\", [], [/The Abi of the contracts/]), (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.callScFunc(\"WAN\", \"0x55ba61f4da3166487a804bccde7ee4015f609f45\", \"getPriAddress\", [], [/The Abi of the contracts/]);\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -769,14 +769,14 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
+            "description": "<p>The chain being querried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "scAddr",
-            "description": "<p>The token address for the certain token.</p>"
+            "description": "<p>The token contract address for the specified token.</p>"
           },
           {
             "group": "Parameter",
@@ -804,7 +804,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -818,12 +818,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getScMap(\"WAN\", \"0x55ba61f4da3166487a804bccde7ee4015f609f45\", \"mapAddr\", \"key\", [/The Abi of the contracts/], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getScMap(\"WAN\", \"0x55ba61f4da3166487a804bccde7ee4015f609f45\", \"mapAddr\", \"key\", [/The Abi of the contracts/]);\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -847,7 +847,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getScOwner",
     "version": "1.0.0",
-    "description": "<p>Get the own of the specific contract on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get the owner of the specified contract from the specified chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -856,21 +856,21 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chainType name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
+            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "scAddr",
-            "description": "<p>The token address for the certain token.</p>"
+            "description": "<p>The token contract address for the specified token.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -884,12 +884,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getScOwner('WAN', '0x59adc38f0b3f64fb542b50e3e955e7a8c1eb3e3b', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getScOwner('WAN', '0x59adc38f0b3f64fb542b50e3e955e7a8c1eb3e3b');\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -922,14 +922,14 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
+            "description": "<p>The chain being querried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "scAddr",
-            "description": "<p>The token address for the certain token.</p>"
+            "description": "<p>The token contract address for the specified token.</p>"
           },
           {
             "group": "Parameter",
@@ -950,7 +950,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -969,12 +969,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getScVar(\"WAN\", \"0x55ba61f4da3166487a804bccde7ee4015f609f45\", \"addr\", [/The Abi of the contracts/], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getScVar(\"WAN\", \"0x55ba61f4da3166487a804bccde7ee4015f609f45\", \"addr\", [/The Abi of the contracts/]);\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -1014,7 +1014,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -1028,12 +1028,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getCoin2WanRatio('ETH', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getCoin2WanRatio('ETH');\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -1073,14 +1073,14 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "tokenScAddr",
-            "description": "<p>The token address for the certain token.</p>"
+            "description": "<p>The token contract address for the specified token.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -1094,12 +1094,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getErc20StoremanGroups('ETH', '0x00f58d6d585f84b2d7267940cede30ce2fe6eae8', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getErc20StoremanGroups('ETH', '0x00f58d6d585f84b2d7267940cede30ce2fe6eae8');\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -1139,7 +1139,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -1153,12 +1153,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getRegErc20Tokens(\"ETH\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getRegErc20Tokens(\"ETH\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -1182,7 +1182,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanGroups",
     "version": "1.0.0",
-    "description": "<p>Get the detail cross-chain storemanGroup info for one cross-chain native coin, like the quota, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get the detailed cross-chain storemanGroup info for one cross-chain native coin, like the quota, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1198,7 +1198,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -1212,12 +1212,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getStoremanGroups('ETH', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getStoremanGroups('ETH');\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -1257,14 +1257,14 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "tokenScAddr",
-            "description": "<p>The token address for the certain token.</p>"
+            "description": "<p>The token contract address for the specified token.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -1278,12 +1278,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getToken2WanRatio(\"ETH\", \"0x00f58d6d585f84b2d7267940cede30ce2fe6eae8\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getToken2WanRatio(\"ETH\", \"0x00f58d6d585f84b2d7267940cede30ce2fe6eae8\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -1316,7 +1316,7 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chainType name that you want to search, should be &quot;WAN&quot;.</p>"
+            "description": "<p>The chain being queried, currently supports <code>'WAN'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1330,14 +1330,14 @@ define({ "api": [
             "type": "array",
             "optional": false,
             "field": "topics",
-            "description": "<p>A string array of values which must each appear in the log entries. The order is important, if you want to leave topics out use null, e.g. [null, '0x00...'].</p>"
+            "description": "<p>An array of string values which must each appear in the log entries. The order is important, if you want to leave topics out use null, e.g. [null, '0x00...'].</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -1351,12 +1351,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getScEvent('WAN', '0xda5b90dc89be59365ec44f3f2d7af8b6700d1167', [\"0xa4345d0839b39e5a6622a55c68bd8f83ac8a68fad252a8363a2c09dbaf85c793\", \"0x0000000000000000000000000000000000000000000000000000000000000000\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getScEvent('WAN', '0xda5b90dc89be59365ec44f3f2d7af8b6700d1167', [\"0xa4345d0839b39e5a6622a55c68bd8f83ac8a68fad252a8363a2c09dbaf85c793\", \"0x0000000000000000000000000000000000000000000000000000000000000000\"]);\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -1380,7 +1380,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "monitorEvent",
     "version": "1.0.0",
-    "description": "<p>Subscribe a smart contract event monitor. The server will push the event to subscriber when event comes. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Subscribe to a smart contract event monitor. The server will push the event to the subscriber when the event occurs. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1389,7 +1389,7 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chainType name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
+            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1410,7 +1410,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -1424,12 +1424,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.monitorEvent('WAN', '0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26', [\"0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \nlet result = await apiTest.monitorEvent('WAN', '0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26', [\"0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7\"]);\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -1453,7 +1453,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getGasPrice",
     "version": "1.0.0",
-    "description": "<p>Get total amount of certain token on Wanchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get total amount of specified token on Wanchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1469,7 +1469,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -1483,12 +1483,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getGasPrice('WAN', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getGasPrice('WAN');\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -1528,7 +1528,7 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "tokenScAddr",
-            "description": "<p>The token address for the certain token.</p>"
+            "description": "<p>The token contract address for the specified token.</p>"
           },
           {
             "group": "Parameter",
@@ -1549,7 +1549,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -1563,12 +1563,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getErc20Allowance(\"ETH\", \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\", \"0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8\", \"0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getErc20Allowance(\"ETH\", \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\", \"0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8\", \"0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -1608,14 +1608,14 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "tokenScAddr",
-            "description": "<p>The token address for the certain token.</p>"
+            "description": "<p>The token contract address for the specified token.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -1629,12 +1629,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getErc20Info(\"ETH\", \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getErc20Info(\"ETH\", \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -1681,7 +1681,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -1695,12 +1695,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getMultiErc20Info(\"ETH\", [\"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\",\"0x7017500899433272b4088afe34c04d742d0ce7df\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getMultiErc20Info(\"ETH\", [\"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\",\"0x7017500899433272b4088afe34c04d742d0ce7df\"]);\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -1724,7 +1724,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getMultiTokenBalance",
     "version": "1.0.0",
-    "description": "<p>Get token balance for multiple addresses of certain token on Wanchain in a single call. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Gets token balance for multiple addresses of specified token on Wanchain in a single call. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1733,28 +1733,28 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;, default &quot;WAN&quot;.</p>"
+            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>, default: <code>'WAN'</code>.</p>"
           },
           {
             "group": "Parameter",
             "type": "array",
             "optional": false,
             "field": "addressArray",
-            "description": "<p>The account's address array that you want to find.</p>"
+            "description": "<p>An array of addresses being queried.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "tokenScAddr",
-            "description": "<p>The token address for the certain token; if set chainType 'WAN', it should be the token address for &quot;WETH&quot; or &quot;WBTC&quot;.</p>"
+            "description": "<p>The token contract address for specified token. I.e., If chainType is 'WAN', it should be the token address for &quot;WETH&quot; or &quot;WBTC&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -1768,12 +1768,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getMultiTokenBalance(\"WAN\", [\"0xfac95c16da814d24cc64b3186348afecf527324f\",\"0xfac95c16da814d24cc64b3186348afecf527324e\"], \"0x63eed4943abaac5f43f657d8eec098ca6d6a546e\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getMultiTokenBalance(\"WAN\", [\"0xfac95c16da814d24cc64b3186348afecf527324f\",\"0xfac95c16da814d24cc64b3186348afecf527324e\"], \"0x63eed4943abaac5f43f657d8eec098ca6d6a546e\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -1806,28 +1806,28 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;, default &quot;WAN&quot;.</p>"
+            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>, default: <code>'WAN'</code>.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "address",
-            "description": "<p>The account's address that you want to find.</p>"
+            "description": "<p>The account being queried.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "tokenScAddr",
-            "description": "<p>The token address for the certain token; if set chainType 'WAN', it should be the token address for &quot;WETH&quot; or &quot;WBTC&quot;.</p>"
+            "description": "<p>The token contract address for specified token. I.e., If chainType is 'WAN', it should be the token address for &quot;WETH&quot; or &quot;WBTC&quot;.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -1841,12 +1841,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTokenBalance(\"WAN\", \"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c\", \"0x63eed4943abaac5f43f657d8eec098ca6d6a546e\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getTokenBalance(\"WAN\", \"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c\", \"0x63eed4943abaac5f43f657d8eec098ca6d6a546e\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -1879,21 +1879,21 @@ define({ "api": [
             "type": "string",
             "optional": true,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;, default &quot;WAN&quot;.</p>"
+            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>, default: <code>'WAN'</code>.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "tokenScAddr",
-            "description": "<p>The token address for the certain token.</p>"
+            "description": "<p>The token contract address for the specified token.</p>"
           },
           {
             "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -1907,12 +1907,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTokenSupply(\"WAN\", \"0x63eed4943abaac5f43f657d8eec098ca6d6a546e\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getTokenSupply(\"WAN\", \"0x63eed4943abaac5f43f657d8eec098ca6d6a546e\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -1959,7 +1959,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -1973,12 +1973,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTransByAddress(\"WAN\", \"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getTransByAddress(\"WAN\", \"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -2039,7 +2039,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -2058,12 +2058,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTransByAddressBetweenBlocks(\"WAN\", \"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d\", 984119, 984120, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getTransByAddressBetweenBlocks(\"WAN\", \"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d\", 984119, 984120);\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -2110,7 +2110,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -2124,12 +2124,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTransByBlock(\"WAN\", \"0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe\", (err, result) => {\n// apiTest.getTransByBlock(\"WAN\", \"984133\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getTransByBlock(\"WAN\", \"0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe\");\n//let result = await apiTest.getTransByBlock(\"WAN\", \"984133\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -2162,7 +2162,7 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
+            "description": "<p>The chain being querried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -2183,7 +2183,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -2197,12 +2197,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTransactionConfirm(\"WAN\", 6, \"0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getTransactionConfirm(\"WAN\", 6, \"0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -2235,7 +2235,7 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot;.</p>"
+            "description": "<p>The chain being querried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -2249,7 +2249,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -2263,12 +2263,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTransactionReceipt(\"WAN\", \"0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getTransactionReceipt(\"WAN\", \"0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -2322,7 +2322,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -2336,12 +2336,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTxInfo(\"WAN\", \"0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);  \nlet result = await apiTest.getTxInfo(\"WAN\", \"0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
@@ -2388,7 +2388,7 @@ define({ "api": [
             "type": "function",
             "optional": true,
             "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -2402,12 +2402,12 @@ define({ "api": [
     },
     "examples": [
       {
-        "title": "Example usage callback:",
+        "title": "Example callback usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.sendRawTransaction('WAN', '0xf86e0109852e90edd000832dc6c0946ed9c11cbd8a6ae8355fa62ebca48493da572661880de0b6b3a7640000801ca0bd349ec9f51dd171eb5c59df9a6b8c5656eacb6793bed945a7ec69135f191abfa0359da11e8a4fdd51b52a8752ac32f9125d168441546d011406736bce67b8a356', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
-        "title": "Example usage promise:",
+        "title": "Example promise usage:",
         "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.sendRawTransaction('WAN', '0xf86e0109852e90edd000832dc6c0946ed9c11cbd8a6ae8355fa62ebca48493da572661880de0b6b3a7640000801ca0bd349ec9f51dd171eb5c59df9a6b8c5656eacb6793bed945a7ec69135f191abfa0359da11e8a4fdd51b52a8752ac32f9125d168441546d011406736bce67b8a356');\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
