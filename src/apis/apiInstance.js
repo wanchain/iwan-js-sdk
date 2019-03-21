@@ -479,60 +479,6 @@ class ApiInstance extends WsInstance {
 
   /**
   *
-  * @apiName getCrossScAddress
-  * @apiGroup Token
-  * @api {CONNECT} /ws/v3/YOUR-API-KEY getCrossScAddress
-  * @apiVersion 1.0.0
-  * @apiDescription Get total amount of certain token on Wanchain.
-  * <br><br><strong>Returns:</strong>
-  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
-  *
-  * @apiParam {string} crossChain The cross-chain name that you want to search, should be "ETH".
-  * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
-  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
-  * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
-  *
-  * @apiParamExample {string} JSON-RPC over websocket
-  * {"jsonrpc":"2.0","method":"getCrossScAddress","params":{"crossChain":"ETH"},"id":1}
-  *
-  * @apiExample {nodejs} Example usage callback:
-  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
-  *   apiTest.getCrossScAddress('ETH', (err, result) => {
-  *     console.log("Result is ", result);
-  *     apiTest.close();
-  *   });
-  *
-  * @apiExample {nodejs} Example usage promise:
-  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   let result = await apiTest.getCrossScAddress('ETH');
-  *   console.log("Result is ", result);
-  *   apiTest.close();
-  *
-  * @apiSuccessExample {json} Successful Response
-  *  "result": {
-  *    "originalChainHtlcAddr": "0xb9f924b9d28ad550610d65b035ddd644da682a48",
-  *    "wanchainHtlcAddr": "0x3906b053c151c3f0b83df808e2b84d87e20efd4d"
-  *  }
-  */
-  getCrossScAddress(crossChain, callback) {
-    if (callback) {
-      callback = utils.wrapCallback(callback);
-    }
-    let method = 'getCrossScAddress';
-    let params = { crossChain: crossChain };
-
-    return utils.promiseOrCallback(callback, cb => {
-      this._request(method, params, (err, result) => {
-        if (err) {
-          return cb(err);
-        }
-        return cb(null, result);
-      });
-    });
-  }
-
-  /**
-  *
   * @apiName getGasPrice
   * @apiGroup Status
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getGasPrice
