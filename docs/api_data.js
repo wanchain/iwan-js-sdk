@@ -461,7 +461,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getBlockTransactionCount",
     "version": "1.0.0",
-    "description": "<p>Get the number of transaction in a given block by blockNumber or blockhash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get the number of transaction in a given block by block number or block hash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -861,7 +861,7 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "crossChain",
-            "description": "<p>The cross_chain native coin name that you want to search.</p>"
+            "description": "<p>The cross-chain native coin name that you want to search.</p>"
           },
           {
             "group": "Parameter",
@@ -1057,7 +1057,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getErc20StoremanGroups",
     "version": "1.0.0",
-    "description": "<p>Get the detail cross_chain storemanGroup info for one specific ERC20 contract, like the quota, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get the detail cross-chain storemanGroup info for one specific ERC20 contract, like the quota, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1066,7 +1066,7 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "crossChain",
-            "description": "<p>The cross_chain name that you want to search, should be &quot;ETH&quot;.</p>"
+            "description": "<p>The cross-chain name that you want to search, should be &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
@@ -1123,7 +1123,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getMultiErc20Info",
     "version": "1.0.0",
-    "description": "<p>Get the infos of muti ERC20 contracts, like symbol and decimals, on certain chain in a single call. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get the information of multiple ERC20 tokens. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1198,7 +1198,7 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "crossChain",
-            "description": "<p>The cross_chain name that you want to search, should be &quot;ETH&quot;.</p>"
+            "description": "<p>The cross-chain name that you want to search, should be &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
@@ -1257,7 +1257,7 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "crossChain",
-            "description": "<p>The cross_chain name that you want to search.</p>"
+            "description": "<p>The cross-chain name that you want to search.</p>"
           },
           {
             "group": "Parameter",
@@ -1316,7 +1316,7 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "crossChain",
-            "description": "<p>The cross_chain name that you want to search, should be &quot;ETH&quot;.</p>"
+            "description": "<p>The cross-chain name that you want to search, should be &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
@@ -1373,7 +1373,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getUTXO",
     "version": "1.0.0",
-    "description": "<p>Get the detail btc utxo info for BTC. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get the detail btc UTXO info for BTC. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1389,14 +1389,14 @@ define({ "api": [
             "type": "number",
             "optional": false,
             "field": "minconf",
-            "description": "<p>The min confirm number of BTC utxo, usually 0.</p>"
+            "description": "<p>The min confirm number of BTC UTXO, usually 0.</p>"
           },
           {
             "group": "Parameter",
             "type": "number",
             "optional": false,
             "field": "maxconf",
-            "description": "<p>The max confirm number of BTC utxo, usually the confirmed blockes you want to wait for the utxo.</p>"
+            "description": "<p>The max confirm number of BTC UTXO, usually the confirmed blocks you want to wait for the UTXO.</p>"
           },
           {
             "group": "Parameter",
@@ -1799,7 +1799,7 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "crossChain",
-            "description": "<p>The cross_chain name that you want to search, should be &quot;ETH&quot;.</p>"
+            "description": "<p>The cross-chain name that you want to search, should be &quot;ETH&quot;.</p>"
           },
           {
             "group": "Parameter",
@@ -2146,7 +2146,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTransByBlock",
     "version": "1.0.0",
-    "description": "<p>Get transaction information in a given block by blockNumber or blockhash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get transaction information in a given block by block number or block hash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
