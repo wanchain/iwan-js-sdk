@@ -1784,65 +1784,6 @@
     "groupTitle": "Status"
   },
   {
-    "name": "getCrossScAddress",
-    "group": "Token",
-    "type": "CONNECT",
-    "url": "/ws/v3/YOUR-API-KEY",
-    "title": "getCrossScAddress",
-    "version": "1.0.0",
-    "description": "<p>Get total amount of certain token on Wanchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "crossChain",
-            "description": "<p>The cross-chain name that you want to search, should be &quot;ETH&quot;.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "function",
-            "optional": true,
-            "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - Which is the saved result.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "JSON-RPC over websocket",
-          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getCrossScAddress\",\"params\":{\"crossChain\":\"ETH\"},\"id\":1}",
-          "type": "string"
-        }
-      ]
-    },
-    "examples": [
-      {
-        "title": "Example usage callback:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getCrossScAddress('ETH', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
-        "type": "nodejs"
-      },
-      {
-        "title": "Example usage promise:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getCrossScAddress('ETH');\nconsole.log(\"Result is \", result);\napiTest.close();",
-        "type": "nodejs"
-      }
-    ],
-    "success": {
-      "examples": [
-        {
-          "title": "Successful Response",
-          "content": "\"result\": {\n  \"originalChainHtlcAddr\": \"0xb9f924b9d28ad550610d65b035ddd644da682a48\",\n  \"wanchainHtlcAddr\": \"0x3906b053c151c3f0b83df808e2b84d87e20efd4d\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/apis/apiInstance.js",
-    "groupTitle": "Token"
-  },
-  {
     "name": "getMultiTokenBalance",
     "group": "Token",
     "type": "CONNECT",
