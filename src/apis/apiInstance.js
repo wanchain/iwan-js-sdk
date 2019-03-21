@@ -50,9 +50,9 @@ class ApiInstance extends WsInstance {
 
   /**
    *
-   * @apiName monitorLog
-   * @apiGroup EventLogs
-   * @api {CONNECT} /ws/v3/YOUR-API-KEY monitorLog
+   * @apiName monitorEvent
+   * @apiGroup Events
+   * @api {CONNECT} /ws/v3/YOUR-API-KEY monitorEvent
    * @apiVersion 1.0.0
    * @apiDescription Subscribe a smart contract event monitor. The server will push the event to subscriber when event comes. 
    * <br><br><strong>Returns:</strong>
@@ -66,18 +66,18 @@ class ApiInstance extends WsInstance {
    * <br>&nbsp;&nbsp;<code>result</code> - Which is the saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"monitorLog","params":{"chainType":"WAN", "address": "0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26", "topics": ["0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7"]},"id":1}
+   * {"jsonrpc":"2.0","method":"monitorEvent","params":{"chainType":"WAN", "address": "0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26", "topics": ["0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7"]},"id":1}
    *
    * @apiExample {nodejs} Example usage callback:
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
-   *   apiTest.monitorLog('WAN', '0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26', ["0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7"], (err, result) => {
+   *   apiTest.monitorEvent('WAN', '0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26', ["0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7"], (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
    * @apiExample {nodejs} Example usage promise:
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
-   *   let result = await apiTest.monitorLog('WAN', '0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26', ["0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7"]);
+   *   let result = await apiTest.monitorEvent('WAN', '0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26', ["0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7"]);
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
@@ -95,11 +95,11 @@ class ApiInstance extends WsInstance {
    * }]
    *
    */
-  monitorLog(chainType, address, topics, callback) {
+  monitorEvent(chainType, address, topics, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
-    let method = 'monitorLog';
+    let method = 'monitorEvent';
     let params = { chainType: chainType, address: address, topics: topics };
 
     return utils.promiseOrCallback(callback, cb => {
@@ -115,7 +115,7 @@ class ApiInstance extends WsInstance {
   /**
   *
   * @apiName getScEvent
-  * @apiGroup EventLogs
+  * @apiGroup Events
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getScEvent
   * @apiVersion 1.0.0
   * @apiDescription Get smart contract event log via topics.
@@ -284,10 +284,10 @@ class ApiInstance extends WsInstance {
   /**
   *
   * @apiName getUTXO
-  * @apiGroup CrossChain
+  * @apiGroup Accounts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getUTXO
   * @apiVersion 1.0.0
-  * @apiDescription Get the detail btc UTXO info for BTC.
+  * @apiDescription Get the detail BTC UTXO info for BTC.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
@@ -641,7 +641,7 @@ class ApiInstance extends WsInstance {
   /**
   *
   * @apiName getTokenBalance
-  * @apiGroup Token
+  * @apiGroup Tokens
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenBalance
   * @apiVersion 1.0.0
   * @apiDescription Get token balance for a single address of certain token on Wanchain.
@@ -695,7 +695,7 @@ class ApiInstance extends WsInstance {
   /**
   *
   * @apiName getMultiTokenBalance
-  * @apiGroup Token
+  * @apiGroup Tokens
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getMultiTokenBalance
   * @apiVersion 1.0.0
   * @apiDescription Get token balance for multiple addresses of certain token on Wanchain in a single call.
@@ -1868,7 +1868,7 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getP2shxByHashx
   * @apiVersion 1.0.0
-  * @apiDescription Get the x value of p2sh by hash(x) from btc.
+  * @apiDescription Get the x value of p2sh by hash(x) from BTC.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
@@ -1899,7 +1899,7 @@ class ApiInstance extends WsInstance {
   *  "result": "2ecb855170c941f239ffe3495f3e07cceabd8421"
   *
   */
-  //Get the x value of p2sh by hash(x) from btc
+  //Get the x value of p2sh by hash(x) from BTC
   getP2shxByHashx(chainType, hashX, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
@@ -1920,10 +1920,10 @@ class ApiInstance extends WsInstance {
   /**
   *
   * @apiName importAddress
-  * @apiGroup CrossChain
+  * @apiGroup Accounts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY importAddress
   * @apiVersion 1.0.0
-  * @apiDescription Send a <code>'import address'</code> command to btc.
+  * @apiDescription Send a <code>'import address'</code> command to BTC.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
@@ -2049,7 +2049,7 @@ class ApiInstance extends WsInstance {
   /**
   *
   * @apiName getErc20Allowance
-  * @apiGroup CrossChain
+  * @apiGroup Tokens
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getErc20Allowance
   * @apiVersion 1.0.0
   * @apiDescription Get the ERC20 allowance for one specific account on one contract for one specific spender account on certain chain.
@@ -2104,7 +2104,7 @@ class ApiInstance extends WsInstance {
   /**
   *
   * @apiName getErc20Info
-  * @apiGroup CrossChain
+  * @apiGroup Tokens
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getErc20Info
   * @apiVersion 1.0.0
   * @apiDescription Get the info of ERC20 contract, like symbol and decimals, on certain chain.
@@ -2159,7 +2159,7 @@ class ApiInstance extends WsInstance {
   /**
   *
   * @apiName getMultiErc20Info
-  * @apiGroup CrossChain
+  * @apiGroup Tokens
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getMultiErc20Info
   * @apiVersion 1.0.0
   * @apiDescription Get the information of multiple ERC20 tokens.
