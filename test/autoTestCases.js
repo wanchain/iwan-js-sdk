@@ -81,14 +81,20 @@ function assertFullMatch(expect, actual) {
     }
 }
 
-let YourApiKey = "d21b98b09c1b4f1001986401e25a27a07a4673140b5125b81cdfedcea4db9e7b";
-let YourSecretKey = "93c30e4a70f5ec3d4427f76602851791aa58fb823773c96cf1347f8b0276b036";
+// let YourApiKey = "d21b98b09c1b4f1001986401e25a27a07a4673140b5125b81cdfedcea4db9e7b";
+// let YourSecretKey = "93c30e4a70f5ec3d4427f76602851791aa58fb823773c96cf1347f8b0276b036";
+let YourApiKey = "fa5078fd834201d1d5bd57908a3069fe8ba560f329c060dffe04ccb52a9f1fcb";
+let YourSecretKey = "67ab8ebd6ade75b5a9ae3761f03aa3750ce73a1d859dd070bddd72436c7d5957";
 
 describe("iWan API Auto Test", () => {
 
     let xlsxHeaderPos = {};
     let testData;
-    let apiTest = new ApiInstance(YourApiKey, YourSecretKey);
+    let option = {
+        url:"apitest.wanchain.org",
+        port:8443
+    }
+    let apiTest = new ApiInstance(YourApiKey, YourSecretKey, option);
 
     after(() => {
         apiTest.close();
