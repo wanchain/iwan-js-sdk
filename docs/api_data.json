@@ -279,7 +279,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chainType name that you want to search, should be &quot;BTC&quot;.</p>"
+            "description": "<p>The chain name that you want to search, should be <code>&quot;BTC&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -359,7 +359,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;BTC&quot;.</p>"
+            "description": "<p>The chain name that you want to search, should be <code>&quot;BTC&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -425,7 +425,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot;.</p>"
+            "description": "<p>The chain name that you want to search, should be <code>&quot;WAN&quot;</code> or <code>&quot;ETH&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -491,7 +491,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot;.</p>"
+            "description": "<p>The chain name that you want to search, should be <code>&quot;WAN&quot;</code> or <code>&quot;ETH&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -557,7 +557,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;BTC&quot;</p>"
+            "description": "<p>The chain name that you want to search, should be <code>&quot;WAN&quot;</code> or <code>&quot;ETH&quot;</code> or <code>&quot;BTC&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -616,7 +616,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot;.</p>"
+            "description": "<p>The chain name that you want to search, should be <code>&quot;WAN&quot;</code> or <code>&quot;ETH&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1007,7 +1007,7 @@
             "type": "string",
             "optional": false,
             "field": "crossChain",
-            "description": "<p>The cross-chain native coin name that you want to search.</p>"
+            "description": "<p>The cross-chain native coin name that you want to search, should be <code>&quot;ETH&quot;</code> or <code>&quot;BTC&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1066,7 +1066,7 @@
             "type": "string",
             "optional": false,
             "field": "crossChain",
-            "description": "<p>The cross-chain name that you want to search, should be &quot;ETH&quot;.</p>"
+            "description": "<p>The cross-chain name that you want to search, should be <code>&quot;ETH&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1132,7 +1132,7 @@
             "type": "string",
             "optional": false,
             "field": "crossChain",
-            "description": "<p>The cross-chain name that you want to search, should be &quot;ETH&quot;.</p>"
+            "description": "<p>The cross-chain name that you want to search, should be <code>&quot;ETH&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1191,7 +1191,7 @@
             "type": "string",
             "optional": false,
             "field": "crossChain",
-            "description": "<p>The cross-chain name that you want to search.</p>"
+            "description": "<p>The cross-chain name that you want to search, should be <code>&quot;ETH&quot;</code> or <code>&quot;BTC&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1250,7 +1250,7 @@
             "type": "string",
             "optional": false,
             "field": "crossChain",
-            "description": "<p>The cross-chain name that you want to search, should be &quot;ETH&quot;.</p>"
+            "description": "<p>The cross-chain name that you want to search, should be <code>&quot;ETH&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1316,7 +1316,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain being queried, currently supports <code>'WAN'</code>.</p>"
+            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1462,7 +1462,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot;.</p>"
+            "description": "<p>The chain name that you want to search, should be <code>&quot;WAN&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1521,7 +1521,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;ETH&quot;.</p>"
+            "description": "<p>The chain name that you want to search, should be <code>&quot;ETH&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1601,7 +1601,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;ETH&quot;.</p>"
+            "description": "<p>The chain name that you want to search, should be <code>&quot;ETH&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1667,7 +1667,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;ETH&quot;.</p>"
+            "description": "<p>The chain name that you want to search, should be <code>&quot;ETH&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1747,7 +1747,7 @@
             "type": "string",
             "optional": false,
             "field": "tokenScAddr",
-            "description": "<p>The token contract address for specified token. I.e., If chainType is 'WAN', it should be the token address for &quot;WETH&quot; or &quot;WBTC&quot;.</p>"
+            "description": "<p>The token contract address for specified token. I.e., If chainType is <code>'WAN'</code>, it should be the token address for <code>&quot;WETH&quot;</code> or <code>&quot;WBTC&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1820,7 +1820,7 @@
             "type": "string",
             "optional": false,
             "field": "tokenScAddr",
-            "description": "<p>The token contract address for specified token. I.e., If chainType is 'WAN', it should be the token address for &quot;WETH&quot; or &quot;WBTC&quot;.</p>"
+            "description": "<p>The token contract address for specified token. I.e., If chainType is <code>'WAN'</code>, it should be the token address for <code>&quot;WETH&quot;</code> or <code>&quot;WBTC&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1945,7 +1945,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot;.</p>"
+            "description": "<p>The chain name that you want to search, should be <code>&quot;WAN&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -2011,7 +2011,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot;.</p>"
+            "description": "<p>The chain name that you want to search, should be <code>&quot;WAN&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -2096,7 +2096,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot;.</p>"
+            "description": "<p>The chain name that you want to search, should be <code>&quot;WAN&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -2301,7 +2301,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;BTC&quot;.</p>"
+            "description": "<p>The chain name that you want to search, should be <code>&quot;WAN&quot;</code> or <code>&quot;ETH&quot;</code> or <code>&quot;BTC&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -2315,7 +2315,7 @@
             "type": "bool",
             "optional": true,
             "field": "format",
-            "description": "<p>Whether to get the serialized or decoded transaction, in this case, <code>chainType</code> should be <code>&quot;BTC&quot;</code>: <br>Set to <code>false</code> (the default) to return the serialized transaction as hex. <br>Set to <code>true</code> to return a decoded transaction.</p>"
+            "description": "<p>Whether to get the serialized or decoded transaction, in this case, <code>chainType</code> should be <code>&quot;BTC&quot;</code>: <br>     Set to <code>false</code> (the default) to return the serialized transaction as hex. <br>     Set to <code>true</code> to return a decoded transaction.</p>"
           },
           {
             "group": "Parameter",
@@ -2374,7 +2374,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be &quot;WAN&quot; or &quot;ETH&quot; or &quot;BTC&quot;.</p>"
+            "description": "<p>The chain name that you want to search, should be <code>&quot;WAN&quot;</code> or <code>&quot;ETH&quot;</code> or <code>&quot;BTC&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
