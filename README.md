@@ -15,7 +15,7 @@ After installation, the iWan SDK can be used to connect to the iWan RPC server t
 ```bash
 const iWanClient = require('iwan-sdk');
 ```
-By default the SDK will connect to `api.wanchain.org:443`
+By default the SDK will connect to `"api.wanchain.org:443"`
 ```bash
 let apiClient = new iWanClient(YourApiKey, YourSecretKey);
 
