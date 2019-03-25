@@ -535,7 +535,7 @@ class ApiInstance extends WsInstance {
   * @apiGroup Accounts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getBalance
   * @apiVersion 1.0.0
-  * @apiDescription Get balance for a single address.
+  * @apiDescription Gets balance for a single address.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
