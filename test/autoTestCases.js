@@ -88,7 +88,11 @@ describe("iWan API Auto Test", () => {
 
     let xlsxHeaderPos = {};
     let testData;
-    let apiTest = new ApiInstance(YourApiKey, YourSecretKey);
+    let option = {
+        url:"apitest.wanchain.org",
+        port:8443
+    }
+    let apiTest = new ApiInstance(YourApiKey, YourSecretKey, option);
 
     after(() => {
         apiTest.close();
@@ -135,6 +139,8 @@ describe("iWan API Auto Test", () => {
                         } catch (err) {
                             actualResult = (err.hasOwnProperty('error') ? err.error : err);
                         }
+                        console.log("Expect:" + JSON.stringify(expectResult) + ", type:" + typeof(expectResult));
+                        console.log("Actual:" + JSON.stringify(actualResult) + ", type:" + typeof(actualResult));
 
                         if (flag === partialKeyword) {
                             assertPartialMatch(expectResult, actualResult);
