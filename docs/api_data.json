@@ -1453,7 +1453,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getGasPrice",
     "version": "1.0.0",
-    "description": "<p>Get total amount of specified token on Wanchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get a bigNumber of the current gas price in wei. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1462,7 +1462,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be <code>&quot;WAN&quot;</code>.</p>"
+            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1521,7 +1521,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be <code>&quot;ETH&quot;</code>.</p>"
+            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1601,7 +1601,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be <code>&quot;ETH&quot;</code>.</p>"
+            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1667,7 +1667,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain name that you want to search, should be <code>&quot;ETH&quot;</code>.</p>"
+            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
