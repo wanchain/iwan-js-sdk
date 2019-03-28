@@ -483,11 +483,11 @@ class ApiInstance extends WsInstance {
   * @apiGroup Status
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getGasPrice
   * @apiVersion 1.0.0
-  * @apiDescription Get total amount of specified token on Wanchain.
+  * @apiDescription Get a bigNumber of the current gas price in wei.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType The chain name that you want to search, should be <code>"WAN"</code>.
+  * @apiParam {string} chainType The chain being querried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -2058,7 +2058,7 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType The chain name that you want to search, should be <code>"ETH"</code>.
+  * @apiParam {string} chainType The chain being querried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.
   * @apiParam {string} tokenScAddr The token contract address for the specified token.
   * @apiParam {string} ownerAddr The owner address on the certain contract.
   * @apiParam {string} spenderAddr The spender address on the certain contract.
@@ -2113,7 +2113,7 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType The chain name that you want to search, should be <code>"ETH"</code>.
+  * @apiParam {string} chainType The chain being querried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.
   * @apiParam {string} tokenScAddr The token contract address for the specified token.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
@@ -2168,7 +2168,7 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType The chain name that you want to search, should be <code>"ETH"</code>.
+  * @apiParam {string} chainType The chain being querried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.
   * @apiParam {array} tokenScAddrArray The token address array for the certain token that you want to find.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
