@@ -414,9 +414,9 @@ class ApiInstance extends WsInstance {
 
   /**
   *
-  * @apiName getErc20StoremanGroups
+  * @apiName getTokenStoremanGroups
   * @apiGroup CrossChain
-  * @api {CONNECT} /ws/v3/YOUR-API-KEY getErc20StoremanGroups
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenStoremanGroups
   * @apiVersion 1.0.0
   * @apiDescription Get the detail cross-chain storemanGroup info for one specific ERC20 contract, like the quota, etc.
   * <br><br><strong>Returns:</strong>
@@ -429,18 +429,18 @@ class ApiInstance extends WsInstance {
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
-  * {"jsonrpc":"2.0","method":"getErc20StoremanGroups","params":{"crossChain":"ETH", "tokenScAddr":"0x00f58d6d585f84b2d7267940cede30ce2fe6eae8"},"id":1}
+  * {"jsonrpc":"2.0","method":"getTokenStoremanGroups","params":{"crossChain":"ETH", "tokenScAddr":"0x00f58d6d585f84b2d7267940cede30ce2fe6eae8"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
-  *   apiTest.getErc20StoremanGroups('ETH', '0x00f58d6d585f84b2d7267940cede30ce2fe6eae8', (err, result) => {
+  *   apiTest.getTokenStoremanGroups('ETH', '0x00f58d6d585f84b2d7267940cede30ce2fe6eae8', (err, result) => {
   *     console.log("Result is ", result);
   *     apiTest.close();
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   let result = await apiTest.getErc20StoremanGroups('ETH', '0x00f58d6d585f84b2d7267940cede30ce2fe6eae8');
+  *   let result = await apiTest.getTokenStoremanGroups('ETH', '0x00f58d6d585f84b2d7267940cede30ce2fe6eae8');
   *   console.log("Result is ", result);
   *   apiTest.close();
   *
@@ -460,11 +460,11 @@ class ApiInstance extends WsInstance {
    }]
   *
   */
-  getErc20StoremanGroups(crossChain, tokenScAddr, callback) {
+  getTokenStoremanGroups(crossChain, tokenScAddr, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
-    let method = 'getErc20StoremanGroups';
+    let method = 'getTokenStoremanGroups';
     let params = { crossChain: crossChain, tokenScAddr: tokenScAddr };
 
     return utils.promiseOrCallback(callback, cb => {
@@ -1974,9 +1974,9 @@ class ApiInstance extends WsInstance {
 
   /**
   *
-  * @apiName getRegErc20Tokens
+  * @apiName getRegTokens
   * @apiGroup CrossChain
-  * @api {CONNECT} /ws/v3/YOUR-API-KEY getRegErc20Tokens
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getRegTokens
   * @apiVersion 1.0.0
   * @apiDescription Get the information of ERC20 tokens which are supported for cross-chain ability.
   * <br><br><strong>Returns:</strong>
@@ -1988,18 +1988,18 @@ class ApiInstance extends WsInstance {
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
-  * {"jsonrpc":"2.0","method":"getRegErc20Tokens","params":{"crossChain":"ETH"},"id":1}
+  * {"jsonrpc":"2.0","method":"getRegTokens","params":{"crossChain":"ETH"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
-  *   apiTest.getRegErc20Tokens("ETH", (err, result) => {
+  *   apiTest.getRegTokens("ETH", (err, result) => {
   *     console.log("Result is ", result);
   *     apiTest.close();
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   let result = await apiTest.getRegErc20Tokens("ETH");
+  *   let result = await apiTest.getRegTokens("ETH");
   *   console.log("Result is ", result);
   *   apiTest.close();
   * 
@@ -2031,11 +2031,11 @@ class ApiInstance extends WsInstance {
    }]
   *
   */
-  getRegErc20Tokens(crossChain, callback) {
+  getRegTokens(crossChain, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
-    let method = 'getRegErc20Tokens';
+    let method = 'getRegTokens';
     let params = { crossChain: crossChain };
 
     return utils.promiseOrCallback(callback, cb => {
@@ -2050,9 +2050,9 @@ class ApiInstance extends WsInstance {
 
   /**
   *
-  * @apiName getErc20Allowance
+  * @apiName getTokenAllowance
   * @apiGroup Tokens
-  * @api {CONNECT} /ws/v3/YOUR-API-KEY getErc20Allowance
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenAllowance
   * @apiVersion 1.0.0
   * @apiDescription Get the ERC20 allowance for one specific account on one contract for one specific spender account on certain chain.
   * <br><br><strong>Returns:</strong>
@@ -2067,18 +2067,18 @@ class ApiInstance extends WsInstance {
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
-  * {"jsonrpc":"2.0","method":"getErc20Allowance","params":{"chainType":"ETH", "tokenScAddr":"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a", "ownerAddr":"0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8", "spenderAddr":"0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1"},"id":1}
+  * {"jsonrpc":"2.0","method":"getTokenAllowance","params":{"chainType":"ETH", "tokenScAddr":"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a", "ownerAddr":"0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8", "spenderAddr":"0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
-  *   apiTest.getErc20Allowance("ETH", "0xc5bc855056d99ef4bda0a4ae937065315e2ae11a", "0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8", "0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1", (err, result) => {
+  *   apiTest.getTokenAllowance("ETH", "0xc5bc855056d99ef4bda0a4ae937065315e2ae11a", "0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8", "0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1", (err, result) => {
   *     console.log("Result is ", result);
   *     apiTest.close();
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   let result = await apiTest.getErc20Allowance("ETH", "0xc5bc855056d99ef4bda0a4ae937065315e2ae11a", "0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8", "0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1");
+  *   let result = await apiTest.getTokenAllowance("ETH", "0xc5bc855056d99ef4bda0a4ae937065315e2ae11a", "0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8", "0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1");
   *   console.log("Result is ", result);
   *   apiTest.close();
   * 
@@ -2086,11 +2086,11 @@ class ApiInstance extends WsInstance {
   *  "result": "999999999999980000000000000"
   *
   */
-  getErc20Allowance(chainType, tokenScAddr, ownerAddr, spenderAddr, callback) {
+  getTokenAllowance(chainType, tokenScAddr, ownerAddr, spenderAddr, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
-    let method = 'getErc20Allowance';
+    let method = 'getTokenAllowance';
     let params = { chainType: chainType, tokenScAddr: tokenScAddr, ownerAddr: ownerAddr, spenderAddr: spenderAddr };
 
     return utils.promiseOrCallback(callback, cb => {
@@ -2105,9 +2105,9 @@ class ApiInstance extends WsInstance {
 
   /**
   *
-  * @apiName getErc20Info
+  * @apiName getTokenInfo
   * @apiGroup Tokens
-  * @api {CONNECT} /ws/v3/YOUR-API-KEY getErc20Info
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenInfo
   * @apiVersion 1.0.0
   * @apiDescription Get the info of ERC20 contract, like symbol and decimals, on certain chain.
   * <br><br><strong>Returns:</strong>
@@ -2120,18 +2120,18 @@ class ApiInstance extends WsInstance {
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
-  * {"jsonrpc":"2.0","method":"getErc20Info","params":{"chainType":"ETH", "tokenScAddr":"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a"},"id":1}
+  * {"jsonrpc":"2.0","method":"getTokenInfo","params":{"chainType":"ETH", "tokenScAddr":"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
-  *   apiTest.getErc20Info("ETH", "0xc5bc855056d99ef4bda0a4ae937065315e2ae11a", (err, result) => {
+  *   apiTest.getTokenInfo("ETH", "0xc5bc855056d99ef4bda0a4ae937065315e2ae11a", (err, result) => {
   *     console.log("Result is ", result);
   *     apiTest.close();
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   let result = await apiTest.getErc20Info("ETH", "0xc5bc855056d99ef4bda0a4ae937065315e2ae11a");
+  *   let result = await apiTest.getTokenInfo("ETH", "0xc5bc855056d99ef4bda0a4ae937065315e2ae11a");
   *   console.log("Result is ", result);
   *   apiTest.close();
   * 
@@ -2141,11 +2141,11 @@ class ApiInstance extends WsInstance {
   *    "decimals": "18"
   *  }
   */
-  getErc20Info(chainType, tokenScAddr, callback) {
+  getTokenInfo(chainType, tokenScAddr, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
-    let method = 'getErc20Info';
+    let method = 'getTokenInfo';
     let params = { chainType: chainType, tokenScAddr: tokenScAddr };
 
     return utils.promiseOrCallback(callback, cb => {
@@ -2160,9 +2160,9 @@ class ApiInstance extends WsInstance {
 
   /**
   *
-  * @apiName getMultiErc20Info
+  * @apiName getMultiTokenInfo
   * @apiGroup Tokens
-  * @api {CONNECT} /ws/v3/YOUR-API-KEY getMultiErc20Info
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getMultiTokenInfo
   * @apiVersion 1.0.0
   * @apiDescription Get the information of multiple ERC20 tokens.
   * <br><br><strong>Returns:</strong>
@@ -2175,18 +2175,18 @@ class ApiInstance extends WsInstance {
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
-  * {"jsonrpc":"2.0","method":"getMultiErc20Info","params":{"tokenScAddrArray":["0xc5bc855056d99ef4bda0a4ae937065315e2ae11a","0x7017500899433272b4088afe34c04d742d0ce7df"],"chainType":"ETH"},"id":1}
+  * {"jsonrpc":"2.0","method":"getMultiTokenInfo","params":{"tokenScAddrArray":["0xc5bc855056d99ef4bda0a4ae937065315e2ae11a","0x7017500899433272b4088afe34c04d742d0ce7df"],"chainType":"ETH"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
-  *   apiTest.getMultiErc20Info("ETH", ["0xc5bc855056d99ef4bda0a4ae937065315e2ae11a","0x7017500899433272b4088afe34c04d742d0ce7df"], (err, result) => {
+  *   apiTest.getMultiTokenInfo("ETH", ["0xc5bc855056d99ef4bda0a4ae937065315e2ae11a","0x7017500899433272b4088afe34c04d742d0ce7df"], (err, result) => {
   *     console.log("Result is ", result);
   *     apiTest.close();
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   let result = await apiTest.getMultiErc20Info("ETH", ["0xc5bc855056d99ef4bda0a4ae937065315e2ae11a","0x7017500899433272b4088afe34c04d742d0ce7df"]);
+  *   let result = await apiTest.getMultiTokenInfo("ETH", ["0xc5bc855056d99ef4bda0a4ae937065315e2ae11a","0x7017500899433272b4088afe34c04d742d0ce7df"]);
   *   console.log("Result is ", result);
   *   apiTest.close();
   * 
@@ -2203,11 +2203,11 @@ class ApiInstance extends WsInstance {
    }]
   *
   */
-  getMultiErc20Info(chainType, tokenScAddrArray, callback) {
+  getMultiTokenInfo(chainType, tokenScAddrArray, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
-    let method = 'getMultiErc20Info';
+    let method = 'getMultiTokenInfo';
     let params = { chainType: chainType, tokenScAddrArray: tokenScAddrArray };
 
     return utils.promiseOrCallback(callback, cb => {
