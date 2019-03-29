@@ -1057,7 +1057,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTokenStoremanGroups",
     "version": "1.0.0",
-    "description": "<p>Get the detail cross-chain storemanGroup info for one specific ERC20 contract, like the quota, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get the detail cross-chain storemanGroup info for one specific token contract, like the quota, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1123,7 +1123,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getRegTokens",
     "version": "1.0.0",
-    "description": "<p>Get the information of ERC20 tokens which are supported for cross-chain ability. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get the information of tokens which are supported for cross-chain ability. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1241,7 +1241,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getToken2WanRatio",
     "version": "1.0.0",
-    "description": "<p>ERC20 token exchange ratio,such as 1 ERC20 to 880 WANs, the precision is 10000, the ratio is 880*precision = 880,0000. The ratio would be changed accoring to the market value ratio periodically. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Token exchange ratio,such as 1 token to 880 WANs, the precision is 10000, the ratio is 880*precision = 880,0000. The ratio would be changed accoring to the market value ratio periodically. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1512,7 +1512,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTokenAllowance",
     "version": "1.0.0",
-    "description": "<p>Get the ERC20 allowance for one specific account on one contract for one specific spender account on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get the token allowance for one specific account on one contract for one specific spender account on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1592,7 +1592,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTokenInfo",
     "version": "1.0.0",
-    "description": "<p>Get the info of ERC20 contract, like symbol and decimals, on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get the info of token contract, like symbol and decimals, on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1658,7 +1658,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getMultiTokenInfo",
     "version": "1.0.0",
-    "description": "<p>Get the information of multiple ERC20 tokens. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get the information of multiple tokens. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
