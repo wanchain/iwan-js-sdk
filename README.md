@@ -15,7 +15,7 @@ After installation, the iWan SDK can be used to connect to the iWan RPC server t
 ```bash
 const iWanClient = require('iwan-sdk');
 ```
-By default the SDK will connect to `"api.wanchain.org:443"`
+By default the SDK will connect to `"api.wanchain.org:8443"`
 ```bash
 let apiClient = new iWanClient(YourApiKey, YourSecretKey);
 
@@ -44,7 +44,7 @@ The SDK object can accept an `option` object. See below for examples of usage.
 
 - `option` {Object}
   - `url` {String}  The RPC server URL, default is 'api.wanchain.org'.
-  - `port` {Number} The RPC server port, default is 443.
+  - `port` {Number} The RPC server port, default is 8443.
   - `flag` {String} The flag to connect the iWan RPC server, default is 'ws'.
   - `version` {String} The RPC method version, default is 'v3'.
 
