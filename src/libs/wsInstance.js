@@ -83,7 +83,7 @@ class WsInstance {
 
     heartCheck() {
         let that = this;
-        let timeout = 20000;
+        let timeout = 30000;
         this.heartCheck = {
             timeout: timeout,
             timeoutObj: null,

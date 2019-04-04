@@ -1,6 +1,6 @@
 const config = {
     socketUrl: 'api.wanchain.org',
-    socketPort: 443,
+    socketPort: 8443,
 
     apiFlag: 'ws',
     apiVersion: 'v3',
