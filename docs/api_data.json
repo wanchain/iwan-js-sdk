@@ -57,7 +57,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": \"10000000000000000000000\"",
+          "content": "\"10000000000000000000000\"",
           "type": "json"
         }
       ]
@@ -123,7 +123,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": {\n  \"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c\": \"10000000000000000000000\",\n  \"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2d\": \"0\"\n}",
+          "content": " {\n  \"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c\": \"10000000000000000000000\",\n  \"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2d\": \"0\"\n}",
           "type": "json"
         }
       ]
@@ -189,7 +189,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": \"0x0\"",
+          "content": "\"0x0\"",
           "type": "json"
         }
       ]
@@ -255,7 +255,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": \"0x0\"",
+          "content": "\"0x0\"",
           "type": "json"
         }
       ]
@@ -335,7 +335,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": " \"result\": [{\n     \"txid\": \"302588f81dc5ad7972d3affc781adc6eb326227a6feda53a990e9b98b715edcc\",\n     \"vout\": 0,\n     \"address\": \"n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R\",\n     \"account\": \"\",\n     \"scriptPubKey\": \"76a914ec8626d9aa394317659a45cfcbd1f0762126c5e888ac\",\n     \"amount\": 0.079,\n     \"confirmations\": 16,\n     \"spendable\": false,\n     \"solvable\": false,\n     \"safe\": true,\n     \"value\": 0.079\n}]",
+          "content": "  [{\n     \"txid\": \"302588f81dc5ad7972d3affc781adc6eb326227a6feda53a990e9b98b715edcc\",\n     \"vout\": 0,\n     \"address\": \"n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R\",\n     \"account\": \"\",\n     \"scriptPubKey\": \"76a914ec8626d9aa394317659a45cfcbd1f0762126c5e888ac\",\n     \"amount\": 0.079,\n     \"confirmations\": 16,\n     \"spendable\": false,\n     \"solvable\": false,\n     \"safe\": true,\n     \"value\": 0.079\n}]",
           "type": "json"
         }
       ]
@@ -401,7 +401,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": \"success\"",
+          "content": "\"success\"",
           "type": "json"
         }
       ]
@@ -467,7 +467,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": {\n     \"size\": 727,\n     \"timestamp\": 1522575814,\n     \"transactions\": [\"0x4dcfc82728b5a9307f249ac095c8e6fcc436db4f85a094a0c5a457255c20f80f\"],\n     \"uncles\": [],\n     \"difficulty\": \"5812826\",\n     \"extraData\": \"0xd783010004846765746887676f312e392e32856c696e75780000000000000000de43ad982c5ccfa922f701d9ac91d47ceaaeeea7e1cc092b1ff6c3c5dcce70a07cf5a79886ff0cc02254ec0de51f1a6881a69a38cd2866a5c0dddbe0dd0f2ce301\",\n     \"gasLimit\": 4712388,\n     \"gasUsed\": 21000,\n     \"hash\": \"0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8\",\n     \"logsBloom\": \"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\",\n     \"miner\": \"0x321a210c019790308abb948360d144e7e00b7dc5\",\n     \"mixHash\": \"0x691299af763a758e94200545b8a5fe9d4f2cedbbfea031a1bbc540cbde4631d1\",\n     \"nonce\": \"0x2c8dd099eda5b188\",\n     \"number\": 670731,\n     \"parentHash\": \"0xd907820c7a46ba668a7e5bda8c6a23ec250877b853a85d8343688337f967b2d9\",\n     \"receiptsRoot\": \"0x056b23fbba480696b65fe5a59b8f2148a1299103c4f57df839233af2cf4ca2d2\",\n     \"sha3Uncles\": \"0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347\",\n     \"stateRoot\": \"0xafbfae425a7fed863662f88d64819132079b43ac4d85988ab6cce7f9342348af\",\n     \"totalDifficulty\": \"3610551057115\",\n     \"transactionsRoot\": \"0x96fc902544191c38f1c9a2725ea2ae29e34246fb4e95728f3e72added7c9574b\"\n   }",
+          "content": "{\n    \"size\": 727,\n    \"timestamp\": 1522575814,\n    \"transactions\": [\"0x4dcfc82728b5a9307f249ac095c8e6fcc436db4f85a094a0c5a457255c20f80f\"],\n    \"uncles\": [],\n    \"difficulty\": \"5812826\",\n    \"extraData\": \"0xd783010004846765746887676f312e392e32856c696e75780000000000000000de43ad982c5ccfa922f701d9ac91d47ceaaeeea7e1cc092b1ff6c3c5dcce70a07cf5a79886ff0cc02254ec0de51f1a6881a69a38cd2866a5c0dddbe0dd0f2ce301\",\n    \"gasLimit\": 4712388,\n    \"gasUsed\": 21000,\n    \"hash\": \"0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8\",\n    \"logsBloom\": \"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\",\n    \"miner\": \"0x321a210c019790308abb948360d144e7e00b7dc5\",\n    \"mixHash\": \"0x691299af763a758e94200545b8a5fe9d4f2cedbbfea031a1bbc540cbde4631d1\",\n    \"nonce\": \"0x2c8dd099eda5b188\",\n    \"number\": 670731,\n    \"parentHash\": \"0xd907820c7a46ba668a7e5bda8c6a23ec250877b853a85d8343688337f967b2d9\",\n    \"receiptsRoot\": \"0x056b23fbba480696b65fe5a59b8f2148a1299103c4f57df839233af2cf4ca2d2\",\n    \"sha3Uncles\": \"0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347\",\n    \"stateRoot\": \"0xafbfae425a7fed863662f88d64819132079b43ac4d85988ab6cce7f9342348af\",\n    \"totalDifficulty\": \"3610551057115\",\n    \"transactionsRoot\": \"0x96fc902544191c38f1c9a2725ea2ae29e34246fb4e95728f3e72added7c9574b\"\n  }",
           "type": "json"
         }
       ]
@@ -533,7 +533,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": {\n     \"size\": 727,\n     \"timestamp\": 1522575814,\n     \"transactions\": [\"0x4dcfc82728b5a9307f249ac095c8e6fcc436db4f85a094a0c5a457255c20f80f\"],\n     \"uncles\": [],\n     \"difficulty\": \"5812826\",\n     \"extraData\": \"0xd783010004846765746887676f312e392e32856c696e75780000000000000000de43ad982c5ccfa922f701d9ac91d47ceaaeeea7e1cc092b1ff6c3c5dcce70a07cf5a79886ff0cc02254ec0de51f1a6881a69a38cd2866a5c0dddbe0dd0f2ce301\",\n     \"gasLimit\": 4712388,\n     \"gasUsed\": 21000,\n     \"hash\": \"0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8\",\n     \"logsBloom\": \"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\",\n     \"miner\": \"0x321a210c019790308abb948360d144e7e00b7dc5\",\n     \"mixHash\": \"0x691299af763a758e94200545b8a5fe9d4f2cedbbfea031a1bbc540cbde4631d1\",\n     \"nonce\": \"0x2c8dd099eda5b188\",\n     \"number\": 670731,\n     \"parentHash\": \"0xd907820c7a46ba668a7e5bda8c6a23ec250877b853a85d8343688337f967b2d9\",\n     \"receiptsRoot\": \"0x056b23fbba480696b65fe5a59b8f2148a1299103c4f57df839233af2cf4ca2d2\",\n     \"sha3Uncles\": \"0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347\",\n     \"stateRoot\": \"0xafbfae425a7fed863662f88d64819132079b43ac4d85988ab6cce7f9342348af\",\n     \"totalDifficulty\": \"3610551057115\",\n     \"transactionsRoot\": \"0x96fc902544191c38f1c9a2725ea2ae29e34246fb4e95728f3e72added7c9574b\"\n   }",
+          "content": "{\n    \"size\": 727,\n    \"timestamp\": 1522575814,\n    \"transactions\": [\"0x4dcfc82728b5a9307f249ac095c8e6fcc436db4f85a094a0c5a457255c20f80f\"],\n    \"uncles\": [],\n    \"difficulty\": \"5812826\",\n    \"extraData\": \"0xd783010004846765746887676f312e392e32856c696e75780000000000000000de43ad982c5ccfa922f701d9ac91d47ceaaeeea7e1cc092b1ff6c3c5dcce70a07cf5a79886ff0cc02254ec0de51f1a6881a69a38cd2866a5c0dddbe0dd0f2ce301\",\n    \"gasLimit\": 4712388,\n    \"gasUsed\": 21000,\n    \"hash\": \"0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8\",\n    \"logsBloom\": \"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\",\n    \"miner\": \"0x321a210c019790308abb948360d144e7e00b7dc5\",\n    \"mixHash\": \"0x691299af763a758e94200545b8a5fe9d4f2cedbbfea031a1bbc540cbde4631d1\",\n    \"nonce\": \"0x2c8dd099eda5b188\",\n    \"number\": 670731,\n    \"parentHash\": \"0xd907820c7a46ba668a7e5bda8c6a23ec250877b853a85d8343688337f967b2d9\",\n    \"receiptsRoot\": \"0x056b23fbba480696b65fe5a59b8f2148a1299103c4f57df839233af2cf4ca2d2\",\n    \"sha3Uncles\": \"0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347\",\n    \"stateRoot\": \"0xafbfae425a7fed863662f88d64819132079b43ac4d85988ab6cce7f9342348af\",\n    \"totalDifficulty\": \"3610551057115\",\n    \"transactionsRoot\": \"0x96fc902544191c38f1c9a2725ea2ae29e34246fb4e95728f3e72added7c9574b\"\n  }",
           "type": "json"
         }
       ]
@@ -592,7 +592,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": \"119858\"",
+          "content": "\"119858\"",
           "type": "json"
         }
       ]
@@ -658,7 +658,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": 1",
+          "content": "1",
           "type": "json"
         }
       ]
@@ -745,7 +745,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": \"0x8cc420e422b3fa1c416a14fc600b3354e3312524\"",
+          "content": "\"0x8cc420e422b3fa1c416a14fc600b3354e3312524\"",
           "type": "json"
         }
       ]
@@ -832,7 +832,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": \"0x2ecb855170c941f239ffe3495f3e07cceabd8421\"",
+          "content": "\"0x2ecb855170c941f239ffe3495f3e07cceabd8421\"",
           "type": "json"
         }
       ]
@@ -898,7 +898,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": \"0xbb8703ca8226f411811dd16a3f1a2c1b3f71825d\"",
+          "content": "\"0xbb8703ca8226f411811dd16a3f1a2c1b3f71825d\"",
           "type": "json"
         }
       ]
@@ -983,7 +983,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": \"0x2ecb855170c941f239ffe3495f3e07cceabd8421\"",
+          "content": "\"0x2ecb855170c941f239ffe3495f3e07cceabd8421\"",
           "type": "json"
         }
       ]
@@ -1042,7 +1042,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": \"20\"",
+          "content": "\"20\"",
           "type": "json"
         }
       ]
@@ -1101,7 +1101,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": [{\n    \"tokenOrigAddr\": \"0x54950025d1854808b09277fe082b54682b11a50b\",\n    \"tokenWanAddr\": \"0xe336cb9b982cdc8055771bd509ac8b89d3b7a3af\",\n    \"ratio\": \"5700000\",\n    \"minDeposit\": \"100000000000000000000\",\n    \"origHtlc\": \"0x87a0dee965e7679d15327ce0cc3df8dfc009b43d\",\n    \"wanHtlc\": \"0xe10515355e684e515c9c632c9eed04cca425cda1\",\n    \"withdrawDelayTime\": \"259200\"\n  }, {\n    \"tokenOrigAddr\": \"0xdbf193627ee704d38495c2f5eb3afc3512eafa4c\",\n    \"tokenWanAddr\": \"0x47db5125f4af190093b0ec2c502959d39dcbc4fa\",\n    \"ratio\": \"5000\",\n    \"minDeposit\": \"100000000000000000000\",\n    \"origHtlc\": \"0x87a0dee965e7679d15327ce0cc3df8dfc009b43d\",\n    \"wanHtlc\": \"0xe10515355e684e515c9c632c9eed04cca425cda1\",\n    \"withdrawDelayTime\": \"259200\"\n  }, {\n    \"tokenOrigAddr\": \"0x00f58d6d585f84b2d7267940cede30ce2fe6eae8\",\n    \"tokenWanAddr\": \"0x8b9efd0f6d5f078520a65ad731d79c0f63675ec0\",\n    \"ratio\": \"3000\",\n    \"minDeposit\": \"100000000000000000000\",\n    \"origHtlc\": \"0x87a0dee965e7679d15327ce0cc3df8dfc009b43d\",\n    \"wanHtlc\": \"0xe10515355e684e515c9c632c9eed04cca425cda1\",\n    \"withdrawDelayTime\": \"259200\"\n  }]",
+          "content": "[{\n   \"tokenOrigAddr\": \"0x54950025d1854808b09277fe082b54682b11a50b\",\n   \"tokenWanAddr\": \"0xe336cb9b982cdc8055771bd509ac8b89d3b7a3af\",\n   \"ratio\": \"5700000\",\n   \"minDeposit\": \"100000000000000000000\",\n   \"origHtlc\": \"0x87a0dee965e7679d15327ce0cc3df8dfc009b43d\",\n   \"wanHtlc\": \"0xe10515355e684e515c9c632c9eed04cca425cda1\",\n   \"withdrawDelayTime\": \"259200\"\n }, {\n   \"tokenOrigAddr\": \"0xdbf193627ee704d38495c2f5eb3afc3512eafa4c\",\n   \"tokenWanAddr\": \"0x47db5125f4af190093b0ec2c502959d39dcbc4fa\",\n   \"ratio\": \"5000\",\n   \"minDeposit\": \"100000000000000000000\",\n   \"origHtlc\": \"0x87a0dee965e7679d15327ce0cc3df8dfc009b43d\",\n   \"wanHtlc\": \"0xe10515355e684e515c9c632c9eed04cca425cda1\",\n   \"withdrawDelayTime\": \"259200\"\n }, {\n   \"tokenOrigAddr\": \"0x00f58d6d585f84b2d7267940cede30ce2fe6eae8\",\n   \"tokenWanAddr\": \"0x8b9efd0f6d5f078520a65ad731d79c0f63675ec0\",\n   \"ratio\": \"3000\",\n   \"minDeposit\": \"100000000000000000000\",\n   \"origHtlc\": \"0x87a0dee965e7679d15327ce0cc3df8dfc009b43d\",\n   \"wanHtlc\": \"0xe10515355e684e515c9c632c9eed04cca425cda1\",\n   \"withdrawDelayTime\": \"259200\"\n }]",
           "type": "json"
         }
       ]
@@ -1160,7 +1160,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": " \"result\": [{\n     \"wanAddress\": \"0x06daa9379cbe241a84a65b217a11b38fe3b4b063\",\n     \"ethAddress\": \"0x41623962c5d44565de623d53eb677e0f300467d2\",\n     \"deposit\": \"128000000000000000000000\",\n     \"txFeeRatio\": \"10\",\n     \"quota\": \"400000000000000000000\",\n     \"inboundQuota\": \"290134198386719012352\",\n     \"outboundQuota\": \"85607176846820246993\",\n     \"receivable\": \"80000000000000000\",\n     \"payable\": \"24178624766460740655\",\n     \"debt\": \"109785801613280987648\"\n}]",
+          "content": "  [{\n     \"wanAddress\": \"0x06daa9379cbe241a84a65b217a11b38fe3b4b063\",\n     \"ethAddress\": \"0x41623962c5d44565de623d53eb677e0f300467d2\",\n     \"deposit\": \"128000000000000000000000\",\n     \"txFeeRatio\": \"10\",\n     \"quota\": \"400000000000000000000\",\n     \"inboundQuota\": \"290134198386719012352\",\n     \"outboundQuota\": \"85607176846820246993\",\n     \"receivable\": \"80000000000000000\",\n     \"payable\": \"24178624766460740655\",\n     \"debt\": \"109785801613280987648\"\n}]",
           "type": "json"
         }
       ]
@@ -1226,7 +1226,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": \"3000\"",
+          "content": "\"3000\"",
           "type": "json"
         }
       ]
@@ -1292,7 +1292,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": [{\n    \"tokenOrigAddr\": \"0xdbf193627ee704d38495c2f5eb3afc3512eafa4c\",\n    \"smgWanAddr\": \"0x765854f97f7a3b6762240c329331a870b65edd96\",\n    \"smgOrigAddr\": \"0x38b6c9a1575c90ceabbfe31b204b6b3a3ce4b3d9\",\n    \"wanDeposit\": \"5000000000000000000000\",\n    \"quota\": \"10000000000000000000000\",\n    \"txFeeRatio\": \"1\",\n    \"inboundQuota\": \"9999500000000000000000\",\n    \"outboundQuota\": \"500000000000000000\",\n    \"receivable\": \"0\",\n    \"payable\": \"0\",\n    \"debt\": \"500000000000000000\"\n  }]",
+          "content": "[{\n   \"tokenOrigAddr\": \"0xdbf193627ee704d38495c2f5eb3afc3512eafa4c\",\n   \"smgWanAddr\": \"0x765854f97f7a3b6762240c329331a870b65edd96\",\n   \"smgOrigAddr\": \"0x38b6c9a1575c90ceabbfe31b204b6b3a3ce4b3d9\",\n   \"wanDeposit\": \"5000000000000000000000\",\n   \"quota\": \"10000000000000000000000\",\n   \"txFeeRatio\": \"1\",\n   \"inboundQuota\": \"9999500000000000000000\",\n   \"outboundQuota\": \"500000000000000000\",\n   \"receivable\": \"0\",\n   \"payable\": \"0\",\n   \"debt\": \"500000000000000000\"\n }]",
           "type": "json"
         }
       ]
@@ -1365,7 +1365,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\":[{\n     \"address\": \"0xda5b90dc89be59365ec44f3f2d7af8b6700d1167\",\n     \"topics\": [\"0xa4345d0839b39e5a6622a55c68bd8f83ac8a68fad252a8363a2c09dbaf85c793\", \"0x0000000000000000000000000000000000000000000000000000000000000000\"],\n     \"data\": \"0x54657374206d6573736167650000000000000000000000000000000000000000\",\n     \"blockNumber\": 1121916,\n     \"transactionHash\": \"0x6bdd2acf6e946be40e2b3a39d3aaadd6d615d59c89730196870f640990a57cbe\",\n     \"transactionIndex\": 0,\n     \"blockHash\": \"0xedda83000829f7d0a0820a7bdf2103a3142a70c404f78fd1dfc7751dc007f5a2\",\n     \"logIndex\": 0,\n     \"removed\": false\n}]",
+          "content": "[{\n     \"address\": \"0xda5b90dc89be59365ec44f3f2d7af8b6700d1167\",\n     \"topics\": [\"0xa4345d0839b39e5a6622a55c68bd8f83ac8a68fad252a8363a2c09dbaf85c793\", \"0x0000000000000000000000000000000000000000000000000000000000000000\"],\n     \"data\": \"0x54657374206d6573736167650000000000000000000000000000000000000000\",\n     \"blockNumber\": 1121916,\n     \"transactionHash\": \"0x6bdd2acf6e946be40e2b3a39d3aaadd6d615d59c89730196870f640990a57cbe\",\n     \"transactionIndex\": 0,\n     \"blockHash\": \"0xedda83000829f7d0a0820a7bdf2103a3142a70c404f78fd1dfc7751dc007f5a2\",\n     \"logIndex\": 0,\n     \"removed\": false\n}]",
           "type": "json"
         }
       ]
@@ -1438,7 +1438,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\":[{\n      \"address\": \"0x0d18157d85c93a86ca194db635336e43b1ffbd26\",\n      \"topics\": [\"0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7\", \"0x0000000000000000000000000d18157d85c93a86ca194db635336e43b1ffbd26\"],\n      \"data\": \"0xf124b8ff25fd9c5e4f4e555232840d6a0fb89f4eb9e507ee15b5eff1336de212\",\n      \"blockNumber\": 685211,\n      \"transactionHash\": \"0xf5889525629718bc39cc26909012f1502826e2241d6f169ac6c229328d38245b\",\n      \"transactionIndex\": 0,\n      \"blockHash\": \"0x6b673291fe79e06323766d0966430cafd0baec742ec7532a10be74018ba1d785\",\n      \"logIndex\": 0,\n      \"removed\": false\n}]",
+          "content": "[{\n      \"address\": \"0x0d18157d85c93a86ca194db635336e43b1ffbd26\",\n      \"topics\": [\"0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7\", \"0x0000000000000000000000000d18157d85c93a86ca194db635336e43b1ffbd26\"],\n      \"data\": \"0xf124b8ff25fd9c5e4f4e555232840d6a0fb89f4eb9e507ee15b5eff1336de212\",\n      \"blockNumber\": 685211,\n      \"transactionHash\": \"0xf5889525629718bc39cc26909012f1502826e2241d6f169ac6c229328d38245b\",\n      \"transactionIndex\": 0,\n      \"blockHash\": \"0x6b673291fe79e06323766d0966430cafd0baec742ec7532a10be74018ba1d785\",\n      \"logIndex\": 0,\n      \"removed\": false\n}]",
           "type": "json"
         }
       ]
@@ -1497,7 +1497,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": \"180000000000\"",
+          "content": "\"180000000000\"",
           "type": "json"
         }
       ]
@@ -1570,7 +1570,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": {\n  \"0xfac95c16da814d24cc64b3186348afecf527324f\": \"10000000000000000000000\",\n  \"0xfac95c16da814d24cc64b3186348afecf527324e\": \"0\"\n}",
+          "content": " {\n  \"0xfac95c16da814d24cc64b3186348afecf527324f\": \"10000000000000000000000\",\n  \"0xfac95c16da814d24cc64b3186348afecf527324e\": \"0\"\n}",
           "type": "json"
         }
       ]
@@ -1636,7 +1636,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": [{\n    \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\": {\n      \"symbol\": \"WCT\",\n      \"decimals\": \"18\"\n    },\n    \"0x7017500899433272b4088afe34c04d742d0ce7df\": {\n      \"symbol\": \"WCT_One\",\n      \"decimals\": \"18\"\n    }\n  }]",
+          "content": "[{\n   \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\": {\n     \"symbol\": \"WCT\",\n     \"decimals\": \"18\"\n   },\n   \"0x7017500899433272b4088afe34c04d742d0ce7df\": {\n     \"symbol\": \"WCT_One\",\n     \"decimals\": \"18\"\n   }\n }]",
           "type": "json"
         }
       ]
@@ -1716,7 +1716,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": \"999999999999980000000000000\"",
+          "content": "\"999999999999980000000000000\"",
           "type": "json"
         }
       ]
@@ -1789,7 +1789,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": \"10000000000000000000000\"",
+          "content": "\"10000000000000000000000\"",
           "type": "json"
         }
       ]
@@ -1855,7 +1855,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": {\n  \"symbol\": \"WCT\",\n  \"decimals\": \"18\"\n}",
+          "content": " {\n  \"symbol\": \"WCT\",\n  \"decimals\": \"18\"\n}",
           "type": "json"
         }
       ]
@@ -1921,7 +1921,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": \"30000000000000000000000\"",
+          "content": "\"30000000000000000000000\"",
           "type": "json"
         }
       ]
@@ -1987,7 +1987,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": [{\n     \"blockNumber\": 1004796,\n     \"gas\": 90000,\n     \"nonce\": 505,\n     \"transactionIndex\": 0,\n     \"txType\": \"0x1\",\n     \"blockHash\": \"0x604e45aa6b67b1957ba793e534878d94bfbacd38eed2eb51990de097595a334e\",\n     \"from\": \"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d\",\n     \"gasPrice\": \"180000000000\",\n     \"hash\": \"0x353545658d513ff4fe1db9b0f979a24a831ae0949b37bc1afefc8179fc29b358\",\n     \"input\": \"0x\",\n     \"to\": \"0x8fbc408bef86476e3098dc539762d4021092bbde\",\n     \"value\": \"100000000000000000000\",\n     \"v\": \"0x2a\",\n     \"r\": \"0xbe8f287930782cff4d2e12e4a55c46765b610b88d13bc1a060a4565f3316e933\",\n     \"s\": \"0x7a297e96c54fffd124833462e03725ea8d168465d34a3e577afbaa9d05a99cd0\"\n   }, {\n     \"blockNumber\": 1004818,\n     \"gas\": 21000,\n     \"nonce\": 0,\n     \"transactionIndex\": 0,\n     \"txType\": \"0x1\",\n     \"blockHash\": \"0xbb5769654036fdb768ede5b1a172298d408808e7dcb78a82b3c8d5ef32fc67cb\",\n     \"from\": \"0x8fbc408bef86476e3098dc539762d4021092bbde\",\n     \"gasPrice\": \"200000000000\",\n     \"hash\": \"0xee3371655a53e6d413c3b9d570fee8852989554989fde51136cf3b9c672e272d\",\n     \"input\": \"0x\",\n     \"to\": \"0xc68b75ca4e4bf0b71e3594452a5e47b11d287724\",\n     \"value\": \"1000000000000000000\",\n     \"v\": \"0x2a\",\n     \"r\": \"0x4341dcd4156050b664b9c977644756201a6357c7b12e5db86b370a38b1ed6dfb\",\n     \"s\": \"0x43b380fc67394e8b9483af97f5de067ef6617b17cfaa75517f07ec8d166f3c65\"\n   }]",
+          "content": "[{\n    \"blockNumber\": 1004796,\n    \"gas\": 90000,\n    \"nonce\": 505,\n    \"transactionIndex\": 0,\n    \"txType\": \"0x1\",\n    \"blockHash\": \"0x604e45aa6b67b1957ba793e534878d94bfbacd38eed2eb51990de097595a334e\",\n    \"from\": \"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d\",\n    \"gasPrice\": \"180000000000\",\n    \"hash\": \"0x353545658d513ff4fe1db9b0f979a24a831ae0949b37bc1afefc8179fc29b358\",\n    \"input\": \"0x\",\n    \"to\": \"0x8fbc408bef86476e3098dc539762d4021092bbde\",\n    \"value\": \"100000000000000000000\",\n    \"v\": \"0x2a\",\n    \"r\": \"0xbe8f287930782cff4d2e12e4a55c46765b610b88d13bc1a060a4565f3316e933\",\n    \"s\": \"0x7a297e96c54fffd124833462e03725ea8d168465d34a3e577afbaa9d05a99cd0\"\n  }, {\n    \"blockNumber\": 1004818,\n    \"gas\": 21000,\n    \"nonce\": 0,\n    \"transactionIndex\": 0,\n    \"txType\": \"0x1\",\n    \"blockHash\": \"0xbb5769654036fdb768ede5b1a172298d408808e7dcb78a82b3c8d5ef32fc67cb\",\n    \"from\": \"0x8fbc408bef86476e3098dc539762d4021092bbde\",\n    \"gasPrice\": \"200000000000\",\n    \"hash\": \"0xee3371655a53e6d413c3b9d570fee8852989554989fde51136cf3b9c672e272d\",\n    \"input\": \"0x\",\n    \"to\": \"0xc68b75ca4e4bf0b71e3594452a5e47b11d287724\",\n    \"value\": \"1000000000000000000\",\n    \"v\": \"0x2a\",\n    \"r\": \"0x4341dcd4156050b664b9c977644756201a6357c7b12e5db86b370a38b1ed6dfb\",\n    \"s\": \"0x43b380fc67394e8b9483af97f5de067ef6617b17cfaa75517f07ec8d166f3c65\"\n  }]",
           "type": "json"
         }
       ]
@@ -2072,7 +2072,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": [{\n     \"blockNumber\": 984119,\n     \"gas\": 4700000,\n     \"nonce\": 407,\n     \"transactionIndex\": 0,\n     \"txType\": \"0x1\",\n     \"blockHash\": \"0xdf59acacabe8c1b64ca6ff611c629069731d9dae60f4b0cc753c4a0571ea7f27\",\n     \"from\": \"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d\",\n     \"gasPrice\": \"180000000000\",\n     \"hash\": \"0xf4610446d836b95d577ba723e1df55258e4f602cfa26d5ada3b50fa2fe82b469\",\n     \"input\": \"0x6060604052341561000f57600080fd5b336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506102d78061005e6000396000f300606060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630900f01014610067578063445df0ac146100a05780638da5cb5b146100c9578063fdacd5761461011e575b600080fd5b341561007257600080fd5b61009e600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610141565b005b34156100ab57600080fd5b6100b3610220565b6040518082815260200191505060405180910390f35b34156100d457600080fd5b6100dc610226565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561012957600080fd5b61013f600480803590602001909190505061024b565b005b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561021c578190508073ffffffffffffffffffffffffffffffffffffffff1663fdacd5766001546040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180828152602001915050600060405180830381600087803b151561020b57600080fd5b5af1151561021857600080fd5b5050505b5050565b60015481565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156102a857806001819055505b505600a165627a7a72305820de682f89b485041a9206a7304a95a151cd2363297029280359a4ca996dcaeda20029\",\n     \"to\": null,\n     \"value\": \"0\",\n     \"v\": \"0x29\",\n     \"r\": \"0xd14dfde02e305a945e6a09b6dbd5fe1f1bd5a6dc0721c15f72732aa10a3829b3\",\n     \"s\": \"0x56923b20a15f02633295b415ae52161529d560580dfcd62a97bc394c841bea37\"\n   }]",
+          "content": "[{\n    \"blockNumber\": 984119,\n    \"gas\": 4700000,\n    \"nonce\": 407,\n    \"transactionIndex\": 0,\n    \"txType\": \"0x1\",\n    \"blockHash\": \"0xdf59acacabe8c1b64ca6ff611c629069731d9dae60f4b0cc753c4a0571ea7f27\",\n    \"from\": \"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d\",\n    \"gasPrice\": \"180000000000\",\n    \"hash\": \"0xf4610446d836b95d577ba723e1df55258e4f602cfa26d5ada3b50fa2fe82b469\",\n    \"input\": \"0x6060604052341561000f57600080fd5b336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506102d78061005e6000396000f300606060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630900f01014610067578063445df0ac146100a05780638da5cb5b146100c9578063fdacd5761461011e575b600080fd5b341561007257600080fd5b61009e600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610141565b005b34156100ab57600080fd5b6100b3610220565b6040518082815260200191505060405180910390f35b34156100d457600080fd5b6100dc610226565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b341561012957600080fd5b61013f600480803590602001909190505061024b565b005b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141561021c578190508073ffffffffffffffffffffffffffffffffffffffff1663fdacd5766001546040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180828152602001915050600060405180830381600087803b151561020b57600080fd5b5af1151561021857600080fd5b5050505b5050565b60015481565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614156102a857806001819055505b505600a165627a7a72305820de682f89b485041a9206a7304a95a151cd2363297029280359a4ca996dcaeda20029\",\n    \"to\": null,\n    \"value\": \"0\",\n    \"v\": \"0x29\",\n    \"r\": \"0xd14dfde02e305a945e6a09b6dbd5fe1f1bd5a6dc0721c15f72732aa10a3829b3\",\n    \"s\": \"0x56923b20a15f02633295b415ae52161529d560580dfcd62a97bc394c841bea37\"\n  }]",
           "type": "json"
         }
       ]
@@ -2138,7 +2138,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": [{\n     \"blockNumber\": 984133,\n     \"gas\": 4700000,\n     \"nonce\": 414,\n     \"transactionIndex\": 0,\n     \"txType\": \"0x1\",\n     \"blockHash\": \"0xaa0fc2a8a868566f2e4888b2942ec05c47c2254e8b81e43d3ea87420a09126c2\",\n     \"from\": \"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d\",\n     \"gasPrice\": \"180000000000\",\n     \"hash\": \"0x2c6dee69c9cc5676484d80d173d683802a4f761d5785a694b4262fbf39dff8fe\",\n     \"input\": \"0xfdacd5760000000000000000000000000000000000000000000000000000000000000002\",\n     \"to\": \"0x92e8ae701cd081ae8f0cb03dcae2e57b9b261667\",\n     \"value\": \"0\",\n     \"v\": \"0x29\",\n     \"r\": \"0x1c1ad7e8ee64fc284adce0910d6f811933af327b20cb8adba392a1b24a15054f\",\n     \"s\": \"0x690785383bed28c9a951b30329a066cb78062f63febf5aa1ca7e7ef62a2108cb\"\n   }]",
+          "content": "[{\n    \"blockNumber\": 984133,\n    \"gas\": 4700000,\n    \"nonce\": 414,\n    \"transactionIndex\": 0,\n    \"txType\": \"0x1\",\n    \"blockHash\": \"0xaa0fc2a8a868566f2e4888b2942ec05c47c2254e8b81e43d3ea87420a09126c2\",\n    \"from\": \"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d\",\n    \"gasPrice\": \"180000000000\",\n    \"hash\": \"0x2c6dee69c9cc5676484d80d173d683802a4f761d5785a694b4262fbf39dff8fe\",\n    \"input\": \"0xfdacd5760000000000000000000000000000000000000000000000000000000000000002\",\n    \"to\": \"0x92e8ae701cd081ae8f0cb03dcae2e57b9b261667\",\n    \"value\": \"0\",\n    \"v\": \"0x29\",\n    \"r\": \"0x1c1ad7e8ee64fc284adce0910d6f811933af327b20cb8adba392a1b24a15054f\",\n    \"s\": \"0x690785383bed28c9a951b30329a066cb78062f63febf5aa1ca7e7ef62a2108cb\"\n  }]",
           "type": "json"
         }
       ]
@@ -2211,7 +2211,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": {\n     \"blockHash\": \"0xcb76ea6649d801cc45294f4d0858bad1ca0c2b169b20c4beae2852c57a7f69c9\",\n     \"blockNumber\": 1137680,\n     \"contractAddress\": null,\n     \"cumulativeGasUsed\": 29572,\n     \"from\": \"0xed1baf7289c0acef52db0c18e1198768eb06247e\",\n     \"gasUsed\": 29572,\n     \"logs\": [{\n       \"address\": \"0xda5b90dc89be59365ec44f3f2d7af8b6700d1167\",\n       \"topics\": [\"0xa4345d0839b39e5a6622a55c68bd8f83ac8a68fad252a8363a2c09dbaf85c793\", \"0x0000000000000000000000000000000000000000000000000000000000000005\"],\n       \"data\": \"0x54657374206d6573736167650000000000000000000000000000000000000000\",\n       \"blockNumber\": 1137680,\n       \"transactionHash\": \"0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da\",\n       \"transactionIndex\": 0,\n       \"blockHash\": \"0xcb76ea6649d801cc45294f4d0858bad1ca0c2b169b20c4beae2852c57a7f69c9\",\n       \"logIndex\": 0,\n       \"removed\": false\n     }],\n     \"logsBloom\": \"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000001000000800000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000200000000000\",\n     \"status\": \"0x1\",\n     \"to\": \"0xda5b90dc89be59365ec44f3f2d7af8b6700d1167\",\n     \"transactionHash\": \"0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da\",\n     \"transactionIndex\": 0\n   }",
+          "content": "{\n    \"blockHash\": \"0xcb76ea6649d801cc45294f4d0858bad1ca0c2b169b20c4beae2852c57a7f69c9\",\n    \"blockNumber\": 1137680,\n    \"contractAddress\": null,\n    \"cumulativeGasUsed\": 29572,\n    \"from\": \"0xed1baf7289c0acef52db0c18e1198768eb06247e\",\n    \"gasUsed\": 29572,\n    \"logs\": [{\n      \"address\": \"0xda5b90dc89be59365ec44f3f2d7af8b6700d1167\",\n      \"topics\": [\"0xa4345d0839b39e5a6622a55c68bd8f83ac8a68fad252a8363a2c09dbaf85c793\", \"0x0000000000000000000000000000000000000000000000000000000000000005\"],\n      \"data\": \"0x54657374206d6573736167650000000000000000000000000000000000000000\",\n      \"blockNumber\": 1137680,\n      \"transactionHash\": \"0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da\",\n      \"transactionIndex\": 0,\n      \"blockHash\": \"0xcb76ea6649d801cc45294f4d0858bad1ca0c2b169b20c4beae2852c57a7f69c9\",\n      \"logIndex\": 0,\n      \"removed\": false\n    }],\n    \"logsBloom\": \"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000001000000800000000000000000000000000000000000800000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000200000000000\",\n    \"status\": \"0x1\",\n    \"to\": \"0xda5b90dc89be59365ec44f3f2d7af8b6700d1167\",\n    \"transactionHash\": \"0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da\",\n    \"transactionIndex\": 0\n  }",
           "type": "json"
         }
       ]
@@ -2277,7 +2277,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": {\n     \"logs\": [],\n     \"blockHash\": \"0x18198d5e42859067db405c9144306f7da87210a8604aac66ef6759b14a199d6b\",\n     \"blockNumber\": 2548378,\n     \"contractAddress\": null,\n     \"cumulativeGasUsed\": 21000,\n     \"from\": \"0xdcfffcbb1edc98ebbc5c7a6b3b700a6748eca3b0\",\n     \"gasUsed\": 21000,\n     \"logsBloom\": \"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\",\n     \"status\": \"0x1\",\n     \"to\": \"0x157908807e95f864284e84cc5d307ce6f3574532\",\n     \"transactionHash\": \"0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe\",\n     \"transactionIndex\": 0\n   }",
+          "content": "{\n    \"logs\": [],\n    \"blockHash\": \"0x18198d5e42859067db405c9144306f7da87210a8604aac66ef6759b14a199d6b\",\n    \"blockNumber\": 2548378,\n    \"contractAddress\": null,\n    \"cumulativeGasUsed\": 21000,\n    \"from\": \"0xdcfffcbb1edc98ebbc5c7a6b3b700a6748eca3b0\",\n    \"gasUsed\": 21000,\n    \"logsBloom\": \"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\",\n    \"status\": \"0x1\",\n    \"to\": \"0x157908807e95f864284e84cc5d307ce6f3574532\",\n    \"transactionHash\": \"0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe\",\n    \"transactionIndex\": 0\n  }",
           "type": "json"
         }
       ]
@@ -2350,7 +2350,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": {\n     \"txType\": \"0x1\",\n     \"blockHash\": \"0xcb76ea6649d801cc45294f4d0858bad1ca0c2b169b20c4beae2852c57a7f69c9\",\n     \"blockNumber\": 1137680,\n     \"from\": \"0xed1baf7289c0acef52db0c18e1198768eb06247e\",\n     \"gas\": 1000000,\n     \"gasPrice\": \"320000000000\",\n     \"hash\": \"0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da\",\n     \"input\": \"0x642b273754657374206d6573736167650000000000000000000000000000000000000000\",\n     \"nonce\": 26,\n     \"to\": \"0xda5b90dc89be59365ec44f3f2d7af8b6700d1167\",\n     \"transactionIndex\": 0,\n     \"value\": \"0\",\n     \"v\": \"0x1b\",\n     \"r\": \"0xe3a5a5d73d0b6512676723bc4bab4f7ffe01476f8cbc9631976890e175d487ac\",\n     \"s\": \"0x3a79e17290fe2a9f4e5b5c5431eb322882729d68ca0d736c5d9b1f3285c9169e\"\n   }",
+          "content": "{\n    \"txType\": \"0x1\",\n    \"blockHash\": \"0xcb76ea6649d801cc45294f4d0858bad1ca0c2b169b20c4beae2852c57a7f69c9\",\n    \"blockNumber\": 1137680,\n    \"from\": \"0xed1baf7289c0acef52db0c18e1198768eb06247e\",\n    \"gas\": 1000000,\n    \"gasPrice\": \"320000000000\",\n    \"hash\": \"0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da\",\n    \"input\": \"0x642b273754657374206d6573736167650000000000000000000000000000000000000000\",\n    \"nonce\": 26,\n    \"to\": \"0xda5b90dc89be59365ec44f3f2d7af8b6700d1167\",\n    \"transactionIndex\": 0,\n    \"value\": \"0\",\n    \"v\": \"0x1b\",\n    \"r\": \"0xe3a5a5d73d0b6512676723bc4bab4f7ffe01476f8cbc9631976890e175d487ac\",\n    \"s\": \"0x3a79e17290fe2a9f4e5b5c5431eb322882729d68ca0d736c5d9b1f3285c9169e\"\n  }",
           "type": "json"
         }
       ]
@@ -2416,7 +2416,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"result\": \"0x4dcfc82728b5a9307f249ac095c8e6fcc436db4f85a094a0c5a457255c20f80f\"",
+          "content": "\"0x4dcfc82728b5a9307f249ac095c8e6fcc436db4f85a094a0c5a457255c20f80f\"",
           "type": "json"
         }
       ]
