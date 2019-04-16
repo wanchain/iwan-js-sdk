@@ -82,7 +82,7 @@ class ApiInstance extends WsInstance {
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
-   * "result":[{
+   * [{
       "address": "0x0d18157d85c93a86ca194db635336e43b1ffbd26",
       "topics": ["0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7", "0x0000000000000000000000000d18157d85c93a86ca194db635336e43b1ffbd26"],
       "data": "0xf124b8ff25fd9c5e4f4e555232840d6a0fb89f4eb9e507ee15b5eff1336de212",
@@ -146,7 +146,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  * "result":[{
+  * [{
      "address": "0xda5b90dc89be59365ec44f3f2d7af8b6700d1167",
      "topics": ["0xa4345d0839b39e5a6622a55c68bd8f83ac8a68fad252a8363a2c09dbaf85c793", "0x0000000000000000000000000000000000000000000000000000000000000000"],
      "data": "0x54657374206d6573736167650000000000000000000000000000000000000000",
@@ -209,7 +209,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": "0xbb8703ca8226f411811dd16a3f1a2c1b3f71825d"
+  *   "0xbb8703ca8226f411811dd16a3f1a2c1b3f71825d"
   *
   */
   getScOwner(chainType, scAddr, callback) {
@@ -261,7 +261,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": "20"
+  *   "20"
   *
   */
   getCoin2WanRatio(crossChain, callback) {
@@ -317,7 +317,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": [{
+  *   [{
      "txid": "302588f81dc5ad7972d3affc781adc6eb326227a6feda53a990e9b98b715edcc",
      "vout": 0,
      "address": "n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R",
@@ -381,7 +381,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": [{
+  *   [{
      "wanAddress": "0x06daa9379cbe241a84a65b217a11b38fe3b4b063",
      "ethAddress": "0x41623962c5d44565de623d53eb677e0f300467d2",
      "deposit": "128000000000000000000000",
@@ -445,7 +445,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": [{
+  *   [{
      "tokenOrigAddr": "0xdbf193627ee704d38495c2f5eb3afc3512eafa4c",
      "smgWanAddr": "0x765854f97f7a3b6762240c329331a870b65edd96",
      "smgOrigAddr": "0x38b6c9a1575c90ceabbfe31b204b6b3a3ce4b3d9",
@@ -509,7 +509,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": "180000000000"
+  *   "180000000000"
   *
   */
   getGasPrice(chainType, callback) {
@@ -562,7 +562,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": "10000000000000000000000"
+  *   "10000000000000000000000"
   *
   */
   getBalance(chainType, address, callback) {
@@ -615,7 +615,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": {
+  *   {
   *    "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c": "10000000000000000000000",
   *    "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2d": "0"
   *  }
@@ -672,7 +672,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": "10000000000000000000000"
+  *   "10000000000000000000000"
   *
   */
   getTokenBalance(chainType, address, tokenScAddr, callback) {
@@ -726,7 +726,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": {
+  *   {
   *    "0xfac95c16da814d24cc64b3186348afecf527324f": "10000000000000000000000",
   *    "0xfac95c16da814d24cc64b3186348afecf527324e": "0"
   *  }
@@ -784,7 +784,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": "30000000000000000000000"
+  *   "30000000000000000000000"
   *
   */
   getTokenSupply(chainType, tokenScAddr, callback) {
@@ -837,7 +837,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": "0x0"
+  *   "0x0"
   *
   */
   getNonce(chainType, address, callback) {
@@ -890,7 +890,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": "0x0"
+  *   "0x0"
   *
   */
   getNonceIncludePending(chainType, address, callback) {
@@ -942,7 +942,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": "119858"
+  *   "119858"
   *
   */
   getBlockNumber(chainType, callback) {
@@ -995,7 +995,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": "0x4dcfc82728b5a9307f249ac095c8e6fcc436db4f85a094a0c5a457255c20f80f"
+  *   "0x4dcfc82728b5a9307f249ac095c8e6fcc436db4f85a094a0c5a457255c20f80f"
   *
   */
   sendRawTransaction(chainType, signedTx, callback) {
@@ -1053,7 +1053,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": {
+  *   {
       "txType": "0x1",
       "blockHash": "0xcb76ea6649d801cc45294f4d0858bad1ca0c2b169b20c4beae2852c57a7f69c9",
       "blockNumber": 1137680,
@@ -1132,7 +1132,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": {
+  *   {
       "size": 727,
       "timestamp": 1522575814,
       "transactions": ["0x4dcfc82728b5a9307f249ac095c8e6fcc436db4f85a094a0c5a457255c20f80f"],
@@ -1206,7 +1206,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": {
+  *   {
       "size": 727,
       "timestamp": 1522575814,
       "transactions": ["0x4dcfc82728b5a9307f249ac095c8e6fcc436db4f85a094a0c5a457255c20f80f"],
@@ -1284,7 +1284,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": 1
+  *   1
   *
   */
   getBlockTransactionCount(chainType, blockHashOrBlockNumber, callback) {
@@ -1345,7 +1345,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": {
+  *   {
       "blockHash": "0xcb76ea6649d801cc45294f4d0858bad1ca0c2b169b20c4beae2852c57a7f69c9",
       "blockNumber": 1137680,
       "contractAddress": null,
@@ -1421,7 +1421,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": {
+  *   {
       "logs": [],
       "blockHash": "0x18198d5e42859067db405c9144306f7da87210a8604aac66ef6759b14a199d6b",
       "blockNumber": 2548378,
@@ -1491,7 +1491,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *  "result": [{
+  *   [{
       "blockNumber": 984133,
       "gas": 4700000,
       "nonce": 414,
@@ -1565,7 +1565,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   * 
   * @apiSuccessExample {json} Successful Response
-  *  "result": [{
+  *   [{
       "blockNumber": 1004796,
       "gas": 90000,
       "nonce": 505,
@@ -1658,7 +1658,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   * 
   * @apiSuccessExample {json} Successful Response
-  *  "result": [{
+  *   [{
       "blockNumber": 984119,
       "gas": 4700000,
       "nonce": 407,
@@ -1732,7 +1732,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   * 
   * @apiSuccessExample {json} Successful Response
-  *  "result": "0x2ecb855170c941f239ffe3495f3e07cceabd8421"
+  *   "0x2ecb855170c941f239ffe3495f3e07cceabd8421"
   *
   */
   getScVar(chainType, scAddr, name, abi, callback) {
@@ -1788,7 +1788,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   * 
   * @apiSuccessExample {json} Successful Response
-  *  "result": "0x2ecb855170c941f239ffe3495f3e07cceabd8421"
+  *   "0x2ecb855170c941f239ffe3495f3e07cceabd8421"
   *
   */
   getScMap(chainType, scAddr, name, key, abi, callback) {
@@ -1844,7 +1844,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   * 
   * @apiSuccessExample {json} Successful Response
-  *  "result": "0x8cc420e422b3fa1c416a14fc600b3354e3312524"
+  *   "0x8cc420e422b3fa1c416a14fc600b3354e3312524"
   *
   */
   callScFunc(chainType, scAddr, name, args, abi, callback) {
@@ -1898,7 +1898,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   * 
   * @apiSuccessExample {json} Successful Response
-  *  "result": "2ecb855170c941f239ffe3495f3e07cceabd8421"
+  *   "2ecb855170c941f239ffe3495f3e07cceabd8421"
   *
   */
   //Get the x value of p2sh by hash(x) from BTC
@@ -1952,7 +1952,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   * 
   * @apiSuccessExample {json} Successful Response
-  *  "result": "success"
+  *   "success"
   *
   */
   importAddress(chainType, address, callback) {
@@ -2004,7 +2004,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   * 
   * @apiSuccessExample {json} Successful Response
-  *  "result": [{
+  *   [{
      "tokenOrigAddr": "0x54950025d1854808b09277fe082b54682b11a50b",
      "tokenWanAddr": "0xe336cb9b982cdc8055771bd509ac8b89d3b7a3af",
      "ratio": "5700000",
@@ -2083,7 +2083,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   * 
   * @apiSuccessExample {json} Successful Response
-  *  "result": "999999999999980000000000000"
+  *   "999999999999980000000000000"
   *
   */
   getTokenAllowance(chainType, tokenScAddr, ownerAddr, spenderAddr, callback) {
@@ -2136,7 +2136,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   * 
   * @apiSuccessExample {json} Successful Response
-  *  "result": {
+  *   {
   *    "symbol": "WCT",
   *    "decimals": "18"
   *  }
@@ -2191,7 +2191,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   * 
   * @apiSuccessExample {json} Successful Response
-  *  "result": [{
+  *   [{
      "0xc5bc855056d99ef4bda0a4ae937065315e2ae11a": {
        "symbol": "WCT",
        "decimals": "18"
@@ -2253,7 +2253,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   * 
   * @apiSuccessExample {json} Successful Response
-  *  "result": "3000"
+  *   "3000"
   *
   */
   getToken2WanRatio(crossChain, tokenScAddr, callback) {
