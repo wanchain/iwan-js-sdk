@@ -33,13 +33,17 @@ class ApiInstance extends WsInstance {
   }
 
   _send(message, callback) {
-    this.sendMessage(message, (resMsg) => {
-      if (resMsg.hasOwnProperty("error")) {
-        callback(resMsg["error"]);
-      } else {
-        callback(null, resMsg["result"]);
-      }
-    });
+    try {
+      this.sendMessage(message, (resMsg) => {
+        if (resMsg.hasOwnProperty("error")) {
+          callback(resMsg["error"]);
+        } else {
+          callback(null, resMsg["result"]);
+        }
+      });
+    } catch (err) {
+      callback(err);
+    }
   }
 
   checkHash(hash) {
