@@ -2191,7 +2191,7 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   * 
   * @apiSuccessExample {json} Successful Response
-  *   [{
+  *   {
      "0xc5bc855056d99ef4bda0a4ae937065315e2ae11a": {
        "symbol": "WCT",
        "decimals": "18"
@@ -2200,7 +2200,7 @@ class ApiInstance extends WsInstance {
        "symbol": "WCT_One",
        "decimals": "18"
      }
-   }]
+   }
   *
   */
   getMultiTokenInfo(chainType, tokenScAddrArray, callback) {

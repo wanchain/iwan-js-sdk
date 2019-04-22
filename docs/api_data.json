@@ -1636,7 +1636,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[{\n   \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\": {\n     \"symbol\": \"WCT\",\n     \"decimals\": \"18\"\n   },\n   \"0x7017500899433272b4088afe34c04d742d0ce7df\": {\n     \"symbol\": \"WCT_One\",\n     \"decimals\": \"18\"\n   }\n }]",
+          "content": "{\n   \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\": {\n     \"symbol\": \"WCT\",\n     \"decimals\": \"18\"\n   },\n   \"0x7017500899433272b4088afe34c04d742d0ce7df\": {\n     \"symbol\": \"WCT_One\",\n     \"decimals\": \"18\"\n   }\n }",
           "type": "json"
         }
       ]
