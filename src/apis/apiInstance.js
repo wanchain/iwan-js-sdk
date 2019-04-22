@@ -21,11 +21,10 @@ class ApiInstance extends WsInstance {
     if (jsonResult.hasOwnProperty("error")) {
         callback(jsonResult["error"]);
     } else {
-      if (this.open) {
+      if (this.isOpen()) {
         this._send(jsonResult["result"], callback);
       } else {
         this.events.on("open", () => {
-          this.open = true;
           this._send(jsonResult["result"], callback);
         });
       }

@@ -14,7 +14,6 @@ class WsInstance {
     constructor(apiKey, secretKey, option) {
         this.apiKey = apiKey;
         this.secretKey = secretKey;
-        this.open = false;
         this.events = new WsEvent();
         this.option = Object.assign({url:config.socketUrl,port:config.socketPort,flag:config.apiFlag,version:config.apiVersion} ,option);
         this.ws_url = 'wss://' + this.option.url + ':' + this.option.port;
@@ -49,7 +48,6 @@ class WsInstance {
         this.wss.onopen = () => {
             console.log("Socket opened.");
             this.heartCheck.reset().start();
-            this.open = true;
             this.events.emit("open");
         };
 
@@ -66,16 +64,13 @@ class WsInstance {
 
         this.wss.onerror = (err) => {
             this.reconnect();
-            this.open = false;
         };
 
         this.wss.onclose = () => {
-            this.open = false;
             console.log("ApiInstance notified socket has closed.");
         };
 
         this.wss.on("unexpected-response", (req, response)=>{
-            this.open = false;
             this.reconnect();
             console.log("ERROR CODE : " + response.statusCode + " < " + response.statusMessage + " > ");
         });
@@ -117,6 +112,10 @@ class WsInstance {
             this.createWebSocket();
             this.lockReconnect = false;
         }, 2000);
+    }
+
+    isOpen() {
+        return this.wss.readyState === WebSocket.OPEN;
     }
 
     close() {
