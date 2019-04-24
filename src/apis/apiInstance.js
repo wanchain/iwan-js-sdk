@@ -1710,7 +1710,7 @@ class ApiInstance extends WsInstance {
   * @apiParam {string} chainType The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.
   * @apiParam {string} scAddr The token contract address for the specified token.
   * @apiParam {string} name The name of the specific contract parameter.
-  * @apiParam {string} abi The abi of the specific contract.
+  * @apiParam {array} abi The abi of the specific contract.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -1769,7 +1769,7 @@ class ApiInstance extends WsInstance {
   * @apiParam {string} scAddr The token contract address for the specified token.
   * @apiParam {string} name The name of the specific contract public map.
   * @apiParam {string} key The key of parameter of the specific contract public map.
-  * @apiParam {string} abi The abi of the specific contract.
+  * @apiParam {array} abi The abi of the specific contract.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -1825,7 +1825,7 @@ class ApiInstance extends WsInstance {
   * @apiParam {string} scAddr The token contract address for the specified token.
   * @apiParam {string} name The name of the specific contract public function.
   * @apiParam {array} args The parameters array a of the specific contract public function.
-  * @apiParam {string} abi The abi of the specific contract.
+  * @apiParam {array} abi The abi of the specific contract.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
