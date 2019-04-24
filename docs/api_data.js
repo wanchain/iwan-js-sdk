@@ -707,7 +707,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "string",
+            "type": "array",
             "optional": false,
             "field": "abi",
             "description": "<p>The abi of the specific contract.</p>"
@@ -794,7 +794,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "string",
+            "type": "array",
             "optional": false,
             "field": "abi",
             "description": "<p>The abi of the specific contract.</p>"
@@ -940,7 +940,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "string",
+            "type": "array",
             "optional": false,
             "field": "abi",
             "description": "<p>The abi of the specific contract.</p>"
