@@ -68,6 +68,7 @@ class WsInstance {
 
         this.wss.onclose = () => {
             console.log("ApiInstance notified socket has closed.");
+            this.reconnect();
         };
 
         this.wss.on("unexpected-response", (req, response)=>{
@@ -95,7 +96,7 @@ class WsInstance {
                         that.wss.ping('{"event": "ping"}');
                     }
                     self.serverTimeoutObj = setTimeout(() => {
-                        that.wss.close();
+                        // that.wss.close();
                     }, timeout);
                 }, timeout)
             }
@@ -120,7 +121,9 @@ class WsInstance {
 
     close() {
         this.heartCheck.reset();
-        this.wss.close();
+        if (this.wss) {
+            this.wss.close();
+        }
     }
 
     sendMessage(message, callback) {
