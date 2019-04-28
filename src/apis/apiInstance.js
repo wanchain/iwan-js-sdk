@@ -184,7 +184,7 @@ class ApiInstance extends WsInstance {
   * @apiName getScOwner
   * @apiGroup Contracts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getScOwner
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.2
   * @apiDescription Get the owner of the specified contract from the specified chain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -237,7 +237,7 @@ class ApiInstance extends WsInstance {
   * @apiName getCoin2WanRatio
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getCoin2WanRatio
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Coin exchange ratio,such as 1 ETH to 880 WANs in ICO period, the precision is 10000, the ratio is 880*precision = 880,0000. The ratio would be changed according to the market value ratio periodically.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -289,7 +289,7 @@ class ApiInstance extends WsInstance {
   * @apiName getUTXO
   * @apiGroup Accounts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getUTXO
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get the detail BTC UTXO info for BTC.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -357,7 +357,7 @@ class ApiInstance extends WsInstance {
   * @apiName getStoremanGroups
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGroups
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get the detailed cross-chain storemanGroup info for one cross-chain native coin, like the quota, etc.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -420,7 +420,7 @@ class ApiInstance extends WsInstance {
   * @apiName getTokenStoremanGroups
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenStoremanGroups
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get the detail cross-chain storemanGroup info for one specific token contract, like the quota, etc.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -485,7 +485,7 @@ class ApiInstance extends WsInstance {
   * @apiName getGasPrice
   * @apiGroup Status
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getGasPrice
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get a bigNumber of the current gas price in wei.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -537,7 +537,7 @@ class ApiInstance extends WsInstance {
   * @apiName getBalance
   * @apiGroup Accounts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getBalance
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get balance for a single address.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -590,7 +590,7 @@ class ApiInstance extends WsInstance {
   * @apiName getMultiBalances
   * @apiGroup Accounts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getMultiBalances
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get balance for multiple Addresses in a single call.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -646,7 +646,7 @@ class ApiInstance extends WsInstance {
   * @apiName getTokenBalance
   * @apiGroup Tokens
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenBalance
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get token balance for a single address of certain token on Wanchain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -700,7 +700,7 @@ class ApiInstance extends WsInstance {
   * @apiName getMultiTokenBalance
   * @apiGroup Tokens
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getMultiTokenBalance
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Gets token balance for multiple addresses of specified token on Wanchain in a single call.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -757,7 +757,7 @@ class ApiInstance extends WsInstance {
   * @apiName getTokenSupply
   * @apiGroup Tokens
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenSupply
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get total amount of certain token on Wanchain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -812,7 +812,7 @@ class ApiInstance extends WsInstance {
   * @apiName getNonce
   * @apiGroup Accounts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getNonce
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get the nonce of an account.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -865,7 +865,7 @@ class ApiInstance extends WsInstance {
   * @apiName getNonceIncludePending
   * @apiGroup Accounts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getNonceIncludePending
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get the pending nonce of an account.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -918,7 +918,7 @@ class ApiInstance extends WsInstance {
   * @apiName getBlockNumber
   * @apiGroup Blocks
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getBlockNumber
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get the current latest block number.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -970,7 +970,7 @@ class ApiInstance extends WsInstance {
   * @apiName sendRawTransaction
   * @apiGroup Transactions
   * @api {CONNECT} /ws/v3/YOUR-API-KEY sendRawTransaction
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Submit a pre-signed transaction for broadcast to certain chain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -1023,7 +1023,7 @@ class ApiInstance extends WsInstance {
   * @apiName getTxInfo
   * @apiGroup Transactions
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTxInfo
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get the transaction detail via txHash on certain chain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -1107,7 +1107,7 @@ class ApiInstance extends WsInstance {
   * @apiName getBlockByNumber
   * @apiGroup Blocks
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getBlockByNumber
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get the block information about a block by block number on certain chain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -1181,7 +1181,7 @@ class ApiInstance extends WsInstance {
   * @apiName getBlockByHash
   * @apiGroup Blocks
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getBlockByHash
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get the block information about a block by block hash on certain chain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -1255,7 +1255,7 @@ class ApiInstance extends WsInstance {
   * @apiName getBlockTransactionCount
   * @apiGroup Blocks
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getBlockTransactionCount
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get the number of transaction in a given block by block number or block hash on certain chain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -1317,7 +1317,7 @@ class ApiInstance extends WsInstance {
   * @apiName getTransactionConfirm
   * @apiGroup Transactions
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTransactionConfirm
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get the transaction mined result on certain chain. 
   * When the receipt not existed, return directly with 'no receipt was found';
   * If receipt existed, the receipt will be returned after confirm-block-number blocks.
@@ -1396,7 +1396,7 @@ class ApiInstance extends WsInstance {
   * @apiName getTransactionReceipt
   * @apiGroup Transactions
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTransactionReceipt
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get the receipt of a transaction by transaction hash on certain chain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -1462,7 +1462,7 @@ class ApiInstance extends WsInstance {
   * @apiName getTransByBlock
   * @apiGroup Transactions
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTransByBlock
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get transaction information in a given block by block number or block hash on certain chain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -1540,7 +1540,7 @@ class ApiInstance extends WsInstance {
   * @apiName getTransByAddress
   * @apiGroup Transactions
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTransByAddress
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get transaction information via the specified address on certain chain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -1625,7 +1625,7 @@ class ApiInstance extends WsInstance {
   * @apiName getTransByAddressBetweenBlocks
   * @apiGroup Transactions
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTransByAddressBetweenBlocks
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get transaction information via the specified address between the specified startBlockNo and endBlockNo on certain chain.
   * <br>Comments:
   * <br>&nbsp;&nbsp;&nbsp;&nbsp;if no startBlockNo given, startBlockNo will be set to 0;
@@ -1702,7 +1702,7 @@ class ApiInstance extends WsInstance {
   * @apiName getScVar
   * @apiGroup Contracts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getScVar
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get the specific public parameter value of one contract on certain chain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -1760,7 +1760,7 @@ class ApiInstance extends WsInstance {
   * @apiName getScMap
   * @apiGroup Contracts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getScMap
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get the specific public map value of one contract on certain chain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -1816,7 +1816,7 @@ class ApiInstance extends WsInstance {
   * @apiName callScFunc
   * @apiGroup Contracts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY callScFunc
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Call the specific public function of one contract on certain chain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -1872,7 +1872,7 @@ class ApiInstance extends WsInstance {
   * @apiName getP2shxByHashx
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getP2shxByHashx
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get the x value of p2sh by hash(x) from BTC.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -1927,7 +1927,7 @@ class ApiInstance extends WsInstance {
   * @apiName importAddress
   * @apiGroup Accounts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY importAddress
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Send a <code>'import address'</code> command to BTC.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -1980,7 +1980,7 @@ class ApiInstance extends WsInstance {
   * @apiName getRegTokens
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getRegTokens
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get the information of tokens which are supported for cross-chain ability.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -2056,7 +2056,7 @@ class ApiInstance extends WsInstance {
   * @apiName getTokenAllowance
   * @apiGroup Tokens
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenAllowance
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get the token allowance for one specific account on one contract for one specific spender account on certain chain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -2111,7 +2111,7 @@ class ApiInstance extends WsInstance {
   * @apiName getTokenInfo
   * @apiGroup Tokens
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenInfo
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get the info of token contract, like symbol and decimals, on certain chain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -2166,7 +2166,7 @@ class ApiInstance extends WsInstance {
   * @apiName getMultiTokenInfo
   * @apiGroup Tokens
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getMultiTokenInfo
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Get the information of multiple tokens.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
@@ -2228,7 +2228,7 @@ class ApiInstance extends WsInstance {
   * @apiName getToken2WanRatio
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getToken2WanRatio
-  * @apiVersion 1.0.1
+  * @apiVersion 1.0.3
   * @apiDescription Token exchange ratio,such as 1 token to 880 WANs, the precision is 10000, the ratio is 880*precision = 880,0000. The ratio would be changed accoring to the market value ratio periodically.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
