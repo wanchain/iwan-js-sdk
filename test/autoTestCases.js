@@ -2,7 +2,7 @@ const assert = require('chai').assert;
 const xlsx = require('node-xlsx');
 const Websocket = require('ws');
 const testCaseFile = __dirname + "/testcase/Wanchain RPC API Testcase.xlsx";
-const ApiInstance = require('../src/apis/apiInstance.js');
+const ApiInstance = require('../');
 
 const xlsxTestCaseIndex = 1;
 const skipKeyword = 'skip';
@@ -81,8 +81,8 @@ function assertFullMatch(expect, actual) {
     }
 }
 
-let YourApiKey = "d21b98b09c1b4f1001986401e25a27a07a4673140b5125b81cdfedcea4db9e7b";
-let YourSecretKey = "93c30e4a70f5ec3d4427f76602851791aa58fb823773c96cf1347f8b0276b036";
+let YourApiKey = "adc34f19004447d75c6cccbeb6cd3c52f379134e150c3c85fc34aeb1c9549e72";
+let YourSecretKey = "59fcd193d83ca1ed433e61cd9305fabe4effdc24cda00307a0ddbe7629e4cdc8";
 
 describe("iWan API Auto Test", () => {
 
