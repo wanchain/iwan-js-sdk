@@ -38,6 +38,8 @@ class WsInstance {
         try {
             console.log("Websocket url is ", this.ws_url);
             this.wss = new WebSocket(this.ws_url, CONN_OPTIONS);
+            this.wss.isAlive = true;
+            this.wss.tries = config.maxTries;
             this.initEventHandle();
         } catch (e) {
             this.reconnect();
@@ -45,60 +47,75 @@ class WsInstance {
     }
 
     initEventHandle() {
+        let that = this;
         this.wss.onopen = () => {
             console.log("Socket opened.");
-            this.heartCheck.reset().start();
-            this.events.emit("open");
+            that.events.emit("open");
         };
 
         this.wss.on('pong', () => {
-            this.heartCheck.reset().start();
+            that.wss.tries = config.maxTries;
+            that.wss.isAlive = true;
         });
 
         this.wss.onmessage = (message) => {
-            this.heartCheck.reset().start();
-
             var re = JSON.parse(message.data);
-            this.getMessage(re);
+            that.getMessage(re);
         };
 
         this.wss.onerror = (err) => {
-            this.reconnect();
+            console.error("ERROR: (%s)", err);
+            that.reconnect();
         };
 
-        this.wss.onclose = () => {
-            console.log("ApiInstance notified socket has closed.");
-            this.reconnect();
-        };
+        this.wss.on("close", (code, reason) => {
+            console.log("ApiInstance notified socket has closed. code: (%s), reason: (%s)", code, reason);
+            that.reconnect();
+        });
 
         this.wss.on("unexpected-response", (req, response)=>{
-            this.reconnect();
-            console.log("ERROR CODE : " + response.statusCode + " < " + response.statusMessage + " > ");
+            console.error("ERROR CODE : " + response.statusCode + " < " + response.statusMessage + " > ");
+            that.reconnect();
         });
+
+        this.heartCheck.reset().start();
     }
 
     heartCheck() {
         let that = this;
-        let timeout = 30000;
+        
         this.heartCheck = {
-            timeout: timeout,
-            timeoutObj: null,
-            serverTimeoutObj: null,
+            intervalObj: null,
             reset: () => {
-                clearTimeout(this.timeoutObj);
-                clearTimeout(this.serverTimeoutObj);
+                if (this.intervalObj) {
+                    clearInterval(this.intervalObj);
+                    this.intervalObj = null;
+                }
                 return this.heartCheck;
             },
             start: () => {
                 var self = this;
-                this.timeoutObj = setTimeout(() => {
-                    if (that.wss.readyState === WebSocket.OPEN) {
-                        that.wss.ping('{"event": "ping"}');
+                this.intervalObj = setInterval(function ping() {
+                    if (!that.wss.isAlive) {
+                        --that.wss.tries;
+                        if (that.wss.tries < 0) {
+                            console.error("Server [%s] is unreachable", that.ws_url);
+                            console.error("reconnect");
+                            that.reconnect();
+                        }
+                    } else {
+                        that.wss.isAlive = false;
+                        if (that.isOpen()) {
+                            that.wss.ping(function noop() {});
+                            // that.wss.ping('{"event": "ping"}');
+                        } else {
+                            that.events.on("open", () => {
+                                that.wss.ping(function noop() {});
+                                // that.wss.ping('{"event": "ping"}');
+                            });
+                        }
                     }
-                    self.serverTimeoutObj = setTimeout(() => {
-                        // that.wss.close();
-                    }, timeout);
-                }, timeout)
+                }, config.pingTime);
             }
         }
     }
@@ -108,6 +125,9 @@ class WsInstance {
             return;
         }
         this.lockReconnect = true;
+        if (!this.isClosed() && !this.isClosing()) {
+            this.close();
+        }
         this.reTt && clearTimeout(this.reTt);
         this.reTt = setTimeout(() => {
             this.createWebSocket();
@@ -115,11 +135,24 @@ class WsInstance {
         }, 2000);
     }
 
+    status() {
+        return this.wss.readyState;
+    }
+
     isOpen() {
         return this.wss.readyState === WebSocket.OPEN;
     }
 
+    isClosed() {
+        return this.wss.readyState === WebSocket.CLOSED;
+    }
+
+    isClosing() {
+        return this.wss.readyState === WebSocket.CLOSED;
+    }
+
     close() {
+        console.log("Websocket closed");
         this.heartCheck.reset();
         if (this.wss) {
             this.wss.close();
