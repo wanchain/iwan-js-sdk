@@ -2319,6 +2319,182 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  getChainInfo(chainType, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getChainInfo';
+    let params = { chainType: chainType };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getStats(chainType, tokenScAddr, symbol, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getStats';
+    let params = { chainType: chainType, tokenScAddr:tokenScAddr, symbol:symbol };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getAccountInfo(chainType, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getAccountInfo';
+    let params = { chainType: chainType, address:address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getAccounts(chainType, addressOrPublicKey, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getAccounts';
+
+    let params = { chainType: chainType };
+    if (addressOrPublicKey.indexOf("EOS") === 0) {
+      params.publicKey = addressOrPublicKey;
+    } else {
+      params.address = address;
+    }
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getAbi(chainType, scAddr, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getAbi';
+
+    let params = { chainType: chainType, scAddr:scAddr };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getJson2Bin(chainType, scAddr, action, args, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getJson2Bin';
+
+    let params = { chainType: chainType, scAddr:scAddr, action:action, args:args };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getActions(chainType, address, indexPos, offset, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getActions';
+
+    let params = { chainType: chainType, address:address };
+
+    if (indexPos) {
+      if (typeof(indexPos) === "function") {
+        callback = indexPos;
+      } else {
+        params.indexPos = indexPos;
+      }
+    }
+    if (offset) {
+      if (typeof(offset) === "function") {
+        callback = offset;
+      } else {
+        params.offset = offset;
+      }
+    }
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getResource(chainType, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getResource';
+    let params = { chainType: chainType, address:address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getResourcePrice(chainType, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getResourcePrice';
+    let params = { chainType: chainType, address:address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
 }
 
 module.exports = ApiInstance;
