@@ -12,7 +12,13 @@ const config = {
   },
 
   maxTries: 3,
-  pingTime: 30000
+  pingTime: 30000,
+
+  ws: {
+    code: {
+      normal:1000
+    }
+  }
 }
 
 module.exports = config;

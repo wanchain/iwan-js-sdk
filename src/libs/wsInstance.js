@@ -12,6 +12,7 @@ class WsEvent extends EventEmitter {}
 
 class WsInstance {
     constructor(apiKey, secretKey, option) {
+        this.intervalObj = null;
         this.apiKey = apiKey;
         this.secretKey = secretKey;
         this.events = new WsEvent();
@@ -34,12 +35,19 @@ class WsInstance {
         }
     }
 
+    handleFailure(log, functionName, err) {
+        log.error('something is wrong when ' + functionName + ', ' + err);
+        let error = (err.hasOwnProperty("message")) ? err.message : err;
+        return error;
+    }
+
     createWebSocket() {
         try {
             console.log("Websocket url is ", this.ws_url);
             this.wss = new WebSocket(this.ws_url, CONN_OPTIONS);
             this.wss.isAlive = true;
             this.wss.tries = config.maxTries;
+            this.wss.activeClose = false;
             this.initEventHandle();
         } catch (e) {
             this.reconnect();
@@ -64,13 +72,15 @@ class WsInstance {
         };
 
         this.wss.onerror = (err) => {
-            console.error("ERROR: (%s)", err);
+            console.error("ERROR: (%s)", JSON.stringify(err));
             that.reconnect();
         };
 
         this.wss.on("close", (code, reason) => {
             console.log("ApiInstance notified socket has closed. code: (%s), reason: (%s)", code, reason);
-            that.reconnect();
+            if (!this.wss.activeClose) {
+                that.reconnect();
+            }
         });
 
         this.wss.on("unexpected-response", (req, response)=>{
@@ -85,17 +95,15 @@ class WsInstance {
         let that = this;
         
         this.heartCheck = {
-            intervalObj: null,
             reset: () => {
-                if (this.intervalObj) {
-                    clearInterval(this.intervalObj);
-                    this.intervalObj = null;
+                if (that.intervalObj) {
+                    clearInterval(that.intervalObj);
+                    that.intervalObj = null;
                 }
                 return this.heartCheck;
             },
             start: () => {
-                var self = this;
-                this.intervalObj = setInterval(function ping() {
+                that.intervalObj = setInterval(function ping() {
                     if (!that.wss.isAlive) {
                         --that.wss.tries;
                         if (that.wss.tries < 0) {
@@ -148,14 +156,16 @@ class WsInstance {
     }
 
     isClosing() {
-        return this.wss.readyState === WebSocket.CLOSED;
+        return this.wss.readyState === WebSocket.CLOSEING;
     }
 
     close() {
+        let that = this;
         console.log("Websocket closed");
         this.heartCheck.reset();
         if (this.wss) {
-            this.wss.close();
+            this.wss.activeClose = true;
+            this.wss.close(config.ws.code.normal, "client normal close");
         }
     }
 
