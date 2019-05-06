@@ -2275,6 +2275,50 @@ class ApiInstance extends WsInstance {
       });
     });
   }
+
+  getOTAMixSet(address, number, chainType, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getOTAMixSet';
+    let params = { otaAddress: address, number:number };
+    if (chainType) {
+      if (typeof(chainType) === "function") {
+        callback = chainType;
+      } else {
+        params.chainType = chainType;
+      }
+    }
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  estimateGas(chainType, txObject, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'estimateGas';
+
+    let params = { chainType: chainType };
+
+    return utils.promiseOrCallback(callback, cb => {
+      Object.assign(params, txObject);
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
 }
 
 module.exports = ApiInstance;
