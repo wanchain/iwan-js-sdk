@@ -678,12 +678,20 @@ class ApiInstance extends WsInstance {
   *   "10000000000000000000000"
   *
   */
-  getTokenBalance(chainType, address, tokenScAddr, callback) {
+  getTokenBalance(chainType, address, tokenScAddr, symbol, callback) {
+    if (symbol && typeof(symbol) === "function") {
+      callback = symbol;
+      symbol = undefined;
+    }
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
+
     let method = 'getTokenBalance';
     let params = { chainType: chainType, address: address, tokenScAddr: tokenScAddr };
+    if (symbol) {
+      params.symbol = symbol;
+    }
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -735,12 +743,19 @@ class ApiInstance extends WsInstance {
   *  }
   *
   */
-  getMultiTokenBalance(chainType, addrArray, tokenScAddr, callback) {
+  getMultiTokenBalance(chainType, addrArray, tokenScAddr, symbol, callback) {
+    if (symbol && typeof(symbol) === "function") {
+      callback = symbol;
+      symbol = undefined;
+    }
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getMultiTokenBalance';
     let params = { chainType: chainType, address: addrArray, tokenScAddr: tokenScAddr };
+    if (symbol) {
+      params.symbol = symbol;
+    }
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
