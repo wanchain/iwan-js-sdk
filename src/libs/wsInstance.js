@@ -1,5 +1,6 @@
 const WebSocket = require('ws');
 const EventEmitter = require('events').EventEmitter;
+const JSON = require("circular-json");
 
 const config = require('../conf/config.js');
 
