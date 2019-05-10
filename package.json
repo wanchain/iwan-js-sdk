@@ -29,6 +29,7 @@
     "test": "mocha --timeout 600000 test/autoTestCases.js -c"
   },
   "dependencies": {
+    "circular-json": "^0.5.9",
     "ws": "^5.2.2"
   },
   "devDependencies": {
