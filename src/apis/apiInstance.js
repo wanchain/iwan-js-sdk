@@ -2512,11 +2512,11 @@ class ApiInstance extends WsInstance {
   }
 
   //POS
-  getEpochId(chainType, callback) {
+  getEpochID(chainType, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
-    let method = 'getEpochId';
+    let method = 'getEpochID';
     let params = { chainType: chainType };
 
     return utils.promiseOrCallback(callback, cb => {
@@ -2546,12 +2546,12 @@ class ApiInstance extends WsInstance {
     });
   }
 
-  getEpochLeadersByEpochID(chainType, epochId, callback) {
+  getEpochLeadersByEpochID(chainType, epochID, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getEpochLeadersByEpochID';
-    let params = { chainType: chainType, epochId:epochId };
+    let params = { chainType: chainType, epochID:epochID };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -2563,12 +2563,12 @@ class ApiInstance extends WsInstance {
     });
   }
 
-  getRandomProposersByEpochID(chainType, epochId, callback) {
+  getRandomProposersByEpochID(chainType, epochID, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getRandomProposersByEpochID';
-    let params = { chainType: chainType, epochId:epochId };
+    let params = { chainType: chainType, epochID:epochID };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -2597,12 +2597,12 @@ class ApiInstance extends WsInstance {
     });
   }
 
-  getEpochIncentivePayDetail(chainType, epochId, callback) {
+  getEpochIncentivePayDetail(chainType, epochID, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getEpochIncentivePayDetail';
-    let params = { chainType: chainType, epochId:epochId };
+    let params = { chainType: chainType, epochID:epochID };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -2614,12 +2614,12 @@ class ApiInstance extends WsInstance {
     });
   }
 
-  getActivity(chainType, epochId, callback) {
+  getActivity(chainType, epochID, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getActivity';
-    let params = { chainType: chainType, epochId:epochId };
+    let params = { chainType: chainType, epochID:epochID };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -2648,12 +2648,12 @@ class ApiInstance extends WsInstance {
     });
   }
 
-  getRandom(chainType, epochId, blockNumber, callback) {
+  getRandom(chainType, epochID, blockNumber, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getRandom';
-    let params = { chainType: chainType, epochId:epochId, blockNumber:blockNumber };
+    let params = { chainType: chainType, epochID:epochID, blockNumber:blockNumber };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
