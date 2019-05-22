@@ -2395,7 +2395,7 @@ class ApiInstance extends WsInstance {
     if (addressOrPublicKey.indexOf("EOS") === 0) {
       params.publicKey = addressOrPublicKey;
     } else {
-      params.address = address;
+      params.address = addressOrPublicKey;
     }
 
     return utils.promiseOrCallback(callback, cb => {
