@@ -2721,7 +2721,109 @@ class ApiInstance extends WsInstance {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getLeaderGroupByEpochID';
-    let params = { chainType: chainType, epochID:epochID };
+    let params = { chainType: chainType, epochID: epochID };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getCurrentEpochInfo(chainType, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getCurrentEpochInfo';
+    let params = { chainType: chainType };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getStakerInfoByEpochID(chainType, epochID, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getStakerInfoByEpochID';
+    let params = { chainType: chainType, epochID: epochID };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getSlotCount(chainType, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getSlotCount';
+    let params = { chainType: chainType };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getSlotTime(chainType, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getSlotTime';
+    let params = { chainType: chainType };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getTimeByEpochID(chainType, epochID, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getTimeByEpochID';
+    let params = { chainType: chainType, epochID: epochID };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getEpochIDByTime(chainType, timestamp, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getEpochIDByTime';
+    let params = { chainType: chainType, timestamp: timestamp };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
