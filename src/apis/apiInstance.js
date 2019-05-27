@@ -24,7 +24,7 @@ class ApiInstance extends WsInstance {
       if (this.isOpen()) {
         this._send(jsonResult["result"], callback);
       } else {
-        this.events.on("open", () => {
+        this.events.once("open", () => {
           this._send(jsonResult["result"], callback);
         });
       }
