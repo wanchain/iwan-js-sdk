@@ -2818,12 +2818,12 @@ class ApiInstance extends WsInstance {
     });
   }
 
-  getEpochIDByTime(chainType, timestamp, callback) {
+  getEpochIDByTime(chainType, time, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getEpochIDByTime';
-    let params = { chainType: chainType, timestamp: timestamp };
+    let params = { chainType: chainType, time: time };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
