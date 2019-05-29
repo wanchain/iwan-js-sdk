@@ -1,4 +1,4 @@
-# iWan-js-sdk
+# iwan-js-sdk
 
 [![GitHub License][license]][license-url]
 
