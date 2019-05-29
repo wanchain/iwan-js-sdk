@@ -2834,6 +2834,31 @@ class ApiInstance extends WsInstance {
       });
     });
   }
+
+  getRegisteredValidator(address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getRegisteredValidator';
+    let params = {};
+
+    if (address) {
+      if (typeof(address) === "function") {
+        callback = address;
+      } else {
+        params.address = address;
+      }
+    }
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
 }
 
 module.exports = ApiInstance;
