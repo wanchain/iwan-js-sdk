@@ -2835,7 +2835,7 @@ class ApiInstance extends WsInstance {
     });
   }
 
-  getRegisteredValidator(address, callback) {
+  getRegisteredValidator(address, after, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
@@ -2843,12 +2843,36 @@ class ApiInstance extends WsInstance {
     let params = {};
 
     if (address) {
-      if (typeof(address) === "function") {
+      if (typeof (address) === "function") {
         callback = address;
+      } else if (typeof (address) === "number") {
+        params.after = address;
+        callback = after;
+      } else if (typeof (after) === "number") {
+        params.address = address;
+        params.after = after;
       } else {
         params.address = address;
+        callback = after;
       }
     }
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getPosInfo(chainType, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getPosInfo';
+    let params = { chainType: chainType };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
