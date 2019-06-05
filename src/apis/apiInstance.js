@@ -24,7 +24,7 @@ class ApiInstance extends WsInstance {
       if (this.isOpen()) {
         this._send(jsonResult["result"], callback);
       } else {
-        this.events.on("open", () => {
+        this.events.once("open", () => {
           this._send(jsonResult["result"], callback);
         });
       }
@@ -678,12 +678,20 @@ class ApiInstance extends WsInstance {
   *   "10000000000000000000000"
   *
   */
-  getTokenBalance(chainType, address, tokenScAddr, callback) {
+  getTokenBalance(chainType, address, tokenScAddr, symbol, callback) {
+    if (symbol && typeof(symbol) === "function") {
+      callback = symbol;
+      symbol = undefined;
+    }
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
+
     let method = 'getTokenBalance';
     let params = { chainType: chainType, address: address, tokenScAddr: tokenScAddr };
+    if (symbol) {
+      params.symbol = symbol;
+    }
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -735,12 +743,19 @@ class ApiInstance extends WsInstance {
   *  }
   *
   */
-  getMultiTokenBalance(chainType, addrArray, tokenScAddr, callback) {
+  getMultiTokenBalance(chainType, addrArray, tokenScAddr, symbol, callback) {
+    if (symbol && typeof(symbol) === "function") {
+      callback = symbol;
+      symbol = undefined;
+    }
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getMultiTokenBalance';
     let params = { chainType: chainType, address: addrArray, tokenScAddr: tokenScAddr };
+    if (symbol) {
+      params.symbol = symbol;
+    }
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -2319,6 +2334,555 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  getChainInfo(chainType, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getChainInfo';
+    let params = { chainType: chainType };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getStats(chainType, tokenScAddr, symbol, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getStats';
+    let params = { chainType: chainType, tokenScAddr:tokenScAddr, symbol:symbol };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getAccountInfo(chainType, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getAccountInfo';
+    let params = { chainType: chainType, address:address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getAccounts(chainType, addressOrPublicKey, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getAccounts';
+
+    let params = { chainType: chainType };
+    if (addressOrPublicKey.indexOf("EOS") === 0) {
+      params.publicKey = addressOrPublicKey;
+    } else {
+      params.address = addressOrPublicKey;
+    }
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getAbi(chainType, scAddr, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getAbi';
+
+    let params = { chainType: chainType, scAddr:scAddr };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getJson2Bin(chainType, scAddr, action, args, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getJson2Bin';
+
+    let params = { chainType: chainType, scAddr:scAddr, action:action, args:args };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getActions(chainType, address, indexPos, offset, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getActions';
+
+    let params = { chainType: chainType, address:address };
+
+    if (indexPos) {
+      if (typeof(indexPos) === "function") {
+        callback = indexPos;
+      } else {
+        params.indexPos = indexPos;
+      }
+    }
+    if (offset) {
+      if (typeof(offset) === "function") {
+        callback = offset;
+      } else {
+        params.offset = offset;
+      }
+    }
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getResource(chainType, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getResource';
+    let params = { chainType: chainType, address:address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getResourcePrice(chainType, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getResourcePrice';
+    let params = { chainType: chainType, address:address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  //POS
+  getEpochID(chainType, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getEpochID';
+    let params = { chainType: chainType };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getSlotID(chainType, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getSlotID';
+    let params = { chainType: chainType };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getEpochLeadersByEpochID(chainType, epochID, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getEpochLeadersByEpochID';
+    let params = { chainType: chainType, epochID:epochID };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getRandomProposersByEpochID(chainType, epochID, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getRandomProposersByEpochID';
+    let params = { chainType: chainType, epochID:epochID };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getStakerInfo(chainType, blockNumber, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getStakerInfo';
+    let params = { chainType: chainType, blockNumber:blockNumber };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getEpochIncentivePayDetail(chainType, epochID, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getEpochIncentivePayDetail';
+    let params = { chainType: chainType, epochID:epochID };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getActivity(chainType, epochID, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getActivity';
+    let params = { chainType: chainType, epochID:epochID };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getMaxStableBlkNumber(chainType, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getMaxStableBlkNumber';
+    let params = { chainType: chainType };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getRandom(chainType, epochID, blockNumber, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getRandom';
+    let params = { chainType: chainType, epochID:epochID, blockNumber:blockNumber };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getValidatorInfo(chainType, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getValidatorInfo';
+    let params = { chainType: chainType, address: address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getDelegatorStakeInfo(chainType, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getDelegatorStakeInfo';
+    let params = { chainType: chainType, address: address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getDelegatorIncentive(chainType, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getDelegatorIncentive';
+    let params = { chainType: chainType, address: address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getLeaderGroupByEpochID(chainType, epochID, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getLeaderGroupByEpochID';
+    let params = { chainType: chainType, epochID: epochID };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getCurrentEpochInfo(chainType, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getCurrentEpochInfo';
+    let params = { chainType: chainType };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getStakerInfoByEpochID(chainType, epochID, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getStakerInfoByEpochID';
+    let params = { chainType: chainType, epochID: epochID };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getSlotCount(chainType, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getSlotCount';
+    let params = { chainType: chainType };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getSlotTime(chainType, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getSlotTime';
+    let params = { chainType: chainType };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getTimeByEpochID(chainType, epochID, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getTimeByEpochID';
+    let params = { chainType: chainType, epochID: epochID };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getEpochIDByTime(chainType, time, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getEpochIDByTime';
+    let params = { chainType: chainType, time: time };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getRegisteredValidator(address, after, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getRegisteredValidator';
+    let params = {};
+
+    if (address) {
+      if (typeof (address) === "function") {
+        callback = address;
+      } else if (typeof (address) === "number") {
+        params.after = address;
+        callback = after;
+      } else if (typeof (after) === "number") {
+        params.address = address;
+        params.after = after;
+      } else {
+        params.address = address;
+        callback = after;
+      }
+    }
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getPosInfo(chainType, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getPosInfo';
+    let params = { chainType: chainType };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
 }
 
 module.exports = ApiInstance;
