@@ -2716,6 +2716,30 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  getDelegatorTotalIncentive(chainType, address, validatorAddress, callback) {
+    if (validatorAddress && typeof(validatorAddress) === "function") {
+      callback = validatorAddress;
+      validatorAddress = undefined;
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getDelegatorTotalIncentive';
+    let params = { chainType: chainType, address: address };
+    if (validatorAddress) {
+      params.validatorAddress = validatorAddress;
+    }
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
   getLeaderGroupByEpochID(chainType, epochID, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
