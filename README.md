@@ -1,4 +1,4 @@
-# iWan-js-sdk
+# iwan-js-sdk
 
 [![GitHub License][license]][license-url]
 
@@ -93,7 +93,7 @@ try {
 
 ## Documentation
 
-[iWan SDK API](https://wanchain.github.io/iWan-js-sdk/) : API details about iWan SDK
+[iWan SDK API](https://wanchain.github.io/iwan-js-sdk/) : API details about iWan SDK
 
 [license]: https://img.shields.io/badge/license-GNUGPL3-blue.svg
 [license-url]:https://github.com/wanchain/iWan-js-sdk/blob/master/LICENSE
