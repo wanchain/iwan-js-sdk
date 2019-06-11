@@ -2699,12 +2699,23 @@ class ApiInstance extends WsInstance {
     });
   }
 
-  getDelegatorIncentive(chainType, address, callback) {
+  getDelegatorIncentive(chainType, address, options, callback) {
+    if (options && typeof(options) === "function") {
+      callback = options;
+      options = undefined;
+    }
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getDelegatorIncentive';
     let params = { chainType: chainType, address: address };
+    if (options) {
+      if (options.validatorAddress) {
+        params.validatorAddress = options.validatorAddress;
+      }
+      typeof(options.from) !== "undefined" && (params.from = options.from);
+      typeof(options.to) !== "undefined" && (params.to = options.to);
+    }
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
