@@ -2939,6 +2939,24 @@ class ApiInstance extends WsInstance {
       });
     });
   }
+
+  getMaxBlockNumber(chainType, epochID, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getMaxBlockNumber';
+    let params = { chainType: chainType, epochID: epochID };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
 }
 
 module.exports = ApiInstance;
