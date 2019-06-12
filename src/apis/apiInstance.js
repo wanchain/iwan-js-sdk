@@ -2789,6 +2789,23 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  getCurrentStakerInfo(chainType, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getCurrentStakerInfo';
+    let params = { chainType: chainType };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
   getStakerInfoByEpochID(chainType, epochID, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
