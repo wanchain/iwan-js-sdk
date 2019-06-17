@@ -2806,23 +2806,6 @@ class ApiInstance extends WsInstance {
     });
   }
 
-  getStakerInfoByEpochID(chainType, epochID, callback) {
-    if (callback) {
-      callback = utils.wrapCallback(callback);
-    }
-    let method = 'getStakerInfoByEpochID';
-    let params = { chainType: chainType, epochID: epochID };
-
-    return utils.promiseOrCallback(callback, cb => {
-      this._request(method, params, (err, result) => {
-        if (err) {
-          return cb(err);
-        }
-        return cb(null, result);
-      });
-    });
-  }
-
   getSlotCount(chainType, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
