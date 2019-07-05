@@ -9,6 +9,8 @@ const CONN_OPTIONS = {
     rejectUnauthorized: false
 };
 
+const PENDING_REPONSE = {"error": "Websocket closed"};
+
 class WsEvent extends EventEmitter {}
 
 class WsInstance {
@@ -161,13 +163,13 @@ class WsInstance {
     }
 
     close() {
-        let that = this;
-        console.log("Websocket closed");
+        console.log("Websocket closed");      
         this.heartCheck.reset();
         if (this.wss) {
             this.wss.activeClose = true;
             this.wss.close(config.ws.code.normal, "client normal close");
         }
+        this.clearPendingReq();
     }
 
     sendMessage(message, callback) {
@@ -180,9 +182,21 @@ class WsInstance {
     getMessage(message) {
         let idx = message.id.toString()
         let fn = this.functionDict[idx];
+        if (fn != undefined) {
+            delete this.functionDict[idx];
+            fn(message);
+        } else {
+            console.log("req %s has been cleared", idx);
+        }
+    }
 
-        delete this.functionDict[idx];
-        fn(message);
+    clearPendingReq() {
+        let tempReq = this.functionDict;
+        this.functionDict = [];
+        for (let idx in tempReq) {
+            console.log("clear pending req %s", idx);
+            tempReq[idx](PENDING_REPONSE);
+        }        
     }
 }
 
