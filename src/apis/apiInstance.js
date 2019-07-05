@@ -2682,6 +2682,23 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  getValidatorStakeInfo(chainType, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getValidatorStakeInfo';
+    let params = { chainType: chainType, address: address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
   getDelegatorStakeInfo(chainType, address, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
