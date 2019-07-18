@@ -141,6 +141,7 @@ class WsInstance {
         }
         this.reTt && clearTimeout(this.reTt);
         this.reTt = setTimeout(() => {
+            this.clearPendingReq();
             this.createWebSocket();
             this.lockReconnect = false;
         }, 2000);
@@ -169,7 +170,6 @@ class WsInstance {
             this.wss.activeClose = true;
             this.wss.close(config.ws.code.normal, "client normal close");
         }
-        this.clearPendingReq();
     }
 
     sendMessage(message, callback) {
