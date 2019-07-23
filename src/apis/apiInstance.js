@@ -2982,6 +2982,40 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  getValidatorSupStakeInfo(chainType, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getValidatorSupStakeInfo';
+    let params = { chainType: chainType, address: address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getDelegatorSupStakeInfo(chainType, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getDelegatorSupStakeInfo';
+    let params = { chainType: chainType, address: address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
   getEpochIncentiveBlockNumber(chainType, epochID, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
