@@ -2682,6 +2682,48 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  getValidatorStakeInfo(chainType, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getValidatorStakeInfo';
+    let params = { chainType: chainType, address: address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getValidatorTotalIncentive(chainType, address, options, callback) {
+    if (options && typeof(options) === "function") {
+      callback = options;
+      options = undefined;
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getValidatorTotalIncentive';
+    let params = { chainType: chainType, address: address };
+    if (options) {
+      typeof(options.from) !== "undefined" && (params.from = options.from);
+      typeof(options.to) !== "undefined" && (params.to = options.to);
+    }
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
   getDelegatorStakeInfo(chainType, address, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
@@ -2928,6 +2970,74 @@ class ApiInstance extends WsInstance {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getMaxBlockNumber';
+    let params = { chainType: chainType, epochID: epochID };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getValidatorSupStakeInfo(chainType, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getValidatorSupStakeInfo';
+    let params = { chainType: chainType, address: address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getDelegatorSupStakeInfo(chainType, address, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getDelegatorSupStakeInfo';
+    let params = { chainType: chainType, address: address };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getEpochIncentiveBlockNumber(chainType, epochID, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getEpochIncentiveBlockNumber';
+    let params = { chainType: chainType, epochID: epochID };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getEpochStakeOut(chainType, epochID, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getEpochStakeOut';
     let params = { chainType: chainType, epochID: epochID };
 
     return utils.promiseOrCallback(callback, cb => {
