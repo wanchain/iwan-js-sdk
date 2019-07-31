@@ -2631,6 +2631,23 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  getValidatorActivity(chainType, epochID, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getValidatorActivity';
+    let params = { chainType: chainType, epochID:epochID };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
   getMaxStableBlkNumber(chainType, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
