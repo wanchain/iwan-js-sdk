@@ -2631,6 +2631,23 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  getSlotActivity(chainType, epochID, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getSlotActivity';
+    let params = { chainType: chainType, epochID:epochID };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
   getValidatorActivity(chainType, epochID, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
