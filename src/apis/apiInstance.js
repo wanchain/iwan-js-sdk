@@ -777,7 +777,7 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>, default: <code>'WAN'</code>.
+  * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>, default: <code>'WAN'</code>.
   * @apiParam {string} tokenScAddr The token contract address for the specified token.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
@@ -2523,7 +2523,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    *
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getEpochID","params":{"chainType":"WAN"},"id":1}
@@ -2572,7 +2572,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    *
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getSlotID","params":{"chainType":"WAN"},"id":1}
@@ -2621,7 +2621,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {number} epochID The epochID you want to search.
    *
    * @apiParamExample {string} JSON-RPC over websocket
@@ -2679,7 +2679,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {number} epochID The epochID you want to search.
    *
    * @apiParamExample {string} JSON-RPC over websocket
@@ -2737,7 +2737,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {number} blockNumber The blockNumber you want to search.
    *
    * @apiParamExample {string} JSON-RPC over websocket
@@ -2811,7 +2811,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {number} epochID The epochID you want to search.
    *
    * @apiParamExample {string} JSON-RPC over websocket
@@ -2892,7 +2892,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {number} epochID The epochID you want to search.
    *
    * @apiParamExample {string} JSON-RPC over websocket
@@ -3004,7 +3004,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {number} epochID The epochID you want to search.
    *
    * @apiParamExample {string} JSON-RPC over websocket
@@ -3076,7 +3076,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {number} epochID The epochID you want to search.
    *
    * @apiParamExample {string} JSON-RPC over websocket
@@ -3184,7 +3184,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    *
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getMaxStableBlkNumber","params":{"chainType":"WAN"},"id":1}
@@ -3233,7 +3233,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {number} epochID The epochID you want to search.
    * @apiParam {number} blockNumber The blockNumber you want to search. If blockNumber is -1, use the latest block.
    *
@@ -3284,7 +3284,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {string} address The validator address you want to search.
    *
    * @apiParamExample {string} JSON-RPC over websocket
@@ -3338,7 +3338,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {string} address The validator owner address you want to search.
    *
    * @apiParamExample {string} JSON-RPC over websocket
@@ -3432,7 +3432,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {string/array} address The validator address you want to search.
    * @apiParam {number} [from] The begin epochID you want to search.
    * @apiParam {number} [to] The end epochID you want to search.
@@ -3499,7 +3499,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {string} address The delegator address you want to search.
    *
    * @apiParamExample {string} JSON-RPC over websocket
@@ -3570,7 +3570,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {string} address The delegator address you want to search.
    * @apiParam {number} [from] The begin epochID you want to search.
    * @apiParam {number} [to] The end epochID you want to search.
@@ -3665,7 +3665,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {string} address The delegator address you want to search.
    * @apiParam {string} [validatorAddress] The validator address you want to search.
    * @apiParam {number} [from] The begin epochID you want to search.
@@ -3761,7 +3761,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {number} epochID The epochID you want to search.
    *
    * @apiParamExample {string} JSON-RPC over websocket
@@ -3837,7 +3837,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    *
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getCurrentEpochInfo","params":{"chainType":"WAN"},"id":1}
@@ -3890,7 +3890,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    *
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getCurrentStakerInfo","params":{"chainType":"WAN"},"id":1}
@@ -3963,7 +3963,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    *
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getSlotCount","params":{"chainType":"WAN"},"id":1}
@@ -4012,7 +4012,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    *
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getSlotTime","params":{"chainType":"WAN"},"id":1}
@@ -4061,7 +4061,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {number} epochID The epochID you want to search.
    *
    * @apiParamExample {string} JSON-RPC over websocket
@@ -4111,7 +4111,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {number} time The UTC time seconds you want to search.
    *
    * @apiParamExample {string} JSON-RPC over websocket
@@ -4193,7 +4193,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    *
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getPosInfo","params":{"chainType":"WAN"},"id":1}
@@ -4245,7 +4245,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {number/array} epochID The epochID you want to search.
    *
    * @apiParamExample {string} JSON-RPC over websocket
@@ -4304,7 +4304,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {string/array} address The validator address you want to search.
    *
    * @apiParamExample {string} JSON-RPC over websocket
@@ -4366,7 +4366,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {string/array} address The delegator address you want to search.
    *
    * @apiParamExample {string} JSON-RPC over websocket
@@ -4430,7 +4430,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {number} epochID The epochID you want to search.
    *
    * @apiParamExample {string} JSON-RPC over websocket
@@ -4480,7 +4480,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainType] The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
    * @apiParam {number} epochID The epochID you want to search.
    *
    * @apiParamExample {string} JSON-RPC over websocket
