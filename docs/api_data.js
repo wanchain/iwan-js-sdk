@@ -1460,7 +1460,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -1519,7 +1519,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           }
@@ -1571,7 +1571,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           }
@@ -1623,7 +1623,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -1696,7 +1696,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -1755,7 +1755,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -1814,7 +1814,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -1894,7 +1894,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           }
@@ -1946,7 +1946,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -2005,7 +2005,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -2064,7 +2064,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -2123,7 +2123,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -2182,7 +2182,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -2241,7 +2241,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -2300,7 +2300,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -2359,7 +2359,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           }
@@ -2411,7 +2411,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           }
@@ -2463,7 +2463,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -2529,7 +2529,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -2588,7 +2588,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -2647,7 +2647,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           }
@@ -2699,7 +2699,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           }
@@ -2751,7 +2751,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           }
@@ -2803,7 +2803,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -2862,7 +2862,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -2921,7 +2921,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -2980,7 +2980,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -3039,7 +3039,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -3098,7 +3098,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -3157,7 +3157,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
           },
@@ -3647,7 +3647,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>, default: <code>'WAN'</code>.</p>"
           },
