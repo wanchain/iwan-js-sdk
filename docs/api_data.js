@@ -2088,12 +2088,12 @@ define({ "api": [
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getEpochIncentivePayDetail(\"WAN\", 3496619, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getEpochIncentivePayDetail(\"WAN\", 18101, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
         "title": "Example promise usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getEpochIncentivePayDetail(\"WAN\", 3496619);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getEpochIncentivePayDetail(\"WAN\", 18101);\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
     ],
@@ -2494,12 +2494,12 @@ define({ "api": [
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getRandom(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getRandom(\"WAN\", 18102, -1, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
         "title": "Example promise usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getRandom(\"WAN\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getRandom(\"WAN\", 18102, -1);\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
     ],
