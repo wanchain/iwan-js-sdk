@@ -2819,14 +2819,14 @@ class ApiInstance extends WsInstance {
    *
    * @apiExample {nodejs} Example callback usage:
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
-   *   apiTest.getEpochIncentivePayDetail("WAN", 3496619, (err, result) => {
+   *   apiTest.getEpochIncentivePayDetail("WAN", 18101, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
    * @apiExample {nodejs} Example promise usage:
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getEpochIncentivePayDetail("WAN", 3496619);
+   *   let result = await apiTest.getEpochIncentivePayDetail("WAN", 18101);
    *   console.log("Result is ", result);
    *   apiTest.close();
    * 
@@ -3242,14 +3242,14 @@ class ApiInstance extends WsInstance {
    *
    * @apiExample {nodejs} Example callback usage:
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); 
-   *   apiTest.getRandom("WAN", (err, result) => {
+   *   apiTest.getRandom("WAN", 18102, -1, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
    * @apiExample {nodejs} Example promise usage:
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getRandom("WAN");
+   *   let result = await apiTest.getRandom("WAN", 18102, -1);
    *   console.log("Result is ", result);
    *   apiTest.close();
    * 
