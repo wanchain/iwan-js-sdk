@@ -1998,7 +1998,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getEpochIncentiveBlockNumber",
     "version": "1.1.0",
-    "description": "<p>Get the epochID of the designated epoch. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get the incentive pay block number of the input epoch. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [

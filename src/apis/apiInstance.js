@@ -4426,7 +4426,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getEpochIncentiveBlockNumber
    * @apiVersion 1.1.0
-   * @apiDescription Get the epochID of the designated epoch.
+   * @apiDescription Get the incentive pay block number of the input epoch.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
