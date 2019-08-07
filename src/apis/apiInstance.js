@@ -2078,8 +2078,8 @@ class ApiInstance extends WsInstance {
   *
   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.
   * @apiParam {string} tokenScAddr The token contract address for the specified token.
-  * @apiParam {string} ownerAddr The owner address on the certain contract.
-  * @apiParam {string} spenderAddr The spender address on the certain contract.
+  * @apiParam {string} ownerAddr The owner address on the specified contract.
+  * @apiParam {string} spenderAddr The spender address on the specified contract.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
