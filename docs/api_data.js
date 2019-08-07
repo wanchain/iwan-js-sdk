@@ -3135,7 +3135,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n  {\n    \"address\": \"0x158bae682e6278a16d09d7c7311074585d38b54d\",\n    \"stakeIn\": 3778078,\n    \"stakeInTimestamp\": 1563134885\n  },\n  {\n    \"address\": \"0x85dae7e5c7b433a1682c54eee63adf63d835d272\",\n    \"stakeIn\": 3905210,\n    \"stakeInTimestamp\": 1563848135\n  },\n  ... ...\n]",
+          "content": "[\n  {\n    \"address\": \"0x158bae682e6278a16d09d7c7311074585d38b54d\",\n    \"stakeIn\": 3778078,\n    \"stakeInTimestamp\": 1563134885\n  },\n  {\n    \"address\": \"0x85dae7e5c7b433a1682c54eee63adf63d835d272\",\n    \"stakeIn\": 3905210,\n    \"stakeInTimestamp\": 1563848135\n  }\n]",
           "type": "json"
         }
       ]
@@ -3208,7 +3208,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n  {\n    \"address\": \"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce\",\n     \"amount\": \"1.828058184231574257465e+21\",\n     \"minEpochId\": 18080,\n     \"epochCount\": 21\n  },\n]",
+          "content": "[\n  {\n    \"address\": \"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce\",\n     \"amount\": \"1.828058184231574257465e+21\",\n     \"minEpochId\": 18080,\n     \"epochCount\": 21\n  }\n]",
           "type": "json"
         }
       ]
