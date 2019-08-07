@@ -3462,7 +3462,7 @@ class ApiInstance extends WsInstance {
    *       "amount": "1.828058184231574257465e+21",
    *       "minEpochId": 18080,
    *       "epochCount": 21
-   *    },
+   *    }
    *  ]
    *
    */
@@ -4338,8 +4338,7 @@ class ApiInstance extends WsInstance {
    *      "address": "0x85dae7e5c7b433a1682c54eee63adf63d835d272",
    *      "stakeIn": 3905210,
    *      "stakeInTimestamp": 1563848135
-   *    },
-   *    ... ...
+   *    }
    *  ]
    *
    */
