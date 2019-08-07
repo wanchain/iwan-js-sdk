@@ -1601,7 +1601,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n  {\n    \"address\": \"0xa4626e2bb450204c4b34bcc7525e585e8f678c0d\",\n    \"pubSec256\": \"0x04b7bf8d3868333f70a30041423c7db204b80b9be2e585c344cf3f391cbf77b17fd14f3058d4475d546355bf8c2709ed9ecf5f0cee9d021c90988af0e8cf52001b\",\n    \"pubBn256\": \"0x289787688eb80c1e223375a71f8d17110d638a9143afa190dc11b3c1e64cf92b21feb02ab7a1dcb31892210dfda458aff890fe9e7508292099ae6256f197b325\",\n    \"amount\": \"0xa968163f0a57b400000\",\n    \"stakeAmount\": \"0x297116712be7b468800000\",\n    \"lockEpochs\": 7,\n    \"nextLockEpochs\": 7,\n    \"from\": \"0xdbb2d6199457d11288f0097659bcec24738e158f\",\n    \"stakingEpoch\": 0,\n    \"feeRate\": 1500,\n    \"clients\":\n    [\n      {\n        \"address\": \"0xfcc3736dc29bf9af7556fcc1dea10b53edaab51d\",\n        \"amount\": \"0x56bc75e2d63100000\",\n        \"stakeAmount\": \"0x1537da569da5bca00000\",\n        \"quitEpoch\": 18071\n      }\n    ],\n    \"partners\": []\n  },\n  ... ...\n]",
+          "content": "[\n  {\n    \"address\": \"0xa4626e2bb450204c4b34bcc7525e585e8f678c0d\",\n    \"pubSec256\": \"0x04b7bf8d3868333f70a30041423c7db204b80b9be2e585c344cf3f391cbf77b17fd14f3058d4475d546355bf8c2709ed9ecf5f0cee9d021c90988af0e8cf52001b\",\n    \"pubBn256\": \"0x289787688eb80c1e223375a71f8d17110d638a9143afa190dc11b3c1e64cf92b21feb02ab7a1dcb31892210dfda458aff890fe9e7508292099ae6256f197b325\",\n    \"amount\": \"0xa968163f0a57b400000\",\n    \"votingPower\": \"0x297116712be7b468800000\",\n    \"lockEpochs\": 7,\n    \"maxFeeRate\": 1500,\n    \"nextLockEpochs\": 7,\n    \"from\": \"0xdbb2d6199457d11288f0097659bcec24738e158f\",\n    \"stakingEpoch\": 0,\n    \"feeRate\": 1500,\n    \"feeRateChangedEpoch\": 0,\n    \"clients\":\n    [\n      {\n        \"address\": \"0xfcc3736dc29bf9af7556fcc1dea10b53edaab51d\",\n        \"amount\": \"0x56bc75e2d63100000\",\n        \"votingPower\": \"0x1537da569da5bca00000\",\n        \"quitEpoch\": 18071\n      }\n    ],\n    \"partners\": []\n  },\n  ... ...\n]",
           "type": "json"
         }
       ]
@@ -1764,7 +1764,7 @@
             "type": "string/array",
             "optional": false,
             "field": "address",
-            "description": "<p>The delegator address you want to query.</p>"
+            "description": "<p>The delegator's address you want to query.</p>"
           }
         ]
       },
@@ -1823,14 +1823,14 @@
             "type": "string",
             "optional": false,
             "field": "address",
-            "description": "<p>The delegator address you want to search.</p>"
+            "description": "<p>The delegator's address you want to query.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": true,
             "field": "validatorAddress",
-            "description": "<p>The validator address you want to query.</p>"
+            "description": "<p>The validator's address you want to query.</p>"
           },
           {
             "group": "Parameter",
@@ -1955,7 +1955,7 @@
             "type": "number",
             "optional": false,
             "field": "time",
-            "description": "<p>The UTC time seconds you want to search.</p>"
+            "description": "<p>The UTC time seconds you want to query.</p>"
           }
         ]
       },
@@ -2014,7 +2014,7 @@
             "type": "number",
             "optional": false,
             "field": "epochID",
-            "description": "<p>The epochID you want to search.</p>"
+            "description": "<p>The epochID you want to query.</p>"
           }
         ]
       },
@@ -2840,7 +2840,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n  {\n    \"address\": \"0xa4626e2bb450204c4b34bcc7525e585e8f678c0d\",\n    \"pubSec256\": \"0x04b7bf8d3868333f70a30041423c7db204b80b9be2e585c344cf3f391cbf77b17fd14f3058d4475d546355bf8c2709ed9ecf5f0cee9d021c90988af0e8cf52001b\",\n    \"pubBn256\": \"0x289787688eb80c1e223375a71f8d17110d638a9143afa190dc11b3c1e64cf92b21feb02ab7a1dcb31892210dfda458aff890fe9e7508292099ae6256f197b325\",\n    \"amount\": \"0xa968163f0a57b400000\",\n    \"stakeAmount\": \"0x297116712be7b468800000\",\n    \"lockEpochs\": 7,\n    \"nextLockEpochs\": 7,\n    \"from\": \"0xdbb2d6199457d11288f0097659bcec24738e158f\",\n    \"stakingEpoch\": 0,\n    \"feeRate\": 1500,\n    \"clients\":\n    [\n      {\n        \"address\": \"0xfcc3736dc29bf9af7556fcc1dea10b53edaab51d\",\n        \"amount\": \"0x56bc75e2d63100000\",\n        \"stakeAmount\": \"0x1537da569da5bca00000\",\n        \"quitEpoch\": 18071\n      }\n    ],\n    \"partners\": []\n  },\n  ... ...\n]",
+          "content": "[\n  {\n    \"address\": \"0xa4626e2bb450204c4b34bcc7525e585e8f678c0d\",\n    \"pubSec256\": \"0x04b7bf8d3868333f70a30041423c7db204b80b9be2e585c344cf3f391cbf77b17fd14f3058d4475d546355bf8c2709ed9ecf5f0cee9d021c90988af0e8cf52001b\",\n    \"pubBn256\": \"0x289787688eb80c1e223375a71f8d17110d638a9143afa190dc11b3c1e64cf92b21feb02ab7a1dcb31892210dfda458aff890fe9e7508292099ae6256f197b325\",\n    \"amount\": \"0xa968163f0a57b400000\",\n    \"votingPower\": \"0x297116712be7b468800000\",\n    \"lockEpochs\": 7,\n    \"maxFeeRate\": 1500,\n    \"nextLockEpochs\": 7,\n    \"from\": \"0xdbb2d6199457d11288f0097659bcec24738e158f\",\n    \"stakingEpoch\": 0,\n    \"feeRate\": 1500,\n    \"feeRateChangedEpoch\": 0,\n    \"clients\":\n    [\n      {\n        \"address\": \"0xfcc3736dc29bf9af7556fcc1dea10b53edaab51d\",\n        \"amount\": \"0x56bc75e2d63100000\",\n        \"votingPower\": \"0x1537da569da5bca00000\",\n        \"quitEpoch\": 18071\n      }\n    ],\n    \"partners\": []\n  },\n  ... ...\n]",
           "type": "json"
         }
       ]
@@ -3135,7 +3135,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n  {\n    \"address\": \"0x158bae682e6278a16d09d7c7311074585d38b54d\",\n    \"stakeIn\": 3778078,\n    \"stakeInTimestamp\": 1563134885\n  },\n  {\n    \"address\": \"0x85dae7e5c7b433a1682c54eee63adf63d835d272\",\n    \"stakeIn\": 3905210,\n    \"stakeInTimestamp\": 1563848135\n  },\n  ... ...\n]",
+          "content": "[\n  {\n    \"address\": \"0x158bae682e6278a16d09d7c7311074585d38b54d\",\n    \"stakeIn\": 3778078,\n    \"stakeInTimestamp\": 1563134885\n  },\n  {\n    \"address\": \"0x85dae7e5c7b433a1682c54eee63adf63d835d272\",\n    \"stakeIn\": 3905210,\n    \"stakeInTimestamp\": 1563848135\n  }\n]",
           "type": "json"
         }
       ]
@@ -3208,7 +3208,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n  {\n    \"address\": \"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce\",\n     \"amount\": \"1.828058184231574257465e+21\",\n     \"minEpochId\": 18080,\n     \"epochCount\": 21\n  },\n]",
+          "content": "[\n  {\n    \"address\": \"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce\",\n     \"amount\": \"1.828058184231574257465e+21\",\n     \"minEpochId\": 18080,\n     \"epochCount\": 21\n  }\n]",
           "type": "json"
         }
       ]
@@ -3223,7 +3223,7 @@
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getGasPrice",
     "version": "1.1.0",
-    "description": "<p>Get the current gas price in wei as long number type. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get the current gas price in wei as bigNumber type. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -3444,14 +3444,14 @@
             "type": "string",
             "optional": false,
             "field": "ownerAddr",
-            "description": "<p>The owner address on the specified contract.</p>"
+            "description": "<p>The owner address on the certain contract.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "spenderAddr",
-            "description": "<p>The spender address on the specified contract.</p>"
+            "description": "<p>The spender address on the certain contract.</p>"
           },
           {
             "group": "Parameter",
