@@ -2763,18 +2763,20 @@ class ApiInstance extends WsInstance {
    *      "pubSec256": "0x04b7bf8d3868333f70a30041423c7db204b80b9be2e585c344cf3f391cbf77b17fd14f3058d4475d546355bf8c2709ed9ecf5f0cee9d021c90988af0e8cf52001b",
    *      "pubBn256": "0x289787688eb80c1e223375a71f8d17110d638a9143afa190dc11b3c1e64cf92b21feb02ab7a1dcb31892210dfda458aff890fe9e7508292099ae6256f197b325",
    *      "amount": "0xa968163f0a57b400000",
-   *      "stakeAmount": "0x297116712be7b468800000",
+   *      "votingPower": "0x297116712be7b468800000",
    *      "lockEpochs": 7,
+   *      "maxFeeRate": 1500,
    *      "nextLockEpochs": 7,
    *      "from": "0xdbb2d6199457d11288f0097659bcec24738e158f",
    *      "stakingEpoch": 0,
    *      "feeRate": 1500,
+   *      "feeRateChangedEpoch": 0,
    *      "clients":
    *      [
    *        {
    *          "address": "0xfcc3736dc29bf9af7556fcc1dea10b53edaab51d",
    *          "amount": "0x56bc75e2d63100000",
-   *          "stakeAmount": "0x1537da569da5bca00000",
+   *          "votingPower": "0x1537da569da5bca00000",
    *          "quitEpoch": 18071
    *        }
    *      ],
@@ -3915,18 +3917,20 @@ class ApiInstance extends WsInstance {
    *      "pubSec256": "0x04b7bf8d3868333f70a30041423c7db204b80b9be2e585c344cf3f391cbf77b17fd14f3058d4475d546355bf8c2709ed9ecf5f0cee9d021c90988af0e8cf52001b",
    *      "pubBn256": "0x289787688eb80c1e223375a71f8d17110d638a9143afa190dc11b3c1e64cf92b21feb02ab7a1dcb31892210dfda458aff890fe9e7508292099ae6256f197b325",
    *      "amount": "0xa968163f0a57b400000",
-   *      "stakeAmount": "0x297116712be7b468800000",
+   *      "votingPower": "0x297116712be7b468800000",
    *      "lockEpochs": 7,
+   *      "maxFeeRate": 1500,
    *      "nextLockEpochs": 7,
    *      "from": "0xdbb2d6199457d11288f0097659bcec24738e158f",
    *      "stakingEpoch": 0,
    *      "feeRate": 1500,
+   *      "feeRateChangedEpoch": 0,
    *      "clients":
    *      [
    *        {
    *          "address": "0xfcc3736dc29bf9af7556fcc1dea10b53edaab51d",
    *          "amount": "0x56bc75e2d63100000",
-   *          "stakeAmount": "0x1537da569da5bca00000",
+   *          "votingPower": "0x1537da569da5bca00000",
    *          "quitEpoch": 18071
    *        }
    *      ],
