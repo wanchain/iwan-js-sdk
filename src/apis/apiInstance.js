@@ -486,7 +486,7 @@ class ApiInstance extends WsInstance {
   * @apiGroup Status
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getGasPrice
   * @apiVersion 1.1.0
-  * @apiDescription Get a bigNumber of the current gas price in wei.
+  * @apiDescription Get the current gas price in wei as bigNumber type.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
@@ -647,7 +647,7 @@ class ApiInstance extends WsInstance {
   * @apiGroup Tokens
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenBalance
   * @apiVersion 1.1.0
-  * @apiDescription Get token balance for a single address of certain token on Wanchain.
+  * @apiDescription Get token balance for a single address of a specified token on Wanchain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
@@ -2072,7 +2072,7 @@ class ApiInstance extends WsInstance {
   * @apiGroup Tokens
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenAllowance
   * @apiVersion 1.1.0
-  * @apiDescription Get the token allowance for one specific account on one contract for one specific spender account on certain chain.
+  * @apiDescription Get the token allowance for one specific account on one contract for one specific spender account on a certain chain.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
@@ -2182,12 +2182,12 @@ class ApiInstance extends WsInstance {
   * @apiGroup Tokens
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getMultiTokenInfo
   * @apiVersion 1.1.0
-  * @apiDescription Get the information of multiple tokens.
+  * @apiDescription Get the information for multiple tokens.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.
-  * @apiParam {array} tokenScAddrArray The token address array for the certain token that you want to find.
+  * @apiParam {array} tokenScAddrArray The token address array for the tokens that you want to query.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters: 
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -2617,7 +2617,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getEpochLeadersByEpochID
    * @apiVersion 1.1.0
-   * @apiDescription Get the public key list of the epoch leader specifying EpochID with the input parameter as EpochID.
+   * @apiDescription Get the public key list of the epoch leaders of the specified EpochID with the input parameter as EpochID.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -2675,7 +2675,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getRandomProposersByEpochID
    * @apiVersion 1.1.0
-   * @apiDescription Get the public key 2 list of the Random Number Proposer that specifies the epoch.
+   * @apiDescription Gets Random Number Proposer public keys of the specified epoch.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -2733,7 +2733,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStakerInfo
    * @apiVersion 1.1.0
-   * @apiDescription Get the verifier details of the specified blockNumber.
+   * @apiDescription Returns an array of validator information for all validators in the specified block number.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -2809,7 +2809,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getEpochIncentivePayDetail
    * @apiVersion 1.1.0
-   * @apiDescription Get the reward information of the designated epoch, enter epochID, and return the reward payment details (including RNP reward, EL reward and chunk reward) for all the verification nodes and clients working in the epoch.
+   * @apiDescription Get the reward information of the specified epoch, enter epochID, and reward payment details (including RNP reward, EL reward and chunk reward) will be returned for all the verification nodes and clients working in the epoch.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -2890,7 +2890,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getActivity
    * @apiVersion 1.1.0
-   * @apiDescription Get the activity information of the specified epoch, the historical epoch is a fixed value, and the current epoch will update the latest current value in real time.
+   * @apiDescription Get the activity information of the specified epoch. For historical epochs the values are fixed, while the current epoch will update the latest current values in real time.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -3002,7 +3002,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getSlotActivity
    * @apiVersion 1.1.0
-   * @apiDescription Get the slot active information of the specified epoch.
+   * @apiDescription Get the slot leader activity information of the specified epoch.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -3074,7 +3074,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getValidatorActivity
    * @apiVersion 1.1.0
-   * @apiDescription Get the validator active information of the EL and RNP specified in the Epoch, and return null for the current Epoch or future Epoch.
+   * @apiDescription Get the validator activity information of the Epoch Leaders and Random Number Proposers of the specified epoch. Returns null for the current Epoch or future Epochs.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -3182,7 +3182,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getMaxStableBlkNumber
    * @apiVersion 1.1.0
-   * @apiDescription Get the current maximum stable block number (no rollback).
+   * @apiDescription Get the current highest stable block number (no rollback).
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -3231,7 +3231,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getRandom
    * @apiVersion 1.1.0
-   * @apiDescription Query the random number specifying epochID and blockNumber to generate the result.
+   * @apiDescription Get the random number of the queried epochID and block number.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -3336,7 +3336,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getValidatorStakeInfo
    * @apiVersion 1.1.0
-   * @apiDescription Get the specified validator stake info by the validator owner.
+   * @apiDescription Get the specified validator staking info by the validator owner's address.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -3430,7 +3430,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getValidatorTotalIncentive
    * @apiVersion 1.1.0
-   * @apiDescription Get the identified validator total incentives.
+   * @apiDescription Get the specified validator's total incentives.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -3497,12 +3497,12 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getDelegatorStakeInfo
    * @apiVersion 1.1.0
-   * @apiDescription Get the identified delegator stake info.
+   * @apiDescription Get the identified delegator's staking info.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
    * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
-   * @apiParam {string} address The delegator address you want to search.
+   * @apiParam {string} address The delegator address you want to query.
    *
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getDelegatorStakeInfo","params":{"chainType":"WAN", "address":"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc"},"id":1}
@@ -3568,14 +3568,14 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getDelegatorIncentive
    * @apiVersion 1.1.0
-   * @apiDescription Get the identified delegator incentives.
+   * @apiDescription Get the identified delegator rewards over a specified range of epochs.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
    * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
-   * @apiParam {string} address The delegator address you want to search.
-   * @apiParam {number} [from] The begin epochID you want to search.
-   * @apiParam {number} [to] The end epochID you want to search.
+   * @apiParam {string} address The delegator address you want to query.
+   * @apiParam {number} [from] The starting epochID you want to query.
+   * @apiParam {number} [to] The ending epochID you want to query.
    *
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getDelegatorIncentive","params":{"chainType":"WAN", "address":"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc"},"id":1}
@@ -3663,15 +3663,15 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getDelegatorTotalIncentive
    * @apiVersion 1.1.0
-   * @apiDescription Get the identified delegator total incentives.
+   * @apiDescription Get the identified delegator's total incentives.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
    * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
-   * @apiParam {string} address The delegator address you want to search.
-   * @apiParam {string} [validatorAddress] The validator address you want to search.
-   * @apiParam {number} [from] The begin epochID you want to search.
-   * @apiParam {number} [to] The end epochID you want to search.
+   * @apiParam {string} address The delegator's address you want to query.
+   * @apiParam {string} [validatorAddress] The validator's address you want to query.
+   * @apiParam {number} [from] The starting epochID you want to query.
+   * @apiParam {number} [to] The ending epochID you want to query.
    *
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getDelegatorTotalIncentive","params":{"chainType":"WAN", "address":"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc"},"id":1}
@@ -3759,7 +3759,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getLeaderGroupByEpochID
    * @apiVersion 1.1.0
-   * @apiDescription Get the EL and RNP addresses and public key lists specifying the epoch.
+   * @apiDescription Get the Epoch Leader and Random Number Proposer addresses and public key lists in the specified epoch.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -3888,7 +3888,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getCurrentStakerInfo
    * @apiVersion 1.1.0
-   * @apiDescription Get the current stake info.
+   * @apiDescription Returns an array with information on each of the current validators.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -3963,7 +3963,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getSlotCount
    * @apiVersion 1.1.0
-   * @apiDescription Get the number of slot within an epoch.
+   * @apiDescription Returns the total number of slots in an epoch. This is a constant.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -4061,7 +4061,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getTimeByEpochID
    * @apiVersion 1.1.0
-   * @apiDescription Get the specified epoch start time and return UTC time seconds.
+   * @apiDescription Returns the specified epoch's start time in UTC time seconds.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -4111,12 +4111,12 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getEpochIDByTime
    * @apiVersion 1.1.0
-   * @apiDescription Calculate the Epoch ID according to the time, enter the UTC time seconds, and return the Epoch ID.
+   * @apiDescription Calculates the Epoch ID according to the time. Enter the UTC time in seconds to get the corresponding Epoch ID.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
    * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
-   * @apiParam {number} time The UTC time seconds you want to search.
+   * @apiParam {number} time The UTC time seconds you want to query.
    *
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getEpochIDByTime","params":{"chainType":"WAN", "time":Math.floor(Date.now()/1000)},"id":1}
@@ -4193,7 +4193,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getPosInfo
    * @apiVersion 1.1.0
-   * @apiDescription Get the upgrade position information from the POW protocol to the POS protocol.
+   * @apiDescription Returns the epoch ID and block number when the switch from POW to the POS protocol occurred.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -4245,12 +4245,12 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getMaxBlockNumber
    * @apiVersion 1.1.0
-   * @apiDescription Get the max blockNumbers by every specified epoch IDs.
+   * @apiDescription Get the highest block number of the specified epoch ID(s).
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
    * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
-   * @apiParam {number/array} epochID The epochID you want to search.
+   * @apiParam {number/array} epochID The epochID(s) you want to query.
    *
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getMaxBlockNumber","params":{"chainType":"WAN", "epochID":[18102, 18101]},"id":1}
@@ -4304,7 +4304,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getValidatorSupStakeInfo
    * @apiVersion 1.1.0
-   * @apiDescription Get the specified validator supplementary information.
+   * @apiDescription Get supplementary information for the specified validator.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -4365,12 +4365,12 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getDelegatorSupStakeInfo
    * @apiVersion 1.1.0
-   * @apiDescription Get the specified delegator supplementary information.
+   * @apiDescription Get the specified delegator's supplementary information.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
    * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
-   * @apiParam {string/array} address The delegator address you want to search.
+   * @apiParam {string/array} address The delegator's address you want to query.
    *
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getDelegatorSupStakeInfo","params":{"chainType":"WAN", "address":["0xc45089dfcf6308d80b377b0a6ffc8bd314273ce0"]},"id":1}
@@ -4429,12 +4429,12 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getEpochIncentiveBlockNumber
    * @apiVersion 1.1.0
-   * @apiDescription Get the incentive pay block number of the input epoch.
+   * @apiDescription Get the block number which contains the incentives transactions for the specified epoch.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
    * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.
-   * @apiParam {number} epochID The epochID you want to search.
+   * @apiParam {number} epochID The epochID you want to query.
    *
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getEpochIncentiveBlockNumber","params":{"chainType":"WAN", "epochID":18106},"id":1}
@@ -4479,7 +4479,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getEpochStakeOut
    * @apiVersion 1.1.0
-   * @apiDescription Get the principal refund record for the specified epoch.
+   * @apiDescription Get the record of stake out transactions for the specified epoch.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
