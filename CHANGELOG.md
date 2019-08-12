@@ -3,13 +3,13 @@
 
 - Add estimateGas
 - Add getOTAMixSet
-- Add POS apis for Wanchain
-- Fix resend message after reconnect 
+- Add POS APIs for Wanchain
+- Fix bugs
 
 ## v1.0.3
 
 - Fix reconnect bug
-- Optimize server response times
+- Optimize mechanism of server response achieve better performance
 
 ## v1.0.2
 
@@ -19,7 +19,7 @@
 
 ## v1.0.1
 
-- Remove Erc20 refer api, add common token refer api instead
+- Remove Erc20 refer APIs, add common token refer APIs instead
 - Update document
 - Update tests
 
