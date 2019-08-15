@@ -162,12 +162,28 @@ class ApiInstance extends WsInstance {
   * }]
   *
   */
-  getScEvent(chainType, address, topics, callback) {
+  getScEvent(chainType, address, topics, fromBlock, toBlock, callback) {
+    let method = 'getScEvent';
+    let params = { chainType: chainType, address: address, topics: topics };
+
+    if (fromBlock) {
+      if (typeof(fromBlock) === "function") {
+        callback = fromBlock;
+      } else {
+        params.fromBlock = fromBlock;
+      }
+    }
+    if (toBlock) {
+      if (typeof(toBlock) === "function") {
+        callback = toBlock;
+      } else {
+        params.toBlock = toBlock;
+      }
+    }
+
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
-    let method = 'getScEvent';
-    let params = { chainType: chainType, address: address, topics: topics };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
