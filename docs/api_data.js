@@ -1334,6 +1334,13 @@ define({ "api": [
           },
           {
             "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "option",
+            "description": "<p>An object value which describes the range between fromBlock and toBlock. <br>  <code>fromBlock</code> - The number of the earliest block (latest may be given to mean the most recent, block). By default 0. <br>  <code>toBlock</code> - The number of the latest block (latest may be given to mean the most recent, block). By default latest.</p>"
+          },
+          {
+            "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
@@ -3444,14 +3451,14 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "ownerAddr",
-            "description": "<p>The owner address on the certain contract.</p>"
+            "description": "<p>The owner address on the specified contract.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "spenderAddr",
-            "description": "<p>The spender address on the certain contract.</p>"
+            "description": "<p>The spender address on the specified contract.</p>"
           },
           {
             "group": "Parameter",
