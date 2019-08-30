@@ -94,6 +94,11 @@ describe("iWan API Auto Test", () => {
     }
     let apiTest = new ApiInstance(YourApiKey, YourSecretKey, option);
 
+    before(async () => {
+        await sleep(2000);
+    });
+
+
     after(() => {
         apiTest.close();
     });
@@ -127,6 +132,9 @@ describe("iWan API Auto Test", () => {
             let xlsxResult = JSON.parse(row[xlsxHeaderPos.output]);
             let expectResult = xlsxResult.hasOwnProperty('error') ? xlsxResult.error : xlsxResult.result;
 
+            // if (!['TC3001', 'TC3002','TC3003','TC3004','TC3005','TC3006','TC3007', 'TC3008'].includes(tcid)) {
+            //     return;
+            // }
             it("Auto test promise [" + tcid + " " + description + "]", async () => {
                 if (api) {
                     if (apiTest[api]) {
@@ -155,7 +163,7 @@ describe("iWan API Auto Test", () => {
                 }
             });
 
-            it("Auto test callback [" + tcid + " " + description + "]", async () => {
+            it("Auto test callback [" + tcid + " " + description + "]", (done) => {
                 if (api) {
                     if (apiTest[api]) {
                         let args = getArgs(apiTest[api]);
@@ -171,12 +179,15 @@ describe("iWan API Auto Test", () => {
                             } else {
                                 assertFullMatch(expectResult, actualResult);
                             } 
+                            done();
                         });
                     } else {
                         assertFullMatch("incorrect API name (" + api + ")", "incorrect API name (" + api + ")");
+                        done();
                     }
                 } else {
                     assertFullMatch("key parameter missing: method", "key parameter missing: method");
+                    done();
                 }
             });
         }

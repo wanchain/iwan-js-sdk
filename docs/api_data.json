@@ -5,7 +5,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getBalance",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get balance for a single address. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -15,7 +15,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -71,7 +71,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getMultiBalances",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get balance for multiple Addresses in a single call. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -81,7 +81,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -137,7 +137,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getNonce",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get the nonce of an account. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -147,7 +147,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -203,7 +203,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getNonceIncludePending",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get the pending nonce of an account. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -213,7 +213,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -269,7 +269,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getUTXO",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get the detail BTC UTXO info for BTC. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -349,7 +349,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "importAddress",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Send a <code>'import address'</code> command to BTC. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -415,7 +415,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getBlockByHash",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get the block information about a block by block hash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -481,7 +481,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getBlockByNumber",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get the block information about a block by block number on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -547,7 +547,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getBlockNumber",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get the current latest block number. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -606,7 +606,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getBlockTransactionCount",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get the number of transaction in a given block by block number or block hash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -672,7 +672,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "callScFunc",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Call the specific public function of one contract on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -682,7 +682,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -759,7 +759,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getScMap",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get the specific public map value of one contract on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -769,7 +769,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -846,7 +846,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getScOwner",
-    "version": "1.0.2",
+    "version": "1.1.1",
     "description": "<p>Get the owner of the specified contract from the specified chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -856,7 +856,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -912,7 +912,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getScVar",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get the specific public parameter value of one contract on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -922,7 +922,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -997,7 +997,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getCoin2WanRatio",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Coin exchange ratio,such as 1 ETH to 880 WANs in ICO period, the precision is 10000, the ratio is 880*precision = 880,0000. The ratio would be changed according to the market value ratio periodically. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1056,7 +1056,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getRegTokens",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get the information of tokens which are supported for cross-chain ability. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1115,7 +1115,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanGroups",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get the detailed cross-chain storemanGroup info for one cross-chain native coin, like the quota, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1174,7 +1174,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getToken2WanRatio",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Token exchange ratio,such as 1 token to 880 WANs, the precision is 10000, the ratio is 880*precision = 880,0000. The ratio would be changed accoring to the market value ratio periodically. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1240,7 +1240,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTokenStoremanGroups",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get the detail cross-chain storemanGroup info for one specific token contract, like the quota, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1306,7 +1306,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getScEvent",
-    "version": "1.0.1",
+    "version": "1.1.1",
     "description": "<p>Get smart contract event log via topics. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1316,7 +1316,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1331,6 +1331,13 @@
             "optional": false,
             "field": "topics",
             "description": "<p>An array of string values which must each appear in the log entries. The order is important, if you want to leave topics out use null, e.g. [null, '0x00...'].</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "option",
+            "description": "<p>An object value which describes the range between fromBlock and toBlock. <br>  <code>fromBlock</code> - The number of the earliest block (latest may be given to mean the most recent, block). By default 0. <br>  <code>toBlock</code> - The number of the latest block (latest may be given to mean the most recent, block). By default latest.</p>"
           },
           {
             "group": "Parameter",
@@ -1379,7 +1386,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "monitorEvent",
-    "version": "1.0.1",
+    "version": "1.1.1",
     "description": "<p>Subscribe to a smart contract event monitor. The server will push the event to the subscriber when the event occurs. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1389,7 +1396,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1447,13 +1454,13 @@
     "groupTitle": "Events"
   },
   {
-    "name": "getGasPrice",
-    "group": "Status",
+    "name": "getActivity",
+    "group": "POS",
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
-    "title": "getGasPrice",
-    "version": "1.0.3",
-    "description": "<p>Get a bigNumber of the current gas price in wei. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "title": "getActivity",
+    "version": "1.1.1",
+    "description": "<p>Get the activity information of the specified epoch. For historical epochs the values are fixed, while the current epoch will update the latest current values in real time. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1462,7 +1469,1777 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "epochID",
+            "description": "<p>The epochID you want to search.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getActivity\",\"params\":{\"chainType\":\"WAN\", \"epochID\":18102},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getActivity(\"WAN\", 18102, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getActivity(\"WAN\", 18102);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n  \"epLeader\":\n  [\n    \"0x28c12c7b51860b9d5aec3a0ceb63c6e187c00aac\",\n    \"0x1a95e85e8ffcfd28eb61ee53a542dc98c57b337a\",\n    \"0x46530055144fe9365eaae87ba623e2f91cd7eff2\",\n    \"0x0e92d125ba28852a11428fcb63b6f0e44a52962f\",\n    \"0xee1ad9c4f9d81f900221e95ee04246b6254b0c6f\",\n    \"0xb58230a7923a6a1941016aa1682e212def899ed1\",\n    \"0xb9d6c1a6e52119026cb5d2a82457f5fd6bc7e0c9\",\n    \"0xdfd7aa554653ca236c197ad746edc2954ca172df\",\n    \"0x1b7740df685f9d34773d5a2aba6ab3a2c1407f40\",\n    \"0xdfd7aa554653ca236c197ad746edc2954ca172df\",\n    \"0x266ddcfdbe3ded75e0e511e6356bca052b221c6b\",\n    \"0x1ae5a38b4a5ca0aefbb1c17fd27073ab00fd2a3f\",\n    \"0x2866bca06ff1d6afe52298f9fc759ea9b80f6902\",\n    \"0xf0e02c3640020f083a314547ae99483aa2c7cd01\",\n    \"0x2a6e8c39d4e9f9152958649fc5dbdb9c68cfcb0b\",\n    \"0x0081a626fecff225cd87d3f23c0dd47a9fe243ac\",\n    \"0x1a95e85e8ffcfd28eb61ee53a542dc98c57b337a\",\n    \"0x1a95e85e8ffcfd28eb61ee53a542dc98c57b337a\",\n    \"0x1a95e85e8ffcfd28eb61ee53a542dc98c57b337a\",\n    \"0xdfd7aa554653ca236c197ad746edc2954ca172df\",\n    \"0x2a6e8c39d4e9f9152958649fc5dbdb9c68cfcb0b\",\n    \"0xa3fb8f5e1fadfe104e4b1da91e8d96aab52faaf3\",\n    \"0x4bf9fd7308d0849a62c3a7dd71c5190e57c28756\",\n    \"0x85dae7e5c7b433a1682c54eee63adf63d835d272\"\n  ],\n  \"epActivity\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n  \"rpLeader\":\n  [\n    \"0x89a7588529eb7aaea0a229f2dfbb277b15649969\",\n    \"0x3dabf8331afbc553a1e458e37a6c9c819c452d55\",\n    \"0x010ee9abdf364972ac8d279ab96fd1d167a4d830\",\n    \"0x7815f56468915a08edb505fffa9d376ad21a9617\",\n    \"0x2c72d7a8c02752fcfafbaea5a63c53056cfaf547\",\n    \"0x9ce4664e9d7346869797b7d9fc8c7a0212d5ff44\",\n    \"0xbdada4f58d17ce602cb0d2db2a55c3e4f47e397f\",\n    \"0xa923ac48439add7124763b3682f4505044c81ae3\",\n    \"0xf1d6ffc8a2276b7e0784973a1a07a26e75200edd\",\n    \"0x5e165460b15f02d84a67f81b29517671989d2492\",\n    \"0x8289e2141c10832e7c9b108317eae0dec2011c67\",\n    \"0xb019a99f0653973ddb2d983a26e0970587d08447\",\n    \"0x8289e2141c10832e7c9b108317eae0dec2011c67\",\n    \"0xa4ebf5bbb131179b69bbf33319257728cdada5cf\",\n    \"0x3dabf8331afbc553a1e458e37a6c9c819c452d55\",\n    \"0x5e165460b15f02d84a67f81b29517671989d2492\",\n    \"0xa4539e1bdffceb3557ffb81f87a92e2159f6d637\",\n    \"0x7815f56468915a08edb505fffa9d376ad21a9617\",\n    \"0xa4626e2bb450204c4b34bcc7525e585e8f678c0d\",\n    \"0xf90cc528e5f4811c8c1f1a69b990b9a58039f7cf\",\n    \"0x1a95e85e8ffcfd28eb61ee53a542dc98c57b337a\",\n    \"0x46530055144fe9365eaae87ba623e2f91cd7eff2\",\n    \"0x93c8ea0326ef334bdc3011e74cd1a6d78ce0594d\",\n    \"0x57dca45124e253bfa93d7571b43555a861c7455f\",\n    \"0x2c72d7a8c02752fcfafbaea5a63c53056cfaf547\"\n  ],\n  \"rpActivity\":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n  \"sltLeader\":[],\n  \"slBlocks\":[],\n  \"slActivity\":0,\n  \"slCtrlCount\":0\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getCurrentEpochInfo",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getCurrentEpochInfo",
+    "version": "1.1.1",
+    "description": "<p>Get the current epoch info. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getCurrentEpochInfo\",\"params\":{\"chainType\":\"WAN\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getCurrentEpochInfo(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getCurrentEpochInfo(\"WAN\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n  \"blockNumber\": 3938057,\n  \"slotId\": 5661,\n  \"epochId\": 18102\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getCurrentStakerInfo",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getCurrentStakerInfo",
+    "version": "1.1.1",
+    "description": "<p>Returns an array with information on each of the current validators. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getCurrentStakerInfo\",\"params\":{\"chainType\":\"WAN\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getCurrentStakerInfo(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getCurrentStakerInfo(\"WAN\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n  {\n    \"address\": \"0xa4626e2bb450204c4b34bcc7525e585e8f678c0d\",\n    \"pubSec256\": \"0x04b7bf8d3868333f70a30041423c7db204b80b9be2e585c344cf3f391cbf77b17fd14f3058d4475d546355bf8c2709ed9ecf5f0cee9d021c90988af0e8cf52001b\",\n    \"pubBn256\": \"0x289787688eb80c1e223375a71f8d17110d638a9143afa190dc11b3c1e64cf92b21feb02ab7a1dcb31892210dfda458aff890fe9e7508292099ae6256f197b325\",\n    \"amount\": \"0xa968163f0a57b400000\",\n    \"votingPower\": \"0x297116712be7b468800000\",\n    \"lockEpochs\": 7,\n    \"maxFeeRate\": 1500,\n    \"nextLockEpochs\": 7,\n    \"from\": \"0xdbb2d6199457d11288f0097659bcec24738e158f\",\n    \"stakingEpoch\": 0,\n    \"feeRate\": 1500,\n    \"feeRateChangedEpoch\": 0,\n    \"clients\":\n    [\n      {\n        \"address\": \"0xfcc3736dc29bf9af7556fcc1dea10b53edaab51d\",\n        \"amount\": \"0x56bc75e2d63100000\",\n        \"votingPower\": \"0x1537da569da5bca00000\",\n        \"quitEpoch\": 18071\n      }\n    ],\n    \"partners\": []\n  },\n  ... ...\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getDelegatorIncentive",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getDelegatorIncentive",
+    "version": "1.1.1",
+    "description": "<p>Get the identified delegator rewards over a specified range of epochs. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "address",
+            "description": "<p>The delegator address you want to query.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "from",
+            "description": "<p>The starting epochID you want to query.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "to",
+            "description": "<p>The ending epochID you want to query.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getDelegatorIncentive\",\"params\":{\"chainType\":\"WAN\", \"address\":\"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getDelegatorIncentive(\"WAN\", \"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getDelegatorIncentive(\"WAN\", \"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n  {\n    \"address\": \"0x6fcfcd4719f110e77bef0633d31cc046616b4b34\",\n    \"amount\": \"0x3217e1b255185bf07\",\n    \"epochId\": 18088\n  },\n  {\n    \"address\": \"0x6fcfcd4719f110e77bef0633d31cc046616b4b34\",\n    \"amount\": \"0x19029a8c0503573f2\",\n    \"epochId\": 18090\n  },\n  {\n    \"address\": \"0x6fcfcd4719f110e77bef0633d31cc046616b4b34\",\n    \"amount\": \"0x1902ee870d0bbf9fc\",\n    \"epochId\": 18091\n  },\n  {\n    \"address\": \"0xdfd7aa554653ca236c197ad746edc2954ca172df\",\n    \"amount\": \"0x2e2c02cc97b59ff49\",\n    \"epochId\": 18091\n  },\n  {\n    \"address\": \"0x4bf9fd7308d0849a62c3a7dd71c5190e57c28756\",\n    \"amount\": \"0xd9861c084d353afe\",\n    \"epochId\": 18091\n  },\n  {\n    \"address\": \"0x93c8ea0326ef334bdc3011e74cd1a6d78ce0594d\",\n    \"amount\": \"0xa4d86dec9cf006aa\",\n    \"epochId\": 18091\n  },\n  ... ...\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getDelegatorStakeInfo",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getDelegatorStakeInfo",
+    "version": "1.1.1",
+    "description": "<p>Get the identified delegator's staking info. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "address",
+            "description": "<p>The delegator address you want to query.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getDelegatorStakeInfo\",\"params\":{\"chainType\":\"WAN\", \"address\":\"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getDelegatorStakeInfo(\"WAN\", \"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getDelegatorStakeInfo(\"WAN\", \"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n  {\n    \"address\": \"0x6fcfcd4719f110e77bef0633d31cc046616b4b34\",\n    \"amount\": \"0xa968163f0a57b400000\",\n    \"quitEpoch\": 0\n  },\n  {\n    \"address\": \"0xdfd7aa554653ca236c197ad746edc2954ca172df\",\n    \"amount\": \"0x3f870857a3e0e3800000\",\n    \"quitEpoch\": 0\n  },\n  {\n    \"address\": \"0x4bf9fd7308d0849a62c3a7dd71c5190e57c28756\",\n    \"amount\": \"0xa968163f0a57b400000\",\n    \"quitEpoch\": 0\n  },\n  {\n    \"address\": \"0x93c8ea0326ef334bdc3011e74cd1a6d78ce0594d\",\n    \"amount\": \"0xa968163f0a57b400000\",\n    \"quitEpoch\": 0\n  },\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getDelegatorSupStakeInfo",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getDelegatorSupStakeInfo",
+    "version": "1.1.1",
+    "description": "<p>Get the specified delegator's supplementary information. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string/array",
+            "optional": false,
+            "field": "address",
+            "description": "<p>The delegator's address you want to query.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getDelegatorSupStakeInfo\",\"params\":{\"chainType\":\"WAN\", \"address\":[\"0xc45089dfcf6308d80b377b0a6ffc8bd314273ce0\"]},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getDelegatorSupStakeInfo(\"WAN\", [\"0xc45089dfcf6308d80b377b0a6ffc8bd314273ce0\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getDelegatorSupStakeInfo(\"WAN\", [\"0xc45089dfcf6308d80b377b0a6ffc8bd314273ce0\"]);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n  {\n    \"address\": \"0xc45089dfcf6308d80b377b0a6ffc8bd314273ce0\",\n    \"vAddress\": \"0x1a95e85e8ffcfd28eb61ee53a542dc98c57b337a\",\n    \"delegateIn\": 3788629,\n    \"delegateInTimestamp\": 1563190930\n  },\n  {\n    \"address\": \"0xc45089dfcf6308d80b377b0a6ffc8bd314273ce0\",\n    \"vAddress\": \"0x1e1e954883d02fba32fa1f7d0d6314156aa2a4e8\",\n    \"delegateIn\": 3788635,\n    \"delegateInTimestamp\": 1563190970\n  },\n  ... ...\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getDelegatorTotalIncentive",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getDelegatorTotalIncentive",
+    "version": "1.1.1",
+    "description": "<p>Get the identified delegator's total incentives. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "address",
+            "description": "<p>The delegator's address you want to query.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "validatorAddress",
+            "description": "<p>The validator's address you want to query.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "from",
+            "description": "<p>The starting epochID you want to query.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "to",
+            "description": "<p>The ending epochID you want to query.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getDelegatorTotalIncentive\",\"params\":{\"chainType\":\"WAN\", \"address\":\"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getDelegatorTotalIncentive(\"WAN\", \"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getDelegatorTotalIncentive(\"WAN\", \"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n  {\n    \"address\": \"0x1a95e85e8ffcfd28eb61ee53a542dc98c57b337a\",\n    \"amount\": \"233401766511923724414\",\n    \"minEpochId\": 18080,\n    \"epochCount\": 6\n  },\n  {\n    \"address\": \"0x4bf9fd7308d0849a62c3a7dd71c5190e57c28756\",\n    \"amount\": \"516430866915939128625\",\n    \"minEpochId\": 18088,\n    \"epochCount\": 12\n  },\n  {\n    \"address\": \"0x6fcfcd4719f110e77bef0633d31cc046616b4b34\",\n    \"amount\": \"662440812840446730555\",\n    \"minEpochId\": 18088,\n    \"epochCount\": 10\n  },\n  {\n    \"address\": \"0x93c8ea0326ef334bdc3011e74cd1a6d78ce0594d\",\n    \"amount\": \"514597535375473288151\",\n    \"minEpochId\": 18088,\n    \"epochCount\": 13\n  },\n  {\n    \"address\": \"0xdfd7aa554653ca236c197ad746edc2954ca172df\",\n    \"amount\": \"6.026970402596349056462e+21\",\n    \"minEpochId\": 18082,\n    \"epochCount\": 20\n  },\n  ... ...\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getEpochID",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getEpochID",
+    "version": "1.1.1",
+    "description": "<p>Get the current Epoch ID. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getEpochID\",\"params\":{\"chainType\":\"WAN\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getEpochID(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getEpochID(\"WAN\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "18102",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getEpochIDByTime",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getEpochIDByTime",
+    "version": "1.1.1",
+    "description": "<p>Calculates the Epoch ID according to the time. Enter the UTC time in seconds to get the corresponding Epoch ID. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "time",
+            "description": "<p>The UTC time seconds you want to query.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getEpochIDByTime\",\"params\":{\"chainType\":\"WAN\", \"time\":Math.floor(Date.now()/1000)},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getEpochIDByTime(\"WAN\", Math.floor(Date.now()/1000), (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getEpochIDByTime(\"WAN\", Math.floor(Date.now()/1000));\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "18108",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getEpochIncentiveBlockNumber",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getEpochIncentiveBlockNumber",
+    "version": "1.1.1",
+    "description": "<p>Get the block number which contains the incentives transactions for the specified epoch. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "epochID",
+            "description": "<p>The epochID you want to query.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getEpochIncentiveBlockNumber\",\"params\":{\"chainType\":\"WAN\", \"epochID\":18106},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getEpochIncentiveBlockNumber(\"WAN\", 18106, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getEpochIncentiveBlockNumber(\"WAN\", 18106);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "4003788",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getEpochIncentivePayDetail",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getEpochIncentivePayDetail",
+    "version": "1.1.1",
+    "description": "<p>Get the reward information of the specified epoch, enter epochID, and reward payment details (including RNP reward, EL reward and chunk reward) will be returned for all the verification nodes and clients working in the epoch. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "epochID",
+            "description": "<p>The epochID you want to search.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getEpochIncentivePayDetail\",\"params\":{\"chainType\":\"WAN\", \"epochID\":18101},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getEpochIncentivePayDetail(\"WAN\", 18101, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getEpochIncentivePayDetail(\"WAN\", 18101);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n  {\n    \"delegators\": [\n      {\n        \"address\": \"0x81ad5c65a815f8dc28e0fd1d17ac4fa38f8a6838\",\n        \"incentive\": \"0x78b093af02e111\",\n        \"type\": \"delegator\"\n      },\n      {\n        \"address\": \"0x4e6b5f1abdd517739889334df047113bd736c546\",\n        \"incentive\": \"0x13afa1b719d597636\",\n        \"type\": \"delegator\"\n      },\n      ... ...\n      {\n        \"address\": \"0x8bf12b4cd3b41d40b2adfdf2857b2077d4194a44\",\n        \"incentive\": \"0x1922a4583a858b0\",\n        \"type\": \"delegator\"\n      },\n      {\n        \"address\": \"0x51253d40bb113827781de47e5a2d41f41924431d\",\n        \"incentive\": \"0x28376d59f73c11\",\n        \"type\": \"delegator\"\n      }\n    ],\n    \"address\": \"0xa4626e2bb450204c4b34bcc7525e585e8f678c0d\",\n    \"stakeInFromAddr\": \"0xdbb2d6199457d11288f0097659bcec24738e158f\",\n    \"incentive\": \"0xaf6f730467435b9f\",\n    \"type\": \"validator\"\n  },\n  ... ...\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getEpochLeadersByEpochID",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getEpochLeadersByEpochID",
+    "version": "1.1.1",
+    "description": "<p>Get the public key list of the epoch leaders of the specified EpochID with the input parameter as EpochID. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "epochID",
+            "description": "<p>The epochID you want to search.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getEpochLeadersByEpochID\",\"params\":{\"chainType\":\"WAN\", \"epochID\":18102},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getEpochLeadersByEpochID(\"WAN\", 18102, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getEpochLeadersByEpochID(\"WAN\", 18102);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n  \"000000\": \"046c0979fbcd38b7887076db6b08adbbaae45189ac4239d2c06749b634dbeaafdf2b229b6c4eda1ab6ede7e46cbd9ab3ac35df1ac2a6f650bac39fd8474d85524e\",\n  \"000001\": \"04dac7b023f0e9fb5be91b48e5d546b2f2eb91029705f6055c24b3c804a49cf83f7cd584a96346ca42a94a02456444b7df4e280d2726971bf267f8182341ff81b9\",\n  \"000002\": \"042b7d4be32d25769472ea7c8d432bbad5abee051c048e4de425e6feb288fde6f33a16269e4e85fbda4f857a7d5eca8d33793b9249c83517a3214b64475cd50176\",\n  ... ...\n  \"000047\": \"046351650f15b8de869d89c572dc093000794e75e7f4a7c9f10e9b35f24694fa7555c143e4c4dd4548c0d06be2b2e6c536b37acf0c0ad4806e6c48f23ade4e4d9a\",\n  \"000048\": \"04fdb485b566c2ddb40e2f4341b1e5746479a7c45e3d8101b1360b8bdba6206deee520ceecc9e9897e3b05b53e3ffa6fa659bef47c384984c0bc021a843df10847\",\n  \"000049\": \"04fdb485b566c2ddb40e2f4341b1e5746479a7c45e3d8101b1360b8bdba6206deee520ceecc9e9897e3b05b53e3ffa6fa659bef47c384984c0bc021a843df10847\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getEpochStakeOut",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getEpochStakeOut",
+    "version": "1.1.1",
+    "description": "<p>Get the record of stake out transactions for the specified epoch. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "epochID",
+            "description": "<p>The epochID you want to search.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getEpochStakeOut\",\"params\":{\"chainType\":\"WAN\", \"epochID\":18106},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getEpochStakeOut(\"WAN\", 18106, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getEpochStakeOut(\"WAN\", 18106);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n  {\n    \"address\": \"0x74b7505ef4ee4a4783f446df8964b6cdd4c61843\",\n    \"amount\": \"0x8f1d5c1cae3740000\"\n  },\n  ... ...\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getLeaderGroupByEpochID",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getLeaderGroupByEpochID",
+    "version": "1.1.1",
+    "description": "<p>Get the Epoch Leader and Random Number Proposer addresses and public key lists in the specified epoch. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "epochID",
+            "description": "<p>The epochID you want to search.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getLeaderGroupByEpochID\",\"params\":{\"chainType\":\"WAN\", \"epochID\":18102},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getLeaderGroupByEpochID(\"WAN\", 18102, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getLeaderGroupByEpochID(\"WAN\", 18102);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n  {\n    \"pubBn256\": \"0x0342c5f001e6970037de3d9de692cb89284435df28e63657f88c8e99893be7960006f8cf93c699856ff8aeffcd64531ce0071cdf09a38d043b33bbbf4cd469ed\",\n    \"pubSec256\": \"0x046c0979fbcd38b7887076db6b08adbbaae45189ac4239d2c06749b634dbeaafdf2b229b6c4eda1ab6ede7e46cbd9ab3ac35df1ac2a6f650bac39fd8474d85524e\",\n    \"secAddr\": \"0x28c12c7b51860b9d5aec3a0ceb63c6e187c00aac\",\n    \"type\": 0\n  },\n  {\n    \"pubBn256\": \"0x093e87d8f1cf8d967be90fc841b73180e8185e480e5b1937c5bd0bf5b47288500598f33d4142bf226b2c8ddaf7358c3093423efdeb1b0a74bfba9d5749ecdf9c\",\n    \"pubSec256\": \"0x04dac7b023f0e9fb5be91b48e5d546b2f2eb91029705f6055c24b3c804a49cf83f7cd584a96346ca42a94a02456444b7df4e280d2726971bf267f8182341ff81b9\",\n    \"secAddr\": \"0x1a95e85e8ffcfd28eb61ee53a542dc98c57b337a\",\n    \"type\": 0\n  },\n  {\n    \"pubBn256\": \"0x00e0c4fae08f124f7a8fe82988a385d9723bea14c8a6e2996a684846ae8d0d4e27abedb7d2f7150bd42ba830e960774b873de74b1d91d7c5ea1ba349a849e575\",\n    \"pubSec256\": \"0x047aa28ac3bf36c51e7781984e2843bdb78bf7d78e3e3f2fe5522581e8f94725749d81b6f2dd3068a02f95b9dddb5e3a97f9c6e22edf5a78e25339c3c94aeb31f1\",\n    \"secAddr\": \"0x57dca45124e253bfa93d7571b43555a861c7455f\",\n    \"type\": 1\n  },\n  {\n    \"pubBn256\": \"0x2094589617397846c5125cf5922ba993643c401998ae8817d5005fe21245f4bc0fbb25158c54446757d2b03d89da10d7dfbbaa23afa38c6e87115dcebe2a8e4d\",\n    \"pubSec256\": \"0x04428597d2d6ab60894c592951337243424637c8b65cc0057215f481dcb78b3e96268365c9bac17bc32b6c08e2c135ca231f636653040f995e8d4e03f6d4b8d812\",\n    \"secAddr\": \"0x2c72d7a8c02752fcfafbaea5a63c53056cfaf547\",\n    \"type\": 1\n  },\n  ... ...\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getMaxBlockNumber",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getMaxBlockNumber",
+    "version": "1.1.1",
+    "description": "<p>Get the highest block number of the specified epoch ID(s). <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number/array",
+            "optional": false,
+            "field": "epochID",
+            "description": "<p>The epochID(s) you want to query.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getMaxBlockNumber\",\"params\":{\"chainType\":\"WAN\", \"epochID\":[18102, 18101]},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getMaxBlockNumber(\"WAN\", [18102, 18101], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getMaxBlockNumber(\"WAN\", [18102, 18101]);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n  {\n    \"epochId\": 18102,\n    \"blockNumber\": 3938057,\n  },\n  {\n    \"epochId\": 18101,\n    \"blockNumber\": 3933152,\n  }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getMaxStableBlkNumber",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getMaxStableBlkNumber",
+    "version": "1.1.1",
+    "description": "<p>Get the current highest stable block number (no rollback). <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getMaxStableBlkNumber\",\"params\":{\"chainType\":\"WAN\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getMaxStableBlkNumber(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getMaxStableBlkNumber(\"WAN\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "4018017",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getPosInfo",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getPosInfo",
+    "version": "1.1.1",
+    "description": "<p>Returns the epoch ID and block number when the switch from POW to the POS protocol occurred. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getPosInfo\",\"params\":{\"chainType\":\"WAN\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getPosInfo(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getPosInfo(\"WAN\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n  \"firstBlockNumber\": 3560000,\n  \"firstEpochId\": 18078\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getRandom",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getRandom",
+    "version": "1.1.1",
+    "description": "<p>Get the random number of the queried epochID and block number. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "epochID",
+            "description": "<p>The epochID you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "blockNumber",
+            "description": "<p>The blockNumber you want to search. If blockNumber is -1, use the latest block.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRandom\",\"params\":{\"chainType\":\"WAN\", \"epochID\":18102, \"blockNumber\":-1},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getRandom(\"WAN\", 18102, -1, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getRandom(\"WAN\", 18102, -1);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "\"0x3a4277627fa45c3bf691014d79c05da2427f8eb115a076b71af7690cdb3a0b5e\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getRandomProposersByEpochID",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getRandomProposersByEpochID",
+    "version": "1.1.1",
+    "description": "<p>Gets Random Number Proposer public keys of the specified epoch. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "epochID",
+            "description": "<p>The epochID you want to search.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRandomProposersByEpochID\",\"params\":{\"chainType\":\"WAN\", \"epochID\":18102},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getRandomProposersByEpochID(\"WAN\", 18102, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getRandomProposersByEpochID(\"WAN\", 18102);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n  \"000000\": \"29e0660fe921282b2d64c6adaf0b24945eee6d9fcdb419c39f84a551ed44151d27f786e5df7abcff94bbed2cbc2791bc76db21b5be469874be181e4fa234fb3e\",\n  \"000001\": \"26a70d685549ffe982df0d66a88f36ac3fca6e488bf69eb6de62a37b97f3f56e2b6b56f47e817c01225ad5549f1ca9751dc1f65559f1a81639c6a4126c9df3ce\",\n  \"000002\": \"21f4f0c4da56206685e94354acba851aab7dc7c090898f6bbb1fc42df986764b055f09e97ceb4c90976a1219ab749dd0b008d47f9c18b962a6056e66de8d858f\",\n  ... ...\n  \"000022\": \"1c96a7abf1424d0c5316fc74eb39022648062fc88997896bdeae70c4e008b3700136608e2ab653c037d144979403061d3247d6298bfdf0b26c9829db3175531e\",\n  \"000023\": \"00e0c4fae08f124f7a8fe82988a385d9723bea14c8a6e2996a684846ae8d0d4e27abedb7d2f7150bd42ba830e960774b873de74b1d91d7c5ea1ba349a849e575\",\n  \"000024\": \"2094589617397846c5125cf5922ba993643c401998ae8817d5005fe21245f4bc0fbb25158c54446757d2b03d89da10d7dfbbaa23afa38c6e87115dcebe2a8e4d\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getSlotActivity",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getSlotActivity",
+    "version": "1.1.1",
+    "description": "<p>Get the slot leader activity information of the specified epoch. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "epochID",
+            "description": "<p>The epochID you want to search.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getSlotActivity\",\"params\":{\"chainType\":\"WAN\", \"epochID\":18102},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getSlotActivity(\"WAN\", 18102, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getSlotActivity(\"WAN\", 18102);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n  \"sltLeader\":\n  [\n    \"0xdf24acd01f69d93ad440c8e9ccf5ac6a32d672d4\",\n    \"0x3628bf135f36c6e26a824ec9152885505f3fbc2a\",\n    \"0xeb55839c891286d4d5bb11737fca1136797eaf83\",\n    \"0x2c72d7a8c02752fcfafbaea5a63c53056cfaf547\",\n    \"0xee1ad9c4f9d81f900221e95ee04246b6254b0c6f\",\n    \"0xcd54e0c35b122860d8fe2eb41f2e8e3e79c085ba\",\n    \"0x46530055144fe9365eaae87ba623e2f91cd7eff2\",\n    \"0x375369561dd38fd1a8c93cade745443558fff0bb\",\n    \"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce\",\n    \"0x57dca45124e253bfa93d7571b43555a861c7455f\",\n    \"0x2866bca06ff1d6afe52298f9fc759ea9b80f6902\",\n    \"0xbee03f252dfd38f4f8d10d0664fb50c36526a611\",\n    \"0x0081a626fecff225cd87d3f23c0dd47a9fe243ac\",\n    \"0x1a95e85e8ffcfd28eb61ee53a542dc98c57b337a\",\n    \"0x6273ce1f6f32e129f295f138d6e4ba6f0e19333e\"\n  ],\n  \"slBlocks\": [336, 1085, 359, 671, 693, 366, 349, 53, 74, 70, 364, 347, 339, 337, 339],\n  \"slActivity\": 0.8467013888888889,\n  \"slCtrlCount\": 8849\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getSlotCount",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getSlotCount",
+    "version": "1.1.1",
+    "description": "<p>Returns the total number of slots in an epoch. This is a constant. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getSlotCount\",\"params\":{\"chainType\":\"WAN\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getSlotCount(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getSlotCount(\"WAN\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "17280",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getSlotID",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getSlotID",
+    "version": "1.1.1",
+    "description": "<p>Get the current epoch slot ID. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getSlotID\",\"params\":{\"chainType\":\"WAN\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getSlotID(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getSlotID(\"WAN\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "2541",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getSlotTime",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getSlotTime",
+    "version": "1.1.1",
+    "description": "<p>Get the time span of a slot in seconds. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getSlotTime\",\"params\":{\"chainType\":\"WAN\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getSlotTime(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getSlotTime(\"WAN\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "5",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getStakerInfo",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getStakerInfo",
+    "version": "1.1.1",
+    "description": "<p>Returns an array of validator information for all validators in the specified block number. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "blockNumber",
+            "description": "<p>The blockNumber you want to search.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getStakerInfo\",\"params\":{\"chainType\":\"WAN\", \"blockNumber\":3496619},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getStakerInfo(\"WAN\", 3496619, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getStakerInfo(\"WAN\", 3496619);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n  {\n    \"address\": \"0xa4626e2bb450204c4b34bcc7525e585e8f678c0d\",\n    \"pubSec256\": \"0x04b7bf8d3868333f70a30041423c7db204b80b9be2e585c344cf3f391cbf77b17fd14f3058d4475d546355bf8c2709ed9ecf5f0cee9d021c90988af0e8cf52001b\",\n    \"pubBn256\": \"0x289787688eb80c1e223375a71f8d17110d638a9143afa190dc11b3c1e64cf92b21feb02ab7a1dcb31892210dfda458aff890fe9e7508292099ae6256f197b325\",\n    \"amount\": \"0xa968163f0a57b400000\",\n    \"votingPower\": \"0x297116712be7b468800000\",\n    \"lockEpochs\": 7,\n    \"maxFeeRate\": 1500,\n    \"nextLockEpochs\": 7,\n    \"from\": \"0xdbb2d6199457d11288f0097659bcec24738e158f\",\n    \"stakingEpoch\": 0,\n    \"feeRate\": 1500,\n    \"feeRateChangedEpoch\": 0,\n    \"clients\":\n    [\n      {\n        \"address\": \"0xfcc3736dc29bf9af7556fcc1dea10b53edaab51d\",\n        \"amount\": \"0x56bc75e2d63100000\",\n        \"votingPower\": \"0x1537da569da5bca00000\",\n        \"quitEpoch\": 18071\n      }\n    ],\n    \"partners\": []\n  },\n  ... ...\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getTimeByEpochID",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getTimeByEpochID",
+    "version": "1.1.1",
+    "description": "<p>Returns the specified epoch's start time in UTC time seconds. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "epochID",
+            "description": "<p>The epochID you want to search.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getTimeByEpochID\",\"params\":{\"chainType\":\"WAN\", \"epochID\":18108},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTimeByEpochID(\"WAN\", 18108, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getTimeByEpochID(\"WAN\", 18108);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "1564531200",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getValidatorActivity",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getValidatorActivity",
+    "version": "1.1.1",
+    "description": "<p>Get the validator activity information of the Epoch Leaders and Random Number Proposers of the specified epoch. Returns null for the current Epoch or future Epochs. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "epochID",
+            "description": "<p>The epochID you want to search.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getValidatorActivity\",\"params\":{\"chainType\":\"WAN\", \"epochID\":18102},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getValidatorActivity(\"WAN\", 18102, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getValidatorActivity(\"WAN\", 18102);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n  \"epLeader\":\n  [\n    \"0x880d861a8bb6909885bbc65f9fc255bbd11a5825\",\n    \"0xc7afae3c9e99af27fe3eaa10f6ec73cd2dbe003b\",\n    \"0x882c9c16c05496d7b5374840936aec1af2a16553\",\n    \"0x54945447375e25d03033099c540f0998dfa4152d\",\n    \"0x71d063d48ac747dd9ef455cc5a58272c04660983\",\n    \"0xd5551afd5c976a8eaac478f438f51aea4547eda9\",\n    \"0xdfd7aa554653ca236c197ad746edc2954ca172df\",\n    \"0x2c72d7a8c02752fcfafbaea5a63c53056cfaf547\",\n    \"0x73494477f3a099415348cd33e3d46a07f4052600\",\n    \"0x847437144ab96c6c499cdee9edc4d64032d06c86\",\n    \"0x0b80f69fcb2564479058e4d28592e095828d24aa\",\n    \"0x54945447375e25d03033099c540f0998dfa4152d\",\n    \"0x742d898d2ee28a338f03af79c47762a908281a6a\",\n    \"0x93c8ea0326ef334bdc3011e74cd1a6d78ce0594d\",\n    \"0x5c1f00ff943de649519ff1ff35ac5b4c62b90964\",\n    \"0x2a6e8c39d4e9f9152958649fc5dbdb9c68cfcb0b\",\n    \"0xc46b1935326ba2423a9f4bbabf97f74d47f37d59\",\n    \"0xbeb30b68160d845593f01aeb6ad9b6e3cc2e3277\",\n    \"0x3daddc5a590808694eb1b732636a70194ad3d98e\",\n    \"0x266ddcfdbe3ded75e0e511e6356bca052b221c6b\",\n    \"0xb9d6c1a6e52119026cb5d2a82457f5fd6bc7e0c9\",\n    \"0xb44a825eb3f0539f6593ea05740c9f2686973f3c\",\n    \"0xa4539e1bdffceb3557ffb81f87a92e2159f6d637\",\n    \"0xb64b60ba915bc16dc71ea59c9950c1538dcead9c\"\n  ],\n  \"epActivity\":[0,1,0,1,0,1,1,1,1,0,1,1,1,1,1,0,1,0,1,0,1,1,0,0],\n  \"rpLeader\":\n  [\n    \"0xee1ad9c4f9d81f900221e95ee04246b6254b0c6f\",\n    \"0xaadb06ebb95f165155f12a38bdcb092ac66e0344\",\n    \"0xdfd7aa554653ca236c197ad746edc2954ca172df\",\n    \"0x4bf9fd7308d0849a62c3a7dd71c5190e57c28756\",\n    \"0xb44a825eb3f0539f6593ea05740c9f2686973f3c\",\n    \"0x3628bf135f36c6e26a824ec9152885505f3fbc2a\",\n    \"0x2866bca06ff1d6afe52298f9fc759ea9b80f6902\",\n    \"0x0b80f69fcb2564479058e4d28592e095828d24aa\",\n    \"0x46530055144fe9365eaae87ba623e2f91cd7eff2\",\n    \"0x36fad9acaf51a13527375b1ffc3d5a749153efdb\",\n    \"0xf8fff523fb1450942dd2cd2b29837eaec2c4c860\",\n    \"0x71d063d48ac747dd9ef455cc5a58272c04660983\",\n    \"0x1b7740df685f9d34773d5a2aba6ab3a2c1407f40\",\n    \"0xb58230a7923a6a1941016aa1682e212def899ed1\",\n    \"0x54945447375e25d03033099c540f0998dfa4152d\",\n    \"0x742d898d2ee28a338f03af79c47762a908281a6a\",\n    \"0x85bbe8f965b1719f7089ee9912e7c9b10fe0a999\",\n    \"0xbee03f252dfd38f4f8d10d0664fb50c36526a611\",\n    \"0x2f13896d55ea42b58578cd835064233f8e80a929\",\n    \"0xf543da34477455ccd0ce9b153baaf344cefd9413\",\n    \"0xef09644a88ace467475c2f333f7bb8ffc9427452\",\n    \"0x0adc1b8d04d3856b394c8a170fbaea68589c4de6\",\n    \"0xaadb06ebb95f165155f12a38bdcb092ac66e0344\",\n    \"0x38550ef70511ff71924c4b58220b54e65720384f\",\n    \"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce\"\n  ],\n  \"rpActivity\":[1,1,1,1,0,1,1,1,1,0,1,0,0,1,0,0,1,1,0,0,0,0,1,1,1]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getValidatorInfo",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getValidatorInfo",
+    "version": "1.1.1",
+    "description": "<p>Get the specified validator info by the validator address. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "address",
+            "description": "<p>The validator address you want to search.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getValidatorInfo\",\"params\":{\"chainType\":\"WAN\", \"address\":\"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getValidatorInfo(\"WAN\", \"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getValidatorInfo(\"WAN\", \"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n  \"address\": \"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce\",\n  \"amount\": \"5.01e+22\",\n  \"feeRate\": 1500\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getValidatorStakeInfo",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getValidatorStakeInfo",
+    "version": "1.1.1",
+    "description": "<p>Get the specified validator staking info by the validator owner's address. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "address",
+            "description": "<p>The validator owner address you want to search.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getValidatorStakeInfo\",\"params\":{\"chainType\":\"WAN\", \"address\":\"0x086b4cfadfd9f232b068c2e8263d608baee85163\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getValidatorStakeInfo(\"WAN\", \"0x086b4cfadfd9f232b068c2e8263d608baee85163\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getValidatorStakeInfo(\"WAN\", \"0x086b4cfadfd9f232b068c2e8263d608baee85163\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n  {\n    \"partners\": [],\n    \"address\": \"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce\",\n    \"pubSec256\": \"0x04c5b937557d0f5f4d75831d746fc0197cba50c5a98cb901e941956240d45ea374c6ba5919bc3e57de69f9813f99f6658dc86433b6d1156298cbf2b7087429dcc1\",\n    \"pubBn256\": \"0x0effcb9cb449235ff25108e0d8968b24a52402f4c6a8c67e4c0c71ac2558369d1ccd2e2f5b90613ef05d0594b675a5b7326dce01304f3c0c0b35f5bdc4a7f930\",\n    \"amount\": \"0xa9bed2b4ed2de500000\",\n    \"votingPower\": \"0x2a4544f88e102dc6c00000\",\n    \"lockEpochs\": 10,\n    \"nextLockEpochs\": 10,\n    \"from\": \"0x086b4cfadfd9f232b068c2e8263d608baee85163\",\n    \"stakingEpoch\": 18098,\n    \"feeRate\": 1500,\n    \"clients\":\n    [\n      {\n        \"address\": \"0xf99a8bc18061812e09652f5855908e35d034154b\",\n        \"amount\": \"0x3635c9adc5dea00000\",\n        \"votingPower\": \"0xd42e876228795e400000\",\n        \"quitEpoch\": 0\n      },\n      {\n        \"address\": \"0xa078ecadd6011a0d8df127cb0be12b03f2db0599\",\n        \"amount\": \"0x3635c9adc5dea00000\",\n        \"votingPower\": \"0xd42e876228795e400000\",\n        \"quitEpoch\": 0\n      },\n      {\n        \"address\": \"0xa373c8e5cbbe161cebbaa5d44f991cd265dcf87d\",\n        \"amount\": \"0x431cb388cb7d980000\",\n        \"votingPower\": \"0x106ae56b56c7994f00000\",\n        \"quitEpoch\": 0\n      },\n      {\n        \"address\": \"0xe57fcb59c510354b414b2c982ae1ddc4b0f3d329\",\n        \"amount\": \"0x3635c9adc5dea00000\",\n        \"votingPower\": \"0xd42e876228795e400000\",\n        \"quitEpoch\": 0\n      },\n      ... ...\n    ],\n    \"maxFeeRate\": 1500,\n    \"feeRateChangedEpoch\": 18098\n  }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getValidatorSupStakeInfo",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getValidatorSupStakeInfo",
+    "version": "1.1.1",
+    "description": "<p>Get supplementary information for the specified validator. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string/array",
+            "optional": false,
+            "field": "address",
+            "description": "<p>The validator address you want to search.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getValidatorSupStakeInfo\",\"params\":{\"chainType\":\"WAN\", \"address\":[\"0x158bae682e6278a16d09d7c7311074585d38b54d\",\"0x85dae7e5c7b433a1682c54eee63adf63d835d272\"]},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getValidatorSupStakeInfo(\"WAN\", [\"0x158bae682e6278a16d09d7c7311074585d38b54d\",\"0x85dae7e5c7b433a1682c54eee63adf63d835d272\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getValidatorSupStakeInfo(\"WAN\", [\"0x158bae682e6278a16d09d7c7311074585d38b54d\",\"0x85dae7e5c7b433a1682c54eee63adf63d835d272\"]);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n  {\n    \"address\": \"0x158bae682e6278a16d09d7c7311074585d38b54d\",\n    \"stakeIn\": 3778078,\n    \"stakeInTimestamp\": 1563134885\n  },\n  {\n    \"address\": \"0x85dae7e5c7b433a1682c54eee63adf63d835d272\",\n    \"stakeIn\": 3905210,\n    \"stakeInTimestamp\": 1563848135\n  }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getValidatorTotalIncentive",
+    "group": "POS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getValidatorTotalIncentive",
+    "version": "1.1.1",
+    "description": "<p>Get the specified validator's total incentives. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string/array",
+            "optional": false,
+            "field": "address",
+            "description": "<p>The validator address you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "from",
+            "description": "<p>The begin epochID you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "to",
+            "description": "<p>The end epochID you want to search.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getValidatorTotalIncentive\",\"params\":{\"chainType\":\"WAN\", \"address\":\"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getValidatorTotalIncentive(\"WAN\", \"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getValidatorTotalIncentive(\"WAN\", \"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n  {\n    \"address\": \"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce\",\n     \"amount\": \"1.828058184231574257465e+21\",\n     \"minEpochId\": 18080,\n     \"epochCount\": 21\n  }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "POS"
+  },
+  {
+    "name": "getGasPrice",
+    "group": "Status",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getGasPrice",
+    "version": "1.1.1",
+    "description": "<p>Get the current gas price in wei as bigNumber type. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1511,7 +3288,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getMultiTokenBalance",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Gets token balance for multiple addresses of specified token on Wanchain in a single call. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1521,7 +3298,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>, default: <code>'WAN'</code>.</p>"
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>, default: <code>'WAN'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1584,8 +3361,8 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getMultiTokenInfo",
-    "version": "1.0.3",
-    "description": "<p>Get the information of multiple tokens. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "version": "1.1.1",
+    "description": "<p>Get the information for multiple tokens. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1594,14 +3371,14 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
             "type": "array",
             "optional": false,
             "field": "tokenScAddrArray",
-            "description": "<p>The token address array for the certain token that you want to find.</p>"
+            "description": "<p>The token address array for the tokens that you want to query.</p>"
           },
           {
             "group": "Parameter",
@@ -1650,8 +3427,8 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTokenAllowance",
-    "version": "1.0.3",
-    "description": "<p>Get the token allowance for one specific account on one contract for one specific spender account on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "version": "1.1.1",
+    "description": "<p>Get the token allowance for one specific account on one contract for one specific spender account on a certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1660,7 +3437,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1674,14 +3451,14 @@
             "type": "string",
             "optional": false,
             "field": "ownerAddr",
-            "description": "<p>The owner address on the certain contract.</p>"
+            "description": "<p>The owner address on the specified contract.</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "spenderAddr",
-            "description": "<p>The spender address on the certain contract.</p>"
+            "description": "<p>The spender address on the specified contract.</p>"
           },
           {
             "group": "Parameter",
@@ -1730,8 +3507,8 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTokenBalance",
-    "version": "1.0.3",
-    "description": "<p>Get token balance for a single address of certain token on Wanchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "version": "1.1.1",
+    "description": "<p>Get token balance for a single address of a specified token on Wanchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1740,7 +3517,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>, default: <code>'WAN'</code>.</p>"
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>, default: <code>'WAN'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1803,7 +3580,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTokenInfo",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get the info of token contract, like symbol and decimals, on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1813,7 +3590,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1869,7 +3646,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTokenSupply",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get total amount of certain token on Wanchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1877,9 +3654,9 @@
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "chainType",
-            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>, default: <code>'WAN'</code>.</p>"
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>, default: <code>'WAN'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1935,7 +3712,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTransByAddress",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get transaction information via the specified address on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2001,7 +3778,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTransByAddressBetweenBlocks",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get transaction information via the specified address between the specified startBlockNo and endBlockNo on certain chain. <br>Comments: <br>    if no startBlockNo given, startBlockNo will be set to 0; <br>    if no endBlockNo given, endBlockNo will be set to the newest blockNumber. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2086,7 +3863,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTransByBlock",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get transaction information in a given block by block number or block hash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2152,7 +3929,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTransactionConfirm",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get the transaction mined result on certain chain. When the receipt not existed, return directly with 'no receipt was found'; If receipt existed, the receipt will be returned after confirm-block-number blocks. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2162,7 +3939,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -2225,7 +4002,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTransactionReceipt",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get the receipt of a transaction by transaction hash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2235,7 +4012,7 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>The chain being queried, currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -2291,7 +4068,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTxInfo",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Get the transaction detail via txHash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2364,7 +4141,7 @@
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "sendRawTransaction",
-    "version": "1.0.3",
+    "version": "1.1.1",
     "description": "<p>Submit a pre-signed transaction for broadcast to certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
