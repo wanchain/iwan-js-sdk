@@ -4178,18 +4178,23 @@ class ApiInstance extends WsInstance {
     if (address) {
       if (typeof (address) === "function") {
         callback = address;
-      } else if (typeof (address) === "number") {
-        params.after = address;
-        callback = after;
-      } else if (typeof (after) === "number") {
-        params.address = address;
-        params.after = after;
+        address = undefined;
       } else {
-        params.address = address;
-        callback = after;
+        if (typeof (after) === "function") {
+          callback = after;
+          after = undefined;
+          if (typeof(address) === "string") {
+            params.address = address;
+          } else {
+            params.after = address;
+          }
+        } else {
+          params.address = address;
+          params.after = after;
+        }
       }
     }
-
+console.log("params ", params);
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
         if (err) {
