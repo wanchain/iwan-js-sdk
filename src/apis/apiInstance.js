@@ -4169,32 +4169,30 @@ class ApiInstance extends WsInstance {
   }
 
   getRegisteredValidator(address, after, callback) {
-    if (callback) {
-      callback = utils.wrapCallback(callback);
-    }
     let method = 'getRegisteredValidator';
     let params = {};
 
-    if (address) {
-      if (typeof (address) === "function") {
-        callback = address;
-        address = undefined;
-      } else {
-        if (typeof (after) === "function") {
-          callback = after;
-          after = undefined;
-          if (typeof(address) === "string") {
-            params.address = address;
-          } else {
-            params.after = address;
-          }
-        } else {
-          params.address = address;
-          params.after = after;
-        }
-      }
+    if (typeof (address) === "function") {
+      callback = address;
+      address = undefined;
+      after = undefined;
     }
-console.log("params ", params);
+    if (typeof (after) === "function") {
+      callback = after;
+      after = undefined;
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    if (typeof(address) !== "undefined" && typeof(after) !== "undefined") {
+      params.address = address;
+      params.after = after;
+    } else if (typeof(address) !== "undefined") {
+      (typeof(address) === "string") ? (params.address = address) : (params.after = address);
+    } else if (typeof(after) !== "undefined") {
+      params.after = after;
+    }
+
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
         if (err) {
