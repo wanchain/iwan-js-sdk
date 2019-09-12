@@ -4545,6 +4545,23 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  checkOTAUsed(chainType, image, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'checkOTAUsed';
+    let params = { chainType: chainType, image: image };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
 }
 
 module.exports = ApiInstance;
