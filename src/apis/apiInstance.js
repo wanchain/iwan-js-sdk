@@ -1725,6 +1725,37 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  getTransCount(chainType, option, callback) {
+    if (option && typeof(option) === "function") {
+      callback = option;
+      option = undefined;
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getTransCount';
+    let params = { chainType: chainType };
+
+    if (option && typeof (option.address) !== "undefined") {
+      params["address"] = option.address;
+    }
+    if (option && typeof (option.startBlockNo) !== "undefined") {
+      params["startBlockNo"] = option.startBlockNo;
+    }
+    if (option && typeof (option.endBlockNo) !== "undefined") {
+      params["endBlockNo"] = option.endBlockNo;
+    }
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
   /**
   *
   * @apiName getScVar
