@@ -1725,6 +1725,37 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  getTransCount(chainType, option, callback) {
+    if (option && typeof(option) === "function") {
+      callback = option;
+      option = undefined;
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getTransCount';
+    let params = { chainType: chainType };
+
+    if (option && typeof (option.address) !== "undefined") {
+      params["address"] = option.address;
+    }
+    if (option && typeof (option.startBlockNo) !== "undefined") {
+      params["startBlockNo"] = option.startBlockNo;
+    }
+    if (option && typeof (option.endBlockNo) !== "undefined") {
+      params["endBlockNo"] = option.endBlockNo;
+    }
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
   /**
   *
   * @apiName getScVar
@@ -4169,25 +4200,28 @@ class ApiInstance extends WsInstance {
   }
 
   getRegisteredValidator(address, after, callback) {
-    if (callback) {
-      callback = utils.wrapCallback(callback);
-    }
     let method = 'getRegisteredValidator';
     let params = {};
 
-    if (address) {
-      if (typeof (address) === "function") {
-        callback = address;
-      } else if (typeof (address) === "number") {
-        params.after = address;
-        callback = after;
-      } else if (typeof (after) === "number") {
-        params.address = address;
-        params.after = after;
-      } else {
-        params.address = address;
-        callback = after;
-      }
+    if (typeof (address) === "function") {
+      callback = address;
+      address = undefined;
+      after = undefined;
+    }
+    if (typeof (after) === "function") {
+      callback = after;
+      after = undefined;
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    if (typeof(address) !== "undefined" && typeof(after) !== "undefined") {
+      params.address = address;
+      params.after = after;
+    } else if (typeof(address) !== "undefined") {
+      (typeof(address) === "string") ? (params.address = address) : (params.after = address);
+    } else if (typeof(after) !== "undefined") {
+      params.after = after;
     }
 
     return utils.promiseOrCallback(callback, cb => {
@@ -4531,6 +4565,23 @@ class ApiInstance extends WsInstance {
     }
     let method = 'getEpochStakeOut';
     let params = { chainType: chainType, epochID: epochID };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  checkOTAUsed(chainType, image, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'checkOTAUsed';
+    let params = { chainType: chainType, image: image };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
