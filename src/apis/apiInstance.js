@@ -4336,6 +4336,41 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  getRegisteredToken(tokenOrigAccount, after, callback) {
+    let method = 'getRegisteredToken';
+    let params = {};
+
+    if (typeof (tokenOrigAccount) === "function") {
+      callback = tokenOrigAccount;
+      tokenOrigAccount = undefined;
+      after = undefined;
+    }
+    if (typeof (after) === "function") {
+      callback = after;
+      after = undefined;
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    if (typeof(tokenOrigAccount) !== "undefined" && typeof(after) !== "undefined") {
+      params.tokenOrigAccount = tokenOrigAccount;
+      params.after = after;
+    } else if (typeof(tokenOrigAccount) !== "undefined") {
+      (typeof(tokenOrigAccount) === "string") ? (params.tokenOrigAccount = tokenOrigAccount) : (params.after = tokenOrigAccount);
+    } else if (typeof(after) !== "undefined") {
+      params.after = after;
+    }
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
   /**
    *
    * @apiName getPosInfo
