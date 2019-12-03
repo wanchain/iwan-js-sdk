@@ -1103,22 +1103,18 @@ class ApiInstance extends WsInstance {
     }
   *
   */
-  getTxInfo(chainType, txHash, format, callback) {
-    let maxArgsize = 4;
-    let mixArgsize = 2;
+  getTxInfo(chainType, txHash, options, callback) {
     let method = 'getTxInfo';
-    let params = { chainType: chainType, txHash: txHash };
 
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
-    for (let i = mixArgsize; i < maxArgsize; ++i) {
-      if (typeof(arguments[i]) === "function") {
-        callback = arguments[i];
-      } else if ("BTC" === chainType && typeof(arguments[i]) === "boolean") {
-        params["format"] = arguments[i];
-      }
-    }
+
+    let params = { chainType: chainType, txHash: txHash, ...options };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -1402,12 +1398,16 @@ class ApiInstance extends WsInstance {
     }
   *
   */
-  getTransactionConfirm(chainType, waitBlocks, txHash, callback) {
+  getTransactionConfirm(chainType, waitBlocks, txHash, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getTransactionConfirm';
-    let params = { chainType: chainType, waitBlocks: waitBlocks, txHash: txHash };
+    let params = { chainType: chainType, waitBlocks: waitBlocks, txHash: txHash, ...options };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -1468,12 +1468,16 @@ class ApiInstance extends WsInstance {
     }
   *
   */
-  getTransactionReceipt(chainType, txHash, callback) {
+  getTransactionReceipt(chainType, txHash, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getTransactionReceipt';
-    let params = { chainType: chainType, txHash: txHash };
+    let params = { chainType: chainType, txHash: txHash, ...options };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -2452,6 +2456,42 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  getRequiredKeys(chainType, txArgs, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getRequiredKeys';
+
+    let params = { chainType: chainType, txArgs:txArgs };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getRawCodeAndAbi(chainType, scAddr, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getRawCodeAndAbi';
+
+    let params = { chainType: chainType, scAddr:scAddr };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
   getAbi(chainType, scAddr, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
@@ -2470,13 +2510,13 @@ class ApiInstance extends WsInstance {
     });
   }
 
-  getJson2Bin(chainType, scAddr, action, args, callback) {
+  getRawAbi(chainType, scAddr, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
-    let method = 'getJson2Bin';
+    let method = 'getRawAbi';
 
-    let params = { chainType: chainType, scAddr:scAddr, action:action, args:args };
+    let params = { chainType: chainType, scAddr:scAddr };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -2487,6 +2527,24 @@ class ApiInstance extends WsInstance {
       });
     });
   }
+
+  // getJson2Bin(chainType, scAddr, action, args, callback) {
+  //   if (callback) {
+  //     callback = utils.wrapCallback(callback);
+  //   }
+  //   let method = 'getJson2Bin';
+
+  //   let params = { chainType: chainType, scAddr:scAddr, action:action, args:args };
+
+  //   return utils.promiseOrCallback(callback, cb => {
+  //     this._request(method, params, (err, result) => {
+  //       if (err) {
+  //         return cb(err);
+  //       }
+  //       return cb(null, result);
+  //     });
+  //   });
+  // }
 
   getActions(chainType, address, indexPos, offset, callback) {
     if (callback) {
@@ -2640,12 +2698,37 @@ class ApiInstance extends WsInstance {
     });
   }
 
-  packTransaction(chainType, actions, callback) {
+  getTableRows(chainType, scAddr, scope, table, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getTableRows';
+    let params = { chainType: chainType, scAddr: scAddr, scope: scope, table: table, ...options };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  packTransaction(chainType, trans, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'packTransaction';
-    let params = { chainType: chainType, actions: actions };
+    let params = { chainType: chainType, tx: trans, ...options };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
