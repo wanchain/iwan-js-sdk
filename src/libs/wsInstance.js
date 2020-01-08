@@ -141,8 +141,9 @@ class WsInstance {
         }
         this.reTt && clearTimeout(this.reTt);
         this.reTt = setTimeout(() => {
-            this.clearPendingReq();
-            this.createWebSocket();
+            if (!this.wss.activeClose) {
+              this.createWebSocket();
+            }
             this.lockReconnect = false;
         }, 2000);
     }
@@ -164,7 +165,8 @@ class WsInstance {
     }
 
     close() {
-        console.log("Websocket closed");      
+        console.log("Websocket closed");
+        this.clearPendingReq();
         this.heartCheck.reset();
         if (this.wss) {
             this.wss.activeClose = true;
