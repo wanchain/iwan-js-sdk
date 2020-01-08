@@ -76,11 +76,13 @@ class WsInstance {
 
         this.wss.onerror = (err) => {
             console.error("ERROR: (%s)", JSON.stringify(err));
+            that.clearPendingReq();
             that.reconnect();
         };
 
         this.wss.on("close", (code, reason) => {
             console.log("ApiInstance notified socket has closed. code: (%s), reason: (%s)", code, reason);
+            that.clearPendingReq();
             if (!this.wss.activeClose) {
                 that.reconnect();
             }
@@ -88,6 +90,7 @@ class WsInstance {
 
         this.wss.on("unexpected-response", (req, response)=>{
             console.error("ERROR CODE : " + response.statusCode + " < " + response.statusMessage + " > ");
+            that.clearPendingReq();
             that.reconnect();
         });
 
@@ -111,6 +114,7 @@ class WsInstance {
                         --that.wss.tries;
                         if (that.wss.tries < 0) {
                             console.error("Server [%s] is unreachable", that.ws_url);
+                            that.clearPendingReq();
                             console.error("reconnect");
                             that.reconnect();
                         }
