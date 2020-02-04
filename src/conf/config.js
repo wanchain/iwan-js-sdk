@@ -13,11 +13,24 @@ const config = {
 
   maxTries: 3,
   pingTime: 30000,
+  reconnTime: 2000,
+  reqTimeout: 30000,
 
   ws: {
     code: {
-      normal:1000
+      normal:1000,
+      abnormal:1006
+    },
+    connOption: {
+      'handshakeTimeout': 12000,
+      rejectUnauthorized: false
     }
+  },
+
+  pendResponse: {
+    connClose: {"result": "Websocket closed"},
+    connLost: {"error": "Websocket closed"},
+    reqTimeout: {"error": "request timeout"}
   }
 }
 
