@@ -28,7 +28,6 @@ const config = {
   },
 
   pendResponse: {
-    connClose: {"result": "Websocket closed"},
     connLost: {"error": "Websocket closed"},
     reqTimeout: {"error": "request timeout"}
   }
