@@ -78,11 +78,9 @@ class WsInstance {
 
         this.wss.on("close", (code, reason) => {
             console.log("ApiInstance notified socket has closed. code: (%s), reason: (%s)", code, reason);
+            self.clearPendingReq();
             if (!this.wss.activeClose) {
-                self.clearPendingReq();
                 self.reconnect();
-            } else {
-                self.clearPendingReq(config.ws.code.normal);
             }
         });
 
@@ -168,7 +166,7 @@ class WsInstance {
 
     close(innerClose = false) {
         console.log("Websocket closed");
-        this.clearPendingReq(config.ws.code.abnormal);
+        this.clearPendingReq();
         this.heartCheck.reset();
         if (innerClose && this.wss) {
             this.wss.close(config.ws.code.normal, "client abnormal close");
@@ -202,12 +200,12 @@ class WsInstance {
         }
     }
 
-    clearPendingReq(errCode = config.ws.code.abnormal) {
+    clearPendingReq() {
         let tempReq = this.functionDict;
         this.functionDict = {};
         for (let idx in tempReq) {
             console.log("clear pending req %s", idx);
-            tempReq[idx].fn(errCode !== config.ws.code.normal ? config.pendResponse.connLost : config.pendResponse.connClose);
+            tempReq[idx].fn(config.pendResponse.connLost);
         }
     }
 
