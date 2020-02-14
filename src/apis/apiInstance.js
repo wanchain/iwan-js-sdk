@@ -2554,14 +2554,14 @@ class ApiInstance extends WsInstance {
 
     let params = { chainType: chainType, address:address };
 
-    if (indexPos) {
+    if (indexPos || indexPos === 0) {
       if (typeof(indexPos) === "function") {
         callback = indexPos;
       } else {
         params.indexPos = indexPos;
       }
     }
-    if (offset) {
+    if (offset || offset === 0) {
       if (typeof(offset) === "function") {
         callback = offset;
       } else {
