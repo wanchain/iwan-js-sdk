@@ -2546,29 +2546,23 @@ class ApiInstance extends WsInstance {
   //   });
   // }
 
-  getActions(chainType, address, indexPos, offset, callback) {
-    if (callback) {
+  // getActions(chainType, address, indexPos, offset, callback) {
+  getActions(chainType, address, options = {}, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    } if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getActions';
 
     let params = { chainType: chainType, address:address };
 
-    if (indexPos || indexPos === 0) {
-      if (typeof(indexPos) === "function") {
-        callback = indexPos;
-      } else {
-        params.indexPos = indexPos;
-      }
-    }
-    if (offset || offset === 0) {
-      if (typeof(offset) === "function") {
-        callback = offset;
-      } else {
-        params.offset = offset;
-      }
-    }
+    // for (let key in options) {
+    //   params[key] = options[key];
+    // }
 
+    params.options = options;
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
         if (err) {
