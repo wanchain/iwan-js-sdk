@@ -4859,6 +4859,153 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  // iwan
+  addDoc(tableName, content, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'addDoc';
+    let params = { table: tableName, content: content };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getDocOne(tableName, filter, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getDocOne';
+    let params = { table: tableName, filter: filter, options: options };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getDocMany(tableName, filter, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getDocMany';
+    let params = { table: tableName, filter: filter, options: options };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  updateDocOne(tableName, filter, content, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'updateDocOne';
+    let params = { table: tableName, filter: filter, content: content, options: options };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  updateDocMany(tableName, filter, content, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'updateDocMany';
+    let params = { table: tableName, filter: filter, content: content, options: options };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  deleteDoc(tableName, filter, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'deleteDoc';
+    let params = { table: tableName, filter: filter };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  aggregateDoc(tableName, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (typeof(options) !== "object") {
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'aggregateDoc';
+    let params = { table: tableName, ...options };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
 }
 
 module.exports = ApiInstance;
