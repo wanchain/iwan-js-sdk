@@ -5006,6 +5006,23 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  countDoc(tableName, filter, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'countDoc';
+    let params = { table: tableName, filter: filter };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
 }
 
 module.exports = ApiInstance;
