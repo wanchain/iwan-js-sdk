@@ -59,7 +59,12 @@ function assertPartialMatch(expect, actual) {
     if (typeof(actual) === "object") {
         if (Array.isArray(actual)) {
             for (let i = 0; i < actual.length; i++) {
-                assert.containsAllKeys(actual[i], expect[0]);
+                if (typeof(actual[i]) === "object") {
+                    assert.containsAllKeys(expect[0], actual[i]);
+                } else {
+                    assert.equal(typeof(actual[i]), typeof(expect[0]));
+                }
+                // assert.containsAllKeys(actual[i], expect[0]);
             }
         } else {
             assert.containsAllKeys(actual, expect);
