@@ -44,7 +44,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getBalance('WAN', '0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getBalance('WAN', '0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -110,7 +110,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getMultiBalances('WAN', [\"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c\",\"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2d\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getMultiBalances('WAN', [\"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c\",\"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2d\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -176,7 +176,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getNonce(\"WAN\", \"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getNonce(\"WAN\", \"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -242,7 +242,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getNonceIncludePending(\"WAN\", \"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getNonceIncludePending(\"WAN\", \"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -322,7 +322,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getUTXO('BTC', 0, 100, [\"n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getUTXO('BTC', 0, 100, [\"n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -388,7 +388,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.importAddress(\"BTC\", \"mmmmmsdfasdjflaksdfasdf\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.importAddress(\"BTC\", \"mmmmmsdfasdjflaksdfasdf\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -454,7 +454,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getBlockByHash(\"WAN\", \"0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getBlockByHash(\"WAN\", \"0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -520,7 +520,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getBlockByNumber(\"WAN\", \"670731\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getBlockByNumber(\"WAN\", \"670731\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -579,7 +579,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getBlockNumber(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getBlockNumber(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -645,7 +645,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getBlockTransactionCount(\"WAN\", \"0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8\", (err, result) => {\n// apiTest.getBlockTransactionCount(\"WAN\", \"670731\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getBlockTransactionCount(\"WAN\", \"0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8\", (err, result) => {\n// apiTest.getBlockTransactionCount(\"WAN\", \"670731\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -732,7 +732,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.callScFunc(\"WAN\", \"0x55ba61f4da3166487a804bccde7ee4015f609f45\", \"getPriAddress\", [], [/The Abi of the contracts/]), (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.callScFunc(\"WAN\", \"0x55ba61f4da3166487a804bccde7ee4015f609f45\", \"getPriAddress\", [], [/The Abi of the contracts/]), (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -819,7 +819,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getScMap(\"WAN\", \"0x55ba61f4da3166487a804bccde7ee4015f609f45\", \"mapAddr\", \"key\", [/The Abi of the contracts/], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getScMap(\"WAN\", \"0x55ba61f4da3166487a804bccde7ee4015f609f45\", \"mapAddr\", \"key\", [/The Abi of the contracts/], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -885,7 +885,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getScOwner('WAN', '0x59adc38f0b3f64fb542b50e3e955e7a8c1eb3e3b', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getScOwner('WAN', '0x59adc38f0b3f64fb542b50e3e955e7a8c1eb3e3b', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -970,7 +970,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getScVar(\"WAN\", \"0x55ba61f4da3166487a804bccde7ee4015f609f45\", \"addr\", [/The Abi of the contracts/], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getScVar(\"WAN\", \"0x55ba61f4da3166487a804bccde7ee4015f609f45\", \"addr\", [/The Abi of the contracts/], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -1029,7 +1029,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getChainInfo(\"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getChainInfo(\"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -1042,7 +1042,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{ server_version: 'aa60b9ca',\nchain_id: 'e70aaab8997e1dfce58fbfac80cbbb8fecec7b99cf982a9444273cbc64c41473',\nhead_block_num: 84031197,\nlast_irreversible_block_num: 84030870,\nlast_irreversible_block_id: '05023596ebe1b775a39a0ab380a0fd95bf435fbe9eccbf2b3e38c44a0cdc6a0d',\nhead_block_id: '050236dd683c4f98c9f5965910bf941d67b8fe6469a149114a3f0053779461da',\nhead_block_time: '2020-04-02T11:35:25.000',\nhead_block_producer: 'five.cartel',\nvirtual_block_cpu_limit: 500000000,\nvirtual_block_net_limit: 524288000,\nblock_cpu_limit: 499990,\nblock_net_limit: 524288,\nserver_version_string: 'v2.0.2',\nfork_db_head_block_num: 84031197,\nfork_db_head_block_id: '050236dd683c4f98c9f5965910bf941d67b8fe6469a149114a3f0053779461da',\nserver_full_version_string: 'v2.0.2-aa60b9caf9b7e2bd2411bb199c0c1d9fd8f085d5' }",
+          "content": "{\n      server_version: 'aa60b9ca',\n      chain_id: 'e70aaab8997e1dfce58fbfac80cbbb8fecec7b99cf982a9444273cbc64c41473',\n      head_block_num: 84031197,\n      last_irreversible_block_num: 84030870,\n      last_irreversible_block_id: '05023596ebe1b775a39a0ab380a0fd95bf435fbe9eccbf2b3e38c44a0cdc6a0d',\n      head_block_id: '050236dd683c4f98c9f5965910bf941d67b8fe6469a149114a3f0053779461da',\n      head_block_time: '2020-04-02T11:35:25.000',\n      head_block_producer: 'five.cartel',\n      virtual_block_cpu_limit: 500000000,\n      virtual_block_net_limit: 524288000,\n      block_cpu_limit: 499990,\n      block_net_limit: 524288,\n      server_version_string: 'v2.0.2',\n      fork_db_head_block_num: 84031197,\n      fork_db_head_block_id: '050236dd683c4f98c9f5965910bf941d67b8fe6469a149114a3f0053779461da',\n      server_full_version_string: 'v2.0.2-aa60b9caf9b7e2bd2411bb199c0c1d9fd8f085d5'\n}",
           "type": "json"
         }
       ]
@@ -1088,7 +1088,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getCoin2WanRatio('ETH', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getCoin2WanRatio('ETH', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -1147,7 +1147,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getRegTokens(\"ETH\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getRegTokens(\"ETH\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -1206,7 +1206,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getStoremanGroups('ETH', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getStoremanGroups('ETH', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -1272,7 +1272,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getToken2WanRatio(\"ETH\", \"0x00f58d6d585f84b2d7267940cede30ce2fe6eae8\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getToken2WanRatio(\"ETH\", \"0x00f58d6d585f84b2d7267940cede30ce2fe6eae8\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -1338,7 +1338,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTokenStoremanGroups('ETH', '0x00f58d6d585f84b2d7267940cede30ce2fe6eae8', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getTokenStoremanGroups('ETH', '0x00f58d6d585f84b2d7267940cede30ce2fe6eae8', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -1404,7 +1404,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getAbi(\"EOS\", \"wanchainhtlc\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getAbi(\"EOS\", \"wanchainhtlc\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -1447,15 +1447,8 @@
             "group": "Parameter",
             "type": "string",
             "optional": false,
-            "field": "tokenScAddr",
-            "description": "<p>EOS contract code.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "symbol",
-            "description": "<p>A string representation of an EOSIO symbol.</p>"
+            "field": "address",
+            "description": "<p>The account code.</p>"
           },
           {
             "group": "Parameter",
@@ -1477,7 +1470,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getAccountInfo(\"EOS\", \"aarontestnet\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getAccountInfo(\"EOS\", \"aarontestnet\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -1490,7 +1483,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{ account_name: 'aarontestnet',\nhead_block_num: 84039011,\nhead_block_time: '2020-04-02T12:40:32.000',\nprivileged: false,\nlast_code_update: '1970-01-01T00:00:00.000',\ncreated: '2019-04-22T03:47:11.500',\ncore_liquid_balance: '148.3494 EOS',\nram_quota: 7517,\nnet_weight: 340000,\ncpu_weight: 2230000,\nnet_limit: { used: 520, available: 2188721, max: 2189241 },\ncpu_limit: { used: 935, available: 13184853, max: 13185788 },\nram_usage: 3894,\npermissions: \n [ { perm_name: 'active', parent: 'owner', required_auth: [Object] },\n   { perm_name: 'owner', parent: '', required_auth: [Object] } ],\ntotal_resources: \n { owner: 'aarontestnet',\n   net_weight: '34.0000 EOS',\n   cpu_weight: '223.0000 EOS',\n   ram_bytes: 6117 },\nself_delegated_bandwidth: \n { from: 'aarontestnet',\n   to: 'aarontestnet',\n   net_weight: '24.0000 EOS',\n   cpu_weight: '73.0000 EOS' },\nrefund_request: null,\nvoter_info: \n { owner: 'aarontestnet',\n   proxy: '',\n   producers: [],\n   staked: 2010000,\n   last_vote_weight: '0.00000000000000000',\n   proxied_vote_weight: '0.00000000000000000',\n   is_proxy: 0,\n   flags1: 0,\n   reserved2: 0,\n   reserved3: '0 ' },\nrex_info: null }",
+          "content": "{\n      account_name: 'aarontestnet',\n      head_block_num: 84039011,\n      head_block_time: '2020-04-02T12:40:32.000',\n      privileged: false,\n      last_code_update: '1970-01-01T00:00:00.000',\n      created: '2019-04-22T03:47:11.500',\n      core_liquid_balance: '148.3494 EOS',\n      ram_quota: 7517,\n      net_weight: 340000,\n      cpu_weight: 2230000,\n      net_limit: { used: 520, available: 2188721, max: 2189241 },\n      cpu_limit: { used: 935, available: 13184853, max: 13185788 },\n      ram_usage: 3894,\n      permissions:\n      [\n        { perm_name: 'active', parent: 'owner', required_auth: [Object] },\n        { perm_name: 'owner', parent: '', required_auth: [Object] }\n      ],\n      total_resources:\n      {\n        owner: 'aarontestnet',\n        net_weight: '34.0000 EOS',\n        cpu_weight: '223.0000 EOS',\n        ram_bytes: 6117\n      },\n      self_delegated_bandwidth:\n      {\n        from: 'aarontestnet',\n        to: 'aarontestnet',\n        net_weight: '24.0000 EOS',\n        cpu_weight: '73.0000 EOS'\n      },\n      refund_request: null,\n      voter_info:\n      {\n        owner: 'aarontestnet',\n        proxy: '',\n        producers: [],\n        staked: 2010000,\n        last_vote_weight: '0.00000000000000000',\n        proxied_vote_weight: '0.00000000000000000',\n        is_proxy: 0,\n        flags1: 0,\n        reserved2: 0,\n        reserved3: '0 '\n      },\n      rex_info: null\n}",
           "type": "json"
         }
       ]
@@ -1520,15 +1513,8 @@
             "group": "Parameter",
             "type": "string",
             "optional": false,
-            "field": "address",
-            "description": "<p>|publicKey account name or the public key.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "symbol",
-            "description": "<p>A string representation of an EOSIO symbol.</p>"
+            "field": "addressOrPublicKey",
+            "description": "<p>The account name or the public key.</p>"
           },
           {
             "group": "Parameter",
@@ -1550,7 +1536,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getAccounts(\"EOS\", \"EOS6yEsFdisRXLpk4xg4AEnYJDW5bLrjwBDoHNREsDsxcwFEncErK\", (err, result) => {\n// apiTest.getAccounts(\"EOS\", \"aarontestnet\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getAccounts(\"EOS\", \"EOS6yEsFdisRXLpk4xg4AEnYJDW5bLrjwBDoHNREsDsxcwFEncErK\", (err, result) => {\n// apiTest.getAccounts(\"EOS\", \"aarontestnet\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -1601,7 +1587,7 @@
             "type": "object",
             "optional": false,
             "field": "options",
-            "description": "<p>Optional, Optional parameters contain the filter for actions. // For eosjs 16.0.0: // <code>options.pos</code>\tint32\tAn absolute sequence positon -1 is the end/last action // <code>options.offset</code> int32\tThe number of actions relative to pos, negative numbers return [pos-offset,pos), positive numbers return [pos,pos+offset) For eosjs 20: <code>options.filter</code> string? code::name filter <code>options.skip</code> number? skip [n] actions (pagination) <code>options.limit</code> number? limit of [n] actions per page <code>options.sort</code> string? sort direction <code>options.after</code> string? filter after specified date (ISO8601) <code>options.before</code> string? filter before specified date (ISO8601) <code>options.transfer_to</code> string? transfer filter to <code>options.transfer_from</code> string? transfer filter from <code>options.transfer_symbol</code> string? transfer filter symbol <code>options.act_name</code> string? act name <code>options.act_account</code> string? act account</p>"
+            "description": "<p>Optional, the filter for actions. <br><br><strong>For eosjs 16.0.0:</strong> <br>  <code>pos</code> - An int32 that is absolute sequence positon, -1 is the end/last action. <br>  <code>offset</code> - The number of actions relative to pos, negative numbers return [pos-offset,pos), positive numbers return [pos,pos+offset). <br><br><strong>For eosjs 20:</strong> <br>  <code>filter</code> - The string for code::name filter. <br>  <code>skip</code> - The number to skip [n] actions (pagination). <br>  <code>limit</code> - The number to limit of [n] actions per page. <br>  <code>sort</code> - The string to sort direction. <br>  <code>after</code> - The string to filter after specified date (ISO8601). <br>  <code>before</code> - The string to filter before specified date (ISO8601). <br>  <code>transfer_to</code> - The string to transfer filter to. <br>  <code>transfer_from</code> - The string to transfer filter from. <br>  <code>transfer_symbol</code> - The string to transfer filter symbol. <br>  <code>act_name</code> - The string for act name. <br>  <code>act_account</code> - The string for act account.</p>"
           },
           {
             "group": "Parameter",
@@ -1623,7 +1609,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getActions(\"EOS\", \"wanchainhtlc\", {filter: \"wanchainhtlc:outlock\", limit: 2}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getActions(\"EOS\", \"wanchainhtlc\", {filter: \"wanchainhtlc:outlock\", limit: 2}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -1636,7 +1622,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[ { act: \n   { authorization: [Array],\n     data: [Object],\n     account: 'wanchainhtlc',\n     name: 'outlock' },\n  cpu_usage_us: 504,\n  net_usage_words: 65,\n  account_ram_deltas: [ [Object] ],\n  global_sequence: 564872608,\n  '@timestamp': '2020-02-20T03:19:58.500',\n  block_num: 76739261,\n  producer: 'eight.cartel',\n  trx_id: '20bd931ce948c57614f9c6b617532f806a59314ebfe0cacea13be461e0806034',\n  action_ordinal: 1,\n  creator_action_ordinal: 0,\n  notified: [ 'wanchainhtlc' ] },\n{ act: \n   { authorization: [Array],\n     data: [Object],\n     account: 'wanchainhtlc',\n     name: 'outlock' },\n  cpu_usage_us: 804,\n  net_usage_words: 65,\n  account_ram_deltas: [ [Object] ],\n  global_sequence: 564620256,\n  '@timestamp': '2020-02-19T07:21:05.000',\n  block_num: 76596349,\n  producer: 'atticlabjbpn',\n  trx_id: '7fab2518afd848042180f86e7e6467b3ad95e5bffce3186cd5ba6ac1eea16087',\n  action_ordinal: 1,\n  creator_action_ordinal: 0,\n  notified: [ 'wanchainhtlc' ] } ]",
+          "content": "[\n      {\n        act: {\n          authorization: [Array],\n          data: [Object],\n          account: 'wanchainhtlc',\n          name: 'outlock'\n        },\n        cpu_usage_us: 504,\n        net_usage_words: 65,\n        account_ram_deltas: [ [Object] ],\n        global_sequence: 564872608,\n        '@timestamp': '2020-02-20T03:19:58.500',\n        block_num: 76739261,\n        producer: 'eight.cartel',\n        trx_id: '20bd931ce948c57614f9c6b617532f806a59314ebfe0cacea13be461e0806034',\n        action_ordinal: 1,\n        creator_action_ordinal: 0,\n        notified: [ 'wanchainhtlc' ]\n      },\n      {\n        act: {\n          authorization: [Array],\n          data: [Object],\n          account: 'wanchainhtlc',\n          name: 'outlock'\n        },\n        cpu_usage_us: 804,\n        net_usage_words: 65,\n        account_ram_deltas: [ [Object] ],\n        global_sequence: 564620256,\n        '@timestamp': '2020-02-19T07:21:05.000',\n        block_num: 76596349,\n        producer: 'atticlabjbpn',\n        trx_id: '7fab2518afd848042180f86e7e6467b3ad95e5bffce3186cd5ba6ac1eea16087',\n        action_ordinal: 1,\n        creator_action_ordinal: 0,\n        notified: [ 'wanchainhtlc' ]\n      }\n]",
           "type": "json"
         }
       ]
@@ -1689,7 +1675,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getBandwidthPrice(\"EOS\", \"junglesweden\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getBandwidthPrice(\"EOS\", \"junglesweden\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -1748,7 +1734,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getRamPrice(\"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getRamPrice(\"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -1814,7 +1800,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getRawAbi(\"EOS\", \"wanchainhtlc\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getRawAbi(\"EOS\", \"wanchainhtlc\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -1827,7 +1813,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{\n      \"0\": 14,\n      \"1\": 101,\n      \"2\": 111,\n      \"3\": 115,\n      \"…\": \"...\",\n      \"1557\": 0\n  }",
+          "content": "{\n      \"0\": 14,\n      \"1\": 101,\n      \"2\": 111,\n      \"3\": 115,\n      ... ...,\n      \"1557\": 0\n}",
           "type": "json"
         }
       ]
@@ -1880,7 +1866,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getRawCodeAndAbi(\"EOS\", \"wanchainhtlc\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getRawCodeAndAbi(\"EOS\", \"wanchainhtlc\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -1893,7 +1879,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{\n      \"account_name\": \"wanchainhtlc\",\n      \"wasm\": \"****\",\n      \"abi\": \"****\"\n    }",
+          "content": "{\n      \"account_name\": \"wanchainhtlc\",\n      \"wasm\": \"...\",\n      \"abi\": \"...\"\n    }",
           "type": "json"
         }
       ]
@@ -1924,7 +1910,7 @@
             "type": "object",
             "optional": false,
             "field": "txArgs",
-            "description": "<p>object contain transaction and avaialbe_keys. <code>transaction</code> transaction expiration: required string (DateTime) ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}$ Time that transaction must be confirmed by. ref_block_num: required integer ref_block_prefix: required integer max_net_usage_words: required string or integer (WholeNumber) A whole number max_cpu_usage_ms: required string or integer (WholeNumber) A whole number delay_sec: required integer context_free_actions: required Array of objects (Action) actions: required Array of objects (Action) transaction_extensions: Array of Array of integers or strings (Extension) <code>available_keys</code>  {array} Array of strings (PublicKey) Provide the available keys</p>"
+            "description": "<p>Optional, transaction arguments. <br>  <code>expiration</code> - required string (DateTime) ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}$ Time that transaction must be confirmed by. <br>  <code>ref_block_num</code> - required integer. <br>  <code>ref_block_prefix</code> - required integer. <br>  <code>max_net_usage_words</code> - required string or integer (WholeNumber) A whole number. <br>  <code>max_cpu_usage_ms</code> - required string or integer (WholeNumber) A whole number. <br>  <code>delay_sec</code> - required integer. <br>  <code>context_free_actions</code> - required Array of objects (Action). <br>  <code>actions</code> - required Array of objects (Action). <br>  <code>transaction_extensions</code> - Array of Array of integers or strings (Extension). <br>  <code>available_keys</code> - Array of strings (PublicKey) Provide the available keys.</p>"
           },
           {
             "group": "Parameter",
@@ -1946,7 +1932,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getRequiredKeys(\"EOS\", {\"transaction\":{\"expiration\":\"2020-04-03T06:06:41\",\"ref_block_num\":15105,\"ref_block_prefix\":2116318876,\"max_net_usage_words\":\"\",\"max_cpu_usage_ms\":\"\",\"delay_sec\":0,\"context_free_actions\":[],\"actions\":[{\"account\":\"eosio.token\",\"name\":\"transfer\",\"authorization\":[{\"actor\":\"cuiqiangtest\",\"permission\":\"active\"}],\"data\":\"90D5CC58E549AF3180626ED39986A6E1010000000000000004454F530000000000\"}],\"transaction_extensions\":[]},\"available_keys\":[\"EOS7MiJnddv2dHhjS82i9SQWMpjLoBbxP1mmpDmwn6ALGz4mpkddv\"]}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getRequiredKeys(\"EOS\", {\"transaction\":{\"expiration\":\"2020-04-03T06:06:41\",\"ref_block_num\":15105,\"ref_block_prefix\":2116318876,\"max_net_usage_words\":\"\",\"max_cpu_usage_ms\":\"\",\"delay_sec\":0,\"context_free_actions\":[],\"actions\":[{\"account\":\"eosio.token\",\"name\":\"transfer\",\"authorization\":[{\"actor\":\"cuiqiangtest\",\"permission\":\"active\"}],\"data\":\"90D5CC58E549AF3180626ED39986A6E1010000000000000004454F530000000000\"}],\"transaction_extensions\":[]},\"available_keys\":[\"EOS7MiJnddv2dHhjS82i9SQWMpjLoBbxP1mmpDmwn6ALGz4mpkddv\"]}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -2005,7 +1991,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getResource(\"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getResource(\"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -2071,7 +2057,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getResourcePrice(\"EOS\", \"junglesweden\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getResourcePrice(\"EOS\", \"junglesweden\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -2144,7 +2130,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getStats(\"EOS\", \"eosio.token\", \"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getStats(\"EOS\", \"eosio.token\", \"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -2224,7 +2210,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTableRows(\"EOS\", \"wanchainhtlc\", \"wanchainhtlc\", \"transfers\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getTableRows(\"EOS\", \"wanchainhtlc\", \"wanchainhtlc\", \"transfers\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -2283,7 +2269,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTotalStaked(\"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getTotalStaked(\"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -2342,7 +2328,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTotalStakedPercent(\"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getTotalStakedPercent(\"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -2401,7 +2387,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTotalSupply(\"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getTotalSupply(\"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -2444,8 +2430,8 @@
             "group": "Parameter",
             "type": "object",
             "optional": false,
-            "field": "tx",
-            "description": "<p>object contain actions and blocksBehind(optional) expireSeconds(optional). actions: required Array of objects (Action) blocksBehind: Optional, default 3; expireSeconds: Optional, default 30; If blocksBehind and expireSeconds are set, the block blocksBehind the head block retrieved from JsonRpc's get_info is set as the reference block and the transaction header is serialized using this reference block and the expiration field.</p>"
+            "field": "trans",
+            "description": "<p>The transaction to be packed. <br>  <code>actions</code> - required Array of objects (Action). <br>  <code>blocksBehind</code> - Optional, default is 3. <br>  <code>expireSeconds</code> - Optional, default is 30. <br> If <code>blocksBehind</code> and <code>expireSeconds</code> are set, the block <code>blocksBehind</code> the head block retrieved from JsonRpc's <code>get_info</code> is set as the reference block and the transaction header is serialized using this reference block and the expiration field.</p>"
           },
           {
             "group": "Parameter",
@@ -2467,7 +2453,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.packTransaction(\"EOS\", {\n          \"actions\": [\n              {\n                  \"account\": \"eosio\",\n                  \"name\": \"delegatebw\",\n                  \"authorization\": [\n                      {\n                          \"actor\": \"aarontestnet\",\n                          \"permission\": \"active\"\n                      }\n                  ],\n                  \"data\": {\n                      \"from\": \"aarontestnet\",\n                      \"receiver\": \"aarontestnet\",\n                      \"stake_net_quantity\": \"0.0001 EOS\",\n                      \"stake_cpu_quantity\": \"0.0001 EOS\",\n                      \"transfer\": false\n                  }\n              }\n          ]\n      }, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.packTransaction(\"EOS\", {\n          \"actions\": [\n              {\n                  \"account\": \"eosio\",\n                  \"name\": \"delegatebw\",\n                  \"authorization\": [\n                      {\n                          \"actor\": \"aarontestnet\",\n                          \"permission\": \"active\"\n                      }\n                  ],\n                  \"data\": {\n                      \"from\": \"aarontestnet\",\n                      \"receiver\": \"aarontestnet\",\n                      \"stake_net_quantity\": \"0.0001 EOS\",\n                      \"stake_cpu_quantity\": \"0.0001 EOS\",\n                      \"transfer\": false\n                  }\n              }\n          ]\n      }, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -2480,7 +2466,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{\n        \"serializedTransaction\": {\n            \"0\": 177,\n            \"1\": 226,\n            \"2\": 138,\n            \"3\": 94,\n            \"4\": 122,\n            \"5\": 95,\n            \"...\": \"...\",\n            \"98\": 0\n        },\n        \"signatures\": []\n    }",
+          "content": "{\n        \"serializedTransaction\": {\n            \"0\": 177,\n            \"1\": 226,\n            \"2\": 138,\n            \"3\": 94,\n            \"4\": 122,\n            \"5\": 95,\n            ... ...,\n            \"98\": 0\n        },\n        \"signatures\": []\n    }",
           "type": "json"
         }
       ]
@@ -2547,7 +2533,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getScEvent('WAN', '0xda5b90dc89be59365ec44f3f2d7af8b6700d1167', [\"0xa4345d0839b39e5a6622a55c68bd8f83ac8a68fad252a8363a2c09dbaf85c793\", \"0x0000000000000000000000000000000000000000000000000000000000000000\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getScEvent('WAN', '0xda5b90dc89be59365ec44f3f2d7af8b6700d1167', [\"0xa4345d0839b39e5a6622a55c68bd8f83ac8a68fad252a8363a2c09dbaf85c793\", \"0x0000000000000000000000000000000000000000000000000000000000000000\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -2620,12 +2606,12 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.monitorEvent('WAN', '0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26', [\"0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.monitorEvent('WAN', '0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26', [\"0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
         "title": "Example promise usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \nlet result = await apiTest.monitorEvent('WAN', '0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26', [\"0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7\"]);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.monitorEvent('WAN', '0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26', [\"0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7\"]);\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
     ],
@@ -2665,6 +2651,13 @@
             "optional": false,
             "field": "epochID",
             "description": "<p>The epochID you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -2679,7 +2672,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getActivity(\"WAN\", 18102, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getActivity(\"WAN\", 18102, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -2717,6 +2710,13 @@
             "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -2731,7 +2731,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getCurrentEpochInfo(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getCurrentEpochInfo(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -2769,6 +2769,13 @@
             "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -2783,7 +2790,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getCurrentStakerInfo(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getCurrentStakerInfo(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -2831,17 +2838,17 @@
           },
           {
             "group": "Parameter",
-            "type": "number",
+            "type": "object",
             "optional": true,
-            "field": "from",
-            "description": "<p>The starting epochID you want to query.</p>"
+            "field": "options",
+            "description": "<p>Optional <br>  <code>from</code> - The number that starting epochID you want to query. <br>  <code>to</code> - The number that ending epochID you want to query.</p>"
           },
           {
             "group": "Parameter",
-            "type": "number",
+            "type": "function",
             "optional": true,
-            "field": "to",
-            "description": "<p>The ending epochID you want to query.</p>"
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -2856,7 +2863,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getDelegatorIncentive(\"WAN\", \"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getDelegatorIncentive(\"WAN\", \"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -2901,6 +2908,13 @@
             "optional": false,
             "field": "address",
             "description": "<p>The delegator address you want to query.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -2915,7 +2929,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getDelegatorStakeInfo(\"WAN\", \"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getDelegatorStakeInfo(\"WAN\", \"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -2960,6 +2974,13 @@
             "optional": false,
             "field": "address",
             "description": "<p>The delegator's address you want to query.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -2974,7 +2995,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getDelegatorSupStakeInfo(\"WAN\", [\"0xc45089dfcf6308d80b377b0a6ffc8bd314273ce0\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getDelegatorSupStakeInfo(\"WAN\", [\"0xc45089dfcf6308d80b377b0a6ffc8bd314273ce0\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -3022,24 +3043,17 @@
           },
           {
             "group": "Parameter",
-            "type": "string",
+            "type": "object",
             "optional": true,
-            "field": "validatorAddress",
-            "description": "<p>The validator's address you want to query.</p>"
+            "field": "options",
+            "description": "<p>Optional <br>  <code>validatorAddress</code> - The validator's address you want to query. <br>  <code>from</code> - The number that starting epochID you want to query. <br>  <code>to</code> - The number that ending epochID you want to query.</p>"
           },
           {
             "group": "Parameter",
-            "type": "number",
+            "type": "function",
             "optional": true,
-            "field": "from",
-            "description": "<p>The starting epochID you want to query.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": true,
-            "field": "to",
-            "description": "<p>The ending epochID you want to query.</p>"
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -3054,7 +3068,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getDelegatorTotalIncentive(\"WAN\", \"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getDelegatorTotalIncentive(\"WAN\", \"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -3092,6 +3106,13 @@
             "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -3106,7 +3127,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getEpochID(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getEpochID(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -3151,6 +3172,13 @@
             "optional": false,
             "field": "time",
             "description": "<p>The UTC time seconds you want to query.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -3165,7 +3193,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getEpochIDByTime(\"WAN\", Math.floor(Date.now()/1000), (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getEpochIDByTime(\"WAN\", Math.floor(Date.now()/1000), (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -3210,6 +3238,13 @@
             "optional": false,
             "field": "epochID",
             "description": "<p>The epochID you want to query.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -3224,7 +3259,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getEpochIncentiveBlockNumber(\"WAN\", 18106, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getEpochIncentiveBlockNumber(\"WAN\", 18106, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -3269,6 +3304,13 @@
             "optional": false,
             "field": "epochID",
             "description": "<p>The epochID you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -3283,7 +3325,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getEpochIncentivePayDetail(\"WAN\", 18101, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getEpochIncentivePayDetail(\"WAN\", 18101, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -3328,6 +3370,13 @@
             "optional": false,
             "field": "epochID",
             "description": "<p>The epochID you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -3342,7 +3391,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getEpochLeadersByEpochID(\"WAN\", 18102, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getEpochLeadersByEpochID(\"WAN\", 18102, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -3387,6 +3436,13 @@
             "optional": false,
             "field": "epochID",
             "description": "<p>The epochID you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -3401,7 +3457,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getEpochStakeOut(\"WAN\", 18106, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getEpochStakeOut(\"WAN\", 18106, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -3446,6 +3502,13 @@
             "optional": false,
             "field": "epochID",
             "description": "<p>The epochID you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -3460,7 +3523,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getLeaderGroupByEpochID(\"WAN\", 18102, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getLeaderGroupByEpochID(\"WAN\", 18102, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -3505,6 +3568,13 @@
             "optional": false,
             "field": "epochID",
             "description": "<p>The epochID(s) you want to query.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -3519,7 +3589,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getMaxBlockNumber(\"WAN\", [18102, 18101], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getMaxBlockNumber(\"WAN\", [18102, 18101], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -3557,6 +3627,13 @@
             "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -3571,7 +3648,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getMaxStableBlkNumber(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getMaxStableBlkNumber(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -3609,6 +3686,13 @@
             "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -3623,7 +3707,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getPosInfo(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getPosInfo(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -3675,6 +3759,13 @@
             "optional": false,
             "field": "blockNumber",
             "description": "<p>The blockNumber you want to search. If blockNumber is -1, use the latest block.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -3689,7 +3780,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getRandom(\"WAN\", 18102, -1, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getRandom(\"WAN\", 18102, -1, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -3734,6 +3825,13 @@
             "optional": false,
             "field": "epochID",
             "description": "<p>The epochID you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -3748,7 +3846,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getRandomProposersByEpochID(\"WAN\", 18102, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getRandomProposersByEpochID(\"WAN\", 18102, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -3793,6 +3891,13 @@
             "optional": false,
             "field": "epochID",
             "description": "<p>The epochID you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -3807,7 +3912,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getSlotActivity(\"WAN\", 18102, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getSlotActivity(\"WAN\", 18102, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -3845,6 +3950,13 @@
             "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -3859,7 +3971,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getSlotCount(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getSlotCount(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -3897,6 +4009,13 @@
             "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -3911,7 +4030,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getSlotID(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getSlotID(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -3949,6 +4068,13 @@
             "optional": false,
             "field": "chainType",
             "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -3963,7 +4089,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getSlotTime(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getSlotTime(\"WAN\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -4008,6 +4134,13 @@
             "optional": false,
             "field": "blockNumber",
             "description": "<p>The blockNumber you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -4022,7 +4155,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getStakerInfo(\"WAN\", 3496619, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getStakerInfo(\"WAN\", 3496619, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -4067,6 +4200,13 @@
             "optional": false,
             "field": "epochID",
             "description": "<p>The epochID you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -4081,7 +4221,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTimeByEpochID(\"WAN\", 18108, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getTimeByEpochID(\"WAN\", 18108, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -4126,6 +4266,13 @@
             "optional": false,
             "field": "epochID",
             "description": "<p>The epochID you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -4140,7 +4287,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getValidatorActivity(\"WAN\", 18102, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getValidatorActivity(\"WAN\", 18102, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -4185,6 +4332,13 @@
             "optional": false,
             "field": "address",
             "description": "<p>The validator address you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -4199,7 +4353,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getValidatorInfo(\"WAN\", \"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getValidatorInfo(\"WAN\", \"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -4244,6 +4398,13 @@
             "optional": false,
             "field": "address",
             "description": "<p>The validator owner address you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -4258,7 +4419,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getValidatorStakeInfo(\"WAN\", \"0x086b4cfadfd9f232b068c2e8263d608baee85163\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getValidatorStakeInfo(\"WAN\", \"0x086b4cfadfd9f232b068c2e8263d608baee85163\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -4303,6 +4464,13 @@
             "optional": false,
             "field": "address",
             "description": "<p>The validator address you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -4317,7 +4485,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getValidatorSupStakeInfo(\"WAN\", [\"0x158bae682e6278a16d09d7c7311074585d38b54d\",\"0x85dae7e5c7b433a1682c54eee63adf63d835d272\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getValidatorSupStakeInfo(\"WAN\", [\"0x158bae682e6278a16d09d7c7311074585d38b54d\",\"0x85dae7e5c7b433a1682c54eee63adf63d835d272\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -4365,17 +4533,17 @@
           },
           {
             "group": "Parameter",
-            "type": "number",
+            "type": "object",
             "optional": true,
-            "field": "from",
-            "description": "<p>The begin epochID you want to search.</p>"
+            "field": "options",
+            "description": "<p>Optional. <br>  <code>from</code> - The number that begin epochID you want to search. <br>  <code>to</code> - The number that end epochID you want to search.</p>"
           },
           {
             "group": "Parameter",
-            "type": "number",
+            "type": "function",
             "optional": true,
-            "field": "to",
-            "description": "<p>The end epochID you want to search.</p>"
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
           }
         ]
       },
@@ -4390,7 +4558,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getValidatorTotalIncentive(\"WAN\", \"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getValidatorTotalIncentive(\"WAN\", \"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -4463,7 +4631,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getOTAMixSet(\"0x02539dD49A75d6Cf4c5cc857bc87BC3836E74F1c845A08eC5E009A4dCa59D47C7c0298697d22cfa7d35A670B45C3531ea9D3aAc39E58c929d440Ac1392BDeB8926e7\", 8, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getOTAMixSet(\"0x02539dD49A75d6Cf4c5cc857bc87BC3836E74F1c845A08eC5E009A4dCa59D47C7c0298697d22cfa7d35A670B45C3531ea9D3aAc39E58c929d440Ac1392BDeB8926e7\", 8, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -4483,6 +4651,336 @@
     },
     "filename": "src/apis/apiInstance.js",
     "groupTitle": "PrivateTrans"
+  },
+  {
+    "name": "fetchService",
+    "group": "Service",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "fetchService",
+    "version": "1.1.1",
+    "description": "<p>Fetch service API by the native http. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "srvType",
+            "description": "<p>The service type.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "funcName",
+            "description": "<p>The service URI.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "type",
+            "description": "<p>The http request method as string. Currently supports <code>'GET'</code> and <code>'POST'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "options",
+            "description": "<p>Optional, the arguments passing to service API.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"fetchService\",\"params\":{\"srvType\":\"bp\", \"funcName\":\"getAddress\", \"type\":\"POST\", \"options\":{}},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.fetchService(\"bp\", \"getAddress\", \"POST\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.fetchService(\"bp\", \"getAddress\", \"POST\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n        \"name\": \"test\",\n        \"address\":\"0x3786038ef9c2f659772c6c2ee8402bdfdc511bb5\"\n},",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Service"
+  },
+  {
+    "name": "getRegisteredAds",
+    "group": "Service",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getRegisteredAds",
+    "version": "1.1.1",
+    "description": "<p>Get records of registered advertisements information. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "options",
+            "description": "<p>Optional. <br>  <code>name</code> - The advertisement name you want to search. <br>  <code>after</code> - The timestamp after you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRegisteredAds\",\"params\":{},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getRegisteredAds((err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getRegisteredAds();\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n  {\n         \"name\": \"test\",\n         \"iconData\": \"iVBORw0KGgoAAAGG ... ...\",\n         \"iconType\": \"png\",\n         \"url\": \"https://test.io/\",\n         \"updatedAt\": 1563780893497\n  },\n  ... ...\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Service"
+  },
+  {
+    "name": "getRegisteredDapp",
+    "group": "Service",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getRegisteredDapp",
+    "version": "1.1.1",
+    "description": "<p>Get records of registered Dapps information. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "options",
+            "description": "<p>Optional. <br>  <code>chainType</code> - The chain type being queried. Currently supports <code>'WAN'</code>. <br>  <code>url</code> - The URL being queried. <br>  <code>language</code> - The supported language being queried . <br>  <code>after</code> - The timestamp after you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRegisteredDapp\",\"params\":{\"after\":1577155812700},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getRegisteredDapp(1577155812700, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getRegisteredDapp(1577155812700);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n  {\n         \"langInfo\": [\n           {\n             \"language\": \"en\",\n             \"name\": \"WRDEX\",\n             \"summary\": \"A Crosschain Dex in wanchain.\",\n             \"detail\": \"A Crosschain Dex in wanchain.\"\n           },\n           {\n             \"language\": \"zh\",\n             \"name\": \"WRDEX\",\n             \"summary\": \"一款万维链上基于链下撮合链上结算原理的去中心化交易所。\",\n             \"detail\": \"一款万维链上基于链下撮合链上结算原理的去中心化交易所。\"\n           }\n         ],\n         \"url\": \"https://exchange.wrdex.io\",\n         \"chainType\": \"wan\",\n         \"type\": \"Exchange\",\n         \"creator\": \"rivex.io\",\n         \"creatorWebsite\": \"https://wrdex.io\",\n         \"scAddress\": [\n           \"0x8786038ef9c2f659772c6c2ee8402bdfdc511bb8\"\n         ],\n         \"iconType\": \"jpg\",\n         \"iconData\": \"/9j/4AAQSkZJRgABAQEBLAEsA ... ...\",\n         \"updatedAt\": 1586226464996\n  },\n  ... ...\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Service"
+  },
+  {
+    "name": "getRegisteredToken",
+    "group": "Service",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getRegisteredToken",
+    "version": "1.1.1",
+    "description": "<p>Get records of registered tokens information. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "tokenOrigAccount",
+            "description": "<p>The token account of original chain.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "after",
+            "description": "<p>The timestamp after you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRegisteredToken\",\"params\":{\"after\":1577155812700},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getRegisteredToken(1577155812700, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getRegisteredToken(1577155812700);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n  {\n         \"tokenOrigAccount\": \"0x00f58d6d585f84b2d7267940cede30ce2fe6eae8\",\n         \"decimals\": 18,\n         \"deposit\": \"10000000000000000000\",\n         \"iconData\": \"/9j/4AAQSkZJ ... ...\",\n         \"iconType\": \"jpg\",\n         \"name\": \"Wanchain ZRX Crosschain Token\",\n         \"symbol\": \"ZRX\",\n         \"token2WanRatio\": \"20000\",\n         \"tokenWanAddr\": \"0x2a4359d8b84b270eb112b54273439ac538f32733\",\n         \"updatedAt\": 1577155812722,\n         \"withDrawDelayTime\": \"259200\"\n  },\n  ... ...\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Service"
+  },
+  {
+    "name": "getRegisteredValidator",
+    "group": "Service",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getRegisteredValidator",
+    "version": "1.1.1",
+    "description": "<p>Get records of registered validators information. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "address",
+            "description": "<p>The validator address you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "after",
+            "description": "<p>The timestamp after you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRegisteredValidator\",\"params\":{},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getRegisteredValidator((err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getRegisteredValidator();\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n       {\n         \"address\": \"0x17d47c6ac4f72d43420f5e9533b526b2dee626a6\",\n         \"name\": \"MatPool\",\n         \"iconData\": \"iVBORw0KGgoAAAANSUhEUgAAAEwAAABQCAYAAACzg5PLAAAABGd ... ...\",\n         \"iconType\": \"png\",\n         \"url\": \"https://matpool.io/\",\n         \"updatedAt\": 1563780889497\n       },\n  ... ...\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Service"
   },
   {
     "name": "getGasPrice",
@@ -4522,7 +5020,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getGasPrice('WAN', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getGasPrice('WAN', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -4595,7 +5093,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getMultiTokenBalance(\"WAN\", [\"0xfac95c16da814d24cc64b3186348afecf527324f\",\"0xfac95c16da814d24cc64b3186348afecf527324e\"], \"0x63eed4943abaac5f43f657d8eec098ca6d6a546e\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getMultiTokenBalance(\"WAN\", [\"0xfac95c16da814d24cc64b3186348afecf527324f\",\"0xfac95c16da814d24cc64b3186348afecf527324e\"], \"0x63eed4943abaac5f43f657d8eec098ca6d6a546e\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -4661,7 +5159,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getMultiTokenInfo(\"ETH\", [\"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\",\"0x7017500899433272b4088afe34c04d742d0ce7df\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getMultiTokenInfo(\"ETH\", [\"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\",\"0x7017500899433272b4088afe34c04d742d0ce7df\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -4741,7 +5239,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTokenAllowance(\"ETH\", \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\", \"0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8\", \"0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getTokenAllowance(\"ETH\", \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\", \"0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8\", \"0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -4814,7 +5312,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTokenBalance(\"WAN\", \"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c\", \"0x63eed4943abaac5f43f657d8eec098ca6d6a546e\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getTokenBalance(\"WAN\", \"0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c\", \"0x63eed4943abaac5f43f657d8eec098ca6d6a546e\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -4880,7 +5378,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTokenInfo(\"ETH\", \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getTokenInfo(\"ETH\", \"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -4946,7 +5444,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTokenSupply(\"WAN\", \"0x63eed4943abaac5f43f657d8eec098ca6d6a546e\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getTokenSupply(\"WAN\", \"0x63eed4943abaac5f43f657d8eec098ca6d6a546e\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -4983,14 +5481,14 @@
             "type": "string",
             "optional": false,
             "field": "chainType",
-            "description": "<p>Optional, the chain being queried. Currently supports <code>'WAN'</code> or <code>'ETH'</code>.</p>"
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> or <code>'ETH'</code>.</p>"
           },
           {
             "group": "Parameter",
             "type": "object",
             "optional": false,
-            "field": "Object",
-            "description": "<ul> <li>A transaction object see web3.eth.sendTransaction, with the difference that for calls the from property is optional as well.</li> </ul>"
+            "field": "txObject",
+            "description": "<p>A transaction object see web3.eth.sendTransaction, with the difference that for calls the from property is optional as well.</p>"
           },
           {
             "group": "Parameter",
@@ -5012,7 +5510,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.estimateGas(\"WAN\", {from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe',\n    to: '0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe',\n    value: '1000000000000000'}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.estimateGas(\"WAN\", {from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe',\n    to: '0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe',\n    value: '1000000000000000'}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -5078,7 +5576,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTransByAddress(\"WAN\", \"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getTransByAddress(\"WAN\", \"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -5163,7 +5661,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTransByAddressBetweenBlocks(\"WAN\", \"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d\", 984119, 984120, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getTransByAddressBetweenBlocks(\"WAN\", \"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d\", 984119, 984120, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -5229,7 +5727,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTransByBlock(\"WAN\", \"0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe\", (err, result) => {\n// apiTest.getTransByBlock(\"WAN\", \"984133\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getTransByBlock(\"WAN\", \"0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe\", (err, result) => {\n// apiTest.getTransByBlock(\"WAN\", \"984133\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -5302,7 +5800,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTransactionConfirm(\"WAN\", 6, \"0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getTransactionConfirm(\"WAN\", 6, \"0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -5368,7 +5866,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTransactionReceipt(\"WAN\", \"0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getTransactionReceipt(\"WAN\", \"0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -5416,10 +5914,10 @@
           },
           {
             "group": "Parameter",
-            "type": "bool",
-            "optional": true,
-            "field": "format",
-            "description": "<p>Whether to get the serialized or decoded transaction, in this case, <code>chainType</code> should be <code>&quot;BTC&quot;</code>: <br>     Set to <code>false</code> (the default) to return the serialized transaction as hex. <br>     Set to <code>true</code> to return a decoded transaction.</p>"
+            "type": "object",
+            "optional": false,
+            "field": "options",
+            "description": "<p>Optional. <br>  <code>format</code> - Whether to get the serialized or decoded transaction, in this case, <code>chainType</code> should be <code>&quot;BTC&quot;</code>: <br>     Set to <code>false</code> (the default) to return the serialized transaction as hex. <br>     Set to <code>true</code> to return a decoded transaction.</p>"
           },
           {
             "group": "Parameter",
@@ -5441,12 +5939,12 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTxInfo(\"WAN\", \"0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getTxInfo(\"WAN\", \"0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
         "title": "Example promise usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);  \nlet result = await apiTest.getTxInfo(\"WAN\", \"0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getTxInfo(\"WAN\", \"0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
     ],
@@ -5507,7 +6005,7 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.sendRawTransaction('WAN', '0xf86e0109852e90edd000832dc6c0946ed9c11cbd8a6ae8355fa62ebca48493da572661880de0b6b3a7640000801ca0bd349ec9f51dd171eb5c59df9a6b8c5656eacb6793bed945a7ec69135f191abfa0359da11e8a4fdd51b52a8752ac32f9125d168441546d011406736bce67b8a356', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.sendRawTransaction('WAN', '0xf86e0109852e90edd000832dc6c0946ed9c11cbd8a6ae8355fa62ebca48493da572661880de0b6b3a7640000801ca0bd349ec9f51dd171eb5c59df9a6b8c5656eacb6793bed945a7ec69135f191abfa0359da11e8a4fdd51b52a8752ac32f9125d168441546d011406736bce67b8a356', (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
