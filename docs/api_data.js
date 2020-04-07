@@ -992,6 +992,65 @@ define({ "api": [
     "groupTitle": "Contracts"
   },
   {
+    "name": "getChainInfo",
+    "group": "CrossChain",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getChainInfo",
+    "version": "1.1.1",
+    "description": "<p>Returns an object containing various details about the blockchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'EOS'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getChainInfo\",\"params\":{\"chainType\":\"EOS\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getChainInfo(\"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await getChainInfo(\"EOS\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{ server_version: 'aa60b9ca',\nchain_id: 'e70aaab8997e1dfce58fbfac80cbbb8fecec7b99cf982a9444273cbc64c41473',\nhead_block_num: 84031197,\nlast_irreversible_block_num: 84030870,\nlast_irreversible_block_id: '05023596ebe1b775a39a0ab380a0fd95bf435fbe9eccbf2b3e38c44a0cdc6a0d',\nhead_block_id: '050236dd683c4f98c9f5965910bf941d67b8fe6469a149114a3f0053779461da',\nhead_block_time: '2020-04-02T11:35:25.000',\nhead_block_producer: 'five.cartel',\nvirtual_block_cpu_limit: 500000000,\nvirtual_block_net_limit: 524288000,\nblock_cpu_limit: 499990,\nblock_net_limit: 524288,\nserver_version_string: 'v2.0.2',\nfork_db_head_block_num: 84031197,\nfork_db_head_block_id: '050236dd683c4f98c9f5965910bf941d67b8fe6469a149114a3f0053779461da',\nserver_full_version_string: 'v2.0.2-aa60b9caf9b7e2bd2411bb199c0c1d9fd8f085d5' }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "CrossChain"
+  },
+  {
     "name": "getCoin2WanRatio",
     "group": "CrossChain",
     "type": "CONNECT",
@@ -1299,6 +1358,1135 @@ define({ "api": [
     },
     "filename": "src/apis/apiInstance.js",
     "groupTitle": "CrossChain"
+  },
+  {
+    "name": "getAbi",
+    "group": "EOS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getAbi",
+    "version": "1.1.1",
+    "description": "<p>Retrieves the ABI for a contract based on its account name. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'EOS'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "scAddr",
+            "description": "<p>contract account name.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getAbi\",\"params\":{\"chainType\":\"EOS\",\"scAddr\":\"wanchainhtlc\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getAbi(\"EOS\", \"wanchainhtlc\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await getAbi(\"EOS\", \"wanchainhtlc\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "  { \"version\": \"eosio::abi/1.1\",\n\t\t\t  \"types\": [ { \"new_type_name\": \"time_t\", \"type\": \"uint32\" } ],\n\t\t\t  \"structs\": \n\t\t\t   [ { \"name\": \"asset_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"debt_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"fee_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"inlock\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"inredeem\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"inrevoke\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"lockdebt\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"num64_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"outlock\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"outredeem\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"outrevoke\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"pk_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"redeemdebt\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"regsig\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"revokedebt\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"setratio\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"signature_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"transfer_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"unregsig\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"updatesig\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"withdraw\", \"base\": \"\", \"fields\": [\"Array\"] } ],\n\t\t\t  \"actions\": \n\t\t\t   [ { \"name\": \"inlock\", \"type\": \"inlock\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"inredeem\", \"type\": \"inredeem\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"inrevoke\", \"type\": \"inrevoke\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"lockdebt\", \"type\": \"lockdebt\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"outlock\", \"type\": \"outlock\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"outredeem\", \"type\": \"outredeem\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"outrevoke\", \"type\": \"outrevoke\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"redeemdebt\",\n\t\t\t       \"type\": \"redeemdebt\",\n\t\t\t       \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"regsig\", \"type\": \"regsig\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"revokedebt\",\n\t\t\t       \"type\": \"revokedebt\",\n\t\t\t       \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"setratio\", \"type\": \"setratio\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"unregsig\", \"type\": \"unregsig\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"updatesig\", \"type\": \"updatesig\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"withdraw\", \"type\": \"withdraw\", \"ricardian_contract\": \"\" } ],\n\t\t\t  \"tables\": \n\t\t\t   [ { \"name\": \"assets\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"asset_t\" },\n\t\t\t     { \"name\": \"debts\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"debt_t\" },\n\t\t\t     { \"name\": \"fees\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"fee_t\" },\n\t\t\t     { \"name\": \"longlongs\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"num64_t\" },\n\t\t\t     { \"name\": \"pks\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"pk_t\" },\n\t\t\t     { \"name\": \"signer\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"signature_t\" },\n\t\t\t     { \"name\": \"transfers\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"transfer_t\" } ],\n\t\t\t  \"ricardian_clauses\": [],\n\t\t\t  \"error_messages\": [],\n\t\t\t  \"abi_extensions\": [],\n\t\t\t  \"variants\": [] }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "EOS"
+  },
+  {
+    "name": "getAccountInfo",
+    "group": "EOS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getAccountInfo",
+    "version": "1.1.1",
+    "description": "<p>Returns an object containing various details about a specific account on the blockchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'EOS'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "tokenScAddr",
+            "description": "<p>EOS contract code.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "symbol",
+            "description": "<p>A string representation of an EOSIO symbol.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getAccountInfo\",\"params\":{\"chainType\":\"EOS\",\"address\":\"aarontestnet\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getAccountInfo(\"EOS\", \"aarontestnet\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await getAccountInfo(\"EOS\", \"aarontestnet\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{ account_name: 'aarontestnet',\nhead_block_num: 84039011,\nhead_block_time: '2020-04-02T12:40:32.000',\nprivileged: false,\nlast_code_update: '1970-01-01T00:00:00.000',\ncreated: '2019-04-22T03:47:11.500',\ncore_liquid_balance: '148.3494 EOS',\nram_quota: 7517,\nnet_weight: 340000,\ncpu_weight: 2230000,\nnet_limit: { used: 520, available: 2188721, max: 2189241 },\ncpu_limit: { used: 935, available: 13184853, max: 13185788 },\nram_usage: 3894,\npermissions: \n [ { perm_name: 'active', parent: 'owner', required_auth: [Object] },\n   { perm_name: 'owner', parent: '', required_auth: [Object] } ],\ntotal_resources: \n { owner: 'aarontestnet',\n   net_weight: '34.0000 EOS',\n   cpu_weight: '223.0000 EOS',\n   ram_bytes: 6117 },\nself_delegated_bandwidth: \n { from: 'aarontestnet',\n   to: 'aarontestnet',\n   net_weight: '24.0000 EOS',\n   cpu_weight: '73.0000 EOS' },\nrefund_request: null,\nvoter_info: \n { owner: 'aarontestnet',\n   proxy: '',\n   producers: [],\n   staked: 2010000,\n   last_vote_weight: '0.00000000000000000',\n   proxied_vote_weight: '0.00000000000000000',\n   is_proxy: 0,\n   flags1: 0,\n   reserved2: 0,\n   reserved3: '0 ' },\nrex_info: null }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "EOS"
+  },
+  {
+    "name": "getAccounts",
+    "group": "EOS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getAccounts",
+    "version": "1.1.1",
+    "description": "<p>Returns an array containing account names which is related to the public key, or owned by the given account. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'EOS'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "address",
+            "description": "<p>|publicKey account name or the public key.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "symbol",
+            "description": "<p>A string representation of an EOSIO symbol.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getAccounts\",\"params\":{\"chainType\":\"EOS\",\"publicKey\":\"EOS6yEsFdisRXLpk4xg4AEnYJDW5bLrjwBDoHNREsDsxcwFEncErK\"},\"id\":1}\nor\n{\"jsonrpc\":\"2.0\",\"method\":\"getAccounts\",\"params\":{\"chainType\":\"EOS\",\"address\":\"aarontestnet\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getAccounts(\"EOS\", \"EOS6yEsFdisRXLpk4xg4AEnYJDW5bLrjwBDoHNREsDsxcwFEncErK\", (err, result) => {\n// apiTest.getAccounts(\"EOS\", \"aarontestnet\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await getAccounts(\"EOS\", \"EOS6yEsFdisRXLpk4xg4AEnYJDW5bLrjwBDoHNREsDsxcwFEncErK\");\n// let result = await getAccounts(\"EOS\", \"aarontestnet\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n      \"wanchainbbbb\",\n      \"wanchainaaaa\"\n  ]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "EOS"
+  },
+  {
+    "name": "getActions",
+    "group": "EOS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getActions",
+    "version": "1.1.1",
+    "description": "<p>Returns an array of actions based on notified account.. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'EOS'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "address",
+            "description": "<p>account name you want to query.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "options",
+            "description": "<p>Optional, Optional parameters contain the filter for actions. // For eosjs 16.0.0: // <code>options.pos</code>\tint32\tAn absolute sequence positon -1 is the end/last action // <code>options.offset</code> int32\tThe number of actions relative to pos, negative numbers return [pos-offset,pos), positive numbers return [pos,pos+offset) For eosjs 20: <code>options.filter</code> string? code::name filter <code>options.skip</code> number? skip [n] actions (pagination) <code>options.limit</code> number? limit of [n] actions per page <code>options.sort</code> string? sort direction <code>options.after</code> string? filter after specified date (ISO8601) <code>options.before</code> string? filter before specified date (ISO8601) <code>options.transfer_to</code> string? transfer filter to <code>options.transfer_from</code> string? transfer filter from <code>options.transfer_symbol</code> string? transfer filter symbol <code>options.act_name</code> string? act name <code>options.act_account</code> string? act account</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getActions\",\"params\":{\"chainType\":\"EOS\",\"address\":\"wanchainhtlc\",\"options\":{\"filter\":\"wanchainhtlc:outlock\",\"limit\":2}},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getActions(\"EOS\", \"wanchainhtlc\", {filter: \"wanchainhtlc:outlock\", limit: 2}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await getActions(\"EOS\", \"wanchainhtlc\", {filter: \"wanchainhtlc:outlock\", limit: 2});\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[ { act: \n   { authorization: [Array],\n     data: [Object],\n     account: 'wanchainhtlc',\n     name: 'outlock' },\n  cpu_usage_us: 504,\n  net_usage_words: 65,\n  account_ram_deltas: [ [Object] ],\n  global_sequence: 564872608,\n  '@timestamp': '2020-02-20T03:19:58.500',\n  block_num: 76739261,\n  producer: 'eight.cartel',\n  trx_id: '20bd931ce948c57614f9c6b617532f806a59314ebfe0cacea13be461e0806034',\n  action_ordinal: 1,\n  creator_action_ordinal: 0,\n  notified: [ 'wanchainhtlc' ] },\n{ act: \n   { authorization: [Array],\n     data: [Object],\n     account: 'wanchainhtlc',\n     name: 'outlock' },\n  cpu_usage_us: 804,\n  net_usage_words: 65,\n  account_ram_deltas: [ [Object] ],\n  global_sequence: 564620256,\n  '@timestamp': '2020-02-19T07:21:05.000',\n  block_num: 76596349,\n  producer: 'atticlabjbpn',\n  trx_id: '7fab2518afd848042180f86e7e6467b3ad95e5bffce3186cd5ba6ac1eea16087',\n  action_ordinal: 1,\n  creator_action_ordinal: 0,\n  notified: [ 'wanchainhtlc' ] } ]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "EOS"
+  },
+  {
+    "name": "getBandwidthPrice",
+    "group": "EOS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getBandwidthPrice",
+    "version": "1.1.1",
+    "description": "<p>Returns an object containing net/cpu price(cpu in ms/EOS, net in KB/EOS) by provide one producer's account. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'EOS'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "address",
+            "description": "<p>one producer's account.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getBandwidthPrice\",\"params\":{\"chainType\":\"EOS\",\"address\":\"junglesweden\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getBandwidthPrice(\"EOS\", \"junglesweden\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await getBandwidthPrice(\"EOS\", \"junglesweden\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n      \"net\": \"0.005301073461471487\",\n      \"cpu\": \"0.005637367015436455\"\n  }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "EOS"
+  },
+  {
+    "name": "getRamPrice",
+    "group": "EOS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getRamPrice",
+    "version": "1.1.1",
+    "description": "<p>Returns ram price(in KB/EOS). <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'EOS'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRamPrice\",\"params\":{\"chainType\":\"EOS\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getRamPrice(\"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await getRamPrice(\"EOS\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "\"0.05022503944229491\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "EOS"
+  },
+  {
+    "name": "getRawAbi",
+    "group": "EOS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getRawAbi",
+    "version": "1.1.1",
+    "description": "<p>Returns an object containing buffer ABI for a contract based on its account name. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'EOS'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "scAddr",
+            "description": "<p>contract account name.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRawAbi\",\"params\":{\"chainType\":\"EOS\",\"scAddr\":\"wanchainhtlc\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getRawAbi(\"EOS\", \"wanchainhtlc\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await getRawAbi(\"EOS\", \"wanchainhtlc\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n      \"0\": 14,\n      \"1\": 101,\n      \"2\": 111,\n      \"3\": 115,\n      \"…\": \"...\",\n      \"1557\": 0\n  }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "EOS"
+  },
+  {
+    "name": "getRawCodeAndAbi",
+    "group": "EOS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getRawCodeAndAbi",
+    "version": "1.1.1",
+    "description": "<p>Retrieves raw code and ABI for a contract based on account name. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'EOS'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "scAddr",
+            "description": "<p>contract account name.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRawCodeAndAbi\",\"params\":{\"chainType\":\"EOS\",\"scAddr\":\"wanchainhtlc\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getRawCodeAndAbi(\"EOS\", \"wanchainhtlc\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await getRawCodeAndAbi(\"EOS\", \"wanchainhtlc\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n      \"account_name\": \"wanchainhtlc\",\n      \"wasm\": \"****\",\n      \"abi\": \"****\"\n    }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "EOS"
+  },
+  {
+    "name": "getRequiredKeys",
+    "group": "EOS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getRequiredKeys",
+    "version": "1.1.1",
+    "description": "<p>Returns the required keys needed to sign a transaction. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'EOS'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "txArgs",
+            "description": "<p>object contain transaction and avaialbe_keys. <code>transaction</code> transaction expiration: required string (DateTime) ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}$ Time that transaction must be confirmed by. ref_block_num: required integer ref_block_prefix: required integer max_net_usage_words: required string or integer (WholeNumber) A whole number max_cpu_usage_ms: required string or integer (WholeNumber) A whole number delay_sec: required integer context_free_actions: required Array of objects (Action) actions: required Array of objects (Action) transaction_extensions: Array of Array of integers or strings (Extension) <code>available_keys</code>  {array} Array of strings (PublicKey) Provide the available keys</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRequiredKeys\",\"params\":{\"chainType\":\"EOS\",\"txArgs\":{\"transaction\":{\"expiration\":\"2020-04-03T06:06:41\",\"ref_block_num\":15105,\"ref_block_prefix\":2116318876,\"max_net_usage_words\":\"\",\"max_cpu_usage_ms\":\"\",\"delay_sec\":0,\"context_free_actions\":[],\"actions\":[{\"account\":\"eosio.token\",\"name\":\"transfer\",\"authorization\":[{\"actor\":\"cuiqiangtest\",\"permission\":\"active\"}],\"data\":\"90D5CC58E549AF3180626ED39986A6E1010000000000000004454F530000000000\"}],\"transaction_extensions\":[]},\"available_keys\":[\"EOS7MiJnddv2dHhjS82i9SQWMpjLoBbxP1mmpDmwn6ALGz4mpkddv\"]},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getRequiredKeys(\"EOS\", {\"transaction\":{\"expiration\":\"2020-04-03T06:06:41\",\"ref_block_num\":15105,\"ref_block_prefix\":2116318876,\"max_net_usage_words\":\"\",\"max_cpu_usage_ms\":\"\",\"delay_sec\":0,\"context_free_actions\":[],\"actions\":[{\"account\":\"eosio.token\",\"name\":\"transfer\",\"authorization\":[{\"actor\":\"cuiqiangtest\",\"permission\":\"active\"}],\"data\":\"90D5CC58E549AF3180626ED39986A6E1010000000000000004454F530000000000\"}],\"transaction_extensions\":[]},\"available_keys\":[\"EOS7MiJnddv2dHhjS82i9SQWMpjLoBbxP1mmpDmwn6ALGz4mpkddv\"]}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await getRequiredKeys(\"EOS\", {\"transaction\":{\"expiration\":\"2020-04-03T06:06:41\",\"ref_block_num\":15105,\"ref_block_prefix\":2116318876,\"max_net_usage_words\":\"\",\"max_cpu_usage_ms\":\"\",\"delay_sec\":0,\"context_free_actions\":[],\"actions\":[{\"account\":\"eosio.token\",\"name\":\"transfer\",\"authorization\":[{\"actor\":\"cuiqiangtest\",\"permission\":\"active\"}],\"data\":\"90D5CC58E549AF3180626ED39986A6E1010000000000000004454F530000000000\"}],\"transaction_extensions\":[]},\"available_keys\":[\"EOS7MiJnddv2dHhjS82i9SQWMpjLoBbxP1mmpDmwn6ALGz4mpkddv\"]});\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "['PUB_K1_69X3383RzBZj41k73CSjUNXM5MYGpnDxyPnWUKPEtYQmVzqTY7']",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "EOS"
+  },
+  {
+    "name": "getResource",
+    "group": "EOS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getResource",
+    "version": "1.1.1",
+    "description": "<p>Returns an object containing rows from the specified table eosio.table.global. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'EOS'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getResource\",\"params\":{\"chainType\":\"EOS\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getResource(\"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await getResource(\"EOS\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n      \"max_block_net_usage\": 524288,\n      \"target_block_net_usage_pct\": 1000,\n      \"max_transaction_net_usage\": 524287,\n      \"base_per_transaction_net_usage\": 12,\n      \"net_usage_leeway\": 500,\n      \"context_free_discount_net_usage_num\": 20,\n      \"context_free_discount_net_usage_den\": 100,\n      \"max_block_cpu_usage\": 500000,\n      \"target_block_cpu_usage_pct\": 10,\n      \"max_transaction_cpu_usage\": 200000,\n      \"min_transaction_cpu_usage\": 10,\n      \"max_transaction_lifetime\": 3600,\n      \"deferred_trx_expiration_window\": 600,\n      \"max_transaction_delay\": 3888000,\n      \"max_inline_action_size\": 524287,\n      \"max_inline_action_depth\": 16,\n      \"max_authority_depth\": 6,\n      \"max_ram_size\": \"68719476736\",\n      \"total_ram_bytes_reserved\": \"31287726990\",\n      \"total_ram_stake\": \"8358873421\",\n      \"last_producer_schedule_update\": \"2020-04-05T13:19:05.500\",\n      \"last_pervote_bucket_fill\": \"2020-04-05T13:12:01.000\",\n      \"pervote_bucket\": 2472797114,\n      \"perblock_bucket\": \"2207987466943\",\n      \"total_unpaid_blocks\": 13819603,\n      \"total_activated_stake\": \"2480152949826\",\n      \"thresh_activated_stake_time\": \"2018-11-23T17:21:01.000\",\n      \"last_producer_schedule_size\": 21,\n      \"total_producer_vote_weight\": \"460825067195145191424.00000000000000000\",\n      \"last_name_close\": \"2020-04-04T13:37:20.500\"\n  }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "EOS"
+  },
+  {
+    "name": "getResourcePrice",
+    "group": "EOS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getResourcePrice",
+    "version": "1.1.1",
+    "description": "<p>Returns an object containing net/cpu/ram price(cpu in ms/EOS, net/ram in KB/EOS) by provide one producer's account. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'EOS'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "address",
+            "description": "<p>one producer's account.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getResourcePrice\",\"params\":{\"chainType\":\"EOS\",\"address\":\"junglesweden\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getResourcePrice(\"EOS\", \"junglesweden\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await getResourcePrice(\"EOS\", \"junglesweden\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n      \"net\": \"0.005301073461471487\",\n      \"cpu\": \"0.005637367015436455\",\n      \"ram\": \"0.050223917691993435\"\n  }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "EOS"
+  },
+  {
+    "name": "getStats",
+    "group": "EOS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getStats",
+    "version": "1.1.1",
+    "description": "<p>Returns an object with one member labeled as the symbol you requested, the object has three members: supply (Symbol), max_supply (Symbol) and issuer (Name). <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'EOS'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "tokenScAddr",
+            "description": "<p>EOS contract code.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "symbol",
+            "description": "<p>A string representation of an EOSIO symbol.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getCurrencyStats\",\"params\":{\"chainType\":\"EOS\",\"tokenScAddr\":\"eosio.token\",\"symbol\":\"EOS\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getStats(\"EOS\", \"eosio.token\", \"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await getStats(\"EOS\", \"eosio.token\", \"EOS\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n      \"supply\": \"10756688680.6257 EOS\",\n      \"max_supply\": \"100000000000.0000 EOS\",\n      \"issuer\": \"eosio\"\n  }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "EOS"
+  },
+  {
+    "name": "getTableRows",
+    "group": "EOS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getTableRows",
+    "version": "1.1.1",
+    "description": "<p>Returns an object containing rows from the specified table. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'EOS'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "scAddr",
+            "description": "<p>The name of the smart contract that controls the provided table.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "scope",
+            "description": "<p>The account to which this data belongs.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "table",
+            "description": "<p>The name of the table to query.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getTableRows\",\"params\":{\"chainType\":\"EOS\",\"scAddr\":\"wanchainhtlc\",\"scope\":\"wanchainhtlc\",\"table\":\"transfers\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTableRows(\"EOS\", \"wanchainhtlc\", \"wanchainhtlc\", \"transfers\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await getTableRows(\"EOS\", \"wanchainhtlc\", \"wanchainhtlc\", \"transfers\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n       \"rows\": [\n           {\n               \"id\": 0,\n               \"pid\": 0,\n               \"quantity\": \"5.0000 EOS\",\n               \"user\": \"cuiqiangtest\",\n               \"lockedTime\": 7200,\n               \"beginTime\": \"2019-12-26T13:59:24\",\n               \"status\": \"inlock\",\n               \"xHash\": \"e4b7be8900393ef6b09a172a21be3b4f1b814ff580dbaeba130484fa99b2da7c\",\n               \"wanAddr\": \"25f2845ad9da78ebaa0e077404d35933f75422b8\",\n               \"account\": \"eosio.token\"\n           },\n           {\n               \"id\": 1,\n               \"pid\": 0,\n               \"quantity\": \"5.0000 EOS\",\n               \"user\": \"cuiqiangtest\",\n               \"lockedTime\": 7200,\n               \"beginTime\": \"2019-12-30T12:23:25\",\n               \"status\": \"inlock\",\n               \"xHash\": \"2be3dee75ddc370d301e55fb74644bab9b1bac9883cb92c4c57a35f4543ce8f6\",\n               \"wanAddr\": \"25f2845ad9da78ebaa0e077404d35933f75422b8\",\n               \"account\": \"eosio.token\"\n           }\n       ],\n       \"more\": true,\n       \"next_key\": \"3\"\n   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "EOS"
+  },
+  {
+    "name": "getTotalStaked",
+    "group": "EOS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getTotalStaked",
+    "version": "1.1.1",
+    "description": "<p>Returns current 'EOS' stake amount. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'EOS'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getTotalStaked\",\"params\":{\"chainType\":\"EOS\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTotalStaked(\"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await getTotalStaked(\"EOS\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "\"2868049208.8674 EOS\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "EOS"
+  },
+  {
+    "name": "getTotalStakedPercent",
+    "group": "EOS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getTotalStakedPercent",
+    "version": "1.1.1",
+    "description": "<p>Returns an object with current 'EOS' stake info, the object has three members: totalStaked, totalSup and staked percent. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'EOS'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getTotalStakedPercent\",\"params\":{\"chainType\":\"EOS\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTotalStakedPercent(\"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await getTotalStakedPercent(\"EOS\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n       \"totalStaked\": 2868049208.8674,\n       \"totalSup\": 10757681325.5591,\n       \"percent\": 0.266604774957706\n   }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "EOS"
+  },
+  {
+    "name": "getTotalSupply",
+    "group": "EOS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getTotalSupply",
+    "version": "1.1.1",
+    "description": "<p>Returns an object with one member labeled as 'EOS' you requested, the object has three members: supply (Symbol), max_supply (Symbol) and issuer (Name). <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'EOS'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getTotalSupply\",\"params\":{\"chainType\":\"EOS\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getTotalSupply(\"EOS\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await getTotalSupply(\"EOS\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n      \"supply\": \"10757681325.5591 EOS\",\n      \"max_supply\": \"100000000000.0000 EOS\",\n      \"issuer\": \"eosio\"\n  }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "EOS"
+  },
+  {
+    "name": "packTransaction",
+    "group": "EOS",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "packTransaction",
+    "version": "1.1.1",
+    "description": "<p>Returns an object with serializedTransaction(buffer) and empty signatures for the given actions with blocksBehind and expireSeconds. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'EOS'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "tx",
+            "description": "<p>object contain actions and blocksBehind(optional) expireSeconds(optional). actions: required Array of objects (Action) blocksBehind: Optional, default 3; expireSeconds: Optional, default 30; If blocksBehind and expireSeconds are set, the block blocksBehind the head block retrieved from JsonRpc's get_info is set as the reference block and the transaction header is serialized using this reference block and the expiration field.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"packTransaction\",\"params\":{\"chainType\":\"EOS\",\"tx\":{\"actions\":[{\"account\":\"eosio\",\"name\":\"delegatebw\",\"authorization\":[{\"actor\":\"aarontestnet\",\"permission\":\"active\"}],\"data\":{\"from\":\"aarontestnet\",\"receiver\":\"aarontestnet\",\"stake_net_quantity\":\"0.0001 EOS\",\"stake_cpu_quantity\":\"0.0001 EOS\",\"transfer\":false}}]}},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.packTransaction(\"EOS\", {\n          \"actions\": [\n              {\n                  \"account\": \"eosio\",\n                  \"name\": \"delegatebw\",\n                  \"authorization\": [\n                      {\n                          \"actor\": \"aarontestnet\",\n                          \"permission\": \"active\"\n                      }\n                  ],\n                  \"data\": {\n                      \"from\": \"aarontestnet\",\n                      \"receiver\": \"aarontestnet\",\n                      \"stake_net_quantity\": \"0.0001 EOS\",\n                      \"stake_cpu_quantity\": \"0.0001 EOS\",\n                      \"transfer\": false\n                  }\n              }\n          ]\n      }, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await packTransaction(\"EOS\", {\n          \"actions\": [\n              {\n                  \"account\": \"eosio\",\n                  \"name\": \"delegatebw\",\n                  \"authorization\": [\n                      {\n                          \"actor\": \"aarontestnet\",\n                          \"permission\": \"active\"\n                      }\n                  ],\n                  \"data\": {\n                      \"from\": \"aarontestnet\",\n                      \"receiver\": \"aarontestnet\",\n                      \"stake_net_quantity\": \"0.0001 EOS\",\n                      \"stake_cpu_quantity\": \"0.0001 EOS\",\n                      \"transfer\": false\n                  }\n              }\n          ]\n      });\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n        \"serializedTransaction\": {\n            \"0\": 177,\n            \"1\": 226,\n            \"2\": 138,\n            \"3\": 94,\n            \"4\": 122,\n            \"5\": 95,\n            \"...\": \"...\",\n            \"98\": 0\n        },\n        \"signatures\": []\n    }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "EOS"
   },
   {
     "name": "getScEvent",
@@ -3224,6 +4412,79 @@ define({ "api": [
     "groupTitle": "POS"
   },
   {
+    "name": "getOTAMixSet",
+    "group": "PrivateTrans",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getOTAMixSet",
+    "version": "1.1.1",
+    "description": "<p>Returns an array about OTA mix set. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "otaAddress",
+            "description": "<p>OtaAddress</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "number",
+            "description": "<p>privateTx:ringSize.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>Optional, the chain being queried. Currently supports <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getOTAMixSet\",\"params\":{\"otaAddress\":\"0x02539dD49A75d6Cf4c5cc857bc87BC3836E74F1c845A08eC5E009A4dCa59D47C7c0298697d22cfa7d35A670B45C3531ea9D3aAc39E58c929d440Ac1392BDeB8926e7\",\"number\":8},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.getOTAMixSet(\"0x02539dD49A75d6Cf4c5cc857bc87BC3836E74F1c845A08eC5E009A4dCa59D47C7c0298697d22cfa7d35A670B45C3531ea9D3aAc39E58c929d440Ac1392BDeB8926e7\", 8, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getOTAMixSet(\"0x02539dD49A75d6Cf4c5cc857bc87BC3836E74F1c845A08eC5E009A4dCa59D47C7c0298697d22cfa7d35A670B45C3531ea9D3aAc39E58c929d440Ac1392BDeB8926e7\", 8);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[ '0x02a0ab76c74fc379743bdc958d806c9062f3fc68b097fe8e91453d7324f7ae648702a20af02d1fe495036b38ab8c44b5676c1c0158f0057b6500150374b6f19ab2ba',\n'0x020317c92daac5ad9cc5377bc4f493197772e9459fb737e1c26c7e6f030f21b7d002c5d50ef420e818f58c87a3f57cb1167adf268911021e9d0c3cf9aea7e06ac1ad',\n'0x02c6fa830d978e20bff8e993356d3456aa6c6f1dab966d20953bac55b7526ab0f203719139be2bc3660a8841fcf3d34d9043693e48b6cfebeaa4447cb1d72f809139',\n'0x03039ca6d4c95e75b7b6e131bf2af3d84b8d1807c34ed04fc637e57e45f5b590e503db2ce78d660ed6e230feb4ea91d8f7662315731d625d4a7d771cf82b686fb0a9',\n'0x03f0ee5da723151435e287a616e4502642315c9ed933569402ad0f838db0fd597a0325b3cb82275a6aa6cc1f1edc9675fc7201f5e9e589a34ed676f4400f2a081129',\n'0x038b3c1fada7710a519c4bb7929c8d08a8e9e17fcf7ea510043d00a6844a06155c02ec1e571a8f3a1471461cf74ecc4568d4009a3fc910c29c30bfdfb05f79924b12',\n'0x036d369b2a0e4fbd0e270c5d78e8fc53c1b0f1d58878f1a106812380325493fec3020f00e39b4e76169433289f92ee0fea44e1e0f26b87420c6f897489f6975621b6',\n'0x03bf32510e236f8bafd3127a3598f9c36f60612371f798ed766214183d1d2c3f1b027de375bc1112030300b843172f39031a735fc626f76e823e6b3e0367d89b269d' ]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "PrivateTrans"
+  },
+  {
     "name": "getGasPrice",
     "group": "Status",
     "type": "CONNECT",
@@ -3705,6 +4966,72 @@ define({ "api": [
     },
     "filename": "src/apis/apiInstance.js",
     "groupTitle": "Tokens"
+  },
+  {
+    "name": "estimateGas",
+    "group": "Transaction",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "estimateGas",
+    "version": "1.1.1",
+    "description": "<p>Executes a message call or transaction and returns the amount of the gas used. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>Optional, the chain being queried. Currently supports <code>'WAN'</code> or <code>'ETH'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "Object",
+            "description": "<ul> <li>A transaction object see web3.eth.sendTransaction, with the difference that for calls the from property is optional as well.</li> </ul>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"estimateGas\",\"params\":{\"chainType\":\"WAN\",\"from\":\"0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe\",\"to\":\"0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe\",\"value\":\"1000000000000000\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY); \napiTest.estimateGas(\"WAN\", {from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe',\n    to: '0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe',\n    value: '1000000000000000'}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.estimateGas(\"WAN\", {from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe',\n    to: '0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe',\n    value: '1000000000000000'});\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "21000",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Transaction"
   },
   {
     "name": "getTransByAddress",
