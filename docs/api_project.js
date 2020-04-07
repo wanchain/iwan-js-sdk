@@ -12,7 +12,7 @@ define({
   "apidoc": "0.3.0",
   "generator": {
     "name": "iWan",
-    "time": "2019-08-02T09:14:24.886Z",
+    "time": "2020-04-07T03:58:28.821Z",
     "url": "https://iwan.wanchain.org",
     "version": "1.1.1"
   }
