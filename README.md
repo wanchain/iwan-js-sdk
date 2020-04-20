@@ -28,7 +28,8 @@ let option = {
     url:"apitest.wanchain.org",
     port:8443,
     flag:"ws",
-    version:"v3"
+    version:"v3",
+    timeout:300000
 };
 apiClient = new iWanClient(YourApiKey, YourSecretKey, option);
 
@@ -47,6 +48,7 @@ The SDK object can accept an `option` object. See below for examples of usage.
   - `port` {Number} The RPC server port, default is 8443.
   - `flag` {String} The flag to connect the iWan RPC server, default is 'ws'.
   - `version` {String} The RPC method version, default is 'v3'.
+  - `timeout` {Number} The RPC method timeout, default is 30000 (ms).
 
 ### ApiKey and SecretKey
 In order to get an `ApiKey`, sign up at [iWan](https://iwan.wanchain.org). Then create a new project to get a new `ApiKey` and `SecretKey` key pair.
