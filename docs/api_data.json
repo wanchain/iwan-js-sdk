@@ -1,5 +1,71 @@
 [
   {
+    "name": "checkOTAUsed",
+    "group": "Accounts",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "checkOTAUsed",
+    "version": "1.1.1",
+    "description": "<p>Check whether the OTA address is used. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "image",
+            "description": "<p>The OTA address.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"checkOTAUsed\",\"params\":{\"chainType\":\"WAN\", \"image\":\"xxxxxxx\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.checkOTAUsed(\"WAN\", \"xxxxxxx\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.checkOTAUsed(\"WAN\", \"xxxxxxx\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "true",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Accounts"
+  },
+  {
     "name": "getBalance",
     "group": "Accounts",
     "type": "CONNECT",
@@ -1042,7 +1108,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{\n      server_version: 'aa60b9ca',\n      chain_id: 'e70aaab8997e1dfce58fbfac80cbbb8fecec7b99cf982a9444273cbc64c41473',\n      head_block_num: 84031197,\n      last_irreversible_block_num: 84030870,\n      last_irreversible_block_id: '05023596ebe1b775a39a0ab380a0fd95bf435fbe9eccbf2b3e38c44a0cdc6a0d',\n      head_block_id: '050236dd683c4f98c9f5965910bf941d67b8fe6469a149114a3f0053779461da',\n      head_block_time: '2020-04-02T11:35:25.000',\n      head_block_producer: 'five.cartel',\n      virtual_block_cpu_limit: 500000000,\n      virtual_block_net_limit: 524288000,\n      block_cpu_limit: 499990,\n      block_net_limit: 524288,\n      server_version_string: 'v2.0.2',\n      fork_db_head_block_num: 84031197,\n      fork_db_head_block_id: '050236dd683c4f98c9f5965910bf941d67b8fe6469a149114a3f0053779461da',\n      server_full_version_string: 'v2.0.2-aa60b9caf9b7e2bd2411bb199c0c1d9fd8f085d5'\n}",
+          "content": "{\n   server_version: 'aa60b9ca',\n   chain_id: 'e70aaab8997e1dfce58fbfac80cbbb8fecec7b99cf982a9444273cbc64c41473',\n   head_block_num: 84031197,\n   last_irreversible_block_num: 84030870,\n   last_irreversible_block_id: '05023596ebe1b775a39a0ab380a0fd95bf435fbe9eccbf2b3e38c44a0cdc6a0d',\n   head_block_id: '050236dd683c4f98c9f5965910bf941d67b8fe6469a149114a3f0053779461da',\n   head_block_time: '2020-04-02T11:35:25.000',\n   head_block_producer: 'five.cartel',\n   virtual_block_cpu_limit: 500000000,\n   virtual_block_net_limit: 524288000,\n   block_cpu_limit: 499990,\n   block_net_limit: 524288,\n   server_version_string: 'v2.0.2',\n   fork_db_head_block_num: 84031197,\n   fork_db_head_block_id: '050236dd683c4f98c9f5965910bf941d67b8fe6469a149114a3f0053779461da',\n   server_full_version_string: 'v2.0.2-aa60b9caf9b7e2bd2411bb199c0c1d9fd8f085d5'\n}",
           "type": "json"
         }
       ]
@@ -1417,7 +1483,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "  { \"version\": \"eosio::abi/1.1\",\n\t\t\t  \"types\": [ { \"new_type_name\": \"time_t\", \"type\": \"uint32\" } ],\n\t\t\t  \"structs\": \n\t\t\t   [ { \"name\": \"asset_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"debt_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"fee_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"inlock\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"inredeem\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"inrevoke\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"lockdebt\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"num64_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"outlock\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"outredeem\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"outrevoke\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"pk_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"redeemdebt\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"regsig\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"revokedebt\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"setratio\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"signature_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"transfer_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"unregsig\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"updatesig\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"withdraw\", \"base\": \"\", \"fields\": [\"Array\"] } ],\n\t\t\t  \"actions\": \n\t\t\t   [ { \"name\": \"inlock\", \"type\": \"inlock\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"inredeem\", \"type\": \"inredeem\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"inrevoke\", \"type\": \"inrevoke\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"lockdebt\", \"type\": \"lockdebt\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"outlock\", \"type\": \"outlock\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"outredeem\", \"type\": \"outredeem\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"outrevoke\", \"type\": \"outrevoke\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"redeemdebt\",\n\t\t\t       \"type\": \"redeemdebt\",\n\t\t\t       \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"regsig\", \"type\": \"regsig\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"revokedebt\",\n\t\t\t       \"type\": \"revokedebt\",\n\t\t\t       \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"setratio\", \"type\": \"setratio\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"unregsig\", \"type\": \"unregsig\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"updatesig\", \"type\": \"updatesig\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"withdraw\", \"type\": \"withdraw\", \"ricardian_contract\": \"\" } ],\n\t\t\t  \"tables\": \n\t\t\t   [ { \"name\": \"assets\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"asset_t\" },\n\t\t\t     { \"name\": \"debts\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"debt_t\" },\n\t\t\t     { \"name\": \"fees\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"fee_t\" },\n\t\t\t     { \"name\": \"longlongs\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"num64_t\" },\n\t\t\t     { \"name\": \"pks\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"pk_t\" },\n\t\t\t     { \"name\": \"signer\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"signature_t\" },\n\t\t\t     { \"name\": \"transfers\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"transfer_t\" } ],\n\t\t\t  \"ricardian_clauses\": [],\n\t\t\t  \"error_messages\": [],\n\t\t\t  \"abi_extensions\": [],\n\t\t\t  \"variants\": [] }",
+          "content": "  { \"version\": \"eosio::abi/1.1\",\n\t\t\t  \"types\": [ { \"new_type_name\": \"time_t\", \"type\": \"uint32\" } ],\n\t\t\t  \"structs\":\n\t\t\t   [ { \"name\": \"asset_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"debt_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"fee_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"inlock\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"inredeem\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"inrevoke\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"lockdebt\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"num64_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"outlock\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"outredeem\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"outrevoke\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"pk_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"redeemdebt\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"regsig\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"revokedebt\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"setratio\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"signature_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"transfer_t\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"unregsig\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"updatesig\", \"base\": \"\", \"fields\": [\"Array\"] },\n\t\t\t     { \"name\": \"withdraw\", \"base\": \"\", \"fields\": [\"Array\"] } ],\n\t\t\t  \"actions\":\n\t\t\t   [ { \"name\": \"inlock\", \"type\": \"inlock\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"inredeem\", \"type\": \"inredeem\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"inrevoke\", \"type\": \"inrevoke\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"lockdebt\", \"type\": \"lockdebt\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"outlock\", \"type\": \"outlock\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"outredeem\", \"type\": \"outredeem\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"outrevoke\", \"type\": \"outrevoke\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"redeemdebt\",\n\t\t\t       \"type\": \"redeemdebt\",\n\t\t\t       \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"regsig\", \"type\": \"regsig\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"revokedebt\",\n\t\t\t       \"type\": \"revokedebt\",\n\t\t\t       \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"setratio\", \"type\": \"setratio\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"unregsig\", \"type\": \"unregsig\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"updatesig\", \"type\": \"updatesig\", \"ricardian_contract\": \"\" },\n\t\t\t     { \"name\": \"withdraw\", \"type\": \"withdraw\", \"ricardian_contract\": \"\" } ],\n\t\t\t  \"tables\":\n\t\t\t   [ { \"name\": \"assets\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"asset_t\" },\n\t\t\t     { \"name\": \"debts\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"debt_t\" },\n\t\t\t     { \"name\": \"fees\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"fee_t\" },\n\t\t\t     { \"name\": \"longlongs\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"num64_t\" },\n\t\t\t     { \"name\": \"pks\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"pk_t\" },\n\t\t\t     { \"name\": \"signer\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"signature_t\" },\n\t\t\t     { \"name\": \"transfers\",\n\t\t\t       \"index_type\": \"i64\",\n\t\t\t       \"key_names\": [],\n\t\t\t       \"key_types\": [],\n\t\t\t       \"type\": \"transfer_t\" } ],\n\t\t\t  \"ricardian_clauses\": [],\n\t\t\t  \"error_messages\": [],\n\t\t\t  \"abi_extensions\": [],\n\t\t\t  \"variants\": [] }",
           "type": "json"
         }
       ]
@@ -1483,7 +1549,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{\n      account_name: 'aarontestnet',\n      head_block_num: 84039011,\n      head_block_time: '2020-04-02T12:40:32.000',\n      privileged: false,\n      last_code_update: '1970-01-01T00:00:00.000',\n      created: '2019-04-22T03:47:11.500',\n      core_liquid_balance: '148.3494 EOS',\n      ram_quota: 7517,\n      net_weight: 340000,\n      cpu_weight: 2230000,\n      net_limit: { used: 520, available: 2188721, max: 2189241 },\n      cpu_limit: { used: 935, available: 13184853, max: 13185788 },\n      ram_usage: 3894,\n      permissions:\n      [\n        { perm_name: 'active', parent: 'owner', required_auth: [Object] },\n        { perm_name: 'owner', parent: '', required_auth: [Object] }\n      ],\n      total_resources:\n      {\n        owner: 'aarontestnet',\n        net_weight: '34.0000 EOS',\n        cpu_weight: '223.0000 EOS',\n        ram_bytes: 6117\n      },\n      self_delegated_bandwidth:\n      {\n        from: 'aarontestnet',\n        to: 'aarontestnet',\n        net_weight: '24.0000 EOS',\n        cpu_weight: '73.0000 EOS'\n      },\n      refund_request: null,\n      voter_info:\n      {\n        owner: 'aarontestnet',\n        proxy: '',\n        producers: [],\n        staked: 2010000,\n        last_vote_weight: '0.00000000000000000',\n        proxied_vote_weight: '0.00000000000000000',\n        is_proxy: 0,\n        flags1: 0,\n        reserved2: 0,\n        reserved3: '0 '\n      },\n      rex_info: null\n}",
+          "content": "{\n   account_name: 'aarontestnet',\n   head_block_num: 84039011,\n   head_block_time: '2020-04-02T12:40:32.000',\n   privileged: false,\n   last_code_update: '1970-01-01T00:00:00.000',\n   created: '2019-04-22T03:47:11.500',\n   core_liquid_balance: '148.3494 EOS',\n   ram_quota: 7517,\n   net_weight: 340000,\n   cpu_weight: 2230000,\n   net_limit: { used: 520, available: 2188721, max: 2189241 },\n   cpu_limit: { used: 935, available: 13184853, max: 13185788 },\n   ram_usage: 3894,\n   permissions:\n   [ { perm_name: 'active', parent: 'owner', required_auth: [Object] },\n   { perm_name: 'owner', parent: '', required_auth: [Object] } ],\n   total_resources:\n   {\n     owner: 'aarontestnet',\n     net_weight: '34.0000 EOS',\n     cpu_weight: '223.0000 EOS',\n     ram_bytes: 6117\n   },\n   self_delegated_bandwidth:\n   {\n     from: 'aarontestnet',\n     to: 'aarontestnet',\n     net_weight: '24.0000 EOS',\n     cpu_weight: '73.0000 EOS'\n   },\n   refund_request: null,\n   voter_info:\n   {\n     owner: 'aarontestnet',\n     proxy: '',\n     producers: [],\n     staked: 2010000,\n     last_vote_weight: '0.00000000000000000',\n     proxied_vote_weight: '0.00000000000000000',\n     is_proxy: 0,\n     flags1: 0,\n     reserved2: 0,\n     reserved3: '0'\n   },\n   rex_info: null\n }",
           "type": "json"
         }
       ]
@@ -1549,7 +1615,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n      \"wanchainbbbb\",\n      \"wanchainaaaa\"\n  ]",
+          "content": "[\n  \"wanchainbbbb\",\n  \"wanchainaaaa\"\n]",
           "type": "json"
         }
       ]
@@ -1587,7 +1653,7 @@
             "type": "object",
             "optional": false,
             "field": "options",
-            "description": "<p>Optional, the filter for actions. <br><br><strong>For eosjs 16.0.0:</strong> <br>  <code>pos</code> - An int32 that is absolute sequence positon, -1 is the end/last action. <br>  <code>offset</code> - The number of actions relative to pos, negative numbers return [pos-offset,pos), positive numbers return [pos,pos+offset). <br><br><strong>For eosjs 20:</strong> <br>  <code>filter</code> - The string for code::name filter. <br>  <code>skip</code> - The number to skip [n] actions (pagination). <br>  <code>limit</code> - The number to limit of [n] actions per page. <br>  <code>sort</code> - The string to sort direction. <br>  <code>after</code> - The string to filter after specified date (ISO8601). <br>  <code>before</code> - The string to filter before specified date (ISO8601). <br>  <code>transfer_to</code> - The string to transfer filter to. <br>  <code>transfer_from</code> - The string to transfer filter from. <br>  <code>transfer_symbol</code> - The string to transfer filter symbol. <br>  <code>act_name</code> - The string for act name. <br>  <code>act_account</code> - The string for act account.</p>"
+            "description": "<p>Optional, the filter for actions. <br>  <strong>For eosjs 16.0.0</strong>: <br>    <code>pos</code> - An int32 that is absolute sequence positon, -1 is the end/last action. <br>    <code>offset</code> - The number of actions relative to pos, negative numbers return [pos-offset,pos), positive numbers return [pos,pos+offset). <br>  <strong>For eosjs 20</strong>: <br>    <code>filter</code> - The string for code::name filter. <br>    <code>skip</code> - The number to skip [n] actions (pagination). <br>    <code>limit</code> - The number to limit of [n] actions per page. <br>    <code>sort</code> - The string to sort direction. <br>    <code>after</code> - The string to filter after specified date (ISO8601). <br>    <code>before</code> - The string to filter before specified date (ISO8601). <br>    <code>transfer_to</code> - The string to transfer filter to. <br>    <code>transfer_from</code> - The string to transfer filter from. <br>    <code>transfer_symbol</code> - The string to transfer filter symbol. <br>    <code>act_name</code> - The string for act name. <br>    <code>act_account</code> - The string for act account.</p>"
           },
           {
             "group": "Parameter",
@@ -1622,7 +1688,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n      {\n        act: {\n          authorization: [Array],\n          data: [Object],\n          account: 'wanchainhtlc',\n          name: 'outlock'\n        },\n        cpu_usage_us: 504,\n        net_usage_words: 65,\n        account_ram_deltas: [ [Object] ],\n        global_sequence: 564872608,\n        '@timestamp': '2020-02-20T03:19:58.500',\n        block_num: 76739261,\n        producer: 'eight.cartel',\n        trx_id: '20bd931ce948c57614f9c6b617532f806a59314ebfe0cacea13be461e0806034',\n        action_ordinal: 1,\n        creator_action_ordinal: 0,\n        notified: [ 'wanchainhtlc' ]\n      },\n      {\n        act: {\n          authorization: [Array],\n          data: [Object],\n          account: 'wanchainhtlc',\n          name: 'outlock'\n        },\n        cpu_usage_us: 804,\n        net_usage_words: 65,\n        account_ram_deltas: [ [Object] ],\n        global_sequence: 564620256,\n        '@timestamp': '2020-02-19T07:21:05.000',\n        block_num: 76596349,\n        producer: 'atticlabjbpn',\n        trx_id: '7fab2518afd848042180f86e7e6467b3ad95e5bffce3186cd5ba6ac1eea16087',\n        action_ordinal: 1,\n        creator_action_ordinal: 0,\n        notified: [ 'wanchainhtlc' ]\n      }\n]",
+          "content": " [\n   {\n     act: { authorization: [Array],\n     data: [Object],\n     account: 'wanchainhtlc',\n     name: 'outlock'\n   },\n   cpu_usage_us: 504,\n   net_usage_words: 65,\n   account_ram_deltas: [ [Object] ],\n   global_sequence: 564872608,\n   '@timestamp': '2020-02-20T03:19:58.500',\n   block_num: 76739261,\n   producer: 'eight.cartel',\n   trx_id: '20bd931ce948c57614f9c6b617532f806a59314ebfe0cacea13be461e0806034',\n   action_ordinal: 1,\n   creator_action_ordinal: 0,\n   notified: [ 'wanchainhtlc' ]\n },\n ... ...\n]",
           "type": "json"
         }
       ]
@@ -1813,7 +1879,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{\n      \"0\": 14,\n      \"1\": 101,\n      \"2\": 111,\n      \"3\": 115,\n      ... ...,\n      \"1557\": 0\n}",
+          "content": "{\n      \"0\": 14,\n      \"1\": 101,\n      \"2\": 111,\n      \"3\": 115,\n      \"…\": \"...\",\n      \"1557\": 0\n  }",
           "type": "json"
         }
       ]
@@ -2143,7 +2209,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{\n      \"supply\": \"10756688680.6257 EOS\",\n      \"max_supply\": \"100000000000.0000 EOS\",\n      \"issuer\": \"eosio\"\n  }",
+          "content": "{\n    \"supply\": \"10756688680.6257 EOS\",\n    \"max_supply\": \"100000000000.0000 EOS\",\n    \"issuer\": \"eosio\"\n}",
           "type": "json"
         }
       ]
@@ -2430,7 +2496,7 @@
             "group": "Parameter",
             "type": "object",
             "optional": false,
-            "field": "trans",
+            "field": "tx",
             "description": "<p>The transaction to be packed. <br>  <code>actions</code> - required Array of objects (Action). <br>  <code>blocksBehind</code> - Optional, default is 3. <br>  <code>expireSeconds</code> - Optional, default is 30. <br> If <code>blocksBehind</code> and <code>expireSeconds</code> are set, the block <code>blocksBehind</code> the head block retrieved from JsonRpc's <code>get_info</code> is set as the reference block and the transaction header is serialized using this reference block and the expiration field.</p>"
           },
           {
@@ -2466,7 +2532,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{\n        \"serializedTransaction\": {\n            \"0\": 177,\n            \"1\": 226,\n            \"2\": 138,\n            \"3\": 94,\n            \"4\": 122,\n            \"5\": 95,\n            ... ...,\n            \"98\": 0\n        },\n        \"signatures\": []\n    }",
+          "content": "{\n        \"serializedTransaction\": {\n            \"0\": 177,\n            \"1\": 226,\n            \"2\": 138,\n            \"3\": 94,\n            \"4\": 122,\n            \"5\": 95,\n            \"...\": \"...\",\n            \"98\": 0\n        },\n        \"signatures\": []\n    }",
           "type": "json"
         }
       ]
@@ -2841,7 +2907,7 @@
             "type": "object",
             "optional": true,
             "field": "options",
-            "description": "<p>Optional <br>  <code>from</code> - The number that starting epochID you want to query. <br>  <code>to</code> - The number that ending epochID you want to query.</p>"
+            "description": "<p>Optional. <br>  <code>from</code> - The number that starting epochID you want to query. <br>  <code>to</code> - The number that ending epochID you want to query.</p>"
           },
           {
             "group": "Parameter",
@@ -3046,7 +3112,7 @@
             "type": "object",
             "optional": true,
             "field": "options",
-            "description": "<p>Optional <br>  <code>validatorAddress</code> - The validator's address you want to query. <br>  <code>from</code> - The number that starting epochID you want to query. <br>  <code>to</code> - The number that ending epochID you want to query.</p>"
+            "description": "<p>Optional. <br>  <code>validatorAddress</code> - The validator's address you want to query. <br>  <code>from</code> - The number that starting epochID you want to query. <br>  <code>to</code> - The number that ending epochID you want to query.</p>"
           },
           {
             "group": "Parameter",
@@ -4711,12 +4777,12 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.fetchService(\"bp\", \"getAddress\", \"POST\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.fetchService(\"bp\", \"getAddress\", \"POST\", {}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
         "title": "Example promise usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.fetchService(\"bp\", \"getAddress\", \"POST\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.fetchService(\"bp\", \"getAddress\", \"POST\", {});\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
     ],
@@ -4724,7 +4790,80 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{\n        \"name\": \"test\",\n        \"address\":\"0x3786038ef9c2f659772c6c2ee8402bdfdc511bb5\"\n},",
+          "content": "{\n  \"name\": \"test\",\n  \"address\":\"0x3786038ef9c2f659772c6c2ee8402bdfdc511bb5\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Service"
+  },
+  {
+    "name": "fetchSpecialService",
+    "group": "Service",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "fetchSpecialService",
+    "version": "1.1.1",
+    "description": "<p>Fetch the special service API by the native http. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "url",
+            "description": "<p>The special service request url absolutely.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "type",
+            "description": "<p>The http request method as string. Currently supports <code>'GET'</code> and <code>'POST'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "options",
+            "description": "<p>The arguments passing to service API.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"fetchSpecialService\",\"params\":{\"url\":\"https://xxx.com:443/getAddress\", \"type\":\"POST\", \"options\":{}},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.fetchSpecialService(\"https://xxx.com:443/getAddress\", \"POST\", {}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.fetchSpecialService(\"https://xxx.com:443/getAddress\", \"POST\", {});\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n  \"name\": \"test\",\n  \"address\":\"0x3786038ef9c2f659772c6c2ee8402bdfdc511bb5\"\n}",
           "type": "json"
         }
       ]
@@ -4762,7 +4901,7 @@
       "examples": [
         {
           "title": "JSON-RPC over websocket",
-          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRegisteredAds\",\"params\":{},\"id\":1}",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRegisteredAds\",\"params\":{\"after\":######},\"id\":1}",
           "type": "string"
         }
       ]
@@ -4770,12 +4909,12 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getRegisteredAds((err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getRegisteredAds(######, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
         "title": "Example promise usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getRegisteredAds();\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getRegisteredAds(######);\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
     ],
@@ -4783,7 +4922,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n  {\n         \"name\": \"test\",\n         \"iconData\": \"iVBORw0KGgoAAAGG ... ...\",\n         \"iconType\": \"png\",\n         \"url\": \"https://test.io/\",\n         \"updatedAt\": 1563780893497\n  },\n  ... ...\n]",
+          "content": "[\n  {\n    \"name\": \"test\",\n    \"iconData\": \"iVBORw0KGgoAAAGG ... ...\",\n    \"iconType\": \"png\",\n    \"url\": \"https://test.io/\",\n    \"updatedAt\": 1563780893497\n  },\n  ... ...\n]",
           "type": "json"
         }
       ]
@@ -4807,7 +4946,7 @@
             "type": "object",
             "optional": true,
             "field": "options",
-            "description": "<p>Optional. <br>  <code>chainType</code> - The chain type being queried. Currently supports <code>'WAN'</code>. <br>  <code>url</code> - The URL being queried. <br>  <code>language</code> - The supported language being queried . <br>  <code>after</code> - The timestamp after you want to search.</p>"
+            "description": "<p>Optional. <br>  <code>chainType</code> - The chain type being queried. Currently supports <code>'WAN'</code>. <br>  <code>url</code> - The URL being queried. <br>  <code>language</code> - The supported language being queried. <br>  <code>after</code> - The timestamp after you want to search.</p>"
           },
           {
             "group": "Parameter",
@@ -4842,7 +4981,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n  {\n         \"langInfo\": [\n           {\n             \"language\": \"en\",\n             \"name\": \"WRDEX\",\n             \"summary\": \"A Crosschain Dex in wanchain.\",\n             \"detail\": \"A Crosschain Dex in wanchain.\"\n           },\n           {\n             \"language\": \"zh\",\n             \"name\": \"WRDEX\",\n             \"summary\": \"一款万维链上基于链下撮合链上结算原理的去中心化交易所。\",\n             \"detail\": \"一款万维链上基于链下撮合链上结算原理的去中心化交易所。\"\n           }\n         ],\n         \"url\": \"https://exchange.wrdex.io\",\n         \"chainType\": \"wan\",\n         \"type\": \"Exchange\",\n         \"creator\": \"rivex.io\",\n         \"creatorWebsite\": \"https://wrdex.io\",\n         \"scAddress\": [\n           \"0x8786038ef9c2f659772c6c2ee8402bdfdc511bb8\"\n         ],\n         \"iconType\": \"jpg\",\n         \"iconData\": \"/9j/4AAQSkZJRgABAQEBLAEsA ... ...\",\n         \"updatedAt\": 1586226464996\n  },\n  ... ...\n]",
+          "content": "[\n  {\n    \"langInfo\": [\n      {\n        \"language\": \"en\",\n        \"name\": \"WRDEX\",\n        \"summary\": \"A Crosschain Dex in wanchain.\",\n        \"detail\": \"A Crosschain Dex in wanchain.\"\n      },\n      {\n        \"language\": \"zh\",\n        \"name\": \"WRDEX\",\n        \"summary\": \"一款万维链上基于链下撮合链上结算原理的去中心化交易所。\",\n        \"detail\": \"一款万维链上基于链下撮合链上结算原理的去中心化交易所。\"\n      }\n    ],\n    \"url\": \"https://exchange.wrdex.io\",\n    \"chainType\": \"wan\",\n    \"type\": \"Exchange\",\n    \"creator\": \"rivex.io\",\n    \"creatorWebsite\": \"https://wrdex.io\",\n    \"scAddress\": [\n      \"0x8786038ef9c2f659772c6c2ee8402bdfdc511bb8\"\n    ],\n    \"iconType\": \"jpg\",\n    \"iconData\": \"/9j/4AAQSkZJRgABAQEBLAEsA ... ...\",\n    \"updatedAt\": 1586226464996\n  },\n  ... ...\n]",
           "type": "json"
         }
       ]
@@ -4908,7 +5047,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n  {\n         \"tokenOrigAccount\": \"0x00f58d6d585f84b2d7267940cede30ce2fe6eae8\",\n         \"decimals\": 18,\n         \"deposit\": \"10000000000000000000\",\n         \"iconData\": \"/9j/4AAQSkZJ ... ...\",\n         \"iconType\": \"jpg\",\n         \"name\": \"Wanchain ZRX Crosschain Token\",\n         \"symbol\": \"ZRX\",\n         \"token2WanRatio\": \"20000\",\n         \"tokenWanAddr\": \"0x2a4359d8b84b270eb112b54273439ac538f32733\",\n         \"updatedAt\": 1577155812722,\n         \"withDrawDelayTime\": \"259200\"\n  },\n  ... ...\n]",
+          "content": "[\n  {\n    \"tokenOrigAccount\": \"0x00f58d6d585f84b2d7267940cede30ce2fe6eae8\",\n    \"decimals\": 18,\n    \"deposit\": \"10000000000000000000\",\n    \"iconData\": \"/9j/4AAQSkZJ ... ...\",\n    \"iconType\": \"jpg\",\n    \"name\": \"Wanchain ZRX Crosschain Token\",\n    \"symbol\": \"ZRX\",\n    \"token2WanRatio\": \"20000\",\n    \"tokenWanAddr\": \"0x2a4359d8b84b270eb112b54273439ac538f32733\",\n    \"updatedAt\": 1577155812722,\n    \"withDrawDelayTime\": \"259200\"\n  },\n  ... ...\n]",
           "type": "json"
         }
       ]
@@ -4953,7 +5092,7 @@
       "examples": [
         {
           "title": "JSON-RPC over websocket",
-          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRegisteredValidator\",\"params\":{},\"id\":1}",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRegisteredValidator\",\"params\":{\"after\":1503780889497},\"id\":1}",
           "type": "string"
         }
       ]
@@ -4961,12 +5100,12 @@
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getRegisteredValidator((err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getRegisteredValidator(1503780889497, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
         "title": "Example promise usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getRegisteredValidator();\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getRegisteredValidator(1503780889497);\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
     ],
@@ -4974,7 +5113,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n       {\n         \"address\": \"0x17d47c6ac4f72d43420f5e9533b526b2dee626a6\",\n         \"name\": \"MatPool\",\n         \"iconData\": \"iVBORw0KGgoAAAANSUhEUgAAAEwAAABQCAYAAACzg5PLAAAABGd ... ...\",\n         \"iconType\": \"png\",\n         \"url\": \"https://matpool.io/\",\n         \"updatedAt\": 1563780889497\n       },\n  ... ...\n]",
+          "content": "[\n  {\n    \"address\": \"0x17d47c6ac4f72d43420f5e9533b526b2dee626a6\",\n    \"name\": \"MatPool\",\n    \"iconData\": \"iVBORw0KGgoAAAANSUhEUgAAAEwAAABQCAYAAACzg5PLAAAABGd ... ...\",\n    \"iconType\": \"png\",\n    \"url\": \"https://matpool.io/\",\n    \"updatedAt\": 1563780889497\n  },\n  ... ...\n]",
           "type": "json"
         }
       ]
@@ -5488,7 +5627,7 @@
             "type": "object",
             "optional": false,
             "field": "txObject",
-            "description": "<p>A transaction object see web3.eth.sendTransaction, with the difference that for calls the from property is optional as well.</p>"
+            "description": "<p>The transaction object see web3.eth.sendTransaction, with the difference that for calls the from property is optional as well.</p>"
           },
           {
             "group": "Parameter",
@@ -5915,9 +6054,9 @@
           {
             "group": "Parameter",
             "type": "object",
-            "optional": false,
+            "optional": true,
             "field": "options",
-            "description": "<p>Optional. <br>  <code>format</code> - Whether to get the serialized or decoded transaction, in this case, <code>chainType</code> should be <code>&quot;BTC&quot;</code>: <br>     Set to <code>false</code> (the default) to return the serialized transaction as hex. <br>     Set to <code>true</code> to return a decoded transaction.</p>"
+            "description": "<p>Optional. <br>  <code>format</code> - Whether to get the serialized or decoded transaction, in this case, the <code>chainType</code> should be <code>&quot;BTC&quot;</code>: <br>     Set to <code>false</code> (the default) to return the serialized transaction as hex. <br>     Set to <code>true</code> to return a decoded transaction.</p>"
           },
           {
             "group": "Parameter",
