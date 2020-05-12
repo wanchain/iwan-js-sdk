@@ -4946,7 +4946,7 @@ define({ "api": [
             "type": "object",
             "optional": true,
             "field": "options",
-            "description": "<p>Optional. <br>  <code>chainType</code> - The chain type being queried. Currently supports <code>'WAN'</code>. <br>  <code>url</code> - The URL being queried. <br>  <code>language</code> - The supported language being queried. <br>  <code>after</code> - The timestamp after you want to search.</p>"
+            "description": "<p>Optional. <br>  <code>chainType</code> - The chain type being queried. Currently supports <code>'WAN'</code>. <br>  <code>url</code> - The URL being queried. <br>  <code>language</code> - The supported language being queried. <br>  <code>name</code> - The name being fuzzy queried. <br>  <code>after</code> - The timestamp after you want to search. <br>  <code>pageIndex</code> - The page index you want to search. If you want to query with the <code>page</code>, <code>page</code> is needed. <br>  <code>page</code> - The page size you want to search.</p>"
           },
           {
             "group": "Parameter",

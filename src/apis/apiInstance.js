@@ -5716,7 +5716,10 @@ class ApiInstance extends WsInstance {
    * <br>&nbsp;&nbsp;<code>chainType</code> - The chain type being queried. Currently supports <code>'WAN'</code>.
    * <br>&nbsp;&nbsp;<code>url</code> - The URL being queried.
    * <br>&nbsp;&nbsp;<code>language</code> - The supported language being queried.
+   * <br>&nbsp;&nbsp;<code>name</code> - The name being fuzzy queried.
    * <br>&nbsp;&nbsp;<code>after</code> - The timestamp after you want to search.
+   * <br>&nbsp;&nbsp;<code>pageIndex</code> - The page index you want to search. If you want to query with the <code>page</code>, <code>page</code> is needed.
+   * <br>&nbsp;&nbsp;<code>page</code> - The page size you want to search.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
