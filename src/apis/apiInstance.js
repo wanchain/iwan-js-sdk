@@ -5499,18 +5499,18 @@ class ApiInstance extends WsInstance {
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getEpochIDByTime","params":{"chainType":"WAN", "time":Math.floor(Date.now()/1000)},"id":1}
+   * {"jsonrpc":"2.0","method":"getEpochIDByTime","params":{"chainType":"WAN", "time":1564550000},"id":1}
    *
    * @apiExample {nodejs} Example callback usage:
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getEpochIDByTime("WAN", Math.floor(Date.now()/1000), (err, result) => {
+   *   apiTest.getEpochIDByTime("WAN", 1564550000, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
    * @apiExample {nodejs} Example promise usage:
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getEpochIDByTime("WAN", Math.floor(Date.now()/1000));
+   *   let result = await apiTest.getEpochIDByTime("WAN", 1564550000);
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
@@ -5718,7 +5718,7 @@ class ApiInstance extends WsInstance {
    * <br>&nbsp;&nbsp;<code>language</code> - The supported language being queried.
    * <br>&nbsp;&nbsp;<code>name</code> - The name being fuzzy queried.
    * <br>&nbsp;&nbsp;<code>after</code> - The timestamp after you want to search.
-   * <br>&nbsp;&nbsp;<code>pageIndex</code> - The page index you want to search. If you want to query with the <code>page</code>, <code>page</code> is needed.
+   * <br>&nbsp;&nbsp;<code>pageIndex</code> - The page index you want to search. If you want to query with the <code>pageIndex</code>, <code>page</code> is needed.
    * <br>&nbsp;&nbsp;<code>page</code> - The page size you want to search.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.

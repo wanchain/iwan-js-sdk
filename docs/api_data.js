@@ -3251,7 +3251,7 @@ define({ "api": [
       "examples": [
         {
           "title": "JSON-RPC over websocket",
-          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getEpochIDByTime\",\"params\":{\"chainType\":\"WAN\", \"time\":Math.floor(Date.now()/1000)},\"id\":1}",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getEpochIDByTime\",\"params\":{\"chainType\":\"WAN\", \"time\":1564550000},\"id\":1}",
           "type": "string"
         }
       ]
@@ -3259,12 +3259,12 @@ define({ "api": [
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getEpochIDByTime(\"WAN\", Math.floor(Date.now()/1000), (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getEpochIDByTime(\"WAN\", 1564550000, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
         "title": "Example promise usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getEpochIDByTime(\"WAN\", Math.floor(Date.now()/1000));\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getEpochIDByTime(\"WAN\", 1564550000);\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
     ],
@@ -4946,7 +4946,7 @@ define({ "api": [
             "type": "object",
             "optional": true,
             "field": "options",
-            "description": "<p>Optional. <br>  <code>chainType</code> - The chain type being queried. Currently supports <code>'WAN'</code>. <br>  <code>url</code> - The URL being queried. <br>  <code>language</code> - The supported language being queried. <br>  <code>name</code> - The name being fuzzy queried. <br>  <code>after</code> - The timestamp after you want to search. <br>  <code>pageIndex</code> - The page index you want to search. If you want to query with the <code>page</code>, <code>page</code> is needed. <br>  <code>page</code> - The page size you want to search.</p>"
+            "description": "<p>Optional. <br>  <code>chainType</code> - The chain type being queried. Currently supports <code>'WAN'</code>. <br>  <code>url</code> - The URL being queried. <br>  <code>language</code> - The supported language being queried. <br>  <code>name</code> - The name being fuzzy queried. <br>  <code>after</code> - The timestamp after you want to search. <br>  <code>pageIndex</code> - The page index you want to search. If you want to query with the <code>pageIndex</code>, <code>page</code> is needed. <br>  <code>page</code> - The page size you want to search.</p>"
           },
           {
             "group": "Parameter",
