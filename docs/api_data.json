@@ -1226,7 +1226,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n  {\n    \"tokenOrigAddr\": \"0x54950025d1854808b09277fe082b54682b11a50b\",\n    \"tokenWanAddr\": \"0x67f3de547c7f3bc77095686a9e7fe49397e59cdf\",\n    \"ratio\": \"15000000\",\n    \"minDeposit\": \"10000000000000000000\",\n    \"origHtlc\": \"0x149f1650f0ff097bca88118b83ed58fb1cfc68ef\",\n    \"wanHtlc\": \"0x27feb1785f61504619a105faa00f57c49cc4d9c3\",\n    \"withdrawDelayTime\": \"259200\",\n    \"tokenHash\": \"0xe6bb4913c8cfb38d44a01360bb7874c58812e14b9154543bb67783e611e0475b\",\n    \"name\": \"Wanchain MKR Crosschain Token\",\n    \"symbol\": \"MKR\",\n    \"decimals\": \"18\",\n    \"iconData\": \"...\",\n    \"iconType\": \"jpg\"\n  },\n  {\n    \"tokenOrigAddr\": \"0xdbf193627ee704d38495c2f5eb3afc3512eafa4c\",\n    \"tokenWanAddr\": \"0xda16e66820a3c64c34f2b35da3f5e1d1742274cb\",\n    \"ratio\": \"20000\",\n    \"minDeposit\": \"10000000000000000000\",\n    \"origHtlc\": \"0x149f1650f0ff097bca88118b83ed58fb1cfc68ef\",\n    \"wanHtlc\": \"0x27feb1785f61504619a105faa00f57c49cc4d9c3\",\n    \"withdrawDelayTime\": \"259200\",\n    \"tokenHash\": \"0x0cfee48dd8c8e32ad342c0f4ee723df9c2818d02734e28897ad0295bb458d4bc\",\n    \"name\": \"Wanchain SAI Crosschain Token\",\n    \"symbol\": \"SAI\",\n    \"decimals\": \"18\",\n    \"iconData\": \"...\",\n    \"iconType\": \"jpg\"\n  },\n ... ...\n]",
+          "content": "[\n  {\n    \"tokenOrigAddr\": \"0x54950025d1854808b09277fe082b54682b11a50b\",\n    \"tokenWanAddr\": \"0x67f3de547c7f3bc77095686a9e7fe49397e59cdf\",\n    \"ratio\": \"15000000\",\n    \"minDeposit\": \"10000000000000000000\",\n    \"origHtlc\": \"0x149f1650f0ff097bca88118b83ed58fb1cfc68ef\",\n    \"wanHtlc\": \"0x27feb1785f61504619a105faa00f57c49cc4d9c3\",\n    \"withdrawDelayTime\": \"259200\",\n    \"tokenHash\": \"0xe6bb4913c8cfb38d44a01360bb7874c58812e14b9154543bb67783e611e0475b\",\n    \"name\": \"Wanchain MKR Crosschain Token\",\n    \"symbol\": \"MKR\",\n    \"decimals\": \"18\",\n    \"iconData\": \"/9j/4AAQ...\",\n    \"iconType\": \"jpg\"\n  },\n  {\n    \"tokenOrigAddr\": \"0xdbf193627ee704d38495c2f5eb3afc3512eafa4c\",\n    \"tokenWanAddr\": \"0xda16e66820a3c64c34f2b35da3f5e1d1742274cb\",\n    \"ratio\": \"20000\",\n    \"minDeposit\": \"10000000000000000000\",\n    \"origHtlc\": \"0x149f1650f0ff097bca88118b83ed58fb1cfc68ef\",\n    \"wanHtlc\": \"0x27feb1785f61504619a105faa00f57c49cc4d9c3\",\n    \"withdrawDelayTime\": \"259200\",\n    \"tokenHash\": \"0x0cfee48dd8c8e32ad342c0f4ee723df9c2818d02734e28897ad0295bb458d4bc\",\n    \"name\": \"Wanchain SAI Crosschain Token\",\n    \"symbol\": \"SAI\",\n    \"decimals\": \"18\",\n    \"iconData\": \"/9j/4AAQ...\",\n    \"iconType\": \"jpg\"\n  },\n ... ...\n]",
           "type": "json"
         }
       ]
@@ -5040,7 +5040,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n    \"tokenScAddr\": \"0xc6f4465a6a521124c8e3096b62575c157999d361\",\n    \"name\": \"FinNexus\",\n    \"symbol\": \"FNX\",\n    \"decimals\": 18,\n    \"iconType\": \"jpg\",\n    \"iconData\": \"/9j/4AAQSkZJRgABAQEBLAEsA ... ...\",\n    \"updatedAt\": :1589512354784\n  },\n  ... ...\n]",
+          "content": "[\n    \"tokenScAddr\": \"0xc6f4465a6a521124c8e3096b62575c157999d361\",\n    \"iconType\": \"jpg\",\n    \"iconData\": \"/9j/4AAQSkZJRgABAQEBLAEsA ... ...\",\n    \"updatedAt\": :1589512354784\n  },\n  ... ...\n]",
           "type": "json"
         }
       ]

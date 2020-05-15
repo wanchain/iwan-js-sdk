@@ -2084,7 +2084,7 @@ class ApiInstance extends WsInstance {
   *      "name": "Wanchain MKR Crosschain Token",
   *      "symbol": "MKR",
   *      "decimals": "18",
-  *      "iconData": "...",
+  *      "iconData": "/9j/4AAQ...",
   *      "iconType": "jpg"
   *    },
   *    {
@@ -2099,7 +2099,7 @@ class ApiInstance extends WsInstance {
   *      "name": "Wanchain SAI Crosschain Token",
   *      "symbol": "SAI",
   *      "decimals": "18",
-  *      "iconData": "...",
+  *      "iconData": "/9j/4AAQ...",
   *      "iconType": "jpg"
   *    },
   *   ... ...
@@ -6619,9 +6619,6 @@ class ApiInstance extends WsInstance {
    * @apiSuccessExample {json} Successful Response
    *  [
    *      "tokenScAddr": "0xc6f4465a6a521124c8e3096b62575c157999d361",
-   *      "name": "FinNexus",
-   *      "symbol": "FNX",
-   *      "decimals": 18,
    *      "iconType": "jpg",
    *      "iconData": "/9j/4AAQSkZJRgABAQEBLAEsA ... ...",
    *      "updatedAt": :1589512354784
