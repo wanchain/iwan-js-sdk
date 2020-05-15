@@ -2071,31 +2071,39 @@ class ApiInstance extends WsInstance {
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
-  *   [{
-     "tokenOrigAddr": "0x54950025d1854808b09277fe082b54682b11a50b",
-     "tokenWanAddr": "0xe336cb9b982cdc8055771bd509ac8b89d3b7a3af",
-     "ratio": "5700000",
-     "minDeposit": "100000000000000000000",
-     "origHtlc": "0x87a0dee965e7679d15327ce0cc3df8dfc009b43d",
-     "wanHtlc": "0xe10515355e684e515c9c632c9eed04cca425cda1",
-     "withdrawDelayTime": "259200"
-   }, {
-     "tokenOrigAddr": "0xdbf193627ee704d38495c2f5eb3afc3512eafa4c",
-     "tokenWanAddr": "0x47db5125f4af190093b0ec2c502959d39dcbc4fa",
-     "ratio": "5000",
-     "minDeposit": "100000000000000000000",
-     "origHtlc": "0x87a0dee965e7679d15327ce0cc3df8dfc009b43d",
-     "wanHtlc": "0xe10515355e684e515c9c632c9eed04cca425cda1",
-     "withdrawDelayTime": "259200"
-   }, {
-     "tokenOrigAddr": "0x00f58d6d585f84b2d7267940cede30ce2fe6eae8",
-     "tokenWanAddr": "0x8b9efd0f6d5f078520a65ad731d79c0f63675ec0",
-     "ratio": "3000",
-     "minDeposit": "100000000000000000000",
-     "origHtlc": "0x87a0dee965e7679d15327ce0cc3df8dfc009b43d",
-     "wanHtlc": "0xe10515355e684e515c9c632c9eed04cca425cda1",
-     "withdrawDelayTime": "259200"
-   }]
+  *  [
+  *    {
+  *      "tokenOrigAddr": "0x54950025d1854808b09277fe082b54682b11a50b",
+  *      "tokenWanAddr": "0x67f3de547c7f3bc77095686a9e7fe49397e59cdf",
+  *      "ratio": "15000000",
+  *      "minDeposit": "10000000000000000000",
+  *      "origHtlc": "0x149f1650f0ff097bca88118b83ed58fb1cfc68ef",
+  *      "wanHtlc": "0x27feb1785f61504619a105faa00f57c49cc4d9c3",
+  *      "withdrawDelayTime": "259200",
+  *      "tokenHash": "0xe6bb4913c8cfb38d44a01360bb7874c58812e14b9154543bb67783e611e0475b",
+  *      "name": "Wanchain MKR Crosschain Token",
+  *      "symbol": "MKR",
+  *      "decimals": "18",
+  *      "iconData": "...",
+  *      "iconType": "jpg"
+  *    },
+  *    {
+  *      "tokenOrigAddr": "0xdbf193627ee704d38495c2f5eb3afc3512eafa4c",
+  *      "tokenWanAddr": "0xda16e66820a3c64c34f2b35da3f5e1d1742274cb",
+  *      "ratio": "20000",
+  *      "minDeposit": "10000000000000000000",
+  *      "origHtlc": "0x149f1650f0ff097bca88118b83ed58fb1cfc68ef",
+  *      "wanHtlc": "0x27feb1785f61504619a105faa00f57c49cc4d9c3",
+  *      "withdrawDelayTime": "259200",
+  *      "tokenHash": "0x0cfee48dd8c8e32ad342c0f4ee723df9c2818d02734e28897ad0295bb458d4bc",
+  *      "name": "Wanchain SAI Crosschain Token",
+  *      "symbol": "SAI",
+  *      "decimals": "18",
+  *      "iconData": "...",
+  *      "iconType": "jpg"
+  *    },
+  *   ... ...
+  *  ]
   *
   */
   getRegTokens(crossChain, callback) {
@@ -5601,7 +5609,7 @@ class ApiInstance extends WsInstance {
       params.address = address;
       params.after = after;
     } else if (typeof(address) !== "undefined") {
-      (typeof(address) === "string") ? (params.address = address) : (params.after = address);
+      (typeof(address) === "string" || Array.isArray(address)) ? (params.address = address) : (params.after = address);
     } else if (typeof(after) !== "undefined") {
       params.after = after;
     }
@@ -5687,7 +5695,7 @@ class ApiInstance extends WsInstance {
       params.tokenOrigAccount = tokenOrigAccount;
       params.after = after;
     } else if (typeof(tokenOrigAccount) !== "undefined") {
-      (typeof(tokenOrigAccount) === "string") ? (params.tokenOrigAccount = tokenOrigAccount) : (params.after = tokenOrigAccount);
+      (typeof(tokenOrigAccount) === "string" || Array.isArray(tokenOrigAccount)) ? (params.tokenOrigAccount = tokenOrigAccount) : (params.after = tokenOrigAccount);
     } else if (typeof(after) !== "undefined") {
       params.after = after;
     }
@@ -5729,14 +5737,14 @@ class ApiInstance extends WsInstance {
    *
    * @apiExample {nodejs} Example callback usage:
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getRegisteredDapp(1577155812700, (err, result) => {
+   *   apiTest.getRegisteredDapp({after:1577155812700}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
    * @apiExample {nodejs} Example promise usage:
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getRegisteredDapp(1577155812700);
+   *   let result = await apiTest.getRegisteredDapp({after:1577155812700});
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
@@ -6562,6 +6570,81 @@ class ApiInstance extends WsInstance {
     }
     let method = 'fetchSpecialService';
     let params = { url: url, type: type, options: options };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  /**
+   *
+   * @apiName getRegisteredOrigToken
+   * @apiGroup Service
+   * @api {CONNECT} /ws/v3/YOUR-API-KEY getRegisteredOrigToken
+   * @apiVersion 1.1.1
+   * @apiDescription Get records of registered tokens information of <code>'WAN'</code> chain.
+   * <br><br><strong>Returns:</strong>
+   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+   *
+   * @apiParam {object} [options] Optional.
+   * <br>&nbsp;&nbsp;<code>tokenScAddr</code> - The token account of <code>'WAN'</code> chain.
+   * <br>&nbsp;&nbsp;<code>after</code> - The timestamp after you want to search.
+   * <br>&nbsp;&nbsp;<code>pageIndex</code> - The page index you want to search. If you want to query with the <code>pageIndex</code>, <code>page</code> is needed.
+   * <br>&nbsp;&nbsp;<code>page</code> - The page size you want to search.
+   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+   *
+   * @apiParamExample {string} JSON-RPC over websocket
+   * {"jsonrpc":"2.0","method":"getRegisteredOrigToken","params":{"after":1577155812700},"id":1}
+   *
+   * @apiExample {nodejs} Example callback usage:
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   apiTest.getRegisteredOrigToken({after:1577155812700}, (err, result) => {
+   *     console.log("Result is ", result);
+   *     apiTest.close();
+   *   });
+   *
+   * @apiExample {nodejs} Example promise usage:
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   let result = await apiTest.getRegisteredOrigToken({after:1577155812700});
+   *   console.log("Result is ", result);
+   *   apiTest.close();
+   *
+   * @apiSuccessExample {json} Successful Response
+   *  [
+   *      "tokenScAddr": "0xc6f4465a6a521124c8e3096b62575c157999d361",
+   *      "name": "FinNexus",
+   *      "symbol": "FNX",
+   *      "decimals": 18,
+   *      "iconType": "jpg",
+   *      "iconData": "/9j/4AAQSkZJRgABAQEBLAEsA ... ...",
+   *      "updatedAt": :1589512354784
+   *    },
+   *    ... ...
+   *  ]
+   *
+   */
+  getRegisteredOrigToken(options, callback) {
+    let method = 'getRegisteredOrigToken';
+    let params = {};
+
+    if (typeof (options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (typeof(options) !== "object") {
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    params = utils.newJson(options);
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
