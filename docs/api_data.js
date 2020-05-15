@@ -1226,7 +1226,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[{\n   \"tokenOrigAddr\": \"0x54950025d1854808b09277fe082b54682b11a50b\",\n   \"tokenWanAddr\": \"0xe336cb9b982cdc8055771bd509ac8b89d3b7a3af\",\n   \"ratio\": \"5700000\",\n   \"minDeposit\": \"100000000000000000000\",\n   \"origHtlc\": \"0x87a0dee965e7679d15327ce0cc3df8dfc009b43d\",\n   \"wanHtlc\": \"0xe10515355e684e515c9c632c9eed04cca425cda1\",\n   \"withdrawDelayTime\": \"259200\"\n }, {\n   \"tokenOrigAddr\": \"0xdbf193627ee704d38495c2f5eb3afc3512eafa4c\",\n   \"tokenWanAddr\": \"0x47db5125f4af190093b0ec2c502959d39dcbc4fa\",\n   \"ratio\": \"5000\",\n   \"minDeposit\": \"100000000000000000000\",\n   \"origHtlc\": \"0x87a0dee965e7679d15327ce0cc3df8dfc009b43d\",\n   \"wanHtlc\": \"0xe10515355e684e515c9c632c9eed04cca425cda1\",\n   \"withdrawDelayTime\": \"259200\"\n }, {\n   \"tokenOrigAddr\": \"0x00f58d6d585f84b2d7267940cede30ce2fe6eae8\",\n   \"tokenWanAddr\": \"0x8b9efd0f6d5f078520a65ad731d79c0f63675ec0\",\n   \"ratio\": \"3000\",\n   \"minDeposit\": \"100000000000000000000\",\n   \"origHtlc\": \"0x87a0dee965e7679d15327ce0cc3df8dfc009b43d\",\n   \"wanHtlc\": \"0xe10515355e684e515c9c632c9eed04cca425cda1\",\n   \"withdrawDelayTime\": \"259200\"\n }]",
+          "content": "[\n  {\n    \"tokenOrigAddr\": \"0x54950025d1854808b09277fe082b54682b11a50b\",\n    \"tokenWanAddr\": \"0x67f3de547c7f3bc77095686a9e7fe49397e59cdf\",\n    \"ratio\": \"15000000\",\n    \"minDeposit\": \"10000000000000000000\",\n    \"origHtlc\": \"0x149f1650f0ff097bca88118b83ed58fb1cfc68ef\",\n    \"wanHtlc\": \"0x27feb1785f61504619a105faa00f57c49cc4d9c3\",\n    \"withdrawDelayTime\": \"259200\",\n    \"tokenHash\": \"0xe6bb4913c8cfb38d44a01360bb7874c58812e14b9154543bb67783e611e0475b\",\n    \"name\": \"Wanchain MKR Crosschain Token\",\n    \"symbol\": \"MKR\",\n    \"decimals\": \"18\",\n    \"iconData\": \"...\",\n    \"iconType\": \"jpg\"\n  },\n  {\n    \"tokenOrigAddr\": \"0xdbf193627ee704d38495c2f5eb3afc3512eafa4c\",\n    \"tokenWanAddr\": \"0xda16e66820a3c64c34f2b35da3f5e1d1742274cb\",\n    \"ratio\": \"20000\",\n    \"minDeposit\": \"10000000000000000000\",\n    \"origHtlc\": \"0x149f1650f0ff097bca88118b83ed58fb1cfc68ef\",\n    \"wanHtlc\": \"0x27feb1785f61504619a105faa00f57c49cc4d9c3\",\n    \"withdrawDelayTime\": \"259200\",\n    \"tokenHash\": \"0x0cfee48dd8c8e32ad342c0f4ee723df9c2818d02734e28897ad0295bb458d4bc\",\n    \"name\": \"Wanchain SAI Crosschain Token\",\n    \"symbol\": \"SAI\",\n    \"decimals\": \"18\",\n    \"iconData\": \"...\",\n    \"iconType\": \"jpg\"\n  },\n ... ...\n]",
           "type": "json"
         }
       ]
@@ -4968,12 +4968,12 @@ define({ "api": [
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getRegisteredDapp(1577155812700, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getRegisteredDapp({after:1577155812700}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
         "title": "Example promise usage:",
-        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getRegisteredDapp(1577155812700);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getRegisteredDapp({after:1577155812700});\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
     ],
@@ -4982,6 +4982,65 @@ define({ "api": [
         {
           "title": "Successful Response",
           "content": "[\n  {\n    \"langInfo\": [\n      {\n        \"language\": \"en\",\n        \"name\": \"WRDEX\",\n        \"summary\": \"A Crosschain Dex in wanchain.\",\n        \"detail\": \"A Crosschain Dex in wanchain.\"\n      },\n      {\n        \"language\": \"zh\",\n        \"name\": \"WRDEX\",\n        \"summary\": \"一款万维链上基于链下撮合链上结算原理的去中心化交易所。\",\n        \"detail\": \"一款万维链上基于链下撮合链上结算原理的去中心化交易所。\"\n      }\n    ],\n    \"url\": \"https://exchange.wrdex.io\",\n    \"chainType\": \"wan\",\n    \"type\": \"Exchange\",\n    \"creator\": \"rivex.io\",\n    \"creatorWebsite\": \"https://wrdex.io\",\n    \"scAddress\": [\n      \"0x8786038ef9c2f659772c6c2ee8402bdfdc511bb8\"\n    ],\n    \"iconType\": \"jpg\",\n    \"iconData\": \"/9j/4AAQSkZJRgABAQEBLAEsA ... ...\",\n    \"updatedAt\": 1586226464996\n  },\n  ... ...\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Service"
+  },
+  {
+    "name": "getRegisteredOrigToken",
+    "group": "Service",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getRegisteredOrigToken",
+    "version": "1.1.1",
+    "description": "<p>Get records of registered tokens information of <code>'WAN'</code> chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "options",
+            "description": "<p>Optional. <br>  <code>tokenScAddr</code> - The token account of <code>'WAN'</code> chain. <br>  <code>after</code> - The timestamp after you want to search. <br>  <code>pageIndex</code> - The page index you want to search. If you want to query with the <code>pageIndex</code>, <code>page</code> is needed. <br>  <code>page</code> - The page size you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRegisteredOrigToken\",\"params\":{\"after\":1577155812700},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getRegisteredOrigToken({after:1577155812700}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getRegisteredOrigToken({after:1577155812700});\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n    \"tokenScAddr\": \"0xc6f4465a6a521124c8e3096b62575c157999d361\",\n    \"name\": \"FinNexus\",\n    \"symbol\": \"FNX\",\n    \"decimals\": 18,\n    \"iconType\": \"jpg\",\n    \"iconData\": \"/9j/4AAQSkZJRgABAQEBLAEsA ... ...\",\n    \"updatedAt\": :1589512354784\n  },\n  ... ...\n]",
           "type": "json"
         }
       ]
