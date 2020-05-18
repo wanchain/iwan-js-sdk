@@ -71,14 +71,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"monitorEvent","params":{"chainType":"WAN", "address": "0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26", "topics": ["0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7"]},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.monitorEvent('WAN', '0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26', ["0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7"], (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.monitorEvent('WAN', '0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26', ["0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7"]);
    *   console.log("Result is ", result);
@@ -139,6 +141,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getScEvent","params":{"chainType":"WAN", "address": "0xda5b90dc89be59365ec44f3f2d7af8b6700d1167", "topics": ["0xa4345d0839b39e5a6622a55c68bd8f83ac8a68fad252a8363a2c09dbaf85c793", "0x0000000000000000000000000000000000000000000000000000000000000000"]},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getScEvent('WAN', '0xda5b90dc89be59365ec44f3f2d7af8b6700d1167', ["0xa4345d0839b39e5a6622a55c68bd8f83ac8a68fad252a8363a2c09dbaf85c793", "0x0000000000000000000000000000000000000000000000000000000000000000"], (err, result) => {
   *     console.log("Result is ", result);
@@ -146,6 +149,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getScEvent('WAN', '0xda5b90dc89be59365ec44f3f2d7af8b6700d1167', ["0xa4345d0839b39e5a6622a55c68bd8f83ac8a68fad252a8363a2c09dbaf85c793", "0x0000000000000000000000000000000000000000000000000000000000000000"]);
   *   console.log("Result is ", result);
@@ -212,6 +216,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getScOwner","params":{"chainType":"WAN", "scAddr": "0x59adc38f0b3f64fb542b50e3e955e7a8c1eb3e3b"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getScOwner('WAN', '0x59adc38f0b3f64fb542b50e3e955e7a8c1eb3e3b', (err, result) => {
   *     console.log("Result is ", result);
@@ -219,6 +224,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getScOwner('WAN', '0x59adc38f0b3f64fb542b50e3e955e7a8c1eb3e3b');
   *   console.log("Result is ", result);
@@ -264,6 +270,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getCoin2WanRatio","params":{"crossChain":"ETH"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getCoin2WanRatio('ETH', (err, result) => {
   *     console.log("Result is ", result);
@@ -271,6 +278,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getCoin2WanRatio('ETH');
   *   console.log("Result is ", result);
@@ -318,8 +326,8 @@ class ApiInstance extends WsInstance {
   * @apiParamExample {string} JSON-RPC over websocket
   * {"jsonrpc":"2.0","method":"getUTXO","params":{"chainType":"BTC", "minconf":0, "maxconf":100, "address":["n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R"]},"id":1}
   *
-  *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getUTXO('BTC', 0, 100, ["n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R"], (err, result) => {
   *     console.log("Result is ", result);
@@ -327,6 +335,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getUTXO('BTC', 0, 100, ["n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R"]);
   *   console.log("Result is ", result);
@@ -384,6 +393,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getStoremanGroups","params":{"crossChain":"ETH"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getStoremanGroups('ETH', (err, result) => {
   *     console.log("Result is ", result);
@@ -391,6 +401,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getStoremanGroups('ETH');
   *   console.log("Result is ", result);
@@ -448,6 +459,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getTokenStoremanGroups","params":{"crossChain":"ETH", "tokenScAddr":"0x00f58d6d585f84b2d7267940cede30ce2fe6eae8"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getTokenStoremanGroups('ETH', '0x00f58d6d585f84b2d7267940cede30ce2fe6eae8', (err, result) => {
   *     console.log("Result is ", result);
@@ -455,6 +467,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getTokenStoremanGroups('ETH', '0x00f58d6d585f84b2d7267940cede30ce2fe6eae8');
   *   console.log("Result is ", result);
@@ -512,6 +525,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getGasPrice","params":{"chainType":"WAN"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getGasPrice('WAN', (err, result) => {
   *     console.log("Result is ", result);
@@ -519,6 +533,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getGasPrice('WAN');
   *   console.log("Result is ", result);
@@ -565,6 +580,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getBalance","params":{"address": "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c","chainType":"WAN"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getBalance('WAN', '0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c', (err, result) => {
   *     console.log("Result is ", result);
@@ -572,6 +588,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getBalance('WAN', '0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c');
   *   console.log("Result is ", result);
@@ -618,6 +635,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getMultiBalances","params":{"address": ["0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c","0x2cc79fa3b80c5b9b02051facd02478ea88a78e2d"],"chainType":"WAN"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getMultiBalances('WAN', ["0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c","0x2cc79fa3b80c5b9b02051facd02478ea88a78e2d"], (err, result) => {
   *     console.log("Result is ", result);
@@ -625,6 +643,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getMultiBalances('WAN', ["0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c","0x2cc79fa3b80c5b9b02051facd02478ea88a78e2d"]);
   *   console.log("Result is ", result);
@@ -675,6 +694,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getTokenBalance","params":{"address": "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c","tokenScAddr" : "0x63eed4943abaac5f43f657d8eec098ca6d6a546e"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getTokenBalance("WAN", "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c", "0x63eed4943abaac5f43f657d8eec098ca6d6a546e", (err, result) => {
   *     console.log("Result is ", result);
@@ -682,6 +702,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getTokenBalance("WAN", "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c", "0x63eed4943abaac5f43f657d8eec098ca6d6a546e");
   *   console.log("Result is ", result);
@@ -737,6 +758,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getMultiTokenBalance","params":{"address": ["0xfac95c16da814d24cc64b3186348afecf527324f","0xfac95c16da814d24cc64b3186348afecf527324e"],"tokenScAddr" : "0x63eed4943abaac5f43f657d8eec098ca6d6a546e"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getMultiTokenBalance("WAN", ["0xfac95c16da814d24cc64b3186348afecf527324f","0xfac95c16da814d24cc64b3186348afecf527324e"], "0x63eed4943abaac5f43f657d8eec098ca6d6a546e", (err, result) => {
   *     console.log("Result is ", result);
@@ -744,6 +766,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getMultiTokenBalance("WAN", ["0xfac95c16da814d24cc64b3186348afecf527324f","0xfac95c16da814d24cc64b3186348afecf527324e"], "0x63eed4943abaac5f43f657d8eec098ca6d6a546e");
   *   console.log("Result is ", result);
@@ -802,6 +825,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getTokenSupply","params":{"chainType":"WAN", "tokenScAddr" : "0x63eed4943abaac5f43f657d8eec098ca6d6a546e"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getTokenSupply("WAN", "0x63eed4943abaac5f43f657d8eec098ca6d6a546e", (err, result) => {
   *     console.log("Result is ", result);
@@ -809,6 +833,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getTokenSupply("WAN", "0x63eed4943abaac5f43f657d8eec098ca6d6a546e");
   *   console.log("Result is ", result);
@@ -855,6 +880,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getNonce","params":{"address": "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c","chainType":"WAN"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getNonce("WAN", "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c", (err, result) => {
   *     console.log("Result is ", result);
@@ -862,6 +888,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getNonce("WAN", "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c");
   *   console.log("Result is ", result);
@@ -908,6 +935,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getNonceIncludePending","params":{"address": "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c","chainType":"WAN"}, "id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getNonceIncludePending("WAN", "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c", (err, result) => {
   *     console.log("Result is ", result);
@@ -915,6 +943,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getNonceIncludePending("WAN", "0x2cc79fa3b80c5b9b02051facd02478ea88a78e2c");
   *   console.log("Result is ", result);
@@ -960,6 +989,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getBlockNumber","params":{"chainType":"WAN"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getBlockNumber("WAN", (err, result) => {
   *     console.log("Result is ", result);
@@ -967,6 +997,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getBlockNumber("WAN");
   *   console.log("Result is ", result);
@@ -1013,6 +1044,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"sendRawTransaction","params":{"chainType":"WAN", "signedTx":"0xf86e0109852e90edd000832dc6c0946ed9c11cbd8a6ae8355fa62ebca48493da572661880de0b6b3a7640000801ca0bd349ec9f51dd171eb5c59df9a6b8c5656eacb6793bed945a7ec69135f191abfa0359da11e8a4fdd51b52a8752ac32f9125d168441546d011406736bce67b8a356"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.sendRawTransaction('WAN', '0xf86e0109852e90edd000832dc6c0946ed9c11cbd8a6ae8355fa62ebca48493da572661880de0b6b3a7640000801ca0bd349ec9f51dd171eb5c59df9a6b8c5656eacb6793bed945a7ec69135f191abfa0359da11e8a4fdd51b52a8752ac32f9125d168441546d011406736bce67b8a356', (err, result) => {
   *     console.log("Result is ", result);
@@ -1020,6 +1052,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.sendRawTransaction('WAN', '0xf86e0109852e90edd000832dc6c0946ed9c11cbd8a6ae8355fa62ebca48493da572661880de0b6b3a7640000801ca0bd349ec9f51dd171eb5c59df9a6b8c5656eacb6793bed945a7ec69135f191abfa0359da11e8a4fdd51b52a8752ac32f9125d168441546d011406736bce67b8a356');
   *   console.log("Result is ", result);
@@ -1072,6 +1105,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getTxInfo","params":{"chainType":"WAN", "txHash":"0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getTxInfo("WAN", "0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da", (err, result) => {
   *     console.log("Result is ", result);
@@ -1079,6 +1113,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getTxInfo("WAN", "0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da");
   *   console.log("Result is ", result);
@@ -1147,6 +1182,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getBlockByNumber","params":{"chainType":"WAN", "blockNumber":"670731"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getBlockByNumber("WAN", "670731", (err, result) => {
   *     console.log("Result is ", result);
@@ -1154,6 +1190,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getBlockByNumber("WAN", "670731");
   *   console.log("Result is ", result);
@@ -1221,6 +1258,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getBlockByHash","params":{"chainType":"WAN", "blockHash":"0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getBlockByHash("WAN", "0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8", (err, result) => {
   *     console.log("Result is ", result);
@@ -1228,6 +1266,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getBlockByHash("WAN", "0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8");
   *   console.log("Result is ", result);
@@ -1297,6 +1336,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getBlockTransactionCount","params":{"chainType":"WAN", "blockHash":"0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getBlockTransactionCount("WAN", "0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8", (err, result) => {
   *   // apiTest.getBlockTransactionCount("WAN", "670731", (err, result) => {
@@ -1305,6 +1345,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getBlockTransactionCount("WAN", "0xeb3b437d765d4da9210481c2dd612fa9d0c51e0e83120ee7f573ed9d6296e9a8");
   *   // let result = await apiTest.getBlockTransactionCount("WAN", "670731");
@@ -1360,6 +1401,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getTransactionConfirm","params":{"chainType":"WAN", "waitBlocks": 6, "txHash": "0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getTransactionConfirm("WAN", 6, "0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da", (err, result) => {
   *     console.log("Result is ", result);
@@ -1367,6 +1409,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getTransactionConfirm("WAN", 6, "0xd2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da");
   *   console.log("Result is ", result);
@@ -1440,6 +1483,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getTransactionReceipt","params":{"chainType":"WAN", "txHash":"0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getTransactionReceipt("WAN", "0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe", (err, result) => {
   *     console.log("Result is ", result);
@@ -1447,6 +1491,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getTransactionReceipt("WAN", "0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe");
   *   console.log("Result is ", result);
@@ -1512,6 +1557,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getTransByBlock","params":{"chainType":"WAN", "blockHash":"0xaa0fc2a8a868566f2e4888b2942ec05c47c2254e8b81e43d3ea87420a09126c2"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getTransByBlock("WAN", "0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe", (err, result) => {
   *   // apiTest.getTransByBlock("WAN", "984133", (err, result) => {
@@ -1520,6 +1566,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getTransByBlock("WAN", "0xc18c4bdf0d40c4bb2f34f0273eaf4dc674171fbf33c3301127e1d4c85c574ebe");
   *   //let result = await apiTest.getTransByBlock("WAN", "984133");
@@ -1588,6 +1635,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getTransByAddress","params":{"chainType":"WAN", "address":"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getTransByAddress("WAN", "0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d", (err, result) => {
   *     console.log("Result is ", result);
@@ -1595,6 +1643,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getTransByAddress("WAN", "0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d");
   *   console.log("Result is ", result);
@@ -1681,6 +1730,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getTransByAddress","params":{"chainType":"WAN", "address":"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getTransByAddressBetweenBlocks("WAN", "0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d", 984119, 984120, (err, result) => {
   *     console.log("Result is ", result);
@@ -1688,6 +1738,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getTransByAddressBetweenBlocks("WAN", "0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d", 984119, 984120);
   *   console.log("Result is ", result);
@@ -1786,6 +1837,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getTransByAddress","params":{"chainType":"WAN", "address":"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getScVar("WAN", "0x55ba61f4da3166487a804bccde7ee4015f609f45", "addr", [/The Abi of the contracts/], (err, result) => {
   *     console.log("Result is ", result);
@@ -1793,6 +1845,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getScVar("WAN", "0x55ba61f4da3166487a804bccde7ee4015f609f45", "addr", [/The Abi of the contracts/]);
   *   console.log("Result is ", result);
@@ -1842,6 +1895,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getScMap","params":{"chainType": "WAN", "scAddr": "0x55ba61f4da3166487a804bccde7ee4015f609f45", "name": "mapAddr", "key": "", "abi": [/The Abi of the contracts/]},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getScMap("WAN", "0x55ba61f4da3166487a804bccde7ee4015f609f45", "mapAddr", "key", [/The Abi of the contracts/], (err, result) => {
   *     console.log("Result is ", result);
@@ -1849,6 +1903,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getScMap("WAN", "0x55ba61f4da3166487a804bccde7ee4015f609f45", "mapAddr", "key", [/The Abi of the contracts/]);
   *   console.log("Result is ", result);
@@ -1898,6 +1953,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"callScFunc","params":{"chainType": "WAN", "scAddr": "0x55ba61f4da3166487a804bccde7ee4015f609f45", "name": "getPriAddress", "args": [], "abi": [/The Abi of the contracts/]},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.callScFunc("WAN", "0x55ba61f4da3166487a804bccde7ee4015f609f45", "getPriAddress", [], [/The Abi of the contracts/]), (err, result) => {
   *     console.log("Result is ", result);
@@ -1905,6 +1961,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.callScFunc("WAN", "0x55ba61f4da3166487a804bccde7ee4015f609f45", "getPriAddress", [], [/The Abi of the contracts/]);
   *   console.log("Result is ", result);
@@ -1952,6 +2009,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getP2shxByHashx","params":{"chainType":"BTC","hashx":"d2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getP2shxByHashx("BTC", "d2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da", (err, result) => {
   *     console.log("Result is ", result);
@@ -1959,6 +2017,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getP2shxByHashx("BTC", "d2a5b1f403594dbc881e466d46a4cac3d6cf202476b1277876f0b24923d032da");
   *   console.log("Result is ", result);
@@ -2006,6 +2065,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"importAddress","params":{"chainType":"BTC","address":"mmmmmsdfasdjflaksdfasdf"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.importAddress("BTC", "mmmmmsdfasdjflaksdfasdf", (err, result) => {
   *     console.log("Result is ", result);
@@ -2013,6 +2073,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.importAddress("BTC", "mmmmmsdfasdjflaksdfasdf");
   *   console.log("Result is ", result);
@@ -2058,6 +2119,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getRegTokens","params":{"crossChain":"ETH"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getRegTokens("ETH", (err, result) => {
   *     console.log("Result is ", result);
@@ -2065,6 +2127,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getRegTokens("ETH");
   *   console.log("Result is ", result);
@@ -2145,6 +2208,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getTokenAllowance","params":{"chainType":"ETH", "tokenScAddr":"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a", "ownerAddr":"0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8", "spenderAddr":"0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getTokenAllowance("ETH", "0xc5bc855056d99ef4bda0a4ae937065315e2ae11a", "0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8", "0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1", (err, result) => {
   *     console.log("Result is ", result);
@@ -2152,6 +2216,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getTokenAllowance("ETH", "0xc5bc855056d99ef4bda0a4ae937065315e2ae11a", "0xc27ecd85faa4ae80bf5e28daf91b605db7be1ba8", "0xcdc96fea7e2a6ce584df5dc22d9211e53a5b18b1");
   *   console.log("Result is ", result);
@@ -2198,6 +2263,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getTokenInfo","params":{"chainType":"ETH", "tokenScAddr":"0xc5bc855056d99ef4bda0a4ae937065315e2ae11a"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getTokenInfo("ETH", "0xc5bc855056d99ef4bda0a4ae937065315e2ae11a", (err, result) => {
   *     console.log("Result is ", result);
@@ -2205,6 +2271,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getTokenInfo("ETH", "0xc5bc855056d99ef4bda0a4ae937065315e2ae11a");
   *   console.log("Result is ", result);
@@ -2253,6 +2320,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getMultiTokenInfo","params":{"tokenScAddrArray":["0xc5bc855056d99ef4bda0a4ae937065315e2ae11a","0x7017500899433272b4088afe34c04d742d0ce7df"],"chainType":"ETH"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getMultiTokenInfo("ETH", ["0xc5bc855056d99ef4bda0a4ae937065315e2ae11a","0x7017500899433272b4088afe34c04d742d0ce7df"], (err, result) => {
   *     console.log("Result is ", result);
@@ -2260,6 +2328,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getMultiTokenInfo("ETH", ["0xc5bc855056d99ef4bda0a4ae937065315e2ae11a","0x7017500899433272b4088afe34c04d742d0ce7df"]);
   *   console.log("Result is ", result);
@@ -2315,6 +2384,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getToken2WanRatio","params":{"crossChain":"ETH", "tokenScAddr":"0x00f58d6d585f84b2d7267940cede30ce2fe6eae8"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getToken2WanRatio("ETH", "0x00f58d6d585f84b2d7267940cede30ce2fe6eae8", (err, result) => {
   *     console.log("Result is ", result);
@@ -2322,6 +2392,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getToken2WanRatio("ETH", "0x00f58d6d585f84b2d7267940cede30ce2fe6eae8");
   *   console.log("Result is ", result);
@@ -2369,6 +2440,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getOTAMixSet","params":{"otaAddress":"0x02539dD49A75d6Cf4c5cc857bc87BC3836E74F1c845A08eC5E009A4dCa59D47C7c0298697d22cfa7d35A670B45C3531ea9D3aAc39E58c929d440Ac1392BDeB8926e7","number":8},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getOTAMixSet("0x02539dD49A75d6Cf4c5cc857bc87BC3836E74F1c845A08eC5E009A4dCa59D47C7c0298697d22cfa7d35A670B45C3531ea9D3aAc39E58c929d440Ac1392BDeB8926e7", 8, (err, result) => {
   *     console.log("Result is ", result);
@@ -2376,6 +2448,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.getOTAMixSet("0x02539dD49A75d6Cf4c5cc857bc87BC3836E74F1c845A08eC5E009A4dCa59D47C7c0298697d22cfa7d35A670B45C3531ea9D3aAc39E58c929d440Ac1392BDeB8926e7", 8);
   *   console.log("Result is ", result);
@@ -2436,6 +2509,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"estimateGas","params":{"chainType":"WAN","from":"0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe","to":"0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe","value":"1000000000000000"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.estimateGas("WAN", {from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe',
       to: '0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe',
@@ -2445,6 +2519,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await apiTest.estimateGas("WAN", {from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe',
       to: '0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe',
@@ -2494,6 +2569,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getChainInfo","params":{"chainType":"EOS"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getChainInfo("EOS", (err, result) => {
   *     console.log("Result is ", result);
@@ -2501,6 +2577,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await getChainInfo("EOS");
   *   console.log("Result is ", result);
@@ -2565,6 +2642,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getCurrencyStats","params":{"chainType":"EOS","tokenScAddr":"eosio.token","symbol":"EOS"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getStats("EOS", "eosio.token", "EOS", (err, result) => {
   *     console.log("Result is ", result);
@@ -2572,6 +2650,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await getStats("EOS", "eosio.token", "EOS");
   *   console.log("Result is ", result);
@@ -2622,6 +2701,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getAccountInfo","params":{"chainType":"EOS","address":"aarontestnet"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getAccountInfo("EOS", "aarontestnet", (err, result) => {
   *     console.log("Result is ", result);
@@ -2629,6 +2709,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await getAccountInfo("EOS", "aarontestnet");
   *   console.log("Result is ", result);
@@ -2723,6 +2804,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getAccounts","params":{"chainType":"EOS","address":"aarontestnet"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getAccounts("EOS", "EOS6yEsFdisRXLpk4xg4AEnYJDW5bLrjwBDoHNREsDsxcwFEncErK", (err, result) => {
   *   // apiTest.getAccounts("EOS", "aarontestnet", (err, result) => {
@@ -2731,6 +2813,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await getAccounts("EOS", "EOS6yEsFdisRXLpk4xg4AEnYJDW5bLrjwBDoHNREsDsxcwFEncErK");
   *   // let result = await getAccounts("EOS", "aarontestnet");
@@ -2797,6 +2880,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getRequiredKeys","params":{"chainType":"EOS","txArgs":{"transaction":{"expiration":"2020-04-03T06:06:41","ref_block_num":15105,"ref_block_prefix":2116318876,"max_net_usage_words":"","max_cpu_usage_ms":"","delay_sec":0,"context_free_actions":[],"actions":[{"account":"eosio.token","name":"transfer","authorization":[{"actor":"cuiqiangtest","permission":"active"}],"data":"90D5CC58E549AF3180626ED39986A6E1010000000000000004454F530000000000"}],"transaction_extensions":[]},"available_keys":["EOS7MiJnddv2dHhjS82i9SQWMpjLoBbxP1mmpDmwn6ALGz4mpkddv"]},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getRequiredKeys("EOS", {"transaction":{"expiration":"2020-04-03T06:06:41","ref_block_num":15105,"ref_block_prefix":2116318876,"max_net_usage_words":"","max_cpu_usage_ms":"","delay_sec":0,"context_free_actions":[],"actions":[{"account":"eosio.token","name":"transfer","authorization":[{"actor":"cuiqiangtest","permission":"active"}],"data":"90D5CC58E549AF3180626ED39986A6E1010000000000000004454F530000000000"}],"transaction_extensions":[]},"available_keys":["EOS7MiJnddv2dHhjS82i9SQWMpjLoBbxP1mmpDmwn6ALGz4mpkddv"]}, (err, result) => {
   *     console.log("Result is ", result);
@@ -2804,6 +2888,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await getRequiredKeys("EOS", {"transaction":{"expiration":"2020-04-03T06:06:41","ref_block_num":15105,"ref_block_prefix":2116318876,"max_net_usage_words":"","max_cpu_usage_ms":"","delay_sec":0,"context_free_actions":[],"actions":[{"account":"eosio.token","name":"transfer","authorization":[{"actor":"cuiqiangtest","permission":"active"}],"data":"90D5CC58E549AF3180626ED39986A6E1010000000000000004454F530000000000"}],"transaction_extensions":[]},"available_keys":["EOS7MiJnddv2dHhjS82i9SQWMpjLoBbxP1mmpDmwn6ALGz4mpkddv"]});
   *   console.log("Result is ", result);
@@ -2851,6 +2936,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getRawCodeAndAbi","params":{"chainType":"EOS","scAddr":"wanchainhtlc"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getRawCodeAndAbi("EOS", "wanchainhtlc", (err, result) => {
   *     console.log("Result is ", result);
@@ -2858,6 +2944,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await getRawCodeAndAbi("EOS", "wanchainhtlc");
   *   console.log("Result is ", result);
@@ -2909,6 +2996,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getAbi","params":{"chainType":"EOS","scAddr":"wanchainhtlc"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getAbi("EOS", "wanchainhtlc", (err, result) => {
   *     console.log("Result is ", result);
@@ -2916,6 +3004,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await getAbi("EOS", "wanchainhtlc");
   *   console.log("Result is ", result);
@@ -3045,6 +3134,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getRawAbi","params":{"chainType":"EOS","scAddr":"wanchainhtlc"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getRawAbi("EOS", "wanchainhtlc", (err, result) => {
   *     console.log("Result is ", result);
@@ -3052,6 +3142,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await getRawAbi("EOS", "wanchainhtlc");
   *   console.log("Result is ", result);
@@ -3142,6 +3233,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getActions","params":{"chainType":"EOS","address":"wanchainhtlc","options":{"filter":"wanchainhtlc:outlock","limit":2}},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getActions("EOS", "wanchainhtlc", {filter: "wanchainhtlc:outlock", limit: 2}, (err, result) => {
   *     console.log("Result is ", result);
@@ -3149,6 +3241,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await getActions("EOS", "wanchainhtlc", {filter: "wanchainhtlc:outlock", limit: 2});
   *   console.log("Result is ", result);
@@ -3224,6 +3317,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getResource","params":{"chainType":"EOS"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getResource("EOS", (err, result) => {
   *     console.log("Result is ", result);
@@ -3231,6 +3325,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await getResource("EOS");
   *   console.log("Result is ", result);
@@ -3309,6 +3404,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getResourcePrice","params":{"chainType":"EOS","address":"junglesweden"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getResourcePrice("EOS", "junglesweden", (err, result) => {
   *     console.log("Result is ", result);
@@ -3316,6 +3412,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await getResourcePrice("EOS", "junglesweden");
   *   console.log("Result is ", result);
@@ -3367,6 +3464,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getBandwidthPrice","params":{"chainType":"EOS","address":"junglesweden"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getBandwidthPrice("EOS", "junglesweden", (err, result) => {
   *     console.log("Result is ", result);
@@ -3374,6 +3472,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await getBandwidthPrice("EOS", "junglesweden");
   *   console.log("Result is ", result);
@@ -3423,6 +3522,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getRamPrice","params":{"chainType":"EOS"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getRamPrice("EOS", (err, result) => {
   *     console.log("Result is ", result);
@@ -3430,6 +3530,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await getRamPrice("EOS");
   *   console.log("Result is ", result);
@@ -3476,6 +3577,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getTotalSupply","params":{"chainType":"EOS"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getTotalSupply("EOS", (err, result) => {
   *     console.log("Result is ", result);
@@ -3483,6 +3585,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await getTotalSupply("EOS");
   *   console.log("Result is ", result);
@@ -3533,6 +3636,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getTotalStaked","params":{"chainType":"EOS"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getTotalStaked("EOS", (err, result) => {
   *     console.log("Result is ", result);
@@ -3540,6 +3644,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await getTotalStaked("EOS");
   *   console.log("Result is ", result);
@@ -3586,6 +3691,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getTotalStakedPercent","params":{"chainType":"EOS"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getTotalStakedPercent("EOS", (err, result) => {
   *     console.log("Result is ", result);
@@ -3593,6 +3699,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await getTotalStakedPercent("EOS");
   *   console.log("Result is ", result);
@@ -3645,6 +3752,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getTableRows","params":{"chainType":"EOS","scAddr":"wanchainhtlc","scope":"wanchainhtlc","table":"transfers"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.getTableRows("EOS", "wanchainhtlc", "wanchainhtlc", "transfers", (err, result) => {
   *     console.log("Result is ", result);
@@ -3652,6 +3760,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await getTableRows("EOS", "wanchainhtlc", "wanchainhtlc", "transfers");
   *   console.log("Result is ", result);
@@ -3735,6 +3844,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"packTransaction","params":{"chainType":"EOS","tx":{"actions":[{"account":"eosio","name":"delegatebw","authorization":[{"actor":"aarontestnet","permission":"active"}],"data":{"from":"aarontestnet","receiver":"aarontestnet","stake_net_quantity":"0.0001 EOS","stake_cpu_quantity":"0.0001 EOS","transfer":false}}]}},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   apiTest.packTransaction("EOS", {
             "actions": [
@@ -3762,6 +3872,7 @@ class ApiInstance extends WsInstance {
   *   });
   *
   * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
   *   let result = await packTransaction("EOS", {
             "actions": [
@@ -3844,14 +3955,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getEpochID","params":{"chainType":"WAN"},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getEpochID("WAN", (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getEpochID("WAN");
    *   console.log("Result is ", result);
@@ -3896,14 +4009,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getSlotID","params":{"chainType":"WAN"},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getSlotID("WAN", (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getSlotID("WAN");
    *   console.log("Result is ", result);
@@ -3949,14 +4064,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getEpochLeadersByEpochID","params":{"chainType":"WAN", "epochID":18102},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getEpochLeadersByEpochID("WAN", 18102, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getEpochLeadersByEpochID("WAN", 18102);
    *   console.log("Result is ", result);
@@ -4010,14 +4127,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getRandomProposersByEpochID","params":{"chainType":"WAN", "epochID":18102},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getRandomProposersByEpochID("WAN", 18102, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getRandomProposersByEpochID("WAN", 18102);
    *   console.log("Result is ", result);
@@ -4071,14 +4190,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getStakerInfo","params":{"chainType":"WAN", "blockNumber":3496619},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getStakerInfo("WAN", 3496619, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getStakerInfo("WAN", 3496619);
    *   console.log("Result is ", result);
@@ -4150,14 +4271,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getEpochIncentivePayDetail","params":{"chainType":"WAN", "epochID":18101},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getEpochIncentivePayDetail("WAN", 18101, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getEpochIncentivePayDetail("WAN", 18101);
    *   console.log("Result is ", result);
@@ -4234,14 +4357,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getActivity","params":{"chainType":"WAN", "epochID":18102},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getActivity("WAN", 18102, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getActivity("WAN", 18102);
    *   console.log("Result is ", result);
@@ -4349,14 +4474,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getSlotActivity","params":{"chainType":"WAN", "epochID":18102},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getSlotActivity("WAN", 18102, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getSlotActivity("WAN", 18102);
    *   console.log("Result is ", result);
@@ -4424,14 +4551,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getValidatorActivity","params":{"chainType":"WAN", "epochID":18102},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getValidatorActivity("WAN", 18102, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getValidatorActivity("WAN", 18102);
    *   console.log("Result is ", result);
@@ -4534,14 +4663,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getMaxStableBlkNumber","params":{"chainType":"WAN"},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getMaxStableBlkNumber("WAN", (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getMaxStableBlkNumber("WAN");
    *   console.log("Result is ", result);
@@ -4588,14 +4719,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getRandom","params":{"chainType":"WAN", "epochID":18102, "blockNumber":-1},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getRandom("WAN", 18102, -1, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getRandom("WAN", 18102, -1);
    *   console.log("Result is ", result);
@@ -4641,14 +4774,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getValidatorInfo","params":{"chainType":"WAN", "address":"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce"},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getValidatorInfo("WAN", "0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce", (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getValidatorInfo("WAN", "0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce");
    *   console.log("Result is ", result);
@@ -4698,14 +4833,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getValidatorStakeInfo","params":{"chainType":"WAN", "address":"0x086b4cfadfd9f232b068c2e8263d608baee85163"},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getValidatorStakeInfo("WAN", "0x086b4cfadfd9f232b068c2e8263d608baee85163", (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getValidatorStakeInfo("WAN", "0x086b4cfadfd9f232b068c2e8263d608baee85163");
    *   console.log("Result is ", result);
@@ -4798,14 +4935,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getValidatorTotalIncentive","params":{"chainType":"WAN", "address":"0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce"},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getValidatorTotalIncentive("WAN", "0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce", (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getValidatorTotalIncentive("WAN", "0xda8fa1aee77709d37f59fb96afd4cf10ccaeb6ce");
    *   console.log("Result is ", result);
@@ -4866,14 +5005,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getDelegatorStakeInfo","params":{"chainType":"WAN", "address":"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc"},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getDelegatorStakeInfo("WAN", "0xa6de4408d9003ee992b5dc0e1bf27968e48727dc", (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getDelegatorStakeInfo("WAN", "0xa6de4408d9003ee992b5dc0e1bf27968e48727dc");
    *   console.log("Result is ", result);
@@ -4943,14 +5084,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getDelegatorIncentive","params":{"chainType":"WAN", "address":"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc"},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getDelegatorIncentive("WAN", "0xa6de4408d9003ee992b5dc0e1bf27968e48727dc", (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getDelegatorIncentive("WAN", "0xa6de4408d9003ee992b5dc0e1bf27968e48727dc");
    *   console.log("Result is ", result);
@@ -5043,14 +5186,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getDelegatorTotalIncentive","params":{"chainType":"WAN", "address":"0xa6de4408d9003ee992b5dc0e1bf27968e48727dc"},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getDelegatorTotalIncentive("WAN", "0xa6de4408d9003ee992b5dc0e1bf27968e48727dc", (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getDelegatorTotalIncentive("WAN", "0xa6de4408d9003ee992b5dc0e1bf27968e48727dc");
    *   console.log("Result is ", result);
@@ -5139,14 +5284,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getLeaderGroupByEpochID","params":{"chainType":"WAN", "epochID":18102},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getLeaderGroupByEpochID("WAN", 18102, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getLeaderGroupByEpochID("WAN", 18102);
    *   console.log("Result is ", result);
@@ -5217,14 +5364,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getCurrentEpochInfo","params":{"chainType":"WAN"},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getCurrentEpochInfo("WAN", (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getCurrentEpochInfo("WAN");
    *   console.log("Result is ", result);
@@ -5273,14 +5422,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getCurrentStakerInfo","params":{"chainType":"WAN"},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getCurrentStakerInfo("WAN", (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getCurrentStakerInfo("WAN");
    *   console.log("Result is ", result);
@@ -5351,14 +5502,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getSlotCount","params":{"chainType":"WAN"},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getSlotCount("WAN", (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getSlotCount("WAN");
    *   console.log("Result is ", result);
@@ -5403,14 +5556,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getSlotTime","params":{"chainType":"WAN"},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getSlotTime("WAN", (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getSlotTime("WAN");
    *   console.log("Result is ", result);
@@ -5456,14 +5611,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getTimeByEpochID","params":{"chainType":"WAN", "epochID":18108},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getTimeByEpochID("WAN", 18108, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getTimeByEpochID("WAN", 18108);
    *   console.log("Result is ", result);
@@ -5510,13 +5667,15 @@ class ApiInstance extends WsInstance {
    * {"jsonrpc":"2.0","method":"getEpochIDByTime","params":{"chainType":"WAN", "time":1564550000},"id":1}
    *
    * @apiExample {nodejs} Example callback usage:
+   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getEpochIDByTime("WAN", 1564550000, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getEpochIDByTime("WAN", 1564550000);
    *   console.log("Result is ", result);
@@ -5563,6 +5722,7 @@ class ApiInstance extends WsInstance {
    * {"jsonrpc":"2.0","method":"getRegisteredValidator","params":{"after":1503780889497},"id":1}
    *
    * @apiExample {nodejs} Example callback usage:
+   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getRegisteredValidator(1503780889497, (err, result) => {
    *     console.log("Result is ", result);
@@ -5570,6 +5730,7 @@ class ApiInstance extends WsInstance {
    *   });
    *
    * @apiExample {nodejs} Example promise usage:
+   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getRegisteredValidator(1503780889497);
    *   console.log("Result is ", result);
@@ -5644,6 +5805,7 @@ class ApiInstance extends WsInstance {
    * {"jsonrpc":"2.0","method":"getRegisteredToken","params":{"after":1577155812700},"id":1}
    *
    * @apiExample {nodejs} Example callback usage:
+   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getRegisteredToken(1577155812700, (err, result) => {
    *     console.log("Result is ", result);
@@ -5651,6 +5813,7 @@ class ApiInstance extends WsInstance {
    *   });
    *
    * @apiExample {nodejs} Example promise usage:
+   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getRegisteredToken(1577155812700);
    *   console.log("Result is ", result);
@@ -5736,6 +5899,7 @@ class ApiInstance extends WsInstance {
    * {"jsonrpc":"2.0","method":"getRegisteredDapp","params":{"after":1577155812700},"id":1}
    *
    * @apiExample {nodejs} Example callback usage:
+   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getRegisteredDapp({after:1577155812700}, (err, result) => {
    *     console.log("Result is ", result);
@@ -5743,6 +5907,7 @@ class ApiInstance extends WsInstance {
    *   });
    *
    * @apiExample {nodejs} Example promise usage:
+   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getRegisteredDapp({after:1577155812700});
    *   console.log("Result is ", result);
@@ -5828,6 +5993,7 @@ class ApiInstance extends WsInstance {
    * {"jsonrpc":"2.0","method":"getRegisteredAds","params":{"after":######},"id":1}
    *
    * @apiExample {nodejs} Example callback usage:
+   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getRegisteredAds(######, (err, result) => {
    *     console.log("Result is ", result);
@@ -5835,6 +6001,7 @@ class ApiInstance extends WsInstance {
    *   });
    *
    * @apiExample {nodejs} Example promise usage:
+   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getRegisteredAds(######);
    *   console.log("Result is ", result);
@@ -5897,14 +6064,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getPosInfo","params":{"chainType":"WAN"},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getPosInfo("WAN", (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getPosInfo("WAN");
    *   console.log("Result is ", result);
@@ -5953,14 +6122,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getMaxBlockNumber","params":{"chainType":"WAN", "epochID":[18102, 18101]},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getMaxBlockNumber("WAN", [18102, 18101], (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getMaxBlockNumber("WAN", [18102, 18101]);
    *   console.log("Result is ", result);
@@ -6015,14 +6186,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getValidatorSupStakeInfo","params":{"chainType":"WAN", "address":["0x158bae682e6278a16d09d7c7311074585d38b54d","0x85dae7e5c7b433a1682c54eee63adf63d835d272"]},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getValidatorSupStakeInfo("WAN", ["0x158bae682e6278a16d09d7c7311074585d38b54d","0x85dae7e5c7b433a1682c54eee63adf63d835d272"], (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getValidatorSupStakeInfo("WAN", ["0x158bae682e6278a16d09d7c7311074585d38b54d","0x85dae7e5c7b433a1682c54eee63adf63d835d272"]);
    *   console.log("Result is ", result);
@@ -6079,14 +6252,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getDelegatorSupStakeInfo","params":{"chainType":"WAN", "address":["0xc45089dfcf6308d80b377b0a6ffc8bd314273ce0"]},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getDelegatorSupStakeInfo("WAN", ["0xc45089dfcf6308d80b377b0a6ffc8bd314273ce0"], (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getDelegatorSupStakeInfo("WAN", ["0xc45089dfcf6308d80b377b0a6ffc8bd314273ce0"]);
    *   console.log("Result is ", result);
@@ -6146,14 +6321,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getEpochIncentiveBlockNumber","params":{"chainType":"WAN", "epochID":18106},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getEpochIncentiveBlockNumber("WAN", 18106, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getEpochIncentiveBlockNumber("WAN", 18106);
    *   console.log("Result is ", result);
@@ -6199,14 +6376,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"getEpochStakeOut","params":{"chainType":"WAN", "epochID":18106},"id":1}
    *
-   * @apiExample {nodejs} Example callback usage:
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getEpochStakeOut("WAN", 18106, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-   * @apiExample {nodejs} Example promise usage:
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getEpochStakeOut("WAN", 18106);
    *   console.log("Result is ", result);
@@ -6259,6 +6438,7 @@ class ApiInstance extends WsInstance {
    * {"jsonrpc":"2.0","method":"checkOTAUsed","params":{"chainType":"WAN", "image":"xxxxxxx"},"id":1}
    *
    * @apiExample {nodejs} Example callback usage:
+   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.checkOTAUsed("WAN", "xxxxxxx", (err, result) => {
    *     console.log("Result is ", result);
@@ -6266,6 +6446,7 @@ class ApiInstance extends WsInstance {
    *   });
    *
    * @apiExample {nodejs} Example promise usage:
+   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.checkOTAUsed("WAN", "xxxxxxx");
    *   console.log("Result is ", result);
@@ -6478,6 +6659,7 @@ class ApiInstance extends WsInstance {
    * {"jsonrpc":"2.0","method":"fetchService","params":{"srvType":"bp", "funcName":"getAddress", "type":"POST", "options":{}},"id":1}
    *
    * @apiExample {nodejs} Example callback usage:
+   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.fetchService("bp", "getAddress", "POST", {}, (err, result) => {
    *     console.log("Result is ", result);
@@ -6485,6 +6667,7 @@ class ApiInstance extends WsInstance {
    *   });
    *
    * @apiExample {nodejs} Example promise usage:
+   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.fetchService("bp", "getAddress", "POST", {});
    *   console.log("Result is ", result);
@@ -6540,6 +6723,7 @@ class ApiInstance extends WsInstance {
    * {"jsonrpc":"2.0","method":"fetchSpecialService","params":{"url":"https://xxx.com:443/getAddress", "type":"POST", "options":{}},"id":1}
    *
    * @apiExample {nodejs} Example callback usage:
+   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.fetchSpecialService("https://xxx.com:443/getAddress", "POST", {}, (err, result) => {
    *     console.log("Result is ", result);
@@ -6547,6 +6731,7 @@ class ApiInstance extends WsInstance {
    *   });
    *
    * @apiExample {nodejs} Example promise usage:
+   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.fetchSpecialService("https://xxx.com:443/getAddress", "POST", {});
    *   console.log("Result is ", result);
@@ -6604,6 +6789,7 @@ class ApiInstance extends WsInstance {
    * {"jsonrpc":"2.0","method":"getRegisteredOrigToken","params":{"after":1577155812700},"id":1}
    *
    * @apiExample {nodejs} Example callback usage:
+   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.getRegisteredOrigToken({after:1577155812700}, (err, result) => {
    *     console.log("Result is ", result);
@@ -6611,6 +6797,7 @@ class ApiInstance extends WsInstance {
    *   });
    *
    * @apiExample {nodejs} Example promise usage:
+   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.getRegisteredOrigToken({after:1577155812700});
    *   console.log("Result is ", result);
