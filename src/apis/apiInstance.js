@@ -71,16 +71,16 @@ class ApiInstance extends WsInstance {
    * @apiParamExample {string} JSON-RPC over websocket
    * {"jsonrpc":"2.0","method":"monitorEvent","params":{"chainType":"WAN", "address": "0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26", "topics": ["0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7"]},"id":1}
    *
-  * @apiExample {nodejs} Example callback usage:
-  *   const ApiInstance = require('iwan-sdk');
+   * @apiExample {nodejs} Example callback usage:
+   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   apiTest.monitorEvent('WAN', '0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26', ["0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7"], (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
    *
-  * @apiExample {nodejs} Example promise usage:
-  *   const ApiInstance = require('iwan-sdk');
+   * @apiExample {nodejs} Example promise usage:
+   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
    *   let result = await apiTest.monitorEvent('WAN', '0x0d18157D85c93A86Ca194DB635336E43B1Ffbd26', ["0x685c13adbbf429a7b274e90887dad988c5f9d0490c6fbedb07b03b388a1683c7"]);
    *   console.log("Result is ", result);
@@ -6772,10 +6772,11 @@ class ApiInstance extends WsInstance {
    * @apiGroup Service
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getRegisteredOrigToken
    * @apiVersion 1.1.1
-   * @apiDescription Get records of registered tokens information of <code>'WAN'</code> chain.
+   * @apiDescription Get records of registered tokens information of original chain.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
+   * @apiParam {string} chainType The chain being queried, default: <code>'WAN'</code>.
    * @apiParam {object} [options] Optional.
    * <br>&nbsp;&nbsp;<code>tokenScAddr</code> - The token account of <code>'WAN'</code> chain.
    * <br>&nbsp;&nbsp;<code>after</code> - The timestamp after you want to search.
@@ -6814,21 +6815,33 @@ class ApiInstance extends WsInstance {
    *  ]
    *
    */
-  getRegisteredOrigToken(options, callback) {
+  getRegisteredOrigToken(chainType, options, callback) {
     let method = 'getRegisteredOrigToken';
     let params = {};
 
+    if (typeof (chainType) === "function") {
+      options = {};
+      chainType = undefined;
+    }
     if (typeof (options) === "function") {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (chainType && typeof (chainType) === "object") {
+      options = chainType;
+      chainType = undefined;
+    }
+  if (typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     params = utils.newJson(options);
+
+    if (chainType) {
+      params.chainType = chainType;
+    }
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
