@@ -6787,12 +6787,12 @@ class ApiInstance extends WsInstance {
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getRegisteredOrigToken","params":{"after":1577155812700},"id":1}
+   * {"jsonrpc":"2.0","method":"getRegisteredOrigToken","params":{"chainType":"WAN", "after":1577155812700},"id":1}
    *
    * @apiExample {nodejs} Example callback usage:
    *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getRegisteredOrigToken({after:1577155812700}, (err, result) => {
+   *   apiTest.getRegisteredOrigToken("WAN", {after:1577155812700}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -6800,7 +6800,7 @@ class ApiInstance extends WsInstance {
    * @apiExample {nodejs} Example promise usage:
    *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getRegisteredOrigToken({after:1577155812700});
+   *   let result = await apiTest.getRegisteredOrigToken("WAN", {after:1577155812700});
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
