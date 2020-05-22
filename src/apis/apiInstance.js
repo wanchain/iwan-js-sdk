@@ -5888,6 +5888,7 @@ class ApiInstance extends WsInstance {
    * <br>&nbsp;&nbsp;<code>url</code> - The URL being queried.
    * <br>&nbsp;&nbsp;<code>language</code> - The supported language being queried.
    * <br>&nbsp;&nbsp;<code>name</code> - The name being fuzzy queried.
+   * <br>&nbsp;&nbsp;<code>platform</code> - The supported platform being queried.
    * <br>&nbsp;&nbsp;<code>after</code> - The timestamp after you want to search.
    * <br>&nbsp;&nbsp;<code>pageIndex</code> - The page index you want to search. If you want to query with the <code>pageIndex</code>, <code>page</code> is needed.
    * <br>&nbsp;&nbsp;<code>page</code> - The page size you want to search.
@@ -5930,6 +5931,7 @@ class ApiInstance extends WsInstance {
    *          "detail": "一款万维链上基于链下撮合链上结算原理的去中心化交易所。"
    *        }
    *      ],
+   *      "platform":["desktop","mobile"],
    *      "url": "https://exchange.wrdex.io",
    *      "chainType": "wan",
    *      "type": "Exchange",
