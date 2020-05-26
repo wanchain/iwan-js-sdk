@@ -5931,6 +5931,7 @@ class ApiInstance extends WsInstance {
    *          "detail": "一款万维链上基于链下撮合链上结算原理的去中心化交易所。"
    *        }
    *      ],
+   *      "platform":["desktop","mobile"],
    *      "url": "https://exchange.wrdex.io",
    *      "chainType": "wan",
    *      "type": "Exchange",
