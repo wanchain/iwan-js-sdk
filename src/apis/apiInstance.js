@@ -5888,6 +5888,7 @@ class ApiInstance extends WsInstance {
    * <br>&nbsp;&nbsp;<code>url</code> - The URL being queried.
    * <br>&nbsp;&nbsp;<code>language</code> - The supported language being queried.
    * <br>&nbsp;&nbsp;<code>name</code> - The name being fuzzy queried.
+   * <br>&nbsp;&nbsp;<code>platform</code> - The supported platform being queried. Currently supports <code>'desktop'</code> and <code>'mobile'</code>.
    * <br>&nbsp;&nbsp;<code>after</code> - The timestamp after you want to search.
    * <br>&nbsp;&nbsp;<code>pageIndex</code> - The page index you want to search. If you want to query with the <code>pageIndex</code>, <code>page</code> is needed.
    * <br>&nbsp;&nbsp;<code>page</code> - The page size you want to search.
