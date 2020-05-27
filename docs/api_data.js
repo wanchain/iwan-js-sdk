@@ -4646,6 +4646,72 @@ define({ "api": [
     "groupTitle": "POS"
   },
   {
+    "name": "estimateGas",
+    "group": "PrivateTrans",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "estimateGas",
+    "version": "1.2.0",
+    "description": "<p>Executes a message call or transaction and returns the amount of the gas used. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> or <code>'ETH'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "txObject",
+            "description": "<p>The transaction object see web3.eth.sendTransaction, with the difference that for calls the from property is optional as well.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"estimateGas\",\"params\":{\"chainType\":\"WAN\",\"from\":\"0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe\",\"to\":\"0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe\",\"value\":\"1000000000000000\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.estimateGas(\"WAN\", {from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe',\n    to: '0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe',\n    value: '1000000000000000'}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.estimateGas(\"WAN\", {from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe',\n    to: '0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe',\n    value: '1000000000000000'});\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "21000",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "PrivateTrans"
+  },
+  {
     "name": "getOTAMixSet",
     "group": "PrivateTrans",
     "type": "CONNECT",
@@ -5669,72 +5735,6 @@ define({ "api": [
     },
     "filename": "src/apis/apiInstance.js",
     "groupTitle": "Tokens"
-  },
-  {
-    "name": "estimateGas",
-    "group": "Transaction",
-    "type": "CONNECT",
-    "url": "/ws/v3/YOUR-API-KEY",
-    "title": "estimateGas",
-    "version": "1.2.0",
-    "description": "<p>Executes a message call or transaction and returns the amount of the gas used. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "chainType",
-            "description": "<p>The chain being queried. Currently supports <code>'WAN'</code> or <code>'ETH'</code>.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "object",
-            "optional": false,
-            "field": "txObject",
-            "description": "<p>The transaction object see web3.eth.sendTransaction, with the difference that for calls the from property is optional as well.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "function",
-            "optional": true,
-            "field": "callback",
-            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "JSON-RPC over websocket",
-          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"estimateGas\",\"params\":{\"chainType\":\"WAN\",\"from\":\"0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe\",\"to\":\"0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe\",\"value\":\"1000000000000000\"},\"id\":1}",
-          "type": "string"
-        }
-      ]
-    },
-    "examples": [
-      {
-        "title": "Example callback usage:",
-        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.estimateGas(\"WAN\", {from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe',\n    to: '0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe',\n    value: '1000000000000000'}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
-        "type": "nodejs"
-      },
-      {
-        "title": "Example promise usage:",
-        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.estimateGas(\"WAN\", {from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe',\n    to: '0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe',\n    value: '1000000000000000'});\nconsole.log(\"Result is \", result);\napiTest.close();",
-        "type": "nodejs"
-      }
-    ],
-    "success": {
-      "examples": [
-        {
-          "title": "Successful Response",
-          "content": "21000",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "src/apis/apiInstance.js",
-    "groupTitle": "Transaction"
   },
   {
     "name": "getTransByAddress",
