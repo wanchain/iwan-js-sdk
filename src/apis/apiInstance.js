@@ -2536,7 +2536,7 @@ class ApiInstance extends WsInstance {
   /**
   *
   * @apiName estimateGas
-  * @apiGroup Transaction
+  * @apiGroup PrivateTrans
   * @api {CONNECT} /ws/v3/YOUR-API-KEY estimateGas
   * @apiVersion 1.2.0
   * @apiDescription Executes a message call or transaction and returns the amount of the gas used.
