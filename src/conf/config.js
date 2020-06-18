@@ -23,7 +23,7 @@ const config = {
     },
     connOption: {
       'handshakeTimeout': 12000,
-      rejectUnauthorized: false
+      rejectUnauthorized: true
     }
   },
 
