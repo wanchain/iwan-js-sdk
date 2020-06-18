@@ -1,3 +1,6 @@
+## v1.2.1
+- Add authority verification
+
 ## v1.2.0
 
 - Add checkOTAUsed
