@@ -34,7 +34,6 @@ class ApiInstance extends WsInstance {
 
   _send(message, callback) {
     try {
-      console.log("aaron debug here , messgae", JSON.stringify(message, null, 2));
       this.sendMessage(message, (resMsg) => {
         if (resMsg.hasOwnProperty("error")) {
           callback(resMsg["error"]);
