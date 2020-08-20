@@ -1908,12 +1908,18 @@ class ApiInstance extends WsInstance {
   *   "0x2ecb855170c941f239ffe3495f3e07cceabd8421"
   *
   */
-  getScVar(chainType, scAddr, name, abi, callback) {
+  getScVar(chainType, scAddr, name, abi, version, callback) {
+    if (typeof (version) === "function") {
+      callback = version;
+    }
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getScVar';
     let params = { chainType: chainType, scAddr: scAddr, name: name, abi: abi };
+    if (typeof (version) === "function") {
+     params.version = version;
+    }
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -1966,12 +1972,18 @@ class ApiInstance extends WsInstance {
   *   "0x2ecb855170c941f239ffe3495f3e07cceabd8421"
   *
   */
-  getScMap(chainType, scAddr, name, key, abi, callback) {
+  getScMap(chainType, scAddr, name, key, abi, version, callback) {
+    if (typeof (version) === "function") {
+      callback = version;
+    }
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getScMap';
     let params = { chainType: chainType, scAddr: scAddr, name: name, key: key, abi: abi };
+    if (typeof (version) === "function") {
+      params.version = version;
+     }
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -2023,13 +2035,19 @@ class ApiInstance extends WsInstance {
   * @apiSuccessExample {json} Successful Response
   *   "0x8cc420e422b3fa1c416a14fc600b3354e3312524"
   *
-  */
-  callScFunc(chainType, scAddr, name, args, abi, callback) {
+  */  
+  callScFunc(chainType, scAddr, name, args, abi, version, callback) {
+    if (typeof (version) === "function") {
+      callback = version;
+    }
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'callScFunc';
     let params = { chainType: chainType, scAddr: scAddr, name: name, args: args, abi: abi };
+    if (typeof (version) !== "function") {
+      params.version = version;
+     }
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -6953,7 +6971,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup CrossChain
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGroupList
    * @apiVersion 1.2.1
-   * @apiDescription Get all the active storemanGroups, include the info like the groupid, deposit, etc.
+   * @apiDescription Get all the active storemanGroups, include the info like the groupid, etc.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -7013,6 +7031,66 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  /**
+   *
+   * @apiName getStoremanGroupListByChainPair
+   * @apiGroup CrossChain
+   * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGroupListByChainPair
+   * @apiVersion 1.2.1
+   * @apiDescription Get all the active storemanGroups, include the info like the groupid, etc.
+   * <br><br><strong>Returns:</strong>
+   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+   *
+   * @apiParam {string} [chainID1] The chainID1 being queried.
+   * @apiParam {string} [chainID2] The chainID2 being queried.
+   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+   *
+   * @apiParamExample {string} JSON-RPC over websocket
+   * {"jsonrpc":"2.0","method":"getStoremanGroupListByChainPair","params":{"chainID1":"2147483708", "chainID2":"2153201998"},"id":1}
+   *
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   apiTest.getStoremanGroupListByChainPair("2147483708", "2153201998", (err, result) => {
+   *     console.log("Result is ", result);
+   *     apiTest.close();
+   *   });
+   *
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   let result = await apiTest.getStoremanGroupListByChainPair("2147483708", "2153201998");
+   *   console.log("Result is ", result);
+   *   apiTest.close();
+   *
+   * @apiSuccessExample {json} Successful Response
+   *  [{
+    "groupId": "0x0000000000000000000000000000000000000000000000003133323936333039",
+    "workStart": "13296310",
+    "workDuration": "2",
+    "registerDuration": "10",
+    "preGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000"
+  }]
+   *
+   */
+  getStoremanGroupListByChainPair(chainID1, chainID2, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getStoremanGroupListByChainPair';
+    let params = {"chainID1": chainID1, "chainID2": chainID2};
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
   /**
    *
    * @apiName getStoremanGroupInfo
