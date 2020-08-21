@@ -1522,12 +1522,12 @@ define({ "api": [
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getMultiStoremanInfo({wkAddr: [\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\"]}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getMultiStoremanInfo([\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\"}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
         "title": "Example promise usage:",
-        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getMultiStoremanInfo({wkAddr: [\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\"]});\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getMultiStoremanInfo([\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\"]);\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
     ],
@@ -1771,7 +1771,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{\n       from:\n       wkAddr:\n       deposit:\n       incentive // 未提取的incentive\n     }",
+          "content": "[{\n       from:\n       wkAddr:\n       deposit:\n       incentive // 未提取的incentive\n     }]",
           "type": "json"
         }
       ]
@@ -1851,7 +1851,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{\n       from:\n       wkAddr:\n       amount:\n       timestamp\n     }",
+          "content": "[{\n       from:\n       wkAddr:\n       amount:\n       timestamp\n     }]",
           "type": "json"
         }
       ]
@@ -1959,6 +1959,13 @@ define({ "api": [
           },
           {
             "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "options",
+            "description": "<p>Optional. <br>  <code>fromEpoch</code> - The number that begin epochID you want to search. <br>  <code>toEpoch</code> - The number that end epochID you want to search.</p>"
+          },
+          {
+            "group": "Parameter",
             "type": "function",
             "optional": true,
             "field": "callback",
@@ -1969,7 +1976,7 @@ define({ "api": [
       "examples": [
         {
           "title": "JSON-RPC over websocket",
-          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getStoremanGroupActivity\",\"params\":{},\"id\":1}",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getStoremanGroupActivity\",\"params\":{groupId: \"0x0000000000000000000000000000000000000000000031353937383131313430\"},\"id\":1}",
           "type": "string"
         }
       ]
@@ -1977,12 +1984,12 @@ define({ "api": [
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getStoremanGroupActivity((err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getStoremanGroupActivity(\"0x0000000000000000000000000000000000000000000031353937383131313430\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
         "title": "Example promise usage:",
-        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getStoremanGroupActivity();\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getStoremanGroupActivity(\"0x0000000000000000000000000000000000000000000031353937383131313430\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
     ],
@@ -1990,7 +1997,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[{\n   \"groupId\": \"0x0000000000000000000000000000000000000000000000003133323936333039\",\n   \"workStart\": \"13296310\",\n   \"workDuration\": \"2\",\n   \"registerDuration\": \"10\",\n   \"preGroupId\": \"0x0000000000000000000000000000000000000000000000000000000000000000\"\n }]",
+          "content": "{\n       \"0\": {\n         \"wkAddr\":\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\",\n         \"activity\": \"90\"\n       },\n       ...\n   }",
           "type": "json"
         }
       ]
@@ -2410,7 +2417,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{\n    \"sender\": \"0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0\",\n    \"PK\": \"0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8\",\n    \"pkAddress\": \"0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606\",\n    \"quited\": false,\n    \"delegateFee\": \"666\",\n    \"deposit\": \"2000\",\n    \"delegateDeposit\": \"0\",\n    \"incentive\": \"0\",\n    \"delegatorCount\": \"0\",\n    \"groupId\": \"0x0000000000000000000000000000000000000000000000003133323936333039\",\n    \"nextGroupId\": \"0x0000000000000000000000000000000000000000000000000000000000000000\"\n  }",
+          "content": "{\n      \"sender\": \"0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0\",\n      \"PK\": \"0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8\",\n      \"pkAddress\": \"0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606\",\n      \"quited\": false,\n      \"delegateFee\": \"666\",\n      \"deposit\": \"2000\",\n      \"delegateDeposit\": \"0\",\n      \"incentive\": \"0\",\n      \"delegatorCount\": \"0\",\n      \"groupId\": \"0x0000000000000000000000000000000000000000000000003133323936333039\",\n      \"nextGroupId\": \"0x0000000000000000000000000000000000000000000000000000000000000000\"\n    }",
           "type": "json"
         }
       ]
@@ -2643,7 +2650,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{\n      from:\n      wkAddr:\n      amount:\n      timestamp\n    }",
+          "content": "[{\n      from:\n      wkAddr:\n      amount:\n      timestamp\n    }]",
           "type": "json"
         }
       ]
