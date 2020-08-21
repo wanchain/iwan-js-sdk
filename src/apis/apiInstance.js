@@ -7663,7 +7663,7 @@ class ApiInstance extends WsInstance {
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
    * @apiParam {string} wkAddr The storeman work address being queried.
-   * @apiParam {string} address The storeman from address being queried.
+   * @apiParam {array} address The storeman from address being queried.
    * @apiParam {string} groupId The storeman group ID being queried.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
@@ -7744,7 +7744,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} address The storeman from address being queried.
+   * @apiParam {array} address The storeman from address being queried.
    * @apiParam {string} wkAddr The storeman work address being queried.
    * @apiParam {number} [fromBlock] The start block number being queried.
    * @apiParam {number} [toBlock] The end block number being queried.
