@@ -2527,7 +2527,7 @@ define({ "api": [
             "group": "Parameter",
             "type": "string",
             "optional": false,
-            "field": "sender",
+            "field": "address",
             "description": "<p>The storeman from address being queried.</p>"
           },
           {
