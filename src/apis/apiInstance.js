@@ -1146,7 +1146,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -1450,7 +1450,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -1525,7 +1525,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -3351,7 +3351,7 @@ class ApiInstance extends WsInstance {
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     let method = 'getActions';
@@ -3879,7 +3879,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -3997,7 +3997,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -5047,7 +5047,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = undefined;
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -5224,7 +5224,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = undefined;
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -5329,7 +5329,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = undefined;
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -6046,7 +6046,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -6120,7 +6120,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -6588,7 +6588,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
 
@@ -6613,7 +6613,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
 
@@ -6638,7 +6638,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
 
@@ -6663,7 +6663,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
 
@@ -6705,7 +6705,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -6789,7 +6789,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
 
@@ -6856,7 +6856,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
 
@@ -6941,7 +6941,7 @@ class ApiInstance extends WsInstance {
       options = chainType;
       chainType = undefined;
     }
-  if (typeof(options) !== "object") {
+  if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -6975,17 +6975,19 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
+  * @apiParam {object} [options] Optional.
+  * <br>&nbsp;&nbsp;<code>chainIds</code> -  Array of chain IDs about the cross chain pair.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getStoremanGroupList","params":{},"id":1}
+   * {"jsonrpc":"2.0","method":"getStoremanGroupList","params":{chainIds:["2153201998", "2147483708"]},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanGroupList((err, result) => {
+   *   apiTest.getStoremanGroupList({chainIds:["2153201998", "2147483708"]}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -6993,18 +6995,42 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanGroupList();
+   *   let result = await apiTest.getStoremanGroupList({chainIds:["2153201998", "2147483708"]});
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
    *  [{
-    "groupId": "0x0000000000000000000000000000000000000000000000003133323936333039",
-    "workStart": "13296310",
-    "workDuration": "2",
-    "registerDuration": "10",
-    "preGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000"
-  }]
+        "groupId": "0x0000000000000000000000000000000000000000000031353937383131313430",
+        "preGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "workStart": "1597811150",
+        "workDuration": "604800",
+        "registerDuration": "60",
+        "status": "5",
+        "deposit": "8000",
+        "chain1": [
+          2153201998, // chain ID
+          "WAN",  // chain symbol
+          "Wanchain", // chain name
+          5718350 // chain index
+        ],
+        "chain2": [
+          2147483708, // chain ID
+          "ETH", // chain symbol
+          "Ethereum", // chain name
+          60 // chain index
+        ],
+        "curve1": "1",
+        "curve2": "1",
+        "gpk1": "0x0c0f172647dc8752c8ea19f49efac9151113605d494c3b0272dea86e5fd63360154506052ec260dbefa10dd46dc77dff9b3c97940717442521409fb641299e62",
+        "gpk2": "0x2f5e2c86302e5eec6607b727eb69c01fc47bde29328fbe5802db369e1d5452562927d105b660b05e7dcc7db98bfe86a90abf8fe7e08ed3584c1e952f43c73ee1",
+        "registerTime": "1597811140",
+        "endRegisterTime": "1597811200",
+        "startTime": "1597811150",
+        "endTime": "1598415950",
+        "delegateFee": "100",
+        "canStakeIn": false
+    }]
    *
    */
   getStoremanGroupList(options, callback) {
@@ -7012,7 +7038,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -7020,6 +7046,76 @@ class ApiInstance extends WsInstance {
     }
     let method = 'getStoremanGroupList';
     let params = {...options};
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+    /**
+   *
+   * @apiName getStoremanGroupActivity
+   * @apiGroup CrossChain
+   * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGroupActivity
+   * @apiVersion 1.2.1
+   * @apiDescription Get the storeman group active information.
+   * <br><br><strong>Returns:</strong>
+   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+   *
+   * @apiParam {string} groupId The storeman group ID.
+   * @apiParam {object} [options] Optional.
+   * <br>&nbsp;&nbsp;<code>fromEpoch</code> - The number that begin epochID you want to search.
+   * <br>&nbsp;&nbsp;<code>toEpoch</code> - The number that end epochID you want to search.
+   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+   *
+   * @apiParamExample {string} JSON-RPC over websocket
+   * {"jsonrpc":"2.0","method":"getStoremanGroupActivity","params":{groupId: "0x0000000000000000000000000000000000000000000031353937383131313430"},"id":1}
+   *
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   apiTest.getStoremanGroupActivity("0x0000000000000000000000000000000000000000000031353937383131313430", (err, result) => {
+   *     console.log("Result is ", result);
+   *     apiTest.close();
+   *   });
+   *
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   let result = await apiTest.getStoremanGroupActivity("0x0000000000000000000000000000000000000000000031353937383131313430");
+   *   console.log("Result is ", result);
+   *   apiTest.close();
+   *
+   * @apiSuccessExample {json} Successful Response
+   *  {
+        "0": {
+          "wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606",
+          "activity": "90"
+        },
+        ...
+    }
+   *
+   */
+  getStoremanGroupActivity(groupId, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (options || typeof(options) !== "object") {
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getStoremanGroupActivity';
+    let params = {groupId: groupId};
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -7101,7 +7197,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [groupId] The storeman groupId being queried.
+   * @apiParam {string} groupId The storeman groupId being queried.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -7126,14 +7222,14 @@ class ApiInstance extends WsInstance {
    *
    * @apiSuccessExample {json} Successful Response
    *  {
-    "groupId": "0x0000000000000000000000000000000000000000000000003133323936333039",
-    "status": "4",
-    "deposit": "2000",
-    "whiteCount": "1",
-    "memberCount": "1",
-    "startTime": "13296310",
-    "endTime": "13296312"
-  }
+      "groupId": "0x0000000000000000000000000000000000000000000000003133323936333039",
+      "status": "4",
+      "deposit": "2000",
+      "whiteCount": "1",
+      "memberCount": "1",
+      "startTime": "13296310",
+      "endTime": "13296312"
+    }
    *
    */
   getStoremanGroupInfo(groupId, callback) {
@@ -7169,12 +7265,12 @@ class ApiInstance extends WsInstance {
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getStoremanGroupConfig","params":{"groupId":"0x0000000000000000000000000000000000000000000000003133323936333039"},"id":1}
+   * {"jsonrpc":"2.0","method":"getStoremanGroupConfig","params":{"groupId":"0x0000000000000000000000000000000000000000000031353937383131313430"},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanGroupConfig("0x0000000000000000000000000000000000000000000000003133323936333039", (err, result) => {
+   *   apiTest.getStoremanGroupConfig("0x0000000000000000000000000000000000000000000031353937383131313430", (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7182,23 +7278,24 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanGroupConfig("0x0000000000000000000000000000000000000000000000003133323936333039");
+   *   let result = await apiTest.getStoremanGroupConfig("0x0000000000000000000000000000000000000000000031353937383131313430");
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
    *  {
-    "groupId": "0x0000000000000000000000000000000000000000000000003133323936333039",
-    "status": "4",
-    "deposit": "2000",
-    "chain1": "0",
-    "chain2": "1",
-    "curve1": "0",
-    "curve2": "1",
-    "gpk1": null,
-    "gpk2": null,
-    "startTime": "13296310",
-    "endTime": "13296312"
+        "groupId": "0x0000000000000000000000000000000000000000000031353937383131313430",
+        "status": "5",
+        "deposit": "8000",
+        "chain1": "2153201998",
+        "chain2": "2147483708",
+        "curve1": "1",
+        "curve2": "1",
+        "gpk1": "0x0c0f172647dc8752c8ea19f49efac9151113605d494c3b0272dea86e5fd63360154506052ec260dbefa10dd46dc77dff9b3c97940717442521409fb641299e62",
+        "gpk2": "0x2f5e2c86302e5eec6607b727eb69c01fc47bde29328fbe5802db369e1d5452562927d105b660b05e7dcc7db98bfe86a90abf8fe7e08ed3584c1e952f43c73ee1",
+        "startTime": "1597811150",
+        "endTime": "1598415950",
+        "delegateFee": "100"
   }
    *
    */
@@ -7240,7 +7337,7 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanInfo("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606", (err, result) => {
+   *   apiTest.getStoremanInfo({"wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7248,24 +7345,24 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanInfo("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606");
+   *   let result = await apiTest.getStoremanInfo({"wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"});
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
    * {
-    "sender": "0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0",
-    "PK": "0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8",
-    "pkAddress": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
-    "quited": false,
-    "delegateFee": "666",
-    "deposit": "2000",
-    "delegateDeposit": "0",
-    "incentive": "0",
-    "delegatorCount": "0",
-    "groupId": "0x0000000000000000000000000000000000000000000000003133323936333039",
-    "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000"
-  }
+      "sender": "0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0",
+      "PK": "0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8",
+      "pkAddress": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
+      "quited": false,
+      "delegateFee": "666",
+      "deposit": "2000",
+      "delegateDeposit": "0",
+      "incentive": "0",
+      "delegatorCount": "0",
+      "groupId": "0x0000000000000000000000000000000000000000000000003133323936333039",
+      "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    }
    *
    */
   getStoremanInfo(options, callback) {
@@ -7295,18 +7392,18 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} wkAddr The storeman wkAddr being queried.
+   * @apiParam {array} wkAddr The array of storeman wkAddr being queried.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getMultiStoremanInfo","params":{"wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"},"id":1}
+   * {"jsonrpc":"2.0","method":"getMultiStoremanInfo","params":{"wkAddr":["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getMultiStoremanInfo("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606", (err, result) => {
+   *   apiTest.getMultiStoremanInfo({wkAddr: ["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7314,24 +7411,27 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getMultiStoremanInfo("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606");
+   *   let result = await apiTest.getMultiStoremanInfo({wkAddr: ["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]});
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
-   * {
-    "sender": "0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0",
-    "PK": "0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8",
-    "pkAddress": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
-    "quited": false,
-    "delegateFee": "666",
-    "deposit": "2000",
-    "delegateDeposit": "0",
-    "incentive": "0",
-    "delegatorCount": "0",
-    "groupId": "0x0000000000000000000000000000000000000000000000003133323936333039",
-    "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000"
-  }
+   * [
+      {
+        "sender": "0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0",
+        "PK": "0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8",
+        "wkAddr": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
+        "quited": false,
+        "deposit": "2000",
+        "delegateDeposit": "0",
+        "incentive": "0",
+        "delegatorCount": "0",
+        "groupId": "0x0000000000000000000000000000000000000000000031353937383131313430",
+        "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "incentivedDay": "13315791",
+        "slashedCount": "0"
+      }
+    ]
    *
    */
   getMultiStoremanInfo(options, callback) {
@@ -7357,22 +7457,21 @@ class ApiInstance extends WsInstance {
    * @apiGroup CrossChain
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanConf
    * @apiVersion 1.2.1
-   * @apiDescription Get the detail info of one certain storeman, include the info like the groupid, deposit, delegatorDeposit, incentive, etc.
+   * @apiDescription Get the conf info of one certain storeman, include the info about backupCount, standaloneWeight, delegatorDeposit and DelegationMulti.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} wkAddr The storeman wkAddr being queried.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getStoremanConf","params":{"wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"},"id":1}
+   * {"jsonrpc":"2.0","method":"getStoremanConf","params":{},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanConf("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606", (err, result) => {
+   *   apiTest.getStoremanConf((err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7380,24 +7479,16 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanConf("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606");
+   *   let result = await apiTest.getStoremanConf();
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
    * {
-    "sender": "0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0",
-    "PK": "0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8",
-    "pkAddress": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
-    "quited": false,
-    "delegateFee": "666",
-    "deposit": "2000",
-    "delegateDeposit": "0",
-    "incentive": "0",
-    "delegatorCount": "0",
-    "groupId": "0x0000000000000000000000000000000000000000000000003133323936333039",
-    "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000"
-  }
+      "backupCount": "3",
+      "standaloneWeight": "1500",
+      "DelegationMulti": "10"
+    }
    *
    */
   getStoremanConf(options, callback) {
@@ -7423,22 +7514,22 @@ class ApiInstance extends WsInstance {
    * @apiGroup CrossChain
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanCandidates
    * @apiVersion 1.2.1
-   * @apiDescription Get the detail info of one certain storeman, include the info like the groupid, deposit, delegatorDeposit, incentive, etc.
+   * @apiDescription Get the storeman candidates info of one certain storeman group.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} wkAddr The storeman wkAddr being queried.
+   * @apiParam {string} groupId The storeman group ID being queried.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getStoremanCandidates","params":{"wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"},"id":1}
+   * {"jsonrpc":"2.0","method":"getStoremanCandidates","params":{"groupId":"0x0000000000000000000000000000000000000000000000003133323936333039"},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanCandidates("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606", (err, result) => {
+   *   apiTest.getStoremanCandidates("0x0000000000000000000000000000000000000000000000003133323936333039", (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7446,24 +7537,30 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanInfo("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606");
+   *   let result = await apiTest.getStoremanCandidates("0x0000000000000000000000000000000000000000000000003133323936333039");
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
-   * {
-    "sender": "0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0",
-    "PK": "0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8",
-    "pkAddress": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
-    "quited": false,
-    "delegateFee": "666",
-    "deposit": "2000",
-    "delegateDeposit": "0",
-    "incentive": "0",
-    "delegatorCount": "0",
-    "groupId": "0x0000000000000000000000000000000000000000000000003133323936333039",
-    "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000"
-  }
+   * [{
+      "groupId": "0x0000000000000000000000000000000000000000000031353937383131313430",
+      "wkAddr": "0x82EF7751A5460BC10F731558f0741705BA972f4E",
+      "from": "0x6f64f6d0d58acabd288774e993d9cacfa3fc88ee",
+      "value": "2000",
+      "PK": "0xccd16e96a70a5b496ff1cec869902b6a8ffa00715897937518f1c9299726f7090bc36cc23c1d028087eb0988c779663e996391f290631317fc22f84fa9bf2467",
+      "quited": false,
+      "deposit": "2000",
+      "delegateDeposit": "0",
+      "incentive": "0",
+      "delegatorCount": "0",
+      "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "incentivedDay": "13315791",
+      "slashedCount": "0",
+      "rank": 1,
+      "activity": 0,
+      "canStakeOut": true,
+      "canStakeClaim": false
+    }]
    *
    */
   getStoremanCandidates(groupId, callback) {
@@ -7489,17 +7586,17 @@ class ApiInstance extends WsInstance {
    * @apiGroup CrossChain
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGroupMember
    * @apiVersion 1.2.1
-   * @apiDescription Get the detail info of one certain storeman, include the info like the groupid, deposit, delegatorDeposit, incentive, etc.
+   * @apiDescription Get the storeman member info of one certain storeman group.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} wkAddr The storeman wkAddr being queried.
+   * @apiParam {string} groupId The storeman group ID being queried.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getStoremanGroupMember","params":{"wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"},"id":1}
+   * {"jsonrpc":"2.0","method":"getStoremanGroupMember","params":{"groupId":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
@@ -7512,24 +7609,30 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanInfo("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606");
+   *   let result = await apiTest.getStoremanGroupMember("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606");
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
-   * {
-    "sender": "0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0",
-    "PK": "0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8",
-    "pkAddress": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
-    "quited": false,
-    "delegateFee": "666",
-    "deposit": "2000",
-    "delegateDeposit": "0",
-    "incentive": "0",
-    "delegatorCount": "0",
-    "groupId": "0x0000000000000000000000000000000000000000000000003133323936333039",
-    "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000"
-  }
+   * [
+   *  {
+        "isWhite": false,
+        "wkAddr": "0xe7215f2786E18A0b0553AEB51421F0aA1615AE6E",
+        "PK": "0x5a7cef17a69a44cfd04e8a3696420b863e266dfaad35766c33e6d9d2e48c2e917ec73dcf9fef9b9d9a4fc915757102a0776de17904376bae87493a5cbba2d33a",
+        "enodeId": "0xf73200718a1a8ad521bc214c595e6e9ea424bbc7373dc22286e56dee5cff7a51268a1bb469578e8d28add08af9d1cf6e9be238658151f04b80e6f35ad893fdc1",
+        "sender": "0xc3D8008aE66FeA0044187cc7cd0E3Fb202FD4041",
+        "quited": false,
+        "deposit": "2000",
+        "delegateDeposit": "0",
+        "incentive": "0",
+        "delegatorCount": "0",
+        "groupId": "0x0000000000000000000000000000000000000000000031353937383233303739",
+        "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "incentivedDay": "0",
+        "slashedCount": "0"
+      },
+      ...
+    ]
    *
    */
   getStoremanGroupMember(groupId, callback) {
@@ -7559,7 +7662,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} address The storeman work address being queried.
+   * @apiParam {string} wkAddr The storeman work address being queried.
    * @apiParam {string} sender The storeman from address being queried.
    * @apiParam {string} groupId The storeman group ID being queried.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
@@ -7567,12 +7670,12 @@ class ApiInstance extends WsInstance {
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getStoremanStakeInfo","params":{"wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"},"id":1}
+   * {"jsonrpc":"2.0","method":"getStoremanStakeInfo","params":{"wkAddr":"0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606"},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanStakeInfo("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606", (err, result) => {
+   *   apiTest.getStoremanStakeInfo({wkAddr: "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606"}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7580,24 +7683,30 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanInfo("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606");
+   *   let result = await apiTest.getStoremanStakeInfo({wkAddr: "0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"});
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
-   * {
-    "sender": "0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0",
-    "PK": "0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8",
-    "pkAddress": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
-    "quited": false,
-    "delegateFee": "666",
-    "deposit": "2000",
-    "delegateDeposit": "0",
-    "incentive": "0",
-    "delegatorCount": "0",
-    "groupId": "0x0000000000000000000000000000000000000000000000003133323936333039",
-    "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000"
-  }
+   * [{
+      "groupId": "0x0000000000000000000000000000000000000000000031353937383131313430",
+      "wkAddr": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
+      "from": "0x7f1d642dbfd62ad4a8fa9810ea619707d09825d0",
+      "value": "2000",
+      "PK": "0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8",
+      "quited": false,
+      "deposit": "2000",
+      "delegateDeposit": "0",
+      "incentive": "0",
+      "delegatorCount": "0",
+      "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "incentivedDay": "13315791",
+      "slashedCount": "0",
+      "rank": 1,
+      "activity": 0,
+      "canStakeOut": true,
+      "canStakeClaim": false
+    }]
    *
    */
 
@@ -7606,7 +7715,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -7635,20 +7744,21 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} address The storeman work address being queried.
-   * @apiParam {string} sender The storeman from address being queried.
-   * @apiParam {string} groupId The storeman group ID being queried.
+   * @apiParam {string} address The storeman from address being queried.
+   * @apiParam {string} wkAddr The storeman work address being queried.
+   * @apiParam {number} [fromBlock] The start block number being queried.
+   * @apiParam {number} [toBlock] The end block number being queried.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getStoremanStakeTotalIncentive","params":{"wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"},"id":1}
+   * {"jsonrpc":"2.0","method":"getStoremanStakeTotalIncentive","params":{"wkAddr":"0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606"},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanStakeTotalIncentive("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606", (err, result) => {
+   *   apiTest.getStoremanStakeTotalIncentive({"wkAddr":"0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606"}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7656,24 +7766,17 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanInfo("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606");
+   *   let result = await apiTest.getStoremanStakeTotalIncentive({"wkAddr":"0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606"});
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
-   * {
-    "sender": "0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0",
-    "PK": "0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8",
-    "pkAddress": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
-    "quited": false,
-    "delegateFee": "666",
-    "deposit": "2000",
-    "delegateDeposit": "0",
-    "incentive": "0",
-    "delegatorCount": "0",
-    "groupId": "0x0000000000000000000000000000000000000000000000003133323936333039",
-    "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000"
-  }
+   * [{
+      from:
+      wkAddr:
+      amount:
+      timestamp
+    }]
    *
    */
 
@@ -7682,7 +7785,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -7711,9 +7814,8 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} address The storeman work address being queried.
-   * @apiParam {string} sender The storeman from address being queried.
-   * @apiParam {string} groupId The storeman group ID being queried.
+   * @apiParam {array} address The array address of delegators being queried.
+   * @apiParam {string} wkAddr The storeman work address being queried.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -7737,19 +7839,12 @@ class ApiInstance extends WsInstance {
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
-   * {
-    "sender": "0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0",
-    "PK": "0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8",
-    "pkAddress": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
-    "quited": false,
-    "delegateFee": "666",
-    "deposit": "2000",
-    "delegateDeposit": "0",
-    "incentive": "0",
-    "delegatorCount": "0",
-    "groupId": "0x0000000000000000000000000000000000000000000000003133323936333039",
-    "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000"
-  }
+   *  [{
+        from:
+        wkAddr:
+        deposit:
+        incentive // 未提取的incentive
+      }]
    *
    */
 
@@ -7758,7 +7853,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -7787,20 +7882,21 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} address The storeman work address being queried.
-   * @apiParam {string} sender The storeman from address being queried.
-   * @apiParam {string} groupId The storeman group ID being queried.
+   * @apiParam {array} address The storeman from address being queried.
+   * @apiParam {string} wkAddr The storeman work address being queried.
+   * @apiParam {number} fromBlock The number of the earliest block (latest may be given to mean the most recent, block). By default 0.
+   * @apiParam {number} toBlock The number of the latest block (latest may be given to mean the most recent, block). By default latest.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getStoremanDelegatorTotalIncentive","params":{"wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"},"id":1}
+   * {"jsonrpc":"2.0","method":"getStoremanDelegatorTotalIncentive","params":{"wkAddr":"0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606"},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanDelegatorTotalIncentive("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606", (err, result) => {
+   *   apiTest.getStoremanDelegatorTotalIncentive({"wkAddr":"0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606"}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7808,24 +7904,17 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanDelegatorTotalIncentive("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606");
+   *   let result = await apiTest.getStoremanDelegatorTotalIncentive({"wkAddr":"0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606"});
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
-   * {
-    "sender": "0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0",
-    "PK": "0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8",
-    "pkAddress": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
-    "quited": false,
-    "delegateFee": "666",
-    "deposit": "2000",
-    "delegateDeposit": "0",
-    "incentive": "0",
-    "delegatorCount": "0",
-    "groupId": "0x0000000000000000000000000000000000000000000000003133323936333039",
-    "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000"
-  }
+   *  [{
+        from:
+        wkAddr:
+        amount:
+        timestamp
+      }]
    *
    */
 
@@ -7834,7 +7923,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -7859,24 +7948,25 @@ class ApiInstance extends WsInstance {
    * @apiGroup CrossChain
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGpkSlashInfo
    * @apiVersion 1.2.1
-   * @apiDescription Get the detail info of one certain storeman, include the info like the groupid, deposit, delegatorDeposit, incentive, etc.
+   * @apiDescription Get the gpk slash info of one certain storeman.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} address The storeman work address being queried.
-   * @apiParam {string} sender The storeman from address being queried.
+   * @apiParam {array} wkAddr The storeman work address being queried.
    * @apiParam {string} groupId The storeman group ID being queried.
+   * @apiParam {number} fromBlock The number of the earliest block (latest may be given to mean the most recent, block). By default 0.
+   * @apiParam {number} toBlock The number of the latest block (latest may be given to mean the most recent, block). By default latest.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getStoremanGpkSlashInfo","params":{"wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"},"id":1}
+   * {"jsonrpc":"2.0","method":"getStoremanGpkSlashInfo","params":{"wkAddr":["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanGpkSlashInfo("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606", (err, result) => {
+   *   apiTest.getStoremanGpkSlashInfo({"wkAddr":["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7884,24 +7974,19 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanGpkSlashInfo("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606");
+   *   let result = await apiTest.getStoremanGpkSlashInfo({"wkAddr":["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]});
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
-   * {
-    "sender": "0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0",
-    "PK": "0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8",
-    "pkAddress": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
-    "quited": false,
-    "delegateFee": "666",
-    "deposit": "2000",
-    "delegateDeposit": "0",
-    "incentive": "0",
-    "delegatorCount": "0",
-    "groupId": "0x0000000000000000000000000000000000000000000000003133323936333039",
-    "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000"
-  }
+   *  [{
+        "slashed": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606", //address
+        "parter": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D601", //address
+        "round": "2000",
+        "curveIndex": "0",
+        "slashType": "232377757916789457893169",
+        "groupId": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      }]
    *
    */
 
@@ -7910,7 +7995,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -7935,24 +8020,25 @@ class ApiInstance extends WsInstance {
    * @apiGroup CrossChain
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanSignSlashInfo
    * @apiVersion 1.2.1
-   * @apiDescription Get the detail info of one certain storeman, include the info like the groupid, deposit, delegatorDeposit, incentive, etc.
+   * @apiDescription Get the sign slash info of one certain storeman.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} address The storeman work address being queried.
-   * @apiParam {string} sender The storeman from address being queried.
+   * @apiParam {array} wkAddr The storeman work address being queried.
    * @apiParam {string} groupId The storeman group ID being queried.
+   * @apiParam {number} fromBlock The number of the earliest block (latest may be given to mean the most recent, block). By default 0.
+   * @apiParam {number} toBlock The number of the latest block (latest may be given to mean the most recent, block). By default latest.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getStoremanSignSlashInfo","params":{"wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"},"id":1}
+   * {"jsonrpc":"2.0","method":"getStoremanSignSlashInfo","params":{"wkAddr":["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanSignSlashInfo("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606", (err, result) => {
+   *   apiTest.getStoremanSignSlashInfo({"wkAddr":["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7960,24 +8046,17 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanSignSlashInfo("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606");
+   *   let result = await apiTest.getStoremanSignSlashInfo({"wkAddr":["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]});
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
-   * {
-    "sender": "0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0",
-    "PK": "0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8",
-    "pkAddress": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
-    "quited": false,
-    "delegateFee": "666",
-    "deposit": "2000",
-    "delegateDeposit": "0",
-    "incentive": "0",
-    "delegatorCount": "0",
-    "groupId": "0x0000000000000000000000000000000000000000000000003133323936333039",
-    "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000"
-  }
+   *  [{
+        "slshReason": "2000",
+        "smIndex": "0",
+        "hashX": ,
+        "groupId": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      }]
    *
    */
 
@@ -7986,7 +8065,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -8015,17 +8094,18 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
+   * @apiParam {array} [chainIds] Optional, the two chain IDs of cross chain pair.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getTokenPairs","params":{},"id":1}
+   * {"jsonrpc":"2.0","method":"getTokenPairs","params":{chainIds:[2147483708, 2153201998]},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getTokenPairs((err, result) => {
+   *   apiTest.getTokenPairs({chainIds:[2147483708, 2153201998]}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -8033,44 +8113,67 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getTokenPairs();
+   *   let result = await apiTest.getTokenPairs({chainIds:[2147483708, 2153201998]});
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
-   * [{
-    "id": "1",
-    "fromChainID": "2147483708",
-    "fromAccount": "0x0000000000000000000000000000000000000000",
-    "toChainID": "2153201998",
-    "tokenAddress": "0x36FfEcE47A3BaF210b26cc469E37eef2212d9812",
-    "ancestorSymbol": "ETH",
-    "ancestorDecimals": "18"
-  }, {
-    "id": "2",
-    "fromChainID": "2153201998",
-    "fromAccount": "0x0000000000000000000000000000000000000000",
-    "toChainID": "2147483708",
-    "tokenAddress": "0xe87627630583e5411486982268b01DaBcaB5CeC0",
-    "ancestorSymbol": "WAN",
-    "ancestorDecimals": "18"
-  }, {
-    "id": "3",
-    "fromChainID": "2147483708",
-    "fromAccount": "0x64993826cdf00b4355c4f366e2c38da140eb5f0d",
-    "toChainID": "2153201998",
-    "tokenAddress": "0x1A5a44D553Df414920874042b8324Cb63F11e917",
-    "ancestorSymbol": "LINK",
-    "ancestorDecimals": "18"
-  }, {
-    "id": "4",
-    "fromChainID": "2153201998",
-    "fromAccount": "0x3f759314c81f078b9baab7a1fddd6758f027d333",
-    "toChainID": "2147483708",
-    "tokenAddress": "0x132329E7e4CD25f4CcAE33d40B4eb40006f1Fb52",
-    "ancestorSymbol": "FNX",
-    "ancestorDecimals": "18"
-  }]
+   * [
+      {
+        "id": "1",
+        "fromChainID": "2147483708",
+        "fromAccount": "0x0000000000000000000000000000000000000000",
+        "toChainID": "2153201998",
+        "toAccount": "0x8758960317bcb6fdbe29aa3c745b311f777f1969",
+        "ancestorSymbol": "ETH",
+        "ancestorDecimals": "18"
+      },
+      {
+        "id": "2",
+        "fromChainID": "2153201998",
+        "fromAccount": "0x0000000000000000000000000000000000000000",
+        "toChainID": "2147483708",
+        "toAccount": "0x26fc21d4b1c6c3ca1964f8e5ff43dea3ec2bd220",
+        "ancestorSymbol": "WAN",
+        "ancestorDecimals": "18"
+      },
+      {
+        "id": "3",
+        "fromChainID": "2147483708",
+        "fromAccount": "0xc6aba254b0bea0f67dd8e97bf1198f96ff5c32b2",
+        "toChainID": "2153201998",
+        "toAccount": "0x217ce1c6052b8cb0099587580464998c41306145",
+        "ancestorSymbol": "LINK",
+        "ancestorDecimals": "18"
+      },
+      {
+        "id": "4",
+        "fromChainID": "2153201998",
+        "fromAccount": "0x2283d27be033d183f0f46e70992ebc1356f6e8b3",
+        "toChainID": "2147483708",
+        "toAccount": "0x422504c423e7373415eec43721f63c0b96ad39ab",
+        "ancestorSymbol": "FNX",
+        "ancestorDecimals": "18"
+      },
+      {
+        "id": "5",
+        "fromChainID": "2153201998",
+        "fromAccount": "0x3ae58c9b8b4da8a29a98494d96f2c919e2e641b1",
+        "toChainID": "2147483708",
+        "toAccount": "0x81c144a2082eb4e116223c70c7f70081acc8a2ab",
+        "ancestorSymbol": "BTC",
+        "ancestorDecimals": "8"
+      },
+      {
+        "id": "6",
+        "fromChainID": "2153201998",
+        "fromAccount": "0xd264b2a8d5938e6eb8235ea8d4aaa8ec135f2c56",
+        "toChainID": "2147483708",
+        "toAccount": "0x075399b3df085c2a04d08db5c914ff14bb0f23d4",
+        "ancestorSymbol": "EOS",
+        "ancestorDecimals": "4"
+      }
+    ]
    *
    */
   getTokenPairs(options, callback) {
@@ -8078,7 +8181,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -8314,17 +8417,18 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
+   * @apiParam {string} [chainIds] The two chain IDs of cross chain pair being queried.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getTokenPairIDs","params":{},"id":1}
+   * {"jsonrpc":"2.0","method":"getTokenPairIDs","params":{{chainIds: [2147483708, 2153201998]}},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getTokenPairIDs((err, result) => {
+   *   apiTest.getTokenPairIDs({chainIds: [2147483708, 2153201998]}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -8332,7 +8436,7 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getTokenPairIDs();
+   *   let result = await apiTest.getTokenPairIDs({chainIds: [2147483708, 2153201998]});
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
@@ -8345,7 +8449,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -8507,7 +8611,12 @@ class ApiInstance extends WsInstance {
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
-   *  [2153201998, "WAN", "Wanchain"]
+   *  [
+   *    2153201998, // chain ID
+   *    "WAN", // chain symbol
+   *    "Wanchain", // chain name
+   *    "5718350" // chainIndex
+   *  ]
    *
    */
   getChainInfoByChainIndex(chainIndex, callback) {
@@ -8561,7 +8670,12 @@ class ApiInstance extends WsInstance {
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
-   *  [2153201998, "WAN", "Wanchain"]
+   *  [
+   *    2153201998, // chain ID
+   *    "WAN", // chain symbol
+   *    "Wanchain", // chain name
+   *    "5718350" // chainIndex
+   *  ]
    *
    */
   getChainInfoByChainId(chainId, callback) {
@@ -8591,18 +8705,20 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} chainId The chain id that you want to search, should like <code>"0x8057414e"</code>. Adding it to 2^31 to get the final hardened key index, 0x80000000 + 5718350(chain index) = 0x8057414e.
+   * @apiParam {string} chainId The chain id that you want to search, should like <code>"2153201998"</code>. Adding it to 2^31 to get the final hardened key index, 0x80000000 + 5718350(chain index) = 0x8057414e.
+   * @apiParam {string} symbol The chain symbol that you want to search, should like <code>"WAN"</code>.
+   * @apiParam {string} index The chain index that you want to search, should like <code>"5718350"</code>.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getChainConstantInfo","params":{"chainId":"0x8057414e"},"id":1}
+   * {"jsonrpc":"2.0","method":"getChainConstantInfo","params":{"chainId":"2153201998"},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getChainConstantInfo("0x8057414e", (err, result) => {
+   *   apiTest.getChainConstantInfo({"chainId":"2153201998"}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -8610,12 +8726,17 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getChainParis("0x8057414e");
+   *   let result = await apiTest.getChainConstantInfo({"chainId":"2153201998"});
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
-   *  [2153201998, "WAN", "Wanchain"]
+   *  [
+   *    2153201998, // chain ID
+   *    "WAN", // chain symbol
+   *    "Wanchain", // chain name
+   *    "5718350" // chainIndex
+   *  ]
    *
    */
   getChainConstantInfo(options, callback) {
@@ -8623,7 +8744,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {}
     }
     if (callback) {
@@ -8652,18 +8773,18 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} chainId The chain id that you want to search, should like <code>"0x8057414e"</code>. Adding it to 2^31 to get the final hardened key index, 0x80000000 + 5718350(chain index) = 0x8057414e.
+   * @apiParam {string} chainIds The chain id that you want to search, should like <code>"0x8057414e"</code>. Adding it to 2^31 to get the final hardened key index, 0x80000000 + 5718350(chain index) = 0x8057414e.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getChainParis","params":{"chainId":"0x8057414e"},"id":1}
+   * {"jsonrpc":"2.0","method":"getChainParis","params":{"chainIds":[2147483708, 2153201998]},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getChainParis("0x8057414e", (err, result) => {
+   *   apiTest.getChainParis({"chainIds":[2147483708, 2153201998]}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -8671,20 +8792,24 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getChainParis("0x8057414e");
+   *   let result = await apiTest.getChainParis({"chainIds":[2147483708, 2153201998]});
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
-   *  [2153201998, "WAN", "Wanchain"]
-   *
+   *  [
+   *    2153201998, // chain ID
+   *    "WAN", // chain symbol
+   *    "Wanchain", // chain name
+   *    "5718350" // chainIndex
+   *  ]   *
    */
   getChainParis(options, callback) {
     if (typeof(options) === "function") {
       callback = options;
       options = {};
     }
-    if (typeof(options) !== "object") {
+    if (options || typeof(options) !== "object") {
       options = {}
     }
     if (callback) {
