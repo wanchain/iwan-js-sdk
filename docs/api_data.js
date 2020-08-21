@@ -2525,7 +2525,7 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "string",
+            "type": "array",
             "optional": false,
             "field": "address",
             "description": "<p>The storeman from address being queried.</p>"
@@ -2591,7 +2591,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "string",
+            "type": "array",
             "optional": false,
             "field": "address",
             "description": "<p>The storeman from address being queried.</p>"
