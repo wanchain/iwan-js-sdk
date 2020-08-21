@@ -1146,7 +1146,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -1450,7 +1450,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -1525,7 +1525,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -3351,7 +3351,7 @@ class ApiInstance extends WsInstance {
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     let method = 'getActions';
@@ -3879,7 +3879,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -3997,7 +3997,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -5047,7 +5047,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = undefined;
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -5224,7 +5224,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = undefined;
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -5329,7 +5329,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = undefined;
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -6046,7 +6046,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -6120,7 +6120,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -6588,7 +6588,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
 
@@ -6613,7 +6613,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
 
@@ -6638,7 +6638,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
 
@@ -6663,7 +6663,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
 
@@ -6705,7 +6705,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -6789,7 +6789,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
 
@@ -6856,7 +6856,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
 
@@ -6941,7 +6941,7 @@ class ApiInstance extends WsInstance {
       options = chainType;
       chainType = undefined;
     }
-  if (options || typeof(options) !== "object") {
+  if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -7038,7 +7038,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -7108,7 +7108,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -7715,7 +7715,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -7785,7 +7785,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -7853,7 +7853,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -7923,7 +7923,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -7995,7 +7995,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -8065,7 +8065,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -8181,7 +8181,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -8449,7 +8449,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {};
     }
     if (callback) {
@@ -8740,11 +8740,12 @@ class ApiInstance extends WsInstance {
    *
    */
   getChainConstantInfo(options, callback) {
+    console.log(options);
     if (typeof(options) === "function") {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {}
     }
     if (callback) {
@@ -8752,6 +8753,8 @@ class ApiInstance extends WsInstance {
     }
     let method = 'getChainConstantInfo';
     let params = {...options};
+    console.log("options:",  options);
+    console.log("params:", params);
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -8809,7 +8812,7 @@ class ApiInstance extends WsInstance {
       callback = options;
       options = {};
     }
-    if (options || typeof(options) !== "object") {
+    if (!options || typeof(options) !== "object") {
       options = {}
     }
     if (callback) {
