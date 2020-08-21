@@ -7337,7 +7337,7 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanInfo({"wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"}, (err, result) => {
+   *   apiTest.getStoremanInfo("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606", (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7345,7 +7345,7 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanInfo({"wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"});
+   *   let result = await apiTest.getStoremanInfo("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606");
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
@@ -7365,12 +7365,12 @@ class ApiInstance extends WsInstance {
     }
    *
    */
-  getStoremanInfo(options, callback) {
+  getStoremanInfo(wkAddr, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getStoremanInfo';
-    let params = {...options};
+    let params = {wkAddr: wkAddr};
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -7403,7 +7403,7 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getMultiStoremanInfo({wkAddr: ["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]}, (err, result) => {
+   *   apiTest.getMultiStoremanInfo(["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7411,7 +7411,7 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getMultiStoremanInfo({wkAddr: ["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]});
+   *   let result = await apiTest.getMultiStoremanInfo(["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]);
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
@@ -7434,12 +7434,12 @@ class ApiInstance extends WsInstance {
     ]
    *
    */
-  getMultiStoremanInfo(options, callback) {
+  getMultiStoremanInfo(wkAddr, callback) {
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getMultiStoremanInfo';
-    let params = {...options};
+    let params = {wkAddr: wkAddr};
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
