@@ -1418,7 +1418,7 @@ define({ "api": [
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanConf",
     "version": "1.2.1",
-    "description": "<p>Get the conf info of one certain storeman, include the info about backupCount, standaloneWeight, delegatorDeposit and DelegationMulti. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "description": "<p>Get the conf info of one certain storeman, include the info about backupCount, standaloneWeight, delegatorDeposit and delegationMulti. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
         "Parameter": [
