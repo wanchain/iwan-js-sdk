@@ -7259,7 +7259,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [groupId] The storeman groupId being queried.
+   * @apiParam {string} groupId The storeman groupId being queried.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -7404,7 +7404,7 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getMultiStoremanInfo(["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"}, (err, result) => {
+   *   apiTest.getMultiStoremanInfo(["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"], (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7663,9 +7663,10 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} wkAddr The storeman work address being queried.
-   * @apiParam {array} address The storeman from address being queried.
-   * @apiParam {string} groupId The storeman group ID being queried.
+  * @apiParam {object} options Details:
+  * <br>&nbsp;&nbsp;<code>address</code> - The array of storeman from address being queried.
+  * <br>&nbsp;&nbsp;<code>wkAddr</code> - The string of storeman work address being queried.
+  * <br>&nbsp;&nbsp;<code>groupId</code> - The string of storeman group ID being queried.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -7745,10 +7746,11 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {array} address The storeman from address being queried.
-   * @apiParam {string} wkAddr The storeman work address being queried.
-   * @apiParam {number} [fromBlock] The start block number being queried.
-   * @apiParam {number} [toBlock] The end block number being queried.
+  * @apiParam {object} options Details:
+  * <br>&nbsp;&nbsp;<code>address</code> - The array of storeman from address being queried.
+  * <br>&nbsp;&nbsp;<code>wkAddr</code> - The string of storeman work address being queried.
+  * <br>&nbsp;&nbsp;<code>fromBlock</code> - Optional, the number of the earliest block (latest may be given to mean the most recent, block). By default 0.
+  * <br>&nbsp;&nbsp;<code>toBlock</code> - Optional, the number of the latest block (latest may be given to mean the most recent, block). By default latest.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -7815,8 +7817,9 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {array} address The array address of delegators being queried.
-   * @apiParam {string} wkAddr The storeman work address being queried.
+  * @apiParam {object} options Details:
+  * <br>&nbsp;&nbsp;<code>address</code> - The array of delegator's address being queried.
+  * <br>&nbsp;&nbsp;<code>wkAddr</code> - The string of storeman work address being queried.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -7827,7 +7830,7 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanDelegatorInfo("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606", (err, result) => {
+   *   apiTest.getStoremanDelegatorInfo({"wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7835,7 +7838,7 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanDelegatorInfo("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606");
+   *   let result = await apiTest.getStoremanDelegatorInfo({"wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"});
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
@@ -7883,10 +7886,11 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {array} address The storeman from address being queried.
-   * @apiParam {string} wkAddr The storeman work address being queried.
-   * @apiParam {number} fromBlock The number of the earliest block (latest may be given to mean the most recent, block). By default 0.
-   * @apiParam {number} toBlock The number of the latest block (latest may be given to mean the most recent, block). By default latest.
+  * @apiParam {object} options Details:
+  * <br>&nbsp;&nbsp;<code>address</code> - The array of storeman from address being queried.
+  * <br>&nbsp;&nbsp;<code>wkAddr</code> - The string of storeman work address being queried.
+  * <br>&nbsp;&nbsp;<code>fromBlock</code> - Optional, the number of the earliest block (latest may be given to mean the most recent, block). By default 0.
+  * <br>&nbsp;&nbsp;<code>toBlock</code> - Optional, the number of the latest block (latest may be given to mean the most recent, block). By default latest.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -7953,10 +7957,11 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {array} wkAddr The storeman work address being queried.
-   * @apiParam {string} groupId The storeman group ID being queried.
-   * @apiParam {number} fromBlock The number of the earliest block (latest may be given to mean the most recent, block). By default 0.
-   * @apiParam {number} toBlock The number of the latest block (latest may be given to mean the most recent, block). By default latest.
+  * @apiParam {object} options Details:
+  * <br>&nbsp;&nbsp;<code>wkAddr</code> - The array of storeman work address being queried.
+  * <br>&nbsp;&nbsp;<code>groupId</code> - The string of storeman group ID being queried.
+  * <br>&nbsp;&nbsp;<code>fromBlock</code> - Optional, the number of the earliest block (latest may be given to mean the most recent, block). By default 0.
+  * <br>&nbsp;&nbsp;<code>toBlock</code> - Optional, the number of the latest block (latest may be given to mean the most recent, block). By default latest.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -8025,21 +8030,22 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {array} wkAddr The storeman work address being queried.
-   * @apiParam {string} groupId The storeman group ID being queried.
-   * @apiParam {number} fromBlock The number of the earliest block (latest may be given to mean the most recent, block). By default 0.
-   * @apiParam {number} toBlock The number of the latest block (latest may be given to mean the most recent, block). By default latest.
+  * @apiParam {object} options Details:
+  * <br>&nbsp;&nbsp;<code>wkAddr</code> - The array of storeman work address being queried.
+  * <br>&nbsp;&nbsp;<code>groupId</code> - The string of storeman group ID being queried.
+  * <br>&nbsp;&nbsp;<code>fromBlock</code> - Optional, the number of the earliest block (latest may be given to mean the most recent, block). By default 0.
+  * <br>&nbsp;&nbsp;<code>toBlock</code> - Optional, the number of the latest block (latest may be given to mean the most recent, block). By default latest.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getStoremanSignSlashInfo","params":{"wkAddr":["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]},"id":1}
+   * {"jsonrpc":"2.0","method":"getStoremanSignSlashInfo","params":{groupId:"0x0000000000000000000000000000000000000000000031353937383131313430", "wkAddr":["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanSignSlashInfo({"wkAddr":["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]}, (err, result) => {
+   *   apiTest.getStoremanSignSlashInfo({groupId:"0x0000000000000000000000000000000000000000000031353937383131313430","wkAddr":["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -8047,7 +8053,7 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanSignSlashInfo({"wkAddr":["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]});
+   *   let result = await apiTest.getStoremanSignSlashInfo({groupId:"0x0000000000000000000000000000000000000000000031353937383131313430", "wkAddr":["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]});
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
@@ -8095,7 +8101,8 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {array} [chainIds] Optional, the two chain IDs of cross chain pair.
+   * @apiParam {object} [options] Optional:
+   * <br>&nbsp;&nbsp;<code>chainIds</code> - Optional, the array of two chain IDs of cross chain pair.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -8211,7 +8218,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [id] The tokenPairId being queried.
+   * @apiParam {string} id The tokenPairId being queried.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -8271,8 +8278,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chain1] The chain1 being queried.
-   * @apiParam {string} [chain2] The chain2 being queried.
+   * @apiParam {array} [chainIds] the array of two chain IDs of cross chain pair.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -8358,7 +8364,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [id] The tokenPairId being queried.
+   * @apiParam {string} id The tokenPairId being queried.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -8418,7 +8424,8 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} [chainIds] The two chain IDs of cross chain pair being queried.
+   * @apiParam {object} [options] Optional:
+   * <br>&nbsp;&nbsp;<code>chainIds</code> - Optional, the array of two chain IDs of cross chain pair.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -8706,9 +8713,10 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} chainId The chain id that you want to search, should like <code>"2153201998"</code>. Adding it to 2^31 to get the final hardened key index, 0x80000000 + 5718350(chain index) = 0x8057414e.
-   * @apiParam {string} symbol The chain symbol that you want to search, should like <code>"WAN"</code>.
-   * @apiParam {string} index The chain index that you want to search, should like <code>"5718350"</code>.
+   * @apiParam {object} options Details:
+   * <br>&nbsp;&nbsp;<code>chainId</code> - The chain id that you want to search, should like <code>"2153201998"</code>. Adding it to 2^31 to get the final hardened key index, 0x80000000 + 5718350(chain index) = 0x8057414e.
+   * <br>&nbsp;&nbsp;<code>symbol</code> - The chain symbol that you want to search, should like <code>"WAN"</code>.
+   * <br>&nbsp;&nbsp;<code>index</code> - The chain index that you want to search, should like <code>"5718350"</code>.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -8777,7 +8785,8 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} chainIds The chain id that you want to search, should like <code>"0x8057414e"</code>. Adding it to 2^31 to get the final hardened key index, 0x80000000 + 5718350(chain index) = 0x8057414e.
+   * @apiParam {object} [options] Optional:
+   * <br>&nbsp;&nbsp;<code>chainIds</code> - Optional, the array of two chain IDs of cross chain pair.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
