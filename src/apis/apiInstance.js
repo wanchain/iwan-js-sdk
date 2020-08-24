@@ -6971,7 +6971,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup CrossChain
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGroupList
    * @apiVersion 1.2.1
-   * @apiDescription Get all the active storemanGroups, include the info like the groupid, etc.
+   * @apiDescription Get all the active storemanGroups, include the info like the groupId, etc.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -7127,66 +7127,6 @@ class ApiInstance extends WsInstance {
     });
   }
 
-  /**
-   *
-   * @apiName getStoremanGroupListByChainPair
-   * @apiGroup CrossChain
-   * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGroupListByChainPair
-   * @apiVersion 1.2.1
-   * @apiDescription Get all the active storemanGroups, include the info like the groupid, etc.
-   * <br><br><strong>Returns:</strong>
-   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
-   *
-   * @apiParam {string} [chainID1] The chainID1 being queried.
-   * @apiParam {string} [chainID2] The chainID2 being queried.
-   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
-   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
-   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
-   *
-   * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getStoremanGroupListByChainPair","params":{"chainID1":"2147483708", "chainID2":"2153201998"},"id":1}
-   *
-  * @apiExample {nodejs} Example callback usage:
-  *   const ApiInstance = require('iwan-sdk');
-   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanGroupListByChainPair("2147483708", "2153201998", (err, result) => {
-   *     console.log("Result is ", result);
-   *     apiTest.close();
-   *   });
-   *
-  * @apiExample {nodejs} Example promise usage:
-  *   const ApiInstance = require('iwan-sdk');
-   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanGroupListByChainPair("2147483708", "2153201998");
-   *   console.log("Result is ", result);
-   *   apiTest.close();
-   *
-   * @apiSuccessExample {json} Successful Response
-   *  [{
-    "groupId": "0x0000000000000000000000000000000000000000000000003133323936333039",
-    "workStart": "13296310",
-    "workDuration": "2",
-    "registerDuration": "10",
-    "preGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000"
-  }]
-   *
-   */
-  getStoremanGroupListByChainPair(chainID1, chainID2, callback) {
-    if (callback) {
-      callback = utils.wrapCallback(callback);
-    }
-    let method = 'getStoremanGroupListByChainPair';
-    let params = {"chainID1": chainID1, "chainID2": chainID2};
-
-    return utils.promiseOrCallback(callback, cb => {
-      this._request(method, params, (err, result) => {
-        if (err) {
-          return cb(err);
-        }
-        return cb(null, result);
-      });
-    });
-  }
   /**
    *
    * @apiName getStoremanGroupInfo
@@ -7389,7 +7329,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup CrossChain
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getMultiStoremanInfo
    * @apiVersion 1.2.1
-   * @apiDescription Get the detail info of one certain storeman, include the info like the groupid, deposit, delegatorDeposit, incentive, etc.
+   * @apiDescription Get the detail info of multi certain storeman, include the info like the groupid, deposit, delegatorDeposit, incentive, etc.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -7659,7 +7599,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup CrossChain
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanStakeInfo
    * @apiVersion 1.2.1
-   * @apiDescription Get the detail info of one certain storeman, include the info like the groupid, deposit, delegatorDeposit, incentive, etc.
+   * @apiDescription Get the stake info of certain storeman.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -7742,7 +7682,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup CrossChain
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanStakeTotalIncentive
    * @apiVersion 1.2.1
-   * @apiDescription Get the detail info of one certain storeman, include the info like the groupid, deposit, delegatorDeposit, incentive, etc.
+   * @apiDescription Get the total incentive info of certain storeman stake.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -7813,7 +7753,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup CrossChain
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanDelegatorInfo
    * @apiVersion 1.2.1
-   * @apiDescription Get the detail info of one certain storeman, include the info like the groupid, deposit, delegatorDeposit, incentive, etc.
+   * @apiDescription Get the delegator info on certain storeman.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -7882,7 +7822,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup CrossChain
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanDelegatorTotalIncentive
    * @apiVersion 1.2.1
-   * @apiDescription Get the detail info of one certain storeman, include the info like the groupid, deposit, delegatorDeposit, incentive, etc.
+   * @apiDescription Get the delegator total incentive info.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -7953,7 +7893,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup CrossChain
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGpkSlashInfo
    * @apiVersion 1.2.1
-   * @apiDescription Get the gpk slash info of one certain storeman.
+   * @apiDescription Get the gpk slash info of certain storeman.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -8026,7 +7966,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup CrossChain
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanSignSlashInfo
    * @apiVersion 1.2.1
-   * @apiDescription Get the sign slash info of one certain storeman.
+   * @apiDescription Get the sign slash info of certain storeman.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
@@ -8270,92 +8210,6 @@ class ApiInstance extends WsInstance {
 
   /**
    *
-   * @apiName getTokenPairsByChainPair
-   * @apiGroup CrossChain
-   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenPairsByChainPair
-   * @apiVersion 1.2.1
-   * @apiDescription Get the info of tokenPair of certain chainPair, like fromChainID, toChainID, tokenAddress.
-   * <br><br><strong>Returns:</strong>
-   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
-   *
-   * @apiParam {array} [chainIds] the array of two chain IDs of cross chain pair.
-   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
-   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
-   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
-   *
-   * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getTokenPairsByChainPair","params":{"chain1":"2147483708", "chain2":"2153201998"},"id":1}
-   *
-  * @apiExample {nodejs} Example callback usage:
-  *   const ApiInstance = require('iwan-sdk');
-   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getTokenPairsByChainPair("2147483708", "2153201998", (err, result) => {
-   *     console.log("Result is ", result);
-   *     apiTest.close();
-   *   });
-   *
-  * @apiExample {nodejs} Example promise usage:
-  *   const ApiInstance = require('iwan-sdk');
-   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getTokenPairsByChainPair("2147483708", "2153201998");
-   *   console.log("Result is ", result);
-   *   apiTest.close();
-   *
-   * @apiSuccessExample {json} Successful Response
-   *  [{
-    "id": "1",
-    "fromChainID": "2147483708",
-    "fromAccount": "0x0000000000000000000000000000000000000000",
-    "toChainID": "2153201998",
-    "tokenAddress": "0x36FfEcE47A3BaF210b26cc469E37eef2212d9812",
-    "ancestorSymbol": "ETH",
-    "ancestorDecimals": "18"
-  }, {
-    "id": "2",
-    "fromChainID": "2153201998",
-    "fromAccount": "0x0000000000000000000000000000000000000000",
-    "toChainID": "2147483708",
-    "tokenAddress": "0xe87627630583e5411486982268b01DaBcaB5CeC0",
-    "ancestorSymbol": "WAN",
-    "ancestorDecimals": "18"
-  }, {
-    "id": "3",
-    "fromChainID": "2147483708",
-    "fromAccount": "0x64993826cdf00b4355c4f366e2c38da140eb5f0d",
-    "toChainID": "2153201998",
-    "tokenAddress": "0x1A5a44D553Df414920874042b8324Cb63F11e917",
-    "ancestorSymbol": "LINK",
-    "ancestorDecimals": "18"
-  }, {
-    "id": "4",
-    "fromChainID": "2153201998",
-    "fromAccount": "0x3f759314c81f078b9baab7a1fddd6758f027d333",
-    "toChainID": "2147483708",
-    "tokenAddress": "0x132329E7e4CD25f4CcAE33d40B4eb40006f1Fb52",
-    "ancestorSymbol": "FNX",
-    "ancestorDecimals": "18"
-  }]
-   *
-   */
-  getTokenPairsByChainPair(chainIds, callback) {
-    if (callback) {
-      callback = utils.wrapCallback(callback);
-    }
-    let method = 'getTokenPairsByChainPair';
-    let params = {chainIds: chainIds};
-
-    return utils.promiseOrCallback(callback, cb => {
-      this._request(method, params, (err, result) => {
-        if (err) {
-          return cb(err);
-        }
-        return cb(null, result);
-      });
-    });
-  }
-
-  /**
-   *
    * @apiName getTokenPairAncestorInfo
    * @apiGroup CrossChain
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenPairAncestorInfo
@@ -8465,233 +8319,6 @@ class ApiInstance extends WsInstance {
     }
     let method = 'getTokenPairIDs';
     let params = {...options};
-
-    return utils.promiseOrCallback(callback, cb => {
-      this._request(method, params, (err, result) => {
-        if (err) {
-          return cb(err);
-        }
-        return cb(null, result);
-      });
-    });
-  }
-
-  /**
-   *
-   * @apiName getTokenPairIDsByChainPair
-   * @apiGroup CrossChain
-   * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenPairIDsByChainPair
-   * @apiVersion 1.2.1
-   * @apiDescription Get all register tokenPairIDs of certain chainPair.
-   * <br><br><strong>Returns:</strong>
-   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
-   *
-   * @apiParam {string} [chain1] The chain1 being queried.
-   * @apiParam {string} [chain2] The chain2 being queried.
-   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
-   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
-   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
-   *
-   * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getTokenPairIDsByChainPair","params":{"chain1":"2147483708", "chain2":"2153201998"},"id":1}
-   *
-  * @apiExample {nodejs} Example callback usage:
-  *   const ApiInstance = require('iwan-sdk');
-   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getTokenPairIDsByChainPair("2147483708", "2153201998", (err, result) => {
-   *     console.log("Result is ", result);
-   *     apiTest.close();
-   *   });
-   *
-  * @apiExample {nodejs} Example promise usage:
-  *   const ApiInstance = require('iwan-sdk');
-   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getTokenPairIDsByChainPair("2147483708", "2153201998");
-   *   console.log("Result is ", result);
-   *   apiTest.close();
-   *
-   * @apiSuccessExample {json} Successful Response
-   *  [ '1', '2', '3', '4' ]
-   *
-   */
-  getTokenPairIDsByChainPair(chain1, chain2, callback) {
-    if (callback) {
-      callback = utils.wrapCallback(callback);
-    }
-    let method = 'getTokenPairIDsByChainPair';
-    let params = {"chain1": chain1, "chain2": chain2};
-
-    return utils.promiseOrCallback(callback, cb => {
-      this._request(method, params, (err, result) => {
-        if (err) {
-          return cb(err);
-        }
-        return cb(null, result);
-      });
-    });
-  }
-
-  /**
-   *
-   * @apiName getChainIdByChainSymbol
-   * @apiGroup CrossChain
-   * @api {CONNECT} /ws/v3/YOUR-API-KEY getChainIdByChainSymbol
-   * @apiVersion 1.2.1
-   * @apiDescription Get the chainIndex (before hardened) which is used as hardened derivation in BIP44. Adding it to 2^31, you can get the final hardened key index, for example 0x80000000 + 5718350 = 0x8057414e.
-   * <br><br><strong>Returns:</strong>
-   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
-   *
-   * @apiParam {string} chainSymbol The chainSymbol that you want to search, should like <code>"WAN"</code>.
-   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
-   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
-   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
-   *
-   * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getChainIdByChainSymbol","params":{"chainSymbol":"WAN"},"id":1}
-   *
-  * @apiExample {nodejs} Example callback usage:
-  *   const ApiInstance = require('iwan-sdk');
-   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getChainIdByChainSymbol("WAN", (err, result) => {
-   *     console.log("Result is ", result);
-   *     apiTest.close();
-   *   });
-   *
-  * @apiExample {nodejs} Example promise usage:
-  *   const ApiInstance = require('iwan-sdk');
-   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getChainIdByChainSymbol("WAN");
-   *   console.log("Result is ", result);
-   *   apiTest.close();
-   *
-   * @apiSuccessExample {json} Successful Response
-   *  5718350
-   *
-   */
-  getChainIdByChainSymbol(chainSymbol, callback) {
-    if (callback) {
-      callback = utils.wrapCallback(callback);
-    }
-    let method = 'getChainIdByChainSymbol';
-    let params = {"chainSymbol": chainSymbol};
-
-    return utils.promiseOrCallback(callback, cb => {
-      this._request(method, params, (err, result) => {
-        if (err) {
-          return cb(err);
-        }
-        return cb(null, result);
-      });
-    });
-  }
-
-  /**
-   *
-   * @apiName getChainInfoByChainIndex
-   * @apiGroup CrossChain
-   * @api {CONNECT} /ws/v3/YOUR-API-KEY getChainInfoByChainIndex
-   * @apiVersion 1.2.1
-   * @apiDescription Get the chainIndex (before hardened) which is used as hardened derivation in BIP44. Adding it to 2^31, you can get the final hardened key index, for example 0x80000000 + 5718350 = 0x8057414e.
-   * <br><br><strong>Returns:</strong>
-   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
-   *
-   * @apiParam {string} chainIndex The chain index that you want to search, should like <code>"5718350"</code>. Adding it to 2^31 to get the final hardened key index, 0x80000000 + 5718350 = 0x8057414e.
-   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
-   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
-   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
-   *
-   * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getChainInfoByChainIndex","params":{"chainIndex":"5718350"},"id":1}
-   *
-  * @apiExample {nodejs} Example callback usage:
-  *   const ApiInstance = require('iwan-sdk');
-   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getChainInfoByChainIndex("5718350", (err, result) => {
-   *     console.log("Result is ", result);
-   *     apiTest.close();
-   *   });
-   *
-  * @apiExample {nodejs} Example promise usage:
-  *   const ApiInstance = require('iwan-sdk');
-   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getChainInfoByChainIndex("5718350");
-   *   console.log("Result is ", result);
-   *   apiTest.close();
-   *
-   * @apiSuccessExample {json} Successful Response
-   *  [
-   *    2153201998, // chain ID
-   *    "WAN", // chain symbol
-   *    "Wanchain", // chain name
-   *    "5718350" // chainIndex
-   *  ]
-   *
-   */
-  getChainInfoByChainIndex(chainIndex, callback) {
-    if (callback) {
-      callback = utils.wrapCallback(callback);
-    }
-    let method = 'getChainInfoByChainIndex';
-    let params = {"chainIndex": chainIndex};
-
-    return utils.promiseOrCallback(callback, cb => {
-      this._request(method, params, (err, result) => {
-        if (err) {
-          return cb(err);
-        }
-        return cb(null, result);
-      });
-    });
-  }
-
-  /**
-   *
-   * @apiName getChainInfoByChainId
-   * @apiGroup CrossChain
-   * @api {CONNECT} /ws/v3/YOUR-API-KEY getChainInfoByChainId
-   * @apiVersion 1.2.1
-   * @apiDescription Get the chainInfo by the chain id which is used as hardened derivation in BIP44.
-   * <br><br><strong>Returns:</strong>
-   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
-   *
-   * @apiParam {string} chainId The chain id that you want to search, should like <code>"0x8057414e"</code>. Adding it to 2^31 to get the final hardened key index, 0x80000000 + 5718350(chain index) = 0x8057414e.
-   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
-   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
-   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
-   *
-   * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getChainInfoByChainId","params":{"chainId":"0x8057414e"},"id":1}
-   *
-  * @apiExample {nodejs} Example callback usage:
-  *   const ApiInstance = require('iwan-sdk');
-   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getChainInfoByChainId("0x8057414e", (err, result) => {
-   *     console.log("Result is ", result);
-   *     apiTest.close();
-   *   });
-   *
-  * @apiExample {nodejs} Example promise usage:
-  *   const ApiInstance = require('iwan-sdk');
-   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getChainInfoByChainId("0x8057414e");
-   *   console.log("Result is ", result);
-   *   apiTest.close();
-   *
-   * @apiSuccessExample {json} Successful Response
-   *  [
-   *    2153201998, // chain ID
-   *    "WAN", // chain symbol
-   *    "Wanchain", // chain name
-   *    "5718350" // chainIndex
-   *  ]
-   *
-   */
-  getChainInfoByChainId(chainId, callback) {
-    if (callback) {
-      callback = utils.wrapCallback(callback);
-    }
-    let method = 'getChainInfoByChainId';
-    let params = {"chainId": chainId};
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
