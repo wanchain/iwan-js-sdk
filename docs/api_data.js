@@ -1070,24 +1070,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "string",
+            "type": "object",
             "optional": false,
-            "field": "chainId",
-            "description": "<p>The chain id that you want to search, should like <code>&quot;2153201998&quot;</code>. Adding it to 2^31 to get the final hardened key index, 0x80000000 + 5718350(chain index) = 0x8057414e.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "symbol",
-            "description": "<p>The chain symbol that you want to search, should like <code>&quot;WAN&quot;</code>.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "index",
-            "description": "<p>The chain index that you want to search, should like <code>&quot;5718350&quot;</code>.</p>"
+            "field": "options",
+            "description": "<p>Details: <br>  <code>chainId</code> - The chain id that you want to search, should like <code>&quot;2153201998&quot;</code>. Adding it to 2^31 to get the final hardened key index, 0x80000000 + 5718350(chain index) = 0x8057414e. <br>  <code>symbol</code> - The chain symbol that you want to search, should like <code>&quot;WAN&quot;</code>. <br>  <code>index</code> - The chain index that you want to search, should like <code>&quot;5718350&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
@@ -1379,10 +1365,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "chainIds",
-            "description": "<p>The chain id that you want to search, should like <code>&quot;0x8057414e&quot;</code>. Adding it to 2^31 to get the final hardened key index, 0x80000000 + 5718350(chain index) = 0x8057414e.</p>"
+            "type": "object",
+            "optional": true,
+            "field": "options",
+            "description": "<p>Optional: <br>  <code>chainIds</code> - Optional, the array of two chain IDs of cross chain pair.</p>"
           },
           {
             "group": "Parameter",
@@ -1522,7 +1508,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getMultiStoremanInfo([\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\"}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getMultiStoremanInfo([\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
@@ -1726,17 +1712,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "array",
+            "type": "object",
             "optional": false,
-            "field": "address",
-            "description": "<p>The array address of delegators being queried.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "wkAddr",
-            "description": "<p>The storeman work address being queried.</p>"
+            "field": "options",
+            "description": "<p>Details: <br>  <code>address</code> - The array of delegator's address being queried. <br>  <code>wkAddr</code> - The string of storeman work address being queried.</p>"
           },
           {
             "group": "Parameter",
@@ -1758,12 +1737,12 @@ define({ "api": [
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getStoremanDelegatorInfo(\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getStoremanDelegatorInfo({\"wkAddr\":\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\"}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
         "title": "Example promise usage:",
-        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getStoremanDelegatorInfo(\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getStoremanDelegatorInfo({\"wkAddr\":\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\"});\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
     ],
@@ -1792,31 +1771,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "array",
+            "type": "object",
             "optional": false,
-            "field": "address",
-            "description": "<p>The storeman from address being queried.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "wkAddr",
-            "description": "<p>The storeman work address being queried.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": false,
-            "field": "fromBlock",
-            "description": "<p>The number of the earliest block (latest may be given to mean the most recent, block). By default 0.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": false,
-            "field": "toBlock",
-            "description": "<p>The number of the latest block (latest may be given to mean the most recent, block). By default latest.</p>"
+            "field": "options",
+            "description": "<p>Details: <br>  <code>address</code> - The array of storeman from address being queried. <br>  <code>wkAddr</code> - The string of storeman work address being queried. <br>  <code>fromBlock</code> - Optional, the number of the earliest block (latest may be given to mean the most recent, block). By default 0. <br>  <code>toBlock</code> - Optional, the number of the latest block (latest may be given to mean the most recent, block). By default latest.</p>"
           },
           {
             "group": "Parameter",
@@ -1872,31 +1830,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "array",
+            "type": "object",
             "optional": false,
-            "field": "wkAddr",
-            "description": "<p>The storeman work address being queried.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "groupId",
-            "description": "<p>The storeman group ID being queried.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": false,
-            "field": "fromBlock",
-            "description": "<p>The number of the earliest block (latest may be given to mean the most recent, block). By default 0.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": false,
-            "field": "toBlock",
-            "description": "<p>The number of the latest block (latest may be given to mean the most recent, block). By default latest.</p>"
+            "field": "options",
+            "description": "<p>Details: <br>  <code>wkAddr</code> - The array of storeman work address being queried. <br>  <code>groupId</code> - The string of storeman group ID being queried. <br>  <code>fromBlock</code> - Optional, the number of the earliest block (latest may be given to mean the most recent, block). By default 0. <br>  <code>toBlock</code> - Optional, the number of the latest block (latest may be given to mean the most recent, block). By default latest.</p>"
           },
           {
             "group": "Parameter",
@@ -2019,7 +1956,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "groupId",
             "description": "<p>The storeman groupId being queried.</p>"
           },
@@ -2417,7 +2354,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{\n      \"sender\": \"0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0\",\n      \"PK\": \"0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8\",\n      \"pkAddress\": \"0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606\",\n      \"quited\": false,\n      \"delegateFee\": \"666\",\n      \"deposit\": \"2000\",\n      \"delegateDeposit\": \"0\",\n      \"incentive\": \"0\",\n      \"delegatorCount\": \"0\",\n      \"groupId\": \"0x0000000000000000000000000000000000000000000000003133323936333039\",\n      \"nextGroupId\": \"0x0000000000000000000000000000000000000000000000000000000000000000\"\n    }",
+          "content": "{\n      \"sender\": \"0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0\",\n      \"PK\": \"0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8\",\n      \"wkAddr\": \"0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606\",\n      \"quited\": false,\n      \"deposit\": \"2000\",\n      \"delegateDeposit\": \"0\",\n      \"incentive\": \"0\",\n      \"delegatorCount\": \"0\",\n      \"groupId\": \"0x0000000000000000000000000000000000000000000031353937383131313430\",\n      \"nextGroupId\": \"0x0000000000000000000000000000000000000000000000000000000000000000\",\n      \"incentivedDay\": \"13315791\",\n      \"slashedCount\": \"0\"\n    }",
           "type": "json"
         }
       ]
@@ -2438,31 +2375,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "array",
+            "type": "object",
             "optional": false,
-            "field": "wkAddr",
-            "description": "<p>The storeman work address being queried.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "groupId",
-            "description": "<p>The storeman group ID being queried.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": false,
-            "field": "fromBlock",
-            "description": "<p>The number of the earliest block (latest may be given to mean the most recent, block). By default 0.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": false,
-            "field": "toBlock",
-            "description": "<p>The number of the latest block (latest may be given to mean the most recent, block). By default latest.</p>"
+            "field": "options",
+            "description": "<p>Details: <br>  <code>wkAddr</code> - The array of storeman work address being queried. <br>  <code>groupId</code> - The string of storeman group ID being queried. <br>  <code>fromBlock</code> - Optional, the number of the earliest block (latest may be given to mean the most recent, block). By default 0. <br>  <code>toBlock</code> - Optional, the number of the latest block (latest may be given to mean the most recent, block). By default latest.</p>"
           },
           {
             "group": "Parameter",
@@ -2476,7 +2392,7 @@ define({ "api": [
       "examples": [
         {
           "title": "JSON-RPC over websocket",
-          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getStoremanSignSlashInfo\",\"params\":{\"wkAddr\":[\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\"]},\"id\":1}",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getStoremanSignSlashInfo\",\"params\":{groupId:\"0x0000000000000000000000000000000000000000000031353937383131313430\", \"wkAddr\":[\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\"]},\"id\":1}",
           "type": "string"
         }
       ]
@@ -2484,12 +2400,12 @@ define({ "api": [
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getStoremanSignSlashInfo({\"wkAddr\":[\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\"]}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getStoremanSignSlashInfo({groupId:\"0x0000000000000000000000000000000000000000000031353937383131313430\",\"wkAddr\":[\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\"]}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
         "title": "Example promise usage:",
-        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getStoremanSignSlashInfo({\"wkAddr\":[\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\"]});\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getStoremanSignSlashInfo({groupId:\"0x0000000000000000000000000000000000000000000031353937383131313430\", \"wkAddr\":[\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\"]});\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
     ],
@@ -2518,24 +2434,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "string",
+            "type": "object",
             "optional": false,
-            "field": "wkAddr",
-            "description": "<p>The storeman work address being queried.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "array",
-            "optional": false,
-            "field": "address",
-            "description": "<p>The storeman from address being queried.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "groupId",
-            "description": "<p>The storeman group ID being queried.</p>"
+            "field": "options",
+            "description": "<p>Details: <br>  <code>address</code> - The array of storeman from address being queried. <br>  <code>wkAddr</code> - The string of storeman work address being queried. <br>  <code>groupId</code> - The string of storeman group ID being queried.</p>"
           },
           {
             "group": "Parameter",
@@ -2591,31 +2493,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "array",
+            "type": "object",
             "optional": false,
-            "field": "address",
-            "description": "<p>The storeman from address being queried.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": false,
-            "field": "wkAddr",
-            "description": "<p>The storeman work address being queried.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": true,
-            "field": "fromBlock",
-            "description": "<p>The start block number being queried.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "number",
-            "optional": true,
-            "field": "toBlock",
-            "description": "<p>The end block number being queried.</p>"
+            "field": "options",
+            "description": "<p>Details: <br>  <code>address</code> - The array of storeman from address being queried. <br>  <code>wkAddr</code> - The string of storeman work address being queried. <br>  <code>fromBlock</code> - Optional, the number of the earliest block (latest may be given to mean the most recent, block). By default 0. <br>  <code>toBlock</code> - Optional, the number of the latest block (latest may be given to mean the most recent, block). By default latest.</p>"
           },
           {
             "group": "Parameter",
@@ -2738,7 +2619,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "id",
             "description": "<p>The tokenPairId being queried.</p>"
           },
@@ -2796,10 +2677,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "string",
+            "type": "object",
             "optional": true,
-            "field": "chainIds",
-            "description": "<p>The two chain IDs of cross chain pair being queried.</p>"
+            "field": "options",
+            "description": "<p>Optional: <br>  <code>chainIds</code> - Optional, the array of two chain IDs of cross chain pair.</p>"
           },
           {
             "group": "Parameter",
@@ -2922,7 +2803,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
-            "optional": true,
+            "optional": false,
             "field": "id",
             "description": "<p>The tokenPairId being queried.</p>"
           },
@@ -2980,10 +2861,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "array",
+            "type": "object",
             "optional": true,
-            "field": "chainIds",
-            "description": "<p>Optional, the two chain IDs of cross chain pair.</p>"
+            "field": "options",
+            "description": "<p>Optional: <br>  <code>chainIds</code> - Optional, the array of two chain IDs of cross chain pair.</p>"
           },
           {
             "group": "Parameter",
@@ -3039,17 +2920,10 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "string",
+            "type": "array",
             "optional": true,
-            "field": "chain1",
-            "description": "<p>The chain1 being queried.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "string",
-            "optional": true,
-            "field": "chain2",
-            "description": "<p>The chain2 being queried.</p>"
+            "field": "chainIds",
+            "description": "<p>the array of two chain IDs of cross chain pair.</p>"
           },
           {
             "group": "Parameter",
