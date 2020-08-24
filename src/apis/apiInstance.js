@@ -7398,7 +7398,7 @@ class ApiInstance extends WsInstance {
    * @apiGroup CrossChain
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanConf
    * @apiVersion 1.2.1
-   * @apiDescription Get the conf info of one certain storeman, include the info about backupCount, standaloneWeight, delegatorDeposit and DelegationMulti.
+   * @apiDescription Get the conf info of one certain storeman, include the info about backupCount, standaloneWeight, delegatorDeposit and delegationMulti.
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
