@@ -1403,7 +1403,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[{\n      \"groupId\": \"0x0000000000000000000000000000000000000000000031353937383131313430\",\n      \"wkAddr\": \"0x82EF7751A5460BC10F731558f0741705BA972f4E\",\n      \"from\": \"0x6f64f6d0d58acabd288774e993d9cacfa3fc88ee\",\n      \"value\": \"2000\",\n      \"PK\": \"0xccd16e96a70a5b496ff1cec869902b6a8ffa00715897937518f1c9299726f7090bc36cc23c1d028087eb0988c779663e996391f290631317fc22f84fa9bf2467\",\n      \"quited\": false,\n      \"deposit\": \"2000\",\n      \"delegateDeposit\": \"0\",\n      \"incentive\": \"0\",\n      \"delegatorCount\": \"0\",\n      \"nextGroupId\": \"0x0000000000000000000000000000000000000000000000000000000000000000\",\n      \"incentivedDay\": \"13315791\",\n      \"slashedCount\": \"0\",\n      \"rank\": 1,\n      \"activity\": 0,\n      \"canStakeOut\": true,\n      \"canStakeClaim\": false\n    }]",
+          "content": "[\n      {\n        \"sender\": \"0x4Eb7Cb5411D13014A69EDc089AA75a6E1fd0Aa68\",\n        \"PK\": \"0xbe3b7fd88613dc272a36f4de570297f5f33b87c26de3060ad04e2ea697e13125a2454acd296e1879a7ddd0084d9e4e724fca9ef610b21420978476e2632a1782\",\n        \"wkAddr\": \"0x23DcbE0323605A7A00ce554baBCFF197bAF99B10\",\n        \"quited\": false,\n        \"deposit\": \"2000\",\n        \"delegateDeposit\": \"0\",\n        \"incentive\": \"0\",\n        \"delegatorCount\": \"0\",\n        \"groupId\": \"0x0000000000000000000000000000000000000000000031353938353934383939\",\n        \"nextGroupId\": \"0x0000000000000000000000000000000000000000000031353938353934383939\",\n        \"incentivedDay\": \"13319374\",\n        \"slashedCount\": \"0\"\n      },\n      {\n        \"sender\": \"0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0\",\n        \"PK\": \"0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8\",\n        \"wkAddr\": \"0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606\",\n        \"quited\": false,\n        \"deposit\": \"2000\",\n        \"delegateDeposit\": \"0\",\n        \"incentive\": \"0\",\n        \"delegatorCount\": \"0\",\n        \"groupId\": \"0x0000000000000000000000000000000000000000000031353938353934383939\",\n        \"nextGroupId\": \"0x0000000000000000000000000000000000000000000031353938353934383939\",\n        \"incentivedDay\": \"13319374\",\n        \"slashedCount\": \"0\",\n        \"name\": \"phorest.xyz\",\n        \"url\": \"https://phorest.xyz/wan\",\n        \"iconData\": \"...\",\n        \"iconType\": \"png\"\n      },\n      ...\n    ]",
           "type": "json"
         }
       ]
@@ -1479,7 +1479,7 @@ define({ "api": [
             "type": "object",
             "optional": false,
             "field": "options",
-            "description": "<p>Details: <br>  <code>address</code> - The array of delegator's address being queried. <br>  <code>wkAddr</code> - The string of storeman work address being queried.</p>"
+            "description": "<p>Details: <br>  <code>address</code> - The array of delegator's address being queried. <br>  <code>wkAddr</code> - The array of storeman work address being queried.</p>"
           },
           {
             "group": "Parameter",
@@ -1493,7 +1493,7 @@ define({ "api": [
       "examples": [
         {
           "title": "JSON-RPC over websocket",
-          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getStoremanDelegatorInfo\",\"params\":{\"wkAddr\":\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\"},\"id\":1}",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getStoremanDelegatorInfo\",\"params\":{\"wkAddr\":[\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\"]},\"id\":1}",
           "type": "string"
         }
       ]
@@ -1501,12 +1501,12 @@ define({ "api": [
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getStoremanDelegatorInfo({\"wkAddr\":\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\"}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getStoremanDelegatorInfo({\"wkAddr\":[\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\"]}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
         "title": "Example promise usage:",
-        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getStoremanDelegatorInfo({\"wkAddr\":\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\"});\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getStoremanDelegatorInfo({\"wkAddr\":[\"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\"}]);\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
     ],
@@ -1514,7 +1514,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[{\n       from:\n       wkAddr:\n       deposit:\n       incentive // 未提取的incentive\n     }]",
+          "content": "[\n     {\n       \"from\": \"0xa6d73936272bad6d9eeabd35ecb83ab365ea3ab1\",\n       \"wkAddr\": \"0xe1ab8145f7e55dc933d51a18c793f901a3a0b276\",\n       \"deposit\": \"200000000000000000000\",\n       \"incentive\": \"0\",\n       \"groupId\": \"0x0000000000000000000000000000000000000000000031353937383138353537\",\n       \"chain1\": [\n         2153201998,\n         \"WAN\",\n         \"Wanchain\",\n         5718350\n       ],\n       \"chain2\": [\n         2147483708,\n         \"ETH\",\n         \"Ethereum\",\n         60\n       ]\n     }\n   ]",
           "type": "json"
         }
       ]
@@ -1632,7 +1632,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[{\n       \"slashed\": \"0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606\", //address\n       \"parter\": \"0x5793e629c061e7FD642ab6A1b4d552CeC0e2D601\", //address\n       \"round\": \"2000\",\n       \"curveIndex\": \"0\",\n       \"slashType\": \"232377757916789457893169\",\n       \"groupId\": \"0x0000000000000000000000000000000000000000000000000000000000000000\",\n     }]",
+          "content": "[{\n       \"groupId\": \"0x0000000000000000000000000000000000000000000031353937383233303739\",\n       \"slashType\": \"3\",\n       \"slashed\": \"0x63ee75865b30f13b614a144023c133bd683e8134\",\n       \"parter\": \"0x19e119167095b4f035a906eafbb66d733545e208\",\n       \"round\": \"2\",\n       \"curveIndex\": \"0\",\n       \"timestamp\": 1597823083\n     },\n     {\n       \"groupId\": \"0x0000000000000000000000000000000000000000000031353937383233303739\",\n       \"slashType\": \"6\",\n       \"slashed\": \"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606\",\n       \"parter\": \"0xd762e1df1a61f5b70b30cd74d3127489af15d974\",\n       \"round\": \"5\",\n       \"curveIndex\": \"1\",\n       \"timestamp\": 1597823084\n     },\n     {\n       \"groupId\": \"0x0000000000000000000000000000000000000000000031353937383233303739\",\n       \"slashType\": \"3\",\n       \"slashed\": \"0xe7215f2786e18a0b0553aeb51421f0aa1615ae6e\",\n       \"parter\": \"0xd762e1df1a61f5b70b30cd74d3127489af15d974\",\n       \"round\": \"5\",\n       \"curveIndex\": \"1\",\n       \"timestamp\": 1597823085\n     }]",
           "type": "json"
         }
       ]
@@ -1757,7 +1757,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{\n       \"groupId\": \"0x0000000000000000000000000000000000000000000031353937383131313430\",\n       \"status\": \"5\",\n       \"deposit\": \"8000\",\n       \"chain1\": \"2153201998\",\n       \"chain2\": \"2147483708\",\n       \"curve1\": \"1\",\n       \"curve2\": \"1\",\n       \"gpk1\": \"0x0c0f172647dc8752c8ea19f49efac9151113605d494c3b0272dea86e5fd63360154506052ec260dbefa10dd46dc77dff9b3c97940717442521409fb641299e62\",\n       \"gpk2\": \"0x2f5e2c86302e5eec6607b727eb69c01fc47bde29328fbe5802db369e1d5452562927d105b660b05e7dcc7db98bfe86a90abf8fe7e08ed3584c1e952f43c73ee1\",\n       \"startTime\": \"1597811150\",\n       \"endTime\": \"1598415950\",\n       \"delegateFee\": \"100\"\n }",
+          "content": "{\n       \"groupId\": \"0x0000000000000000000000000000000000000000000031353937383131313430\",\n       \"status\": \"5\",\n       \"deposit\": \"8000\",\n       \"chain1\": \"2153201998\",\n       \"chain2\": \"2147483708\",\n       \"curve1\": \"1\",\n       \"curve2\": \"1\",\n       \"gpk1\": \"0x0c0f172647dc8752c8ea19f49efac9151113605d494c3b0272dea86e5fd63360154506052ec260dbefa10dd46dc77dff9b3c97940717442521409fb641299e62\",\n       \"gpk2\": \"0x2f5e2c86302e5eec6607b727eb69c01fc47bde29328fbe5802db369e1d5452562927d105b660b05e7dcc7db98bfe86a90abf8fe7e08ed3584c1e952f43c73ee1\",\n       \"startTime\": \"1597811150\",\n       \"endTime\": \"1598415950\"\n     }",
           "type": "json"
         }
       ]
@@ -1934,7 +1934,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n {\n        \"isWhite\": false,\n        \"wkAddr\": \"0xe7215f2786E18A0b0553AEB51421F0aA1615AE6E\",\n        \"PK\": \"0x5a7cef17a69a44cfd04e8a3696420b863e266dfaad35766c33e6d9d2e48c2e917ec73dcf9fef9b9d9a4fc915757102a0776de17904376bae87493a5cbba2d33a\",\n        \"enodeId\": \"0xf73200718a1a8ad521bc214c595e6e9ea424bbc7373dc22286e56dee5cff7a51268a1bb469578e8d28add08af9d1cf6e9be238658151f04b80e6f35ad893fdc1\",\n        \"sender\": \"0xc3D8008aE66FeA0044187cc7cd0E3Fb202FD4041\",\n        \"quited\": false,\n        \"deposit\": \"2000\",\n        \"delegateDeposit\": \"0\",\n        \"incentive\": \"0\",\n        \"delegatorCount\": \"0\",\n        \"groupId\": \"0x0000000000000000000000000000000000000000000031353937383233303739\",\n        \"nextGroupId\": \"0x0000000000000000000000000000000000000000000000000000000000000000\",\n        \"incentivedDay\": \"0\",\n        \"slashedCount\": \"0\"\n      },\n      ...\n    ]",
+          "content": "[\n {\n        \"isWhite\": true,\n        \"sender\": \"0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0\",\n        \"PK\": \"0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8\",\n        \"wkAddr\": \"0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606\",\n        \"quited\": false,\n        \"deposit\": \"2000\",\n        \"delegateDeposit\": \"0\",\n        \"incentive\": \"0\",\n        \"delegatorCount\": \"0\",\n        \"groupId\": \"0x0000000000000000000000000000000000000000000031353938353934383939\",\n        \"nextGroupId\": \"0x0000000000000000000000000000000000000000000031353938353934383939\",\n        \"incentivedDay\": \"13319374\",\n        \"slashedCount\": \"0\",\n        \"name\": \"phorest.xyz\",\n        \"url\": \"https://phorest.xyz/wan\",\n        \"iconData\": \"...\",\n        \"iconType\": \"png\"\n      },\n      {\n        \"isWhite\": false,\n        \"sender\": \"0x6f64f6D0d58ACABD288774e993d9caCFa3FC88eE\",\n        \"PK\": \"0xccd16e96a70a5b496ff1cec869902b6a8ffa00715897937518f1c9299726f7090bc36cc23c1d028087eb0988c779663e996391f290631317fc22f84fa9bf2467\",\n        \"wkAddr\": \"0x82EF7751A5460BC10F731558f0741705BA972f4E\",\n        \"quited\": false,\n        \"deposit\": \"2000\",\n        \"delegateDeposit\": \"0\",\n        \"incentive\": \"0\",\n        \"delegatorCount\": \"0\",\n        \"groupId\": \"0x0000000000000000000000000000000000000000000031353938353934383939\",\n        \"nextGroupId\": \"0x0000000000000000000000000000000000000000000031353938353934383939\",\n        \"incentivedDay\": \"13319377\",\n        \"slashedCount\": \"0\"\n      },\n      ...\n    ]",
           "type": "json"
         }
       ]
@@ -2170,7 +2170,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[{\n      \"groupId\": \"0x0000000000000000000000000000000000000000000031353937383131313430\",\n      \"wkAddr\": \"0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606\",\n      \"from\": \"0x7f1d642dbfd62ad4a8fa9810ea619707d09825d0\",\n      \"value\": \"2000\",\n      \"PK\": \"0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8\",\n      \"quited\": false,\n      \"deposit\": \"2000\",\n      \"delegateDeposit\": \"0\",\n      \"incentive\": \"0\",\n      \"delegatorCount\": \"0\",\n      \"nextGroupId\": \"0x0000000000000000000000000000000000000000000000000000000000000000\",\n      \"incentivedDay\": \"13315791\",\n      \"slashedCount\": \"0\",\n      \"rank\": 1,\n      \"activity\": 0,\n      \"canStakeOut\": true,\n      \"canStakeClaim\": false\n    }]",
+          "content": "[{\n      \"groupId\": \"0x0000000000000000000000000000000000000000000031353938353934383939\",\n      \"wkAddr\": \"0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606\",\n      \"from\": \"0x7f1d642dbfd62ad4a8fa9810ea619707d09825d0\",\n      \"value\": \"2000\",\n      \"PK\": \"0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8\",\n      \"quited\": false,\n      \"deposit\": \"2000\",\n      \"delegateDeposit\": \"0\",\n      \"incentive\": \"0\",\n      \"delegatorCount\": \"0\",\n      \"nextGroupId\": \"0x0000000000000000000000000000000000000000000031353938353934383939\",\n      \"incentivedDay\": \"13319374\",\n      \"slashedCount\": \"0\",\n      \"rank\": 1,\n      \"selectedCount\": \"4\",\n      \"activity\": 0,\n      \"canStakeOut\": true,\n      \"canStakeClaim\": false\n    }]",
           "type": "json"
         }
       ]
