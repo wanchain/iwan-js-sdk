@@ -7234,9 +7234,8 @@ class ApiInstance extends WsInstance {
         "gpk1": "0x0c0f172647dc8752c8ea19f49efac9151113605d494c3b0272dea86e5fd63360154506052ec260dbefa10dd46dc77dff9b3c97940717442521409fb641299e62",
         "gpk2": "0x2f5e2c86302e5eec6607b727eb69c01fc47bde29328fbe5802db369e1d5452562927d105b660b05e7dcc7db98bfe86a90abf8fe7e08ed3584c1e952f43c73ee1",
         "startTime": "1597811150",
-        "endTime": "1598415950",
-        "delegateFee": "100"
-  }
+        "endTime": "1598415950"
+      }
    *
    */
   getStoremanGroupConfig(groupId, callback) {
@@ -7483,25 +7482,41 @@ class ApiInstance extends WsInstance {
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
-   * [{
-      "groupId": "0x0000000000000000000000000000000000000000000031353937383131313430",
-      "wkAddr": "0x82EF7751A5460BC10F731558f0741705BA972f4E",
-      "from": "0x6f64f6d0d58acabd288774e993d9cacfa3fc88ee",
-      "value": "2000",
-      "PK": "0xccd16e96a70a5b496ff1cec869902b6a8ffa00715897937518f1c9299726f7090bc36cc23c1d028087eb0988c779663e996391f290631317fc22f84fa9bf2467",
-      "quited": false,
-      "deposit": "2000",
-      "delegateDeposit": "0",
-      "incentive": "0",
-      "delegatorCount": "0",
-      "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000",
-      "incentivedDay": "13315791",
-      "slashedCount": "0",
-      "rank": 1,
-      "activity": 0,
-      "canStakeOut": true,
-      "canStakeClaim": false
-    }]
+   * [
+      {
+        "sender": "0x4Eb7Cb5411D13014A69EDc089AA75a6E1fd0Aa68",
+        "PK": "0xbe3b7fd88613dc272a36f4de570297f5f33b87c26de3060ad04e2ea697e13125a2454acd296e1879a7ddd0084d9e4e724fca9ef610b21420978476e2632a1782",
+        "wkAddr": "0x23DcbE0323605A7A00ce554baBCFF197bAF99B10",
+        "quited": false,
+        "deposit": "2000",
+        "delegateDeposit": "0",
+        "incentive": "0",
+        "delegatorCount": "0",
+        "groupId": "0x0000000000000000000000000000000000000000000031353938353934383939",
+        "nextGroupId": "0x0000000000000000000000000000000000000000000031353938353934383939",
+        "incentivedDay": "13319374",
+        "slashedCount": "0"
+      },
+      {
+        "sender": "0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0",
+        "PK": "0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8",
+        "wkAddr": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
+        "quited": false,
+        "deposit": "2000",
+        "delegateDeposit": "0",
+        "incentive": "0",
+        "delegatorCount": "0",
+        "groupId": "0x0000000000000000000000000000000000000000000031353938353934383939",
+        "nextGroupId": "0x0000000000000000000000000000000000000000000031353938353934383939",
+        "incentivedDay": "13319374",
+        "slashedCount": "0",
+        "name": "phorest.xyz",
+        "url": "https://phorest.xyz/wan",
+        "iconData": "...",
+        "iconType": "png"
+      },
+      ...
+    ]
    *
    */
   getStoremanCandidates(groupId, callback) {
@@ -7557,19 +7572,37 @@ class ApiInstance extends WsInstance {
    * @apiSuccessExample {json} Successful Response
    * [
    *  {
-        "isWhite": false,
-        "wkAddr": "0xe7215f2786E18A0b0553AEB51421F0aA1615AE6E",
-        "PK": "0x5a7cef17a69a44cfd04e8a3696420b863e266dfaad35766c33e6d9d2e48c2e917ec73dcf9fef9b9d9a4fc915757102a0776de17904376bae87493a5cbba2d33a",
-        "enodeId": "0xf73200718a1a8ad521bc214c595e6e9ea424bbc7373dc22286e56dee5cff7a51268a1bb469578e8d28add08af9d1cf6e9be238658151f04b80e6f35ad893fdc1",
-        "sender": "0xc3D8008aE66FeA0044187cc7cd0E3Fb202FD4041",
+        "isWhite": true,
+        "sender": "0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0",
+        "PK": "0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8",
+        "wkAddr": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
         "quited": false,
         "deposit": "2000",
         "delegateDeposit": "0",
         "incentive": "0",
         "delegatorCount": "0",
-        "groupId": "0x0000000000000000000000000000000000000000000031353937383233303739",
-        "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000",
-        "incentivedDay": "0",
+        "groupId": "0x0000000000000000000000000000000000000000000031353938353934383939",
+        "nextGroupId": "0x0000000000000000000000000000000000000000000031353938353934383939",
+        "incentivedDay": "13319374",
+        "slashedCount": "0",
+        "name": "phorest.xyz",
+        "url": "https://phorest.xyz/wan",
+        "iconData": "...",
+        "iconType": "png"
+      },
+      {
+        "isWhite": false,
+        "sender": "0x6f64f6D0d58ACABD288774e993d9caCFa3FC88eE",
+        "PK": "0xccd16e96a70a5b496ff1cec869902b6a8ffa00715897937518f1c9299726f7090bc36cc23c1d028087eb0988c779663e996391f290631317fc22f84fa9bf2467",
+        "wkAddr": "0x82EF7751A5460BC10F731558f0741705BA972f4E",
+        "quited": false,
+        "deposit": "2000",
+        "delegateDeposit": "0",
+        "incentive": "0",
+        "delegatorCount": "0",
+        "groupId": "0x0000000000000000000000000000000000000000000031353938353934383939",
+        "nextGroupId": "0x0000000000000000000000000000000000000000000031353938353934383939",
+        "incentivedDay": "13319377",
         "slashedCount": "0"
       },
       ...
@@ -7631,7 +7664,7 @@ class ApiInstance extends WsInstance {
    *
    * @apiSuccessExample {json} Successful Response
    * [{
-      "groupId": "0x0000000000000000000000000000000000000000000031353937383131313430",
+      "groupId": "0x0000000000000000000000000000000000000000000031353938353934383939",
       "wkAddr": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
       "from": "0x7f1d642dbfd62ad4a8fa9810ea619707d09825d0",
       "value": "2000",
@@ -7641,10 +7674,11 @@ class ApiInstance extends WsInstance {
       "delegateDeposit": "0",
       "incentive": "0",
       "delegatorCount": "0",
-      "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000",
-      "incentivedDay": "13315791",
+      "nextGroupId": "0x0000000000000000000000000000000000000000000031353938353934383939",
+      "incentivedDay": "13319374",
       "slashedCount": "0",
       "rank": 1,
+      "selectedCount": "4",
       "activity": 0,
       "canStakeOut": true,
       "canStakeClaim": false
@@ -7759,18 +7793,18 @@ class ApiInstance extends WsInstance {
    *
   * @apiParam {object} options Details:
   * <br>&nbsp;&nbsp;<code>address</code> - The array of delegator's address being queried.
-  * <br>&nbsp;&nbsp;<code>wkAddr</code> - The string of storeman work address being queried.
+  * <br>&nbsp;&nbsp;<code>wkAddr</code> - The array of storeman work address being queried.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getStoremanDelegatorInfo","params":{"wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"},"id":1}
+   * {"jsonrpc":"2.0","method":"getStoremanDelegatorInfo","params":{"wkAddr":["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanDelegatorInfo({"wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"}, (err, result) => {
+   *   apiTest.getStoremanDelegatorInfo({"wkAddr":["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7778,17 +7812,32 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanDelegatorInfo({"wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"});
+   *   let result = await apiTest.getStoremanDelegatorInfo({"wkAddr":["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"}]);
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
-   *  [{
-        from:
-        wkAddr:
-        deposit:
-        incentive // 未提取的incentive
-      }]
+   *  [
+      {
+        "from": "0xa6d73936272bad6d9eeabd35ecb83ab365ea3ab1",
+        "wkAddr": "0xe1ab8145f7e55dc933d51a18c793f901a3a0b276",
+        "deposit": "200000000000000000000",
+        "incentive": "0",
+        "groupId": "0x0000000000000000000000000000000000000000000031353937383138353537",
+        "chain1": [
+          2153201998,
+          "WAN",
+          "Wanchain",
+          5718350
+        ],
+        "chain2": [
+          2147483708,
+          "ETH",
+          "Ethereum",
+          60
+        ]
+      }
+    ]
    *
    */
 
@@ -7926,12 +7975,31 @@ class ApiInstance extends WsInstance {
    *
    * @apiSuccessExample {json} Successful Response
    *  [{
-        "slashed": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606", //address
-        "parter": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D601", //address
-        "round": "2000",
+        "groupId": "0x0000000000000000000000000000000000000000000031353937383233303739",
+        "slashType": "3",
+        "slashed": "0x63ee75865b30f13b614a144023c133bd683e8134",
+        "parter": "0x19e119167095b4f035a906eafbb66d733545e208",
+        "round": "2",
         "curveIndex": "0",
-        "slashType": "232377757916789457893169",
-        "groupId": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "timestamp": 1597823083
+      },
+      {
+        "groupId": "0x0000000000000000000000000000000000000000000031353937383233303739",
+        "slashType": "6",
+        "slashed": "0x5793e629c061e7fd642ab6a1b4d552cec0e2d606",
+        "parter": "0xd762e1df1a61f5b70b30cd74d3127489af15d974",
+        "round": "5",
+        "curveIndex": "1",
+        "timestamp": 1597823084
+      },
+      {
+        "groupId": "0x0000000000000000000000000000000000000000000031353937383233303739",
+        "slashType": "3",
+        "slashed": "0xe7215f2786e18a0b0553aeb51421f0aa1615ae6e",
+        "parter": "0xd762e1df1a61f5b70b30cd74d3127489af15d974",
+        "round": "5",
+        "curveIndex": "1",
+        "timestamp": 1597823085
       }]
    *
    */
