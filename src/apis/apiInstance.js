@@ -7115,7 +7115,7 @@ class ApiInstance extends WsInstance {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getStoremanGroupActivity';
-    let params = {groupId: groupId};
+    let params = {groupId: groupId, ...options};
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -7667,7 +7667,6 @@ class ApiInstance extends WsInstance {
       "groupId": "0x0000000000000000000000000000000000000000000031353938353934383939",
       "wkAddr": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
       "from": "0x7f1d642dbfd62ad4a8fa9810ea619707d09825d0",
-      "value": "2000",
       "PK": "0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8",
       "quited": false,
       "deposit": "2000",
@@ -8444,7 +8443,6 @@ class ApiInstance extends WsInstance {
    *
    */
   getChainConstantInfo(options, callback) {
-    console.log(options);
     if (typeof(options) === "function") {
       callback = options;
       options = {};
@@ -8457,8 +8455,6 @@ class ApiInstance extends WsInstance {
     }
     let method = 'getChainConstantInfo';
     let params = {...options};
-    console.log("options:",  options);
-    console.log("params:", params);
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
