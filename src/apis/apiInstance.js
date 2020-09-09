@@ -8216,54 +8216,72 @@ class ApiInstance extends WsInstance {
         "fromChainID": "2147483708",
         "fromAccount": "0x0000000000000000000000000000000000000000",
         "toChainID": "2153201998",
-        "toAccount": "0x8758960317bcb6fdbe29aa3c745b311f777f1969",
+        "toAccount": "0xfabd5d341dd3b933ea9906d921df7be79c156e8d",
         "ancestorSymbol": "ETH",
-        "ancestorDecimals": "18"
+        "ancestorDecimals": "18",
+        "name": "wanETH@Wanchain",
+        "symbol": "wanETH",
+        "decimals": "18"
       },
       {
         "id": "2",
         "fromChainID": "2153201998",
         "fromAccount": "0x0000000000000000000000000000000000000000",
         "toChainID": "2147483708",
-        "toAccount": "0x26fc21d4b1c6c3ca1964f8e5ff43dea3ec2bd220",
+        "toAccount": "0xf832a671af322a28493b26d56c952795c05d7b11",
         "ancestorSymbol": "WAN",
-        "ancestorDecimals": "18"
+        "ancestorDecimals": "18",
+        "name": "WAN@Ethereum",
+        "symbol": "WAN",
+        "decimals": "18"
       },
       {
         "id": "3",
         "fromChainID": "2147483708",
-        "fromAccount": "0xc6aba254b0bea0f67dd8e97bf1198f96ff5c32b2",
+        "fromAccount": "0x01be23585060835e02b77ef475b0cc51aa1e0709",
         "toChainID": "2153201998",
-        "toAccount": "0x217ce1c6052b8cb0099587580464998c41306145",
+        "toAccount": "0x6e7bc85ab206965a4118da06c9e66bd49bdc33b8",
         "ancestorSymbol": "LINK",
-        "ancestorDecimals": "18"
+        "ancestorDecimals": "18",
+        "name": "wanLINK@Wanchain",
+        "symbol": "wanLINK",
+        "decimals": "18"
       },
       {
         "id": "4",
         "fromChainID": "2153201998",
         "fromAccount": "0x2283d27be033d183f0f46e70992ebc1356f6e8b3",
         "toChainID": "2147483708",
-        "toAccount": "0x422504c423e7373415eec43721f63c0b96ad39ab",
+        "toAccount": "0xf9a9ef6078bd6679d530ad61c6108ab3ea3b1ba8",
         "ancestorSymbol": "FNX",
-        "ancestorDecimals": "18"
+        "ancestorDecimals": "18",
+        "name": "wanFNX@Ethereum",
+        "symbol": "wanFNX",
+        "decimals": "18"
       },
       {
         "id": "5",
         "fromChainID": "2153201998",
-        "fromAccount": "0x3ae58c9b8b4da8a29a98494d96f2c919e2e641b1",
+        "fromAccount": "0xc978c14020b4a5965337fb141d2187f387de5ce8",
         "toChainID": "2147483708",
-        "toAccount": "0x81c144a2082eb4e116223c70c7f70081acc8a2ab",
+        "toAccount": "0x1c5e5c977f95681923a026ab1ed72ff1a12b0737",
         "ancestorSymbol": "BTC",
-        "ancestorDecimals": "8"
+        "ancestorDecimals": "8",
+        "name": "wanBTC@Ethereum",
+        "symbol": "wanBTC",
+        "decimals": "8"
       },
       {
         "id": "6",
         "fromChainID": "2153201998",
-        "fromAccount": "0xd264b2a8d5938e6eb8235ea8d4aaa8ec135f2c56",
+        "fromAccount": "0x31ddd0bd73bb1fd4068acc91c966b99c24b016d8",
         "toChainID": "2147483708",
-        "toAccount": "0x075399b3df085c2a04d08db5c914ff14bb0f23d4",
+        "toAccount": "0xdd8ad504b0ffbf5188c69ef8914f9bd3b5b8e4df",
         "ancestorSymbol": "EOS",
-        "ancestorDecimals": "4"
+        "ancestorDecimals": "4",
+        "name": "wanEOS@Ethereum",
+        "symbol": "wanEOS",
+        "decimals": "4"
       }
     ]
    *
@@ -8327,12 +8345,12 @@ class ApiInstance extends WsInstance {
    *
    * @apiSuccessExample {json} Successful Response
    *  {
-    "fromChainID": "2147483708",
-    "fromAccount": "0x0000000000000000000000000000000000000000",
-    "toChainID": "2153201998",
-    "tokenAddress": "0x36FfEcE47A3BaF210b26cc469E37eef2212d9812",
-    "isValid": true
-  }
+        "fromChainID": "2147483708",
+        "fromAccount": "0x0000000000000000000000000000000000000000",
+        "toChainID": "2153201998",
+        "tokenAddress": "0x36FfEcE47A3BaF210b26cc469E37eef2212d9812",
+        "isValid": true
+      }
    *
    */
   getTokenPairInfo(id, callback) {
