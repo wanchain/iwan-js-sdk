@@ -1943,6 +1943,72 @@ define({ "api": [
     "groupTitle": "CrossChain"
   },
   {
+    "name": "getStoremanGroupQuota",
+    "group": "CrossChain",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getStoremanGroupQuota",
+    "version": "1.2.1",
+    "description": "<p>Get the storeman group quota information. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "groupId",
+            "description": "<p>The storeman group ID.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "array",
+            "optional": false,
+            "field": "tokenPairId",
+            "description": "<p>The array token pair ID being queried.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getStoremanGroupQuota\",\"params\":{groupId: \"0x0000000000000000000000000000000000000000000031353937383131313430\", tokenPairId: [1, 2]},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getStoremanGroupQuota(\"0x0000000000000000000000000000000000000000000031353937383131313430\", [1, 2], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getStoremanGroupQuota(\"0x0000000000000000000000000000000000000000000031353937383131313430\", [1, 2]);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n       {\n         \"id\": 1,\n         \"userMintQuota\": \"39\",\n         \"smgMintQuota\": \"39\",\n         \"userBurnQuota\": \"0\",\n         \"smgBurnQuota\": \"0\"\n       },\n       {\n         \"id\": 2,\n         \"userMintQuota\": \"63000\",\n         \"smgMintQuota\": \"63000\",\n         \"userBurnQuota\": \"0\",\n         \"smgBurnQuota\": \"0\"\n       }\n     ]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "CrossChain"
+  },
+  {
     "name": "getStoremanGroups",
     "group": "CrossChain",
     "type": "CONNECT",
