@@ -7127,6 +7127,83 @@ class ApiInstance extends WsInstance {
     });
   }
 
+    /**
+   *
+   * @apiName getStoremanGroupQuota
+   * @apiGroup CrossChain
+   * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGroupQuota
+   * @apiVersion 1.2.1
+   * @apiDescription Get the storeman group quota information.
+   * <br><br><strong>Returns:</strong>
+   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+   *
+   * @apiParam {string} groupId The storeman group ID.
+   * @apiParam {array} tokenPairId The array token pair ID being queried.
+   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+   *
+   * @apiParamExample {string} JSON-RPC over websocket
+   * {"jsonrpc":"2.0","method":"getStoremanGroupQuota","params":{groupId: "0x0000000000000000000000000000000000000000000031353937383131313430", tokenPairId: [1, 2]},"id":1}
+   *
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   apiTest.getStoremanGroupQuota("0x0000000000000000000000000000000000000000000031353937383131313430", [1, 2], (err, result) => {
+   *     console.log("Result is ", result);
+   *     apiTest.close();
+   *   });
+   *
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   let result = await apiTest.getStoremanGroupQuota("0x0000000000000000000000000000000000000000000031353937383131313430", [1, 2]);
+   *   console.log("Result is ", result);
+   *   apiTest.close();
+   *
+   * @apiSuccessExample {json} Successful Response
+   *  [
+        {
+          "id": 1,
+          "userMintQuota": "39",
+          "smgMintQuota": "39",
+          "userBurnQuota": "0",
+          "smgBurnQuota": "0"
+        },
+        {
+          "id": 2,
+          "userMintQuota": "63000",
+          "smgMintQuota": "63000",
+          "userBurnQuota": "0",
+          "smgBurnQuota": "0"
+        }
+      ]
+   *
+   */
+  getStoremanGroupQuota(groupId, tokenPairId, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (!options || typeof(options) !== "object") {
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getStoremanGroupQuota';
+    let params = {groupId: groupId, tokenPairId: tokenPairId, ...options};
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
   /**
    *
    * @apiName getStoremanGroupInfo
