@@ -6968,7 +6968,7 @@ class ApiInstance extends WsInstance {
     /**
    *
    * @apiName getStoremanGroupList
-   * @apiGroup CrossChain
+   * @apiGroup CrossChainV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGroupList
    * @apiVersion 1.2.1
    * @apiDescription Get all the active storemanGroups, include the info like the groupId, etc.
@@ -7060,7 +7060,7 @@ class ApiInstance extends WsInstance {
     /**
    *
    * @apiName getStoremanGroupActivity
-   * @apiGroup CrossChain
+   * @apiGroup CrossChainV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGroupActivity
    * @apiVersion 1.2.1
    * @apiDescription Get the storeman group active information.
@@ -7130,7 +7130,7 @@ class ApiInstance extends WsInstance {
     /**
    *
    * @apiName getStoremanGroupQuota
-   * @apiGroup CrossChain
+   * @apiGroup CrossChainV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGroupQuota
    * @apiVersion 1.2.1
    * @apiDescription Get the storeman group quota information.
@@ -7207,7 +7207,7 @@ class ApiInstance extends WsInstance {
   /**
    *
    * @apiName getStoremanGroupInfo
-   * @apiGroup CrossChain
+   * @apiGroup CrossChainV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGroupInfo
    * @apiVersion 1.2.1
    * @apiDescription Get the detail info of one certain storemanGroup, include the info like the deposit, memberCount etc.
@@ -7269,7 +7269,7 @@ class ApiInstance extends WsInstance {
   /**
    *
    * @apiName getStoremanGroupConfig
-   * @apiGroup CrossChain
+   * @apiGroup CrossChainV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGroupConfig
    * @apiVersion 1.2.1
    * @apiDescription Get the detail config of one certain storemanGroup, include the info like the chain1/curve1/gpk1/chain2/curve2/gpk2, etc.
@@ -7335,7 +7335,7 @@ class ApiInstance extends WsInstance {
     /**
    *
    * @apiName getStoremanInfo
-   * @apiGroup CrossChain
+   * @apiGroup CrossChainV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanInfo
    * @apiVersion 1.2.1
    * @apiDescription Get the detail info of one certain storeman, include the info like the groupid, deposit, delegatorDeposit, incentive, etc.
@@ -7402,7 +7402,7 @@ class ApiInstance extends WsInstance {
     /**
    *
    * @apiName getMultiStoremanInfo
-   * @apiGroup CrossChain
+   * @apiGroup CrossChainV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getMultiStoremanInfo
    * @apiVersion 1.2.1
    * @apiDescription Get the detail info of multi certain storeman, include the info like the groupid, deposit, delegatorDeposit, incentive, etc.
@@ -7471,7 +7471,7 @@ class ApiInstance extends WsInstance {
     /**
    *
    * @apiName getStoremanConf
-   * @apiGroup CrossChain
+   * @apiGroup CrossChainV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanConf
    * @apiVersion 1.2.1
    * @apiDescription Get the conf info of one certain storeman, include the info about backupCount, standaloneWeight, delegatorDeposit and delegationMulti.
@@ -7528,7 +7528,7 @@ class ApiInstance extends WsInstance {
     /**
    *
    * @apiName getStoremanCandidates
-   * @apiGroup CrossChain
+   * @apiGroup CrossChainV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanCandidates
    * @apiVersion 1.2.1
    * @apiDescription Get the storeman candidates info of one certain storeman group.
@@ -7616,7 +7616,7 @@ class ApiInstance extends WsInstance {
     /**
    *
    * @apiName getStoremanGroupMember
-   * @apiGroup CrossChain
+   * @apiGroup CrossChainV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGroupMember
    * @apiVersion 1.2.1
    * @apiDescription Get the storeman member info of one certain storeman group.
@@ -7706,7 +7706,7 @@ class ApiInstance extends WsInstance {
     /**
    *
    * @apiName getStoremanStakeInfo
-   * @apiGroup CrossChain
+   * @apiGroup CrossChainV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanStakeInfo
    * @apiVersion 1.2.1
    * @apiDescription Get the stake info of certain storeman.
@@ -7789,7 +7789,7 @@ class ApiInstance extends WsInstance {
     /**
    *
    * @apiName getStoremanStakeTotalIncentive
-   * @apiGroup CrossChain
+   * @apiGroup CrossChainV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanStakeTotalIncentive
    * @apiVersion 1.2.1
    * @apiDescription Get the total incentive info of certain storeman stake.
@@ -7860,7 +7860,7 @@ class ApiInstance extends WsInstance {
     /**
    *
    * @apiName getStoremanDelegatorInfo
-   * @apiGroup CrossChain
+   * @apiGroup CrossChainV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanDelegatorInfo
    * @apiVersion 1.2.1
    * @apiDescription Get the delegator info on certain storeman.
@@ -7944,7 +7944,7 @@ class ApiInstance extends WsInstance {
     /**
    *
    * @apiName getStoremanDelegatorTotalIncentive
-   * @apiGroup CrossChain
+   * @apiGroup CrossChainV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanDelegatorTotalIncentive
    * @apiVersion 1.2.1
    * @apiDescription Get the delegator total incentive info.
@@ -8015,7 +8015,7 @@ class ApiInstance extends WsInstance {
     /**
    *
    * @apiName getStoremanGpkSlashInfo
-   * @apiGroup CrossChain
+   * @apiGroup CrossChainV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGpkSlashInfo
    * @apiVersion 1.2.1
    * @apiDescription Get the gpk slash info of certain storeman.
@@ -8107,7 +8107,7 @@ class ApiInstance extends WsInstance {
     /**
    *
    * @apiName getStoremanSignSlashInfo
-   * @apiGroup CrossChain
+   * @apiGroup CrossChainV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanSignSlashInfo
    * @apiVersion 1.2.1
    * @apiDescription Get the sign slash info of certain storeman.
@@ -8178,7 +8178,7 @@ class ApiInstance extends WsInstance {
   /**
    *
    * @apiName getTokenPairs
-   * @apiGroup CrossChain
+   * @apiGroup TokensV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenPairs
    * @apiVersion 1.2.1
    * @apiDescription Get the info of all register tokenPairs, like fromChainID, toChainID, tokenAddress.
@@ -8313,7 +8313,7 @@ class ApiInstance extends WsInstance {
   /**
    *
    * @apiName getTokenPairInfo
-   * @apiGroup CrossChain
+   * @apiGroup TokensV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenPairInfo
    * @apiVersion 1.2.1
    * @apiDescription Get the info of tokenPair of certain tokenPairId, like fromChainID, toChainID, tokenAddress.
@@ -8373,7 +8373,7 @@ class ApiInstance extends WsInstance {
   /**
    *
    * @apiName getTokenPairAncestorInfo
-   * @apiGroup CrossChain
+   * @apiGroup TokensV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenPairAncestorInfo
    * @apiVersion 1.2.1
    * @apiDescription Get the info of tokenPair Ancestor of certain tokenPairId, like symbol, decimals.
@@ -8433,7 +8433,7 @@ class ApiInstance extends WsInstance {
   /**
    *
    * @apiName getTokenPairIDs
-   * @apiGroup CrossChain
+   * @apiGroup TokensV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getTokenPairIDs
    * @apiVersion 1.2.1
    * @apiDescription Get all register tokenPairIDs.
@@ -8495,7 +8495,7 @@ class ApiInstance extends WsInstance {
   /**
    *
    * @apiName getChainConstantInfo
-   * @apiGroup CrossChain
+   * @apiGroup CrossChainV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getChainConstantInfo
    * @apiVersion 1.2.1
    * @apiDescription Get the chainInfo by the chain id which is used as hardened derivation in BIP44.
