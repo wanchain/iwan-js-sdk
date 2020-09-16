@@ -7239,13 +7239,32 @@ class ApiInstance extends WsInstance {
    *
    * @apiSuccessExample {json} Successful Response
    *  {
-      "groupId": "0x0000000000000000000000000000000000000000000000003133323936333039",
-      "status": "4",
-      "deposit": "2000",
-      "whiteCount": "1",
-      "memberCount": "1",
-      "startTime": "13296310",
-      "endTime": "13296312"
+      "groupId": "0x000000000000000000000000000000000000000000000000006a61636f622d32",
+      "status": "5",
+      "deposit": "10776900000000000000103",
+      "depositWeight": "10814400000000000000099",
+      "selectedCount": "21",
+      "memberCount": "21",
+      "whiteCount": "2",
+      "whiteCountAll": "5",
+      "startTime": "1600143517",
+      "endTime": "1600489117",
+      "registerTime": "1600142125",
+      "registerDuration": "200",
+      "memberCountDesign": "21",
+      "threshold": "17",
+      "chain1": "2153201998",
+      "chain2": "2147483708",
+      "curve1": "1",
+      "curve2": "1",
+      "tickedCount": "0",
+      "minStakeIn": "2000",
+      "minDelegateIn": "100",
+      "minPartIn": "50",
+      "crossIncoming": "0",
+      "gpk1": "0x1d399574e29639e3d3e0a42a4af8c29a164e93787eaeff8f4d5f953b4d30a8f526239021ed69422ea4c7fd1a52ad583d302135c678f88addbf218091515ff918",
+      "gpk2": "0x2353026c7886980f532304815fcae304849f6558a0f0d0676b183e445150599a1a9230eac233dec1c2bc64d4cbdb11d90952c2e8397a658a7f37e5f213517fd4",
+      "delegateFee": "100"
     }
    *
    */
@@ -7348,12 +7367,12 @@ class ApiInstance extends WsInstance {
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getStoremanInfo","params":{"wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"},"id":1}
+   * {"jsonrpc":"2.0","method":"getStoremanInfo","params":{"wkAddr":"0x332651327037257C5f3A736f4d5Fb58C5187219e"},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanInfo("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606", (err, result) => {
+   *   apiTest.getStoremanInfo("0x332651327037257C5f3A736f4d5Fb58C5187219e", (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7361,24 +7380,29 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanInfo("0x5793e629c061e7fd642ab6a1b4d552cec0e2d606");
+   *   let result = await apiTest.getStoremanInfo("0x332651327037257C5f3A736f4d5Fb58C5187219e");
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
    * {
-      "sender": "0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0",
-      "PK": "0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8",
-      "wkAddr": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
+      "sender": "0x1fB80dC60Ee4F518A2F18B9565Ff31e466Fd1fAc",
+      "enodeID": "0x0c9d2e32575d88d0c1baa78dfe89e8a09c8966e0e2b8c7e478b101b867f7aac2608202161fd7aa0cf8db707b45802d3a0e06230ba9b17dd2713ca2705eeccbd5",
+      "PK": "0x86346d9a907d66df15ac607f93e7b9c814567b835fff0cd87e69fb5ab26a78dd3580bb5f5662961c7425ef1de2ce984a99dcb42f6f8b54e5b733181fa7a48f6a",
+      "wkAddr": "0x332651327037257C5f3A736f4d5Fb58C5187219e",
+      "isWhite": false,
       "quited": false,
-      "deposit": "2000",
-      "delegateDeposit": "0",
-      "incentive": "0",
       "delegatorCount": "0",
-      "groupId": "0x0000000000000000000000000000000000000000000031353937383131313430",
-      "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000",
-      "incentivedDay": "13315791",
-      "slashedCount": "0"
+      "delegateDeposit": "0",
+      "partnerCount": "0",
+      "partnerDeposit": "0",
+      "crossIncoming": "0",
+      "slashedCount": "0",
+      "incentivedDelegator": "0",
+      "incentivedDay": "18518",
+      "groupId": "0x0000000000000000000000000000000000000000000000000000006a61636f62",
+      "nextGroupId": "0x000000000000000000000000000000000000000000000000006a61636f622d32",
+      "deposit": "2499999999999999977"
     }
    *
    */
@@ -7415,12 +7439,12 @@ class ApiInstance extends WsInstance {
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getMultiStoremanInfo","params":{"wkAddr":["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]},"id":1}
+   * {"jsonrpc":"2.0","method":"getMultiStoremanInfo","params":{"wkAddr":["0x332651327037257C5f3A736f4d5Fb58C5187219e"]},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getMultiStoremanInfo(["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"], (err, result) => {
+   *   apiTest.getMultiStoremanInfo(["0x332651327037257C5f3A736f4d5Fb58C5187219e"], (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7428,25 +7452,30 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getMultiStoremanInfo(["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]);
+   *   let result = await apiTest.getMultiStoremanInfo(["0x332651327037257C5f3A736f4d5Fb58C5187219e"]);
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
    * [
       {
-        "sender": "0x7F1d642DbfD62aD4A8fA9810eA619707d09825D0",
-        "PK": "0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8",
-        "wkAddr": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
+        "sender": "0x1fB80dC60Ee4F518A2F18B9565Ff31e466Fd1fAc",
+        "enodeID": "0x0c9d2e32575d88d0c1baa78dfe89e8a09c8966e0e2b8c7e478b101b867f7aac2608202161fd7aa0cf8db707b45802d3a0e06230ba9b17dd2713ca2705eeccbd5",
+        "PK": "0x86346d9a907d66df15ac607f93e7b9c814567b835fff0cd87e69fb5ab26a78dd3580bb5f5662961c7425ef1de2ce984a99dcb42f6f8b54e5b733181fa7a48f6a",
+        "wkAddr": "0x332651327037257C5f3A736f4d5Fb58C5187219e",
+        "isWhite": false,
         "quited": false,
-        "deposit": "2000",
-        "delegateDeposit": "0",
-        "incentive": "0",
         "delegatorCount": "0",
-        "groupId": "0x0000000000000000000000000000000000000000000031353937383131313430",
-        "nextGroupId": "0x0000000000000000000000000000000000000000000000000000000000000000",
-        "incentivedDay": "13315791",
-        "slashedCount": "0"
+        "delegateDeposit": "0",
+        "partnerCount": "0",
+        "partnerDeposit": "0",
+        "crossIncoming": "0",
+        "slashedCount": "0",
+        "incentivedDelegator": "0",
+        "incentivedDay": "18518",
+        "groupId": "0x0000000000000000000000000000000000000000000000000000006a61636f62",
+        "nextGroupId": "0x000000000000000000000000000000000000000000000000006a61636f622d32",
+        "deposit": "2499999999999999977"
       }
     ]
    *
@@ -7722,12 +7751,12 @@ class ApiInstance extends WsInstance {
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getStoremanStakeInfo","params":{"wkAddr":"0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606"},"id":1}
+   * {"jsonrpc":"2.0","method":"getStoremanStakeInfo","params":{"wkAddr":"0x332651327037257C5f3A736f4d5Fb58C5187219e"},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanStakeInfo({wkAddr: "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606"}, (err, result) => {
+   *   apiTest.getStoremanStakeInfo({wkAddr: "0x332651327037257C5f3A736f4d5Fb58C5187219e"}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7735,30 +7764,37 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanStakeInfo({wkAddr: "0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"});
+   *   let result = await apiTest.getStoremanStakeInfo({wkAddr: "0x332651327037257C5f3A736f4d5Fb58C5187219e"});
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
-   * [{
-      "groupId": "0x0000000000000000000000000000000000000000000031353938353934383939",
-      "wkAddr": "0x5793e629c061e7FD642ab6A1b4d552CeC0e2D606",
-      "from": "0x7f1d642dbfd62ad4a8fa9810ea619707d09825d0",
-      "PK": "0x25fa6a4190ddc87d9f9dd986726cafb901e15c21aafd2ed729efed1200c73de89f1657726631d29733f4565a97dc00200b772b4bc2f123a01e582e7e56b80cf8",
-      "quited": false,
-      "deposit": "2000",
-      "delegateDeposit": "0",
-      "incentive": "0",
-      "delegatorCount": "0",
-      "nextGroupId": "0x0000000000000000000000000000000000000000000031353938353934383939",
-      "incentivedDay": "13319374",
-      "slashedCount": "0",
-      "rank": 1,
-      "selectedCount": "4",
-      "activity": 0,
-      "canStakeOut": true,
-      "canStakeClaim": false
-    }]
+   * [
+      {
+        "enodeID": "0x0c9d2e32575d88d0c1baa78dfe89e8a09c8966e0e2b8c7e478b101b867f7aac2608202161fd7aa0cf8db707b45802d3a0e06230ba9b17dd2713ca2705eeccbd5",
+        "PK": "0x86346d9a907d66df15ac607f93e7b9c814567b835fff0cd87e69fb5ab26a78dd3580bb5f5662961c7425ef1de2ce984a99dcb42f6f8b54e5b733181fa7a48f6a",
+        "wkAddr": "0x332651327037257C5f3A736f4d5Fb58C5187219e",
+        "isWhite": false,
+        "quited": false,
+        "delegatorCount": "0",
+        "delegateDeposit": "0",
+        "partnerCount": "0",
+        "partnerDeposit": "0",
+        "crossIncoming": "0",
+        "slashedCount": "0",
+        "incentivedDelegator": "0",
+        "incentivedDay": "18518",
+        "groupId": "0x0000000000000000000000000000000000000000000000000000006a61636f62",
+        "nextGroupId": "0x000000000000000000000000000000000000000000000000006a61636f622d32",
+        "deposit": "2499999999999999977",
+        "from": "0x1fB80dC60Ee4F518A2F18B9565Ff31e466Fd1fAc",
+        "rank": 21,
+        "selectedCount": 21,
+        "activity": "NaN",
+        "canStakeOut": true,
+        "canStakeClaim": false
+      }
+    ]
    *
    */
 
@@ -7875,12 +7911,12 @@ class ApiInstance extends WsInstance {
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getStoremanDelegatorInfo","params":{"wkAddr":["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]},"id":1}
+   * {"jsonrpc":"2.0","method":"getStoremanDelegatorInfo","params":{"wkAddr":["0x5c770cbf582d770b93ca90adad7e6bd33fabc44c"]},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanDelegatorInfo({"wkAddr":["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"]}, (err, result) => {
+   *   apiTest.getStoremanDelegatorInfo({"wkAddr":["0x5c770cbf582d770b93ca90adad7e6bd33fabc44c"]}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7888,32 +7924,63 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanDelegatorInfo({"wkAddr":["0x5793e629c061e7fd642ab6a1b4d552cec0e2d606"}]);
+   *   let result = await apiTest.getStoremanDelegatorInfo({"wkAddr":["0x5c770cbf582d770b93ca90adad7e6bd33fabc44c"}]);
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
    *  [
-      {
-        "from": "0xa6d73936272bad6d9eeabd35ecb83ab365ea3ab1",
-        "wkAddr": "0xe1ab8145f7e55dc933d51a18c793f901a3a0b276",
-        "deposit": "200000000000000000000",
-        "incentive": "0",
-        "groupId": "0x0000000000000000000000000000000000000000000031353937383138353537",
-        "chain1": [
-          2153201998,
-          "WAN",
-          "Wanchain",
-          5718350
-        ],
-        "chain2": [
-          2147483708,
-          "ETH",
-          "Ethereum",
-          60
-        ]
-      }
-    ]
+        {
+          "from": "0xa6d73936272bad6d9eeabd35ecb83ab365ea3ab1",
+          "wkAddr": "0x5c770cbf582d770b93ca90adad7e6bd33fabc44c",
+          "deposit": "60000000000000000000",
+          "incentive": "51094457472788729",
+          "groupId": "0x0000000000000000000000000000000000000000000000000000006a61636f62",
+          "wkStake": {
+            "deposit": "25000000000000000000",
+            "delegateDeposit": "175000000000000000000"
+          },
+          "chain1": [
+            2153201998,
+            "WAN",
+            "Wanchain",
+            5718350
+          ],
+          "chain2": [
+            2147483708,
+            "ETH",
+            "Ethereum",
+            60
+          ],
+          "quited": false,
+          "canDelegateOut": true
+        },
+        {
+          "from": "0xfee7c2df6d07c429f0eb63c521b0dbbe7b86d7d5",
+          "wkAddr": "0x5c770cbf582d770b93ca90adad7e6bd33fabc44c",
+          "deposit": "20000000000000000000",
+          "incentive": "0",
+          "groupId": "0x0000000000000000000000000000000000000000000000000000006a61636f62",
+          "wkStake": {
+            "deposit": "25000000000000000000",
+            "delegateDeposit": "175000000000000000000"
+          },
+          "chain1": [
+            2153201998,
+            "WAN",
+            "Wanchain",
+            5718350
+          ],
+          "chain2": [
+            2147483708,
+            "ETH",
+            "Ethereum",
+            60
+          ],
+          "quited": false,
+          "canDelegateOut": true
+        }
+      ]
    *
    */
 
@@ -8219,8 +8286,8 @@ class ApiInstance extends WsInstance {
         "toAccount": "0xfabd5d341dd3b933ea9906d921df7be79c156e8d",
         "ancestorSymbol": "ETH",
         "ancestorDecimals": "18",
-        "name": "wanETH@Wanchain",
-        "symbol": "wanETH",
+        "name": "wanETH@Wanchain", // toAccount name
+        "symbol": "wanETH",        // toAccount symbol
         "decimals": "18"
       },
       {
@@ -8231,8 +8298,8 @@ class ApiInstance extends WsInstance {
         "toAccount": "0xf832a671af322a28493b26d56c952795c05d7b11",
         "ancestorSymbol": "WAN",
         "ancestorDecimals": "18",
-        "name": "WAN@Ethereum",
-        "symbol": "WAN",
+        "name": "WAN@Ethereum", // toAccount name
+        "symbol": "WAN",        // toAccount symbol
         "decimals": "18"
       },
       {
@@ -8243,8 +8310,8 @@ class ApiInstance extends WsInstance {
         "toAccount": "0x6e7bc85ab206965a4118da06c9e66bd49bdc33b8",
         "ancestorSymbol": "LINK",
         "ancestorDecimals": "18",
-        "name": "wanLINK@Wanchain",
-        "symbol": "wanLINK",
+        "name": "wanLINK@Wanchain", // toAccount name
+        "symbol": "wanLINK",        // toAccount symbol
         "decimals": "18"
       },
       {
@@ -8255,8 +8322,8 @@ class ApiInstance extends WsInstance {
         "toAccount": "0xf9a9ef6078bd6679d530ad61c6108ab3ea3b1ba8",
         "ancestorSymbol": "FNX",
         "ancestorDecimals": "18",
-        "name": "wanFNX@Ethereum",
-        "symbol": "wanFNX",
+        "name": "wanFNX@Ethereum", // toAccount name
+        "symbol": "wanFNX",        // toAccount symbol
         "decimals": "18"
       },
       {
@@ -8267,8 +8334,8 @@ class ApiInstance extends WsInstance {
         "toAccount": "0x1c5e5c977f95681923a026ab1ed72ff1a12b0737",
         "ancestorSymbol": "BTC",
         "ancestorDecimals": "8",
-        "name": "wanBTC@Ethereum",
-        "symbol": "wanBTC",
+        "name": "wanBTC@Ethereum", // toAccount name
+        "symbol": "wanBTC",        // toAccount symbol
         "decimals": "8"
       },
       {
@@ -8279,8 +8346,8 @@ class ApiInstance extends WsInstance {
         "toAccount": "0xdd8ad504b0ffbf5188c69ef8914f9bd3b5b8e4df",
         "ancestorSymbol": "EOS",
         "ancestorDecimals": "4",
-        "name": "wanEOS@Ethereum",
-        "symbol": "wanEOS",
+        "name": "wanEOS@Ethereum", // toAccount name
+        "symbol": "wanEOS",        // toAccount symbol
         "decimals": "4"
       }
     ]
