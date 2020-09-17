@@ -1146,7 +1146,7 @@ define({ "api": [
       "examples": [
         {
           "title": "JSON-RPC over websocket",
-          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getMultiStoremanInfo\",\"params\":{\"wkAddr\":[\"0x332651327037257C5f3A736f4d5Fb58C5187219e\"]},\"id\":1}",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getMultiStoremanInfo\",\"params\":{\"wkAddr\":[\"0x5C770cBf582D770b93cA90AdaD7E6BD33fAbC44C\"]},\"id\":1}",
           "type": "string"
         }
       ]
@@ -1154,12 +1154,12 @@ define({ "api": [
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getMultiStoremanInfo([\"0x332651327037257C5f3A736f4d5Fb58C5187219e\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getMultiStoremanInfo([\"0x5C770cBf582D770b93cA90AdaD7E6BD33fAbC44C\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
         "title": "Example promise usage:",
-        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getMultiStoremanInfo([\"0x332651327037257C5f3A736f4d5Fb58C5187219e\"]);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getMultiStoremanInfo([\"0x5C770cBf582D770b93cA90AdaD7E6BD33fAbC44C\"]);\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
     ],
@@ -1167,7 +1167,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n      {\n        \"sender\": \"0x1fB80dC60Ee4F518A2F18B9565Ff31e466Fd1fAc\",\n        \"enodeID\": \"0x0c9d2e32575d88d0c1baa78dfe89e8a09c8966e0e2b8c7e478b101b867f7aac2608202161fd7aa0cf8db707b45802d3a0e06230ba9b17dd2713ca2705eeccbd5\",\n        \"PK\": \"0x86346d9a907d66df15ac607f93e7b9c814567b835fff0cd87e69fb5ab26a78dd3580bb5f5662961c7425ef1de2ce984a99dcb42f6f8b54e5b733181fa7a48f6a\",\n        \"wkAddr\": \"0x332651327037257C5f3A736f4d5Fb58C5187219e\",\n        \"isWhite\": false,\n        \"quited\": false,\n        \"delegatorCount\": \"0\",\n        \"delegateDeposit\": \"0\",\n        \"partnerCount\": \"0\",\n        \"partnerDeposit\": \"0\",\n        \"crossIncoming\": \"0\",\n        \"slashedCount\": \"0\",\n        \"incentivedDelegator\": \"0\",\n        \"incentivedDay\": \"18518\",\n        \"groupId\": \"0x0000000000000000000000000000000000000000000000000000006a61636f62\",\n        \"nextGroupId\": \"0x000000000000000000000000000000000000000000000000006a61636f622d32\",\n        \"deposit\": \"2499999999999999977\"\n      }\n    ]",
+          "content": "[\n      {\n        \"sender\": \"0xc3badB2686A540564D68870E853b39bEe843F6dB\",\n        \"enodeID\": \"0xc532e740b50d2a620dbc3b5842cb6f30ea68910cefef256095f1598966068a135276b1f626958bc4550ce15191d48e2056e971d46599a64f70237fe847845766\",\n        \"PK\": \"0x02ccb9853b4fb6b78875e76e3f586249663f4c0cb435e2c82e9e4ca846b8148138f8b428d195edb0bf4ea87fb4934866262e11f19994010719d4cf7267281e9c\",\n        \"wkAddr\": \"0x5C770cBf582D770b93cA90AdaD7E6BD33fAbC44C\",\n        \"isWhite\": true,\n        \"quited\": false,\n        \"delegatorCount\": \"4\",\n        \"delegateDeposit\": \"175000000000000000000\",\n        \"partnerCount\": \"1\",\n        \"partnerDeposit\": \"10500000000000000000000\",\n        \"crossIncoming\": \"0\",\n        \"slashedCount\": \"0\",\n        \"incentivedDelegator\": \"0\",\n        \"incentivedDay\": \"18518\",\n        \"groupId\": \"0x0000000000000000000000000000000000000000000000000000006a61636f62\",\n        \"nextGroupId\": \"0x000000000000000000000000000000000000000000000000006a61636f622d32\",\n        \"deposit\": \"25000000000000000000\",\n        \"incentive\": \"78662592388931115\"\n      }\n    ]",
           "type": "json"
         }
       ]
@@ -1861,7 +1861,7 @@ define({ "api": [
       "examples": [
         {
           "title": "JSON-RPC over websocket",
-          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getStoremanInfo\",\"params\":{\"wkAddr\":\"0x332651327037257C5f3A736f4d5Fb58C5187219e\"},\"id\":1}",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getStoremanInfo\",\"params\":{\"wkAddr\":\"0x5C770cBf582D770b93cA90AdaD7E6BD33fAbC44C\"},\"id\":1}",
           "type": "string"
         }
       ]
@@ -1869,12 +1869,12 @@ define({ "api": [
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getStoremanInfo(\"0x332651327037257C5f3A736f4d5Fb58C5187219e\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getStoremanInfo(\"0x5C770cBf582D770b93cA90AdaD7E6BD33fAbC44C\", (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
         "title": "Example promise usage:",
-        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getStoremanInfo(\"0x332651327037257C5f3A736f4d5Fb58C5187219e\");\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getStoremanInfo(\"0x5C770cBf582D770b93cA90AdaD7E6BD33fAbC44C\");\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
     ],
@@ -1882,7 +1882,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{\n      \"sender\": \"0x1fB80dC60Ee4F518A2F18B9565Ff31e466Fd1fAc\",\n      \"enodeID\": \"0x0c9d2e32575d88d0c1baa78dfe89e8a09c8966e0e2b8c7e478b101b867f7aac2608202161fd7aa0cf8db707b45802d3a0e06230ba9b17dd2713ca2705eeccbd5\",\n      \"PK\": \"0x86346d9a907d66df15ac607f93e7b9c814567b835fff0cd87e69fb5ab26a78dd3580bb5f5662961c7425ef1de2ce984a99dcb42f6f8b54e5b733181fa7a48f6a\",\n      \"wkAddr\": \"0x332651327037257C5f3A736f4d5Fb58C5187219e\",\n      \"isWhite\": false,\n      \"quited\": false,\n      \"delegatorCount\": \"0\",\n      \"delegateDeposit\": \"0\",\n      \"partnerCount\": \"0\",\n      \"partnerDeposit\": \"0\",\n      \"crossIncoming\": \"0\",\n      \"slashedCount\": \"0\",\n      \"incentivedDelegator\": \"0\",\n      \"incentivedDay\": \"18518\",\n      \"groupId\": \"0x0000000000000000000000000000000000000000000000000000006a61636f62\",\n      \"nextGroupId\": \"0x000000000000000000000000000000000000000000000000006a61636f622d32\",\n      \"deposit\": \"2499999999999999977\"\n    }",
+          "content": "{\n      \"sender\": \"0xc3badB2686A540564D68870E853b39bEe843F6dB\",\n      \"enodeID\": \"0xc532e740b50d2a620dbc3b5842cb6f30ea68910cefef256095f1598966068a135276b1f626958bc4550ce15191d48e2056e971d46599a64f70237fe847845766\",\n      \"PK\": \"0x02ccb9853b4fb6b78875e76e3f586249663f4c0cb435e2c82e9e4ca846b8148138f8b428d195edb0bf4ea87fb4934866262e11f19994010719d4cf7267281e9c\",\n      \"wkAddr\": \"0x5C770cBf582D770b93cA90AdaD7E6BD33fAbC44C\",\n      \"isWhite\": true,\n      \"quited\": false,\n      \"delegatorCount\": \"4\",\n      \"delegateDeposit\": \"175000000000000000000\",\n      \"partnerCount\": \"1\",\n      \"partnerDeposit\": \"10500000000000000000000\",\n      \"crossIncoming\": \"0\",\n      \"slashedCount\": \"0\",\n      \"incentivedDelegator\": \"0\",\n      \"incentivedDay\": \"18518\",\n      \"groupId\": \"0x0000000000000000000000000000000000000000000000000000006a61636f62\",\n      \"nextGroupId\": \"0x000000000000000000000000000000000000000000000000006a61636f622d32\",\n      \"deposit\": \"25000000000000000000\",\n      \"incentive\": \"78662592388931115\"\n    }",
           "type": "json"
         }
       ]

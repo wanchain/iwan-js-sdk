@@ -7367,12 +7367,12 @@ class ApiInstance extends WsInstance {
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getStoremanInfo","params":{"wkAddr":"0x332651327037257C5f3A736f4d5Fb58C5187219e"},"id":1}
+   * {"jsonrpc":"2.0","method":"getStoremanInfo","params":{"wkAddr":"0x5C770cBf582D770b93cA90AdaD7E6BD33fAbC44C"},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanInfo("0x332651327037257C5f3A736f4d5Fb58C5187219e", (err, result) => {
+   *   apiTest.getStoremanInfo("0x5C770cBf582D770b93cA90AdaD7E6BD33fAbC44C", (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7380,29 +7380,30 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanInfo("0x332651327037257C5f3A736f4d5Fb58C5187219e");
+   *   let result = await apiTest.getStoremanInfo("0x5C770cBf582D770b93cA90AdaD7E6BD33fAbC44C");
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
    * {
-      "sender": "0x1fB80dC60Ee4F518A2F18B9565Ff31e466Fd1fAc",
-      "enodeID": "0x0c9d2e32575d88d0c1baa78dfe89e8a09c8966e0e2b8c7e478b101b867f7aac2608202161fd7aa0cf8db707b45802d3a0e06230ba9b17dd2713ca2705eeccbd5",
-      "PK": "0x86346d9a907d66df15ac607f93e7b9c814567b835fff0cd87e69fb5ab26a78dd3580bb5f5662961c7425ef1de2ce984a99dcb42f6f8b54e5b733181fa7a48f6a",
-      "wkAddr": "0x332651327037257C5f3A736f4d5Fb58C5187219e",
-      "isWhite": false,
+      "sender": "0xc3badB2686A540564D68870E853b39bEe843F6dB",
+      "enodeID": "0xc532e740b50d2a620dbc3b5842cb6f30ea68910cefef256095f1598966068a135276b1f626958bc4550ce15191d48e2056e971d46599a64f70237fe847845766",
+      "PK": "0x02ccb9853b4fb6b78875e76e3f586249663f4c0cb435e2c82e9e4ca846b8148138f8b428d195edb0bf4ea87fb4934866262e11f19994010719d4cf7267281e9c",
+      "wkAddr": "0x5C770cBf582D770b93cA90AdaD7E6BD33fAbC44C",
+      "isWhite": true,
       "quited": false,
-      "delegatorCount": "0",
-      "delegateDeposit": "0",
-      "partnerCount": "0",
-      "partnerDeposit": "0",
+      "delegatorCount": "4",
+      "delegateDeposit": "175000000000000000000",
+      "partnerCount": "1",
+      "partnerDeposit": "10500000000000000000000",
       "crossIncoming": "0",
       "slashedCount": "0",
       "incentivedDelegator": "0",
       "incentivedDay": "18518",
       "groupId": "0x0000000000000000000000000000000000000000000000000000006a61636f62",
       "nextGroupId": "0x000000000000000000000000000000000000000000000000006a61636f622d32",
-      "deposit": "2499999999999999977"
+      "deposit": "25000000000000000000",
+      "incentive": "78662592388931115"
     }
    *
    */
@@ -7439,12 +7440,12 @@ class ApiInstance extends WsInstance {
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getMultiStoremanInfo","params":{"wkAddr":["0x332651327037257C5f3A736f4d5Fb58C5187219e"]},"id":1}
+   * {"jsonrpc":"2.0","method":"getMultiStoremanInfo","params":{"wkAddr":["0x5C770cBf582D770b93cA90AdaD7E6BD33fAbC44C"]},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getMultiStoremanInfo(["0x332651327037257C5f3A736f4d5Fb58C5187219e"], (err, result) => {
+   *   apiTest.getMultiStoremanInfo(["0x5C770cBf582D770b93cA90AdaD7E6BD33fAbC44C"], (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7452,30 +7453,31 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getMultiStoremanInfo(["0x332651327037257C5f3A736f4d5Fb58C5187219e"]);
+   *   let result = await apiTest.getMultiStoremanInfo(["0x5C770cBf582D770b93cA90AdaD7E6BD33fAbC44C"]);
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
    * [
       {
-        "sender": "0x1fB80dC60Ee4F518A2F18B9565Ff31e466Fd1fAc",
-        "enodeID": "0x0c9d2e32575d88d0c1baa78dfe89e8a09c8966e0e2b8c7e478b101b867f7aac2608202161fd7aa0cf8db707b45802d3a0e06230ba9b17dd2713ca2705eeccbd5",
-        "PK": "0x86346d9a907d66df15ac607f93e7b9c814567b835fff0cd87e69fb5ab26a78dd3580bb5f5662961c7425ef1de2ce984a99dcb42f6f8b54e5b733181fa7a48f6a",
-        "wkAddr": "0x332651327037257C5f3A736f4d5Fb58C5187219e",
-        "isWhite": false,
+        "sender": "0xc3badB2686A540564D68870E853b39bEe843F6dB",
+        "enodeID": "0xc532e740b50d2a620dbc3b5842cb6f30ea68910cefef256095f1598966068a135276b1f626958bc4550ce15191d48e2056e971d46599a64f70237fe847845766",
+        "PK": "0x02ccb9853b4fb6b78875e76e3f586249663f4c0cb435e2c82e9e4ca846b8148138f8b428d195edb0bf4ea87fb4934866262e11f19994010719d4cf7267281e9c",
+        "wkAddr": "0x5C770cBf582D770b93cA90AdaD7E6BD33fAbC44C",
+        "isWhite": true,
         "quited": false,
-        "delegatorCount": "0",
-        "delegateDeposit": "0",
-        "partnerCount": "0",
-        "partnerDeposit": "0",
+        "delegatorCount": "4",
+        "delegateDeposit": "175000000000000000000",
+        "partnerCount": "1",
+        "partnerDeposit": "10500000000000000000000",
         "crossIncoming": "0",
         "slashedCount": "0",
         "incentivedDelegator": "0",
         "incentivedDay": "18518",
         "groupId": "0x0000000000000000000000000000000000000000000000000000006a61636f62",
         "nextGroupId": "0x000000000000000000000000000000000000000000000000006a61636f622d32",
-        "deposit": "2499999999999999977"
+        "deposit": "25000000000000000000",
+        "incentive": "78662592388931115"
       }
     ]
    *
