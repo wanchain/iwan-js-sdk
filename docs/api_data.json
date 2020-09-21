@@ -6491,7 +6491,7 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{\n       \"fromChainID\": \"2147483708\",\n       \"fromAccount\": \"0x0000000000000000000000000000000000000000\",\n       \"toChainID\": \"2153201998\",\n       \"tokenAddress\": \"0x36FfEcE47A3BaF210b26cc469E37eef2212d9812\",\n       \"isValid\": true\n     }",
+          "content": "{\n       \"fromChainID\": \"2147483708\",\n       \"fromAccount\": \"0x0000000000000000000000000000000000000000\",\n       \"toChainID\": \"2153201998\",\n       \"toAccount\": \"0x36FfEcE47A3BaF210b26cc469E37eef2212d9812\"\n     }",
           "type": "json"
         }
       ]

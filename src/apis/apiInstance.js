@@ -8417,8 +8417,7 @@ class ApiInstance extends WsInstance {
         "fromChainID": "2147483708",
         "fromAccount": "0x0000000000000000000000000000000000000000",
         "toChainID": "2153201998",
-        "tokenAddress": "0x36FfEcE47A3BaF210b26cc469E37eef2212d9812",
-        "isValid": true
+        "toAccount": "0x36FfEcE47A3BaF210b26cc469E37eef2212d9812"
       }
    *
    */
