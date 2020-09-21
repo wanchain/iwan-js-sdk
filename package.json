@@ -1,6 +1,6 @@
 {
   "name": "iwan-sdk",
-  "version": "1.1.1",
+  "version": "1.2.1",
   "keywords": [
     "iwan",
     "iwan-sdk",
@@ -39,7 +39,7 @@
   },
   "apidoc": {
     "name": "iWan-js-sdk",
-    "version": "1.1.1",
+    "version": "1.2.1",
     "description": "JavaScript SDK for iWan RPC Server",
     "title": "iWan-js-sdk Custom apiDoc browser title",
     "url": "wss://api.wanchain.org:8443",
