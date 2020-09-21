@@ -1,6 +1,6 @@
 define({
   "name": "iWan-js-sdk",
-  "version": "1.1.1",
+  "version": "1.2.1",
   "description": "JavaScript SDK for iWan RPC Server",
   "title": "iWan-js-sdk Custom apiDoc browser title",
   "url": "wss://api.wanchain.org:8443",
@@ -12,8 +12,8 @@ define({
   "apidoc": "0.3.0",
   "generator": {
     "name": "iWan",
-    "time": "2020-04-07T03:58:28.821Z",
+    "time": "2020-06-18T02:53:58.595Z",
     "url": "https://iwan.wanchain.org",
-    "version": "1.1.1"
+    "version": "1.2.1"
   }
 });

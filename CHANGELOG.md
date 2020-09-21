@@ -1,6 +1,23 @@
+## v1.2.1
+- Add authority verification
+
+## v1.2.0
+
+- Add checkOTAUsed
+- Add getTransCount
+- Add getRegisteredToken
+- Add getRegisteredDapp
+- Add fetchService
+- Add fetchSpecialService
+- Add getRegisteredOrigToken
+- Add EOS APIs for EOS-Cross
+- Add API request timeout
+- Update document
+- Fix bugs
+
 ## v1.1.1
 
-- optimize getScEvent
+- Optimize getScEvent
 
 ## v1.1.0
 
