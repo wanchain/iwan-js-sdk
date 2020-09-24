@@ -1176,6 +1176,65 @@ define({ "api": [
     "groupTitle": "CrossChainV2"
   },
   {
+    "name": "getSelectedStoreman",
+    "group": "CrossChainV2",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getSelectedStoreman",
+    "version": "1.2.1",
+    "description": "<p>Get all the selected storeman. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "options",
+            "description": "<p>Optional: <br>  <code>groupId</code> - The string of storeman group ID being queried.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getSelectedStoreman\",\"params\":{groupId:\"0x000000000000000000000000000000000000000000746573746e65745f303031\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getSelectedStoreman({groupId:\"0x000000000000000000000000000000000000000000746573746e65745f303031\"}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getSelectedStoreman({groupId:\"0x000000000000000000000000000000000000000000746573746e65745f303031\"});\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n      \"0x5C770cBf582D770b93cA90AdaD7E6BD33fAbC44C\",\n      \"0x17e7120ED515b98AD868366cfe37B3B2f59662E8\",\n      \"0x35a7322c6c5262B469856BcF6df9A5049cF4A815\",\n      \"0x6C5E293C36a87B3a0282207c8650066469d9dA73\",\n      \"0x333065360359A6992c57d2DB0F7E41CB194fbBC0\",\n      \"0x5e5dA1DcE5ebF135B0CF06FE004D4B0178755d6F\",\n      \"0x6a86210203d9Efa630a16F8a09dCEC473fbbaEe2\",\n      \"0x0748e35A742419710393D0C5739e9353FD9a77F2\",\n      \"0x042cB0BF6997BF6eBBa90830cf3f7Ebe01A528fd\",\n      \"0x8D271c767e538f670d7c4E0438AB8C71128c0f97\",\n      \"0x523946badBC216ab6Bb88c96e05280033226cBDf\",\n      \"0xc286577b0BA0d0F7BD786887FD2F3B31F41C5e0b\",\n      \"0x425C5156F2e801d38F4c559d94AF1408c1fdc992\",\n      \"0x229a142a636e1910fe93fF5Ce7FF711553e7D3Bb\",\n      \"0x597148f4eaC61B6b51dd3f789c300d97fE4E35Ba\",\n      \"0x8259fDDC9a21F5d89452773978A3C2C961d7e747\",\n      \"0x9e40D2F77eAc05e6027550FDC5e1832DD812DD10\",\n      \"0xF3F0C1a1385f469ED637d5fDf2d903DEB6C6F1E2\",\n      \"0x0bBA6A7cA768873a5FCc525CfeD0e7828cE001ae\",\n      \"0x7EDba0748b88D7eFa771611b12A6fF86bFa14F2D\",\n      \"0x9ac5fCe406B0aBcfE5B1019D4778A5D79597d992\"\n    ]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "CrossChainV2"
+  },
+  {
     "name": "getStoremanCandidates",
     "group": "CrossChainV2",
     "type": "CONNECT",

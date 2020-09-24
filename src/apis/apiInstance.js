@@ -8629,6 +8629,162 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  getPrdInctMetric(options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (!options || typeof(options) !== "object") {
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getPrdInctMetric';
+    let params = {...options};
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getSelectedSmInfo(options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (!options || typeof(options) !== "object") {
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getSelectedSmInfo';
+    let params = {...options};
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  /**
+   *
+   * @apiName getSelectedStoreman
+   * @apiGroup CrossChainV2
+   * @api {CONNECT} /ws/v3/YOUR-API-KEY getSelectedStoreman
+   * @apiVersion 1.2.1
+   * @apiDescription Get all the selected storeman.
+   * <br><br><strong>Returns:</strong>
+   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+   *
+   * @apiParam {object} [options] Optional:
+   * <br>&nbsp;&nbsp;<code>groupId</code> - The string of storeman group ID being queried.
+   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+   *
+   * @apiParamExample {string} JSON-RPC over websocket
+   * {"jsonrpc":"2.0","method":"getSelectedStoreman","params":{groupId:"0x000000000000000000000000000000000000000000746573746e65745f303031"},"id":1}
+   *
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   apiTest.getSelectedStoreman({groupId:"0x000000000000000000000000000000000000000000746573746e65745f303031"}, (err, result) => {
+   *     console.log("Result is ", result);
+   *     apiTest.close();
+   *   });
+   *
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   let result = await apiTest.getSelectedStoreman({groupId:"0x000000000000000000000000000000000000000000746573746e65745f303031"});
+   *   console.log("Result is ", result);
+   *   apiTest.close();
+   *
+   * @apiSuccessExample {json} Successful Response
+   * [
+      "0x5C770cBf582D770b93cA90AdaD7E6BD33fAbC44C",
+      "0x17e7120ED515b98AD868366cfe37B3B2f59662E8",
+      "0x35a7322c6c5262B469856BcF6df9A5049cF4A815",
+      "0x6C5E293C36a87B3a0282207c8650066469d9dA73",
+      "0x333065360359A6992c57d2DB0F7E41CB194fbBC0",
+      "0x5e5dA1DcE5ebF135B0CF06FE004D4B0178755d6F",
+      "0x6a86210203d9Efa630a16F8a09dCEC473fbbaEe2",
+      "0x0748e35A742419710393D0C5739e9353FD9a77F2",
+      "0x042cB0BF6997BF6eBBa90830cf3f7Ebe01A528fd",
+      "0x8D271c767e538f670d7c4E0438AB8C71128c0f97",
+      "0x523946badBC216ab6Bb88c96e05280033226cBDf",
+      "0xc286577b0BA0d0F7BD786887FD2F3B31F41C5e0b",
+      "0x425C5156F2e801d38F4c559d94AF1408c1fdc992",
+      "0x229a142a636e1910fe93fF5Ce7FF711553e7D3Bb",
+      "0x597148f4eaC61B6b51dd3f789c300d97fE4E35Ba",
+      "0x8259fDDC9a21F5d89452773978A3C2C961d7e747",
+      "0x9e40D2F77eAc05e6027550FDC5e1832DD812DD10",
+      "0xF3F0C1a1385f469ED637d5fDf2d903DEB6C6F1E2",
+      "0x0bBA6A7cA768873a5FCc525CfeD0e7828cE001ae",
+      "0x7EDba0748b88D7eFa771611b12A6fF86bFa14F2D",
+      "0x9ac5fCe406B0aBcfE5B1019D4778A5D79597d992"
+    ]
+   *
+   */
+  getSelectedStoreman(options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (!options || typeof(options) !== "object") {
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getSelectedStoreman';
+    let params = {...options};
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getSmDelegatorInfo(options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (!options || typeof(options) !== "object") {
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getSmDelegatorInfo';
+    let params = {...options};
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
 }
 
 module.exports = ApiInstance;
