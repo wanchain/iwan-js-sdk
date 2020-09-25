@@ -7540,6 +7540,13 @@ class ApiInstance extends WsInstance {
    *
    */
   getStoremanConf(options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (!options || typeof(options) !== "object") {
+      options = {};
+    }
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
