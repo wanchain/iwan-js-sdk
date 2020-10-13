@@ -1189,7 +1189,7 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "object",
-            "optional": true,
+            "optional": false,
             "field": "options",
             "description": "<p>Optional: <br>  <code>groupId</code> - The string of storeman group ID being queried.</p>"
           },
