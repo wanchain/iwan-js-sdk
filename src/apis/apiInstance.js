@@ -8694,7 +8694,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {object} [options] Optional:
+   * @apiParam {object} options Optional:
    * <br>&nbsp;&nbsp;<code>groupId</code> - The string of storeman group ID being queried.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
