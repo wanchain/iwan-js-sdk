@@ -1117,6 +1117,65 @@ define({ "api": [
     "groupTitle": "CrossChainV2"
   },
   {
+    "name": "getMultiStoremanGroupInfo",
+    "group": "CrossChainV2",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getMultiStoremanGroupInfo",
+    "version": "1.2.1",
+    "description": "<p>Get the detail info of multi-storemanGroup, include the info like the deposit, memberCount etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "groupId",
+            "description": "<p>The array of storeman groupId being queried.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>  <code>err</code> - If an error occurred. <br>  <code>result</code> - The saved result.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getMultiStoremanGroupInfo\",\"params\":{\"groupId\":[\"0x0000000000000000000000000000000000000000000000003133323936333039\"]},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getMultiStoremanGroupInfo([\"0x0000000000000000000000000000000000000000000000003133323936333039\"], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getMultiStoremanGroupInfo([\"0x0000000000000000000000000000000000000000000000003133323936333039\"]);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[{\n     \"groupId\": \"0x000000000000000000000000000000000000000000000000006a61636f622d32\",\n     \"status\": \"5\",\n     \"deposit\": \"10776900000000000000103\",\n     \"depositWeight\": \"10814400000000000000099\",\n     \"selectedCount\": \"21\",\n     \"memberCount\": \"21\",\n     \"whiteCount\": \"2\",\n     \"whiteCountAll\": \"5\",\n     \"startTime\": \"1600143517\",\n     \"endTime\": \"1600489117\",\n     \"registerTime\": \"1600142125\",\n     \"registerDuration\": \"200\",\n     \"memberCountDesign\": \"21\",\n     \"threshold\": \"17\",\n     \"chain1\": \"2153201998\",\n     \"chain2\": \"2147483708\",\n     \"curve1\": \"1\",\n     \"curve2\": \"1\",\n     \"tickedCount\": \"0\",\n     \"minStakeIn\": \"2000\",\n     \"minDelegateIn\": \"100\",\n     \"minPartIn\": \"50\",\n     \"crossIncoming\": \"0\",\n     \"gpk1\": \"0x1d399574e29639e3d3e0a42a4af8c29a164e93787eaeff8f4d5f953b4d30a8f526239021ed69422ea4c7fd1a52ad583d302135c678f88addbf218091515ff918\",\n     \"gpk2\": \"0x2353026c7886980f532304815fcae304849f6558a0f0d0676b183e445150599a1a9230eac233dec1c2bc64d4cbdb11d90952c2e8397a658a7f37e5f213517fd4\",\n     \"delegateFee\": \"100\"\n   }]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "CrossChainV2"
+  },
+  {
     "name": "getMultiStoremanInfo",
     "group": "CrossChainV2",
     "type": "CONNECT",
