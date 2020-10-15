@@ -7287,6 +7287,87 @@ class ApiInstance extends WsInstance {
 
   /**
    *
+   * @apiName getMultiStoremanGroupInfo
+   * @apiGroup CrossChainV2
+   * @api {CONNECT} /ws/v3/YOUR-API-KEY getMultiStoremanGroupInfo
+   * @apiVersion 1.2.1
+   * @apiDescription Get the detail info of multi-storemanGroup, include the info like the deposit, memberCount etc.
+   * <br><br><strong>Returns:</strong>
+   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+   *
+   * @apiParam {string} groupId The array of storeman groupId being queried.
+   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+   *
+   * @apiParamExample {string} JSON-RPC over websocket
+   * {"jsonrpc":"2.0","method":"getMultiStoremanGroupInfo","params":{"groupId":["0x0000000000000000000000000000000000000000000000003133323936333039"]},"id":1}
+   *
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   apiTest.getMultiStoremanGroupInfo(["0x0000000000000000000000000000000000000000000000003133323936333039"], (err, result) => {
+   *     console.log("Result is ", result);
+   *     apiTest.close();
+   *   });
+   *
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   let result = await apiTest.getMultiStoremanGroupInfo(["0x0000000000000000000000000000000000000000000000003133323936333039"]);
+   *   console.log("Result is ", result);
+   *   apiTest.close();
+   *
+   * @apiSuccessExample {json} Successful Response
+   *  [{
+      "groupId": "0x000000000000000000000000000000000000000000000000006a61636f622d32",
+      "status": "5",
+      "deposit": "10776900000000000000103",
+      "depositWeight": "10814400000000000000099",
+      "selectedCount": "21",
+      "memberCount": "21",
+      "whiteCount": "2",
+      "whiteCountAll": "5",
+      "startTime": "1600143517",
+      "endTime": "1600489117",
+      "registerTime": "1600142125",
+      "registerDuration": "200",
+      "memberCountDesign": "21",
+      "threshold": "17",
+      "chain1": "2153201998",
+      "chain2": "2147483708",
+      "curve1": "1",
+      "curve2": "1",
+      "tickedCount": "0",
+      "minStakeIn": "2000",
+      "minDelegateIn": "100",
+      "minPartIn": "50",
+      "crossIncoming": "0",
+      "gpk1": "0x1d399574e29639e3d3e0a42a4af8c29a164e93787eaeff8f4d5f953b4d30a8f526239021ed69422ea4c7fd1a52ad583d302135c678f88addbf218091515ff918",
+      "gpk2": "0x2353026c7886980f532304815fcae304849f6558a0f0d0676b183e445150599a1a9230eac233dec1c2bc64d4cbdb11d90952c2e8397a658a7f37e5f213517fd4",
+      "delegateFee": "100"
+    }]
+   *
+   */
+  getMultiStoremanGroupInfo(groupId, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getMultiStoremanGroupInfo';
+    let params = {"groupId": groupId};
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  /**
+   *
    * @apiName getStoremanGroupConfig
    * @apiGroup CrossChainV2
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGroupConfig
