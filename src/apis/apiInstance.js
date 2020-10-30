@@ -7099,7 +7099,7 @@ class ApiInstance extends WsInstance {
           "wkAddr":"0x5793e629c061e7fd642ab6a1b4d552cec0e2d606",
           "activity": "90"
         },
-        ...
+        ... ...
    *  }
    *
    */
@@ -7711,7 +7711,7 @@ class ApiInstance extends WsInstance {
         "iconData": "...",
         "iconType": "png"
       },
-      ...
+      ... ...
    * ]
    *
    */
@@ -7801,7 +7801,7 @@ class ApiInstance extends WsInstance {
         "incentivedDay": "13319377",
         "slashedCount": "0"
       },
-      ...
+      ... ...
    * ]
    *
    */
@@ -8151,7 +8151,7 @@ class ApiInstance extends WsInstance {
           "from": "0x8e12f79275b1c251b0eb5753d18b8a0bfdd8f7cb",
           "timestamp": 1603101540
         },
-        ......
+        ... ...
    *  ]
    *
    */
@@ -8307,7 +8307,7 @@ class ApiInstance extends WsInstance {
           "smIndex": "10",
           "slshReason": "3"
         },
-        ......
+        ... ...
    *  ]
    *
    */
