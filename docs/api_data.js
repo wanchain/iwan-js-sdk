@@ -2555,7 +2555,7 @@ define({ "api": [
             "type": "string",
             "optional": false,
             "field": "crossChain",
-            "description": "<p>The cross-chain name that you want to search, should be <code>&quot;ETH&quot;</code>.</p>"
+            "description": "<p>The cross-chain name that you want to search, should be <code>&quot;ETH&quot;</code> or <code>&quot;EOS&quot;</code>.</p>"
           },
           {
             "group": "Parameter",
