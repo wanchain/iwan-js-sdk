@@ -6963,6 +6963,93 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  /**
+   *
+   * @apiName getRegisteredMapToken
+   * @apiGroup Service
+   * @api {CONNECT} /ws/v3/YOUR-API-KEY getRegisteredMapToken
+   * @apiVersion 1.2.1
+   * @apiDescription Get records of registered mapping tokens information of shadow chain.
+   * <br><br><strong>Returns:</strong>
+   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+   *
+   * @apiParam {string} chainType The chain being queried, default: <code>'WAN'</code>.
+   * @apiParam {object} [options] Optional.
+   * <br>&nbsp;&nbsp;<code>tokenScAddr</code> - The token account of <code>'WAN'</code> chain.
+   * <br>&nbsp;&nbsp;<code>after</code> - The timestamp after you want to search.
+   * <br>&nbsp;&nbsp;<code>pageIndex</code> - The page index you want to search. If you want to query with the <code>pageIndex</code>, <code>page</code> is needed.
+   * <br>&nbsp;&nbsp;<code>page</code> - The page size you want to search.
+   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+   *
+   * @apiParamExample {string} JSON-RPC over websocket
+   * {"jsonrpc":"2.0","method":"getRegisteredMapToken","params":{"chainType":"WAN", "after":1577155812700},"id":1}
+   *
+   * @apiExample {nodejs} Example callback usage:
+   *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   apiTest.getRegisteredMapToken("WAN", {after:1577155812700}, (err, result) => {
+   *     console.log("Result is ", result);
+   *     apiTest.close();
+   *   });
+   *
+   * @apiExample {nodejs} Example promise usage:
+   *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   let result = await apiTest.getRegisteredMapToken("WAN", {after:1577155812700});
+   *   console.log("Result is ", result);
+   *   apiTest.close();
+   *
+   * @apiSuccessExample {json} Successful Response
+   *  [
+   *      "tokenScAddr": "0xc6f4465a6a521124c8e3096b62575c157999d361",
+   *      "iconType": "jpg",
+   *      "iconData": "/9j/4AAQSkZJRgABAQEBLAEsA ... ...",
+   *      "updatedAt": :1589512354784
+   *    },
+   *    ... ...
+   *  ]
+   *
+   */
+  getRegisteredMapToken(chainType, options, callback) {
+    let method = 'getRegisteredMapToken';
+    let params = {};
+
+    if (typeof (chainType) === "function") {
+      options = {};
+      chainType = undefined;
+    }
+    if (typeof (options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (chainType && typeof (chainType) === "object") {
+      options = chainType;
+      chainType = undefined;
+    }
+  if (!options || typeof(options) !== "object") {
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    params = utils.newJson(options);
+
+    if (chainType) {
+      params.chainType = chainType;
+    }
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
   // ################### open storeman api ###################
 
     /**
