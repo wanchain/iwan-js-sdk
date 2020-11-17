@@ -8110,14 +8110,15 @@ class ApiInstance extends WsInstance {
    * @apiSuccessExample {json} Successful Response
    *  [
         {
-          "from": "0xa6d73936272bad6d9eeabd35ecb83ab365ea3ab1",
+          "from": "0x8e12f79275b1c251b0eb5753d18b8a0bfdd8f7cb",
           "wkAddr": "0x5c770cbf582d770b93ca90adad7e6bd33fabc44c",
-          "deposit": "60000000000000000000",
-          "incentive": "51094457472788729",
-          "groupId": "0x0000000000000000000000000000000000000000000000000000006a61636f62",
+          "deposit": "100000000000000000000",
+          "incentive": "112906519254666719",
+          "groupId": "0x000000000000000000000000000000000000000000746573746e65745f303038",
           "wkStake": {
-            "deposit": "25000000000000000000",
-            "delegateDeposit": "175000000000000000000"
+            "deposit": "10100000000000000000000",
+            "delegateDeposit": "500000000000000000000",
+            "partnerDeposit": "10000000000000000000000"
           },
           "chain1": [
             2153201998,
@@ -8132,17 +8133,19 @@ class ApiInstance extends WsInstance {
             60
           ],
           "quited": false,
-          "canDelegateOut": true
+          "canDelegateOut": true,
+          "canDelegateClaim": false
         },
         {
-          "from": "0xfee7c2df6d07c429f0eb63c521b0dbbe7b86d7d5",
+          "from": "0xe659b7c9d33563103b206bd7fce7d53a5eeaaeed",
           "wkAddr": "0x5c770cbf582d770b93ca90adad7e6bd33fabc44c",
-          "deposit": "20000000000000000000",
-          "incentive": "0",
-          "groupId": "0x0000000000000000000000000000000000000000000000000000006a61636f62",
+          "deposit": "200000000000000000000",
+          "incentive": "1276848200329784586",
+          "groupId": "0x000000000000000000000000000000000000000000746573746e65745f303038",
           "wkStake": {
-            "deposit": "25000000000000000000",
-            "delegateDeposit": "175000000000000000000"
+            "deposit": "10100000000000000000000",
+            "delegateDeposit": "500000000000000000000",
+            "partnerDeposit": "10000000000000000000000"
           },
           "chain1": [
             2153201998,
@@ -8156,8 +8159,9 @@ class ApiInstance extends WsInstance {
             "Ethereum",
             60
           ],
-          "quited": false,
-          "canDelegateOut": true
+          "quited": true,
+          "canDelegateOut": false,
+          "canDelegateClaim": true
         }
    *  ]
    *
