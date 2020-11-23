@@ -48,6 +48,8 @@ function getParams(needed, input) {
             } else if (input["params"].hasOwnProperty("blockNumber")) {
                 params.push(input["params"]["blockNumber"]);
             }
+        } else if (needed[i] === "options" || needed[i] === "option") {
+            params.push(input["params"]);
         } else {
             params.push(input["params"][needed[i]]);
         }
@@ -137,63 +139,74 @@ describe("iWan API Auto Test", () => {
             let xlsxResult = JSON.parse(row[xlsxHeaderPos.output]);
             let expectResult = xlsxResult.hasOwnProperty('error') ? xlsxResult.error : xlsxResult.result;
 
-            // if (!['TC3001', 'TC3002','TC3003','TC3004','TC3005','TC3006','TC3007', 'TC3008'].includes(tcid)) {
-            //     return;
-            // }
-            it("Auto test promise [" + tcid + " " + description + "]", async () => {
-                if (api) {
-                    if (apiTest[api]) {
-                        let args = getArgs(apiTest[api]);
-                        let params = getParams(args, input);;
-                        let actualResult = null;
+            let runIDs = [
+                6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009,
+                6010, 6011, 6012, 6013, 6014, 6015, 6016, 6017, 6018, 6019,
+                6020, 6021, 6022, 6023, 6024, 6025, 6026, 6027, 6028, 6029,
+                6030, 6031, 6032, 6032
+            ].map(id => `TC${id}`);
+            if (runIDs.length && !runIDs.includes(tcid)) {
+                return;
+            }
 
-                        try {
-                            actualResult = await apiTest[api](...params);
-                        } catch (err) {
-                            actualResult = (err.hasOwnProperty('error') ? err.error : err);
-                        }
-                        console.log("Expect:" + JSON.stringify(expectResult) + ", type:" + typeof(expectResult));
-                        console.log("Actual:" + JSON.stringify(actualResult) + ", type:" + typeof(actualResult));
+            describe("iWan API Promise and Callback Test", () => {
+                it("Auto test promise [" + tcid + " " + description + "]", async () => {
+                    if (api) {
+                        if (apiTest[api]) {
+                            let args = getArgs(apiTest[api]);
+                            let params = getParams(args, input);
+                            let actualResult = null;
 
-                        if (flag === partialKeyword) {
-                            assertPartialMatch(expectResult, actualResult);
-                        } else {
-                            assertFullMatch(expectResult, actualResult);
-                        } 
-                    } else {
-                        assertFullMatch("incorrect API name (" + api + ")", "incorrect API name (" + api + ")");
-                    }
-                } else {
-                    assertFullMatch("key parameter missing: method", "key parameter missing: method");
-                }
-            });
-
-            it("Auto test callback [" + tcid + " " + description + "]", (done) => {
-                if (api) {
-                    if (apiTest[api]) {
-                        let args = getArgs(apiTest[api]);
-                        let params = getParams(args, input);;
-                        let actualResult = null;
-
-                        apiTest[api](...params, (err, actualResult) => {
-                            if (err) {
-                                actualResult = err;
+                            try {
+                                actualResult = await apiTest[api](...params);
+                            } catch (err) {
+                                actualResult = (err.hasOwnProperty('error') ? err.error : err);
                             }
+                            // console.log(tcid, "Expect:" + JSON.stringify(expectResult) + ", type:" + typeof(expectResult));
+                            // console.log(tcid, "Actual:" + JSON.stringify(actualResult) + ", type:" + typeof(actualResult));
+
                             if (flag === partialKeyword) {
                                 assertPartialMatch(expectResult, actualResult);
                             } else {
                                 assertFullMatch(expectResult, actualResult);
                             } 
-                            done();
-                        });
+                        } else {
+                            assertFullMatch("incorrect API name (" + api + ")", "incorrect API name (" + api + ")");
+                        }
                     } else {
-                        assertFullMatch("incorrect API name (" + api + ")", "incorrect API name (" + api + ")");
+                        assertFullMatch("key parameter missing: method", "key parameter missing: method");
+                    }
+                });
+
+                it("Auto test callback [" + tcid + " " + description + "]", (done) => {
+                    if (api) {
+                        console.log(tcid, api, "callback")
+                        if (apiTest[api]) {
+                            let args = getArgs(apiTest[api]);
+                            let params = getParams(args, input);;
+
+                            apiTest[api](...params, (err, actualResult) => {
+                                if (err) {
+                                    actualResult = err;
+                                }
+                                // console.log(tcid, "Expect:" + JSON.stringify(expectResult) + ", type:" + typeof(expectResult));
+                                // console.log(tcid, "Actual:" + JSON.stringify(actualResult) + ", type:" + typeof(actualResult));
+                                if (flag === partialKeyword) {
+                                    assertPartialMatch(expectResult, actualResult);
+                                } else {
+                                    assertFullMatch(expectResult, actualResult);
+                                }
+                                done();
+                            });
+                        } else {
+                            assertFullMatch("incorrect API name (" + api + ")", "incorrect API name (" + api + ")");
+                            done();
+                        }
+                    } else {
+                        assertFullMatch("key parameter missing: method", "key parameter missing: method");
                         done();
                     }
-                } else {
-                    assertFullMatch("key parameter missing: method", "key parameter missing: method");
-                    done();
-                }
+                });
             });
         }
     });
