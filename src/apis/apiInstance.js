@@ -9093,6 +9093,30 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  multiCall(chainType, calls, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (!options || typeof(options) !== "object") {
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'multiCall';
+    let params = {chainType: chainType, calls: calls, ...options};
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
 }
 
 module.exports = ApiInstance;
