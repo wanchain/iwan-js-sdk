@@ -376,6 +376,100 @@ class ApiInstance extends WsInstance {
 
   /**
   *
+  * @apiName getOpReturnOutputs
+  * @apiGroup Accounts
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getOpReturnOutputs
+  * @apiVersion 1.2.1
+  * @apiDescription Get the vout with OP_RETURN info for BTC.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+  *
+  * @apiParam {string} chainType The chain name that you want to search, should be <code>"BTC"</code>.
+  * @apiParam {array} address The address array that you want to search.
+  * @apiParam {object} options Optional:
+  * <br>&nbsp;&nbsp;<code>fromBlock</code> - Optional, the number of the earliest block (latest may be given to mean the most recent, block). By default 0.
+  * <br>&nbsp;&nbsp;<code>toBlock</code> - Optional, the number of the latest block (latest may be given to mean the most recent, block). By default latest.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getOpReturnOutputs","params":{"chainType":"BTC", "address":["n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R"]},"id":1}
+  *
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+  *   apiTest.getOpReturnOutputs('BTC',["n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R"], (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+  *   let result = await apiTest.getOpReturnOutputs('BTC', ["n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R"]);
+  *   console.log("Result is ", result);
+  *   apiTest.close();
+  *
+  * @apiSuccessExample {json} Successful Response
+  * [{
+      "txid": "2c7a583b84fe0732fe17017bf0b17437bb5dcdad3ca8a8d661e86be666c33cc0",
+      "height": 101641,
+      "vout": [
+        {
+          "scriptPubKey": {
+            "addresses": [
+              "mzW2hdZN2um7WBvTDerdahKqRgj3md9C29"
+            ],
+            "asm": "04ffd03de44a6e11b9917f3a29f9443283d9871c9d743ef30d5eddcd37094b64d1b3d8090496b53256786bf5c82932ec23c3b74d9f05a6f95a8b5529352656664b OP_CHECKSIG",
+            "hex": "4104ffd03de44a6e11b9917f3a29f9443283d9871c9d743ef30d5eddcd37094b64d1b3d8090496b53256786bf5c82932ec23c3b74d9f05a6f95a8b5529352656664bac",
+            "reqSigs": 1,
+            "type": "pubkey"
+          },
+          "value": 0.49743473,
+          "index": 1
+        },
+        {
+          "scriptPubKey": {
+            "asm": "OP_RETURN f25ce69be9489038099442ed615ca8b0003330821c2804f2763c7a8e72274d1c0000000000000a00",
+            "hex": "6a28f25ce69be9489038099442ed615ca8b0003330821c2804f2763c7a8e72274d1c0000000000000a00",
+            "type": "nulldata"
+          },
+          "value": 0,
+          "index": 2
+        }
+      ]
+    },
+    ... ...
+  ]
+  *
+  */
+  getOpReturnOutputs(chainType, address, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (!options || typeof(options) !== "object") {
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getOpReturnOutputs';
+    let params = { chainType: chainType, address: address, ...options };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  /**
+  *
   * @apiName getStoremanGroups
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY getStoremanGroups
