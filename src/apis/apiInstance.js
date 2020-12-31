@@ -7978,6 +7978,23 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  getStoremanCandidatesV2(groupId, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getStoremanCandidatesV2';
+    let params = {"groupId": groupId};
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
     /**
    *
    * @apiName getStoremanGroupMember
@@ -8056,6 +8073,23 @@ class ApiInstance extends WsInstance {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getStoremanGroupMember';
+    let params = {"groupId": groupId};
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getStoremanGroupMemberV2(groupId, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getStoremanGroupMemberV2';
     let params = {"groupId": groupId};
 
     return utils.promiseOrCallback(callback, cb => {
