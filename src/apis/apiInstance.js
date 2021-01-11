@@ -385,8 +385,8 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType The chain name that you want to search, should be <code>"BTC"</code>.
-  * @apiParam {array} address The address array that you want to search.
   * @apiParam {object} options Optional:
+  * <br>&nbsp;&nbsp;<code>address</code> - Optional, the address array that you want to search.
   * <br>&nbsp;&nbsp;<code>fromBlock</code> - Optional, the number of the earliest block (latest may be given to mean the most recent, block). By default 0.
   * <br>&nbsp;&nbsp;<code>toBlock</code> - Optional, the number of the latest block (latest may be given to mean the most recent, block). By default latest.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
@@ -399,7 +399,7 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   apiTest.getOpReturnOutputs('BTC',["n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R"], (err, result) => {
+  *   apiTest.getOpReturnOutputs('BTC',{address:["n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R"]}, (err, result) => {
   *     console.log("Result is ", result);
   *     apiTest.close();
   *   });
@@ -407,7 +407,7 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   let result = await apiTest.getOpReturnOutputs('BTC', ["n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R"]);
+  *   let result = await apiTest.getOpReturnOutputs('BTC', {address:["n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R"]});
   *   console.log("Result is ", result);
   *   apiTest.close();
   *
@@ -444,7 +444,7 @@ class ApiInstance extends WsInstance {
   ]
   *
   */
-  getOpReturnOutputs(chainType, address, options, callback) {
+  getOpReturnOutputs(chainType, options, callback) {
     if (typeof(options) === "function") {
       callback = options;
       options = {};
@@ -456,7 +456,7 @@ class ApiInstance extends WsInstance {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getOpReturnOutputs';
-    let params = { chainType: chainType, address: address, ...options };
+    let params = { chainType: chainType, ...options };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
