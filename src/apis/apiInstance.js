@@ -7383,6 +7383,7 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
+   * @apiParam {string} chainType The chain being queried, default: <code>'WAN'</code>.
    * @apiParam {string} groupId The storeman group ID.
    * @apiParam {array} tokenPairId The array token pair ID being queried.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
@@ -7426,7 +7427,7 @@ class ApiInstance extends WsInstance {
    *  ]
    *
    */
-  getStoremanGroupQuota(groupId, tokenPairId, options, callback) {
+  getStoremanGroupQuota(chainType, groupId, tokenPairId, options, callback) {
     if (typeof(options) === "function") {
       callback = options;
       options = {};
@@ -7438,7 +7439,7 @@ class ApiInstance extends WsInstance {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getStoremanGroupQuota';
-    let params = {groupId: groupId, tokenPairId: tokenPairId, ...options};
+    let params = {chainType: chainType, groupId: groupId, tokenPairId: tokenPairId, ...options};
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
