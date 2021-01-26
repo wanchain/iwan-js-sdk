@@ -7427,7 +7427,7 @@ class ApiInstance extends WsInstance {
    *  ]
    *
    */
-  getStoremanGroupQuota(chainType, groupId, tokenPairId, options, callback) {
+  getStoremanGroupQuota(chainType, groupId, symbol, options, callback) {
     if (typeof(options) === "function") {
       callback = options;
       options = {};
@@ -7439,7 +7439,7 @@ class ApiInstance extends WsInstance {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getStoremanGroupQuota';
-    let params = {chainType: chainType, groupId: groupId, tokenPairId: tokenPairId, ...options};
+    let params = {chainType: chainType, groupId: groupId, symbol: symbol, ...options};
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
