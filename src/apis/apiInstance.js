@@ -9350,6 +9350,7 @@ class ApiInstance extends WsInstance {
   * @apiParam {object} options Optional:
   * <br>&nbsp;&nbsp;<code>target</code> - The numeric of confirmation target in blocks (1 - 1008).
   * <br>&nbsp;&nbsp;<code>mode</code> - The string of fee estimate mode.
+  * <br>&nbsp;&nbsp;<code>feeRate</code> - The numeric of estimate fee rate.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
