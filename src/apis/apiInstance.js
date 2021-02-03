@@ -6299,6 +6299,80 @@ class ApiInstance extends WsInstance {
 
   /**
    *
+   * @apiName getRegisteredCoinGecko
+   * @apiGroup Service
+   * @api {CONNECT} /ws/v3/YOUR-API-KEY getRegisteredCoinGecko
+   * @apiVersion 1.2.1
+   * @apiDescription Get records of registered coingecko information.
+   * <br><br><strong>Returns:</strong>
+   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+   *
+   * @apiParam {object} [options] Optional.
+   * <br>&nbsp;&nbsp;<code>address</code> - The array of coingecko address you want to search.
+   * <br>&nbsp;&nbsp;<code>symbol</code> - The array of coingecko symbol you want to search.
+   * <br>&nbsp;&nbsp;<code>after</code> - The timestamp after you want to search.
+   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+   *
+   * @apiParamExample {string} JSON-RPC over websocket
+   * {"jsonrpc":"2.0","method":"getRegisteredCoinGecko","params":{"symbol":######},"id":1}
+   *
+   * @apiExample {nodejs} Example callback usage:
+   *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   apiTest.getRegisteredCoinGecko({symbol:######}, (err, result) => {
+   *     console.log("Result is ", result);
+   *     apiTest.close();
+   *   });
+   *
+   * @apiExample {nodejs} Example promise usage:
+   *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   let result = await apiTest.getRegisteredCoinGecko({symbol:######});
+   *   console.log("Result is ", result);
+   *   apiTest.close();
+   *
+   * @apiSuccessExample {json} Successful Response
+   *  [
+   *    {
+   *      "id": "wanchain",
+   *      "symbol": "wan",
+   *      "name": "Wanchain"
+   *      "updatedAt": 1563780893497
+   *    },
+   *    ... ...
+   *  ]
+   *
+   */
+  getRegisteredCoinGecko(options, callback) {
+    let method = 'getRegisteredCoinGecko';
+    let params = {};
+
+    if (typeof (options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (!options || typeof(options) !== "object") {
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    params = utils.newJson(options);
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  /**
+   *
    * @apiName getPosInfo
    * @apiGroup POS
    * @api {CONNECT} /ws/v3/YOUR-API-KEY getPosInfo
@@ -7383,20 +7457,20 @@ class ApiInstance extends WsInstance {
    * <br><br><strong>Returns:</strong>
    * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
    *
-   * @apiParam {string} chainType The chain being queried, default: <code>'WAN'</code>.
+   * @apiParam {string} chainType The from chain being queried, default: <code>'WAN'</code>.
    * @apiParam {string} groupId The storeman group ID.
-   * @apiParam {array} tokenPairId The array token pair ID being queried.
+   * @apiParam {array} symbol The array of symbol being queried.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getStoremanGroupQuota","params":{groupId: "0x0000000000000000000000000000000000000000000031353937383131313430", tokenPairId: [1, 2]},"id":1}
+   * {"jsonrpc":"2.0","method":"getStoremanGroupQuota","params":{chainType:"BTC", groupId: "0x0000000000000000000000000000000000000000000031353937383131313430", symbol: ["BTC"]},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanGroupQuota("0x0000000000000000000000000000000000000000000031353937383131313430", [1, 2], (err, result) => {
+   *   apiTest.getStoremanGroupQuota("0x0000000000000000000000000000000000000000000031353937383131313430", ["BTC"], (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7404,25 +7478,16 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanGroupQuota("0x0000000000000000000000000000000000000000000031353937383131313430", [1, 2]);
+   *   let result = await apiTest.getStoremanGroupQuota("BTC", "0x0000000000000000000000000000000000000000000031353937383131313430", ["BTC"]);
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
    *  [
         {
-          "id": 1,
-          "userMintQuota": "39",
-          "smgMintQuota": "39",
-          "userBurnQuota": "0",
-          "smgBurnQuota": "0"
-        },
-        {
-          "id": 2,
-          "userMintQuota": "63000",
-          "smgMintQuota": "63000",
-          "userBurnQuota": "0",
-          "smgBurnQuota": "0"
+          "symbol": "BTC",
+          "minQuota": "2",
+          "maxQuota": "3312485144"
         }
    *  ]
    *
