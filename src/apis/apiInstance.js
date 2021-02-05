@@ -9402,6 +9402,134 @@ class ApiInstance extends WsInstance {
   });
 }
 
+  /**
+  *
+  * @apiName getLedgerVersion
+  * @apiGroup Blocks
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getLedgerVersion
+  * @apiVersion 1.2.1
+  * @apiDescription Get the current latest ledger version.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+  *
+  * @apiParam {string} chainType The chain being queried. Currently supports <code>"XRP"</code>.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getLedgerVersion","params":{"chainType":"XRP"},"id":1}
+  *
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+  *   apiTest.getLedgerVersion("XRP", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+  *   let result = await apiTest.getLedgerVersion("XRP");
+  *   console.log("Result is ", result);
+  *   apiTest.close();
+  *
+  * @apiSuccessExample {json} Successful Response
+  *   14678584
+  *
+  */
+ getLedgerVersion(chainType, callback) {
+  if (callback) {
+    callback = utils.wrapCallback(callback);
+  }
+  let method = 'getLedgerVersion';
+  let params = { chainType: chainType };
+
+  return utils.promiseOrCallback(callback, cb => {
+    this._request(method, params, (err, result) => {
+      if (err) {
+        return cb(err);
+      }
+      return cb(null, result);
+    });
+  });
+}
+
+  /**
+  *
+  * @apiName getLedger
+  * @apiGroup Blocks
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getLedger
+  * @apiVersion 1.2.1
+  * @apiDescription Get the ledger information about a ledger by ledger version or hash on certain chain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+  *
+  * @apiParam {string} chainType The chain being queried. Currently supports <code>"XRP"</code>.
+  * @apiParam {string} [ledgerHash] The ledger hash you want to search.
+  * @apiParam {number} [ledgerVersion] The ledger version you want to search.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getLedger","params":{"chainType":"XRP", "ledgerVersion":"14678584"},"id":1}
+  *
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+  *   apiTest.getLedger("XRP", {"ledgerVersion":"14678584"}, (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+  *   let result = await apiTest.getLedger("XRP", {"ledgerVersion":"14678584"});
+  *   console.log("Result is ", result);
+  *   apiTest.close();
+  *
+  * @apiSuccessExample {json} Successful Response
+  *   {
+        "stateHash": "97B20C16920AE94A4F10F5883122CCFF7444DF2A66A0F20366909721360C1409",
+        "closeTime": "2021-02-05T07:07:41.000Z",
+        "closeTimeResolution": 10,
+        "closeFlags": 0,
+        "ledgerHash": "0DFA222F22734DAD2C74768867721275BFE099AAA334FBEA6B06E8B0BF5CF3BA",
+        "ledgerVersion": 14678584,
+        "parentLedgerHash": "A1E2B3F964E4E0515C5A928B050AFE54924F38ECEC8831937F1F18B4A31EA1CF",
+        "parentCloseTime": "2021-02-05T07:07:40.000Z",
+        "totalDrops": "99999778277825681",
+        "transactionHash": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+  *
+  */
+ getLedger(chainType, options, callback) {
+  if (typeof(options) === "function") {
+    callback = options;
+    options = {};
+  }
+  if (!options || typeof(options) !== "object") {
+    options = {};
+  }
+  if (callback) {
+    callback = utils.wrapCallback(callback);
+  }
+  let method = 'getLedger';
+  let params = { chainType: chainType, ...options };
+
+  return utils.promiseOrCallback(callback, cb => {
+    this._request(method, params, (err, result) => {
+      if (err) {
+        return cb(err);
+      }
+      return cb(null, result);
+    });
+  });
+}
+
 }
 
 module.exports = ApiInstance;
