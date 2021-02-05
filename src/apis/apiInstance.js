@@ -9474,12 +9474,12 @@ class ApiInstance extends WsInstance {
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
   *
   * @apiParamExample {string} JSON-RPC over websocket
-  * {"jsonrpc":"2.0","method":"getLedger","params":{"chainType":"XRP", "ledgerVersion":"14678584"},"id":1}
+  * {"jsonrpc":"2.0","method":"getLedger","params":{"chainType":"XRP", "ledgerVersion":14679040},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   apiTest.getLedger("XRP", {"ledgerVersion":"14678584"}, (err, result) => {
+  *   apiTest.getLedger("XRP", {"ledgerVersion":14679040}, (err, result) => {
   *     console.log("Result is ", result);
   *     apiTest.close();
   *   });
@@ -9487,22 +9487,25 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-  *   let result = await apiTest.getLedger("XRP", {"ledgerVersion":"14678584"});
+  *   let result = await apiTest.getLedger("XRP", {"ledgerVersion":14679040});
   *   console.log("Result is ", result);
   *   apiTest.close();
   *
   * @apiSuccessExample {json} Successful Response
   *   {
-        "stateHash": "97B20C16920AE94A4F10F5883122CCFF7444DF2A66A0F20366909721360C1409",
-        "closeTime": "2021-02-05T07:07:41.000Z",
+        "stateHash": "0F4548F6E4807F13570C41C11A52792096D6642027EC32840B9D53BF961409BF",
+        "closeTime": "2021-02-05T07:30:31.000Z",
         "closeTimeResolution": 10,
         "closeFlags": 0,
-        "ledgerHash": "0DFA222F22734DAD2C74768867721275BFE099AAA334FBEA6B06E8B0BF5CF3BA",
-        "ledgerVersion": 14678584,
-        "parentLedgerHash": "A1E2B3F964E4E0515C5A928B050AFE54924F38ECEC8831937F1F18B4A31EA1CF",
-        "parentCloseTime": "2021-02-05T07:07:40.000Z",
-        "totalDrops": "99999778277825681",
-        "transactionHash": "0000000000000000000000000000000000000000000000000000000000000000"
+        "ledgerHash": "C08F61EF03F095B9D08CC27618AF47D30E6BC10EF7F0F94FA02E6636BE5646DF",
+        "ledgerVersion": 14679040,
+        "parentLedgerHash": "4EA79DB81E2F2EDCBB9757B42A1E50419268C417D8250ADDE5F2993B49ADEDBC",
+        "parentCloseTime": "2021-02-05T07:30:30.000Z",
+        "totalDrops": "99999778277224991",
+        "transactionHash": "38751D1FAAE173F9074C1B9B3521A1F91B7AD5A1A7F2A55B8388CEC17AEDF766",
+        "transactionHashes": [
+          "A7B0FE36FB0071B396EE118078C81D8E38E1FC8429EE9F12E0B96F0113D88E41"
+        ]
       }
   *
   */
