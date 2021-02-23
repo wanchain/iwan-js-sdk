@@ -5,7 +5,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "checkOTAUsed",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Check whether the OTA address is used. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -71,7 +71,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getBalance",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get balance for a single address. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -137,7 +137,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getMultiBalances",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get balance for multiple Addresses in a single call. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -203,7 +203,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getNonce",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the nonce of an account. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -269,7 +269,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getNonceIncludePending",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the pending nonce of an account. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -335,7 +335,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getUTXO",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the detail BTC UTXO info for BTC. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -415,7 +415,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "importAddress",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Send a <code>'import address'</code> command to BTC. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -481,7 +481,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getBlockByHash",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the block information about a block by block hash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -547,7 +547,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getBlockByNumber",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the block information about a block by block number on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -613,7 +613,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getBlockNumber",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the current latest block number. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -672,7 +672,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getBlockTransactionCount",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the number of transaction in a given block by block number or block hash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -738,7 +738,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "callScFunc",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Call the specific public function of one contract on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -825,7 +825,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getScMap",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the specific public map value of one contract on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -912,7 +912,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getScOwner",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the owner of the specified contract from the specified chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -978,7 +978,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getScVar",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the specific public parameter value of one contract on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1063,7 +1063,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getChainConstantInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the chainInfo by the chain id which is used as hardened derivation in BIP44. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1122,7 +1122,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getMultiStoremanGroupInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the detail info of multi-storemanGroup, include the info like the deposit, memberCount etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1181,7 +1181,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getMultiStoremanInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the detail info of multi certain storeman, include the info like the groupid, deposit, delegatorDeposit, incentive, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1240,7 +1240,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getRewardRatio",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the reward ratio. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1292,7 +1292,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getSelectedStoreman",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get all the selected storeman. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1351,7 +1351,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanCandidates",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the storeman candidates info of one certain storeman group. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1410,7 +1410,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanConf",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the conf info of one certain storeman, include the info about backupCount, standaloneWeight, delegatorDeposit and delegationMulti. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1462,7 +1462,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanDelegatorInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the delegator info on certain storeman. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1521,7 +1521,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanDelegatorTotalIncentive",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the delegator total incentive info. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1580,7 +1580,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanGpkSlashInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the gpk slash info of certain storeman. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1639,7 +1639,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanGroupActivity",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the storeman group active information. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1705,7 +1705,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanGroupConfig",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the detail config of one certain storemanGroup, include the info like the chain1/curve1/gpk1/chain2/curve2/gpk2, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1764,7 +1764,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanGroupInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the detail info of one certain storemanGroup, include the info like the deposit, memberCount etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1823,7 +1823,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanGroupList",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get all the active storemanGroups, include the info like the groupId, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1882,7 +1882,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanGroupMember",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the storeman member info of one certain storeman group. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -1941,7 +1941,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanGroupQuota",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the storeman group quota information. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2007,7 +2007,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the detail info of one certain storeman, include the info like the groupid, deposit, delegatorDeposit, incentive, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2066,7 +2066,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanSignSlashInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the sign slash info of certain storeman. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2125,7 +2125,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanStakeInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the stake info of certain storeman. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2184,7 +2184,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanStakeTotalIncentive",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the total incentive info of certain storeman stake. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2243,7 +2243,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getChainInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns an object containing various details about the blockchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2302,7 +2302,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getCoin2WanRatio",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Coin exchange ratio,such as 1 ETH to 880 WANs in ICO period, the precision is 10000, the ratio is 880*precision = 880,0000. The ratio would be changed according to the market value ratio periodically. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2361,7 +2361,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getRegTokens",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the information of tokens which are supported for cross-chain ability. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2420,7 +2420,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStoremanGroups",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the detailed cross-chain storemanGroup info for one cross-chain native coin, like the quota, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2479,7 +2479,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getToken2WanRatio",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Token exchange ratio,such as 1 token to 880 WANs, the precision is 10000, the ratio is 880*precision = 880,0000. The ratio would be changed accoring to the market value ratio periodically. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2545,7 +2545,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTokenStoremanGroups",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the detail cross-chain storemanGroup info for one specific token contract, like the quota, etc. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2611,7 +2611,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getAbi",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Retrieves the ABI for a contract based on its account name. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2677,7 +2677,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getAccountInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns an object containing various details about a specific account on the blockchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2743,7 +2743,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getAccounts",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns an array containing account names which is related to the public key, or owned by the given account. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2809,7 +2809,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getActions",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns an array of actions based on notified account.. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2882,7 +2882,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getBandwidthPrice",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns an object containing net/cpu price(cpu in ms/EOS, net in KB/EOS) by provide one producer's account. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -2948,7 +2948,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getRamPrice",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns ram price(in KB/EOS). <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -3007,7 +3007,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getRawAbi",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns an object containing buffer ABI for a contract based on its account name. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -3073,7 +3073,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getRawCodeAndAbi",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Retrieves raw code and ABI for a contract based on account name. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -3139,7 +3139,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getRequiredKeys",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns the required keys needed to sign a transaction. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -3205,7 +3205,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getResource",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns an object containing rows from the specified table eosio.table.global. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -3264,7 +3264,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getResourcePrice",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns an object containing net/cpu/ram price(cpu in ms/EOS, net/ram in KB/EOS) by provide one producer's account. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -3330,7 +3330,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStats",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns an object with one member labeled as the symbol you requested, the object has three members: supply (Symbol), max_supply (Symbol) and issuer (Name). <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -3403,7 +3403,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTableRows",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns an object containing rows from the specified table. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -3483,7 +3483,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTotalStaked",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns current 'EOS' stake amount. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -3542,7 +3542,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTotalStakedPercent",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns an object with current 'EOS' stake info, the object has three members: totalStaked, totalSup and staked percent. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -3601,7 +3601,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTotalSupply",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns an object with one member labeled as 'EOS' you requested, the object has three members: supply (Symbol), max_supply (Symbol) and issuer (Name). <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -3660,7 +3660,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "packTransaction",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns an object with serializedTransaction(buffer) and empty signatures for the given actions with blocksBehind and expireSeconds. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -3726,7 +3726,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getScEvent",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get smart contract event log via topics. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -3806,7 +3806,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "monitorEvent",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Subscribe to a smart contract event monitor. The server will push the event to the subscriber when the event occurs. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -3879,7 +3879,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getActivity",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the activity information of the specified epoch. For historical epochs the values are fixed, while the current epoch will update the latest current values in real time. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -3945,7 +3945,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getCurrentEpochInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the current epoch info. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -4004,7 +4004,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getCurrentStakerInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns an array with information on each of the current validators. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -4063,7 +4063,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getDelegatorIncentive",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the identified delegator rewards over a specified range of epochs. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -4136,7 +4136,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getDelegatorStakeInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the identified delegator's staking info. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -4202,7 +4202,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getDelegatorSupStakeInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the specified delegator's supplementary information. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -4268,7 +4268,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getDelegatorTotalIncentive",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the identified delegator's total incentives. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -4341,7 +4341,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getEpochID",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the current Epoch ID. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -4400,7 +4400,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getEpochIDByTime",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Calculates the Epoch ID according to the time. Enter the UTC time in seconds to get the corresponding Epoch ID. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -4466,7 +4466,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getEpochIncentiveBlockNumber",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the block number which contains the incentives transactions for the specified epoch. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -4532,7 +4532,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getEpochIncentivePayDetail",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the reward information of the specified epoch, enter epochID, and reward payment details (including RNP reward, EL reward and chunk reward) will be returned for all the verification nodes and clients working in the epoch. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -4598,7 +4598,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getEpochLeadersByEpochID",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the public key list of the epoch leaders of the specified EpochID with the input parameter as EpochID. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -4664,7 +4664,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getEpochStakeOut",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the record of stake out transactions for the specified epoch. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -4730,7 +4730,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getLeaderGroupByEpochID",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the Epoch Leader and Random Number Proposer addresses and public key lists in the specified epoch. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -4796,7 +4796,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getMaxBlockNumber",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the highest block number of the specified epoch ID(s). <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -4862,7 +4862,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getMaxStableBlkNumber",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the current highest stable block number (no rollback). <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -4921,7 +4921,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getPosInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns the epoch ID and block number when the switch from POW to the POS protocol occurred. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -4980,7 +4980,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getRandom",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the random number of the queried epochID and block number. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -5053,7 +5053,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getRandomProposersByEpochID",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Gets Random Number Proposer public keys of the specified epoch. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -5119,7 +5119,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getSlotActivity",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the slot leader activity information of the specified epoch. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -5185,7 +5185,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getSlotCount",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns the total number of slots in an epoch. This is a constant. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -5244,7 +5244,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getSlotID",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the current epoch slot ID. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -5303,7 +5303,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getSlotTime",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the time span of a slot in seconds. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -5362,7 +5362,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getStakerInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns an array of validator information for all validators in the specified block number. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -5428,7 +5428,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTimeByEpochID",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns the specified epoch's start time in UTC time seconds. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -5494,7 +5494,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getValidatorActivity",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the validator activity information of the Epoch Leaders and Random Number Proposers of the specified epoch. Returns null for the current Epoch or future Epochs. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -5560,7 +5560,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getValidatorInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the specified validator info by the validator address. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -5626,7 +5626,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getValidatorStakeInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the specified validator staking info by the validator owner's address. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -5692,7 +5692,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getValidatorSupStakeInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get supplementary information for the specified validator. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -5758,7 +5758,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getValidatorTotalIncentive",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the specified validator's total incentives. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -5831,7 +5831,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "estimateGas",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Executes a message call or transaction and returns the amount of the gas used. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -5897,7 +5897,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getOTAMixSet",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Returns an array about OTA mix set. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -5970,7 +5970,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "fetchService",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Fetch service API by the native http. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -6050,7 +6050,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "fetchSpecialService",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Fetch the special service API by the native http. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -6123,7 +6123,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getRegisteredAds",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get records of registered advertisements information. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -6182,7 +6182,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getRegisteredDapp",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get records of registered Dapps information. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -6241,7 +6241,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getRegisteredMapToken",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get records of registered mapping tokens information of shadow chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -6307,7 +6307,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getRegisteredOrigToken",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get records of registered tokens information of original chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -6373,7 +6373,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getRegisteredToken",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get records of registered tokens information. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -6439,7 +6439,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getRegisteredValidator",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get records of registered validators information. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -6505,7 +6505,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getGasPrice",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the current gas price in wei as bigNumber type. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -6564,7 +6564,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTokenPairAncestorInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the info of tokenPair Ancestor of certain tokenPairId, like symbol, decimals. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -6623,7 +6623,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTokenPairIDs",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get all register tokenPairIDs. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -6682,7 +6682,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTokenPairInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the info of tokenPair of certain tokenPairId, like fromChainID, toChainID, tokenAddress. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -6741,7 +6741,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTokenPairs",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the info of all register tokenPairs, like fromChainID, toChainID, tokenAddress. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -6800,7 +6800,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getMultiTokenBalance",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Gets token balance for multiple addresses of specified token on Wanchain in a single call. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -6873,7 +6873,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getMultiTokenInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the information for multiple tokens. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -6939,7 +6939,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTokenAllowance",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the token allowance for one specific account on one contract for one specific spender account on a certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -7019,7 +7019,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTokenBalance",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get token balance for a single address of a specified token on Wanchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -7092,7 +7092,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTokenInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the info of token contract, like symbol and decimals, on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -7158,7 +7158,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTokenSupply",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get total amount of certain token on Wanchain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -7224,7 +7224,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTransByAddress",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get transaction information via the specified address on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -7290,7 +7290,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTransByAddressBetweenBlocks",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get transaction information via the specified address between the specified startBlockNo and endBlockNo on certain chain. <br>Comments: <br>    if no <code>startBlockNo</code> given, <code>startBlockNo</code> will be set to 0; <br>    if no <code>endBlockNo</code> given, <code>endBlockNo</code> will be set to the newest blockNumber. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -7375,7 +7375,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTransByBlock",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get transaction information in a given block by block number or block hash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -7441,7 +7441,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTransCount",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get transaction count on certain chain. <br>Comments: <br>    if no <code>startBlockNo</code> given, <code>startBlockNo</code> will be set to 0; <br>    if no <code>endBlockNo</code> given, <code>endBlockNo</code> will be set to the newest blockNumber. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -7507,7 +7507,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTransactionConfirm",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the transaction mined result on certain chain. When the receipt not existed, return directly with 'no receipt was found'; If receipt existed, the receipt will be returned after confirm-block-number blocks. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -7580,7 +7580,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTransactionReceipt",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the receipt of a transaction by transaction hash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -7646,7 +7646,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "getTxInfo",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Get the transaction detail via txHash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {
@@ -7719,7 +7719,7 @@ define({ "api": [
     "type": "CONNECT",
     "url": "/ws/v3/YOUR-API-KEY",
     "title": "sendRawTransaction",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "description": "<p>Submit a pre-signed transaction for broadcast to certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p>",
     "parameter": {
       "fields": {

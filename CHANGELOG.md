@@ -1,3 +1,6 @@
+## v1.3.0
+- Add APIs about bridge for Cross-Chain
+
 ## v1.2.1
 - Add authority verification
 
