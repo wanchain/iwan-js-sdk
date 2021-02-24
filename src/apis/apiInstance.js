@@ -357,12 +357,19 @@ class ApiInstance extends WsInstance {
   * }]
   *
   */
-  getUTXO(chainType, minconf, maxconf, address, callback) {
+  getUTXO(chainType, minconf, maxconf, address, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (!options || typeof(options) !== "object") {
+      options = {};
+    }
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getUTXO';
-    let params = { chainType: chainType, minconf: minconf, maxconf: maxconf, address: address };
+    let params = { chainType: chainType, minconf: minconf, maxconf: maxconf, address: address, ...options };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
