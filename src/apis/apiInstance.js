@@ -9348,7 +9348,7 @@ class ApiInstance extends WsInstance {
   * @apiGroup Accounts
   * @api {CONNECT} /ws/v3/YOUR-API-KEY estimateNetworkFee
   * @apiVersion 1.3.0
-  * @apiDescription Query a <code>'estimateNetworkFee'</code> command to BTC.
+  * @apiDescription estimate network fee.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
