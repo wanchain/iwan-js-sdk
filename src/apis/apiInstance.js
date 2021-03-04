@@ -9352,12 +9352,13 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType The chain name that you want to search, should be <code>"BTC"</code>.
+  * @apiParam {string} chainType The chain name that you want to search, should be <code>"BTC"</code> or <code>"XRP"</code>.
   * @apiParam {string} feeType The type of fee that you want to search, should be <code>"lock"</code> or <code>"release"</code>.
   * @apiParam {object} options Optional:
   * <br>&nbsp;&nbsp;<code>target</code> - The numeric of confirmation target in blocks (1 - 1008).
   * <br>&nbsp;&nbsp;<code>mode</code> - The string of fee estimate mode.
   * <br>&nbsp;&nbsp;<code>feeRate</code> - The numeric of estimate fee rate.
+  * <br>&nbsp;&nbsp;<code>toChainType</code> - The to chain name that you want to search.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
