@@ -1,44 +1,49 @@
 const WebSocket = require('ws');
-const EventEmitter = require('events').EventEmitter;
 const JSON = require("circular-json");
 
+const WsInstanceBase = require('./wsInstanceBase');
 const config = require('../conf/config.js');
 
-class WsEvent extends EventEmitter {}
-
-class WsInstance {
+class WsInstance extends WsInstanceBase {
     constructor(apiKey, secretKey, option) {
+        super(apiKey, secretKey, option);
         this.intervalObj = null;
-        this.intervalReq = null;
-        this.apiKey = apiKey;
-        this.secretKey = secretKey;
-        this.events = new WsEvent();
-        this.option = Object.assign({url:config.socketUrl,port:config.socketPort,flag:config.apiFlag,version:config.apiVersion, timeout:config.reqTimeout} ,option);
-        this.ws_url = 'wss://' + this.option.url + ':' + this.option.port;
-        if (this.option.flag) {
-            this.ws_url += '/' + this.option.flag;
-        }
 
-        if (this.apiKey) {
-            this.ws_url += '/' + this.option.version + '/' + this.apiKey;
+        this.requestCheck = this.createReqHeartCheck();
+        this.heartCheck();
+        this.createWebSocket();
+        this.requestCheck.start();
+            // this.apiKey = apiKey;
+        // this.secretKey = secretKey;
+        // this.option = Object.assign({url:config.socketUrl,port:config.socketPort,flag:config.apiFlag,version:config.apiVersion, timeout:config.reqTimeout} ,option);
+        // this.ws_url = 'wss://' + this.option.url + ':' + this.option.port;
+        // if (this.option.flag) {
+        //     this.ws_url += '/' + this.option.flag;
+        // }
 
-            this.lockReconnect = false;
-            this.functionDict = {};
-            this.requestCheck = this.createReqHeartCheck();
-            this.heartCheck();
-            this.createWebSocket();
-            this.requestCheck.start();
-        } else {
-            throw new Error('Should config \'APIKEY\' and \'SECRETKEY\'');
-            process.exit();
-        }
+        // if (this.apiKey) {
+        //     this.ws_url += '/' + this.option.version + '/' + this.apiKey;
+
+        //     this.lockReconnect = false;
+        //     this.functionDict = {};
+        //     this.requestCheck = this.createReqHeartCheck();
+        //     this.heartCheck();
+        //     this.createWebSocket();
+        //     this.requestCheck.start();
+        // } else {
+        //     throw new Error('Should config \'APIKEY\' and \'SECRETKEY\'');
+        //     process.exit();
+        // }
     }
 
-    handleFailure(log, functionName, err) {
-        log.error('something is wrong when ' + functionName + ', ' + err);
-        let error = (err.hasOwnProperty("message")) ? err.message : err;
-        return error;
-    }
+    // initConstructor() {
+    //     this.intervalObj = null;
+    //     this.intervalReq = null;
+    //     this.requestCheck = this.createReqHeartCheck();
+    //     this.heartCheck();
+    //     this.createWebSocket();
+    //     this.requestCheck.start();
+    // }
 
     createWebSocket() {
         try {
@@ -116,7 +121,7 @@ class WsInstance {
                         }
                     } else {
                         self.wss.isAlive = false;
-                        if (self.isOpen()) {
+                        if (self.isConnectionOpen()) {
                             self.wss.ping(function noop() {});
                             // self.wss.ping('{"event": "ping"}');
                         } else {
@@ -145,14 +150,22 @@ class WsInstance {
               this.createWebSocket();
             }
             this.lockReconnect = false;
-        }, config.reconnTime);
+        }, this.option.reconnectTimeoutOut);
     }
 
     status() {
         return this.wss.readyState;
     }
 
-    isOpen() {
+    isConnectionOpen() {
+        return this.wss.readyState === WebSocket.OPEN;
+    }
+
+    isConnecting() {
+        return this.wss.readyState === WebSocket.CONNECTING;
+    }
+
+    isConnected() {
         return this.wss.readyState === WebSocket.OPEN;
     }
 
@@ -227,7 +240,7 @@ class WsInstance {
                             fn(config.pendResponse.reqTimeout);
                         }
                     }
-                }, config.reconnTime);
+                }, this.option.reconnectTimeoutOut);
             }
         }
     }
