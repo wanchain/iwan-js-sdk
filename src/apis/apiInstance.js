@@ -1836,6 +1836,12 @@ class ApiInstance extends WsInstance {
   * @apiParam {string} address The account's address that you want to search.
   * @apiParam {number} startBlockNo The start block number that you want to search from.
   * @apiParam {number} endBlockNo The end block number that you want to search to.
+  * @apiParam {object} [options] Optional.
+  * <br>&nbsp;&nbsp;<code>counterparty</code> - The string of account's address that you want to search. Only for <code>"XRP"</code>. If provided, only return transactions with this account as a counterparty to the transaction.
+  * <br>&nbsp;&nbsp;<code>earliestFirst</code> - Boolean. Only for <code>"XRP"</code>. If true, sort transactions so that the earliest ones come first. By default, the newest transactions will come first.
+  * <br>&nbsp;&nbsp;<code>initiated</code> - Boolean. Only for <code>"XRP"</code>. If true, return only transactions initiated by the account specified by address. If false, return only transactions not initiated by the account specified by address.
+  * <br>&nbsp;&nbsp;<code>limit</code> - Number. Only for <code>"XRP"</code>. If specified, return at most this many transactions.
+  * <br>&nbsp;&nbsp;<code>types</code> - Array. Only for <code>"XRP"</code>. Only return transactions of the specified Transaction Types. Currently supports <code>"payment"</code>, <code>"order"</code>, <code>"orderCancellation"</code>, <code>"trustline"</code>, <code>"settings"</code>, <code>"escrowCreation"</code>, <code>"escrowCancellation"</code>, <code>"escrowExecution"</code>, <code>"checkCreate"</code>, <code>"checkCancel"</code>, <code>"checkCash"</code>, <code>"paymentChannelCreate"</code>, <code>"paymentChannelFund"</code>, <code>"paymentChannelClaim"</code>, <code>"ticketCreate"</code>.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
