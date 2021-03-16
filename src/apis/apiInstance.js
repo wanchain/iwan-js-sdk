@@ -1795,12 +1795,19 @@ class ApiInstance extends WsInstance {
     }]
   *
   */
-  getTransByAddress(chainType, address, callback) {
+  getTransByAddress(chainType, address, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (!options || typeof(options) !== "object") {
+      options = {};
+    }
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getTransByAddress';
-    let params = { chainType: chainType, address: address };
+    let params = { chainType: chainType, address: address, ...options };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -1874,12 +1881,19 @@ class ApiInstance extends WsInstance {
     }]
   *
   */
-  getTransByAddressBetweenBlocks(chainType, address, startBlockNo, endBlockNo, callback) {
+  getTransByAddressBetweenBlocks(chainType, address, startBlockNo, endBlockNo, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (!options || typeof(options) !== "object") {
+      options = {};
+    }
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getTransByAddressBetweenBlocks';
-    let params = { chainType: chainType, address: address, startBlockNo: startBlockNo, endBlockNo: endBlockNo };
+    let params = { chainType: chainType, address: address, startBlockNo: startBlockNo, endBlockNo: endBlockNo, ...options };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -1988,7 +2002,7 @@ class ApiInstance extends WsInstance {
   * {"jsonrpc":"2.0","method":"getScVar","params":{"chainType": "WAN", "scAddr": "0x55ba61f4da3166487a804bccde7ee4015f609f45", "name": "addr", "abi": [/The Abi of the contracts/]},"id":1}
   *
   * @apiParamExample {string} JSON-RPC over websocket
-  * {"jsonrpc":"2.0","method":"getTransByAddress","params":{"chainType":"WAN", "address":"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d"},"id":1}
+  * {"jsonrpc":"2.0","method":"getScVar","params":{"chainType":"WAN", "address":"0xbb9003ca8226f411811dd16a3f1a2c1b3f71825d"},"id":1}
   *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
@@ -9517,29 +9531,83 @@ class ApiInstance extends WsInstance {
       }
   *
   */
- getLedger(chainType, options, callback) {
-  if (typeof(options) === "function") {
-    callback = options;
-    options = {};
-  }
-  if (!options || typeof(options) !== "object") {
-    options = {};
-  }
-  if (callback) {
-    callback = utils.wrapCallback(callback);
-  }
-  let method = 'getLedger';
-  let params = { chainType: chainType, ...options };
+  getLedger(chainType, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (!options || typeof(options) !== "object") {
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getLedger';
+    let params = { chainType: chainType, ...options };
 
-  return utils.promiseOrCallback(callback, cb => {
-    this._request(method, params, (err, result) => {
-      if (err) {
-        return cb(err);
-      }
-      return cb(null, result);
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
     });
-  });
-}
+  }
+
+  /**
+  *
+  * @apiName getServerInfo
+  * @apiGroup Blocks
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getServerInfo
+  * @apiVersion 1.3.0
+  * @apiDescription Get server info.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+  *
+  * @apiParam {string} chainType The chain being queried. Currently supports <code>"XRP"</code>.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getServerInfo","params":{"chainType":"XRP"},"id":1}
+  *
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+  *   apiTest.getServerInfo("XRP", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+  *   let result = await apiTest.getServerInfo("XRP");
+  *   console.log("Result is ", result);
+  *   apiTest.close();
+  *
+  * @apiSuccessExample {json} Successful Response
+  *   14678584
+  *
+  */
+   getServerInfo(chainType, callback) {
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getServerInfo';
+    let params = { chainType: chainType };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
 
 }
 
