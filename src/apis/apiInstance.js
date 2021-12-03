@@ -2512,6 +2512,8 @@ class ApiInstance extends WsInstance {
   *
   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.
   * @apiParam {string} tokenScAddr The token contract address for the specified token.
+  * @apiParam {object} options Optional:
+  * <br>&nbsp;&nbsp;<code>tokenType</code> - The token type, Currently supports <code>'Erc20'</code> and <code>'Erc721'</code>.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -2540,12 +2542,19 @@ class ApiInstance extends WsInstance {
   *    "decimals": "18"
   *  }
   */
-  getTokenInfo(chainType, tokenScAddr, callback) {
-    if (callback) {
+  getTokenInfo(chainType, tokenScAddr, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (!options || typeof(options) !== "object") {
+      options = {};
+    }
+      if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getTokenInfo';
-    let params = { chainType: chainType, tokenScAddr: tokenScAddr };
+    let params = { chainType: chainType, tokenScAddr: tokenScAddr, ...options };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -2569,6 +2578,8 @@ class ApiInstance extends WsInstance {
   *
   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.
   * @apiParam {array} tokenScAddrArray The token address array for the tokens that you want to query.
+  * @apiParam {object} options Optional:
+  * <br>&nbsp;&nbsp;<code>tokenType</code> - The token type, Currently supports <code>'Erc20'</code> and <code>'Erc721'</code>.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -2604,12 +2615,19 @@ class ApiInstance extends WsInstance {
    }
   *
   */
-  getMultiTokenInfo(chainType, tokenScAddrArray, callback) {
-    if (callback) {
+  getMultiTokenInfo(chainType, tokenScAddrArray, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (!options || typeof(options) !== "object") {
+      options = {};
+    }
+      if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getMultiTokenInfo';
-    let params = { chainType: chainType, tokenScAddrArray: tokenScAddrArray };
+    let params = { chainType: chainType, tokenScAddrArray: tokenScAddrArray, ...options };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
