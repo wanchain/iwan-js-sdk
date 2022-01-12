@@ -9869,6 +9869,215 @@ class ApiInstance extends WsInstance {
    });
  }
 
+  /**
+  *
+  * @apiName getLatestBlock
+  * @apiGroup CrossChain
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getLatestBlock
+  * @apiVersion 1.3.0
+  * @apiDescription Get the latest block information on certain chain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+  *
+  * @apiParam {string} chainType The chain being queried. Currently supports <code>"ADA"</code>.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getLatestBlock","params":{"chainType":"ADA"},"id":1}
+  *
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+  *   apiTest.getLatestBlock("ADA", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+  *   let result = await apiTest.getLatestBlock("ADA");
+  *   console.log("Result is ", result);
+  *   apiTest.close();
+  *
+  * @apiSuccessExample {json} Successful Response
+  *   {
+        "time": 1641956199,
+        "height": 3230335,
+        "hash": "8c5789337cdd540fed8fc57f07d93740100af974f471a58ccb446c0fa76a8d56",
+        "slot": 47586983,
+        "epoch": 180,
+        "epoch_slot": 196583,
+        "slot_leader": "pool10k7t5kp6etvj95ma0q3c8tugx05dlfwly3lcdfgke4gjkhdx0ej",
+        "size": 16699,
+        "tx_count": 7,
+        "output": "38941298302128",
+        "fees": "2110816",
+        "block_vrf": "vrf_vk1yl2d9rfaeht0m9l8x0y9a3j9rapepz04yr4jlxrr2aw2ulpsyahs5mv4cx",
+        "previous_block": "f0b44052ff43386d10b8e81303961a96f8bd79e2362842619700d536964cf5d4",
+        "next_block": null,
+        "confirmations": 0
+      }
+  *
+  */
+   getLatestBlock(chainType, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+   if (callback) {
+     callback = utils.wrapCallback(callback);
+   }
+   let method = 'getLatestBlock';
+   let params = { chainType: chainType, ...options };
+
+   return utils.promiseOrCallback(callback, cb => {
+     this._request(method, params, (err, result) => {
+       if (err) {
+         return cb(err);
+       }
+       return cb(null, result);
+     });
+   });
+ }
+
+  /**
+  *
+  * @apiName getEpochParameters
+  * @apiGroup CrossChain
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getEpochParameters
+  * @apiVersion 1.3.0
+  * @apiDescription Get epoch parameters about a epoch by block ID on certain chain.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+  *
+  * @apiParam {string} chainType The chain being queried. Currently supports <code>"ADA"</code>.
+  * @apiParam {object} options Optional:
+  * <br>&nbsp;&nbsp;<code>epochID</code> - The ID of epoch you want to search.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getEpochParameters","params":{"chainType":"ADA", 180},"id":1}
+  *
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+  *   apiTest.getEpochParameters("ADA", 180, (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+  *   let result = await apiTest.getEpochParameters("ADA", 180);
+  *   console.log("Result is ", result);
+  *   apiTest.close();
+  *
+  * @apiSuccessExample {json} Successful Response
+  *   {
+        "epoch": 180,
+        "min_fee_a": 44,
+        "min_fee_b": 155381,
+        "max_block_size": 73728,
+        "max_tx_size": 16384,
+        "max_block_header_size": 1100,
+        "key_deposit": "2000000",
+        "pool_deposit": "500000000",
+        "e_max": 18,
+        "n_opt": 500,
+        "a0": 0.3,
+        "rho": 0.003,
+        "tau": 0.2,
+        "decentralisation_param": 0,
+        "extra_entropy": null,
+        "protocol_major_ver": 6,
+        "protocol_minor_ver": 0,
+        "min_utxo": "34482",
+        "min_pool_cost": "340000000",
+        "nonce": "0c9a4974209212b3e1909a107f6bd19a5d797851d619c9fbaeeb2aec613ccf19",
+        "price_mem": 0.0577,
+        "price_step": 0.0000721,
+        "max_tx_ex_mem": "12500000",
+        "max_tx_ex_steps": "10000000000",
+        "max_block_ex_mem": "50000000",
+        "max_block_ex_steps": "40000000000",
+        "max_val_size": "5000",
+        "collateral_percent": 150,
+        "max_collateral_inputs": 3,
+        "coins_per_utxo_word": "34482"
+      }
+  *
+  */
+   getEpochParameters(chainType, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+   if (callback) {
+     callback = utils.wrapCallback(callback);
+   }
+   let method = 'getEpochParameters';
+   let params = { chainType: chainType, ...options };
+
+   return utils.promiseOrCallback(callback, cb => {
+     this._request(method, params, (err, result) => {
+       if (err) {
+         return cb(err);
+       }
+       return cb(null, result);
+     });
+   });
+ }
+
+  // TODO: debug
+  parseAddress(chainType, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'parseAddress';
+    let params = { chainType: chainType, ...options };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  // TODO: debug
+  getAccountBalance(chainType, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getAccountBalance';
+    let params = { chainType: chainType, ...options };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
 }
 
 module.exports = ApiInstance;
