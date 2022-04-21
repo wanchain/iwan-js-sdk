@@ -179,6 +179,7 @@ class ApiInstance extends WsInstance {
       } else {
         params.fromBlock = option.fromBlock ? option.fromBlock : 0;
         params.toBlock = option.toBlock ? option.toBlock : 'latest';
+        params = {...option, ...params};
       }
     }
 
@@ -10033,50 +10034,6 @@ class ApiInstance extends WsInstance {
      });
    });
  }
-
-  // TODO: debug
-  parseAddress(chainType, options, callback) {
-    if (typeof(options) === "function") {
-      callback = options;
-      options = {};
-    }
-    if (callback) {
-      callback = utils.wrapCallback(callback);
-    }
-    let method = 'parseAddress';
-    let params = { chainType: chainType, ...options };
-
-    return utils.promiseOrCallback(callback, cb => {
-      this._request(method, params, (err, result) => {
-        if (err) {
-          return cb(err);
-        }
-        return cb(null, result);
-      });
-    });
-  }
-
-  // TODO: debug
-  getAccountBalance(chainType, options, callback) {
-    if (typeof(options) === "function") {
-      callback = options;
-      options = {};
-    }
-    if (callback) {
-      callback = utils.wrapCallback(callback);
-    }
-    let method = 'getAccountBalance';
-    let params = { chainType: chainType, ...options };
-
-    return utils.promiseOrCallback(callback, cb => {
-      this._request(method, params, (err, result) => {
-        if (err) {
-          return cb(err);
-        }
-        return cb(null, result);
-      });
-    });
-  }
 
 }
 
