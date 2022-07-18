@@ -7423,9 +7423,9 @@ class ApiInstance extends WsInstance {
 
   /**
    *
-   * @apiName getRegisteredCrossTokenMultiAsset
+   * @apiName getRegisteredMultiChainOrigToken
    * @apiGroup Service
-   * @api {CONNECT} /ws/v3/YOUR-API-KEY getRegisteredCrossTokenMultiAsset
+   * @api {CONNECT} /ws/v3/YOUR-API-KEY getRegisteredMultiChainOrigToken
    * @apiVersion 1.3.0
    * @apiDescription Get records of registered cross-chain token of multi-chain asset.
    * <br><br><strong>Returns:</strong>
@@ -7439,12 +7439,12 @@ class ApiInstance extends WsInstance {
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getRegisteredCrossTokenMultiAsset","params":{"chainType":"ETH"},"id":1}
+   * {"jsonrpc":"2.0","method":"getRegisteredMultiChainOrigToken","params":{"chainType":"ETH"},"id":1}
    *
    * @apiExample {nodejs} Example callback usage:
    *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getRegisteredCrossTokenMultiAsset({chainType:"ETH"}, (err, result) => {
+   *   apiTest.getRegisteredMultiChainOrigToken({chainType:"ETH"}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7452,7 +7452,7 @@ class ApiInstance extends WsInstance {
    * @apiExample {nodejs} Example promise usage:
    *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getRegisteredCrossTokenMultiAsset({chainType:"ETH"});
+   *   let result = await apiTest.getRegisteredMultiChainOrigToken({chainType:"ETH"});
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
@@ -7465,8 +7465,8 @@ class ApiInstance extends WsInstance {
    *  ]
    *
    */
-   getRegisteredCrossTokenMultiAsset(options, callback) {
-    let method = 'getRegisteredCrossTokenMultiAsset';
+   getRegisteredMultiChainOrigToken(options, callback) {
+    let method = 'getRegisteredMultiChainOrigToken';
     let params = {};
 
     if (typeof (options) === "function") {
