@@ -1191,9 +1191,10 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType The chain name that you want to search, should be <code>"WAN"</code> or <code>"ETH"</code> or <code>"BTC"</code>.
+  * @apiParam {string} chainType The chain name that you want to search, should be in [<code>"WAN"</code>, <code>"ETH"</code>, <code>"BTC"</code>, <code>"TRX"</code>, <code>"BNB"</code>, <code>"MOVR"</code>, <code>"XRP"</code>, ...].
   * @apiParam {string} txHash The txHash you want to search.
   * @apiParam {object} [options] Optional.
+  * <br>&nbsp;&nbsp;<code>version</code> - The result format version you want to search, using <code>undefined</code> that means legacy format as default.
   * <br>&nbsp;&nbsp;<code>format</code> - Whether to get the serialized or decoded transaction, in this case, the <code>chainType</code> should be <code>"BTC"</code>:
   * <br>&nbsp;&nbsp;&nbsp;&nbsp;
   * Set to <code>false</code> (the default) to return the serialized transaction as hex.
@@ -1503,6 +1504,8 @@ class ApiInstance extends WsInstance {
   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.
   * @apiParam {number} waitBlocks The confirm-block-number you want to set.
   * @apiParam {string} txHash The txHash you want to search.
+  * @apiParam {object} [options] Optional.
+  * <br>&nbsp;&nbsp;<code>version</code> - The result format version you want to search, using <code>undefined</code> that means legacy format as default.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -1588,6 +1591,8 @@ class ApiInstance extends WsInstance {
   *
   * @apiParam {string} chainType The chain being queried. Currently supports <code>'WAN'</code> and <code>'ETH'</code>.
   * @apiParam {string} txHash The txHash you want to search.
+  * @apiParam {object} [options] Optional.
+  * <br>&nbsp;&nbsp;<code>version</code> - The result format version you want to search, using <code>undefined</code> that means legacy format as default.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -1743,6 +1748,8 @@ class ApiInstance extends WsInstance {
   *
   * @apiParam {string} chainType The chain name that you want to search, should be <code>"WAN"</code>.
   * @apiParam {string} address The account's address that you want to search.
+  * @apiParam {object} [options] Optional.
+  * <br>&nbsp;&nbsp;<code>version</code> - The result format version you want to search, using <code>undefined</code> that means legacy format as default.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -1848,6 +1855,7 @@ class ApiInstance extends WsInstance {
   * <br>&nbsp;&nbsp;<code>initiated</code> - Boolean. Only for <code>"XRP"</code>. If true, return only transactions initiated by the account specified by address. If false, return only transactions not initiated by the account specified by address.
   * <br>&nbsp;&nbsp;<code>limit</code> - Number. Only for <code>"XRP"</code>. If specified, return at most this many transactions.
   * <br>&nbsp;&nbsp;<code>types</code> - Array. Only for <code>"XRP"</code>. Only return transactions of the specified Transaction Types. Currently supports <code>"payment"</code>, <code>"order"</code>, <code>"orderCancellation"</code>, <code>"trustline"</code>, <code>"settings"</code>, <code>"escrowCreation"</code>, <code>"escrowCancellation"</code>, <code>"escrowExecution"</code>, <code>"checkCreate"</code>, <code>"checkCancel"</code>, <code>"checkCash"</code>, <code>"paymentChannelCreate"</code>, <code>"paymentChannelFund"</code>, <code>"paymentChannelClaim"</code>, <code>"ticketCreate"</code>.
+  * <br>&nbsp;&nbsp;<code>version</code> - The result format version you want to search, using <code>undefined</code> that means legacy format as default.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -2312,6 +2320,7 @@ class ApiInstance extends WsInstance {
   * @apiParam {object} options Optional:
   * <br>&nbsp;&nbsp;<code>target</code> - The numeric of confirmation target in blocks (1 - 1008).
   * <br>&nbsp;&nbsp;<code>mode</code> - The string of fee estimate mode.
+  * <br>&nbsp;&nbsp;<code>version</code> - The result format version you want to search, using <code>undefined</code> that means legacy format as default.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -2972,8 +2981,10 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType The chain being queried. Currently supports <code>'EOS'</code>.
+  * @apiParam {string} chainType The chain being queried. Currently supports <code>'EOS'</code> and <code>'XRP'</code>.
   * @apiParam {string} address The account code.
+  * @apiParam {object} [options] Optional.
+  * <br>&nbsp;&nbsp;<code>version</code> - The result format version you want to search, using <code>undefined</code> that means legacy format as default.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -3046,12 +3057,16 @@ class ApiInstance extends WsInstance {
   *   }
   *
   */
-  getAccountInfo(chainType, address, callback) {
+  getAccountInfo(chainType, address, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
     if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getAccountInfo';
-    let params = { chainType: chainType, address:address };
+    let params = { chainType: chainType, address:address, ...options };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -4118,12 +4133,14 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType The chain being queried. Currently supports <code>'EOS'</code>.
+  * @apiParam {string} chainType The chain being queried. Currently supports <code>'EOS'</code> or <code>'XRP'</code>.
   * @apiParam {object} tx The transaction to be packed.
   * <br>&nbsp;&nbsp;<code>actions</code> - required Array of objects (Action).
   * <br>&nbsp;&nbsp;<code>blocksBehind</code> - Optional, default is 3.
   * <br>&nbsp;&nbsp;<code>expireSeconds</code> - Optional, default is 30.
   * <br> If <code>blocksBehind</code> and <code>expireSeconds</code> are set, the block <code>blocksBehind</code> the head block retrieved from JsonRpc's <code>get_info</code> is set as the reference block and the transaction header is serialized using this reference block and the expiration field.
+  * @apiParam {object} [options] Optional.
+  * <br>&nbsp;&nbsp;<code>version</code> - The result format version you want to search, using <code>undefined</code> that means legacy format as default.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -9762,6 +9779,8 @@ class ApiInstance extends WsInstance {
   * @apiParam {string} chainType The chain being queried. Currently supports <code>"XRP"</code>.
   * @apiParam {string} [ledgerHash] The ledger hash you want to search.
   * @apiParam {number} [ledgerVersion] The ledger version you want to search.
+  * @apiParam {object} [options] Optional.
+  * <br>&nbsp;&nbsp;<code>version</code> - The result format version you want to search, using <code>undefined</code> that means legacy format as default.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -9837,6 +9856,8 @@ class ApiInstance extends WsInstance {
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
   * @apiParam {string} chainType The chain being queried. Currently supports <code>"XRP"</code>.
+  * @apiParam {object} [options] Optional.
+  * <br>&nbsp;&nbsp;<code>version</code> - The result format version you want to search, using <code>undefined</code> that means legacy format as default.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -9863,12 +9884,16 @@ class ApiInstance extends WsInstance {
   *   14678584
   *
   */
-   getServerInfo(chainType, callback) {
-    if (callback) {
+   getServerInfo(chainType, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+   if (callback) {
       callback = utils.wrapCallback(callback);
     }
     let method = 'getServerInfo';
-    let params = { chainType: chainType };
+    let params = { chainType: chainType, ...options };
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
@@ -9892,6 +9917,8 @@ class ApiInstance extends WsInstance {
   *
   * @apiParam {string} chainType The chain being queried. Currently supports <code>"WAN"</code>, <code>"ETH"</code> and <code>"XRP"</code>.
   * @apiParam {string} chainIds Array of chain IDs about the cross chain pair.
+  * @apiParam {object} options Optional:
+  * <br>&nbsp;&nbsp;<code>tokenPairID</code> - The ID of token pair you want to search.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -10004,12 +10031,14 @@ class ApiInstance extends WsInstance {
   * @apiGroup CrossChain
   * @api {CONNECT} /ws/v3/YOUR-API-KEY estimateCrossChainOperationFee
   * @apiVersion 1.3.0
-  * @apiDescription Get cross chain network fee.
+  * @apiDescription Get cross chain operation fee.
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType The chain being queried. Currently supports <code>"WAN"</code>, <code>"ETH"</code> and <code>"XRP"</code>.
+  * @apiParam {string} chainType The chain being queried.
   * @apiParam {string} targetChainType The target chain.
+  * @apiParam {object} options Optional:
+  * <br>&nbsp;&nbsp;<code>tokenPairID</code> - The ID of token pair you want to search.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -10067,8 +10096,10 @@ class ApiInstance extends WsInstance {
   * <br><br><strong>Returns:</strong>
   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
   *
-  * @apiParam {string} chainType The chain being queried. Currently supports <code>"WAN"</code>, <code>"ETH"</code> and <code>"XRP"</code>.
+  * @apiParam {string} chainType The chain being queried.
   * @apiParam {string} targetChainType The target chain.
+  * @apiParam {object} options Optional:
+  * <br>&nbsp;&nbsp;<code>tokenPairID</code> - The ID of token pair you want to search.
   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
@@ -10341,6 +10372,93 @@ class ApiInstance extends WsInstance {
       });
     });
   }
+
+  /**
+  *
+  * @apiName getGateWayBalances
+  * @apiGroup XRP
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getGateWayBalances
+  * @apiVersion 1.3.0
+  * @apiDescription Calculates the total balances issued by a given account, optionally excluding amounts held by operational addresses.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+  *
+  * @apiParam {string} chainType The chain being queried. Currently supports <code>'XRP'</code>.
+  * @apiParam {string} address The Address to check. This should be the issuing address.
+  * @apiParam {object} options Optional:
+  * <br>&nbsp;&nbsp;<code>excludeAddresses</code> - Array of addresses to exclude from the balances issued.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getGateWayBalances","params":{"chainType":"XRP","address":"rLZGBrdXNvS1RPjjJB7Z4FeA4w5Hggtt7t"},"id":1}
+  *
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+  *   apiTest.getAccountInfo("XRP", "rLZGBrdXNvS1RPjjJB7Z4FeA4w5Hggtt7t", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+  *   let result = await getAccountInfo("XRP", "rLZGBrdXNvS1RPjjJB7Z4FeA4w5Hggtt7t");
+  *   console.log("Result is ", result);
+  *   apiTest.close();
+  *
+  * @apiSuccessExample {json} Successful Response
+  * {
+      "account": "rLZGBrdXNvS1RPjjJB7Z4FeA4w5Hggtt7t",
+      "assets": {
+        "rBZJzEisyXt2gvRWXLxHftFRkd1vJEpBQP": [
+          {
+            "currency": "USD",
+            "value": "999837.9851212292"
+          },
+          {
+            "currency": "CSC",
+            "value": "1001969.604918081"
+          },
+          {
+            "currency": "EUR",
+            "value": "999872.9919846801"
+          },
+          {
+            "currency": "SGB",
+            "value": "1001217.283002503"
+          }
+        ]
+      },
+      "ledger_hash": "0D23585632BE7D65A8C0166370BB32E33D0AC16E4E14B7A681724A8734B6378A",
+      "ledger_index": 30591557,
+      "validated": true
+  * }
+  *
+  */
+   getGateWayBalances(chainType, address, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getGateWayBalances';
+    let params = { chainType: chainType, address:address, ...options };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
 }
 
 module.exports = ApiInstance;
