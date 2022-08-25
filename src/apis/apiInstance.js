@@ -10459,6 +10459,114 @@ class ApiInstance extends WsInstance {
     });
   }
 
+
+  /**
+  *
+  * @apiName getTrustLines
+  * @apiGroup XRP
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getTrustLines
+  * @apiVersion 1.3.0
+  * @apiDescription Returns information about an account's trust lines, including balances in all non-XRP currencies and assets.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+  *
+  * @apiParam {string} chainType The chain being queried. Currently supports <code>'XRP'</code>.
+  * @apiParam {string} address A unique identifier for the account, most commonly the account's Address.
+  * @apiParam {object} options Optional:
+  * <br>&nbsp;&nbsp;<code>peer</code> - The Address of a second account. If provided, show only lines of trust connecting the two accounts.
+  * <br>&nbsp;&nbsp;<code>ledgerVersion</code> - The ledger version of the ledger to use.
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getTrustLines","params":{"chainType":"XRP","address":"rLZGBrdXNvS1RPjjJB7Z4FeA4w5Hggtt7t"},"id":1}
+  *
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+  *   apiTest.getTrustLines("XRP", "rLZGBrdXNvS1RPjjJB7Z4FeA4w5Hggtt7t", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+  *   let result = await getTrustLines("XRP", "rLZGBrdXNvS1RPjjJB7Z4FeA4w5Hggtt7t");
+  *   console.log("Result is ", result);
+  *   apiTest.close();
+  *
+  * @apiSuccessExample {json} Successful Response
+  * [
+      {
+        "account": "rBZJzEisyXt2gvRWXLxHftFRkd1vJEpBQP",
+        "balance": "999810.9889023065",
+        "currency": "USD",
+        "limit": "10000000000",
+        "limit_peer": "0",
+        "no_ripple": false,
+        "no_ripple_peer": false,
+        "quality_in": 0,
+        "quality_out": 0
+      },
+      {
+        "account": "rBZJzEisyXt2gvRWXLxHftFRkd1vJEpBQP",
+        "balance": "1002135.316796746",
+        "currency": "CSC",
+        "limit": "10000000000",
+        "limit_peer": "0",
+        "no_ripple": false,
+        "no_ripple_peer": false,
+        "quality_in": 0,
+        "quality_out": 0
+      },
+      {
+        "account": "rBZJzEisyXt2gvRWXLxHftFRkd1vJEpBQP",
+        "balance": "999847.2508449599",
+        "currency": "EUR",
+        "limit": "10000000000",
+        "limit_peer": "0",
+        "no_ripple": false,
+        "no_ripple_peer": false,
+        "quality_in": 0,
+        "quality_out": 0
+      },
+      {
+        "account": "rBZJzEisyXt2gvRWXLxHftFRkd1vJEpBQP",
+        "balance": "1001374.924056726",
+        "currency": "SGB",
+        "limit": "10000000000",
+        "limit_peer": "0",
+        "no_ripple": false,
+        "no_ripple_peer": false,
+        "quality_in": 0,
+        "quality_out": 0
+      }
+  * ]
+  *
+  */
+  getTrustLines(chainType, address, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getTrustLines';
+    let params = { chainType: chainType, address:address, ...options };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
 }
 
 module.exports = ApiInstance;
