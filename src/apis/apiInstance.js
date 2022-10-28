@@ -10567,6 +10567,75 @@ class ApiInstance extends WsInstance {
     });
   }
 
+  /**
+   *
+   * @apiName getRegisteredSubgraph
+   * @apiGroup Service
+   * @api {CONNECT} /ws/v3/YOUR-API-KEY getRegisteredSubgraph
+   * @apiVersion 1.3.0
+   * @apiDescription Get records of registered subgraph info.
+   * <br><br><strong>Returns:</strong>
+   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+   *
+   * @apiParam {object} [options] Optional.
+   * <br>&nbsp;&nbsp;<code>chainType</code> - The chainType you want to search.
+   * <br>&nbsp;&nbsp;<code>keywords</code> - The keywords you want to search.
+   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+   *
+   * @apiParamExample {string} JSON-RPC over websocket
+   * {"jsonrpc":"2.0","method":"getRegisteredSubgraph","params":{"chainType":"ETH", keywords:["0x..."]},"id":1}
+   *
+   * @apiExample {nodejs} Example callback usage:
+   *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   apiTest.getRegisteredSubgraph({chainType:"ETH", keywords:["0x..."]}, (err, result) => {
+   *     console.log("Result is ", result);
+   *     apiTest.close();
+   *   });
+   *
+   * @apiExample {nodejs} Example promise usage:
+   *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   let result = await apiTest.getRegisteredSubgraph({chainType:"ETH", keywords:["0x..."]});
+   *   console.log("Result is ", result);
+   *   apiTest.close();
+   *
+   * @apiSuccessExample {json} Successful Response
+   *  [
+   *    {
+   *      "chainType":"ETH",
+   *      "keyword":"0x...",
+   *      "subgraph": "https://..."
+   *    },
+   *    ... ...
+   *  ]
+   *
+   */
+   getRegisteredSubgraph(options, callback) {
+    let method = 'getRegisteredSubgraph';
+    let params = {};
+
+    if (typeof (options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    params = utils.newJson(options);
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
 }
 
 module.exports = ApiInstance;
