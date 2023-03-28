@@ -10756,6 +10756,68 @@ getCostModelParameters(chainType, options, callback) {
     });
   }
 
+  /**
+   *
+   * @apiName getRegisteredTokenIssuer
+   * @apiGroup Service
+   * @api {CONNECT} /ws/v3/YOUR-API-KEY getRegisteredTokenIssuer
+   * @apiVersion 1.3.0
+   * @apiDescription Get records of registered token issuer info.
+   * <br><br><strong>Returns:</strong>
+   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+   *
+   * @apiParam {object} [options] Optional.
+   * <br>&nbsp;&nbsp;<code>chainType</code> - The chainType you want to search.
+   * <br>&nbsp;&nbsp;<code>tokenScAddr</code> - The tokenScAddr you want to search.
+   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+   *
+   * @apiParamExample {string} JSON-RPC over websocket
+   * {"jsonrpc":"2.0","method":"getRegisteredTokenIssuer","params":{"chainType":"ETH", tokenScAddr:["0x..."]},"id":1}
+   *
+   * @apiExample {nodejs} Example callback usage:
+   *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   apiTest.getRegisteredTokenIssuer({chainType:"ETH", tokenScAddr:["0x..."]}, (err, result) => {
+   *     console.log("Result is ", result);
+   *     apiTest.close();
+   *   });
+   *
+   * @apiExample {nodejs} Example promise usage:
+   *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   let result = await apiTest.getRegisteredTokenIssuer({chainType:"ETH", tokenScAddr:"0x0000000000000000000000000000000000000000"});
+   *   console.log("Result is ", result);
+   *   apiTest.close();
+   *
+   * @apiSuccessExample {json} Successful Response
+   *  [{"chainType":"ETH","isNativeCoin":true,"issuer":"Ethereum","tokenScAddr":"0x0000000000000000000000000000000000000000","tokenType":"erc20","updatedAt":1680000764477}]
+   *
+   */
+  getRegisteredTokenIssuer(options, callback) {
+    let method = 'getRegisteredTokenIssuer';
+    let params = {};
+
+    if (typeof (options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    params = utils.newJson(options);
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
 }
 
 module.exports = ApiInstance;
