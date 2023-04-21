@@ -9,6 +9,9 @@ class ApiInstance extends WsInstance {
   }
 
   _request(method, parameters, callback) {
+    parameters.clientType = this.option.clientType;
+    parameters.clientVersion = this.option.clientVersion;
+
     let message = {
         jsonrpc: "2.0",
         method: method,

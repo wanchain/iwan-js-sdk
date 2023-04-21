@@ -13,10 +13,20 @@ class WsInstance {
         this.apiKey = apiKey;
         this.secretKey = secretKey;
         this.events = new WsEvent();
-        this.option = Object.assign({url:config.socketUrl,port:config.socketPort,flag:config.apiFlag,version:config.apiVersion, timeout:config.reqTimeout} ,option);
+        this.option = Object.assign({
+            url:config.socketUrl,
+            port:config.socketPort,
+            flag:config.apiFlag,
+            version:config.apiVersion,
+            timeout:config.reqTimeout,
+        } ,option);
         this.ws_url = 'wss://' + this.option.url + ':' + this.option.port;
         if (this.option.flag) {
             this.ws_url += '/' + this.option.flag;
+        }
+        if (this.option.clientType === undefined && this.option.clientVersion === undefined) {
+            this.option.clientType = config.defaultCliType;
+            this.option.clientVersion = config.defaultCliVersion;
         }
 
         if (this.apiKey) {
