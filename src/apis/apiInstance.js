@@ -180,8 +180,6 @@ class ApiInstance extends WsInstance {
       if (typeof(option) === "function") {
         callback = option;
       } else {
-        params.fromBlock = option.fromBlock ? option.fromBlock : 0;
-        params.toBlock = option.toBlock ? option.toBlock : 'latest';
         params = {...option, ...params};
       }
     }
