@@ -10972,6 +10972,45 @@ getCostModelParameters(chainType, options, callback) {
     });
   }
 
+  /**
+   *
+   * @apiName getCrossChainReservedQuota
+   * @apiGroup Service
+   * @api {CONNECT} /ws/v3/YOUR-API-KEY getCrossChainReservedQuota
+   * @apiVersion 1.3.0
+   * @apiDescription Get cross chain reserved quota.
+   * <br><br><strong>Returns:</strong>
+   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+   *
+   * @apiParam {object} object.
+   * <br>&nbsp;&nbsp;<code>targetChainType</code> - The target chainType you want to search.
+   * <br>&nbsp;&nbsp;<code>symbols</code> - The array of token symbol you want to search.
+   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+   *
+   * @apiParamExample {string} JSON-RPC over websocket
+   * {"jsonrpc":"2.0","method":"getCrossChainReservedQuota","params":{targetChainType:"", symbols:["BTC"]},"id":1}
+   *
+   * @apiExample {nodejs} Example callback usage:
+   *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   apiTest.getCrossChainReservedQuota({targetChainType:"", symbols:["BTC"]}, (err, result) => {
+   *     console.log("Result is ", result);
+   *     apiTest.close();
+   *   });
+   *
+   * @apiExample {nodejs} Example promise usage:
+   *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   let result = await apiTest.getCrossChainReservedQuota({targetChainType:"", symbols:["BTC"]});
+   *   console.log("Result is ", result);
+   *   apiTest.close();
+   *
+   * @apiSuccessExample {json} Successful Response
+   *  {"BTC":"0.5"}
+   *
+   */
   getCrossChainReservedQuota(options, callback) {
     let method = 'getCrossChainReservedQuota';
     let params = {};
