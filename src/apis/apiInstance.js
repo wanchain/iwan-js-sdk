@@ -7830,17 +7830,24 @@ class ApiInstance extends WsInstance {
    * @apiParam {string} chainType The from chain being queried, default: <code>'WAN'</code>.
    * @apiParam {string} groupId The storeman group ID.
    * @apiParam {array} symbol The array of symbol being queried.
+   * @apiParam {object} object:
+   * <br>&nbsp;&nbsp;<code>targetChainType</code> - The target chain being queried.
+   * <br>&nbsp;&nbsp;<code>ignoreReservation</code> - Optional. Whether to ignore the reservation quota:
+   * <br>&nbsp;&nbsp;&nbsp;&nbsp;
+   * Set to <code>false</code> (the default) to return the quota that deducts the reserved amount.
+   * <br>&nbsp;&nbsp;&nbsp;&nbsp;
+   * Set to <code>true</code> to return the quota without deducting the reservation amount.
    * @apiParam {function} [callback] Optional, the callback will receive two parameters:
    * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
    * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
    *
    * @apiParamExample {string} JSON-RPC over websocket
-   * {"jsonrpc":"2.0","method":"getStoremanGroupQuota","params":{chainType:"BTC", groupId: "0x0000000000000000000000000000000000000000000031353937383131313430", symbol: ["BTC"]},"id":1}
+   * {"jsonrpc":"2.0","method":"getStoremanGroupQuota","params":{chainType:"BTC", groupId: "0x0000000000000000000000000000000000000000000031353937383131313430", symbol: ["BTC"], targetChainType:"MATIC"},"id":1}
    *
   * @apiExample {nodejs} Example callback usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   apiTest.getStoremanGroupQuota("0x0000000000000000000000000000000000000000000031353937383131313430", ["BTC"], (err, result) => {
+   *   apiTest.getStoremanGroupQuota("0x0000000000000000000000000000000000000000000031353937383131313430", ["BTC"], {targetChainType:"MATIC"}, (err, result) => {
    *     console.log("Result is ", result);
    *     apiTest.close();
    *   });
@@ -7848,7 +7855,7 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getStoremanGroupQuota("BTC", "0x0000000000000000000000000000000000000000000031353937383131313430", ["BTC"]);
+   *   let result = await apiTest.getStoremanGroupQuota("BTC", "0x0000000000000000000000000000000000000000000031353937383131313430", ["BTC"], {targetChainType:"MATIC"});
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
