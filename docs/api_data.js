@@ -1950,6 +1950,13 @@ define({ "api": [
             "group": "Parameter",
             "type": "string",
             "optional": false,
+            "field": "chainType",
+            "description": "<p>The from chain being queried, default: <code>'WAN'</code>.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
             "field": "groupId",
             "description": "<p>The storeman group ID.</p>"
           },
@@ -1957,8 +1964,15 @@ define({ "api": [
             "group": "Parameter",
             "type": "array",
             "optional": false,
-            "field": "tokenPairId",
-            "description": "<p>The array token pair ID being queried.</p>"
+            "field": "symbol",
+            "description": "<p>The array of symbol being queried.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "object:",
+            "description": "<p><br>  <code>targetChainType</code> - The target chain being queried. <br>  <code>ignoreReservation</code> - Optional. Whether to ignore the reservation quota: <br>     Set to <code>false</code> (the default) to return the quota that deducts the reserved amount. <br>     Set to <code>true</code> to return the quota without deducting the reservation amount.</p>"
           },
           {
             "group": "Parameter",
@@ -1972,7 +1986,7 @@ define({ "api": [
       "examples": [
         {
           "title": "JSON-RPC over websocket",
-          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getStoremanGroupQuota\",\"params\":{groupId: \"0x0000000000000000000000000000000000000000000031353937383131313430\", tokenPairId: [1, 2]},\"id\":1}",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getStoremanGroupQuota\",\"params\":{chainType:\"BTC\", groupId: \"0x0000000000000000000000000000000000000000000031353937383131313430\", symbol: [\"BTC\"], targetChainType:\"MATIC\"},\"id\":1}",
           "type": "string"
         }
       ]
@@ -1980,12 +1994,12 @@ define({ "api": [
     "examples": [
       {
         "title": "Example callback usage:",
-        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getStoremanGroupQuota(\"0x0000000000000000000000000000000000000000000031353937383131313430\", [1, 2], (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\napiTest.getStoremanGroupQuota(\"0x0000000000000000000000000000000000000000000031353937383131313430\", [\"BTC\"], {targetChainType:\"MATIC\"}, (err, result) => {\n  console.log(\"Result is \", result);\n  apiTest.close();\n});",
         "type": "nodejs"
       },
       {
         "title": "Example promise usage:",
-        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getStoremanGroupQuota(\"0x0000000000000000000000000000000000000000000031353937383131313430\", [1, 2]);\nconsole.log(\"Result is \", result);\napiTest.close();",
+        "content": "const ApiInstance = require('iwan-sdk');\nlet apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\nlet result = await apiTest.getStoremanGroupQuota(\"BTC\", \"0x0000000000000000000000000000000000000000000031353937383131313430\", [\"BTC\"], {targetChainType:\"MATIC\"});\nconsole.log(\"Result is \", result);\napiTest.close();",
         "type": "nodejs"
       }
     ],
@@ -1993,7 +2007,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n       {\n         \"id\": 1,\n         \"userMintQuota\": \"39\",\n         \"smgMintQuota\": \"39\",\n         \"userBurnQuota\": \"0\",\n         \"smgBurnQuota\": \"0\"\n       },\n       {\n         \"id\": 2,\n         \"userMintQuota\": \"63000\",\n         \"smgMintQuota\": \"63000\",\n         \"userBurnQuota\": \"0\",\n         \"smgBurnQuota\": \"0\"\n       }\n]",
+          "content": "[\n       {\n         \"symbol\": \"BTC\",\n         \"minQuota\": \"2\",\n         \"maxQuota\": \"3312485144\"\n       }\n]",
           "type": "json"
         }
       ]
