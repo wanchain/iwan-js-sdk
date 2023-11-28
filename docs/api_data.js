@@ -7879,6 +7879,65 @@ define({ "api": [
     "groupTitle": "Service"
   },
   {
+    "name": "hasHackerAccount",
+    "group": "Service",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "hasHackerAccount",
+    "version": "1.3.0",
+    "description": "<p>Check if address list contrains hacker account. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "object.",
+            "description": "<p><br>&nbsp;&nbsp;<code>address</code> - The Array of address you want to check.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"hasHackerAccount\",\"params\":{address:[\"0x420000000000000000000000000000000000000a\"]},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.hasHackerAccount([\"0x420000000000000000000000000000000000000a\"]}, (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.hasHackerAccount([\"0x420000000000000000000000000000000000000a\"]);\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": " false",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Service"
+  },
+  {
     "name": "getGasPrice",
     "group": "Status",
     "type": "CONNECT",
