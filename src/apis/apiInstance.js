@@ -11042,6 +11042,66 @@ getCostModelParameters(chainType, options, callback) {
     });
   }
 
+  /**
+   *
+   * @apiName hasHackerAccount
+   * @apiGroup Service
+   * @api {CONNECT} /ws/v3/YOUR-API-KEY hasHackerAccount
+   * @apiVersion 1.3.0
+   * @apiDescription Check if address list contrains hacker account.
+   * <br><br><strong>Returns:</strong>
+   * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+   *
+   * @apiParam {object} object.
+   * <br>&nbsp;&nbsp;<code>address</code> - The Array of address you want to check.
+   * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+   * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+   * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+   *
+   * @apiParamExample {string} JSON-RPC over websocket
+   * {"jsonrpc":"2.0","method":"hasHackerAccount","params":{address:["0x420000000000000000000000000000000000000a"]},"id":1}
+   *
+   * @apiExample {nodejs} Example callback usage:
+   *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   apiTest.hasHackerAccount(["0x420000000000000000000000000000000000000a"]}, (err, result) => {
+   *     console.log("Result is ", result);
+   *     apiTest.close();
+   *   });
+   *
+   * @apiExample {nodejs} Example promise usage:
+   *   const ApiInstance = require('iwan-sdk');
+   *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+   *   let result = await apiTest.hasHackerAccount(["0x420000000000000000000000000000000000000a"]);
+   *   console.log("Result is ", result);
+   *   apiTest.close();
+   *
+   * @apiSuccessExample {json} Successful Response
+   *  false
+   *
+   */
+  hasHackerAccount(address, options, callback) {
+    let method = 'hasHackerAccount';
+
+    if (typeof (options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let params = { address:address, ...options };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
 }
 
 module.exports = ApiInstance;
