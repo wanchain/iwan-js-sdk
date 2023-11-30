@@ -30,7 +30,10 @@ const config = {
   pendResponse: {
     connLost: {"error": "Websocket closed"},
     reqTimeout: {"error": "request timeout"}
-  }
+  },
+
+  defaultCliVersion: "1.4.0",
+  defaultCliType: "iWanSDK",
 }
 
 module.exports = config;
