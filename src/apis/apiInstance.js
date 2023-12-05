@@ -11102,6 +11102,90 @@ getCostModelParameters(chainType, options, callback) {
     });
   }
 
+  /**
+  *
+  * @apiName getChainParameters
+  * @apiGroup CrossChain
+  * @api {CONNECT} /ws/v3/YOUR-API-KEY getChainParameters
+  * @apiVersion 1.3.0
+  * @apiDescription Get the parameters of the blockchain used for witnessses to create a proposal.
+  * <br><br><strong>Returns:</strong>
+  * <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.
+  *
+  * @apiParam {string} chainType The chain being queried. Currently supports <code>"TRX"</code>.
+  * @apiParam {object} [options]
+  * @apiParam {function} [callback] Optional, the callback will receive two parameters:
+  * <br>&nbsp;&nbsp;<code>err</code> - If an error occurred.
+  * <br>&nbsp;&nbsp;<code>result</code> - The saved result.
+  *
+  * @apiParamExample {string} JSON-RPC over websocket
+  * {"jsonrpc":"2.0","method":"getChainParameters","params":{"chainType":"TRX"},"id":1}
+  *
+  * @apiExample {nodejs} Example callback usage:
+  *   const ApiInstance = require('iwan-sdk');
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+  *   apiTest.getChainParameters("TRX", (err, result) => {
+  *     console.log("Result is ", result);
+  *     apiTest.close();
+  *   });
+  *
+  * @apiExample {nodejs} Example promise usage:
+  *   const ApiInstance = require('iwan-sdk');
+  *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
+  *   let result = await apiTest.getChainParameters("TRX");
+  *   console.log("Result is ", result);
+  *   apiTest.close();
+  *
+  * @apiSuccessExample {json} Successful Response
+  *   [ { key: 'getMaintenanceTimeInterval', value: 21600000 },
+  { key: 'getAccountUpgradeCost', value: 9999000000 },
+  { key: 'getCreateAccountFee', value: 100000 },
+  { key: 'getTransactionFee', value: 10 },
+  { key: 'getAssetIssueFee', value: 1024000000 },
+  { key: 'getWitnessPayPerBlock', value: 32000000 },
+  { key: 'getWitnessStandbyAllowance', value: 115200000000 },
+  { key: 'getCreateNewAccountFeeInSystemContract' },
+  { key: 'getCreateNewAccountBandwidthRate', value: 1 },
+  { key: 'getAllowCreationOfContracts', value: 1 },
+  { key: 'getRemoveThePowerOfTheGr', value: -1 },
+  { key: 'getEnergyFee', value: 10 },
+  { key: 'getExchangeCreateFee', value: 1024000000 },
+  { key: 'getMaxCpuTimeOfOneTx', value: 50 },
+  { key: 'getAllowUpdateAccountName' },
+  { key: 'getAllowSameTokenName', value: 1 },
+  { key: 'getAllowDelegateResource', value: 1 },
+  { key: 'getTotalEnergyLimit', value: 100000000000 },
+  { key: 'getAllowTvmTransferTrc10', value: 1 },
+  { key: 'getTotalEnergyCurrentLimit', value: 100000000000 },
+  { key: 'getAllowMultiSign' },
+  { key: 'getAllowAdaptiveEnergy' },
+  { key: 'getTotalEnergyTargetLimit', value: 6944444 },
+  { key: 'getTotalEnergyAverageUsage' },
+  { key: 'getUpdateAccountPermissionFee', value: 100000000 },
+  { key: 'getMultiSignFee', value: 1000000 } ]
+  *
+  */
+  getChainParameters(chainType, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getChainParameters';
+    let params = { chainType: chainType, ...options };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
 }
 
 module.exports = ApiInstance;
