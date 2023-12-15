@@ -321,7 +321,73 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"0x0\"",
+          "content": "  \"0x0\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Accounts"
+  },
+  {
+    "name": "getOpReturnOutputs",
+    "group": "Accounts",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getOpReturnOutputs",
+    "version": "1.3.0",
+    "description": "<p>Get the vout with OP_RETURN info for BTC. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain name that you want to search, should be <code>&quot;BTC&quot;</code>.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "options",
+            "description": "<p>Optional: <br>&nbsp;&nbsp;<code>address</code> - Optional, the address array that you want to search. <br>&nbsp;&nbsp;<code>fromBlock</code> - Optional, the number of the earliest block (latest may be given to mean the most recent, block). By default 0. <br>&nbsp;&nbsp;<code>toBlock</code> - Optional, the number of the latest block (latest may be given to mean the most recent, block). By default latest.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getOpReturnOutputs\",\"params\":{\"chainType\":\"BTC\", \"address\":[\"n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R\"]},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getOpReturnOutputs('BTC',{address:[\"n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R\"]}, (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getOpReturnOutputs('BTC', {address:[\"n35aUMToGvxJhYm7QVMtyBL83PTDKzPC1R\"]});\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[{\n      \"txid\": \"2c7a583b84fe0732fe17017bf0b17437bb5dcdad3ca8a8d661e86be666c33cc0\",\n      \"height\": 101641,\n      \"vout\": [\n        {\n          \"scriptPubKey\": {\n            \"addresses\": [\n              \"mzW2hdZN2um7WBvTDerdahKqRgj3md9C29\"\n            ],\n            \"asm\": \"04ffd03de44a6e11b9917f3a29f9443283d9871c9d743ef30d5eddcd37094b64d1b3d8090496b53256786bf5c82932ec23c3b74d9f05a6f95a8b5529352656664b OP_CHECKSIG\",\n            \"hex\": \"4104ffd03de44a6e11b9917f3a29f9443283d9871c9d743ef30d5eddcd37094b64d1b3d8090496b53256786bf5c82932ec23c3b74d9f05a6f95a8b5529352656664bac\",\n            \"reqSigs\": 1,\n            \"type\": \"pubkey\"\n          },\n          \"value\": 0.49743473,\n          \"index\": 1\n        },\n        {\n          \"scriptPubKey\": {\n            \"asm\": \"OP_RETURN f25ce69be9489038099442ed615ca8b0003330821c2804f2763c7a8e72274d1c0000000000000a00\",\n            \"hex\": \"6a28f25ce69be9489038099442ed615ca8b0003330821c2804f2763c7a8e72274d1c0000000000000a00\",\n            \"type\": \"nulldata\"\n          },\n          \"value\": 0,\n          \"index\": 2\n        }\n      ]\n    },\n    ... ...\n  ]",
           "type": "json"
         }
       ]
@@ -725,6 +791,211 @@
         {
           "title": "Successful Response",
           "content": "1",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Blocks"
+  },
+  {
+    "name": "getLedger",
+    "group": "Blocks",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getLedger",
+    "version": "1.3.0",
+    "description": "<p>Get the ledger information about a ledger by ledger version or hash on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>&quot;XRP&quot;</code>.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "ledgerHash",
+            "description": "<p>The ledger hash you want to search.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": true,
+            "field": "ledgerVersion",
+            "description": "<p>The ledger version you want to search.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "options",
+            "description": "<p>Optional. <br>&nbsp;&nbsp;<code>version</code> - The result format version you want to search, using <code>undefined</code> that means legacy format as default.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getLedger\",\"params\":{\"chainType\":\"XRP\", \"ledgerVersion\":14679040},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getLedger(\"XRP\", {\"ledgerVersion\":14679040}, (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getLedger(\"XRP\", {\"ledgerVersion\":14679040});\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "  {\n        \"stateHash\": \"0F4548F6E4807F13570C41C11A52792096D6642027EC32840B9D53BF961409BF\",\n        \"closeTime\": \"2021-02-05T07:30:31.000Z\",\n        \"closeTimeResolution\": 10,\n        \"closeFlags\": 0,\n        \"ledgerHash\": \"C08F61EF03F095B9D08CC27618AF47D30E6BC10EF7F0F94FA02E6636BE5646DF\",\n        \"ledgerVersion\": 14679040,\n        \"parentLedgerHash\": \"4EA79DB81E2F2EDCBB9757B42A1E50419268C417D8250ADDE5F2993B49ADEDBC\",\n        \"parentCloseTime\": \"2021-02-05T07:30:30.000Z\",\n        \"totalDrops\": \"99999778277224991\",\n        \"transactionHash\": \"38751D1FAAE173F9074C1B9B3521A1F91B7AD5A1A7F2A55B8388CEC17AEDF766\",\n        \"transactionHashes\": [\n          \"A7B0FE36FB0071B396EE118078C81D8E38E1FC8429EE9F12E0B96F0113D88E41\"\n        ]\n      }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Blocks"
+  },
+  {
+    "name": "getLedgerVersion",
+    "group": "Blocks",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getLedgerVersion",
+    "version": "1.3.0",
+    "description": "<p>Get the current latest ledger version. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>&quot;XRP&quot;</code>.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getLedgerVersion\",\"params\":{\"chainType\":\"XRP\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getLedgerVersion(\"XRP\", (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getLedgerVersion(\"XRP\");\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "  14678584",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Blocks"
+  },
+  {
+    "name": "getServerInfo",
+    "group": "Blocks",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getServerInfo",
+    "version": "1.3.0",
+    "description": "<p>Get server info. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>&quot;XRP&quot;</code>.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "options",
+            "description": "<p>Optional. <br>&nbsp;&nbsp;<code>version</code> - The result format version you want to search, using <code>undefined</code> that means legacy format as default.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getServerInfo\",\"params\":{\"chainType\":\"XRP\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getServerInfo(\"XRP\", (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getServerInfo(\"XRP\");\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "  14678584",
           "type": "json"
         }
       ]
@@ -2252,6 +2523,211 @@
     "groupTitle": "CrossChainV2"
   },
   {
+    "name": "getSupportedChainInfo",
+    "group": "CrossChainV2",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getSupportedChainInfo",
+    "version": "1.3.0",
+    "description": "<p>Get the supported chain info. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "options",
+            "description": "<p>Details:</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getSupportedChainInfo\",\"params\":{},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getSupportedChainInfo({}, (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getSupportedChainInfo({\"chainId\":\"2153201998\"});\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": " [\n   2153201998, // chain ID\n   \"WAN\", // chain symbol\n   \"Wanchain\", // chain name\n   \"5718350\" // chainIndex\n ]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "CrossChainV2"
+  },
+  {
+    "name": "estimateCrossChainNetworkFee",
+    "group": "CrossChain",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "estimateCrossChainNetworkFee",
+    "version": "1.3.0",
+    "description": "<p>Get cross chain network fee. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "targetChainType",
+            "description": "<p>The target chain.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "options",
+            "description": "<p>Optional: <br>&nbsp;&nbsp;<code>tokenPairID</code> - The ID of token pair you want to search.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"estimateCrossChainNetworkFee\",\"params\":{\"chainType\":\"WAN\", \"chainIds\": [\"0x8057414e\", \"0x8000003c\"]},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.estimateCrossChainNetworkFee(\"WAN\", [\"0x8057414e\", \"0x8000003c\"], (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.estimateCrossChainNetworkFee(\"WAN\", [\"0x8057414e\", \"0x8000003c\"]);\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "  {\"lockFee\":\"20000000000000000000\",\"revokeFee\":\"0\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "CrossChain"
+  },
+  {
+    "name": "estimateCrossChainOperationFee",
+    "group": "CrossChain",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "estimateCrossChainOperationFee",
+    "version": "1.3.0",
+    "description": "<p>Get cross chain operation fee. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "targetChainType",
+            "description": "<p>The target chain.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "options",
+            "description": "<p>Optional: <br>&nbsp;&nbsp;<code>tokenPairID</code> - The ID of token pair you want to search.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"estimateCrossChainOperationFee\",\"params\":{\"chainType\":\"WAN\", \"chainIds\": [\"0x8057414e\", \"0x8000003c\"]},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.estimateCrossChainOperationFee(\"WAN\", [\"0x8057414e\", \"0x8000003c\"], (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.estimateCrossChainOperationFee(\"WAN\", [\"0x8057414e\", \"0x8000003c\"]);\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "  {\"lockFee\":\"20000000000000000000\",\"revokeFee\":\"0\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "CrossChain"
+  },
+  {
     "name": "getChainInfo",
     "group": "CrossChain",
     "type": "CONNECT",
@@ -2302,7 +2778,139 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{\n   server_version: 'aa60b9ca',\n   chain_id: 'e70aaab8997e1dfce58fbfac80cbbb8fecec7b99cf982a9444273cbc64c41473',\n   head_block_num: 84031197,\n   last_irreversible_block_num: 84030870,\n   last_irreversible_block_id: '05023596ebe1b775a39a0ab380a0fd95bf435fbe9eccbf2b3e38c44a0cdc6a0d',\n   head_block_id: '050236dd683c4f98c9f5965910bf941d67b8fe6469a149114a3f0053779461da',\n   head_block_time: '2020-04-02T11:35:25.000',\n   head_block_producer: 'five.cartel',\n   virtual_block_cpu_limit: 500000000,\n   virtual_block_net_limit: 524288000,\n   block_cpu_limit: 499990,\n   block_net_limit: 524288,\n   server_version_string: 'v2.0.2',\n   fork_db_head_block_num: 84031197,\n   fork_db_head_block_id: '050236dd683c4f98c9f5965910bf941d67b8fe6469a149114a3f0053779461da',\n   server_full_version_string: 'v2.0.2-aa60b9caf9b7e2bd2411bb199c0c1d9fd8f085d5'\n}",
+          "content": " {\n    server_version: 'aa60b9ca',\n    chain_id: 'e70aaab8997e1dfce58fbfac80cbbb8fecec7b99cf982a9444273cbc64c41473',\n    head_block_num: 84031197,\n    last_irreversible_block_num: 84030870,\n    last_irreversible_block_id: '05023596ebe1b775a39a0ab380a0fd95bf435fbe9eccbf2b3e38c44a0cdc6a0d',\n    head_block_id: '050236dd683c4f98c9f5965910bf941d67b8fe6469a149114a3f0053779461da',\n    head_block_time: '2020-04-02T11:35:25.000',\n    head_block_producer: 'five.cartel',\n    virtual_block_cpu_limit: 500000000,\n    virtual_block_net_limit: 524288000,\n    block_cpu_limit: 499990,\n    block_net_limit: 524288,\n    server_version_string: 'v2.0.2',\n    fork_db_head_block_num: 84031197,\n    fork_db_head_block_id: '050236dd683c4f98c9f5965910bf941d67b8fe6469a149114a3f0053779461da',\n    server_full_version_string: 'v2.0.2-aa60b9caf9b7e2bd2411bb199c0c1d9fd8f085d5'\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "CrossChain"
+  },
+  {
+    "name": "getChainParameters",
+    "group": "CrossChain",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getChainParameters",
+    "version": "1.3.0",
+    "description": "<p>Get the parameters of the blockchain used for witnessses to create a proposal. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>&quot;TRX&quot;</code>.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "options",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getChainParameters\",\"params\":{\"chainType\":\"TRX\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getChainParameters(\"TRX\", (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getChainParameters(\"TRX\");\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "  [ { key: 'getMaintenanceTimeInterval', value: 21600000 },\n  { key: 'getAccountUpgradeCost', value: 9999000000 },\n  { key: 'getCreateAccountFee', value: 100000 },\n  { key: 'getTransactionFee', value: 10 },\n  { key: 'getAssetIssueFee', value: 1024000000 },\n  { key: 'getWitnessPayPerBlock', value: 32000000 },\n  { key: 'getWitnessStandbyAllowance', value: 115200000000 },\n  { key: 'getCreateNewAccountFeeInSystemContract' },\n  { key: 'getCreateNewAccountBandwidthRate', value: 1 },\n  { key: 'getAllowCreationOfContracts', value: 1 },\n  { key: 'getRemoveThePowerOfTheGr', value: -1 },\n  { key: 'getEnergyFee', value: 10 },\n  { key: 'getExchangeCreateFee', value: 1024000000 },\n  { key: 'getMaxCpuTimeOfOneTx', value: 50 },\n  { key: 'getAllowUpdateAccountName' },\n  { key: 'getAllowSameTokenName', value: 1 },\n  { key: 'getAllowDelegateResource', value: 1 },\n  { key: 'getTotalEnergyLimit', value: 100000000000 },\n  { key: 'getAllowTvmTransferTrc10', value: 1 },\n  { key: 'getTotalEnergyCurrentLimit', value: 100000000000 },\n  { key: 'getAllowMultiSign' },\n  { key: 'getAllowAdaptiveEnergy' },\n  { key: 'getTotalEnergyTargetLimit', value: 6944444 },\n  { key: 'getTotalEnergyAverageUsage' },\n  { key: 'getUpdateAccountPermissionFee', value: 100000000 },\n  { key: 'getMultiSignFee', value: 1000000 } ]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "CrossChain"
+  },
+  {
+    "name": "getChainQuotaHiddenFlags",
+    "group": "CrossChain",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getChainQuotaHiddenFlags",
+    "version": "1.3.0",
+    "description": "<p>Get the disabled chain dict. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "array",
+            "optional": true,
+            "field": "chainIds",
+            "description": "<p>The array of bip44 chain ID being queried.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "options",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getChainQuotaHiddenFlags\",\"params\":{},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getChainQuotaHiddenFlags((err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getChainQuotaHiddenFlags();\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "   {\"2153201998\":true}",
           "type": "json"
         }
       ]
@@ -2361,7 +2969,264 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"20\"",
+          "content": "  \"20\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "CrossChain"
+  },
+  {
+    "name": "getCostModelParameters",
+    "group": "CrossChain",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getCostModelParameters",
+    "version": "1.3.0",
+    "description": "<p>Get epoch model parameters about a epoch by block ID on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>&quot;ADA&quot;</code>.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "options",
+            "description": "<p>Optional: <br>&nbsp;&nbsp;<code>epochID</code> - The ID of epoch you want to search.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getCostModelParameters\",\"params\":{\"chainType\":\"ADA\", 180},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getCostModelParameters(\"ADA\", 180, (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getCostModelParameters(\"ADA\", 180);\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "  {\"minFeeCoefficient\":44,\"minFeeConstant\":155381,\"maxBlockBodySize\":90112,\"maxBlockHeaderSize\":1100,\"maxTxSize\":16384,\"stakeKeyDeposit\":2000000,\"poolDeposit\":500000000,\"poolRetirementEpochBound\":18,\"desiredNumberOfPools\":500,\"poolInfluence\":\"3/10\",\"monetaryExpansion\":\"3/1000\",\"treasuryExpansion\":\"1/5\",\"protocolVersion\":{\"major\":8,\"minor\":0},\"minPoolCost\":340000000,\"coinsPerUtxoByte\":4310,\"costModels\":{\"plutus:v1\":{\"addInteger-cpu-arguments-intercept\":205665,\"addInteger-cpu-arguments-slope\":812,\"addInteger-memory-arguments-intercept\":1,\"addInteger-memory-arguments-slope\":1,\"appendByteString-cpu-arguments-intercept\":1000,\"appendByteString-cpu-arguments-slope\":571,\"appendByteString-memory-arguments-intercept\":0,\"appendByteString-memory-arguments-slope\":1,\"appendString-cpu-arguments-intercept\":1000,\"appendString-cpu-arguments-slope\":24177,\"appendString-memory-arguments-intercept\":4,\"appendString-memory-arguments-slope\":1,\"bData-cpu-arguments\":1000,\"bData-memory-arguments\":32,\"blake2b_256-cpu-arguments-intercept\":117366,\"blake2b_256-cpu-arguments-slope\":10475,\"blake2b_256-memory-arguments\":4,\"cekApplyCost-exBudgetCPU\":23000,\"cekApplyCost-exBudgetMemory\":100,\"cekBuiltinCost-exBudgetCPU\":23000,\"cekBuiltinCost-exBudgetMemory\":100,\"cekConstCost-exBudgetCPU\":23000,\"cekConstCost-exBudgetMemory\":100,\"cekDelayCost-exBudgetCPU\":23000,\"cekDelayCost-exBudgetMemory\":100,\"cekForceCost-exBudgetCPU\":23000,\"cekForceCost-exBudgetMemory\":100,\"cekLamCost-exBudgetCPU\":23000,\"cekLamCost-exBudgetMemory\":100,\"cekStartupCost-exBudgetCPU\":100,\"cekStartupCost-exBudgetMemory\":100,\"cekVarCost-exBudgetCPU\":23000,\"cekVarCost-exBudgetMemory\":100,\"chooseData-cpu-arguments\":19537,\"chooseData-memory-arguments\":32,\"chooseList-cpu-arguments\":175354,\"chooseList-memory-arguments\":32,\"chooseUnit-cpu-arguments\":46417,\"chooseUnit-memory-arguments\":4,\"consByteString-cpu-arguments-intercept\":221973,\"consByteString-cpu-arguments-slope\":511,\"consByteString-memory-arguments-intercept\":0,\"consByteString-memory-arguments-slope\":1,\"constrData-cpu-arguments\":89141,\"constrData-memory-arguments\":32,\"decodeUtf8-cpu-arguments-intercept\":497525,\"decodeUtf8-cpu-arguments-slope\":14068,\"decodeUtf8-memory-arguments-intercept\":4,\"decodeUtf8-memory-arguments-slope\":2,\"divideInteger-cpu-arguments-constant\":196500,\"divideInteger-cpu-arguments-model-arguments-intercept\":453240,\"divideInteger-cpu-arguments-model-arguments-slope\":220,\"divideInteger-memory-arguments-intercept\":0,\"divideInteger-memory-arguments-minimum\":1,\"divideInteger-memory-arguments-slope\":1,\"encodeUtf8-cpu-arguments-intercept\":1000,\"encodeUtf8-cpu-arguments-slope\":28662,\"encodeUtf8-memory-arguments-intercept\":4,\"encodeUtf8-memory-arguments-slope\":2,\"equalsByteString-cpu-arguments-constant\":245000,\"equalsByteString-cpu-arguments-intercept\":216773,\"equalsByteString-cpu-arguments-slope\":62,\"equalsByteString-memory-arguments\":1,\"equalsData-cpu-arguments-intercept\":1060367,\"equalsData-cpu-arguments-slope\":12586,\"equalsData-memory-arguments\":1,\"equalsInteger-cpu-arguments-intercept\":208512,\"equalsInteger-cpu-arguments-slope\":421,\"equalsInteger-memory-arguments\":1,\"equalsString-cpu-arguments-constant\":187000,\"equalsString-cpu-arguments-intercept\":1000,\"equalsString-cpu-arguments-slope\":52998,\"equalsString-memory-arguments\":1,\"fstPair-cpu-arguments\":80436,\"fstPair-memory-arguments\":32,\"headList-cpu-arguments\":43249,\"headList-memory-arguments\":32,\"iData-cpu-arguments\":1000,\"iData-memory-arguments\":32,\"ifThenElse-cpu-arguments\":80556,\"ifThenElse-memory-arguments\":1,\"indexByteString-cpu-arguments\":57667,\"indexByteString-memory-arguments\":4,\"lengthOfByteString-cpu-arguments\":1000,\"lengthOfByteString-memory-arguments\":10,\"lessThanByteString-cpu-arguments-intercept\":197145,\"lessThanByteString-cpu-arguments-slope\":156,\"lessThanByteString-memory-arguments\":1,\"lessThanEqualsByteString-cpu-arguments-intercept\":197145,\"lessThanEqualsByteString-cpu-arguments-slope\":156,\"lessThanEqualsByteString-memory-arguments\":1,\"lessThanEqualsInteger-cpu-arguments-intercept\":204924,\"lessThanEqualsInteger-cpu-arguments-slope\":473,\"lessThanEqualsInteger-memory-arguments\":1,\"lessThanInteger-cpu-arguments-intercept\":208896,\"lessThanInteger-cpu-arguments-slope\":511,\"lessThanInteger-memory-arguments\":1,\"listData-cpu-arguments\":52467,\"listData-memory-arguments\":32,\"mapData-cpu-arguments\":64832,\"mapData-memory-arguments\":32,\"mkCons-cpu-arguments\":65493,\"mkCons-memory-arguments\":32,\"mkNilData-cpu-arguments\":22558,\"mkNilData-memory-arguments\":32,\"mkNilPairData-cpu-arguments\":16563,\"mkNilPairData-memory-arguments\":32,\"mkPairData-cpu-arguments\":76511,\"mkPairData-memory-arguments\":32,\"modInteger-cpu-arguments-constant\":196500,\"modInteger-cpu-arguments-model-arguments-intercept\":453240,\"modInteger-cpu-arguments-model-arguments-slope\":220,\"modInteger-memory-arguments-intercept\":0,\"modInteger-memory-arguments-minimum\":1,\"modInteger-memory-arguments-slope\":1,\"multiplyInteger-cpu-arguments-intercept\":69522,\"multiplyInteger-cpu-arguments-slope\":11687,\"multiplyInteger-memory-arguments-intercept\":0,\"multiplyInteger-memory-arguments-slope\":1,\"nullList-cpu-arguments\":60091,\"nullList-memory-arguments\":32,\"quotientInteger-cpu-arguments-constant\":196500,\"quotientInteger-cpu-arguments-model-arguments-intercept\":453240,\"quotientInteger-cpu-arguments-model-arguments-slope\":220,\"quotientInteger-memory-arguments-intercept\":0,\"quotientInteger-memory-arguments-minimum\":1,\"quotientInteger-memory-arguments-slope\":1,\"remainderInteger-cpu-arguments-constant\":196500,\"remainderInteger-cpu-arguments-model-arguments-intercept\":453240,\"remainderInteger-cpu-arguments-model-arguments-slope\":220,\"remainderInteger-memory-arguments-intercept\":0,\"remainderInteger-memory-arguments-minimum\":1,\"remainderInteger-memory-arguments-slope\":1,\"sha2_256-cpu-arguments-intercept\":806990,\"sha2_256-cpu-arguments-slope\":30482,\"sha2_256-memory-arguments\":4,\"sha3_256-cpu-arguments-intercept\":1927926,\"sha3_256-cpu-arguments-slope\":82523,\"sha3_256-memory-arguments\":4,\"sliceByteString-cpu-arguments-intercept\":265318,\"sliceByteString-cpu-arguments-slope\":0,\"sliceByteString-memory-arguments-intercept\":4,\"sliceByteString-memory-arguments-slope\":0,\"sndPair-cpu-arguments\":85931,\"sndPair-memory-arguments\":32,\"subtractInteger-cpu-arguments-intercept\":205665,\"subtractInteger-cpu-arguments-slope\":812,\"subtractInteger-memory-arguments-intercept\":1,\"subtractInteger-memory-arguments-slope\":1,\"tailList-cpu-arguments\":41182,\"tailList-memory-arguments\":32,\"trace-cpu-arguments\":212342,\"trace-memory-arguments\":32,\"unBData-cpu-arguments\":31220,\"unBData-memory-arguments\":32,\"unConstrData-cpu-arguments\":32696,\"unConstrData-memory-arguments\":32,\"unIData-cpu-arguments\":43357,\"unIData-memory-arguments\":32,\"unListData-cpu-arguments\":32247,\"unListData-memory-arguments\":32,\"unMapData-cpu-arguments\":38314,\"unMapData-memory-arguments\":32,\"verifyEd25519Signature-cpu-arguments-intercept\":57996947,\"verifyEd25519Signature-cpu-arguments-slope\":18975,\"verifyEd25519Signature-memory-arguments\":10},\"plutus:v2\":{\"addInteger-cpu-arguments-intercept\":205665,\"addInteger-cpu-arguments-slope\":812,\"addInteger-memory-arguments-intercept\":1,\"addInteger-memory-arguments-slope\":1,\"appendByteString-cpu-arguments-intercept\":1000,\"appendByteString-cpu-arguments-slope\":571,\"appendByteString-memory-arguments-intercept\":0,\"appendByteString-memory-arguments-slope\":1,\"appendString-cpu-arguments-intercept\":1000,\"appendString-cpu-arguments-slope\":24177,\"appendString-memory-arguments-intercept\":4,\"appendString-memory-arguments-slope\":1,\"bData-cpu-arguments\":1000,\"bData-memory-arguments\":32,\"blake2b_256-cpu-arguments-intercept\":117366,\"blake2b_256-cpu-arguments-slope\":10475,\"blake2b_256-memory-arguments\":4,\"cekApplyCost-exBudgetCPU\":23000,\"cekApplyCost-exBudgetMemory\":100,\"cekBuiltinCost-exBudgetCPU\":23000,\"cekBuiltinCost-exBudgetMemory\":100,\"cekConstCost-exBudgetCPU\":23000,\"cekConstCost-exBudgetMemory\":100,\"cekDelayCost-exBudgetCPU\":23000,\"cekDelayCost-exBudgetMemory\":100,\"cekForceCost-exBudgetCPU\":23000,\"cekForceCost-exBudgetMemory\":100,\"cekLamCost-exBudgetCPU\":23000,\"cekLamCost-exBudgetMemory\":100,\"cekStartupCost-exBudgetCPU\":100,\"cekStartupCost-exBudgetMemory\":100,\"cekVarCost-exBudgetCPU\":23000,\"cekVarCost-exBudgetMemory\":100,\"chooseData-cpu-arguments\":19537,\"chooseData-memory-arguments\":32,\"chooseList-cpu-arguments\":175354,\"chooseList-memory-arguments\":32,\"chooseUnit-cpu-arguments\":46417,\"chooseUnit-memory-arguments\":4,\"consByteString-cpu-arguments-intercept\":221973,\"consByteString-cpu-arguments-slope\":511,\"consByteString-memory-arguments-intercept\":0,\"consByteString-memory-arguments-slope\":1,\"constrData-cpu-arguments\":89141,\"constrData-memory-arguments\":32,\"decodeUtf8-cpu-arguments-intercept\":497525,\"decodeUtf8-cpu-arguments-slope\":14068,\"decodeUtf8-memory-arguments-intercept\":4,\"decodeUtf8-memory-arguments-slope\":2,\"divideInteger-cpu-arguments-constant\":196500,\"divideInteger-cpu-arguments-model-arguments-intercept\":453240,\"divideInteger-cpu-arguments-model-arguments-slope\":220,\"divideInteger-memory-arguments-intercept\":0,\"divideInteger-memory-arguments-minimum\":1,\"divideInteger-memory-arguments-slope\":1,\"encodeUtf8-cpu-arguments-intercept\":1000,\"encodeUtf8-cpu-arguments-slope\":28662,\"encodeUtf8-memory-arguments-intercept\":4,\"encodeUtf8-memory-arguments-slope\":2,\"equalsByteString-cpu-arguments-constant\":245000,\"equalsByteString-cpu-arguments-intercept\":216773,\"equalsByteString-cpu-arguments-slope\":62,\"equalsByteString-memory-arguments\":1,\"equalsData-cpu-arguments-intercept\":1060367,\"equalsData-cpu-arguments-slope\":12586,\"equalsData-memory-arguments\":1,\"equalsInteger-cpu-arguments-intercept\":208512,\"equalsInteger-cpu-arguments-slope\":421,\"equalsInteger-memory-arguments\":1,\"equalsString-cpu-arguments-constant\":187000,\"equalsString-cpu-arguments-intercept\":1000,\"equalsString-cpu-arguments-slope\":52998,\"equalsString-memory-arguments\":1,\"fstPair-cpu-arguments\":80436,\"fstPair-memory-arguments\":32,\"headList-cpu-arguments\":43249,\"headList-memory-arguments\":32,\"iData-cpu-arguments\":1000,\"iData-memory-arguments\":32,\"ifThenElse-cpu-arguments\":80556,\"ifThenElse-memory-arguments\":1,\"indexByteString-cpu-arguments\":57667,\"indexByteString-memory-arguments\":4,\"lengthOfByteString-cpu-arguments\":1000,\"lengthOfByteString-memory-arguments\":10,\"lessThanByteString-cpu-arguments-intercept\":197145,\"lessThanByteString-cpu-arguments-slope\":156,\"lessThanByteString-memory-arguments\":1,\"lessThanEqualsByteString-cpu-arguments-intercept\":197145,\"lessThanEqualsByteString-cpu-arguments-slope\":156,\"lessThanEqualsByteString-memory-arguments\":1,\"lessThanEqualsInteger-cpu-arguments-intercept\":204924,\"lessThanEqualsInteger-cpu-arguments-slope\":473,\"lessThanEqualsInteger-memory-arguments\":1,\"lessThanInteger-cpu-arguments-intercept\":208896,\"lessThanInteger-cpu-arguments-slope\":511,\"lessThanInteger-memory-arguments\":1,\"listData-cpu-arguments\":52467,\"listData-memory-arguments\":32,\"mapData-cpu-arguments\":64832,\"mapData-memory-arguments\":32,\"mkCons-cpu-arguments\":65493,\"mkCons-memory-arguments\":32,\"mkNilData-cpu-arguments\":22558,\"mkNilData-memory-arguments\":32,\"mkNilPairData-cpu-arguments\":16563,\"mkNilPairData-memory-arguments\":32,\"mkPairData-cpu-arguments\":76511,\"mkPairData-memory-arguments\":32,\"modInteger-cpu-arguments-constant\":196500,\"modInteger-cpu-arguments-model-arguments-intercept\":453240,\"modInteger-cpu-arguments-model-arguments-slope\":220,\"modInteger-memory-arguments-intercept\":0,\"modInteger-memory-arguments-minimum\":1,\"modInteger-memory-arguments-slope\":1,\"multiplyInteger-cpu-arguments-intercept\":69522,\"multiplyInteger-cpu-arguments-slope\":11687,\"multiplyInteger-memory-arguments-intercept\":0,\"multiplyInteger-memory-arguments-slope\":1,\"nullList-cpu-arguments\":60091,\"nullList-memory-arguments\":32,\"quotientInteger-cpu-arguments-constant\":196500,\"quotientInteger-cpu-arguments-model-arguments-intercept\":453240,\"quotientInteger-cpu-arguments-model-arguments-slope\":220,\"quotientInteger-memory-arguments-intercept\":0,\"quotientInteger-memory-arguments-minimum\":1,\"quotientInteger-memory-arguments-slope\":1,\"remainderInteger-cpu-arguments-constant\":196500,\"remainderInteger-cpu-arguments-model-arguments-intercept\":453240,\"remainderInteger-cpu-arguments-model-arguments-slope\":220,\"remainderInteger-memory-arguments-intercept\":0,\"remainderInteger-memory-arguments-minimum\":1,\"remainderInteger-memory-arguments-slope\":1,\"serialiseData-cpu-arguments-intercept\":1159724,\"serialiseData-cpu-arguments-slope\":392670,\"serialiseData-memory-arguments-intercept\":0,\"serialiseData-memory-arguments-slope\":2,\"sha2_256-cpu-arguments-intercept\":806990,\"sha2_256-cpu-arguments-slope\":30482,\"sha2_256-memory-arguments\":4,\"sha3_256-cpu-arguments-intercept\":1927926,\"sha3_256-cpu-arguments-slope\":82523,\"sha3_256-memory-arguments\":4,\"sliceByteString-cpu-arguments-intercept\":265318,\"sliceByteString-cpu-arguments-slope\":0,\"sliceByteString-memory-arguments-intercept\":4,\"sliceByteString-memory-arguments-slope\":0,\"sndPair-cpu-arguments\":85931,\"sndPair-memory-arguments\":32,\"subtractInteger-cpu-arguments-intercept\":205665,\"subtractInteger-cpu-arguments-slope\":812,\"subtractInteger-memory-arguments-intercept\":1,\"subtractInteger-memory-arguments-slope\":1,\"tailList-cpu-arguments\":41182,\"tailList-memory-arguments\":32,\"trace-cpu-arguments\":212342,\"trace-memory-arguments\":32,\"unBData-cpu-arguments\":31220,\"unBData-memory-arguments\":32,\"unConstrData-cpu-arguments\":32696,\"unConstrData-memory-arguments\":32,\"unIData-cpu-arguments\":43357,\"unIData-memory-arguments\":32,\"unListData-cpu-arguments\":32247,\"unListData-memory-arguments\":32,\"unMapData-cpu-arguments\":38314,\"unMapData-memory-arguments\":32,\"verifyEcdsaSecp256k1Signature-cpu-arguments\":35892428,\"verifyEcdsaSecp256k1Signature-memory-arguments\":10,\"verifyEd25519Signature-cpu-arguments-intercept\":57996947,\"verifyEd25519Signature-cpu-arguments-slope\":18975,\"verifyEd25519Signature-memory-arguments\":10,\"verifySchnorrSecp256k1Signature-cpu-arguments-intercept\":38887044,\"verifySchnorrSecp256k1Signature-cpu-arguments-slope\":32947,\"verifySchnorrSecp256k1Signature-memory-arguments\":10}},\"prices\":{\"memory\":\"577/10000\",\"steps\":\"721/10000000\"},\"maxExecutionUnitsPerTransaction\":{\"memory\":14000000,\"steps\":10000000000},\"maxExecutionUnitsPerBlock\":{\"memory\":62000000,\"steps\":20000000000},\"maxValueSize\":5000,\"collateralPercentage\":150,\"maxCollateralInputs\":3}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "CrossChain"
+  },
+  {
+    "name": "getEpochParameters",
+    "group": "CrossChain",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getEpochParameters",
+    "version": "1.3.0",
+    "description": "<p>Get epoch parameters about a epoch by block ID on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>&quot;ADA&quot;</code>.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "options",
+            "description": "<p>Optional: <br>&nbsp;&nbsp;<code>epochID</code> - The ID of epoch you want to search.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getEpochParameters\",\"params\":{\"chainType\":\"ADA\", 180},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getEpochParameters(\"ADA\", 180, (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getEpochParameters(\"ADA\", 180);\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "  {\n        \"epoch\": 180,\n        \"min_fee_a\": 44,\n        \"min_fee_b\": 155381,\n        \"max_block_size\": 73728,\n        \"max_tx_size\": 16384,\n        \"max_block_header_size\": 1100,\n        \"key_deposit\": \"2000000\",\n        \"pool_deposit\": \"500000000\",\n        \"e_max\": 18,\n        \"n_opt\": 500,\n        \"a0\": 0.3,\n        \"rho\": 0.003,\n        \"tau\": 0.2,\n        \"decentralisation_param\": 0,\n        \"extra_entropy\": null,\n        \"protocol_major_ver\": 6,\n        \"protocol_minor_ver\": 0,\n        \"min_utxo\": \"34482\",\n        \"min_pool_cost\": \"340000000\",\n        \"nonce\": \"0c9a4974209212b3e1909a107f6bd19a5d797851d619c9fbaeeb2aec613ccf19\",\n        \"price_mem\": 0.0577,\n        \"price_step\": 0.0000721,\n        \"max_tx_ex_mem\": \"12500000\",\n        \"max_tx_ex_steps\": \"10000000000\",\n        \"max_block_ex_mem\": \"50000000\",\n        \"max_block_ex_steps\": \"40000000000\",\n        \"max_val_size\": \"5000\",\n        \"collateral_percent\": 150,\n        \"max_collateral_inputs\": 3,\n        \"coins_per_utxo_word\": \"34482\"\n      }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "CrossChain"
+  },
+  {
+    "name": "getLatestBlock",
+    "group": "CrossChain",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getLatestBlock",
+    "version": "1.3.0",
+    "description": "<p>Get the latest block information on certain chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>&quot;ADA&quot;</code>.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getLatestBlock\",\"params\":{\"chainType\":\"ADA\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getLatestBlock(\"ADA\", (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getLatestBlock(\"ADA\");\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "  {\n        \"time\": 1641956199,\n        \"height\": 3230335,\n        \"hash\": \"8c5789337cdd540fed8fc57f07d93740100af974f471a58ccb446c0fa76a8d56\",\n        \"slot\": 47586983,\n        \"epoch\": 180,\n        \"epoch_slot\": 196583,\n        \"slot_leader\": \"pool10k7t5kp6etvj95ma0q3c8tugx05dlfwly3lcdfgke4gjkhdx0ej\",\n        \"size\": 16699,\n        \"tx_count\": 7,\n        \"output\": \"38941298302128\",\n        \"fees\": \"2110816\",\n        \"block_vrf\": \"vrf_vk1yl2d9rfaeht0m9l8x0y9a3j9rapepz04yr4jlxrr2aw2ulpsyahs5mv4cx\",\n        \"previous_block\": \"f0b44052ff43386d10b8e81303961a96f8bd79e2362842619700d536964cf5d4\",\n        \"next_block\": null,\n        \"confirmations\": 0\n      }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "CrossChain"
+  },
+  {
+    "name": "getMinCrossChainAmount",
+    "group": "CrossChain",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getMinCrossChainAmount",
+    "version": "1.3.0",
+    "description": "<p>Get cross chain fees. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>&quot;WAN&quot;</code>, <code>&quot;ETH&quot;</code> and <code>&quot;XRP&quot;</code>.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainIds",
+            "description": "<p>Array of chain IDs about the cross chain pair.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getMinCrossChainAmount\",\"params\":{\"chainType\":\"WAN\", \"chainIds\": [\"0x8057414e\", \"0x8000003c\"]},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getMinCrossChainAmount(\"WAN\", [\"0x8057414e\", \"0x8000003c\"], (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getMinCrossChainAmount(\"WAN\", [\"0x8057414e\", \"0x8000003c\"]);\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "  {\"lockFee\":\"20000000000000000000\",\"revokeFee\":\"0\"}",
           "type": "json"
         }
       ]
@@ -2545,7 +3410,73 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "\"3000\"",
+          "content": "  \"3000\"",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "CrossChain"
+  },
+  {
+    "name": "getTokenPairsHash",
+    "group": "CrossChain",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getTokenPairsHash",
+    "version": "1.3.0",
+    "description": "<p>Get token pairs hash. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>&quot;ADA&quot;</code>.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "options",
+            "description": "<p>Optional: <br>&nbsp;&nbsp;<code>epochID</code> - The ID of epoch you want to search.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getTokenPairsHash\",\"params\":{},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getTokenPairsHash((err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getTokenPairsHash();\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "  e1fb2e32321423509bfa9e096cad3596",
           "type": "json"
         }
       ]
@@ -6123,7 +7054,66 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "{\n  \"name\": \"test\",\n  \"address\":\"0x3786038ef9c2f659772c6c2ee8402bdfdc511bb5\"\n}",
+          "content": " {\n   \"name\": \"test\",\n   \"address\":\"0x3786038ef9c2f659772c6c2ee8402bdfdc511bb5\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Service"
+  },
+  {
+    "name": "getCrossChainReservedQuota",
+    "group": "Service",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getCrossChainReservedQuota",
+    "version": "1.3.0",
+    "description": "<p>Get cross chain reserved quota. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "object.",
+            "description": "<p><br>&nbsp;&nbsp;<code>targetChainType</code> - The target chainType you want to search. <br>&nbsp;&nbsp;<code>symbols</code> - The array of token symbol you want to search.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getCrossChainReservedQuota\",\"params\":{targetChainType:\"\", symbols:[\"BTC\"]},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getCrossChainReservedQuota({targetChainType:\"\", symbols:[\"BTC\"]}, (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getCrossChainReservedQuota({targetChainType:\"\", symbols:[\"BTC\"]});\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": " {\"BTC\":\"0.5\"}",
           "type": "json"
         }
       ]
@@ -6182,7 +7172,125 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n  {\n    \"name\": \"test\",\n    \"iconData\": \"iVBORw0KGgoAAAGG ... ...\",\n    \"iconType\": \"png\",\n    \"url\": \"https://test.io/\",\n    \"updatedAt\": 1563780893497\n  },\n  ... ...\n]",
+          "content": " [\n   {\n     \"name\": \"test\",\n     \"iconData\": \"iVBORw0KGgoAAAGG ... ...\",\n     \"iconType\": \"png\",\n     \"url\": \"https://test.io/\",\n     \"updatedAt\": 1563780893497\n   },\n   ... ...\n ]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Service"
+  },
+  {
+    "name": "getRegisteredChainLogo",
+    "group": "Service",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getRegisteredChainLogo",
+    "version": "1.3.0",
+    "description": "<p>Get records of registered chain logo. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "options",
+            "description": "<p>Optional. <br>&nbsp;&nbsp;<code>chainType</code> - The chainType you want to search. <br>&nbsp;&nbsp;<code>after</code> - The timestamp after you want to search. <br>&nbsp;&nbsp;<code>pageIndex</code> - The page index you want to search. If you want to query with the <code>pageIndex</code>, <code>page</code> is needed. <br>&nbsp;&nbsp;<code>page</code> - The page size you want to search. <br>&nbsp;&nbsp;&nbsp;&nbsp; Set to <code>false</code> (the default) to return the default token logo. <br>&nbsp;&nbsp;&nbsp;&nbsp; Set to <code>true</code> to return all token type logo.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRegisteredChainLogo\",\"params\":{\"chainType\":\"WAN\", \"after\":1577155812700},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getRegisteredChainLogo({chainType:\"WAN\", after:1577155812700}, (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getRegisteredChainLogo({chainType:\"WAN\", after:1577155812700});\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": " [\n     \"chainType\":\"WAN\",\n     \"iconType\": \"jpg\",\n     \"iconData\": \"/9j/4AAQSkZJRgABAQEBLAEsA ... ...\",\n     \"updatedAt\": :1589512354784\n   },\n   ... ...\n ]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Service"
+  },
+  {
+    "name": "getRegisteredCoinGecko",
+    "group": "Service",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getRegisteredCoinGecko",
+    "version": "1.3.0",
+    "description": "<p>Get records of registered coingecko information. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "options",
+            "description": "<p>Optional. <br>&nbsp;&nbsp;<code>address</code> - The array of coingecko address you want to search. <br>&nbsp;&nbsp;<code>symbol</code> - The array of coingecko symbol you want to search. <br>&nbsp;&nbsp;<code>after</code> - The timestamp after you want to search.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRegisteredCoinGecko\",\"params\":{\"symbol\":######},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getRegisteredCoinGecko({symbol:######}, (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getRegisteredCoinGecko({symbol:######});\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": " [\n   {\n     \"id\": \"wanchain\",\n     \"symbol\": \"wan\",\n     \"name\": \"Wanchain\"\n     \"updatedAt\": 1563780893497\n   },\n   ... ...\n ]",
           "type": "json"
         }
       ]
@@ -6307,7 +7415,66 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n    \"tokenScAddr\": \"0xc6f4465a6a521124c8e3096b62575c157999d361\",\n    \"iconType\": \"jpg\",\n    \"iconData\": \"/9j/4AAQSkZJRgABAQEBLAEsA ... ...\",\n    \"updatedAt\": :1589512354784\n  },\n  ... ...\n]",
+          "content": " [\n     \"tokenScAddr\": \"0xc6f4465a6a521124c8e3096b62575c157999d361\",\n     \"iconType\": \"jpg\",\n     \"iconData\": \"/9j/4AAQSkZJRgABAQEBLAEsA ... ...\",\n     \"updatedAt\": :1589512354784\n   },\n   ... ...\n ]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Service"
+  },
+  {
+    "name": "getRegisteredMultiChainOrigToken",
+    "group": "Service",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getRegisteredMultiChainOrigToken",
+    "version": "1.3.0",
+    "description": "<p>Get records of registered cross-chain token of multi-chain asset. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "options",
+            "description": "<p>Optional. <br>&nbsp;&nbsp;<code>chainType</code> - The chainType you want to search. <br>&nbsp;&nbsp;<code>symbol</code> - The symbol you want to search.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRegisteredMultiChainOrigToken\",\"params\":{\"chainType\":\"ETH\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getRegisteredMultiChainOrigToken({chainType:\"ETH\"}, (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getRegisteredMultiChainOrigToken({chainType:\"ETH\"});\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": " [\n     \"chainType\":\"ETH\",\n     \"updatedAt\": :\"USDT\"\n   },\n   ... ...\n ]",
           "type": "json"
         }
       ]
@@ -6373,7 +7540,66 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n    \"tokenScAddr\": \"0xc6f4465a6a521124c8e3096b62575c157999d361\",\n    \"iconType\": \"jpg\",\n    \"iconData\": \"/9j/4AAQSkZJRgABAQEBLAEsA ... ...\",\n    \"updatedAt\": :1589512354784\n  },\n  ... ...\n]",
+          "content": " [\n     \"tokenScAddr\": \"0xc6f4465a6a521124c8e3096b62575c157999d361\",\n     \"iconType\": \"jpg\",\n     \"iconData\": \"/9j/4AAQSkZJRgABAQEBLAEsA ... ...\",\n     \"updatedAt\": :1589512354784\n   },\n   ... ...\n ]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Service"
+  },
+  {
+    "name": "getRegisteredSubgraph",
+    "group": "Service",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getRegisteredSubgraph",
+    "version": "1.3.0",
+    "description": "<p>Get records of registered subgraph info. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "options",
+            "description": "<p>Optional. <br>&nbsp;&nbsp;<code>chainType</code> - The chainType you want to search. <br>&nbsp;&nbsp;<code>keywords</code> - The keywords you want to search.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRegisteredSubgraph\",\"params\":{\"chainType\":\"ETH\", keywords:[\"0x...\"]},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getRegisteredSubgraph({chainType:\"ETH\", keywords:[\"0x...\"]}, (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getRegisteredSubgraph({chainType:\"ETH\", keywords:[\"0x...\"]});\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": " [\n   {\n     \"chainType\":\"ETH\",\n     \"keyword\":\"0x...\",\n     \"subgraph\": \"https://...\"\n   },\n   ... ...\n ]",
           "type": "json"
         }
       ]
@@ -6439,7 +7665,191 @@
       "examples": [
         {
           "title": "Successful Response",
-          "content": "[\n  {\n    \"tokenOrigAccount\": \"0x00f58d6d585f84b2d7267940cede30ce2fe6eae8\",\n    \"decimals\": 18,\n    \"deposit\": \"10000000000000000000\",\n    \"iconData\": \"/9j/4AAQSkZJ ... ...\",\n    \"iconType\": \"jpg\",\n    \"name\": \"Wanchain ZRX Crosschain Token\",\n    \"symbol\": \"ZRX\",\n    \"token2WanRatio\": \"20000\",\n    \"tokenWanAddr\": \"0x2a4359d8b84b270eb112b54273439ac538f32733\",\n    \"updatedAt\": 1577155812722,\n    \"withDrawDelayTime\": \"259200\"\n  },\n  ... ...\n]",
+          "content": " [\n   {\n     \"tokenOrigAccount\": \"0x00f58d6d585f84b2d7267940cede30ce2fe6eae8\",\n     \"decimals\": 18,\n     \"deposit\": \"10000000000000000000\",\n     \"iconData\": \"/9j/4AAQSkZJ ... ...\",\n     \"iconType\": \"jpg\",\n     \"name\": \"Wanchain ZRX Crosschain Token\",\n     \"symbol\": \"ZRX\",\n     \"token2WanRatio\": \"20000\",\n     \"tokenWanAddr\": \"0x2a4359d8b84b270eb112b54273439ac538f32733\",\n     \"updatedAt\": 1577155812722,\n     \"withDrawDelayTime\": \"259200\"\n   },\n   ... ...\n ]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Service"
+  },
+  {
+    "name": "getRegisteredTokenIssuer",
+    "group": "Service",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getRegisteredTokenIssuer",
+    "version": "1.3.0",
+    "description": "<p>Get records of registered token issuer info. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "options",
+            "description": "<p>Optional. <br>&nbsp;&nbsp;<code>chainType</code> - The chainType you want to search. <br>&nbsp;&nbsp;<code>tokenScAddr</code> - The tokenScAddr you want to search.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRegisteredTokenIssuer\",\"params\":{\"chainType\":\"ETH\", tokenScAddr:[\"0x...\"]},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getRegisteredTokenIssuer({chainType:\"ETH\", tokenScAddr:[\"0x...\"]}, (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getRegisteredTokenIssuer({chainType:\"ETH\", tokenScAddr:\"0x0000000000000000000000000000000000000000\"});\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": " [{\"chainType\":\"ETH\",\"isNativeCoin\":true,\"issuer\":\"Ethereum\",\"tokenScAddr\":\"0x0000000000000000000000000000000000000000\",\"tokenType\":\"erc20\",\"updatedAt\":1680000764477}]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Service"
+  },
+  {
+    "name": "getRegisteredTokenList",
+    "group": "Service",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getRegisteredTokenList",
+    "version": "1.3.0",
+    "description": "<p>Get records of registered token list info. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "options",
+            "description": "<p>Optional. <br>&nbsp;&nbsp;<code>chainType</code> - The chainType you want to search. <br>&nbsp;&nbsp;<code>tags</code> - The array of tag you want to search. <br>&nbsp;&nbsp;<code>tokenTypes</code> - The array of token type you want to search.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRegisteredTokenList\",\"params\":{{chainType:\"ETH\", tags:[\"desktop\"], tokenTypes:[\"erc20\"]}},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getRegisteredTokenList({{chainType:\"ETH\", tags:[\"desktop\"], tokenTypes:[\"erc20\"]}}, (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getRegisteredTokenList({chainType:\"ETH\", tags:[\"desktop\"], tokenTypes:[\"erc20\"]});\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": " [{\"groupTag\":\"ETH\",\"address\":\"0x0000000000000000000000000000000000000000\",\"name\":\"ethereum\",\"symbol\":\"ETH\",\"decimals\":\"18\",\"tokenType\":\"erc20\",\"chainType\":\"ETH\"},{\"groupTag\":\"WAN\",\"address\":\"0xdd22d37d976648071277306fbf4883cb21ea86c6\",\"name\":\"WAN@ethereum\",\"symbol\":\"WAN\",\"decimals\":\"18\",\"tokenType\":\"erc20\",\"chainType\":\"ETH\"},...]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Service"
+  },
+  {
+    "name": "getRegisteredTokenLogo",
+    "group": "Service",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getRegisteredTokenLogo",
+    "version": "1.3.0",
+    "description": "<p>Get records of registered tokens information of original chain. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried, default: <code>&#39;WAN&#39;</code>.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "options",
+            "description": "<p>Optional. <br>&nbsp;&nbsp;<code>tokenScAddr</code> - The token account of <code>&#39;WAN&#39;</code> chain. <br>&nbsp;&nbsp;<code>after</code> - The timestamp after you want to search. <br>&nbsp;&nbsp;<code>isEqual</code> - If you want to query with the <code>isEqual</code>, <code>after</code> is needed. The timestamp including <code>after</code> after you want to search. <br>&nbsp;&nbsp;<code>limit</code> - The maximum token logo you want to search. <br>&nbsp;&nbsp;<code>tokenTypes</code> - The multi token types logo you want to search. If <code>isAllTokenTypes</code> is true, using <code>isAllTokenTypes</code> first. <br>&nbsp;&nbsp;<code>isAllTokenTypes</code> - Whether to get all token type logo you want to search. <br>&nbsp;&nbsp;&nbsp;&nbsp; Set to <code>false</code> (the default) to return the default token logo. <br>&nbsp;&nbsp;&nbsp;&nbsp; Set to <code>true</code> to return all token type logo.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getRegisteredTokenLogo\",\"params\":{\"chainType\":\"WAN\", \"after\":1577155812700},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getRegisteredTokenLogo(\"WAN\", {after:1577155812700}, (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getRegisteredTokenLogo(\"WAN\", {after:1577155812700});\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": " [\n     \"tokenScAddr\": \"0xc6f4465a6a521124c8e3096b62575c157999d361\",\n     \"iconType\": \"jpg\",\n     \"iconData\": \"/9j/4AAQSkZJRgABAQEBLAEsA ... ...\",\n     \"updatedAt\": :1589512354784\n   },\n   ... ...\n ]",
           "type": "json"
         }
       ]
@@ -6866,6 +8276,72 @@
     },
     "filename": "src/apis/apiInstance.js",
     "groupTitle": "TokensV2"
+  },
+  {
+    "name": "getAllBalances",
+    "group": "Tokens",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getAllBalances",
+    "version": "1.3.0",
+    "description": "<p>Gets all balances for address. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>&#39;XRP&#39;</code>.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "address",
+            "description": "<p>String of address being queried.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getAllBalances\",\"params\":{\"address\": \"rgiPXoiRiwYXrzmpno6rRnKdKtsvvvJmn\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getAllBalances(\"WAN\", \"rgiPXoiRiwYXrzmpno6rRnKdKtsvvvJmn\", (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getAllBalances(\"WAN\", \"rgiPXoiRiwYXrzmpno6rRnKdKtsvvvJmn\");\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "  [{\"currency\":\"XRP\",\"value\":\"999.99976\"},{\"value\":\"0\",\"currency\":\"FOO\",\"issuer\":\"rnqpsE8GSmLrZQzXguURJHjT7sN5S1XSqz\"},{\"value\":\"1.012345678913579\",\"currency\":\"BAR\",\"issuer\":\"rnqpsE8GSmLrZQzXguURJHjT7sN5S1XSqz\"}]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "Tokens"
   },
   {
     "name": "getMultiTokenBalance",
@@ -7851,5 +9327,151 @@
     },
     "filename": "src/apis/apiInstance.js",
     "groupTitle": "Transactions"
+  },
+  {
+    "name": "getGateWayBalances",
+    "group": "XRP",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getGateWayBalances",
+    "version": "1.3.0",
+    "description": "<p>Calculates the total balances issued by a given account, optionally excluding amounts held by operational addresses. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>&#39;XRP&#39;</code>.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "address",
+            "description": "<p>The Address to check. This should be the issuing address.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "options",
+            "description": "<p>Optional: <br>&nbsp;&nbsp;<code>excludeAddresses</code> - Array of addresses to exclude from the balances issued.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getGateWayBalances\",\"params\":{\"chainType\":\"XRP\",\"address\":\"rLZGBrdXNvS1RPjjJB7Z4FeA4w5Hggtt7t\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getAccountInfo(\"XRP\", \"rLZGBrdXNvS1RPjjJB7Z4FeA4w5Hggtt7t\", (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await getAccountInfo(\"XRP\", \"rLZGBrdXNvS1RPjjJB7Z4FeA4w5Hggtt7t\");\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "{\n      \"account\": \"rLZGBrdXNvS1RPjjJB7Z4FeA4w5Hggtt7t\",\n      \"assets\": {\n        \"rBZJzEisyXt2gvRWXLxHftFRkd1vJEpBQP\": [\n          {\n            \"currency\": \"USD\",\n            \"value\": \"999837.9851212292\"\n          },\n          {\n            \"currency\": \"CSC\",\n            \"value\": \"1001969.604918081\"\n          },\n          {\n            \"currency\": \"EUR\",\n            \"value\": \"999872.9919846801\"\n          },\n          {\n            \"currency\": \"SGB\",\n            \"value\": \"1001217.283002503\"\n          }\n        ]\n      },\n      \"ledger_hash\": \"0D23585632BE7D65A8C0166370BB32E33D0AC16E4E14B7A681724A8734B6378A\",\n      \"ledger_index\": 30591557,\n      \"validated\": true\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "XRP"
+  },
+  {
+    "name": "getTrustLines",
+    "group": "XRP",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getTrustLines",
+    "version": "1.3.0",
+    "description": "<p>Returns information about an account&#39;s trust lines, including balances in all non-XRP currencies and assets. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "chainType",
+            "description": "<p>The chain being queried. Currently supports <code>&#39;XRP&#39;</code>.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "address",
+            "description": "<p>A unique identifier for the account, most commonly the account&#39;s Address.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "options",
+            "description": "<p>Optional: <br>&nbsp;&nbsp;<code>peer</code> - The Address of a second account. If provided, show only lines of trust connecting the two accounts. <br>&nbsp;&nbsp;<code>ledgerVersion</code> - The ledger version of the ledger to use.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getTrustLines\",\"params\":{\"chainType\":\"XRP\",\"address\":\"rLZGBrdXNvS1RPjjJB7Z4FeA4w5Hggtt7t\"},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getTrustLines(\"XRP\", \"rLZGBrdXNvS1RPjjJB7Z4FeA4w5Hggtt7t\", (err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await getTrustLines(\"XRP\", \"rLZGBrdXNvS1RPjjJB7Z4FeA4w5Hggtt7t\");\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "[\n      {\n        \"account\": \"rBZJzEisyXt2gvRWXLxHftFRkd1vJEpBQP\",\n        \"balance\": \"999810.9889023065\",\n        \"currency\": \"USD\",\n        \"limit\": \"10000000000\",\n        \"limit_peer\": \"0\",\n        \"no_ripple\": false,\n        \"no_ripple_peer\": false,\n        \"quality_in\": 0,\n        \"quality_out\": 0\n      },\n      {\n        \"account\": \"rBZJzEisyXt2gvRWXLxHftFRkd1vJEpBQP\",\n        \"balance\": \"1002135.316796746\",\n        \"currency\": \"CSC\",\n        \"limit\": \"10000000000\",\n        \"limit_peer\": \"0\",\n        \"no_ripple\": false,\n        \"no_ripple_peer\": false,\n        \"quality_in\": 0,\n        \"quality_out\": 0\n      },\n      {\n        \"account\": \"rBZJzEisyXt2gvRWXLxHftFRkd1vJEpBQP\",\n        \"balance\": \"999847.2508449599\",\n        \"currency\": \"EUR\",\n        \"limit\": \"10000000000\",\n        \"limit_peer\": \"0\",\n        \"no_ripple\": false,\n        \"no_ripple_peer\": false,\n        \"quality_in\": 0,\n        \"quality_out\": 0\n      },\n      {\n        \"account\": \"rBZJzEisyXt2gvRWXLxHftFRkd1vJEpBQP\",\n        \"balance\": \"1001374.924056726\",\n        \"currency\": \"SGB\",\n        \"limit\": \"10000000000\",\n        \"limit_peer\": \"0\",\n        \"no_ripple\": false,\n        \"no_ripple_peer\": false,\n        \"quality_in\": 0,\n        \"quality_out\": 0\n      }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "XRP"
   }
 ]
