@@ -11185,6 +11185,26 @@ getCostModelParameters(chainType, options, callback) {
     });
   }
 
+  getChainQuotaHiddenFlags(chainIds, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getChainQuotaHiddenFlags';
+    let params = { chainIds: chainIds, ...options };
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
 }
 
 module.exports = ApiInstance;
