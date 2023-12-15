@@ -2926,6 +2926,72 @@ define({ "api": [
     "groupTitle": "CrossChain"
   },
   {
+    "name": "getChainQuotaHiddenFlags",
+    "group": "CrossChain",
+    "type": "CONNECT",
+    "url": "/ws/v3/YOUR-API-KEY",
+    "title": "getChainQuotaHiddenFlags",
+    "version": "1.3.0",
+    "description": "<p>Get the disabled chain dict. <br><br><strong>Returns:</strong> <br><font color=&#39;blue&#39;>«Promise,undefined»</font> Returns undefined if used with callback or a promise otherwise.</p> ",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "array",
+            "optional": true,
+            "field": "chainIds",
+            "description": "<p>The array of bip44 chain ID being queried.</p> "
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": true,
+            "field": "options",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "function",
+            "optional": true,
+            "field": "callback",
+            "description": "<p>Optional, the callback will receive two parameters: <br>&nbsp;&nbsp;<code>err</code> - If an error occurred. <br>&nbsp;&nbsp;<code>result</code> - The saved result.</p> "
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "JSON-RPC over websocket",
+          "content": "{\"jsonrpc\":\"2.0\",\"method\":\"getChainQuotaHiddenFlags\",\"params\":{},\"id\":1}",
+          "type": "string"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example callback usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  apiTest.getChainQuotaHiddenFlags((err, result) => {\n    console.log(\"Result is \", result);\n    apiTest.close();\n  });",
+        "type": "nodejs"
+      },
+      {
+        "title": "Example promise usage:",
+        "content": "  const ApiInstance = require('iwan-sdk');\n  let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);\n  let result = await apiTest.getChainQuotaHiddenFlags();\n  console.log(\"Result is \", result);\n  apiTest.close();",
+        "type": "nodejs"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Successful Response",
+          "content": "   {\"2153201998\":true}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/apis/apiInstance.js",
+    "groupTitle": "CrossChain"
+  },
+  {
     "name": "getCoin2WanRatio",
     "group": "CrossChain",
     "type": "CONNECT",
