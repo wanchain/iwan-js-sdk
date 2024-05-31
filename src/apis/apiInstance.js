@@ -9477,17 +9477,20 @@ class ApiInstance extends WsInstance {
   * @apiExample {nodejs} Example promise usage:
   *   const ApiInstance = require('iwan-sdk');
    *   let apiTest = new ApiInstance(YOUR-API-KEY, YOUR-SECRET-KEY);
-   *   let result = await apiTest.getSupportedChainInfo({"chainId":"2153201998"});
+   *   let result = await apiTest.getSupportedChainInfo({});
    *   console.log("Result is ", result);
    *   apiTest.close();
    *
    * @apiSuccessExample {json} Successful Response
-   *  [
-   *    2153201998, // chain ID
-   *    "WAN", // chain symbol
-   *    "Wanchain", // chain name
-   *    "5718350" // chainIndex
-   *  ]
+   *  [{
+        "chainType": "WAN",
+        "chainID": "2153201998",
+        "chainName": "Wanchain",
+        "chainSymbol": "WAN",
+        "chainDecimals": 18,
+        "crossScAddr": "0x62dE27e16f6f31d9Aa5B02F4599Fc6E21B339e79",
+        "multicallAddr": "0xFe3359b5C97191c4E2543dC7aC675d8BD947dE57"
+      }]
    *
    */
   getSupportedChainInfo(options, callback) {
@@ -11254,6 +11257,30 @@ getCostModelParameters(chainType, options, callback) {
       callback = utils.wrapCallback(callback);
     }
     let params = Object.assign({}, {}, options);
+
+    return utils.promiseOrCallback(callback, cb => {
+      this._request(method, params, (err, result) => {
+        if (err) {
+          return cb(err);
+        }
+        return cb(null, result);
+      });
+    });
+  }
+
+  getChainQuotaHiddenFlagDirectionally(chainIds, options, callback) {
+    if (typeof(options) === "function") {
+      callback = options;
+      options = {};
+    }
+    if (!options || typeof(options) !== "object") {
+      options = {};
+    }
+    if (callback) {
+      callback = utils.wrapCallback(callback);
+    }
+    let method = 'getChainQuotaHiddenFlagDirectionally';
+    let params = {chainIds, ...options};
 
     return utils.promiseOrCallback(callback, cb => {
       this._request(method, params, (err, result) => {
