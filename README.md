@@ -54,25 +54,10 @@ The SDK object can accept an `option` object. See below for examples of usage.
 In order to get an `ApiKey`, sign up at [iWan](https://iwan.wanchain.org). Then create a new project to get a new `ApiKey` and `SecretKey` key pair.
 
 ## Basic Usage
-Both `Promise` and `callback` are supported for each method. 
+`Promise` are supported for each method. 
 
-- `callback` {Function}
-  - `err` {String}  in case of error, error details will be stored in `err`, `err` will contain `null` otherwise.
-  - `result` {Object} if successful (in other words `err` is `null`), the `result` object will contain the result of the method called, such as `getBalance`.
+The method `getBalance` is used as an example below to show the use of `Promise` in the iWan SDK :
 
-The method `getBalance` is used as an example below to show the use of `callback` and `Promise` in the iWan SDK :
-
-### Callback
-`callback` can be used for asynchronous mode:
-```bash
-apiClient.getBalance('WAN', '0x0cc79fa3b80c5b9b02051facd02478ea88a78e2c', (err, balance) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log("Balance result is ", balance);
-  }
-});
-```
 ### Promise
 `Promise` can be used for synchronous mode:
 ```bash
@@ -86,7 +71,7 @@ try {
 
 ### Examples
 
-- [Simple Usage](examples/simple.js)
+- [Simple Usage](examples/simple.ts)
 
 ## Development
 1. `git clone https://github.com/wanchain/iWan-js-sdk.git`
