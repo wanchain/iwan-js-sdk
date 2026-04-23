@@ -7,13 +7,9 @@
   "template": {
     "forceLanguage": "en"
   },
-  "sampleUrl": false,
-  "defaultVersion": "0.0.0",
-  "apidoc": "0.3.0",
   "generator": {
-    "name": "iWan",
-    "time": "2023-11-21T09:38:24.213Z",
-    "url": "https://iwan.wanchain.org",
-    "version": "1.3.0"
-  }
+    "version": "0.9.1",
+    "time": "2026-04-23T09:08:17.805Z"
+  },
+  "apidoc": "0.2.0"
 }

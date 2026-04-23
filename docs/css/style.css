@@ -191,7 +191,17 @@ pre.language-html {
   margin: 0 0 20px 0;
 }
 
+.textP{
+  margin: 20px 0;
+}
+
+.textP a{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .type {
+  /* display: none; */
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
   font-size: 15px;
