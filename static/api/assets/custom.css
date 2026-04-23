@@ -1,0 +1,43 @@
+/* typedoc-style.css */
+
+:root {
+    --color-primary: #0052cc; /* Wanchain 风格蓝色 */
+    --color-primary-alcove: #f4f5f7;
+    --color-link: #0052cc;
+}
+
+/* 顶部 Header 定制 */
+.tsd-page-toolbar {
+    background-color: #1a1a1a; /* 深色背景 */
+    color: #ffffff;
+}
+
+.tsd-page-toolbar a {
+    color: #ffffff !important;
+}
+
+/* 侧边栏样式优化 */
+.tsd-navigation.primary ul li a {
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.tsd-navigation.primary ul li.current a {
+    border-left: 3px solid var(--color-primary);
+    background-color: var(--color-primary-alcove);
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* 模块/类/接口 卡片样式 */
+.tsd-panel {
+    border: 1px solid #e1e4e8;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* 隐藏不必要的元素以保持简洁 */
+.tsd-generator {
+    display: none !important;
+}

@@ -1,50 +1,64 @@
 {
-  "name": "iwan-sdk",
-  "version": "1.3.0",
-  "keywords": [
-    "iwan",
-    "iwan-sdk",
-    "WebSocket",
-    "WebSockets",
-    "BlockChain",
-    "CrossChain"
+  "name": "@gao623/iwan-sdk",
+  "version": "1.1.0",
+  "description": "TypeScript SDK for iWan RPC (Wanchain) - CommonJS / ESM / Browser / TypeScript",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "browser": {
+    "ws": false
+  },
+  "files": [
+    "dist"
   ],
-  "description": "JavaScript SDK for iWan RPC Server",
-  "author": "iwan.wanchain.org <techsupport@wanchain.org> (https://iwan.wanchain.org)",
-  "license": "ISC",
-  "main": "index.js",
-  "homepage": "https://github.com/wanchain/iWan-js-sdk#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wanchain/iWan-js-sdk.git"
-  },
-  "bugs": {
-    "url": "https://github.com/wanchain/iWan-js-sdk/issues"
-  },
-  "directories": {
-    "doc": "docs",
-    "test": "test"
-  },
   "scripts": {
-    "test": "mocha --timeout 600000 test/autoTestCases.js -c"
+    "build": "tsdown",
+    "docs": "typedoc --out docs src/index.ts --excludePrivate --excludeProtected",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run",
+    "dev": "tsdown --watch",
+    "build:docs": "typedoc",
+    "docs:deploy": "typedoc && cp static/apidoc/index.html static/apidoc/docs.html",
+    "build:docs:watchs": "typedoc --watch"
   },
   "dependencies": {
-    "circular-json": "^0.5.9",
-    "ws": "^5.2.2"
+    "crypto-js": "^4.2.0",
+    "eventemitter3": "^5.0.1",
+    "ws": "^8.19.0"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^5.0.5",
-    "node-xlsx": "^0.12.0"
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^25.5.0",
+    "@types/ws": "^8.18.1",
+    "@vitest/browser-playwright": "^4.1.0",
+    "playwright": "^1.58.2",
+    "tsdown": "^0.21.4",
+    "tsx": "^4.21.0",
+    "typedoc": "^0.28.17",
+    "typedoc-material-theme": "^1.4.1",
+    "typescript": "^5.9.3",
+    "unplugin-unused": "^0.5.7",
+    "vitest": "^4.1.0"
   },
-  "apidoc": {
-    "name": "iWan-js-sdk",
-    "version": "1.3.0",
-    "description": "JavaScript SDK for iWan RPC Server",
-    "title": "iWan-js-sdk Custom apiDoc browser title",
-    "url": "wss://api.wanchain.org:8443",
-    "template": {
-      "forceLanguage": "en"
-    }
+  "keywords": [
+    "wanchain",
+    "iwan",
+    "rpc",
+    "sdk",
+    "typescript",
+    "browser"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gao623/iwan-sdk"
   }
 }

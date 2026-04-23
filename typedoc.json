@@ -1,0 +1,33 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["./src/index.ts"],
+  "out": "./static/api",
+  "tsconfig": "./tsconfig.json",
+  "customCss": "./typedoc-custom.css",
+  "exclude": ["**/*.test.ts", "**/*.spec.ts", "**/node_modules/**", "**/dist/**"],
+  "excludeExternals": true,
+  "excludeInternal": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeNotDocumented": false,
+  "readme": "none",
+  "theme": "default",
+  "name": "Wanchain Public RPC API",
+  "plugin": ["typedoc-material-theme"],
+  "categoryOrder": ["Classes", "Interfaces", "Methods", "Functions", "*"],
+  "sort": ["source-order"],
+  "hideGenerator": true,
+  "disableSources": false,
+  "includeVersion": true,
+  "searchInComments": true,
+  "cleanOutputDir": true,
+  "githubPages": false,
+  "gitRevision": "main",
+  "navigation": {
+    "includeCategories": true,
+    "includeGroups": true
+  },
+  "sidebarLinks": {
+    "GitHub": "https://github.com/gao623/iwan-sdk"
+  }
+}
