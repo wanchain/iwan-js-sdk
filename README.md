@@ -8,12 +8,12 @@
 Use NPM or Yarn to install the library:
 
 ```bash
-npm install --save iwan-sdk
+npm install --save @wandevs/iwan-sdk
 ```
 ## Config
 After installation, the iWan SDK can be used to connect to the iWan RPC server to call a method such as `getBalance`. The default config can be used or custom config parameters can be passed using the `option` object.
 ```bash
-const iWanClient = require('iwan-sdk');
+const iWanClient = require('@wandevs/iwan-sdk');
 ```
 By default the SDK will connect to `"api.wanchain.org:8443"`
 ```bash
