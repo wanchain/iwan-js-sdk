@@ -1,6 +1,6 @@
 {
   "name": "@wandevs/iwan-sdk",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "TypeScript SDK for iWan RPC (Wanchain) - CommonJS / ESM / Browser / TypeScript",
   "type": "module",
   "main": "./dist/index.cjs",
